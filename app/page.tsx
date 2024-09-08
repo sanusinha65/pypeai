@@ -8,7 +8,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [images, setImages] = useState<string[]>([
+  const [images] = useState<string[]>([
     "/Aakhya-logo.png",
     "/eight-logo.png",
     "/samunnati-logo.png"

@@ -13,7 +13,7 @@ const ThemeSwitcher: React.FC = () => {
   }, []);
 
   return mount ? (
-    <div className="fixed right-5 z-[10000000000] max-lg:bottom-2.5 lg:bottom-[5%]">
+    <div className="fixed right-5 z-[10000000000] max-lg:bottom-1/2 bottom-1/2">
       <button
         onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
         type="button"

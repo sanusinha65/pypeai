@@ -55,7 +55,7 @@ export default function Home() {
             </Link>
           </div>
         </div>
-        <p className="text-gray-500 dark:text-gray-200">Helping individuals and teams at the world's best companies</p>
+        <p className="text-gray-500 dark:text-gray-200">Helping individuals and teams at the world&apos;s best companies</p>
       </section>
 
       <section className="container-xl px-4 md:px-24 mx-auto pt-5 md:pt-24">

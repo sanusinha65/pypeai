@@ -41,6 +41,7 @@ export default function Home() {
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            loading="eager"
           />
         </div>
         <div className="flex md:flex-wrap justify-center mt-5 md:mt-24 pb-5 md:pb-10">

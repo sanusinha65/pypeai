@@ -45,7 +45,7 @@ export default function Home() {
           />
         </div>
         <div className="flex md:flex-wrap justify-center mt-5 md:mt-24 pb-5 md:pb-10">
-          <div className="w-1/2 md:w-52 custom-launch-app-btn text-center text-[14px] mx-2 py-3 px-4  rounded-[10px] dark:border-white dark:border">
+          <div className="w-1/2 md:w-52 custom-launch-app-btn text-center text-[14px] mx-2 py-3 px-4  rounded-[10px] dark:border-white dark:border dark:hover:bg-gray-300">
             <Link href="https://app.pypeai.com/">
               <span className="text-gray-300">Launch App</span>
             </Link>
@@ -63,7 +63,7 @@ export default function Home() {
         <ImageScroller images={images} />
       </section>
 
-      <section className="max-w-screen-md mx-auto pt-10 pb-10 text-center">
+      <section className="max-w-screen-md mx-auto pt-24 pb-10 text-center">
         <div className="inline-block ">
           <div className="flex flex-wrap justify-center items-center border border-gray-600 rounded-2xl py-1.5 px-3 custom-box-shadow dark:border-white">
             <svg
@@ -81,7 +81,7 @@ export default function Home() {
                 clipRule="evenodd"
               />
             </svg>
-            <span className="text-[13px] ml-2 font-medium text-[#53535C] dark:text-gray-200">Features</span>
+            <span className="text-[13px] ml-2 font-medium text-[#53535C] dark:text-gray-200" id="features">Features</span>
           </div>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function Home() {
             />
 
             <FeatureCard
-              icon={<LayoutDashboard size="60px" className="text-[#53535C] dark:text-gray-200 "/>}
+              icon={<LayoutDashboard size="60px" className="text-[#53535C] dark:text-gray-200 " />}
               title="Monitor deployed prompts"
               description="Robust observability tools provide real-time metrics— cost, latency, requests, accuracy and 10+ metrics."
               image={<Image src="/deployement.webp" width={1024} height={531} alt="Pype Development" />}
@@ -130,6 +130,15 @@ export default function Home() {
               title="No expertise required"
               description="No need to learn 50+ prompting techniques to improve prompts."
             />
+          </div>
+        </div>
+        <div className="w-full mt-10">
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full md:w-52 bg-gray-700 hover:bg-gray-600 text-center text-[14px] py-3 px-4  rounded-[10px] transition-all duration-300 ease-in-out dark:border-white dark:border">
+              <Link href="/products" className="flex flex-wrap items-center justify-center" prefetch>
+                <span className="text-white font-medium">Check Products</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

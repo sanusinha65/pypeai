@@ -4,7 +4,7 @@ interface FeatureCardProps {
     icon: React.ReactNode;
     title: string;
     description: string;
-    image?: React.ReactNode;  // Optional image prop
+    image?: React.ReactNode; 
 }
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, image }) => {

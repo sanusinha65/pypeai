@@ -38,7 +38,7 @@ const ProductsPage = async () => {
     }
 
     if (error) {
-        return <div className="text-center py-4">{error}</div>;
+        throw new Error(error);
     }
 
     return (

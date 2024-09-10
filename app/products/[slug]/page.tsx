@@ -78,7 +78,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
   const content = root.toString();
 
   return (
-    <div className="min-h-screen container-2xl mx-auto py-6 md:px-2 lg:px-2 xl:px-14 bg-white dark:bg-[#18181a] text-black dark:text-white">
+    <div className="min-h-screen container-2xl mx-auto py-6 px-2 md:px-2 lg:px-2 xl:px-14 bg-white dark:bg-[#18181a] text-black dark:text-white">
       <div className="w-full">
         <div className="flex flex-wrap">
           <div className="w-full md:w-52 bg-gray-700 hover:bg-gray-600 text-center text-[14px] py-1.5 rounded-[10px] transition-all duration-300 ease-in-out dark:border-white dark:border">
@@ -89,19 +89,19 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
         </div>
       </div>
       <div className="flex flex-wrap pt-24">
-        <div className="w-full md:w-1/3 overflow-hidden">
+        <div className="w-full lg:w-1/3 overflow-hidden mt-2 mb-2">
           <div className="flex flex-wrap">
             <Image
               src={product.images[0]?.file.url || '/placeholder-image.png'}
               alt={product.name}
               width={500}
               height={250}
-              className="overflow-hidden object-contain hover:scale-105 transition-all duration-300 ease-in-out"
+              className="w-full lg:w-[500px] overflow-hidden object-contain hover:scale-105 transition-all duration-300 ease-in-out dark:border-white dark:border-2"
               priority
             />
           </div>
         </div>
-        <div className="w-full md:w-2/3 ml-0 px-6 mt-4 md:mt-0 font-afacad">
+        <div className="w-full lg:w-2/3 ml-0 px-2 lg:px-6 mt-4 md:mt-2 mb-2 font-afacad">
           <h1 className="text-3xl font-bold mb-6">{product.name}</h1>
           <div
             className="text-md text-gray-600 dark:text-white"
@@ -120,7 +120,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
           </p>
           <br/>
           <button
-            className="min-w-32  rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-md text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" disabled>
+            className="w-full lg:w-32 rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-md text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button" disabled>
             Sold Out
           </button>
         </div>

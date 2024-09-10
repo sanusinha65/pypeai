@@ -16,7 +16,12 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## CMS
+
+I have integrated Swell - CMS. In the Check Products, you will be able to see the different products. I have added some products. You can check them. When you will click on Shop Now, you will see that product and its description. 
+
+I have added the Check Products button on the homepage for you to notice. 
+
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 

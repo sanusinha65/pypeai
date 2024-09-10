@@ -1,6 +1,9 @@
 "use client"
 
 export default function ErrorBoundary() {
+    const refreshPage = () => {
+        window.location.reload();
+    }
     return (
         <div className="flex items-center justify-center min-h-screen bg-white dark:bg-[#18181a]">
             <div role="status" className="flex flex-col items-center">
@@ -22,6 +25,13 @@ export default function ErrorBoundary() {
                 </svg>
                 <span className="sr-only"></span>
                 <p className="pt-3 text-2xl font-bold">Please Try Again....</p>
+                <div className="pt-5">
+                    <button
+                        className="min-w-32  rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button"
+                        onClick={refreshPage}>
+                        Refresh
+                    </button>
+                </div>
             </div>
         </div>
     );

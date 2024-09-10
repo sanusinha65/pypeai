@@ -5,14 +5,8 @@ import ImageScroller from "@/components/ImageScroller";
 import Image from "next/image";
 import { ChartBar, Code, LayoutDashboard, ScreenShare, Server, UsersRound } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Home() {
-  const [images] = useState<string[]>([
-    "/Aakhya-logo.png",
-    "/eight-logo.png",
-    "/samunnati-logo.png"
-  ]);
 
   return (
     <div className="font-inter">
@@ -60,10 +54,14 @@ export default function Home() {
       </section>
 
       <section className="container-xl px-4 md:px-24 mx-auto pt-5 md:pt-24">
-        <ImageScroller images={images} />
+        <ImageScroller images={[
+          "/Aakhya-logo.png",
+          "/eight-logo.png",
+          "/samunnati-logo.png"
+        ]} />
       </section>
 
-      <section className="max-w-screen-md mx-auto pt-24 pb-10 text-center">
+      <section className="max-w-screen-md mx-auto pt-24 pb-10 text-center" id="app-features">
         <div className="inline-block ">
           <div className="flex flex-wrap justify-center items-center border border-gray-600 rounded-2xl py-1.5 px-3 custom-box-shadow dark:border-white">
             <svg

@@ -8,17 +8,7 @@ export default function Header() {
     const [lastScrollY, setLastScrollY] = useState(0);
 
     const scrollToFeatures = () => {
-        const features = document.getElementById("features");
-        if (features) {
-            const elementPosition = features.getBoundingClientRect().top + window.scrollY;
-            const offset = 60; 
-            window.scrollTo({
-                top: elementPosition - offset,
-                behavior: 'smooth',
-            });
-        } else {
-            console.error(`Element with id "features" not found.`);
-        }
+        window.location.href = "/#app-features";
     };
 
 

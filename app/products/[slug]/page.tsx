@@ -94,6 +94,7 @@ export default async function ProductDetailPage({ params }: { params: { slug: st
               width={500}
               height={250}
               className="overflow-hidden object-contain hover:scale-105 transition-all duration-300 ease-in-out"
+              priority
             />
           </div>
         </div>

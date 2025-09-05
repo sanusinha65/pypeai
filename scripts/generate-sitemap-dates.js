@@ -5,7 +5,7 @@ const { execSync } = require("child_process");
 
 const SITE_ROOT = process.env.SITE_ROOT || "https://developers.qodex.ai";
 const REPO_ROOT = process.cwd();
-const DOCS_PATH = path.join(REPO_ROOT, "app");
+const DOCS_PATH = path.join(REPO_ROOT, "docs");
 const OUTPUT_FILE = path.join(REPO_ROOT, "sitemapDates.js");
 
 /**

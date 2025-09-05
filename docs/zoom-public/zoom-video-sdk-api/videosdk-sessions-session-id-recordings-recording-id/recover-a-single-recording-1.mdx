@@ -1,0 +1,51 @@
+# Recover a single recording
+
+PUT {{baseUrl}}/videosdk/sessions/:sessionId/recordings/:recordingId/status
+
+
+<p>
+Zoom allows users to recover recordings from trash for up to 30 days from the deletion date. Use this API to recover a single recording file from the session.
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+<br>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;recover&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

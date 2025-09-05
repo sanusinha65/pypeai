@@ -1,0 +1,88 @@
+# Get cloud recording usage report
+
+GET {{baseUrl}}/report/cloud_recording?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;group_id=&lt;string&gt;
+
+
+<p>
+Retrieve cloud recording usage report for a specified period. You can only get cloud recording reports that is one day earlier than the current date and for the most recent period of 6 months. The date gap between from and to dates should be smaller or equal to 30 days.   
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `group_id` | string |  | The group ID. To get a group ID, use the [**List groups**](/api-reference/zoom-api/methods#operation/groups) API. 
+
+ **Note:** The API response will only contain users who are members of the queried group ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;cloud_recording_storage&quot;:[{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;free_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cstring\u003e&quot;},{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;free_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,73 @@
+#Zoom Meeting API
+
+Number of APIs: 172
+
+
+<p>
+The Zoom Meeting APIs let developers to access information from Zoom. You can use this API to build private services or public applications on the 
+<a href="http://marketplace.zoom.us">
+Zoom App Marketplace
+</a>
+. To learn how to get your credentials and create private/public applications, read our 
+<a href="https://developers.zoom.us/docs/">
+documentation
+</a>
+.
+</p>
+
+
+
+<p>
+All endpoints are available via 
+<code>
+https
+</code>
+ and are located at 
+<code>
+api.zoom.us/v2/
+</code>
+.
+</p>
+
+
+
+1. [webinars-{webinarId}-branding-virtual_backgrounds - Set webinar&#39;s default branding Virtual Background](https://developers.qodex.ai/zoom-public/zoom-meeting-api/webinars-webinarid-branding-virtual_backgrounds/set-webinar-s-default-branding-virtual-background)
+PATCH {{baseUrl}}/webinars/:webinarId/branding/virtual_backgrounds?id=&lt;string&gt;&amp;set_default_for_all_panelists=&lt;boolean&gt;
+
+
+2. [report-billing-invoices - Get billing invoice reports](https://developers.qodex.ai/zoom-public/zoom-meeting-api/report-billing-invoices/get-billing-invoice-reports)
+GET {{baseUrl}}/report/billing/invoices?billing_id=&lt;string&gt;
+
+
+3. [tsp - Get account&#39;s TSP information](https://developers.qodex.ai/zoom-public/zoom-meeting-api/tsp-1/get-account-s-tsp-information-1)
+GET {{baseUrl}}/tsp
+
+
+4. [webinars-{webinarId}-jointoken-local_archiving - Get a webinar&#39;s archive token for local archiving](https://developers.qodex.ai/zoom-public/zoom-meeting-api/webinars-webinarid-jointoken-local_archiving/get-a-webinar-s-archive-token-for-local-archiving)
+GET {{baseUrl}}/webinars/:webinarId/jointoken/local_archiving
+
+
+5. [past_meetings-{meetingId}-participants - Get past meeting participants](https://developers.qodex.ai/zoom-public/zoom-meeting-api/past_meetings-meetingid-participants/get-past-meeting-participants)
+GET {{baseUrl}}/past_meetings/:meetingId/participants?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+6. [users-{userId}-webinar_templates - List webinar templates](https://developers.qodex.ai/zoom-public/zoom-meeting-api/users-userid-webinar_templates/list-webinar-templates)
+GET {{baseUrl}}/users/:userId/webinar_templates
+
+
+7. [past_webinars-{webinarId}-participants - List webinar participants](https://developers.qodex.ai/zoom-public/zoom-meeting-api/past_webinars-webinarid-participants/list-webinar-participants)
+GET {{baseUrl}}/past_webinars/:webinarId/participants?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+8. [meetings-{meetingId}-registrants-{registrantId} - Get a meeting registrant](https://developers.qodex.ai/zoom-public/zoom-meeting-api/meetings-meetingid-registrants-registrantid/get-a-meeting-registrant)
+GET {{baseUrl}}/meetings/:meetingId/registrants/:registrantId
+
+
+9. [report-users-{userId}-meetings - Get meeting reports](https://developers.qodex.ai/zoom-public/zoom-meeting-api/report-users-userid-meetings/get-meeting-reports)
+GET {{baseUrl}}/report/users/:userId/meetings?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;type=past
+
+
+10. [meetings-{meetingId}-registrants-{registrantId} - Delete a meeting registrant](https://developers.qodex.ai/zoom-public/zoom-meeting-api/meetings-meetingid-registrants-registrantid/delete-a-meeting-registrant)
+DELETE {{baseUrl}}/meetings/:meetingId/registrants/:registrantId?occurrence_id=&lt;string&gt;
+
+

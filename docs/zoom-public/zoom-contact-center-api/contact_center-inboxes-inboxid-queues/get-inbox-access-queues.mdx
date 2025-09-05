@@ -1,0 +1,57 @@
+# Get inbox access queues
+
+GET {{baseUrl}}/contact_center/inboxes/:inboxId/queues
+
+
+<p>
+Retrieve a list of queues that have access to an inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;agents_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;supervisors_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;channel_types&quot;:[&quot;voice&quot;,&quot;video&quot;]},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;agents_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;supervisors_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;channel_types&quot;:[&quot;in_app_chat&quot;,&quot;sms&quot;]}]}
+```

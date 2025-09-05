@@ -1,0 +1,101 @@
+# Add an extension&#39;s inbound block rule
+
+POST {{baseUrl}}/phone/extension/:extensionId/inbound_blocked/rules
+
+
+<p>
+Adds the given extension&#39;s block rule for inbound calls and messaging. 
+</p>
+
+
+
+<p>
+It adds the inbound block rule for the given Call Queue, Auto Receptionist, Shared Line Group, Common Area, Zoom Room or User.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:extension_inbound_block_rule:admin
+</code>
+,
+<code>
+phone:write:extension_inbound_block_rule
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;blocked_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;match_type&quot;=&gt;&quot;phoneNumber&quot;, &quot;type&quot;=&gt;&quot;block_for_other_reasons&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,90 @@
+# Get Zoom Room location profile
+
+GET {{baseUrl}}/rooms/locations/:locationId
+
+
+<p>
+Each location type of the 
+<a href="https://support.zoom.us/hc/en-us/articles/115000342983-Zoom-Rooms-Location-Hierarchy">
+Zoom Rooms location hierarchy
+</a>
+ has a profile page with information such as the location name, address, support email, and more. Use this API to retrieve information about a specific Zoom Rooms location type, such as the city location of the Zoom Rooms.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Account owner or admin permission
+</li>
+
+
+<li>
+Zoom Rooms version 4.0 or higher
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;basic&quot;:{&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;required_code_to_ext&quot;:&quot;\u003cboolean\u003e&quot;,&quot;room_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;support_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;support_phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;parent_location_id&quot;:&quot;\u003cstring\u003e&quot;}}
+```

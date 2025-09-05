@@ -1,0 +1,57 @@
+# Get a disposition set
+
+GET {{baseUrl}}/contact_center/dispositions/sets/:dispositionSetId
+
+
+<p>
+Retrieve information about a disposition set. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_disposition:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;disposition_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;inactive&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;dispositions&quot;:[{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

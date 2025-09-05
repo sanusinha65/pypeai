@@ -1,0 +1,102 @@
+# List customized outbound caller ID phone numbers
+
+GET {{baseUrl}}/phone/sites/:siteId/outbound_caller_id/customized_numbers?selected=&lt;boolean&gt;&amp;site_id=&lt;string&gt;&amp;extension_type=sharedLineGroup&amp;keyword=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to retrieve phone numbers that can be used as the 
+<code>
+site-level
+</code>
+ customized outbound caller ID. 
+* Multiple sites must be 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-Multiple-Sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15">
+enabled
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_site_customized_number:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `selected` | string |  | Status of the phone numbers.  
+ `true`- Numbers already added to the custom list.   
+ `false`- Numbers not yet added to the custom list |
+| `site_id` | string |  | For filtering phone numbers that belong to the site. |
+| `extension_type` | string |  | The type of the extension to which the phone number belongs. |
+| `keyword` | string |  | A search keyword for phone or extension numbers. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;customize_numbers&quot;:[{&quot;customize_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;incoming&quot;:&quot;\u003cboolean\u003e&quot;,&quot;outgoing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;customize_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;incoming&quot;:&quot;\u003cboolean\u003e&quot;,&quot;outgoing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

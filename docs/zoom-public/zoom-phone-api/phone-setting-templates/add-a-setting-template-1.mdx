@@ -1,0 +1,73 @@
+# Add a setting template
+
+POST {{baseUrl}}/phone/setting_templates
+
+
+<p>
+Use this API to create a Zoom Phone setting template for an account. After creating a phone template, the defined settings will become the default settings for an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+, 
+<code>
+phone:write
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or enterprise Zoom account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;user template&quot;, &quot;type&quot;=&gt;&quot;user&quot;, &quot;description&quot;=&gt;&quot;Main site user template&quot;, &quot;site_id&quot;=&gt;&quot;SQv52YtkRLC2dwrDdYtGsA&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;description&quot;:&quot;Main site user template&quot;,&quot;id&quot;:&quot;2kFqiqSlS5udzWB5QqMiNg&quot;,&quot;name&quot;:&quot;user template&quot;,&quot;type&quot;:&quot;user&quot;}
+```

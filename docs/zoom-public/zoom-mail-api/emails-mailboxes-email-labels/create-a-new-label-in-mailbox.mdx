@@ -1,0 +1,72 @@
+# Create a new label in mailbox
+
+POST {{baseUrl}}/emails/mailboxes/:email/labels
+
+
+<p>
+Creates a new label.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;parentId&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;messageListVisibilitystring&quot;=&gt;&quot;show&quot;, &quot;labelListVisibility&quot;=&gt;&quot;labelHide&quot;, &quot;color&quot;=&gt;{&quot;textColor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;backgroundColor&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;parentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelLevel&quot;:&quot;\u003cinteger\u003e&quot;,&quot;messageListVisibilitystring&quot;:&quot;show&quot;,&quot;labelListVisibility&quot;:&quot;labelShowIfUnread&quot;,&quot;color&quot;:{&quot;textColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;backgroundColor&quot;:&quot;\u003cstring\u003e&quot;}}
+```

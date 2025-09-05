@@ -1,0 +1,66 @@
+# List closures
+
+GET {{baseUrl}}/contact_center/closures?next_page_token=&lt;string&gt;&amp;page_size=30&amp;account_default=&lt;boolean&gt;
+
+
+<p>
+Get a list of closures. Admins can create closures to select. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+<code>
+contact_center_operating_hours:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `account_default` | string |  | Default business hours or closures for the newly-created queue. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;closure_sets&quot;:[{&quot;account_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;closure_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;closures&quot;:[{&quot;closure_hour_type&quot;:2,&quot;closure_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency&quot;:0,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency_type&quot;:1,&quot;recurring_month&quot;:2,&quot;recurring_week_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recurring_days_of_week&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;closure_hour_type&quot;:2,&quot;closure_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency&quot;:3,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency_type&quot;:1,&quot;recurring_month&quot;:1,&quot;recurring_week_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recurring_days_of_week&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;flows_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;queues_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;},{&quot;account_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;closure_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;closures&quot;:[{&quot;closure_hour_type&quot;:1,&quot;closure_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency&quot;:2,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency_type&quot;:2,&quot;recurring_month&quot;:3,&quot;recurring_week_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recurring_days_of_week&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;closure_hour_type&quot;:2,&quot;closure_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency&quot;:1,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency_type&quot;:1,&quot;recurring_month&quot;:10,&quot;recurring_week_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recurring_days_of_week&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;flows_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;queues_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

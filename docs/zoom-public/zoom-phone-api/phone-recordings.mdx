@@ -1,0 +1,16 @@
+#  phone-recordings
+
+Number of APIs: 3
+
+1. [Get call recordings](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-recordings/get-call-recordings-1)
+GET {{baseUrl}}/phone/recordings?page_size=30&amp;next_page_token=cWiI3vTqdcENiV9RJz3Rh8iP1ksNPheW8c1&amp;from=2021-12-01&amp;to=2021-12-31&amp;owner_type=all&amp;recording_type=OnDemand&amp;site_id=8f71O6rWT8KFUGQmJIFAdQ&amp;query_date_type=start_time
+
+
+2. [Get call recordings](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-recordings/get-call-recordings)
+GET {{baseUrl}}/phone/recordings?page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;owner_type=all&amp;recording_type=&lt;string&gt;&amp;site_id=All sites&amp;query_date_type=start_time&amp;group_id=All groups
+
+
+3. [Delete a call recording](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-recordings/delete-a-call-recording-1)
+DELETE {{baseUrl}}/phone/recordings/:recordingId
+
+

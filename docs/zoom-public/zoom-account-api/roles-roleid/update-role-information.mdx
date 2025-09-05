@@ -1,0 +1,107 @@
+# Update role information
+
+PATCH {{baseUrl}}/roles/:roleId
+
+
+<p>
+Each Zoom user automatically has a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control">
+role
+</a>
+ which can either be owner, administrator, or a member. Account Owners and users with edit privileges for Role management can add customized roles with a list.
+</p>
+
+
+
+<p>
+Use this API to change the privileges, name and description of a specific role.  
+</p>
+
+
+
+<p>
+
+<strong>
+Pre-requisite:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+A Pro or higher plan.  
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+For role management and updates, you must be the Account Owner or user with role management permissions.  
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+role:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;privileges&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;sub_account_privileges&quot;=&gt;{&quot;second_level&quot;=&gt;&quot;&lt;integer&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{}
+```

@@ -1,0 +1,95 @@
+# List panelists
+
+GET {{baseUrl}}/webinars/:webinarId/panelists
+
+
+<p>
+List all of a webinar&#39;s panelists.  
+</p>
+
+
+
+<p>
+Webinar panelists can view and send video, screen share, annotate, and do much more compared to webinar attendees. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with 
+<a href="https://zoom.us/webinar">
+Webinar Add-on
+</a>
+.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;panelists&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;virtual_background_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_pronouns&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_description&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;virtual_background_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_pronouns&quot;:&quot;\u003cstring\u003e&quot;,&quot;name_tag_description&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

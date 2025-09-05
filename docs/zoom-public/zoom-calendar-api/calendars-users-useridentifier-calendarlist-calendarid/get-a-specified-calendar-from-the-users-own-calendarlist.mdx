@@ -1,0 +1,65 @@
+# Get a specified calendar from the user&#39;s own calendarList
+
+GET {{baseUrl}}/calendars/users/:userIdentifier/calendarList/:calendarId
+
+
+<p>
+Returns a calendar from the user&#39;s calendar list. The user can be 
+<code>
+me
+</code>
+ or a given calendar ID. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:read
+</code>
+,
+<code>
+calendar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cemail\u003e&quot;,&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;,&quot;colorId&quot;:&quot;\u003cstring\u003e&quot;,&quot;backgroundColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;foregroundColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;hidden&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;,&quot;accessRole&quot;:&quot;reader&quot;,&quot;defaultReminders&quot;:[{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;defaultAllDayReminders&quot;:[{&quot;method&quot;:&quot;email&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;notificationSettings&quot;:{&quot;notifications&quot;:[{&quot;type&quot;:&quot;eventChange&quot;,&quot;method&quot;:&quot;email&quot;},{&quot;type&quot;:&quot;agenda&quot;,&quot;method&quot;:&quot;email&quot;}]},&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;,&quot;deleted&quot;:&quot;\u003cboolean\u003e&quot;,&quot;summaryOverride&quot;:&quot;\u003cstring\u003e&quot;}
+```

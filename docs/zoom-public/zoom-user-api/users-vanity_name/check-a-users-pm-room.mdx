@@ -1,0 +1,65 @@
+# Check a user&#39;s PM room
+
+GET {{baseUrl}}/users/vanity_name?vanity_name=&lt;string&gt;
+
+
+<p>
+A personal meeting room is a virtual meeting room that can be permanently assigned to a user.
+Use this API to check if a personal meeting room with the given name exists or not.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `vanity_name` | string |  | (Required) Personal meeting room name. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;existed&quot;:&quot;\u003cboolean\u003e&quot;}
+```

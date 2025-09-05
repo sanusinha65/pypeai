@@ -1,0 +1,102 @@
+# Sync deskphones
+
+POST {{baseUrl}}/phone/devices/sync
+
+
+<p>
+Use this API to resync all online zero-touch or assisted-provisioning devices in an account or a site. Only allows sending one request every 15 minutes.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:sync_device:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;level&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

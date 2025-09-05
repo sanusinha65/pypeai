@@ -1,0 +1,74 @@
+# Check a user email
+
+GET {{baseUrl}}/users/email?email=&lt;string&gt;
+
+
+<p>
+Verify if a user&#39;s email is registered with Zoom.  
+</p>
+
+
+
+<p>
+&lt;b&gt;Note: &lt;/b&gt;You can successfully check if a user is a registered Zoom user only if the user 
+<strong>
+signed up for Zoom via email and is within your account.
+</strong>
+ If you provide an email address of a user who is not in your account, the value of &quot;existed_email&quot; parameter will be &quot;false&quot; irrespective of whether or not the user is registered with Zoom. The response of this API call will not include users who joined Zoom using options such as &quot;Sign in with SSO&quot;, &quot;Sign in with Google&quot; or &quot;Sign in with Facebook&quot; even if they are in the same account as yours.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `email` | string |  | (Required) The email address to be verified. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;existed_email&quot;:&quot;\u003cboolean\u003e&quot;}
+```

@@ -1,0 +1,66 @@
+# List business hours
+
+GET {{baseUrl}}/contact_center/business_hours?next_page_token=&lt;string&gt;&amp;page_size=30&amp;account_default=&lt;boolean&gt;
+
+
+<p>
+Get a list of business hours. Admins can create business hours to select, such as the business hours &quot;Default Hours&quot;. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_operating_hours:read:admin
+</code>
+
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `account_default` | string |  | Default business hours or closures for the newly created queue. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;business_hours&quot;:[{&quot;business_hour_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;business_hour_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;queues_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;flows_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;hours&quot;:{&quot;hour_type&quot;:2,&quot;custom_hours&quot;:[{&quot;day_of_week&quot;:6,&quot;custom_hour_type&quot;:1,&quot;custom_hour_ranges&quot;:[{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;day_of_week&quot;:2,&quot;custom_hour_type&quot;:0,&quot;custom_hour_ranges&quot;:[{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]}]}},{&quot;business_hour_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;business_hour_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;queues_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;flows_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;hours&quot;:{&quot;hour_type&quot;:1,&quot;custom_hours&quot;:[{&quot;day_of_week&quot;:1,&quot;custom_hour_type&quot;:2,&quot;custom_hour_ranges&quot;:[{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;day_of_week&quot;:5,&quot;custom_hour_type&quot;:2,&quot;custom_hour_ranges&quot;:[{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]}]}}]}
+```

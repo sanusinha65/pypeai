@@ -1,0 +1,100 @@
+# Delete a meeting poll
+
+DELETE {{baseUrl}}/meetings/:meetingId/polls/:pollId
+
+
+<p>
+Polls allow the meeting host to survey attendees. Delete a meeting 
+<a href="https://support.zoom.us/hc/en-us/articles/213756303-Polling-for-Meetings">
+poll
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Host user type must be 
+<strong>
+Pro
+</strong>
+.
+</li>
+
+
+<li>
+Polling feature should be enabled in the host&#39;s account.
+</li>
+
+
+<li>
+Meeting must be a scheduled meeting. Instant meetings do not have polling features enabled.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

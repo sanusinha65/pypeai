@@ -1,0 +1,93 @@
+# Create a shared line group
+
+POST {{baseUrl}}/phone/shared_line_groups
+
+
+<p>
+A 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792">
+shared line group
+</a>
+ allows Zoom Phone admins to share a phone number and extension with a group of phone users or common area phones. This gives members of the shared line group access to the group&#39;s direct phone number and voicemail. Use this API to create a shared line group.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin privileges 
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;display_name&quot;=&gt;&quot;Mtest sharedLineGroup&quot;, &quot;description&quot;=&gt;&quot;test shared line&quot;, &quot;extension_number&quot;=&gt;-62416864, &quot;site_id&quot;=&gt;&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{}
+```

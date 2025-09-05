@@ -1,0 +1,24 @@
+#  phone-call queues-{call Queue Id}
+
+Number of APIs: 5
+
+1. [Delete a call queue](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-call-queues-call-queue-id/delete-a-call-queue-1)
+DELETE {{baseUrl}}/phone/call_queues/:callQueueId
+
+
+2. [Get call queue details](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-call-queues-call-queue-id/get-call-queue-details-1)
+GET {{baseUrl}}/phone/call_queues/:callQueueId
+
+
+3. [Change call queue manager](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-call-queues-call-queue-id/change-call-queue-manager)
+PUT {{baseUrl}}/phone/call_queues/:callQueueId/manager
+
+
+4. [Get call queue recordings](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-call-queues-call-queue-id/get-call-queue-recordings-1)
+GET {{baseUrl}}/phone/call_queues/:callQueueId/recordings?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;from=2020-10-31&amp;to=2021-12-31
+
+
+5. [Update call queue details](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-call-queues-call-queue-id/update-call-queue-details-1)
+PATCH {{baseUrl}}/phone/call_queues/:callQueueId
+
+

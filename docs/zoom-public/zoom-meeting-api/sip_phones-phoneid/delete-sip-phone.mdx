@@ -1,0 +1,76 @@
+# Delete SIP phone
+
+DELETE {{baseUrl}}/sip_phones/:phoneId
+
+
+<p>
+Use this API to delete a Zoom account&#39;s SIP phone. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+: 
+* Currently only supported on Cisco and Avaya PBX systems. 
+* The user must enable 
+<strong>
+SIP Phone Integration
+</strong>
+ by contacting the 
+<a href="https://zoom.us/contactsales">
+Zoom Sales
+</a>
+ team.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+sip_phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

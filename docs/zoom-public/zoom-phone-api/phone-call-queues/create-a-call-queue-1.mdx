@@ -1,0 +1,100 @@
+# Create a call queue
+
+POST {{baseUrl}}/phone/call_queues
+
+
+<p>
+Call queues allow you to route incoming calls to a group of users. For instance, you can use call queues to route calls to various departments in your organization such as sales, engineering, billing, customer service etc.
+ Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360021524831-Managing-Call-Queues#h_e81faeeb-9184-429a-aaea-df49ff5ff413">
+create a call queue
+</a>
+.
+ You can add phone users or common area phones to call queues.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro, Business, or Education account
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;site_id&quot;=&gt;&quot;lA68sMSVQ6GAUcGg_GH0nQ&quot;, &quot;name&quot;=&gt;&quot;callhandling0001_Not_Delete&quot;, &quot;cost_center&quot;=&gt;&quot;testCostCenter&quot;, &quot;department&quot;=&gt;&quot;testDepartment&quot;, &quot;description&quot;=&gt;&quot;testDescription&quot;, &quot;extension_number&quot;=&gt;10, &quot;members&quot;=&gt;{&quot;common_area_phone_ids&quot;=&gt;[&quot;fP1KKAIqQ9qMYybaOONe3Q&quot;, &quot;fP1KKAIqQ9qMYybaOONe3Q&quot;], &quot;common_area_ids&quot;=&gt;[&quot;1pegM6NlSfCEP_jBCfX94A&quot;, &quot;1pegM6NlSfCEP_jBCfX94A&quot;], &quot;users&quot;=&gt;[{&quot;email&quot;=&gt;&quot;2021050800001@testapi.com&quot;, &quot;id&quot;=&gt;&quot;dksc_wq67sach2_3jxs&quot;}, {&quot;email&quot;=&gt;&quot;2021050800001@testapi.com&quot;, &quot;id&quot;=&gt;&quot;dksc_wq67sach2_3jxs&quot;}]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;extension_number&quot;:26000026010,&quot;id&quot;:&quot;IU8_1qAGS1Gf-3e56B_1Lw&quot;,&quot;name&quot;:&quot;callhandling0001_Not_Delete&quot;,&quot;status&quot;:&quot;active&quot;}
+```

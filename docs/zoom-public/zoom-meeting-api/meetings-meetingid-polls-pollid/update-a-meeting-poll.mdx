@@ -1,0 +1,69 @@
+# Update a meeting poll
+
+PUT {{baseUrl}}/meetings/:meetingId/polls/:pollId
+
+
+<p>
+Polls allow the meeting host to survey attendees. Update information of a specific meeting 
+<a href="https://support.zoom.us/hc/en-us/articles/213756303-Polling-for-Meetings">
+poll
+</a>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;anonymous&quot;=&gt;false, &quot;poll_type&quot;=&gt;2, &quot;questions&quot;=&gt;[{&quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompts&quot;=&gt;[{&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false, &quot;type&quot;=&gt;&quot;rank_order&quot;}, {&quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompts&quot;=&gt;[{&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false, &quot;type&quot;=&gt;&quot;fill_in_the_blank&quot;}], &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

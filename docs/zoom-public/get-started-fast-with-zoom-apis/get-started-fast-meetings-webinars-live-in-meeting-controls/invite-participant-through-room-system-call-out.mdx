@@ -1,0 +1,23 @@
+# Invite participant through room system call out
+
+PATCH {{baseUrl}}/live_meetings/{meetingId}/events
+
+
+
+
+
+### Request Body
+```
+{&quot;method&quot;=&gt;&quot;participant.invite.room_system_callout&quot;, &quot;params&quot;=&gt;{&quot;contacts&quot;=&gt;[{&quot;email&quot;=&gt;&quot;jchill@example.com&quot;, &quot;id&quot;=&gt;&quot;30R7kT7bTIKSNUFEuH_Qlg&quot;}], &quot;invitee_name&quot;=&gt;&quot;Jill Chill&quot;, &quot;phone_number&quot;=&gt;&quot;5550100&quot;, &quot;invite_options&quot;=&gt;{&quot;require_greeting&quot;=&gt;true, &quot;require_pressing_one&quot;=&gt;true}, &quot;call_type&quot;=&gt;&quot;h323&quot;, &quot;device_ip&quot;=&gt;&quot;10.100.111.237&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

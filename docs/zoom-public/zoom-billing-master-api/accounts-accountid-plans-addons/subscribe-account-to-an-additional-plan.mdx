@@ -1,0 +1,106 @@
+# Subscribe account to an additional plan
+
+POST {{baseUrl}}/accounts/:accountId/plans/addons
+
+
+<p>
+Subscribe a subaccount to a Zoom add-on plan. 
+</p>
+
+
+
+<p>
+Only master accounts that pay all billing charges of their associated Pro or higher sub accounts can use this API.
+</p>
+
+
+
+<p>
+Zoom only allows approved partners to use 
+<a href="https://marketplace.zoom.us/docs/api-reference/master-account-apis">
+Master APIs
+</a>
+ and to manage billing information for  subaccounts. Email the partner programs team at 
+<a href="mailto:partner-success@zoom.us">
+
+<strong>
+partner-success@zoom.us
+</strong>
+
+</a>
+ for more details. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with the 
+<strong>
+Master account
+</strong>
+ option enabled. 
+* The subaccount 
+<strong>
+must
+</strong>
+ be a paid account whose billing charges are paid by its Master account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;hosts&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;paid_period_start_date&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;service_effective_date&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;plan_audio&quot;:{&quot;callout_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;ddi_numbers&quot;:&quot;\u003cinteger\u003e&quot;,&quot;premium_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;tollfree_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_base&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;increasing_hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_large_meeting&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_phone&quot;:{&quot;plan_base&quot;:{&quot;callout_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_calling&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_calling_addons&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_number&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;plan_zcc&quot;:{&quot;plan_package&quot;:{&quot;callout_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_usage&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_phone_number&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;plan_recording&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_room_connector&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_webinar&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_zoom_events&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_zoom_rooms&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_sdk_cmr&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_whiteboard&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_whiteboard_plus&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zoom_iq&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_bundle&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zoom_one&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_zwr&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_ztransl&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zsched&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cinteger\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_znode&quot;:{&quot;plan_znode_base&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cnumber\u003e&quot;},&quot;plan_zphybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cnumber\u003e&quot;},&quot;plan_zmhybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cnumber\u003e&quot;},&quot;plan_mchybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cnumber\u003e&quot;},&quot;plan_rchybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cnumber\u003e&quot;}},&quot;plan_mesh&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cnumber\u003e&quot;},&quot;plan_workforce_management&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;discount_rate&quot;:&quot;\u003cinteger\u003e&quot;,&quot;discount_percent&quot;:&quot;\u003cinteger\u003e&quot;}}
+```

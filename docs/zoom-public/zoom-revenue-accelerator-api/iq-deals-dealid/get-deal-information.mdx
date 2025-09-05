@@ -1,0 +1,61 @@
+# Get deal information
+
+GET {{baseUrl}}/iq/deals/:dealId
+
+
+<p>
+Get information for a specific deal.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_deal:read:admin
+</code>
+,
+<code>
+iq_deal:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;deal_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_stage&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_is_closed&quot;:&quot;\u003cboolean\u003e&quot;,&quot;create_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_is_private&quot;:&quot;\u003cboolean\u003e&quot;,&quot;deal_amount&quot;:&quot;\u003cinteger\u003e&quot;,&quot;currency_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;close_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;time_in_stage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;number_of_conversations&quot;:&quot;\u003cinteger\u003e&quot;,&quot;last_activity_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;account_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;contacts&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}
+```

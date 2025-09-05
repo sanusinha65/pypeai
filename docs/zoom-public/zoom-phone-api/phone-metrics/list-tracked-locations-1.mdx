@@ -1,0 +1,81 @@
+# List tracked locations
+
+GET {{baseUrl}}/phone/metrics/location_tracking?type=6&amp;site_id=NjHmTu16Qfe8yOiNJuekXA&amp;location_type=personal&amp;keyword=device name
+
+
+<p>
+Use this API to list tracked locations. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | number |  | The type of response data. Supports &#39;6&#39; only at this time.
+`1`: Nomadic Emergency Services.
+`2`: Users Permission for Location Sharing.
+`3`: Default Emergency Address.
+`4`: Detectable Personal Location.
+`5`: Real-time Location for Users.
+`6`: Real-time Location for IP Phones. |
+| `site_id` | string |  | The site&#39;s ID. |
+| `location_type` | string |  | The location&#39;s type, &#39;company&#39; being the default value. |
+| `keyword` | string |  | Device name or device mac address. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;location_tracking&quot;:[{&quot;assignees&quot;:[{&quot;extension_number&quot;:10010,&quot;id&quot;:&quot;IqoQmDRqS-aIoXqV_FZ88w&quot;,&quot;name&quot;:&quot;testUser&quot;},{&quot;extension_number&quot;:10010,&quot;id&quot;:&quot;IqoQmDRqS-aIoXqV_FZ88w&quot;,&quot;name&quot;:&quot;testUser&quot;}],&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;device&quot;:{&quot;bssid&quot;:&quot;SA43YjfBTS6gJbUpfvIziQ&quot;,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;mac_address&quot;:&quot;543968a78ee7&quot;,&quot;name&quot;:&quot;Desk Phone&quot;,&quot;private_ip&quot;:&quot;192.168.1.1&quot;,&quot;public_ip&quot;:&quot;192.168.1.1&quot;},&quot;emergency_address&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;name&quot;:&quot;testLocation&quot;,&quot;network_switch&quot;:{&quot;mac_address&quot;:&quot;543968a78ee7&quot;,&quot;port&quot;:&quot;2&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;NjHmTu16Qfe8yOiNJuekXA&quot;,&quot;name&quot;:&quot;testSite&quot;},&quot;type&quot;:&quot;personal&quot;,&quot;zip&quot;:&quot;95113&quot;},{&quot;assignees&quot;:[{&quot;extension_number&quot;:10010,&quot;id&quot;:&quot;IqoQmDRqS-aIoXqV_FZ88w&quot;,&quot;name&quot;:&quot;testUser&quot;},{&quot;extension_number&quot;:10010,&quot;id&quot;:&quot;IqoQmDRqS-aIoXqV_FZ88w&quot;,&quot;name&quot;:&quot;testUser&quot;}],&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;device&quot;:{&quot;bssid&quot;:&quot;SA43YjfBTS6gJbUpfvIziQ&quot;,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;mac_address&quot;:&quot;543968a78ee7&quot;,&quot;name&quot;:&quot;Desk Phone&quot;,&quot;private_ip&quot;:&quot;192.168.1.1&quot;,&quot;public_ip&quot;:&quot;192.168.1.1&quot;},&quot;emergency_address&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;name&quot;:&quot;testLocation&quot;,&quot;network_switch&quot;:{&quot;mac_address&quot;:&quot;543968a78ee7&quot;,&quot;port&quot;:&quot;2&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;NjHmTu16Qfe8yOiNJuekXA&quot;,&quot;name&quot;:&quot;testSite&quot;},&quot;type&quot;:&quot;personal&quot;,&quot;zip&quot;:&quot;95113&quot;}],&quot;next_page_token&quot;:&quot;T6WMY4fJBIAlxPUiqRtwvQS9dvsq8AoRam2&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:1}
+```

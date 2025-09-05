@@ -1,0 +1,88 @@
+# Assign phone numbers to a common area
+
+POST {{baseUrl}}/phone/common_areas/:commonAreaId/phone_numbers
+
+
+<p>
+Assign phone numbers to a common area.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license.
+* Account owner or admin permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_numbers&quot;=&gt;[{&quot;id&quot;=&gt;&quot;TqH98ec8RVCu6Z00aBv9ow&quot;, &quot;number&quot;=&gt;&quot;+12055437350&quot;}, {&quot;id&quot;=&gt;&quot;TqH98ec8RVCu6Z00aBv9ow&quot;, &quot;number&quot;=&gt;&quot;+12055437350&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;TqH98ec8RVCu6Z00aBv9ow&quot;,&quot;number&quot;:&quot;+12055437350&quot;},{&quot;id&quot;:&quot;TqH98ec8RVCu6Z00aBv9ow&quot;,&quot;number&quot;:&quot;+12055437350&quot;}]}
+```

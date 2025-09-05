@@ -1,0 +1,88 @@
+# Add a meeting registrant
+
+POST {{baseUrl}}/meetings/:meetingId/registrants?occurrence_ids=&lt;string&gt;
+
+
+<p>
+Create and submit a user&#39;s registration to a meeting. See 
+<a href="https://support.zoom.us/hc/en-us/articles/202835649-Customizing-webinar-registration">
+Customizing webinar registration
+</a>
+ for details on how to set the requirements for these fields. Note that there is a maximum limit of 4,999 registrants per meeting and users will see an error if the meeting&#39;s capacity is reached. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The host must be a 
+<strong>
+Licensed
+</strong>
+ user type.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_ids` | string |  | A comma-separated list of meeting occurrence IDs. You can get this value with the [Get a meeting](/docs/api-reference/zoom-api/methods#operation/meeting) API. |
+
+
+### Request Body
+```
+{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;comments&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;custom_questions&quot;=&gt;[{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;industry&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;job_title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;no_of_employees&quot;=&gt;&quot;&quot;, &quot;org&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;purchasing_time_frame&quot;=&gt;&quot;No timeframe&quot;, &quot;role_in_purchase_process&quot;=&gt;&quot;Evaluator/Recommender&quot;, &quot;language&quot;=&gt;&quot;Tr-TR&quot;, &quot;auto_approve&quot;=&gt;&quot;&lt;boolean&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;occurrences&quot;:[{&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;occurrence_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;\u003cstring\u003e&quot;},{&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;occurrence_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;\u003cstring\u003e&quot;}],&quot;participant_pin_code&quot;:&quot;\u003clong\u003e&quot;}
+```

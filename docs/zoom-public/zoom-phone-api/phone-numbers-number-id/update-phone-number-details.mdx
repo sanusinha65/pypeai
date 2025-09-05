@@ -1,0 +1,77 @@
+# Update phone number details
+
+PATCH {{baseUrl}}/phone/numbers/:numberId
+
+
+<p>
+Use this API to update a Zoom Phone number&#39;s information.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+, 
+<code>
+phone:master
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Paid account
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;capability&quot;=&gt;[&quot;incoming&quot;, &quot;incoming&quot;], &quot;display_name&quot;=&gt;&quot;Display Name&quot;, &quot;emergency_address_status&quot;=&gt;1, &quot;sip_group_id&quot;=&gt;&quot;8MhK7ea4Q4ihIQ4TD_g0kw&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

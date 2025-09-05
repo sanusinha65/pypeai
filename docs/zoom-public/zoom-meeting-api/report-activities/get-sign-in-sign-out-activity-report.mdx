@@ -1,0 +1,91 @@
+# Get sign In / sign out activity report
+
+GET {{baseUrl}}/report/activities?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Retrieve a list of sign in / sign out activity logs 
+<a href="https://support.zoom.us/hc/en-us/articles/201363213-Getting-Started-with-Reports">
+report
+</a>
+ of users under a Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | Start date for which you would like to view the activity logs report. Using the `from` and `to` parameters, specify a monthly date range for the report as the API only provides one month worth of data in one request. The specified date range should fall within the last six months. |
+| `to` | string |  | End date up to which you would like to view the activity logs report. |
+| `page_size` | string |  | The number of records to be returned within a single API call |
+| `next_page_token` | string |  | Next page token is used to paginate through large result sets |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;activity_logs&quot;:[{&quot;client_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;type&quot;:&quot;Sign out&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;},{&quot;client_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;type&quot;:&quot;Sign out&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;}],&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;}
+```

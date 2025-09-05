@@ -1,0 +1,73 @@
+# Add users to a directory
+
+POST {{baseUrl}}/phone/dial_by_name_directory/extensions
+
+
+<p>
+Use this API to add users to a 
+<a href="https://support.zoom.us/hc/en-us/articles/4404938949389-Using-a-dial-by-name-directory">
+directory
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;site_id&quot;=&gt;&quot;pei2g0vFDF&quot;, &quot;extension_ids&quot;=&gt;[&quot;O3JFBAnds&quot;, &quot;O3JFBAnds&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+&quot;&quot;
+```

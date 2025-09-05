@@ -1,0 +1,67 @@
+# Send IM messages
+
+POST {{baseUrl}}/im/users/me/chat/messages?chat_user=&lt;email&gt;
+
+
+<p>
+Sends chat message to a user. 
+<aside>
+Note: This API only supports OAuth 2.0.
+</aside>
+
+<br>
+
+<br>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+imchat:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `chat_user` | string |  | The email address (registered with Zoom) or the userId of the chat user. |
+
+
+### Request Body
+```
+{&quot;message&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cuuid\u003e&quot;}
+```

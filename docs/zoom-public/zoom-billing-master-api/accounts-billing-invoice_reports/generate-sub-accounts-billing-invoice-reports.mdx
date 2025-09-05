@@ -1,0 +1,119 @@
+# Generate sub accounts&#39; billing invoice reports
+
+POST {{baseUrl}}/accounts/billing/invoice_reports
+
+
+<p>
+Use this API to generate sub account invoice reports. 
+</p>
+
+
+
+<p>
+This API can only be used by master accounts that pay all billing charges of their associated Pro or higher sub accounts. Zoom only allows approved partners to use 
+<a href="https://marketplace.zoom.us/docs/api-reference/zoom-api/ma">
+Master account API
+</a>
+ and manage sub accounts&#39; billing information. Email the partner programs team at 
+<a href="mailto:partner-success@zoom.us">
+
+<strong>
+partner-success@zoom.us
+</strong>
+
+</a>
+ for more details. 
+</p>
+
+
+
+<p>
+
+<strong>
+one
+</strong>
+ request to this API every 
+<strong>
+3 minutes
+</strong>
+.
+* This API has a daily limit of 
+<strong>
+100 requests per account
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with the 
+<strong>
+Master account
+</strong>
+ option enabled. 
+* The sub account 
+<strong>
+must
+</strong>
+ be a paid account whose billing charges are paid by its Master account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;start_date&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_date&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;account_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;accounts_total_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;remaining_days&quot;:&quot;\u003cinteger\u003e&quot;,&quot;status&quot;:&quot;Processing&quot;}
+```

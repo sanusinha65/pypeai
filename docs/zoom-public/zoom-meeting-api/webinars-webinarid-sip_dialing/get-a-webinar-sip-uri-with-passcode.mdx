@@ -1,0 +1,66 @@
+# Get a webinar SIP URI with Passcode
+
+POST {{baseUrl}}/webinars/:webinarId/sip_dialing
+
+
+<p>
+Get a webinar&#39;s SIP URI. The URI consists of the webinar ID, an optional user-supplied passcode, and participant identifier code. The API return data also includes additional fields to indicate whether the API caller has a valid Cloud Room Connector subscription, the participant identifier code from the URI, and the SIP URI validity period in seconds. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write:admin:sip_dialing
+</code>
+,
+<code>
+webinar:write:sip_dialing
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;passcode&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;sip_dialing&quot;:&quot;\u003cstring\u003e&quot;,&quot;paid_crc_plan_participant&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_identifier_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;expire_in&quot;:&quot;\u003clong\u003e&quot;}
+```

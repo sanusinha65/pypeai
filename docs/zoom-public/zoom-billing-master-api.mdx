@@ -1,0 +1,82 @@
+#Zoom Billing Master API
+
+Number of APIs: 18
+
+
+<p>
+Access and update information about accounts&#39; and subaccounts&#39; billing plan and usage.
+</p>
+
+
+
+<h5>
+Prerequisites
+</h5>
+
+
+
+<ul>
+
+
+<li>
+Must be a 
+<a href="https://developers.zoom.us/docs/api/rest/master-account-apis/">
+Master Account
+</a>
+
+</li>
+
+
+<li>
+Have 
+<a href="https://developers.zoom.us/docs/api/rest/other-references/plans/">
+plan
+</a>
+ in place
+</li>
+
+
+</ul>
+
+
+
+1. [accounts-{accountId}-billing-invoices - List billing invoices](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-billing-invoices/list-billing-invoices)
+GET {{baseUrl}}/accounts/:accountId/billing/invoices?from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+2. [accounts-billing-invoice_reports-{invoiceReportId} - Delete sub accounts&#39; billing invoice report](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-billing-invoice_reports-invoicereportid/delete-sub-accounts-billing-invoice-report)
+DELETE {{baseUrl}}/accounts/billing/invoice_reports/:invoiceReportId
+
+
+3. [accounts-billing-invoice_reports-{invoiceReportId} - Download sub accounts&#39; billing invoice reports](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-billing-invoice_reports-invoicereportid/download-sub-accounts-billing-invoice-reports)
+GET {{baseUrl}}/accounts/billing/invoice_reports/:invoiceReportId?download=&lt;boolean&gt;
+
+
+4. [accounts-billing-renewals - List upcoming renewal accounts](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-billing-renewals/list-upcoming-renewal-accounts)
+GET {{baseUrl}}/accounts/billing/renewals?interval=30&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;
+
+
+5. [accounts-{accountId}-billing-invoices-{invoiceId} - Get invoice details](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-billing-invoices-invoiceid/get-invoice-details)
+GET {{baseUrl}}/accounts/:accountId/billing/invoices/:invoiceId
+
+
+6. [accounts-{accountId}-billing - Get billing information](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-billing/get-billing-information)
+GET {{baseUrl}}/accounts/:accountId/billing
+
+
+7. [accounts-{accountId}-billing - Update billing information](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-billing/update-billing-information)
+PATCH {{baseUrl}}/accounts/:accountId/billing
+
+
+8. [accounts-{accountId}-plans-addons - Update an account&#39;s additional plan](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-plans-addons/update-an-accounts-additional-plan)
+PUT {{baseUrl}}/accounts/:accountId/plans/addons
+
+
+9. [accounts-{accountId}-plans-base-status - Cancel a base plan](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-plans-base-status/cancel-a-base-plan)
+PATCH {{baseUrl}}/accounts/:accountId/plans/base/status
+
+
+10. [accounts-{accountId}-plans-base - Update a base plan](https://developers.qodex.ai/zoom-public/zoom-billing-master-api/accounts-accountid-plans-base/update-a-base-plan)
+PUT {{baseUrl}}/accounts/:accountId/plans/base
+
+

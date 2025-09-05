@@ -1,0 +1,57 @@
+# Get an address book
+
+GET {{baseUrl}}/contact_center/address_books/:addressBookId
+
+
+<p>
+Use this API to get information about an address book. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_contact:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_contacts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;unit_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_name&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,88 @@
+# Add a setting template
+
+POST {{baseUrl}}/phone/setting_templates
+
+
+<p>
+Creates a Zoom Phone setting template for an account. After creating a phone template, the defined settings will become the default settings for an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or enterprise Zoom account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:setting_template:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,108 @@
+# Update call queue details
+
+PATCH {{baseUrl}}/phone/call_queues/:callQueueId
+
+
+<p>
+Call queues allow you to route incoming calls to a group of users. For instance, you can use call queues to route calls to various departments in your organization such as sales, engineering, billing, customer service etc.
+ Use this API to update information of a specific Call Queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro, Business, or Education account
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:call_queue:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;cost_center&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;department&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;extension_number&quot;=&gt;&quot;&lt;long&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;active&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

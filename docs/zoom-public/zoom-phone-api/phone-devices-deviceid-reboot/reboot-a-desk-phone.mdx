@@ -1,0 +1,82 @@
+# Reboot a desk phone
+
+POST {{baseUrl}}/phone/devices/:deviceId/reboot
+
+
+<p>
+Use this API to reboot an online zero-touch or assisted-provisioning device. You can only send one request every second.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:reboot_device:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

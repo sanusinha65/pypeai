@@ -1,0 +1,73 @@
+# Get a meeting&#39;s archive token for local archiving
+
+GET {{baseUrl}}/meetings/:meetingId/jointoken/local_archiving
+
+
+<p>
+Get a meeting&#39;s archive token to allow local archiving. The archive token allows a meeting SDK app or bot to get archive permission to access the meeting&#39;s raw audio and video media stream in real-time. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan for the meeting host. 
+* The 
+<strong>
+Archive meetings and webinars
+</strong>
+ account setting enabled in the Zoom web portal.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting_token:read:admin:local_archiving
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;expire_in&quot;:120,&quot;token&quot;:&quot;\u003cstring\u003e&quot;}
+```

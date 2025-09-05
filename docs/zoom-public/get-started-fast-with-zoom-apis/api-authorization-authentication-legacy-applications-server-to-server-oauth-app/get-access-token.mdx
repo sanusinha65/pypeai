@@ -1,0 +1,226 @@
+# Get access token
+
+POST https://zoom.us/oauth/token?grant_type=account_credentials&amp;account_id=gYz8S9w5Q5yrDoIvmdClYw
+
+
+<h3>
+Get Access Token
+</h3>
+
+
+
+<p>
+Use the 
+<code>
+account_id
+</code>
+ you got from you S2S OAuth app credentials (or the 
+<q>
+Get a user
+</q>
+ API endpoint request in the folder) for the 
+<code>
+account_id
+</code>
+ value under the 
+<code>
+Params
+</code>
+ tab.
+</p>
+
+
+
+<p>
+Navigate to the Auth tab and under 
+<code>
+Basic Auth
+</code>
+ fill in the following account credentials from your Server-to-Server OAuth app:
+</p>
+
+
+
+<ul>
+
+
+<li>
+Username: [Client_ID]
+</li>
+
+
+<li>
+Password: [Client_Secret]
+</li>
+
+
+</ul>
+
+
+
+<p>
+Remember, you can always use the [collection variables] feature and syntax within Qodex or directly paste those values in the respective form fields if you do not wish to edit/use the global variables feature.
+</p>
+
+
+
+<p>
+🚨 There are no refresh tokens for Server-to-Server OAuth app type. To get a new access token, your app should call the 
+<code>
+/oauth/token
+</code>
+ endpoint again with the 
+<code>
+account_credentials
+</code>
+ grant.
+</p>
+
+
+
+<p>
+
+<strong>
+Alternatively, you can clear the Auth tab fields, and use the
+</strong>
+ 
+<strong>
+
+<code>
+Headers
+</code>
+
+</strong>
+ 
+<strong>
+tab per our Zoom documentation
+</strong>
+.
+</p>
+
+
+
+<p>
+If you go this route, 
+<u>
+make sure to re-check the
+</u>
+ 
+<code>
+Headers
+</code>
+ 
+<u>
+key-value field boxes
+</u>
+ and 
+<a href="https://www.base64encode.org/">
+Base64-encode
+</a>
+ your 
+<code>
+Client_ID:Client_Secret
+</code>
+ (with the colon between the two and no spaces) before pasting in the 
+<code>
+Authorization
+</code>
+ value field.
+</p>
+
+
+
+<p>
+Once you&#39;re done, send the POST request to 
+<code>
+https://zoom.us/oauth/token
+</code>
+ (already pre-populated in this request for you).
+</p>
+
+
+
+<p>
+The successful response will be the access token, which is a Bearer token type that expires in an hour, with the scopes that you chose in your app settings screen:
+</p>
+
+
+
+<pre>
+
+<code class="json">
+{
+      “Access_token“: String,
+      “Token_type”: “bearer”,
+      “Expire_in”: long,
+      “scope” : [String]
+}
+
+
+</code>
+
+</pre>
+
+
+
+<hr>
+
+
+
+<h5>
+Developer Documentation:
+</h5>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+
+<a href="https://developers.zoom.us/docs/internal-apps/s2s-oauth/">
+Server-to-Server OAuth
+</a>
+
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+
+<a href="https://developers.zoom.us/docs/internal-apps/s2s-oauth/">
+Get app credentials
+</a>
+
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `grant_type` | string |  |  |
+| `account_id` | string |  |  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Authorization` | string |  | The string Basic with your Client ID and Client Secret separated with colon (:), Base64-encoded. |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

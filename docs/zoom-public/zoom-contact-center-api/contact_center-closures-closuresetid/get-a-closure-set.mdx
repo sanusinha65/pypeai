@@ -1,0 +1,61 @@
+# Get a closure set
+
+GET {{baseUrl}}/contact_center/closures/:closureSetId
+
+
+<p>
+Get information about a closure set.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+<code>
+contact_center_operating_hours:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;account_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;closure_set_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;closures&quot;:[{&quot;closure_hour_type&quot;:1,&quot;closure_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency&quot;:0,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency_type&quot;:2,&quot;recurring_month&quot;:9,&quot;recurring_week_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recurring_days_of_week&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;closure_hour_type&quot;:1,&quot;closure_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency&quot;:3,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurring_frequency_type&quot;:2,&quot;recurring_month&quot;:5,&quot;recurring_week_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recurring_days_of_week&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,93 @@
+# Update a shared line group
+
+PATCH {{baseUrl}}/phone/shared_line_groups/:sharedLineGroupId
+
+
+<p>
+A 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792">
+shared line group
+</a>
+ allows Zoom Phone admins to share a phone number and extension with a group of phone users or common area phones. This gives members of the shared line group access to the group&#39;s direct phone number and voicemail. Use this API to update information of a Shared Line Group. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin privileges 
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;display_name&quot;=&gt;&quot;slg_name_2020_12_22_06_52_34_430&quot;, &quot;extension_number&quot;=&gt;65537130, &quot;primary_number&quot;=&gt;{&quot;id&quot;=&gt;&quot;---M1padRvSUtw7YihN7sA&quot;, &quot;number&quot;=&gt;&quot;14232058798&quot;}, &quot;status&quot;=&gt;&quot;active&quot;, &quot;timezone&quot;=&gt;&quot;UTC&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

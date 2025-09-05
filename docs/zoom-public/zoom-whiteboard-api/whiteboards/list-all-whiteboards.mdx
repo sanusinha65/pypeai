@@ -1,0 +1,125 @@
+# List all whiteboards
+
+GET {{baseUrl}}/whiteboards?search_key=&lt;string&gt;&amp;user_id=&lt;string&gt;&amp;date_filter_type=modified_date&amp;from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;&amp;page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to list whiteboards of current user (
+<strong>
+Required Scopes
+</strong>
+: 
+<code>
+whiteboard:read
+</code>
+) or list all whiteboards under the account (
+<strong>
+Required Scopes
+</strong>
+: 
+<code>
+whiteboard:read:admin
+</code>
+).
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+<code>
+user_id
+</code>
+ can intake 
+<code>
+Zoom user ID
+</code>
+ or 
+<code>
+email
+</code>
+ which only applies when scope = 
+<code>
+whiteboard:read:admin
+</code>
+. Otherwise, the 
+<code>
+user_id
+</code>
+ can only intake 
+<code>
+me
+</code>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+whiteboard:read:admin
+</code>
+,
+<code>
+whiteboard:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `search_key` | string |  | The name of a whiteboard. If this parameter is provided, only the matched whiteboard will be returned. Otherwise, all whiteboards will be returned. |
+| `user_id` | string |  | The email address or user ID of the whiteboard owner. If this parameter is provided, only the whiteboard owned by the provided user will be returned. 
+If set to `me`, will return the matched whiteboards of current user. |
+| `date_filter_type` | string |  | The whiteboard date filter type. 
+Enum:
+* `created_date` - Whiteboard create date. 
+* `modified_date` - Whiteboard modify date.
+ |
+| `from` | string |  | The queried start date and time in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` UTC format for the created date range for which you would like to retrieve whiteboards. The maximum range can be a month. If no value is provided for this field, the default will be current date. For example, if you make the API request on June 30, 2020, without providing the &amp;ldquo;from&amp;rdquo; and &amp;ldquo;to&amp;rdquo; parameters, by default the value of &#39;from&#39; field will be &amp;ldquo;2020-06-30&amp;rdquo; and the value of the &#39;to&#39; field will be &amp;ldquo;2020-07-01&amp;rdquo;. |
+| `to` | string |  | The queried end date and time in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` UTC format.  |
+| `page_size` | number |  | The number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;whiteboards&quot;:[{&quot;whiteboard_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;whiteboard_name&quot;:&quot;Untitled&quot;,&quot;locked&quot;:false,&quot;trashed&quot;:false,&quot;readonly&quot;:false,&quot;non_cloud&quot;:false,&quot;created_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;share_link_setting&quot;:{&quot;share_scope&quot;:0,&quot;share_role&quot;:3},&quot;advanced_share_setting&quot;:{&quot;can_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_to_external&quot;:&quot;\u003cboolean\u003e&quot;,&quot;external_can_share&quot;:&quot;\u003cboolean\u003e&quot;}},{&quot;whiteboard_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;whiteboard_name&quot;:&quot;Untitled&quot;,&quot;locked&quot;:false,&quot;trashed&quot;:false,&quot;readonly&quot;:false,&quot;non_cloud&quot;:false,&quot;created_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;share_link_setting&quot;:{&quot;share_scope&quot;:0,&quot;share_role&quot;:4},&quot;advanced_share_setting&quot;:{&quot;can_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_to_external&quot;:&quot;\u003cboolean\u003e&quot;,&quot;external_can_share&quot;:&quot;\u003cboolean\u003e&quot;}}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

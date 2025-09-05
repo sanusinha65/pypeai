@@ -1,0 +1,110 @@
+# List user&#39;s SMS sessions in descending order
+
+GET {{baseUrl}}/phone/users/:userId/sms/sessions/sync?sync_type=FSync&amp;sync_token=&lt;string&gt;&amp;count=&lt;integer&gt;&amp;session_type=user
+
+
+<p>
+Retrieves the user&#39;s SMS sessions in descending order. Mirrors the ZP client behavior with the most recent on top.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Paid account 
+* User-enabled Zoom phone   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+,
+<code>
+phone_sms:read:admin
+</code>
+,
+<code>
+phone_sms:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:sms_session
+</code>
+,
+<code>
+phone:read:sms_session:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | (Required) FSync: Full sync BSync: Backward sync ISync: Forward sync |
+| `sync_token` | string |  | The sync token. Use if requesting a backward (`BSync`) or forward (`ISync`) sync. |
+| `count` | string |  | The record count of each query |
+| `session_type` | string |  | This field filters the specific session list by a session type.
+The value for this field can be one of the following:  
+ `user`  
+ `call_queue`  
+ `auto_receptionist`  
+ `all` |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;sms_sessions&quot;:[{&quot;last_access_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;latest_message&quot;:{&quot;attachments&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;PNG&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;OTHER&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:1,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}}]},&quot;participants&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;sharedLineGroup&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;unread_message_count&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;last_access_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;latest_message&quot;:{&quot;attachments&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;GIF&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;JPG/JPEG&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:5,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;sharedLineGroup&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}}]},&quot;participants&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;unread_message_count&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;sync_token&quot;:&quot;\u003cstring\u003e&quot;}
+```

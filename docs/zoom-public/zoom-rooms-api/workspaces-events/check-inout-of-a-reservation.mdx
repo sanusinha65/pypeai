@@ -1,0 +1,65 @@
+# Check in/out of a reservation
+
+POST {{baseUrl}}/workspaces/events
+
+
+<p>
+Use this API to check in to or out of a reservation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:write
+</code>
+
+<code>
+workspace:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;method&quot;=&gt;&quot;check_in&quot;, &quot;params&quot;=&gt;{&quot;workspace_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;reservation_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

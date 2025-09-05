@@ -1,0 +1,96 @@
+# Batch delete user profiles
+
+DELETE {{baseUrl}}/contact_center/users?user_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;&amp;user_emails=&lt;string&gt;&amp;user_emails=&lt;string&gt;
+
+
+<p>
+Batch delete users. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Either 
+<code>
+user_ids
+</code>
+ or 
+<code>
+user_emails
+</code>
+ needs to be provided. If both 
+<code>
+user_ids
+</code>
+ and 
+<code>
+user_emails
+</code>
+ are provided, only 
+<code>
+user_ids
+</code>
+ will be used, while 
+<code>
+user_emails
+</code>
+ will be ignored. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `user_ids` | string |  | A comma-separated list of user IDs to query, up to 20 user IDs. |
+| `user_ids` | string |  | A comma-separated list of user IDs to query, up to 20 user IDs. |
+| `user_emails` | string |  | A comma-separated list of user emails to query, up to 20 user emails. |
+| `user_emails` | string |  | A comma-separated list of user emails to query, up to 20 user emails. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

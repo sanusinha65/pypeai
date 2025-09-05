@@ -1,0 +1,28 @@
+#  Get Started Fast: Zoom Mail-Get, Create, Update, Delete Email Drafts
+
+Number of APIs: 6
+
+1. [Update the specified draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/update-the-specified-draft-email-1)
+PUT {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+2. [Delete an existing draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/delete-an-existing-draft-email-1)
+DELETE {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+3. [Get the specified draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/get-the-specified-draft-email-1)
+GET {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId?format=full
+
+
+4. [List emails from draft folder](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/list-emails-from-draft-folder-1)
+GET {{baseUrl}}/emails/mailboxes/:email/drafts?includeSpamTrash=&lt;boolean&gt;&amp;maxResults=&lt;integer&gt;&amp;pageToken=&lt;string&gt;&amp;q=&lt;string&gt;
+
+
+5. [Create a new draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/create-a-new-draft-email-1)
+POST {{baseUrl}}/emails/mailboxes/:email/drafts
+
+
+6. [Send out a draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/send-out-a-draft-email-1)
+POST {{baseUrl}}/emails/mailboxes/:email/drafts/send
+
+

@@ -1,0 +1,65 @@
+# Delete directory backup routing rule
+
+DELETE {{baseUrl}}/phone/routing_rules/:routingRuleId
+
+
+<p>
+Use this API to delete directory backup routing rule. The directory backup routing rules are a series of predefined Regular Expressions. These rules are used to route outgoing calls. If a dialed number does not match a Zoom Phone user, and does not match a defined External Contact, these rules are tested next. If a dialed number does not match any rules, the call will be routed via the PSTN.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,25 @@
+# POST Device Authorization
+
+POST https://zoom.us/oauth/devicecode
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;client_id&quot;, &quot;value&quot;=&gt;&quot;{{oAuthDevClientId}}&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Authorization` | string |  | The string Basic with your Client ID and Client Secret separated with colon (:), Base64-encoded. |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

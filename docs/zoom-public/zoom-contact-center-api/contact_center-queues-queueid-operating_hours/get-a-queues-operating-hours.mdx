@@ -1,0 +1,57 @@
+# Get a queue&#39;s operating hours
+
+GET {{baseUrl}}/contact_center/queues/:queueId/operating_hours
+
+
+<p>
+Get information about a queue&#39;s operating hours. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;account_default_business_hour&quot;:&quot;\u003cboolean\u003e&quot;,&quot;business_hour_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;business_hour_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;closure_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_default_closure_set&quot;:&quot;\u003cboolean\u003e&quot;}
+```

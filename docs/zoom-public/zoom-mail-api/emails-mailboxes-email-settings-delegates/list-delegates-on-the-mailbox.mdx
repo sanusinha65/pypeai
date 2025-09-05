@@ -1,0 +1,67 @@
+# List delegates on the mailbox
+
+GET {{baseUrl}}/emails/mailboxes/:email/settings/delegates
+
+
+<p>
+Lists the delegates on the mailbox.  Managing delegate operations must be done by the mailbox owner.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;delegates&quot;:[{&quot;delegateEmail&quot;:&quot;\u003cstring\u003e&quot;,&quot;verificationStatus&quot;:&quot;rejected&quot;,&quot;delegateAccess&quot;:&quot;dlgeditor&quot;,&quot;accessTime&quot;:&quot;\u003cstring\u003e&quot;,&quot;creationTime&quot;:&quot;\u003cstring\u003e&quot;},{&quot;delegateEmail&quot;:&quot;\u003cstring\u003e&quot;,&quot;verificationStatus&quot;:&quot;accepted&quot;,&quot;delegateAccess&quot;:&quot;dlgauthor&quot;,&quot;accessTime&quot;:&quot;\u003cstring\u003e&quot;,&quot;creationTime&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,87 @@
+# Get a provision template
+
+GET {{baseUrl}}/phone/provision_templates/:templateId
+
+
+<p>
+Use this API to get a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360035817952">
+provision template
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:provision_template:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;bound_device_count&quot;:&quot;\u003cinteger\u003e&quot;}
+```

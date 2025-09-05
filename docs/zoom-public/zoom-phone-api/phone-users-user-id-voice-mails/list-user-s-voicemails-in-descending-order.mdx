@@ -1,0 +1,100 @@
+# List user&#39;s voicemails in descending order
+
+GET {{baseUrl}}/phone/users/:userId/voice_mails/sync?sync_type=FSync&amp;sync_token=Z2JHTFNkMkRQa18xNjQxNTM3MDg2ODA5XzE2NDMyNjAxNzA5NDg=&amp;count=15
+
+
+<p>
+Use this API to retrieve a user&#39;s Zoom Phone voicemails in descending order. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone_voicemail:read
+</code>
+, 
+<code>
+phone_voicemail:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | (Required) FSync: Full sync 
+BSync: Backward sync 
+ISync: Forward sync |
+| `sync_token` | string |  | Sync token. Use if requesting a backward (`BSync`) or forward (`ISync`) sync. |
+| `count` | number |  | Record count of each query. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;sync_token&quot;:&quot;Z2JHTFNkMkRQa18xNjQxNTM3MDg2ODA5XzE2NDMyNjAxNzA5NDg=&quot;,&quot;voice_mails&quot;:[{&quot;call_id&quot;:&quot;876634343743&quot;,&quot;call_log_id&quot;:&quot;46541323465&quot;,&quot;callee_name&quot;:&quot;Jane Doe&quot;,&quot;callee_number&quot;:&quot;34567889&quot;,&quot;callee_number_type&quot;:2,&quot;caller_name&quot;:&quot;John Doe&quot;,&quot;caller_number&quot;:&quot;12345678&quot;,&quot;caller_number_type&quot;:2,&quot;date_time&quot;:&quot;2019-05-19T20:00:00Z&quot;,&quot;download_url&quot;:&quot;exampleurl.io&quot;,&quot;duration&quot;:18,&quot;id&quot;:&quot;d43520fc6b7e4b26bbeef58a8a80f235&quot;,&quot;status&quot;:&quot;read&quot;},{&quot;call_id&quot;:&quot;876634343743&quot;,&quot;call_log_id&quot;:&quot;46541323465&quot;,&quot;callee_name&quot;:&quot;Jane Doe&quot;,&quot;callee_number&quot;:&quot;34567889&quot;,&quot;callee_number_type&quot;:2,&quot;caller_name&quot;:&quot;John Doe&quot;,&quot;caller_number&quot;:&quot;12345678&quot;,&quot;caller_number_type&quot;:2,&quot;date_time&quot;:&quot;2019-05-19T20:00:00Z&quot;,&quot;download_url&quot;:&quot;exampleurl.io&quot;,&quot;duration&quot;:18,&quot;id&quot;:&quot;d43520fc6b7e4b26bbeef58a8a80f235&quot;,&quot;status&quot;:&quot;read&quot;}]}
+```

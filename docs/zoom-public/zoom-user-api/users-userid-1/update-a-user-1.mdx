@@ -1,0 +1,103 @@
+# Update a user
+
+PATCH {{baseUrl}}/users/:userId?login_type=99&amp;remove_tsp_credentials=&lt;boolean&gt;
+
+
+<p>
+Update a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/201363203-My-Profile">
+Zoom profile
+</a>
+ information. For user-level apps, pass 
+<a href="hhttps://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `login_type` | number |  | The user&#39;s login method. 
+* `0` - Facebook OAuth. 
+* `1` - Google OAuth. 
+* `24` - Apple OAuth. 
+* `27` - Microsoft OAuth. 
+* `97` - Mobile device. 
+* `98` - RingCentral OAuth. 
+* `99` - API user. 
+* `100` - Zoom Work email. 
+* `101` - Single Sign-On (SSO). 
+
+These login methods are only available in China. 
+* `11` - Phone number. 
+* `21` - WeChat. 
+* `23` - Alipay. |
+| `remove_tsp_credentials` | string |  | Whether to remove the user&#39;s TSP credentials. 
+* `true` - The queried ID is an employee&#39;s unique ID. 
+* `false` - The queried ID is not an employee&#39;s unique ID. 
+
+ This value defaults to `false` (null). |
+
+
+### Request Body
+```
+{&quot;cms_user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;company&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;custom_attributes&quot;=&gt;[{&quot;key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;dept&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;group_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;host_key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;job_title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;language&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;location&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;manager&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;phone_country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_numbers&quot;=&gt;[{&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;label&quot;=&gt;&quot;Office&quot;, &quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;label&quot;=&gt;&quot;Mobile&quot;, &quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;pmi&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;pronouns&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;pronouns_option&quot;=&gt;3, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;99, &quot;use_pmi&quot;=&gt;false, &quot;vanity_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zoom_one_type&quot;=&gt;128, &quot;plan_united_type&quot;=&gt;&quot;8192&quot;, &quot;feature&quot;=&gt;{&quot;zoom_phone&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;about_me&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;linkedin_url&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

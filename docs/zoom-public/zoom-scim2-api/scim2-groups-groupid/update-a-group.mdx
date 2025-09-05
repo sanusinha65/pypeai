@@ -1,0 +1,57 @@
+# Update a group
+
+PATCH {{baseUrl}}/scim2/Groups/:groupId
+
+
+<p>
+Use this API to update a group&#39;s information. 
+</p>
+
+
+
+<p>
+
+<strong>
+OAuth Scope:
+</strong>
+ 
+<code>
+scim2
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;schemas&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;Operations&quot;=&gt;[{&quot;op&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;{&quot;displayName&quot;=&gt;&quot;&lt;string&gt;&quot;}}, {&quot;op&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;{&quot;displayName&quot;=&gt;&quot;&lt;string&gt;&quot;}}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

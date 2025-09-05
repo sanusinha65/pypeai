@@ -1,0 +1,73 @@
+# Unassign a phone number
+
+DELETE {{baseUrl}}/phone/call_queues/:callQueueId/phone_numbers/:phoneNumberId
+
+
+<p>
+After assigning a phone number, you can unbind it if you don&#39;t want it to be assigned to a 
+<a href="https://support.zoom.us/hc/en-us/articles/360021524831-Managing-Call-Queues">
+Call Queue
+</a>
+. Use this API to unbind a phone number from a Call Queue. After successful unbinding, the number will appear in the 
+<a href="https://zoom.us/signin#/numbers/unassigned">
+Unassigned tab
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account palan
+* Account owner or admin permissions
+* Zoom Phone license 
+ 
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

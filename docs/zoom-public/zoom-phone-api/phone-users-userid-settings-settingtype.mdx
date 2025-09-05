@@ -1,0 +1,16 @@
+#  phone-users-{userId}-settings-{settingType}
+
+Number of APIs: 3
+
+1. [Add a user&#39;s shared access setting](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-userid-settings-settingtype/add-a-users-shared-access-setting)
+POST {{baseUrl}}/phone/users/:userId/settings/:settingType
+
+
+2. [Delete a user&#39;s shared access setting](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-userid-settings-settingtype/delete-a-users-shared-access-setting)
+DELETE {{baseUrl}}/phone/users/:userId/settings/:settingType?shared_id=&lt;string&gt;&amp;assistant_extension_id=&lt;string&gt;&amp;device_id=&lt;string&gt;&amp;intercom_extension_id=&lt;string&gt;
+
+
+3. [Update a user&#39;s shared access setting](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-userid-settings-settingtype/update-a-user-s-shared-access-setting)
+PATCH {{baseUrl}}/phone/users/:userId/settings/:settingType
+
+

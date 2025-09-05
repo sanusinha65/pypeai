@@ -1,0 +1,102 @@
+# Get Alert setting details
+
+GET {{baseUrl}}/phone/alert_settings/:alertSettingId
+
+
+<p>
+Gets detailed information about a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/7146944434445">
+Alert setting
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license 
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:alert_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;alert_setting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;alert_setting_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;module&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rule&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rule_conditions&quot;:[{&quot;rule_condition_type&quot;:2,&quot;rule_condition_value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;rule_condition_type&quot;:2,&quot;rule_condition_value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;targets&quot;:[{&quot;target_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_type&quot;:1,&quot;target_extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;target_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_type&quot;:3,&quot;target_extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;time_frame_type&quot;:&quot;all_day&quot;,&quot;time_frame_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;time_frame_to&quot;:&quot;\u003cstring\u003e&quot;,&quot;frequency&quot;:30,&quot;email_recipients&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;chat_channels&quot;:[{&quot;chat_channel_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_point&quot;:&quot;\u003cstring\u003e&quot;},{&quot;chat_channel_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_point&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:1}
+```

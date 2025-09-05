@@ -1,0 +1,89 @@
+# Update user profile settings
+
+PATCH {{baseUrl}}/phone/users/:userId/settings
+
+
+<p>
+Use this API to update the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360021325712-Configuring-Settings">
+profile settings
+</a>
+ of a user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;area_code&quot;=&gt;&quot;01&quot;, &quot;audio_prompt_language&quot;=&gt;&quot;en-US&quot;, &quot;country_iso_code&quot;=&gt;&quot;US&quot;, &quot;music_on_hold_id&quot;=&gt;&quot;NOZ98sQvTimYi0XxL_x-iQ&quot;, &quot;outbound_caller_id&quot;=&gt;&quot;+123123123&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

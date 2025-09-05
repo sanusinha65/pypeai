@@ -1,0 +1,112 @@
+# Use in-meeting controls
+
+PATCH {{baseUrl}}/live_meetings/:meetingId/events
+
+
+<p>
+Control 
+<a href="https://support.zoom.us/hc/en-us/articles/360021921032-In-Meeting-Controls">
+in-meeting
+</a>
+ features. In-meeting controls include starting and stopping a recording, pausing and resuming a recording, and inviting participants. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ This API&#39;s recording control only works for cloud recordings. It does 
+<strong>
+not
+</strong>
+ work for local recordings. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* The meeting 
+<strong>
+must
+</strong>
+ be a live meeting 
+<strong>
+except
+</strong>
+ inviting participants to the meeting through [call out (phone)/(room system)]. 
+* Recording control: 
+<a href="https://support.zoom.us/hc/en-us/articles/360060231472-Enabling-cloud-recording">
+Cloud recording
+</a>
+ must be enabled on the account. 
+* The user calling this API must be the host or an alternative meeting host.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;method&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;params&quot;=&gt;{&quot;contacts&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;invitee_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;invite_options&quot;=&gt;{&quot;require_greeting&quot;=&gt;true, &quot;require_pressing_one&quot;=&gt;true}, &quot;call_type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;device_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;h323_headers&quot;=&gt;{&quot;from_display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_display_name&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;sip_headers&quot;=&gt;{&quot;from_display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;from_uri&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;additional_headers&quot;=&gt;[{&quot;key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}]}}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

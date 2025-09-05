@@ -1,0 +1,78 @@
+# Update an auto receptionist policy
+
+PATCH {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/policies
+
+
+<p>
+Use this API to update the policy setting of a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom Phone License
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;voicemail_transcription&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;voicemail_notification_by_email&quot;=&gt;{&quot;include_voicemail_file&quot;=&gt;true, &quot;include_voicemail_transcription&quot;=&gt;false, &quot;forward_voicemail_to_email&quot;=&gt;true, &quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;sms&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true, &quot;international_sms&quot;=&gt;true, &quot;international_sms_countries&quot;=&gt;[&quot;US&quot;, &quot;US&quot;]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

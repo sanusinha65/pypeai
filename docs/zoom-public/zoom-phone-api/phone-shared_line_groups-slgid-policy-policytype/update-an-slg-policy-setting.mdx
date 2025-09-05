@@ -1,0 +1,81 @@
+# Update an SLG policy setting
+
+PATCH {{baseUrl}}/phone/shared_line_groups/:slgId/policy/:policyType
+
+
+<p>
+Updates the policy sub-setting for a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792">
+shared line group
+</a>
+ according to the 
+<code>
+policyType
+</code>
+. For example, you can use this API to update shared access members. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or higher account with Zoom Phone license.
+* Account owner or admin privileges 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;voicemail_access_members&quot;=&gt;[{&quot;access_user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;allow_download&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_sharing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;shared_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;access_user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;allow_download&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_sharing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;shared_id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

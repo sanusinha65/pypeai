@@ -1,0 +1,67 @@
+# Update a task
+
+PATCH {{baseUrl}}/contact_center/tasks/:taskId
+
+
+<p>
+Use this API to:
+<br>
+
+  1) update a task&#39;s priority level or
+<br>
+
+  2) manually assign or unassign a task to an agent. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_task:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;task_priority&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;assigned_user_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

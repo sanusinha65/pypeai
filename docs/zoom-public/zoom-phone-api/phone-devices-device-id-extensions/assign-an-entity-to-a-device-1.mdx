@@ -1,0 +1,83 @@
+# Assign an entity to a device
+
+POST {{baseUrl}}/phone/devices/:deviceId/extensions
+
+
+<p>
+By default, all Zoom Phone users can make and receive calls using the Zoom desktop and mobile applications. Additionally, if a desk phone is required, use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092#h_5ca07504-68a8-4c3d-ad0e-c1d3594436da">
+add a desk phone and assign it to a user
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+* 
+<a href="https://support.zoom.us/hc/en-us/articles/360001299063-Zoom-Voice-Supported-Devices">
+Supported device
+</a>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;assignee_extension_ids&quot;=&gt;[&quot;dsH7FaYRHy9gV4Qb8ecku&quot;, &quot;dsH7FaYRHy9gV4Qb8ecku&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

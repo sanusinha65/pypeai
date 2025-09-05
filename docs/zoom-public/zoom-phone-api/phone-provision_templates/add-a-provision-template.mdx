@@ -1,0 +1,92 @@
+# Add a provision template
+
+POST {{baseUrl}}/phone/provision_templates
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360035817952#h_8266cb40-58fc-4c1a-8da2-885d72167234">
+create a provision template
+</a>
+ in a Zoom account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:provision_template:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;content&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}
+```

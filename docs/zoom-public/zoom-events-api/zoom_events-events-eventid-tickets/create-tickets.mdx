@@ -1,0 +1,71 @@
+# Create tickets
+
+POST {{baseUrl}}/zoom_events/events/:eventId/tickets
+
+
+<p>
+Use this API to create tickets for an event. You can add a single ticket or up to 30 tickets in a batch operation.
+ Please note that this request uses the 
+<code>
+pre-registration
+</code>
+ flow. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_tickets:write
+</code>
+
+<code>
+zoom_events_tickets:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;tickets&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;ticket_type_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_ticket_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;send_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;fast_join&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registration_needed&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;industry&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;job_title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;organization&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;organization_size&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;custom_questions&quot;=&gt;[{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;answer&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;answer&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;ticket_type_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_ticket_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;send_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;fast_join&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registration_needed&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;industry&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;job_title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;organization&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;organization_size&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;custom_questions&quot;=&gt;[{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;answer&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;answer&quot;=&gt;&quot;&lt;string&gt;&quot;}]}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;tickets&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_join_link&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_registration_link&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_join_link&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_registration_link&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

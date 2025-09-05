@@ -1,0 +1,113 @@
+# Get invoice details
+
+GET {{baseUrl}}/accounts/:accountId/billing/invoices/:invoiceId
+
+
+<p>
+Get detailed information about a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/207276556-Viewing-your-invoice-history#h_6710542f-23cc-4059-9cc7-ff02bec7314e">
+invoice
+</a>
+.
+<br>
+
+ To retrieve a regular Zoom account&#39;s invoice details or a master account&#39;s invoice details, provide 
+<code>
+me
+</code>
+ as the value of 
+<code>
+accountId
+</code>
+ path parameter. To list a sub account&#39;s invoice details, provide the account ID of the sub account in the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Account must be enrolled in Pro or a higher plan.   
+</p>
+
+
+
+<p>
+
+<strong>
+Additional Rate Limit:
+</strong>
+ You can make 
+<strong>
+one
+</strong>
+ API request every 
+<strong>
+thirty
+</strong>
+ minutes until the daily limit is reached. This API has a daily limit of 
+<strong>
+100
+</strong>
+ requests per 
+<strong>
+account
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;balance&quot;:&quot;\u003cdouble\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;due_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_items&quot;:[{&quot;charge_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;charge_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;charge_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;purchase_order_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cdouble\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cdouble\u003e&quot;},{&quot;charge_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;charge_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;charge_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;partner_sku&quot;:&quot;\u003cstring\u003e&quot;,&quot;purchase_order_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cdouble\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cdouble\u003e&quot;}],&quot;invoice_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\&quot;Draft\&quot;&quot;,&quot;target_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cdouble\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cdouble\u003e&quot;}
+```

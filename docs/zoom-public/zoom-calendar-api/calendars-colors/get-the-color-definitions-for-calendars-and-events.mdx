@@ -1,0 +1,61 @@
+# Get the color definitions for calendars and events
+
+GET {{baseUrl}}/calendars/colors
+
+
+<p>
+Returns the color definitions for calendars and events.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:read
+</code>
+,
+<code>
+calendar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;kind&quot;:&quot;calendar#colors&quot;,&quot;updated&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;calendar&quot;:[{&quot;color_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:{&quot;foreground&quot;:&quot;\u003cstring\u003e&quot;,&quot;background&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;color_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:{&quot;foreground&quot;:&quot;\u003cstring\u003e&quot;,&quot;background&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;event&quot;:[{&quot;color_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:{&quot;foreground&quot;:&quot;\u003cstring\u003e&quot;,&quot;background&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;color_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:{&quot;foreground&quot;:&quot;\u003cstring\u003e&quot;,&quot;background&quot;:&quot;\u003cstring\u003e&quot;}}]}
+```

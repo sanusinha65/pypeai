@@ -1,0 +1,116 @@
+# List common areas
+
+GET {{baseUrl}}/phone/common_areas?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Lists common areas under an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license 
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:common_area:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The total number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;common_areas&quot;:[{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;external&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;offline&quot;,&quot;desk_phones&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;offline&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;offline&quot;}]},{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;external&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;online&quot;,&quot;desk_phones&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;online&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;online&quot;}]}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;}
+```

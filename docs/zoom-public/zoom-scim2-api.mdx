@@ -1,0 +1,144 @@
+#Zoom SCIM2 API
+
+Number of APIs: 11
+
+
+<p>
+SCIM2 (System for Cross-domain Identity Management) is a specification designed to automate the provisioning of user/group identities across various cloud-based applications and services using SSO services and Identity Providers. The Zoom SCIM2 API provides support for user/group provisioning through the 
+<strong>
+User/Group
+</strong>
+ resource. Each SCIM2 API endpoint has a rate limit of 1 request/second per account.
+</p>
+
+
+
+<p>
+SCIM uses HTTP methods that is compatible to REST architecture style. The payloads require schema definitions, attributes, and values for request. Also using the SCIM API, you can use additional features such as attribute filters and search criteria.
+</p>
+
+
+
+<p>
+While using the SCIM APIs, set the value of the Accept header as 
+<code>
+application/scim+json
+</code>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Zoom Owner or Admin privileges.
+</li>
+
+
+<li>
+Business or Education account with approved 
+<a href="https://support.zoom.us/hc/en-us/articles/215062646-Guidelines-for-Vanity-URL-Requests">
+Vanity URL
+</a>
+.
+</li>
+
+
+<li>
+Single sign-on enabled
+</li>
+
+
+</ul>
+
+
+
+<h2>
+Authentication
+</h2>
+
+
+
+<p>
+The SCIM2 API supports OAuth authentication. To use Oauth 2.0, create an 
+<a href="https://marketplace.zoom.us/docs/guides/build/oauth-app">
+OAuth app
+</a>
+ or a 
+<a href="https://marketplace.zoom.us/docs/guides/build/server-to-server-oauth-app">
+Server-to-Server OAuth app
+</a>
+ on the Zoom App Marketplace and select 
+<code>
+SCIM2
+</code>
+ as the scope for your app. Next, 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+generate an OAuth token
+</a>
+ for your app and start making SCIM2 API calls.
+</p>
+
+
+
+<p>
+Contact Support:
+<br>
+
+Name: Zoom Developers
+</p>
+
+
+
+1. [scim2-Users - Create a user](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-users/create-a-user)
+POST {{baseUrl}}/scim2/Users
+
+
+2. [scim2-Groups-{groupId} - Update a group](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-groups-groupid/update-a-group)
+PATCH {{baseUrl}}/scim2/Groups/:groupId
+
+
+3. [scim2-Users-{userId} - Delete a user](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-users-userid/delete-a-user)
+DELETE {{baseUrl}}/scim2/Users/:userId
+
+
+4. [scim2-Users - List users](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-users/list-users)
+GET {{baseUrl}}/scim2/Users?startIndex=1&amp;count=1&amp;filter=&lt;string&gt;
+
+
+5. [scim2-Users-{userId} - Deactivate a user](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-users-userid/deactivate-a-user)
+PATCH {{baseUrl}}/scim2/Users/:userId
+
+
+6. [scim2-Groups-{groupId} - Delete a group](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-groups-groupid/delete-a-group)
+DELETE {{baseUrl}}/scim2/Groups/:groupId
+
+
+7. [scim2-Groups - Create a group](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-groups/create-a-group)
+POST {{baseUrl}}/scim2/Groups
+
+
+8. [scim2-Groups-{groupId} - Get a group](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-groups-groupid/get-a-group)
+GET {{baseUrl}}/scim2/Groups/:groupId
+
+
+9. [scim2-Users-{userId} - Get a user](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-users-userid/get-a-user)
+GET {{baseUrl}}/scim2/Users/:userId
+
+
+10. [scim2-Users-{userId} - Update a user](https://developers.qodex.ai/zoom-public/zoom-scim2-api/scim2-users-userid/update-a-user)
+PUT {{baseUrl}}/scim2/Users/:userId
+
+

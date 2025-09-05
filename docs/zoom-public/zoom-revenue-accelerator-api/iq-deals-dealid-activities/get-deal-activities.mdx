@@ -1,0 +1,71 @@
+# Get deal activities
+
+GET {{baseUrl}}/iq/deals/:dealId/activities?conversation_topic=&lt;string&gt;&amp;callout_type=engagingQuestions&amp;indicator_id=&lt;string&gt;&amp;mentioned_topic_id=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Get activities for a specific deal.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_deal:read:admin
+</code>
+,
+<code>
+iq_deal:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `conversation_topic` | string |  | The conversation topic |
+| `callout_type` | string |  | The callout type of conversations to query: 
+* `engagingQuestions` &amp;mdash; Only query conversations that include engaging questions indicator. 
+* `nextSteps` &amp;mdash; Only query conversations that include next steps indicator. |
+| `indicator_id` | string |  | The indicator id to query. |
+| `mentioned_topic_id` | string |  | The mentioned topic id to query. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;activities&quot;:[{&quot;conversation_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_stage&quot;:&quot;\u003cstring\u003e&quot;,&quot;sentiment_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;engagement_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;activity_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;stage_during_conversation&quot;:&quot;\u003cstring\u003e&quot;,&quot;processing_analysis&quot;:&quot;\u003cboolean\u003e&quot;,&quot;message_ids&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_of_message_in_thread&quot;:&quot;\u003cinteger\u003e&quot;,&quot;conversation_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;conversation_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_stage&quot;:&quot;\u003cstring\u003e&quot;,&quot;sentiment_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;engagement_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;activity_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;stage_during_conversation&quot;:&quot;\u003cstring\u003e&quot;,&quot;processing_analysis&quot;:&quot;\u003cboolean\u003e&quot;,&quot;message_ids&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_of_message_in_thread&quot;:&quot;\u003cinteger\u003e&quot;,&quot;conversation_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

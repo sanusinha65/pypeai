@@ -1,0 +1,61 @@
+# Update whiteboard collaborators
+
+PATCH {{baseUrl}}/whiteboards/:whiteboardId/collaborator
+
+
+<p>
+Use this API to update whiteboard collaborators. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+whiteboard:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;collaborators&quot;=&gt;[{&quot;collaborator_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;role&quot;=&gt;2}, {&quot;collaborator_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;role&quot;=&gt;0}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

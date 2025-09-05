@@ -1,0 +1,76 @@
+# Delete meeting recordings
+
+DELETE {{baseUrl}}/meetings/:meetingId/recordings?action=trash
+
+
+<p>
+Delete all recording files of a meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:
+* Cloud Recording should be enabled on the user&#39;s account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `action` | string |  | The recording delete actions:  
+ `trash` - Move recording to trash.  
+ `delete` - Delete recording permanently. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

@@ -1,0 +1,55 @@
+#Zoom Marketplace API
+
+Number of APIs: 6
+
+
+<p>
+The Zoom Marketplace APIs allow developers to access information from the Zoom platform. You can use this API to build private or public applications on the 
+<a href="http://marketplace.zoom.us">
+Zoom App Marketplace
+</a>
+. For more information about getting credentials and creating private or public applications, read our 
+<a href="https://marketplace.zoom.us/docs/docs/guides/auth/oauth">
+OAuth
+</a>
+ and 
+<a href="https://marketplace.zoom.us/docs/guides/auth/jwt">
+JWT
+</a>
+ documentation. Note: All endpoints are available via 
+<code>
+https
+</code>
+ and are located at 
+<code>
+api.zoom.us/v2/
+</code>
+.
+</p>
+
+
+
+1. [marketplace-apps-{app Id}-requests - Update app&#39;s request status](https://developers.qodex.ai/zoom-public/zoom-marketplace-api/marketplace-apps-app-id-requests/update-app-s-request-status)
+PATCH {{baseUrl}}/marketplace/apps/:appId/requests
+
+
+2. [marketplace-apps-{app Id}-requests - Get an app&#39;s user requests](https://developers.qodex.ai/zoom-public/zoom-marketplace-api/marketplace-apps-app-id-requests/get-an-apps-user-requests)
+GET {{baseUrl}}/marketplace/apps/:appId/requests?page_size=30&amp;next_page_token=R4aF9Oj0fVM2hhezJTEmSKaBSkfesDwGy42&amp;status=pending
+
+
+3. [marketplace-apps-{app Id}-requests - Add app allow requests for users](https://developers.qodex.ai/zoom-public/zoom-marketplace-api/marketplace-apps-app-id-requests/add-app-allow-requests-for-users)
+POST {{baseUrl}}/marketplace/apps/:appId/requests
+
+
+4. [marketplace-apps-{app Id} - Get information about an app](https://developers.qodex.ai/zoom-public/zoom-marketplace-api/marketplace-apps-app-id/get-information-about-an-app)
+GET {{baseUrl}}/marketplace/apps/:appId
+
+
+5. [marketplace - Get a user&#39;s app requests](https://developers.qodex.ai/zoom-public/zoom-marketplace-api/marketplace/get-a-users-app-requests)
+GET {{baseUrl}}/marketplace/users/:userId/apps?page_size=30&amp;next_page_token=R4aF9Oj0fVM2hhezJTEmSKaBSkfesDwGy42&amp;type=active_requests
+
+
+6. [marketplace-apps - List apps](https://developers.qodex.ai/zoom-public/zoom-marketplace-api/marketplace-apps/list-apps)
+GET {{baseUrl}}/marketplace/apps?page_size=30&amp;next_page_token=R4aF9Oj0fVM2hhezJTEmSKaBSkfesDwGy42&amp;type=active_requests
+
+

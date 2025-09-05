@@ -1,0 +1,66 @@
+# Import event to the specified calendar
+
+POST {{baseUrl}}/calendars/:calId/events/import
+
+
+<p>
+Imports an event. This operation adds a private copy of an existing event to a calendar.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;end&quot;=&gt;{&quot;date&quot;=&gt;&quot;&lt;date&gt;&quot;, &quot;dateTime&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;timeZone&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;start&quot;=&gt;{&quot;date&quot;=&gt;&quot;&lt;date&gt;&quot;, &quot;dateTime&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;timeZone&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;attendees&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;additionalGuests&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;displayName&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;optional&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;resource&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;responseStatus&quot;=&gt;&quot;declined&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;additionalGuests&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;displayName&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;optional&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;resource&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;responseStatus&quot;=&gt;&quot;declined&quot;}], &quot;colorId&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;guestsCanInviteOthers&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;guestsCanModify&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;guestsCanSeeOtherGuests&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;location&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;recurrence&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;reminders&quot;=&gt;{&quot;useDefault&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;overrides&quot;=&gt;[{&quot;method&quot;=&gt;&quot;popup&quot;, &quot;minutes&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;method&quot;=&gt;&quot;popup&quot;, &quot;minutes&quot;=&gt;&quot;&lt;integer&gt;&quot;}]}, &quot;status&quot;=&gt;&quot;tentative&quot;, &quot;summary&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;transparency&quot;=&gt;&quot;transparent&quot;, &quot;visibility&quot;=&gt;&quot;public&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;start&quot;:{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;dateTime&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;},&quot;end&quot;:{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;dateTime&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;},&quot;attendees&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;additionalGuests&quot;:&quot;\u003cinteger\u003e&quot;,&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;optional&quot;:&quot;\u003cboolean\u003e&quot;,&quot;resource&quot;:&quot;\u003cboolean\u003e&quot;,&quot;responseStatus&quot;:&quot;needsAction&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;additionalGuests&quot;:&quot;\u003cinteger\u003e&quot;,&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;optional&quot;:&quot;\u003cboolean\u003e&quot;,&quot;resource&quot;:&quot;\u003cboolean\u003e&quot;,&quot;responseStatus&quot;:&quot;accepted&quot;}],&quot;colorId&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;guestsCanInviteOthers&quot;:&quot;\u003cboolean\u003e&quot;,&quot;guestsCanModify&quot;:&quot;\u003cboolean\u003e&quot;,&quot;guestsCanSeeOtherGuests&quot;:&quot;\u003cboolean\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurrence&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;reminders&quot;:{&quot;useDefault&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overrides&quot;:[{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;method&quot;:&quot;email&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;}]},&quot;status&quot;:&quot;confirmed&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;transparency&quot;:&quot;opaque&quot;,&quot;visibility&quot;:&quot;public&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;created&quot;:&quot;\u003cstring\u003e&quot;,&quot;creator&quot;:{&quot;email&quot;:&quot;\u003cstring\u003e&quot;},&quot;organizer&quot;:{&quot;email&quot;:&quot;\u003cstring\u003e&quot;},&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;updated&quot;:&quot;\u003cstring\u003e&quot;}
+```

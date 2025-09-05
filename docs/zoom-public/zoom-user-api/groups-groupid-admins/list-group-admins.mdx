@@ -1,0 +1,76 @@
+# List group admins
+
+GET {{baseUrl}}/groups/:groupId/admins?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to return a list of 
+<a href="https://support.zoom.us/hc/en-us/articles/204519819-Group-Management-">
+group
+</a>
+ administrators under your account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro, Business, or Education account
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+group:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;admins&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

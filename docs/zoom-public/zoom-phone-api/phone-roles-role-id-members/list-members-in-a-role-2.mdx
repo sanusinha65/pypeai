@@ -1,0 +1,72 @@
+# List members in a role
+
+GET {{baseUrl}}/phone/roles/:roleId/members?in_role=false
+
+
+<p>
+Use this API to get members (not) in a 
+<a href="https://support.zoom.us/hc/en-us/articles/360042099012-Using-Zoom-Phone-role-management">
+role
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `in_role` | boolean |  | Whether the user belongs to the role: default is `false`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;members&quot;:[{&quot;user_id&quot;:&quot;1PXbl7s6Q52nbePrUxUZTg&quot;,&quot;display_name&quot;:&quot;ZOOM_API Test&quot;,&quot;email&quot;:&quot;2020042400000003@qq.com&quot;,&quot;extension_number&quot;:&quot;1000123460&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;}}]}
+```

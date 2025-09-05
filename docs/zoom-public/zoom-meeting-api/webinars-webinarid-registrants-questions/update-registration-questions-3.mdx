@@ -1,0 +1,96 @@
+# Update registration questions
+
+PATCH {{baseUrl}}/webinars/:webinarId/registrants/questions
+
+
+<p>
+Update registration questions and fields of a scheduled webinar for users to answer during webinar registration. Scheduling a 
+<a href="https://support.zoom.us/hc/en-us/articles/204619915-Scheduling-a-Webinar-with-Registration">
+webinar with registration
+</a>
+ requires your registrants to complete a brief form with fields and questions before they can receive the link to join the webinar.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan with a Webinar Add-on.
+</li>
+
+
+<li>
+Registration option for Webinar should be set as required to use this API. 
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;custom_questions&quot;=&gt;[{&quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;multiple&quot;}, {&quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single_radio&quot;}], &quot;questions&quot;=&gt;[{&quot;field_name&quot;=&gt;&quot;last_name&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;field_name&quot;=&gt;&quot;last_name&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,57 @@
+# Get an inbox
+
+GET {{baseUrl}}/contact_center/inboxes/:inboxId
+
+
+<p>
+Retrieve an inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_inbox:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;inbox_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_type&quot;:&quot;voicemail&quot;,&quot;inbox_content_storage_location&quot;:&quot;US&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail&quot;:{&quot;soft_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;soft_delete_days_limit&quot;:&quot;\u003cinteger\u003e&quot;,&quot;voicemail_time_limit&quot;:&quot;\u003cinteger\u003e&quot;,&quot;delete_voicemail_days_limit&quot;:&quot;\u003cinteger\u003e&quot;,&quot;voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_notification_by_email&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_file&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;forward_voicemail_to_emails&quot;:&quot;\u003cboolean\u003e&quot;,&quot;emails&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}}}
+```

@@ -1,0 +1,101 @@
+# Update common area settings
+
+PATCH {{baseUrl}}/phone/common_areas/:commonAreaId/settings/:settingType
+
+
+<p>
+Use this API to update the common area setting according to the setting type, specifically for desk phones.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license.
+* Account owner or admin permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:common_area_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;desk_phones&quot;=&gt;[{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;hot_desking&quot;=&gt;{&quot;status&quot;=&gt;&quot;off&quot;}}, {&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;hot_desking&quot;=&gt;{&quot;status&quot;=&gt;&quot;off&quot;}}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

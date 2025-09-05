@@ -1,0 +1,77 @@
+# Create a new Zoom Rooms Tag
+
+POST {{baseUrl}}/rooms/tags
+
+
+<p>
+Use this API to create a new Zoom Rooms Tag. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with a 
+<a href="https://zoom.us/zoomrooms">
+Zoom Rooms
+</a>
+ license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

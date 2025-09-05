@@ -1,0 +1,73 @@
+# List a user&#39;s collaboration devices
+
+GET {{baseUrl}}/users/:userId/collaboration_devices
+
+
+<p>
+List a user&#39;s collaboration devices. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;collaboration_devices&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Offline&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Online&quot;}]}
+```

@@ -1,0 +1,94 @@
+# Add a Zoom Room
+
+POST {{baseUrl}}/rooms
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/202822279-Add-Zoom-Rooms-on-Web-Portal">
+add a Zoom Room
+</a>
+ to a Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with 
+<a href="https://zoom.us/zoomrooms">
+Zoom Room
+</a>
+ license.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;Kiosk&quot;, &quot;location_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;calendar_resource_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;SchedulingDisplayOnly&quot;,&quot;calendar_resource_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

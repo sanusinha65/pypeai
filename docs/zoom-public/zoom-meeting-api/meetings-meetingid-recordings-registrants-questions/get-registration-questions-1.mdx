@@ -1,0 +1,71 @@
+# Get registration questions
+
+GET {{baseUrl}}/meetings/:meetingId/recordings/registrants/questions
+
+
+<p>
+For 
+<a href="https://support.zoom.us/hc/en-us/articles/360000488283-On-demand-Recordings">
+on-demand
+</a>
+ meeting recordings, you can include fields with questions that will be shown to registrants when they register to view the recording.
+</p>
+
+
+
+<p>
+Use this API to retrieve a list of questions that are displayed for users to complete when registering to view the recording of a specific meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+,
+<code>
+recording:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;custom_questions&quot;:[{&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single&quot;},{&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;short&quot;}],&quot;questions&quot;:[{&quot;field_name&quot;:&quot;industry&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;field_name&quot;:&quot;industry&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

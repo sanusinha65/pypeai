@@ -1,0 +1,59 @@
+# Update phone account settings
+
+PATCH {{baseUrl}}/phone/settings
+
+
+<p>
+Account owners can use this API to update Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360025846692">
+account settings
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;byoc&quot;=&gt;{&quot;enable&quot;=&gt;true}, &quot;multiple_sites&quot;=&gt;{&quot;enabled&quot;=&gt;true, &quot;site_code&quot;=&gt;{&quot;enable&quot;=&gt;false, &quot;short_extension_length&quot;=&gt;3}}, &quot;show_device_ip_for_call_log&quot;=&gt;{&quot;enable&quot;=&gt;false}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

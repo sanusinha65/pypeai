@@ -1,0 +1,96 @@
+# Add phone numbers for an account&#39;s customized outbound caller ID
+
+POST {{baseUrl}}/phone/outbound_caller_id/customized_numbers
+
+
+<p>
+Adds the 
+<code>
+account-level
+</code>
+ customized outbound caller ID phone numbers. Note that when multiple sites policy is enabled, users cannot manage the 
+<code>
+account-level
+</code>
+ configuration. The system will throw an exception.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:customized_number:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_number_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

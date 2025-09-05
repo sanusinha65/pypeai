@@ -1,0 +1,88 @@
+# Remove peering phone numbers
+
+DELETE {{baseUrl}}/phone/peering/numbers
+
+
+<p>
+Use this API to remove phone numbers that were added to Zoom through the Provider Exchange.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Phone peering API and events are for use by partners that have completed the MoU to peer with Zoom. To become a peering provider/ carrier, please submit your 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSewkY6ixVyKVNkWC-vgmejC16gigxsJWXji3dWzE3XlWtjsgg/viewform">
+request
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes
+</strong>
+: 
+<code>
+phone_peering:write:admin
+</code>
+, 
+<code>
+phone_peering:master
+</code>
+
+</br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;carrier_code&quot;=&gt;8901, &quot;phone_numbers&quot;=&gt;[&quot;8615306207777&quot;, &quot;8615306207777&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;unprocessed_numbers&quot;:[{&quot;failure_reason&quot;:&quot;Number not exist.&quot;,&quot;phone_number&quot;:&quot;+15556660100&quot;},{&quot;failure_reason&quot;:&quot;Number not exist.&quot;,&quot;phone_number&quot;:&quot;+15556660100&quot;}]}
+```

@@ -1,0 +1,65 @@
+# Update a H.323/SIP device
+
+PATCH {{baseUrl}}/h323/devices/:deviceId
+
+
+<p>
+A H.323 or SIP device can make a video call to a 
+<a href="https://support.zoom.us/hc/en-us/articles/201363273-Getting-Started-With-H-323-SIP-Room-Connector">
+Room Connector
+</a>
+ to join a Zoom cloud meeting. A Room Connector can also call out to a H.323 or SIP device to join a Zoom cloud meeting. Use this API to edit information of a H.323/SIP device from your Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+h323:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;encryption&quot;=&gt;&quot;auto&quot;, &quot;ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;protocol&quot;=&gt;&quot;SIP&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

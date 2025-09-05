@@ -1,0 +1,108 @@
+# List an extension&#39;s inbound block rules
+
+GET {{baseUrl}}/phone/extension/:extensionId/inbound_blocked/rules?keyword=&lt;string&gt;&amp;match_type=prefix&amp;type=block_as_threat&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Returns a list of the given extension&#39;s block rule for inbound calls and messaging. 
+</p>
+
+
+
+<p>
+it lists inbound block rule for the given Call Queue, Auto Receptionist, Shared Line Group, Common Area, Zoom Room, or User.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_extension_inbound_block_rules:admin
+</code>
+,
+<code>
+phone:read:list_extension_inbound_block_rules
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `keyword` | string |  | The partial string of a phone number. |
+| `match_type` | string |  | The match type for the block rule:
+* `phoneNumber`: Only a specific phone number that is shown in the `blocked_number` field is blocked.
+* `prefix`: All numbers starting with the prefix that is shown in the `blocked_number` field are blocked.
+* `SMS-shortCodes`:  Only a specific SMS short code that is shown in the `blocked_number` field is blocked. |
+| `type` | string |  | The block type for the block rule:
+* `block_for_other_reasons`
+* `block_as_threat` |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. It returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records in a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;extension_blocked_rules&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;match_type&quot;:&quot;prefix&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;block_for_other_reasons&quot;,&quot;blocked_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;match_type&quot;:&quot;SMS-shortCodes&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;block_for_other_reasons&quot;,&quot;blocked_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30}
+```

@@ -1,0 +1,68 @@
+# Get a location&#39;s hot desk usage
+
+GET {{baseUrl}}/workspaces/usage?location_id=&lt;string&gt;
+
+
+<p>
+Use this API to get a location&#39;s 
+<a href="https://en.wikipedia.org/wiki/Hot_desking">
+hot desk
+</a>
+ usage information. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:read
+</code>
+
+<code>
+workspace:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `location_id` | string |  | (Required) The location&#39;s ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;desk_usage&quot;:{&quot;in_use&quot;:&quot;\u003cinteger\u003e&quot;,&quot;not_in_use&quot;:&quot;\u003cinteger\u003e&quot;},&quot;room_usage&quot;:{&quot;in_use&quot;:&quot;\u003cinteger\u003e&quot;,&quot;not_in_use&quot;:&quot;\u003cinteger\u003e&quot;},&quot;total_usage&quot;:{&quot;in_use&quot;:&quot;\u003cinteger\u003e&quot;,&quot;not_in_use&quot;:&quot;\u003cinteger\u003e&quot;}}
+```

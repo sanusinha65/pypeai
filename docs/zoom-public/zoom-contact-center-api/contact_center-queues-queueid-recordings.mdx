@@ -1,0 +1,12 @@
+#  contact_center-queues-{queueId}-recordings
+
+Number of APIs: 2
+
+1. [List queue recordings](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-queues-queueid-recordings/list-queue-recordings)
+GET {{baseUrl}}/contact_center/queues/:queueId/recordings?channel_type=voice&amp;from=&lt;string&gt;&amp;to=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+2. [Delete queue recordings](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-queues-queueid-recordings/delete-queue-recordings)
+DELETE {{baseUrl}}/contact_center/queues/:queueId/recordings?delete_all_recordings=true
+
+

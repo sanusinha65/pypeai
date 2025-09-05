@@ -1,0 +1,63 @@
+# Delete an existing event from the specified calendar
+
+DELETE {{baseUrl}}/calendars/:calId/events/:eventId?sendUpdates=none
+
+
+<p>
+Deletes an event.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sendUpdates` | string |  | Whether to send notifications about the deletion of the event. Note that some emails might still be sent. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

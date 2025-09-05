@@ -1,0 +1,70 @@
+# Get a group&#39;s webinar registration settings
+
+GET {{baseUrl}}/groups/:groupId/settings/registration?type=webinar
+
+
+<p>
+Get webinar registration settings for a 
+<a href="https://support.zoom.us/hc/en-us/articles/204519819-Group-Management-">
+group
+</a>
+. 
+
+<strong>
+Prerequisite
+</strong>
+: Pro, Business, or Education account  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+group:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The registration type: 
+* `webinar` &amp;mdash; webinar. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;options&quot;:{&quot;host_email_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;close_registration&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_participants_to_join_from_multiple_devices&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_social_share_buttons&quot;:&quot;\u003cboolean\u003e&quot;},&quot;questions&quot;:[{&quot;field_name&quot;:&quot;comments&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;field_name&quot;:&quot;comments&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;approve_type&quot;:0,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;multiple&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;short&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}]}
+```

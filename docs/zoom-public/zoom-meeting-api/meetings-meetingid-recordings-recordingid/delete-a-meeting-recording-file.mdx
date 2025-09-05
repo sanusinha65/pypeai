@@ -1,0 +1,69 @@
+# Delete a meeting recording file
+
+DELETE {{baseUrl}}/meetings/:meetingId/recordings/:recordingId?action=trash
+
+
+<p>
+Delete a specific recording file from a meeting.&lt;p style=&quot;background-color:#e1f5fe; color:#01579b; padding:8px&quot;&gt; &lt;b&gt;Note:&lt;/b&gt; To use this API, you must enable the &lt;b&gt;The host can delete cloud recordings&lt;/b&gt; setting. You can find this setting in the &lt;b&gt;Recording&lt;/b&gt; tab of the &lt;b&gt;Settings&lt;/b&gt; interface in the 
+<a href="https://zoom.us/">
+Zoom web portal
+</a>
+.&lt;/p&gt;
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `action` | string |  | The recording delete actions:  
+ `trash` - Move recording to trash.  
+ `delete` - Delete recording permanently. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

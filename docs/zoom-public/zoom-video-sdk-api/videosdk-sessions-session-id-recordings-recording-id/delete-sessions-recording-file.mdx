@@ -1,0 +1,55 @@
+# Delete session&#39;s recording file
+
+DELETE {{baseUrl}}/videosdk/sessions/:sessionId/recordings/:recordingId?action=trash
+
+
+<p>
+Delete a specific recording file from a session.
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note:
+</b>
+ To use this API, you must enable the 
+<b>
+The host can delete cloud recordings
+</b>
+ setting.
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `action` | string |  | The recording delete actions:&lt;br&gt;`trash` - Move recording to trash.&lt;br&gt;`delete` - Delete recording permanently. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

@@ -1,0 +1,104 @@
+# Get telephone reports
+
+GET {{baseUrl}}/report/telephone?type=1&amp;query_date_type=start_time&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;page_number=1&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+The 
+<a href="https://support.zoom.us/hc/en-us/articles/206514816-Telephone-reports">
+telephone report
+</a>
+ allows you to view who dialed into meetings via phone (Audio Conferencing or SIP Connected Audio) and which number they dialed into and other details. Use this API to get telephone report for a specified period of time.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | number |  | Audio types:  
+ `1` - Toll-free Call-in &amp;amp; Call-out.  
+ `2` - Toll   
+ 
+`3` - SIP Connected Audio |
+| `query_date_type` | string |  | The type of date to query. 
+* `start_time` &amp;mdash; Query by call start time. 
+* `end_time` &amp;mdash; Query by call end time. 
+* `meeting_start_time` &amp;mdash; Query by meeting start time. 
+* `meeting_end_time` &amp;mdash; Query by meeting end time. 
+
+This value defaults to `start_time`. |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `page_number` | number |  | The page number of the current page in the returned records. This field is **not** available if the `query_date_type` parameter is the `meeting_start_time` or `meeting_end_time` value. 
+
+This field is deprecated. Use the `next_page_token` query parameter for pagination. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;telephony_usage&quot;:[{&quot;call_in_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;host_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;signaled_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;total&quot;:&quot;\u003cnumber\u003e&quot;,&quot;type&quot;:&quot;call-in&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;},{&quot;call_in_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;host_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;rate&quot;:&quot;\u003cnumber\u003e&quot;,&quot;signaled_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;total&quot;:&quot;\u003cnumber\u003e&quot;,&quot;type&quot;:&quot;premium call-in&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

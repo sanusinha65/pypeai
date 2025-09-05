@@ -1,0 +1,66 @@
+# Create an address book contact
+
+POST {{baseUrl}}/contact_center/address_books/:addressBookId/contacts
+
+
+<p>
+Use this API to create a new contact in an 
+<a href="https://support.zoom.us/hc/en-us/articles/4471544949389">
+address book
+</a>
+. During an active engagement, the Zoom desktop client will display information from the address book if that customer is a contact in the address book. If the consumer is not in the address book, agents can add a new contact and choose which address book the contact belongs to. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_contact:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_numbers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;emails&quot;=&gt;[&quot;&lt;email&gt;&quot;, &quot;&lt;email&gt;&quot;], &quot;location&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;account_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;company&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;role&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;variables&quot;=&gt;[{&quot;variable_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;variable_value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;variable_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;variable_value&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;contact_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;emails&quot;:[&quot;\u003cemail\u003e&quot;,&quot;\u003cemail\u003e&quot;],&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variables&quot;:[{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_type&quot;:&quot;string&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_type&quot;:&quot;string&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,69 @@
+# Download an invoice file
+
+GET {{baseUrl}}/api/download/billing/invoices/:invoiceId
+
+
+<p>
+Use this API to download a Zoom account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/201363263-About-Billing">
+billed
+</a>
+ invoice file, in PDF format. To get an account&#39;s invoice ID, use the 
+<strong>
+
+<a href="/docs/api-reference/zoom-api/ma#operation/accountBillingInvoices">
+List billing invoices
+</a>
+
+</strong>
+ API.
+</p>
+
+
+
+<p>
+
+<strong>
+one
+</strong>
+ request to this API every 
+<strong>
+30 minutes
+</strong>
+ until the daily limit is reached.
+* This API has a daily limit of 
+<strong>
+100 requests per account
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

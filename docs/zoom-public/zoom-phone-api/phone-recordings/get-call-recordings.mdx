@@ -1,0 +1,121 @@
+# Get call recordings
+
+GET {{baseUrl}}/phone/recordings?page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;owner_type=all&amp;recording_type=&lt;string&gt;&amp;site_id=All sites&amp;query_date_type=start_time&amp;group_id=All groups
+
+
+<p>
+Returns an account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360038521091-Accessing-and-sharing-call-recordings">
+call recordings
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+ * A Zoom Phone license 
+ * Account owner or admin privileges
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_call_recordings:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | string |  | The number of records returned within a single API call. 
+
+The default is **30** and the maximum is **300**. |
+| `next_page_token` | string |  | The current page number of the returned records. |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd T HH:mm:ssZ** format. 
+
+The date range defined in the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. 
+
+If unspecified, it returns data from the past 30 days. |
+| `to` | string |  | This field is **required** only when the `from` parameter is specified. 
+
+The end time and date display in **yyyy-mm-dd** or **yyyy-MM-dd T HH:mm:ssZ** format, which is the same format as the `from` parameter. |
+| `owner_type` | string |  | The owner type. 
+
+The allowed values are `null`, `user`, or `callQueue`. 
+
+The default value is `null`.  If the value is `null`, it returns all owner types. |
+| `recording_type` | string |  | The recording type. The allowed values are `null`, `OnDemand`, or `Automatic`. The default value is `null`. If `null`, it returns all recording types. |
+| `site_id` | string |  | The site ID. 
+
+The default value is `All sites`. |
+| `query_date_type` | string |  | The query date type, which can be `start_time` or `end_time`. 
+
+The default value is `start_time`. |
+| `group_id` | string |  | The group ID. 
+
+The default value is `All groups`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recordings&quot;:[{&quot;auto_delete_policy&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:3,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;disclaimer_status&quot;:2,&quot;direction&quot;:&quot;outbound&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;call queue&quot;,&quot;extension_status&quot;:&quot;inactive&quot;,&quot;extension_deleted_time&quot;:&quot;\u003cstring\u003e&quot;},&quot;recording_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;transcript_download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_delete_enable&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;auto_delete_policy&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:3,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;disclaimer_status&quot;:1,&quot;direction&quot;:&quot;outbound&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;,&quot;extension_status&quot;:&quot;deleted&quot;,&quot;extension_deleted_time&quot;:&quot;\u003cstring\u003e&quot;},&quot;recording_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;transcript_download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_delete_enable&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

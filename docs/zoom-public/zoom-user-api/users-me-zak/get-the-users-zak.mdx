@@ -1,0 +1,91 @@
+# Get the user&#39;s ZAK
+
+GET {{baseUrl}}/users/me/zak
+
+
+<p>
+Get the Zoom Access Key (ZAK) for the authenticated user associated with the access token in the API request. Use a ZAK to start or join a meeting on behalf of this user.
+</p>
+
+
+
+<p>
+ZAKs obtained with this endpoint expire five minutes after receipt.
+</p>
+
+
+
+<p>
+To get a ZAK for a different user or with a different expiration, use the 
+<a href="https://marketplace.zoom.us/docs/api-reference/zoom-api/methods#operation/userToken">
+Get a user token
+</a>
+ API with the 
+<code>
+zak
+</code>
+ 
+<code>
+type
+</code>
+ query parameter.
+</p>
+
+
+
+<p>
+See 
+<a href="https://developers.zoom.us/docs/meeting-sdk/auth/#start-meetings-and-webinars-with-a-zoom-users-zak-token">
+Getting a Zoom Access Key (ZAK)
+</a>
+ for details.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user_zak:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;token&quot;:&quot;\u003cstring\u003e&quot;}
+```

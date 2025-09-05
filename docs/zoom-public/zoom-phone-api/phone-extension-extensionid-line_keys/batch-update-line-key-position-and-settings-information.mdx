@@ -1,0 +1,99 @@
+# Batch update line key position and settings information
+
+PATCH {{baseUrl}}/phone/extension/:extensionId/line_keys
+
+
+<p>
+Use this API to batch update the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360040587552">
+line key settings
+</a>
+ information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:line_keys
+</code>
+,
+<code>
+phone:update:line_keys:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;line_keys&quot;=&gt;[{&quot;line_key_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;index&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;type&quot;=&gt;&quot;blf&quot;, &quot;key_assignment&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;speed_dial_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;retrieval_code&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;alias&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;outbound_caller_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;line_key_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;index&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;type&quot;=&gt;&quot;call_park&quot;, &quot;key_assignment&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;speed_dial_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;retrieval_code&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;alias&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;outbound_caller_id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

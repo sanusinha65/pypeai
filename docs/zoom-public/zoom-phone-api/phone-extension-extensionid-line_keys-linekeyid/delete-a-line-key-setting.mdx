@@ -1,0 +1,94 @@
+# Delete a line key setting.
+
+DELETE {{baseUrl}}/phone/extension/:extensionId/line_keys/:lineKeyId
+
+
+<p>
+Use this API to delete the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360040587552">
+line key settings
+</a>
+ information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:line_keys
+</code>
+,
+<code>
+phone:delete:line_keys:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

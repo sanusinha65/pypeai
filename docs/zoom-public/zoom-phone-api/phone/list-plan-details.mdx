@@ -1,0 +1,73 @@
+# List plan details
+
+GET {{baseUrl}}/phone/plans
+
+
+<p>
+Use this API to return all of an account&#39;s Zoom Phone 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans#additional-zoom-phone-plans-and-codes">
+plan package
+</a>
+, phone number usage and availability.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calling_plans&quot;:[{&quot;assigned&quot;:28,&quot;available&quot;:72,&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;subscribed&quot;:100,&quot;type&quot;:100},{&quot;assigned&quot;:28,&quot;available&quot;:72,&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;subscribed&quot;:100,&quot;type&quot;:100}],&quot;phone_numbers&quot;:[{&quot;assigned&quot;:28,&quot;available&quot;:72,&quot;name&quot;:&quot;US/CA Included Phone Numbers&quot;,&quot;subscribed&quot;:100},{&quot;assigned&quot;:28,&quot;available&quot;:72,&quot;name&quot;:&quot;US/CA Included Phone Numbers&quot;,&quot;subscribed&quot;:100}]}
+```

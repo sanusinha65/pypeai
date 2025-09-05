@@ -1,0 +1,90 @@
+# List BYOC SIP trunks
+
+GET {{baseUrl}}/phone/sip_trunk/trunks?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Use this API to return a list of an account&#39;s assigned 
+<a href="https://zoom.us/docs/doc/Zoom-Bring%20Your%20Own%20Carrier.pdf">
+BYOC (Bring Your Own Carrier) SIP (Session Initiation Protocol) trunks
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_sip_trunks:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;byoc_sip_trunk&quot;:[{&quot;carrier&quot;:&quot;\u003cstring\u003e&quot;,&quot;carrier_account&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;region&quot;:&quot;\u003cstring\u003e&quot;,&quot;sbc_label&quot;:&quot;\u003cstring\u003e&quot;},{&quot;carrier&quot;:&quot;\u003cstring\u003e&quot;,&quot;carrier_account&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;region&quot;:&quot;\u003cstring\u003e&quot;,&quot;sbc_label&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30}
+```

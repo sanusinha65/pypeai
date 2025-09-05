@@ -1,0 +1,102 @@
+# List common area phones
+
+GET {{baseUrl}}/phone/common_area_phones?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2
+
+
+<p>
+Use this API to list all of an account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360028516231-Managing-Common-Area-Phones">
+common area phones
+</a>
+.
+</p>
+
+
+
+<p>
+A common area phone can be provisioned by a Zoom account owner or a Zoom admin so that anyone in an organization can use it. For example, if your office has shared desks that don&#39;t belong to a specific employees, you could add a common area phone so that any person can use it.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin permissions.
+</li>
+
+
+<li>
+A 
+<a href="https://support.zoom.us/hc/en-us/articles/360001299063-Zoom-Voice-Supported-Devices">
+supported device
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The total number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;common_area_phones&quot;:[{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}],&quot;device_type&quot;:&quot;Other&quot;,&quot;display_name&quot;:&quot;test_cap&quot;,&quot;id&quot;:&quot;JOZmuJ30Spyrw-v9vUzIrA&quot;,&quot;mac_address&quot;:&quot;0004f25eec3a&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;S5q4FDC3QsOCnO7LqHgqNw&quot;,&quot;number&quot;:&quot;+12058945543&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;id&quot;:&quot;S5q4FDC3QsOCnO7LqHgqNw&quot;,&quot;number&quot;:&quot;+12058945543&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;status&quot;:&quot;offline&quot;},{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}],&quot;device_type&quot;:&quot;Other&quot;,&quot;display_name&quot;:&quot;test_cap&quot;,&quot;id&quot;:&quot;JOZmuJ30Spyrw-v9vUzIrA&quot;,&quot;mac_address&quot;:&quot;0004f25eec3a&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;S5q4FDC3QsOCnO7LqHgqNw&quot;,&quot;number&quot;:&quot;+12058945543&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;id&quot;:&quot;S5q4FDC3QsOCnO7LqHgqNw&quot;,&quot;number&quot;:&quot;+12058945543&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;status&quot;:&quot;offline&quot;}],&quot;next_page_token&quot;:&quot;T6WMY4fJBIAlxPUiqRtwvQS9dvsq8AoRam2&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:35}
+```

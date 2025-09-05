@@ -1,0 +1,57 @@
+# Get a queue
+
+GET {{baseUrl}}/contact_center/queues/:queueId
+
+
+<p>
+Get information about a queue. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;dispositions_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;disposition_sets_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;channel_types&quot;:[&quot;chat&quot;,&quot;in_app_chat&quot;],&quot;max_wait_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;wrap_up_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;max_engagement_in_queue&quot;:&quot;\u003cinteger\u003e&quot;,&quot;short_abandon&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;threshold&quot;:&quot;\u003cinteger\u003e&quot;},&quot;distribution_type&quot;:null,&quot;distribution_duration_in_seconds&quot;:&quot;\u003cinteger\u003e&quot;,&quot;connecting_media_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;connecting_media_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transferring_media_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transferring_media_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;holding_media_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;holding_media_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;waiting_room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;waiting_room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_accept&quot;:&quot;auto&quot;,&quot;wrap_up_expiration&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_to_goodbye_message&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_to_queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;overflow_to_flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;overflow_to_inbox_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_close_message&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_close_message_enabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_close_timeout&quot;:&quot;\u003cinteger\u003e&quot;,&quot;auto_close_alert_message&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_close_alert_message_enabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_close_alert_message_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recording_storage_location&quot;:&quot;us - United States&quot;,&quot;service_level_threshold_in_seconds&quot;:&quot;\u003cinteger\u003e&quot;,&quot;service_level_exclude_short_abandoned_calls&quot;:&quot;\u003cboolean\u003e&quot;,&quot;service_level_exclude_long_abandoned_calls&quot;:&quot;\u003cboolean\u003e&quot;,&quot;service_level_exclude_abandoned_quit_engagements&quot;:&quot;\u003cboolean\u003e&quot;,&quot;service_level_target_in_percentage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;agent_routing_profile_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;agent_routing_profile_name&quot;:&quot;\u003cstring\u003e&quot;}
+```

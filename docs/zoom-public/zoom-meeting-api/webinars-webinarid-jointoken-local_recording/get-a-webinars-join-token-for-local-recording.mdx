@@ -1,0 +1,77 @@
+# Get a webinar&#39;s join token for local recording
+
+GET {{baseUrl}}/webinars/:webinarId/jointoken/local_recording
+
+
+<p>
+Use this API to get a webinar&#39;s join token to allow for local recording. The join token lets a recording bot implemented using Zoom Meeting SDK to connect to a Zoom webinar. The recording bot can then automatically start locally recording. This supports both regular and raw local recording types. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan with a Webinar Add-on. 
+* The 
+<strong>
+Local recording
+</strong>
+ user setting enabled in the Zoom web portal.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar_token:read:admin:local_recording
+</code>
+,
+<code>
+webinar_token:read:local_recording
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;expire_in&quot;:120,&quot;token&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,87 @@
+# React to a chat message
+
+PATCH {{baseUrl}}/chat/users/:userId/messages/:messageId/emoji_reactions
+
+
+<p>
+Adds or removes an emoji to a chat message.
+</p>
+
+
+
+<p>
+For an 
+<strong>
+account-level
+</strong>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:%7E:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+role
+</a>
+ that has the 
+<strong>
+Edit
+</strong>
+ permission for 
+<strong>
+Chat Messages
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:write
+</code>
+, 
+<code>
+chat_message:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;remove&quot;, &quot;emoji&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_channel&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_contact&quot;=&gt;&quot;&lt;email&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

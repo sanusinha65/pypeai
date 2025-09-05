@@ -1,0 +1,72 @@
+# Create or update a push notification watch on the mailbox
+
+POST {{baseUrl}}/emails/mailboxes/:email/watch
+
+
+<p>
+Create or update a push notification watch on the given mailbox.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;topicName&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;labelIds&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;labelFilterAction&quot;=&gt;&quot;exclude&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;historyId&quot;:&quot;\u003cstring\u003e&quot;,&quot;expiration&quot;:&quot;\u003cstring\u003e&quot;}
+```

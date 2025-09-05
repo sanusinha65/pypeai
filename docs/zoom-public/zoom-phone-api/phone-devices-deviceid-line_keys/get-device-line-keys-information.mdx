@@ -1,0 +1,95 @@
+# Get device line keys information
+
+GET {{baseUrl}}/phone/devices/:deviceId/line_keys
+
+
+<p>
+Use this API to get information on the Zoom Phone device 
+<a href="https://support.zoom.us/hc/en-us/articles/4402415568397-Customizing-keys-for-devices-with-multiple-users">
+line keys
+</a>
+ settings and position.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:device_line_keys
+</code>
+,
+<code>
+phone:read:device_line_keys:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;device_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;positions&quot;:[{&quot;index&quot;:&quot;\u003cinteger\u003e&quot;,&quot;owner_extension_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;User&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_caller_ids&quot;:[{&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage_type&quot;:&quot;Direct Number&quot;},{&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage_type&quot;:&quot;Phone Number&quot;}]},{&quot;index&quot;:&quot;\u003cinteger\u003e&quot;,&quot;owner_extension_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;CommonArea&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_caller_ids&quot;:[{&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage_type&quot;:&quot;Phone Number&quot;},{&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage_type&quot;:&quot;Additional Company Number&quot;}]}]}
+```

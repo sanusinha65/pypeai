@@ -1,0 +1,75 @@
+# List session&#39;s recordings
+
+GET {{baseUrl}}/videosdk/sessions/:sessionId/recordings?include_fields=download_access_token&amp;ttl=0
+
+
+<p>
+Get all the [recordings] from a session instance. The recording files can be downloaded via the 
+<code>
+download_url
+</code>
+ property listed in the response.
+</p>
+
+
+
+<blockquote>
+
+
+<p>
+To access a password-protected cloud recording, add an 
+<code>
+access_token
+</code>
+ parameter to the download URL and provide 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-jwt-app">
+JWT
+</a>
+ as the 
+<code>
+access_token
+</code>
+ value.
+</p>
+
+
+</blockquote>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `include_fields` | string |  | Get the `download_access_token` field for downloading session recordings. |
+| `ttl` | number |  | Time to live (TTL) of the `download_access_token`. This is only valid if the `include_fields` query parameter contains `download_access_token`. The range is between 0-604800. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;session_id&quot;:&quot;KkMHZ4y8QhSUWAHi5sWvfg==&quot;,&quot;session_name&quot;:&quot;session name&quot;,&quot;start_time&quot;:&quot;2022-03-10T02:27:24Z&quot;,&quot;duration&quot;:2,&quot;total_size&quot;:444601,&quot;recording_count&quot;:4,&quot;recording_files&quot;:[{&quot;id&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;session_id&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;recording_start&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;recording_end&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;file_type&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;file_size&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;download_url&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;status&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;deleted_time&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;recording_type&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},{&quot;id&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;session_id&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;recording_start&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;recording_end&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;file_type&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;file_size&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;download_url&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;status&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;deleted_time&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;recording_type&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}}],&quot;download_access_token&quot;:&quot;exampleTokenXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;,&quot;password&quot;:&quot;123456&quot;,&quot;participant_audio_files&quot;:[{&quot;id&quot;:&quot;24698bd1-589e-4c33-9ba3-bc788b2a0ac2&quot;,&quot;recording_start&quot;:&quot;2021-12-07T05:40:28Z&quot;,&quot;recording_end&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;file_name&quot;:&quot;file name&quot;,&quot;file_type&quot;:&quot;MP4&quot;,&quot;file_extension&quot;:&quot;MP4&quot;,&quot;file_size&quot;:352121,&quot;download_url&quot;:&quot;https://download/example/download_url&quot;,&quot;status&quot;:&quot;completed&quot;},{&quot;id&quot;:&quot;24698bd1-589e-4c33-9ba3-bc788b2a0ac2&quot;,&quot;recording_start&quot;:&quot;2021-12-07T05:40:28Z&quot;,&quot;recording_end&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;file_name&quot;:&quot;file name&quot;,&quot;file_type&quot;:&quot;MP4&quot;,&quot;file_extension&quot;:&quot;MP4&quot;,&quot;file_size&quot;:352121,&quot;download_url&quot;:&quot;https://download/example/download_url&quot;,&quot;status&quot;:&quot;completed&quot;}]}
+```

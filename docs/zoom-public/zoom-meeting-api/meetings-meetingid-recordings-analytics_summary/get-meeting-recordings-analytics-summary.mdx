@@ -1,0 +1,87 @@
+# Get Meeting Recording&#39;s Analytics Summary
+
+GET {{baseUrl}}/meetings/:meetingId/recordings/analytics_summary?from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+<p>
+Use this API to return a meeting recording&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/205347605-Managing-cloud-recordings#h_0b665029-ce74-4849-9794-d1aa0320d163">
+analytics summary
+</a>
+. 
+<strong>
+Maximum duration: 1 Month
+</strong>
+. To access a password-protected cloud recording, send the user&#39;s 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+OAuth access token
+</a>
+ as a Bearer token in the Authorization header. For example, 
+</p>
+
+
+
+<p>
+
+<code>
+curl -H &amp;quot;Authorization: Bearer &amp;lt;ACCESS_TOKEN&amp;gt;&amp;quot; https://{{base-domain}}/rec/archive/download/xyz
+</code>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+,
+<code>
+recording:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The start date for the monthly range to query. The maximum range can be a month. If you do not provide this value, this defaults to the current date. |
+| `to` | string |  | The end date for the monthly range to query. The maximum range can be a month. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;analytics_summary&quot;:[{&quot;date&quot;:&quot;\u003cstring\u003e&quot;,&quot;views_total_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;downloads_total_count&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;date&quot;:&quot;\u003cstring\u003e&quot;,&quot;views_total_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;downloads_total_count&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

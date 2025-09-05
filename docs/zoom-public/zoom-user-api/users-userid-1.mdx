@@ -1,0 +1,16 @@
+#  users-{userId}
+
+Number of APIs: 3
+
+1. [Update a user](https://developers.qodex.ai/zoom-public/zoom-user-api/users-userid-1/update-a-user-1)
+PATCH {{baseUrl}}/users/:userId?login_type=99&amp;remove_tsp_credentials=&lt;boolean&gt;
+
+
+2. [Get a user](https://developers.qodex.ai/zoom-public/zoom-user-api/users-userid-1/get-a-user-1)
+GET {{baseUrl}}/users/:userId?login_type=99&amp;encrypted_email=false&amp;search_by_unique_id=&lt;boolean&gt;
+
+
+3. [Delete a user](https://developers.qodex.ai/zoom-public/zoom-user-api/users-userid-1/delete-a-user-1)
+DELETE {{baseUrl}}/users/:userId?encrypted_email=false&amp;action=disassociate&amp;transfer_email=&lt;string&gt;&amp;transfer_meeting=&lt;boolean&gt;&amp;transfer_webinar=&lt;boolean&gt;&amp;transfer_recording=&lt;boolean&gt;&amp;transfer_whiteboard=&lt;boolean&gt;
+
+

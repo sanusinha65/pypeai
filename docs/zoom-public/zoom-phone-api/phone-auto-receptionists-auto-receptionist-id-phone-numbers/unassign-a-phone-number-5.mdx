@@ -1,0 +1,72 @@
+# Unassign a phone number
+
+DELETE {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/phone_numbers/:phoneNumberId
+
+
+<p>
+Unassign a specific phone number that was previously assigned to an 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom Phone License
+* Account owner or admin permissions
+<br>
+
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

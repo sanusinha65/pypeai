@@ -1,0 +1,99 @@
+# Get common area phone details
+
+GET {{baseUrl}}/phone/common_area_phones/:commonAreaPhoneId
+
+
+<p>
+Use this API to get details on a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360028516231-Managing-Common-Area-Phones">
+common area phone
+</a>
+ in an account.
+</p>
+
+
+
+<p>
+A common area phone can be provisioned by a Zoom account owner or a Zoom admin so that anyone in an organization can use it. For example, if your office has shared desks that don&#39;t belong to a specific employees, you could add a common area phone so that any person can use it. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+A 
+<a href="https://support.zoom.us/hc/en-us/articles/360001299063-Zoom-Voice-Supported-Devices">
+supported device
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}],&quot;cost_center&quot;:&quot;pbx cost center&quot;,&quot;department&quot;:&quot;pbx department&quot;,&quot;device_type&quot;:&quot;Polycom trio8500&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 Almaden Blvd&quot;,&quot;address_line2&quot;:&quot;8 floor&quot;,&quot;city&quot;:&quot;San Jose&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;gBGwqgwoTb-DiSCA75tMWw&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;status&quot;:3,&quot;zip&quot;:&quot;95113&quot;},&quot;id&quot;:&quot;5NmyHmVoRWWk4YT5ad6oxg&quot;,&quot;mac_address&quot;:&quot;0004f25eec4d&quot;,&quot;name&quot;:&quot;Test_cap&quot;,&quot;phone_numbers&quot;:[{&quot;display_name&quot;:&quot;phone number display name&quot;,&quot;id&quot;:&quot;S5q4FDC3QsOCnO7LqHgqNw&quot;,&quot;number&quot;:&quot;+12058945543&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;display_name&quot;:&quot;phone number display name&quot;,&quot;id&quot;:&quot;S5q4FDC3QsOCnO7LqHgqNw&quot;,&quot;number&quot;:&quot;+12058945543&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;policy&quot;:{&quot;hot_desking&quot;:{&quot;status&quot;:&quot;on&quot;},&quot;international_calling&quot;:{&quot;enable&quot;:true},&quot;select_outbound_caller_id&quot;:{&quot;enable&quot;:true}},&quot;provision&quot;:{&quot;sip_accounts&quot;:[{&quot;authorization_id&quot;:&quot;352882557629&quot;,&quot;outbound_proxy&quot;:&quot;dev01zpgatesj01.zoomdev.us:5091&quot;,&quot;password&quot;:&quot;bnQBw0ow&quot;,&quot;secondary_outbound_proxy&quot;:&quot;dev01zpgatesj02.zoomdev.us:5090&quot;,&quot;sip_domain&quot;:&quot;10010236712.zoomdev.us&quot;,&quot;user_name&quot;:&quot;username1001&quot;},{&quot;authorization_id&quot;:&quot;352882557629&quot;,&quot;outbound_proxy&quot;:&quot;dev01zpgatesj01.zoomdev.us:5091&quot;,&quot;password&quot;:&quot;bnQBw0ow&quot;,&quot;secondary_outbound_proxy&quot;:&quot;dev01zpgatesj02.zoomdev.us:5090&quot;,&quot;sip_domain&quot;:&quot;10010236712.zoomdev.us&quot;,&quot;user_name&quot;:&quot;username1001&quot;}],&quot;type&quot;:&quot;assisted&quot;,&quot;url&quot;:&quot;https://example.com/api/v2/pbx/provisioning/Polycom/trio8500&quot;},&quot;provision_template&quot;:{&quot;id&quot;:&quot;CLbU64xzTzCUXz58e2Lo&quot;,&quot;name&quot;:&quot;TestProvisionTemplate&quot;,&quot;supported&quot;:true},&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;status&quot;:&quot;offline&quot;,&quot;common_area_optimized&quot;:true}
+```

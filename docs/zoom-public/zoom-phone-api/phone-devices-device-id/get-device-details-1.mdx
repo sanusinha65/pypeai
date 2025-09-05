@@ -1,0 +1,68 @@
+# Get device details
+
+GET {{baseUrl}}/phone/devices/:deviceId
+
+
+<p>
+Get detailed information about a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092">
+desk phone device
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assignee&quot;:{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;i242djsgrg&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;i242djsgrg&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;bdkfdler&quot;},{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;i242djsgrg&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;bdkfdler&quot;}],&quot;device_type&quot;:&quot;Ribbon EdgeMarc302&quot;,&quot;display_name&quot;:&quot;Pooja&#39;s Phone&quot;,&quot;id&quot;:&quot;1234324&quot;,&quot;mac_address&quot;:&quot;203a07240534&quot;,&quot;provision&quot;:{&quot;sip_accounts&quot;:[{&quot;authorization_id&quot;:&quot;123123&quot;,&quot;outbound_proxy&quot;:&quot;123123&quot;,&quot;password&quot;:&quot;1123&quot;,&quot;secondary_outbound_proxy&quot;:&quot;proxy.example.com:5555&quot;,&quot;shared_line&quot;:{&quot;alias&quot;:&quot;additional information&quot;,&quot;line_subscription&quot;:{&quot;display_name&quot;:&quot;Pooja&quot;,&quot;extension_number&quot;:123123,&quot;phone_number&quot;:&quot;12059535689&quot;},&quot;outbound_caller_id&quot;:&quot;+123123123&quot;},&quot;sip_domain&quot;:&quot;123.zoom.us&quot;,&quot;user_name&quot;:&quot;123123&quot;},{&quot;authorization_id&quot;:&quot;123123&quot;,&quot;outbound_proxy&quot;:&quot;123123&quot;,&quot;password&quot;:&quot;1123&quot;,&quot;secondary_outbound_proxy&quot;:&quot;proxy.example.com:5555&quot;,&quot;shared_line&quot;:{&quot;alias&quot;:&quot;additional information&quot;,&quot;line_subscription&quot;:{&quot;display_name&quot;:&quot;Pooja&quot;,&quot;extension_number&quot;:123123,&quot;phone_number&quot;:&quot;12059535689&quot;},&quot;outbound_caller_id&quot;:&quot;+123123123&quot;},&quot;sip_domain&quot;:&quot;123.zoom.us&quot;,&quot;user_name&quot;:&quot;123123&quot;}],&quot;type&quot;:&quot;manual&quot;,&quot;url&quot;:&quot;wwww.example.com&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;123123&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;status&quot;:&quot;offline&quot;,&quot;provision_template_id&quot;:&quot;Ke5Ghevvoo001hr&quot;}
+```

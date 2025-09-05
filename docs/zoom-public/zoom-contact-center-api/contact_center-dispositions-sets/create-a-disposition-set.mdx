@@ -1,0 +1,62 @@
+# Create a disposition set
+
+POST {{baseUrl}}/contact_center/dispositions/sets
+
+
+<p>
+Create a new disposition set. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_disposition:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;disposition_set_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;inactive&quot;, &quot;disposition_set_description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;disposition_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;disposition_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;inactive&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;dispositions&quot;:[{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

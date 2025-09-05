@@ -1,0 +1,74 @@
+# List email threads from the mailbox
+
+GET {{baseUrl}}/emails/mailboxes/:email/threads?includeSpamTrash=false&amp;labelIds=&lt;string&gt;&amp;maxResults=&lt;string&gt;&amp;pageToken=&lt;string&gt;&amp;q=&lt;string&gt;
+
+
+<p>
+Lists the threads in the mailbox.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `includeSpamTrash` | boolean |  | Whether or not to include threads from SPAM and TRASH folders in the results. |
+| `labelIds` | string |  | Only return threads with message labels that match all of the specified label IDs in this query parameter. |
+| `maxResults` | string |  | Maximum number of threads to return.  It defaults to 50. The maximum allowed value for this parameter is 500. |
+| `pageToken` | string |  | Page token to retrieve a specific page of results in the list. |
+| `q` | string |  | Only return threads matching the specified elastic search query. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;threads&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;snippet&quot;:&quot;\u003cstring\u003e&quot;,&quot;historyId&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadName&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;normal&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;snippet&quot;:&quot;\u003cstring\u003e&quot;,&quot;historyId&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadName&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;normal&quot;}],&quot;nextPageToken&quot;:&quot;\u003cstring\u003e&quot;,&quot;resultSizeEstimate&quot;:&quot;\u003cinteger\u003e&quot;}
+```

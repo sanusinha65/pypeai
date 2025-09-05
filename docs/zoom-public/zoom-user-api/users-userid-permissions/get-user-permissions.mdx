@@ -1,0 +1,79 @@
+# Get user permissions
+
+GET {{baseUrl}}/users/:userId/permissions
+
+
+<p>
+Get permissions that have been granted to the user. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+Users can be assigned a set of permissions that allows them to access only the pages or information that a user needs to view or edit.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;permissions&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}
+```

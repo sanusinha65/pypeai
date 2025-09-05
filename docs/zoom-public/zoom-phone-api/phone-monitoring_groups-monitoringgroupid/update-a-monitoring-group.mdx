@@ -1,0 +1,91 @@
+# Update a monitoring group
+
+PATCH {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId
+
+
+<p>
+Use this API to update a 
+<a href="https://support.zoom.us/hc/en-us/articles/360044804711">
+Monitoring Group
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:monitoring_group:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;monitoring_privileges&quot;=&gt;[&quot;take_over&quot;, &quot;barge&quot;], &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

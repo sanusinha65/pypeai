@@ -1,0 +1,113 @@
+# List devices
+
+GET {{baseUrl}}/phone/devices?type=assigned&amp;assignee_type=commonArea&amp;device_source=haas&amp;location_status=unknownAddress&amp;site_id=&lt;string&gt;&amp;device_type=yealink&amp;keyword=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Lists all the 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092">
+desk phone devices
+</a>
+ that are configured with Zoom Phone on an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_devices:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | (Required) The device status: `assigned` or `unassigned` to list device status in Zoom account. |
+| `assignee_type` | string |  | The type of the assignee. It&#39;s available if `type = assigned`. It&#39;s unavailable if the account has not enabled the common area feature. It also returns devices of the specified `assignee_type`. If unspecified, it returns all assigned devices. |
+| `device_source` | string |  | The device source. `hotDesking` is only available when `type = assigned`. |
+| `location_status` | string |  | The status of device location. It&#39;s available if `type = assigned`. |
+| `site_id` | string |  | The site of the assignee. |
+| `device_type` | string |  | The manufacturer name or device type. |
+| `keyword` | string |  | The user, extension, MAC address, or IP address to filter the results. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;devices&quot;:[{&quot;assignee&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;offline&quot;,&quot;provision_template_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;assignee&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;offline&quot;,&quot;provision_template_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

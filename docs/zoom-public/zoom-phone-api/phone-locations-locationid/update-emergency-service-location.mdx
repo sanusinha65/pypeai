@@ -1,0 +1,87 @@
+# Update emergency service location
+
+PATCH {{baseUrl}}/phone/locations/:locationId
+
+
+<p>
+Updates an emergency location&#39;s information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:emergency_location:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;bssid&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;elin_phone_number_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;emergency_address_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;network_switches&quot;=&gt;[{&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_prefix&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_prefix&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;private_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;public_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sip_group_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;minimum_match_criteria&quot;=&gt;&quot;&lt;boolean&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

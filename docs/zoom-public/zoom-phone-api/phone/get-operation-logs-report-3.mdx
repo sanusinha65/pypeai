@@ -1,0 +1,97 @@
+# Get operation logs report
+
+GET {{baseUrl}}/phone/reports/operationlogs?from=2020-11-01&amp;to=2021-12-31&amp;category_type=all&amp;page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2
+
+
+<p>
+The 
+<strong>
+Phone System operation logs report
+</strong>
+ allows account owners and admins to view monthly Zoom phone related admin operation details. 
+</p>
+
+
+
+<p>
+Use this API to retrieve the 
+<strong>
+Phone System Operation Logs Report
+</strong>
+. Account owners and admins can also access this information by logging into their Zoom accounts and navigating to 
+<a href="https://zoom.us/pbx/page/report/operations#/report/operation-logs">
+Phone System Operation Logs
+</a>
+.
+<br>
+
+<br>
+ 
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+<br>
+
+
+<br>
+ 
+<strong>
+Prerequisites:
+</strong>
+ 
+<br>
+
+* Account must be enrollled in Pro or a higher plan
+* Account must be enrolled in a 
+<a href="https://zoom.us/pricing/zoom-phone">
+Zoom Phone
+</a>
+ plan
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | Start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. If unspecified, returns data within the 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `category_type` | string |  | Filter the response by the category of the action performed. By default, the value of this field is &quot;all&quot; and thus, the response will include log of all operations for the defined period.&lt;br&gt;&lt;br&gt;To only include response for a specific category type, provide a value for `category_type` from this [table](https://marketplace.zoom.us/docs/api-reference/other-references/phone-operation-categories). |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&quot;,&quot;page_size&quot;:20,&quot;operation_logs&quot;:[{&quot;action&quot;:&quot;ADD&quot;,&quot;category_type&quot;:&quot;Phone Number&quot;,&quot;operation_detail&quot;:&quot;Add BYOC +86 182 5188 5564&quot;,&quot;operator&quot;:&quot;user@test.com&quot;,&quot;time&quot;:&quot;2022-02-01T02:36:14Z&quot;},{&quot;action&quot;:&quot;ADD&quot;,&quot;category_type&quot;:&quot;Phone Number&quot;,&quot;operation_detail&quot;:&quot;Add BYOC +86 182 5188 5564&quot;,&quot;operator&quot;:&quot;user@test.com&quot;,&quot;time&quot;:&quot;2022-02-01T02:36:14Z&quot;}]}
+```

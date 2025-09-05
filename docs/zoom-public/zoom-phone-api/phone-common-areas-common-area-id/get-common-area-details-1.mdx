@@ -1,0 +1,82 @@
+# Get common area details
+
+GET {{baseUrl}}/phone/common_areas/:commonAreaId
+
+
+<p>
+Use this API to get detailed information on the common area.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+<br>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;area_code&quot;:&quot;408&quot;,&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}],&quot;cost_center&quot;:&quot;pbx_cost_center&quot;,&quot;country&quot;:{&quot;code&quot;:&quot;US&quot;,&quot;country_code&quot;:&quot;1&quot;,&quot;name&quot;:&quot;United States&quot;},&quot;department&quot;:&quot;department_pbx&quot;,&quot;display_name&quot;:&quot;test_ca&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 Almaden Blvd&quot;,&quot;address_line2&quot;:&quot;6th floor&quot;,&quot;city&quot;:&quot;San Jose&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;gBGwqgwoTb-DiSCA75tMWw&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;status&quot;:1,&quot;zip&quot;:&quot;95113&quot;},&quot;id&quot;:&quot;SHzioi3ZR9SXv-XkLbmYCg&quot;,&quot;outbound_caller_ids&quot;:[{&quot;is_default&quot;:true,&quot;name&quot;:&quot;Direct Number&quot;,&quot;number&quot;:&quot;+12055437350&quot;},{&quot;is_default&quot;:true,&quot;name&quot;:&quot;Direct Number&quot;,&quot;number&quot;:&quot;+12055437350&quot;}],&quot;phone_numbers&quot;:[{&quot;display_name&quot;:&quot;office phone&quot;,&quot;id&quot;:&quot;TqH98ec8RVCu6Z00aBv9ow&quot;,&quot;number&quot;:&quot;+12055437350&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;display_name&quot;:&quot;office phone&quot;,&quot;id&quot;:&quot;TqH98ec8RVCu6Z00aBv9ow&quot;,&quot;number&quot;:&quot;+12055437350&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main site&quot;},&quot;status&quot;:&quot;offline&quot;}
+```

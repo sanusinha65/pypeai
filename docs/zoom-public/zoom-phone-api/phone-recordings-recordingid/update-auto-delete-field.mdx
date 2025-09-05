@@ -1,0 +1,107 @@
+# Update auto delete field
+
+PATCH {{baseUrl}}/phone/recordings/:recordingId
+
+
+<p>
+Updates the auto delete field for recording. It only updates if you enable the 
+<strong>
+Auto Delete Data After Retention Duration
+</strong>
+ setting in the account settings for recordings. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* User must belong to a Business or Enterprise account 
+* User must have a Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+,
+<code>
+phone_recording:write
+</code>
+,
+<code>
+phone_recording:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:call_recording
+</code>
+,
+<code>
+phone:update:call_recording:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;auto_delete_enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

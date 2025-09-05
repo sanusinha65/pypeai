@@ -1,0 +1,62 @@
+# Create a new whiteboard
+
+POST {{baseUrl}}/whiteboards
+
+
+<p>
+Use this API to create a new whiteboard for a user.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+whiteboard:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;Untitled&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;whiteboard_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;whiteboard_name&quot;:&quot;Untitled&quot;,&quot;locked&quot;:false,&quot;trashed&quot;:false,&quot;readonly&quot;:false,&quot;non_cloud&quot;:false,&quot;created_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;share_link_setting&quot;:{&quot;share_scope&quot;:0,&quot;share_role&quot;:3},&quot;advanced_share_setting&quot;:{&quot;can_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_to_external&quot;:&quot;\u003cboolean\u003e&quot;,&quot;external_can_share&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

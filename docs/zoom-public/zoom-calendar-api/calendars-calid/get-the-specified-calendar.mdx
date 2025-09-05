@@ -1,0 +1,61 @@
+# Get the specified calendar
+
+GET {{baseUrl}}/calendars/:calId
+
+
+<p>
+Returns metadata for a calendar.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:read
+</code>
+,
+<code>
+calendar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cemail\u003e&quot;,&quot;kind&quot;:&quot;calendar#calendar&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;}
+```

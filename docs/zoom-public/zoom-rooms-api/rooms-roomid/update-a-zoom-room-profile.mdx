@@ -1,0 +1,89 @@
+# Update a Zoom Room profile
+
+PATCH {{baseUrl}}/rooms/:roomId
+
+
+<p>
+Update basic information on a specific Zoom Room in a Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with 
+<a href="https://zoom.us/zoomrooms">
+Zoom Room
+</a>
+ license.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;basic&quot;=&gt;{&quot;hide_room_in_contacts&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;required_code_to_ext&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;room_passcode&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;support_email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;support_phone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;calendar_resource_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zoom_room_type&quot;=&gt;&quot;DigitalSignageOnly&quot;}, &quot;device&quot;=&gt;{&quot;device_profile_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;setup&quot;=&gt;{&quot;checkin_and_checkout&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;checkin_and_checkout_options&quot;=&gt;{&quot;checkin_minutes_prior_to_meeting_start_time&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;allowed_minutes_before_release_room_after_no_checkout&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;enable_new_user_checkin_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable_remove_recurring&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allowed_consecutive_missed_checkin_before_removing_room&quot;=&gt;&quot;&lt;integer&gt;&quot;}}, &quot;under_construction&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

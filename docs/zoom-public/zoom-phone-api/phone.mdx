@@ -1,0 +1,44 @@
+#  phone
+
+Number of APIs: 10
+
+1. [Batch add emergency service locations](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/batch-add-emergency-service-locations-1)
+POST {{baseUrl}}/phone/batch_locations
+
+
+2. [List calling plans](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/list-calling-plans-1)
+GET {{baseUrl}}/phone/calling_plans
+
+
+3. [List plan details](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/list-plan-details)
+GET {{baseUrl}}/phone/plans
+
+
+4. [Download a phone recording transcript](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/download-a-phone-recording-transcript-1)
+GET {{baseUrl}}/phone/recording_transcript/download/:recordingId
+
+
+5. [List BYOC SIP trunks](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/list-byoc-sip-trunks-1)
+GET {{baseUrl}}/phone/sip_trunk/trunks?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+6. [List updatable firmwares](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/list-updatable-firmwares-1)
+GET {{baseUrl}}/phone/firmwares?is_update=true&amp;site_id=8f71O6rWT8KFUGQmJIFAdQ
+
+
+7. [Add BYOC phone numbers](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/add-byoc-phone-numbers-1)
+POST {{baseUrl}}/phone/byoc_numbers
+
+
+8. [Change main company number](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/change-main-company-number)
+PUT {{baseUrl}}/phone/company_number
+
+
+9. [Get operation logs report](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/get-operation-logs-report-3)
+GET {{baseUrl}}/phone/reports/operationlogs?from=2020-11-01&amp;to=2021-12-31&amp;category_type=all&amp;page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2
+
+
+10. [List SIP groups](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone/list-sip-groups-1)
+GET {{baseUrl}}/phone/sip_groups?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+

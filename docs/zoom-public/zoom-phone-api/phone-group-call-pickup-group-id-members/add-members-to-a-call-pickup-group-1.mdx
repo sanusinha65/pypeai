@@ -1,0 +1,77 @@
+# Add members to a call pickup group
+
+POST {{baseUrl}}/phone/group_call_pickup/:groupId/members
+
+
+<p>
+Use this API to add members to the specified 
+<a href="https://support.zoom.us/hc/en-us/articles/360060107472-Setting-up-and-using-group-call-pickup">
+Group Call Pickup
+</a>
+ object. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;member_extension_ids&quot;=&gt;[&quot;SQv52YtkRLC2dwrDdYtGsA&quot;, &quot;SQv52YtkRLC2dwrDdYtGsA&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+&quot;&quot;
+```

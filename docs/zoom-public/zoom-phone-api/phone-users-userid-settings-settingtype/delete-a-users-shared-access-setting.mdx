@@ -1,0 +1,147 @@
+# Delete a user&#39;s shared access setting
+
+DELETE {{baseUrl}}/phone/users/:userId/settings/:settingType?shared_id=&lt;string&gt;&amp;assistant_extension_id=&lt;string&gt;&amp;device_id=&lt;string&gt;&amp;intercom_extension_id=&lt;string&gt;
+
+
+<p>
+Removes the user setting according to the setting type, specifically for delegation, intercom and shared access for voicemail and call recordings. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+To see the shared access settings in the Zoom web portal, go to 
+<strong>
+Admin &gt; Phone System Management &gt; Users &amp; Rooms
+</strong>
+ . Click 
+<strong>
+Users
+</strong>
+ and select 
+<strong>
+User Policy
+</strong>
+. Go to 
+<strong>
+Voicemail, Automatic Call Recording and Ad Hoc Call Recording
+</strong>
+.
+</p>
+
+
+
+<p>
+To view the delegation and intercom setting in your Zoom web portal, navigate to 
+<strong>
+Admin &gt; Phone System Management &gt; Users &amp; Rooms
+</strong>
+. Click the 
+<strong>
+Users
+</strong>
+ tab and select 
+<strong>
+User Settings
+</strong>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:shared_setting
+</code>
+,
+<code>
+phone:delete:shared_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `shared_id` | string |  | This field is required only for voicemail, auto_call_recording, and ad_hoc_call_recording setting type. |
+| `assistant_extension_id` | string |  | This field deletes the delegation assistant, used for delegation setting type. |
+| `device_id` | string |  | This field deletes the assigned device, used for `desk_phone` setting type. |
+| `intercom_extension_id` | string |  | This field deletes the intercom connection for the `intercom` setting type. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

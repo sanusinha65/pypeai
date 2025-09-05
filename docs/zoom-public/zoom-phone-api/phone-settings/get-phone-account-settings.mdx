@@ -1,0 +1,64 @@
+# Get phone account settings
+
+GET {{baseUrl}}/phone/settings
+
+
+<p>
+Use this API to return an account&#39;s settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;byoc&quot;:{&quot;enable&quot;:true},&quot;country&quot;:{&quot;code&quot;:&quot;US&quot;,&quot;name&quot;:&quot;United States&quot;},&quot;multiple_sites&quot;:{&quot;enabled&quot;:false,&quot;site_code&quot;:true},&quot;show_device_ip_for_call_log&quot;:{&quot;enable&quot;:false}}
+```

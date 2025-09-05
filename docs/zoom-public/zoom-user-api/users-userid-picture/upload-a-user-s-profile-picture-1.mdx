@@ -1,0 +1,100 @@
+# Upload a user&#39;s profile picture
+
+POST {{baseUrl}}/users/:userId/picture
+
+
+<p>
+Upload a user&#39;s profile picture. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+Provide 
+<code>
+multipart/form-data
+</code>
+ as the value of the 
+<code>
+content-type
+</code>
+ header for this request. This API supports 
+<code>
+.jpeg
+</code>
+ and 
+<code>
+.png
+</code>
+ file formats.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;pic_file&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

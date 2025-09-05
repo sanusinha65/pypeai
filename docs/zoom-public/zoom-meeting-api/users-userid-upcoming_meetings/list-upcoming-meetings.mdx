@@ -1,0 +1,89 @@
+# List upcoming meetings
+
+GET {{baseUrl}}/users/:userId/upcoming_meetings
+
+
+<p>
+List a Zoom user&#39;s upcoming meetings. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+
+* This API includes the meetings that Zoom users schedule and the meetings they are invited to join.
+* This API 
+<strong>
+only
+</strong>
+ includes upcoming meetings within the next 24 hours.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read
+</code>
+,
+<code>
+meeting:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;meetings&quot;:[{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:2,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

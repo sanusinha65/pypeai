@@ -1,0 +1,87 @@
+# Get call handling settings
+
+GET {{baseUrl}}/phone/extension/:extensionId/call_handling/settings
+
+
+<p>
+Returns information about a Zoom Phone&#39;s call handling settings. Call handling settings let you control how your system routes calls during business, closed, or holiday hours. For more information, read our 
+<a href="https://developers.zoom.us/docs/zoom-phone/call-handling/">
+API guide
+</a>
+ or Zoom support article 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+.
+<strong>
+Applicable to user, call queue, auto receptionist, or shared line group call handling at this time.
+</strong>
+ 
+<strong>
+Prerequisites:
+</strong>
+ * Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_call_handling_settings:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;business_hours&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_members_to_reset&quot;:&quot;\u003cboolean\u003e&quot;,&quot;audio_while_connecting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;call_distribution&quot;:{&quot;handle_multiple_calls&quot;:&quot;\u003cboolean\u003e&quot;,&quot;ring_duration&quot;:10,&quot;ring_mode&quot;:&quot;rotating&quot;,&quot;skip_offline_device_phone_number&quot;:&quot;\u003cboolean\u003e&quot;},&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_contact&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_contact_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[&quot;\u003cstring\u003e&quot;]}}],&quot;call_not_answer_action&quot;:4,&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;custom_hours_settings&quot;:[{&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1,&quot;weekday&quot;:6}],&quot;greeting_prompt&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;max_call_in_queue&quot;:&quot;\u003cinteger\u003e&quot;,&quot;max_wait_time&quot;:30,&quot;music_on_hold&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;receive_call&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;busy_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;},&quot;busy_routing&quot;:{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;sharedLineGroup&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;busy_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;},&quot;type&quot;:2,&quot;wrap_up_time&quot;:30},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;}],&quot;closed_hours&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_contact&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_contact_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[&quot;\u003cstring\u003e&quot;]}}],&quot;call_not_answer_action&quot;:1,&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;max_wait_time&quot;:15,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;busy_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;},&quot;busy_routing&quot;:{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;busy_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;}},&quot;sub_setting_type&quot;:&quot;call_handling&quot;}],&quot;holiday_hours&quot;:[{&quot;details&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_contact&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_contact_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[&quot;\u003cstring\u003e&quot;]}}],&quot;call_not_answer_action&quot;:14,&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;max_wait_time&quot;:35,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;sharedLineGroup&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;connect_to_operator&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_callers_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overflow_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;busy_play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;},&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;},&quot;sub_setting_type&quot;:&quot;holiday&quot;}],&quot;holiday_id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,110 @@
+# Get location settings
+
+GET {{baseUrl}}/rooms/locations/:locationId/settings?setting_type=meeting
+
+
+<p>
+Get information on meeting or alert settings applied to Zoom Rooms located in a specific location. By default, only 
+<strong>
+Meeting Settings
+</strong>
+ are returned. To view only 
+<strong>
+Alert Settings
+</strong>
+, specify 
+<code>
+alert
+</code>
+ as the value of the 
+<code>
+setting_type
+</code>
+ query parameter.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Zoom Room licenses
+</li>
+
+
+<li>
+Owner or Admin privileges on the Zoom Account.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `setting_type` | string |  | (Required) The type of setting that you would like to retrieve.  
+  `alert`: Alert Settings applied on the Zoom Rooms Account.  
+ 
+`meeting`: Meeting settings of the Zoom Rooms Account.  
+ 
+`signage`: Digital signage settings of the Zoom Rooms Account. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;meeting_security&quot;:{&quot;encryption_type&quot;:&quot;enhanced_encryption&quot;,&quot;end_to_end_encrypted_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_security&quot;:&quot;\u003cboolean\u003e&quot;},&quot;zoom_rooms&quot;:{&quot;allow_multiple_content_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;audio_device_daily_auto_test&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_accept_incoming_call_and_fecc&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_direct_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_start_scheduled_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_stop_scheduled_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;count_attendees_number_in_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;display_feedback_survey&quot;:&quot;\u003cboolean\u003e&quot;,&quot;display_meeting_list&quot;:&quot;\u003cboolean\u003e&quot;,&quot;display_top_banner&quot;:&quot;\u003cboolean\u003e&quot;,&quot;encrypt_shared_screen_content&quot;:&quot;\u003cboolean\u003e&quot;,&quot;hide_id_for_private_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;hide_self_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;lock_speaker_volume_control&quot;:&quot;\u003cboolean\u003e&quot;,&quot;send_whiteboard_to_internal_contact_only&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_alert_before_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_call_history_in_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_contact_list_on_controller&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_non_video_participants&quot;:&quot;\u003cboolean\u003e&quot;,&quot;start_airplay_manually&quot;:&quot;\u003cboolean\u003e&quot;,&quot;start_airplay_mirroring&quot;:&quot;\u003cboolean\u003e&quot;,&quot;start_hdmi_content_share_manualy&quot;:&quot;\u003cboolean\u003e&quot;,&quot;support_join_3rd_party_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;transform_meeting_to_private&quot;:&quot;\u003cboolean\u003e&quot;,&quot;upcoming_meeting_alert&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voice_commands&quot;:&quot;\u003cboolean\u003e&quot;,&quot;weekly_system_restart&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

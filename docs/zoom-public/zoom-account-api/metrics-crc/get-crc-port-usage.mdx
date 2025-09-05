@@ -1,0 +1,100 @@
+# Get CRC port usage
+
+GET {{baseUrl}}/metrics/crc?from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+<p>
+A Cloud Room Connector allows H.323/SIP endpoints to connect to a Zoom meeting. 
+</p>
+
+
+
+<p>
+Use this API to get the hour by hour CRC Port usage for a specified period of time. &lt;aside class=&#39;notice&#39;&gt;We will provide the report for a maximum of one month. For example, if &quot;from&quot; is set to &quot;2017-08-05&quot; and &quot;to&quot; is set to &quot;2017-10-10&quot;, we will adjust &quot;from&quot; to &quot;2017-09-10&quot;.&lt;/aside&gt;  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business, Education or API Plan.
+</li>
+
+
+<li>
+Room Connector must be enabled on the account.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_crc:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;crc_ports_usage&quot;:[{&quot;crc_ports_hour_usage&quot;:[{&quot;hour&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_usage&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;hour&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_usage&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;date_time&quot;:&quot;\u003cdate\u003e&quot;},{&quot;crc_ports_hour_usage&quot;:[{&quot;hour&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_usage&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;hour&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_usage&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;date_time&quot;:&quot;\u003cdate\u003e&quot;}]}
+```

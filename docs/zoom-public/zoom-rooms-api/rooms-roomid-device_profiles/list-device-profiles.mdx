@@ -1,0 +1,68 @@
+# List device profiles
+
+GET {{baseUrl}}/rooms/:roomId/device_profiles
+
+
+<p>
+Use this API to return a list of Zoom Room device profiles. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account with Zoom Rooms.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+[{&quot;audio_processing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_adjust_mic_level&quot;:&quot;\u003cboolean\u003e&quot;,&quot;camera_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;echo_cancellation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;noise_suppression&quot;:&quot;moderate&quot;,&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;audio_processing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_adjust_mic_level&quot;:&quot;\u003cboolean\u003e&quot;,&quot;camera_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;echo_cancellation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;noise_suppression&quot;:&quot;aggressive&quot;,&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;}]
+```

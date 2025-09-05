@@ -1,0 +1,61 @@
+# List user&#39;s TSP accounts
+
+GET {{baseUrl}}/users/:userId/tsp
+
+
+<p>
+A user can have a maximum of two TSP accounts. Use this API to list all TSP accounts of a user.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tsp:read:admin
+</code>
+,
+<code>
+tsp:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;tsp_accounts&quot;:[{&quot;conference_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;leader_pin&quot;:&quot;\u003cstring\u003e&quot;,&quot;dial_in_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;toll&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;media_link&quot;}],&quot;id&quot;:&quot;1&quot;,&quot;tsp_bridge&quot;:&quot;US_TSP_TB&quot;},{&quot;conference_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;leader_pin&quot;:&quot;\u003cstring\u003e&quot;,&quot;dial_in_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;toll&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;tollfree&quot;}],&quot;id&quot;:&quot;1&quot;,&quot;tsp_bridge&quot;:&quot;US_TSP_TB&quot;}]}
+```

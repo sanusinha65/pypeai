@@ -1,0 +1,73 @@
+# Get a Zoom Room under Zoom Phone license
+
+GET {{baseUrl}}/phone/rooms/:roomId
+
+
+<p>
+Use this API to retrieve a 
+<a href="https://support.zoom.us/hc/en-us/articles/360025153711">
+Zoom Room
+</a>
+ under the account that has the Zoom Phone license assigned.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;AU/NZ Metered&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;AU/NZ Metered&quot;,&quot;type&quot;:100}],&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;122&quot;,&quot;address_line2&quot;:&quot;122&quot;,&quot;city&quot;:&quot;12&quot;,&quot;country&quot;:&quot;SG&quot;,&quot;id&quot;:&quot;fXEdhQmSQheGaNuLYbm8Wg&quot;,&quot;state_code&quot;:&quot;123&quot;,&quot;zip&quot;:&quot;50383&quot;},&quot;extension_id&quot;:&quot;_zQiBLNDQumOuA_tOnBIrw&quot;,&quot;extension_number&quot;:1233012,&quot;id&quot;:&quot;3JTPXDqTQCuzYJEwH6kN4g&quot;,&quot;name&quot;:&quot;test&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;6fTPXDwT2CuzYrwwH6sN4g&quot;,&quot;number&quot;:&quot;12058945544&quot;},{&quot;id&quot;:&quot;6fTPXDwT2CuzYrwwH6sN4g&quot;,&quot;number&quot;:&quot;12058945544&quot;}],&quot;policy&quot;:{&quot;international_calling&quot;:{&quot;enable&quot;:false,&quot;locked_by&quot;:&quot;site&quot;},&quot;select_outbound_caller_id&quot;:{&quot;enable&quot;:false,&quot;locked_by&quot;:&quot;account&quot;}},&quot;site&quot;:{&quot;id&quot;:&quot;kLD4F3WBT-O9LYE31C0tRQ&quot;,&quot;name&quot;:&quot;API DZ SITE3&quot;}}
+```

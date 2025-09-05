@@ -1,0 +1,98 @@
+# Get zoom meetings client feedback
+
+GET {{baseUrl}}/metrics/client/feedback/:feedbackId?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Retrieve detailed information on a 
+<a href="https://support.zoom.us/hc/en-us/articles/115005855266-End-of-Meeting-Feedback-Survey#h_e30d552b-6d8e-4e0a-a588-9ca8180c4dbf">
+Zoom meetings client feedback
+</a>
+.
+<br>
+
+  You can specify a monthly date range for the dashboard data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or higher account
+* 
+<a href="https://support.zoom.us/hc/en-us/articles/115005838023">
+Feedback to Zoom
+</a>
+ enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_home:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  |  |
+| `to` | string |  |  |
+| `page_size` | number |  |  |
+| `next_page_token` | string |  |  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;client_feedback_details&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;time&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

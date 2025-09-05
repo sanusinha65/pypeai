@@ -1,0 +1,66 @@
+# List system statuses
+
+GET {{baseUrl}}/contact_center/system_statuses?next_page_token=&lt;string&gt;&amp;page_size=30&amp;status_category=queue_opt_out_and_not_ready_status
+
+
+<p>
+Get a list of system statuses. Admins can create system statuses, such as &quot;Maintenance&quot;.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_preference:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `status_category` | string |  | The status&#39;s category.
+
+* `agent_status`: User&amp;rsquo;s system statuses.
+
+* `queue_opt_out_and_not_ready_status`: User&amp;rsquo;s &amp;quot;Queue Opt-Out&amp;quot; and &amp;quot;Not Ready&amp;quot; reasons. &amp;quot;Not Ready&amp;quot; reasons are referenced by field &amp;quot;sub_status_name&amp;quot; in the Users APIs (e.g. [List Users&amp;rsquo; Profiles](https://developers.zoom.us/docs/contact-center/apis/#operation/users)) |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;statuses&quot;:[{&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;string&quot;,&quot;status_type&quot;:&quot;default&quot;,&quot;status_category&quot;:&quot;agent_status&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Not Ready&quot;,&quot;status_type&quot;:&quot;default&quot;,&quot;status_category&quot;:&quot;agent_status&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

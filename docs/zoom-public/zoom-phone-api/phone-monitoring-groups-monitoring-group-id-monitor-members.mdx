@@ -1,0 +1,20 @@
+#  phone-monitoring groups-{monitoring Group Id}-monitor members
+
+Number of APIs: 4
+
+1. [Get members of a monitoring group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-monitoring-groups-monitoring-group-id-monitor-members/get-members-of-a-monitoring-group-1)
+GET {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId/monitor_members?member_type=monitor&amp;page_size=1&amp;next_page_token=ICF5K4lVmGG4kyIyGxSfBU2LH4QQG95cn32
+
+
+2. [Add members to a monitoring group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-monitoring-groups-monitoring-group-id-monitor-members/add-members-to-a-monitoring-group-1)
+POST {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId/monitor_members?member_type=monitor
+
+
+3. [Remove all monitors or monitored members from a monitoring group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-monitoring-groups-monitoring-group-id-monitor-members/remove-all-monitors-or-monitored-members-from-a-monitoring-group-1)
+DELETE {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId/monitor_members?member_type=monitor
+
+
+4. [Remove a member from a monitoring group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-monitoring-groups-monitoring-group-id-monitor-members/remove-a-member-from-a-monitoring-group-1)
+DELETE {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId/monitor_members/:memberExtensionId?member_type=monitor
+
+

@@ -1,0 +1,83 @@
+# Add a call handling setting
+
+POST {{baseUrl}}/phone/extension/:extensionId/call_handling/settings/:settingType
+
+
+<p>
+Use this API to create a Zoom Phone call handling setting. Call handling settings let you control how your system routes calls during business, closed, or holiday hours. For more information, read our 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+ documentation.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, or auto receptionist call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;settings&quot;=&gt;{&quot;description&quot;=&gt;&quot;testDescription&quot;, &quot;from&quot;=&gt;&quot;2022-03-05T00:00:00Z&quot;, &quot;name&quot;=&gt;&quot;test&quot;, &quot;phone_number&quot;=&gt;&quot;+12058945795&quot;, &quot;to&quot;=&gt;&quot;2022-03-06T00:00:00Z&quot;}, &quot;sub_setting_type&quot;=&gt;&quot;holiday&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;call_forwarding_id&quot;:&quot;qPvrfrrcrf843cdfvbDRDg&quot;,&quot;holiday_id&quot;:&quot;fwDSdod32xmXw43rsda&quot;}
+```

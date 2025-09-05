@@ -1,0 +1,61 @@
+# Get past meeting details
+
+GET {{baseUrl}}/past_meetings/:meetingId
+
+
+<p>
+Get information about a past meeting. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;participants_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;source&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:7,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;}
+```

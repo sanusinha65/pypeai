@@ -1,0 +1,115 @@
+# List a user&#39;s chat sessions
+
+GET {{baseUrl}}/chat/users/:userId/sessions?type=1:1&amp;page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Retrieves a user&#39;s chat sessions. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note:
+</b>
+ For an 
+<b>
+account-level
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:~:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+role
+</a>
+ that has the 
+<b>
+View
+</b>
+ or 
+<b>
+Edit
+</b>
+ permission for 
+<b>
+Chat Messages
+</b>
+.
+</p>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:read
+</code>
+, 
+<code>
+chat_message:read:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The session queried by the chat type. The API only returns sessions of which the user is a member and of the specified chat `type`. 
+
+**Note:** 
+* If no `type` is provided, response will contain both group and 1:1 chats. |
+| `page_size` | number |  | The number of records returned with a single API call.  |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sessions&quot;:[{&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_mesage_sent_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;peer_contact_email&quot;:&quot;\u003cemail\u003e&quot;},{&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_mesage_sent_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;peer_contact_email&quot;:&quot;\u003cemail\u003e&quot;}]}
+```

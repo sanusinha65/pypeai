@@ -1,0 +1,87 @@
+# Delete a device
+
+DELETE {{baseUrl}}/phone/devices/:deviceId
+
+
+<p>
+Remove a 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092">
+desk phone device or ATA (Analog Telephone Adapter)
+</a>
+ from the Zoom Phone System Management.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+* Device must not have been assigned to a user.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:device:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

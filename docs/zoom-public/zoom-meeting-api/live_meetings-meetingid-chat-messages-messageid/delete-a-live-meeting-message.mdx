@@ -1,0 +1,74 @@
+# Delete a live meeting message
+
+DELETE {{baseUrl}}/live_meetings/:meetingId/chat/messages/:messageId?file_ids=&lt;string&gt;
+
+
+<p>
+Delete a message in a live meeting, based on ID. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Have Zoom enable the DLP for the in-meeting chat feature to use this API.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `file_ids` | string |  | The live webinar chat file&#39;s universally unique identifier (UUID), in base64-encoded format. Separate multiple values with commas. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

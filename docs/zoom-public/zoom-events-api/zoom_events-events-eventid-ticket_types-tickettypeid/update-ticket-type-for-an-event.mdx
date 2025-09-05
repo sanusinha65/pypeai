@@ -1,0 +1,65 @@
+# Update ticket type for an event
+
+PATCH {{baseUrl}}/zoom_events/events/:eventId/ticket_types/:ticketTypeId
+
+
+<p>
+Use this API to update the ticket type for an event ID. This API is not allowed for single session event type.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_ticket_types:write:admin
+</code>
+
+<code>
+zoom_events_ticket_types:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;currency&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;free&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;price&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;quantity&quot;=&gt;&quot;&lt;number&gt;&quot;, &quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sold_quantity&quot;=&gt;&quot;&lt;number&gt;&quot;, &quot;sessions&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;private_visibility_rules&quot;=&gt;{&quot;account_restrict&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_domain_list&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;email_restrict_list&quot;=&gt;[&quot;&lt;string&gt;&quot;]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

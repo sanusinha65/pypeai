@@ -1,0 +1,69 @@
+# Get role information
+
+GET {{baseUrl}}/phone/roles/:roleId
+
+
+<p>
+Use this API to get information on a phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360042099012-Using-Zoom-Phone-role-management">
+role
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;description&quot;:&quot;Admin has full privileges to access and manage the Zoom Phone (default).&quot;,&quot;id&quot;:&quot;MRNStlOVS02fJ6pOAzrh0A&quot;,&quot;name&quot;:&quot;Phone Super Admin&quot;,&quot;total_members&quot;:1,&quot;is_default&quot;:true}
+```

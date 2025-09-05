@@ -1,0 +1,86 @@
+# Update site level outbound calling countries or regions
+
+PATCH {{baseUrl}}/phone/sites/:siteId/outbound_calling/countries_regions
+
+
+<p>
+Updates the site level outbound calling policy country or region.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Account must have a Pro or a higher plan with a Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:site_outbound_calling_rule:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;country_regions&quot;=&gt;[{&quot;iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rule&quot;=&gt;3, &quot;delete_existing_exception_rules&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rule&quot;=&gt;2, &quot;delete_existing_exception_rules&quot;=&gt;&quot;&lt;boolean&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

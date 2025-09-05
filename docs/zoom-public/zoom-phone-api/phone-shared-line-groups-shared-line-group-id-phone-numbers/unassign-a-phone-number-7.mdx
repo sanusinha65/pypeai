@@ -1,0 +1,82 @@
+# Unassign a phone number
+
+DELETE {{baseUrl}}/phone/shared_line_groups/:sharedLineGroupId/phone_numbers/:phoneNumberId
+
+
+<p>
+Use this API to unassign a specific phone number that was assigned to the 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792-Setting-up-shared-line-groups">
+shared line group
+</a>
+.
+
+<strong>
+Prerequisites:
+</strong>
+ 
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account with Zoom Phone license.
+</li>
+
+
+<li>
+A valid Shared Line Group
+</li>
+
+
+<li>
+Account owner or admin privileges
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

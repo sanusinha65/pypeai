@@ -1,0 +1,89 @@
+# Assign calling plans to common area phone
+
+POST {{baseUrl}}/phone/common_area_phones/:commonAreaPhoneId/calling_plans
+
+
+<p>
+Assign calling plans to common area phone.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin permissions.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;calling_plans&quot;=&gt;[{&quot;type&quot;=&gt;100}, {&quot;type&quot;=&gt;100}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}]}
+```

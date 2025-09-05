@@ -1,0 +1,57 @@
+# Get a variable
+
+GET {{baseUrl}}/contact_center/variables/:variableId
+
+
+<p>
+Retrieve a variable. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_variable:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_type&quot;:&quot;global_variable&quot;,&quot;address_books&quot;:[{&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_contacts&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_contacts&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;use_in_reporting&quot;:false,&quot;mask_variable_data&quot;:false,&quot;use_as_routing_profile_parameters&quot;:false,&quot;data_type&quot;:&quot;number&quot;,&quot;value_category&quot;:&quot;\u003cstring\u003e&quot;,&quot;values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;linked_value_lock&quot;:false,&quot;default_value&quot;:&quot;\u003cstring\u003e&quot;,&quot;use_in_external_url_parameters&quot;:&quot;\u003cboolean\u003e&quot;,&quot;client_show_in_client_profile_section&quot;:&quot;\u003cboolean\u003e&quot;,&quot;client_show_in_client_engagement_section&quot;:&quot;\u003cboolean\u003e&quot;,&quot;client_show_in_inbound_call_notifications&quot;:&quot;\u003cboolean\u003e&quot;}
+```

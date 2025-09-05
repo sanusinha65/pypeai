@@ -1,0 +1,75 @@
+# List history of events for mailbox
+
+GET {{baseUrl}}/emails/mailboxes/:email/history?maxResults=&lt;integer&gt;&amp;pageToken=&lt;string&gt;&amp;startHistoryId=&lt;string&gt;&amp;historyTypes=delegateUpdated&amp;excludeHistoryTypes=delegatorsUpdated&amp;labelId=&lt;string&gt;
+
+
+<p>
+Lists the history of the changes to the given mailbox.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `maxResults` | string |  | Maximum number of history events to return. This field defaults to 50. The maximum allowed value is 500. |
+| `pageToken` | string |  | The page token to retrieve a specific page of results in the list. |
+| `startHistoryId` | string |  | (Required) Returns history records after the specified `startHistoryId`. The supplied `startHistoryId` should be obtained from the `historyId` of a message, thread, or previous list response. History IDs increase chronologically but are not contiguous with random gaps in between. Supplying an invalid or out of date `startHistoryId` typically returns an HTTP 404 error code. A `historyId` is typically valid for at least a week, but in some rare circumstances may be valid for much shorter period. If you receive an HTTP 404 error response, your application should perform a full sync. If you receive no **nextPageToken** in the response, there are no updates to retrieve and you can store the returned `historyId` for a future request. |
+| `historyTypes` | string |  | History types to be returned by the function.  If one history type included in both query parameters``historyType`` and ``excludeHistoryType``, the exclude take the priority. |
+| `excludeHistoryTypes` | string |  | History types not to be returned by the function.  If one history type included in both query parameters ``historyTypes`` and ``excludeHistoryTypes``, the exclude take the priority. |
+| `labelId` | string |  | Only return messages with a label matching the ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;history&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;cid&quot;:&quot;\u003cstring\u003e&quot;,&quot;messagesAdded&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesDeleted&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesImported&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesImportedNew&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesUpdated&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;labelsAdded&quot;:[{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;labelsRemoved&quot;:[{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;settingsAdded&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;signature&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;delegation&quot;}],&quot;settingsDeleted&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;emailTemplates&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;userLabels&quot;}],&quot;settingsUpdated&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;delegation&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;disposableEmails&quot;}],&quot;delegatesAdded&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatesDeleted&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatesUpdated&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatorsAdded&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatorsDeleted&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatorsUpdated&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;cid&quot;:&quot;\u003cstring\u003e&quot;,&quot;messagesAdded&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesDeleted&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesImported&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesImportedNew&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;messagesUpdated&quot;:[{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;labelsAdded&quot;:[{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;labelsRemoved&quot;:[{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;settingsAdded&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;filter&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;delegation&quot;}],&quot;settingsDeleted&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;signature&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;delegation&quot;}],&quot;settingsUpdated&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;language&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;filter&quot;}],&quot;delegatesAdded&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatesDeleted&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatesUpdated&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatorsAdded&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatorsDeleted&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;delegatorsUpdated&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;nextPageToken&quot;:&quot;\u003cstring\u003e&quot;,&quot;historyId&quot;:&quot;\u003cstring\u003e&quot;}
+```

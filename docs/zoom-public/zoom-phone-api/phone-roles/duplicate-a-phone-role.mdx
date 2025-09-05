@@ -1,0 +1,70 @@
+# Duplicate a phone role
+
+POST {{baseUrl}}/phone/roles
+
+
+<p>
+Use this API to duplicate a phone role.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;role_id&quot;=&gt;&quot;MRNStlOVS02fJ6pOAzrh0B&quot;, &quot;name&quot;=&gt;&quot;Phone Super Admin&quot;, &quot;description&quot;=&gt;&quot;Admin has full privileges to access and manage the Zoom Phone (default).&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;1exEg_e9QbKFD4dBJzzrZw&quot;,&quot;name&quot;:&quot;Compliance Admin (Copy)&quot;}
+```

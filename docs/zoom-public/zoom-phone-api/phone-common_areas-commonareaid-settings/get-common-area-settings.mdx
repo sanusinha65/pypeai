@@ -1,0 +1,97 @@
+# Get common area settings
+
+GET {{baseUrl}}/phone/common_areas/:commonAreaId/settings
+
+
+<p>
+Use this API to get common area settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license.
+* Account owner or admin permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_common_area_settings:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;desk_phones&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;online&quot;,&quot;hot_desking&quot;:{&quot;status&quot;:&quot;on&quot;}},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;offline&quot;,&quot;hot_desking&quot;:{&quot;status&quot;:&quot;off&quot;}}]}
+```

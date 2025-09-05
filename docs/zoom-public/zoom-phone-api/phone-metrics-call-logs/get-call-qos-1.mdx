@@ -1,0 +1,69 @@
+# Get call QoS
+
+GET {{baseUrl}}/phone/metrics/call_logs/:callId/qos
+
+
+<p>
+Get call quality of service(QoS) data for a call made or received by a Zoom phone user in the account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;7081466125443483485&quot;,&quot;callee_qos&quot;:{&quot;device_private_ip&quot;:&quot;10.100.111.237&quot;,&quot;device_public_ip&quot;:&quot;38.99.100.2&quot;,&quot;receiving&quot;:[{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;0.82%&quot;,&quot;bitrate&quot;:&quot;14.98kbps&quot;,&quot;jitter&quot;:&quot;7.53ms&quot;,&quot;max_loss&quot;:&quot;1.51%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;307&quot;}},{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;0.82%&quot;,&quot;bitrate&quot;:&quot;14.98kbps&quot;,&quot;jitter&quot;:&quot;7.53ms&quot;,&quot;max_loss&quot;:&quot;1.51%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;307&quot;}}],&quot;sending&quot;:[{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;0.82%&quot;,&quot;bitrate&quot;:&quot;14.98kbps&quot;,&quot;jitter&quot;:&quot;7.53ms&quot;,&quot;max_loss&quot;:&quot;1.51%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;307&quot;}},{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;0.82%&quot;,&quot;bitrate&quot;:&quot;14.98kbps&quot;,&quot;jitter&quot;:&quot;7.53ms&quot;,&quot;max_loss&quot;:&quot;1.51%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;307&quot;}}]},&quot;caller_qos&quot;:{&quot;device_private_ip&quot;:&quot;10.100.111.237&quot;,&quot;device_public_ip&quot;:&quot;38.99.100.2&quot;,&quot;receiving&quot;:[{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;1.29%&quot;,&quot;bitrate&quot;:&quot;16.31kbps&quot;,&quot;jitter&quot;:&quot;5.15ms&quot;,&quot;max_loss&quot;:&quot;2.01%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;301&quot;}},{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;1.29%&quot;,&quot;bitrate&quot;:&quot;16.31kbps&quot;,&quot;jitter&quot;:&quot;5.15ms&quot;,&quot;max_loss&quot;:&quot;2.01%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;301&quot;}}],&quot;sending&quot;:[{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;1.29%&quot;,&quot;bitrate&quot;:&quot;16.31kbps&quot;,&quot;jitter&quot;:&quot;5.15ms&quot;,&quot;max_loss&quot;:&quot;2.01%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;303&quot;}},{&quot;date_time&quot;:&quot;2022-04-01T03:05:43Z&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;1.29%&quot;,&quot;bitrate&quot;:&quot;16.31kbps&quot;,&quot;jitter&quot;:&quot;5.15ms&quot;,&quot;max_loss&quot;:&quot;2.01%&quot;,&quot;mos&quot;:&quot;3.6&quot;,&quot;network_delay&quot;:&quot;303&quot;}}]}}
+```

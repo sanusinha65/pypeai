@@ -1,0 +1,57 @@
+# Get a system status
+
+GET {{baseUrl}}/contact_center/system_statuses/:statusId
+
+
+<p>
+Display information about a system status. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_preference:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Not Ready&quot;,&quot;status_type&quot;:&quot;custom&quot;,&quot;status_category&quot;:&quot;agent_status&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;}
+```

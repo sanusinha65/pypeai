@@ -1,0 +1,50 @@
+# Use in-Session events controls
+
+PATCH {{baseUrl}}/videosdk/sessions/:sessionId/events
+
+
+<p>
+Use this API to control in-Session events such as the 
+<strong>
+recording controls
+</strong>
+ to start a recording, stop a recording, pause a recording, and resume a recording, and 
+<strong>
+invitation control
+</strong>
+ to invite participants. The recording controls only work for Cloud Recordings and not for local recordings.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite:
+</strong>
+
+* The session must be a live session.
+* Cloud Recording must be enabled for recording controls.
+* The user using this API must either be the host or alternative host of the session.
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;method&quot;=&gt;&quot;recording.start&quot;, &quot;params&quot;=&gt;{&quot;invitee_name&quot;=&gt;&quot;Jill Chill&quot;, &quot;phone_number&quot;=&gt;&quot;5550100&quot;, &quot;invite_options&quot;=&gt;{&quot;require_greeting&quot;=&gt;true, &quot;require_pressing_one&quot;=&gt;true}, &quot;call_type&quot;=&gt;&quot;h323&quot;, &quot;device_ip&quot;=&gt;&quot;10.100.111.237&quot;, &quot;sip_headers&quot;=&gt;{&quot;from_display_name&quot;=&gt;&quot;display name&quot;, &quot;to_display_name&quot;=&gt;&quot;display name&quot;, &quot;from_uri&quot;=&gt;&quot;sip:username@domain.company.org&quot;, &quot;additional_headers&quot;=&gt;[{&quot;key&quot;=&gt;&quot;X-Header1&quot;, &quot;value&quot;=&gt;&quot;X-body1&quot;}, {&quot;key&quot;=&gt;&quot;X-Header1&quot;, &quot;value&quot;=&gt;&quot;X-body1&quot;}]}}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

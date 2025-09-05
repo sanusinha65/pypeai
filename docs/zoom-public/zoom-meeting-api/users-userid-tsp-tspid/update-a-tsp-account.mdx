@@ -1,0 +1,65 @@
+# Update a TSP account
+
+PATCH {{baseUrl}}/users/:userId/tsp/:tspId
+
+
+<p>
+Update a user&#39;s TSP account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tsp:write:admin
+</code>
+,
+<code>
+tsp:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;conference_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;leader_pin&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;dial_in_numbers&quot;=&gt;[{&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;media_link&quot;}, {&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;toll&quot;}], &quot;tsp_bridge&quot;=&gt;&quot;US_TSP_TB&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

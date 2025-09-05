@@ -1,0 +1,76 @@
+# Get a webinar
+
+GET {{baseUrl}}/webinars/:webinarId?occurrence_id=&lt;string&gt;&amp;show_previous_occurrences=&lt;boolean&gt;
+
+
+<p>
+Get details for a scheduled Zoom Webinar.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher plan with a Webinar add-on.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | string |  | Unique identifier for an occurrence of a recurring webinar. [Recurring webinars](https://support.zoom.us/hc/en-us/articles/216354763-How-to-Schedule-A-Recurring-Webinar) can have a maximum of 50 occurrences. When you create a recurring Webinar using [**Create a webinar**](/docs/api-reference/zoom-api/methods#operation/webinarCreate) API, you can retrieve the Occurrence ID from the response of the API call. |
+| `show_previous_occurrences` | string |  | Set the value of this field to `true` if you would like to view Webinar details of all previous occurrences of a recurring Webinar. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;host_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;agenda&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;occurrences&quot;:[{&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;occurrence_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;available&quot;},{&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;occurrence_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;available&quot;}],&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;encrypted_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;h323_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurrence&quot;:{&quot;type&quot;:3,&quot;end_date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_times&quot;:1,&quot;monthly_day&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monthly_week&quot;:2,&quot;monthly_week_day&quot;:7,&quot;repeat_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;weekly_days&quot;:&quot;\u003cstring\u003e&quot;},&quot;settings&quot;:{&quot;allow_multiple_devices&quot;:&quot;\u003cboolean\u003e&quot;,&quot;alternative_hosts&quot;:&quot;\u003cstring\u003e&quot;,&quot;alternative_host_update_polls&quot;:&quot;\u003cboolean\u003e&quot;,&quot;approval_type&quot;:2,&quot;attendees_and_panelists_reminder_email_notification&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:4},&quot;audio&quot;:&quot;both&quot;,&quot;audio_conference_info&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_domains&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_option&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_recording&quot;:&quot;none&quot;,&quot;close_registration&quot;:&quot;\u003cboolean\u003e&quot;,&quot;contact_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;contact_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email_language&quot;:&quot;\u003cstring\u003e&quot;,&quot;enforce_login&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enforce_login_domains&quot;:&quot;\u003cstring\u003e&quot;,&quot;follow_up_absentees_email_notification&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:4},&quot;follow_up_attendees_email_notification&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:6},&quot;global_dial_in_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;hd_video&quot;:false,&quot;hd_video_for_attendees&quot;:false,&quot;host_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;language_interpretation&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;interpreters&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;languages&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;languages&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;sign_language_interpretation&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;interpreters&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;sign_language&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;sign_language&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;panelist_authentication&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_authentication&quot;:&quot;\u003cboolean\u003e&quot;,&quot;add_watermark&quot;:&quot;\u003cboolean\u003e&quot;,&quot;add_audio_watermark&quot;:&quot;\u003cboolean\u003e&quot;,&quot;notify_registrants&quot;:&quot;\u003cboolean\u003e&quot;,&quot;on_demand&quot;:false,&quot;panelists_invitation_email_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;panelists_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;post_webinar_survey&quot;:&quot;\u003cboolean\u003e&quot;,&quot;practice_session&quot;:false,&quot;question_and_answer&quot;:{&quot;allow_submit_questions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_anonymous_questions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answer_questions&quot;:&quot;all&quot;,&quot;attendees_can_comment&quot;:&quot;\u003cboolean\u003e&quot;,&quot;attendees_can_upvote&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_auto_reply&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_reply_text&quot;:&quot;\u003cstring\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;},&quot;registrants_confirmation_email&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registrants_email_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registrants_restrict_number&quot;:0,&quot;registration_type&quot;:1,&quot;send_1080p_video_to_attendees&quot;:false,&quot;show_share_button&quot;:&quot;\u003cboolean\u003e&quot;,&quot;survey_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;enable_session_branding&quot;:&quot;\u003cboolean\u003e&quot;},&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;start_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;type&quot;:5,&quot;is_simulive&quot;:&quot;\u003cboolean\u003e&quot;,&quot;record_file_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

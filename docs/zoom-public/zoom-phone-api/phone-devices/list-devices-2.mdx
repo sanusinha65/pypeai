@@ -1,0 +1,90 @@
+# List devices
+
+GET {{baseUrl}}/phone/devices?type=assigned&amp;assignee_type=user&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+<p>
+List all the 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092">
+desk phone devices
+</a>
+ that are configured with Zoom Phone on an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | (Required) Device status: `assigned` or `unassigned` to list device status in Zoom account. |
+| `assignee_type` | string |  | Type of the assignee. Available if `type = assigned`. Unavailable if the account has not enabled the common area feature. Returns devices of the specified `assignee_type`. If unspecified, returns all assigned devices. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;devices&quot;:[{&quot;assignee&quot;:{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;},{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;}],&quot;device_type&quot;:&quot;AudioCodes405&quot;,&quot;display_name&quot;:&quot;Pooja&#39;s Phone&quot;,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;mac_address&quot;:&quot;203a07240534&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;NjHmTu16Qfe8yOiNJuekXA&quot;,&quot;name&quot;:&quot;HQ site&quot;},&quot;status&quot;:&quot;online&quot;,&quot;provision_template_id&quot;:&quot;Ke5Ghevvoo001hr&quot;},{&quot;assignee&quot;:{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;},{&quot;extension_number&quot;:123,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;name&quot;:&quot;Pooja&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;}],&quot;device_type&quot;:&quot;AudioCodes405&quot;,&quot;display_name&quot;:&quot;Pooja&#39;s Phone&quot;,&quot;id&quot;:&quot;-tDdYIstSumpA0L13GztIQ&quot;,&quot;mac_address&quot;:&quot;203a07240534&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;NjHmTu16Qfe8yOiNJuekXA&quot;,&quot;name&quot;:&quot;HQ site&quot;},&quot;status&quot;:&quot;online&quot;,&quot;provision_template_id&quot;:&quot;Ke5Ghevvoo001hr&quot;}],&quot;next_page_token&quot;:&quot;felbo4ib&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:1}
+```

@@ -1,0 +1,62 @@
+# Share a whiteboard to new users or team chat channels.
+
+POST {{baseUrl}}/whiteboards/:whiteboardId/collaborator
+
+
+<p>
+Use this API to add collaborators to a whiteboard.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+whiteboard_collaborator:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;collaborators&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;channel_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;role&quot;=&gt;0}, {&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;channel_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;role&quot;=&gt;2}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+[{&quot;collaborator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;collaborator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;avatar&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:1,&quot;collaborator_type&quot;:1},{&quot;collaborator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;collaborator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;avatar&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:3,&quot;collaborator_type&quot;:1}]
+```

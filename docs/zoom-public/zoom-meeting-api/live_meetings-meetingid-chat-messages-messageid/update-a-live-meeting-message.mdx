@@ -1,0 +1,69 @@
+# Update a live meeting message
+
+PATCH {{baseUrl}}/live_meetings/:meetingId/chat/messages/:messageId
+
+
+<p>
+Update a message in a live meeting, based on ID. 
+<strong>
+Prerequisites:
+</strong>
+ * Have Zoom enable the DLP for the in-meeting chat feature to use this API.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;message_content&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

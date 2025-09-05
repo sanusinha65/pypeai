@@ -1,0 +1,102 @@
+# Get role information
+
+GET {{baseUrl}}/roles/:roleId
+
+
+<p>
+Each Zoom user automatically has a role which can either be owner, administrator, or member. Account owners and users with edit privileges for role management can add customized roles with a list of privileges.
+</p>
+
+
+
+<p>
+Use this API to get information including specific privileges assigned to a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control">
+role
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Pre-requisites
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+A Pro or higher plan.  
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+For role management and updates, you must be either the account owner or a user with role management permissions.
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+role:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;privileges&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;sub_account_privileges&quot;:{&quot;second_level&quot;:&quot;\u003cinteger\u003e&quot;},&quot;total_members&quot;:&quot;\u003cinteger\u003e&quot;}
+```

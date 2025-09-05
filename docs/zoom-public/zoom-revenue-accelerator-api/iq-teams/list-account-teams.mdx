@@ -1,0 +1,67 @@
+# List Account Teams
+
+GET {{baseUrl}}/iq/teams?parent_team_id=&lt;string&gt;&amp;team_name=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+List account teams. Filter by parent team ID or team name.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_team:read:admin
+</code>
+,
+<code>
+iq_team:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `parent_team_id` | string |  | parent team  id |
+| `team_name` | string |  | the name of team |
+| `page_size` | number |  | The number of records returned in a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of the available result list exceeds the page size. The expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;teams&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;flat team&quot;,&quot;member_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;supervisor_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;leaf&quot;:&quot;\u003cboolean\u003e&quot;,&quot;parent_teams&quot;:[{&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;hierarchical team&quot;,&quot;member_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;supervisor_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;leaf&quot;:&quot;\u003cboolean\u003e&quot;,&quot;parent_teams&quot;:[{&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;}
+```

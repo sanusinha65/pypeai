@@ -1,0 +1,90 @@
+# Get webinar details
+
+GET {{baseUrl}}/metrics/webinars/:webinarId?type=live
+
+
+<p>
+Retrieve details from live or past webinars.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business, Education or API Plan with Webinar add-on.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_webinars:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of webinar to query: 
+* `past` &amp;mdash; All past webinars. 
+* `live` - All live webinars. 
+
+This value defaults to `live`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_quality&quot;:&quot;poor&quot;,&quot;video_quality&quot;:&quot;fair&quot;,&quot;screen_share_quality&quot;:&quot;fair&quot;}
+```

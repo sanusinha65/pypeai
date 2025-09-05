@@ -1,0 +1,118 @@
+# Update a user&#39;s email
+
+PUT {{baseUrl}}/users/:userId/email
+
+
+<p>
+Change a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/201362563-How-Do-I-Change-the-Email-on-My-Account-">
+email address
+</a>
+ on a Zoom account that has managed domain set up. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<ul>
+
+
+<li>
+If the Zoom account in which the user belongs has multiple 
+<a href="https://support.zoom.us/hc/en-us/articles/203395207-What-is-Managed-Domain-">
+managed domains
+</a>
+, then the email to be updated 
+<strong>
+must
+</strong>
+ match one of the managed domains.
+</li>
+
+
+<li>
+A user&#39;s email address can be changed up to 3 times in any 24 hour period.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Managed domain must be enabled in the account. 
+* The new email address should not already exist in Zoom.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

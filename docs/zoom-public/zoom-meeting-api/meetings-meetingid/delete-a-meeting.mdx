@@ -1,0 +1,70 @@
+# Delete a meeting
+
+DELETE {{baseUrl}}/meetings/:meetingId?occurrence_id=&lt;string&gt;&amp;schedule_for_reminder=&lt;boolean&gt;&amp;cancel_meeting_reminder=&lt;boolean&gt;
+
+
+<p>
+Delete a meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | string |  | The meeting or webinar occurrence ID. |
+| `schedule_for_reminder` | string |  | `true`: Notify host and alternative host about the meeting cancellation via email.
+`false`: Do not send any email notification. |
+| `cancel_meeting_reminder` | string |  | `true`: Notify registrants about the meeting cancellation via email. 
+
+`false`: Do not send any email notification to meeting registrants. 
+
+The default value of this field is `false`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

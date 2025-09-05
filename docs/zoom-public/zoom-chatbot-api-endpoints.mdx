@@ -1,0 +1,41 @@
+#Zoom Chatbot API Endpoints
+
+Number of APIs: 5
+
+
+<p>
+Test the Zoom Chatbot API right in Qodex.
+</p>
+
+
+
+<p>
+
+<a href="https://developers.zoom.us/docs/team-chat-apps/send-edit-and-delete-messages/">
+https://developers.zoom.us/docs/team-chat-apps/send-edit-and-delete-messages/
+</a>
+
+</p>
+
+
+
+1. [Message with Markdown](https://developers.qodex.ai/zoom-public/zoom-chatbot-api-endpoints/message-with-markdown)
+POST {{baseUrl}}/v2/im/chat/messages
+
+
+2. [Message](https://developers.qodex.ai/zoom-public/zoom-chatbot-api-endpoints/message)
+PUT {{baseUrl}}/im/chat/messages/{messageId}
+
+
+3. [Message](https://developers.qodex.ai/zoom-public/zoom-chatbot-api-endpoints/message-1)
+DELETE {{baseUrl}}/im/chat/messages/{messageId}
+
+
+4. [Authorize Chatbot](https://developers.qodex.ai/zoom-public/zoom-chatbot-api-endpoints/authorize-chatbot)
+POST https://zoom.us/oauth/token?grant_type=client_credentials
+
+
+5. [Message with Dropdown](https://developers.qodex.ai/zoom-public/zoom-chatbot-api-endpoints/message-with-dropdown)
+POST {{baseUrl}}/im/chat/messages
+
+

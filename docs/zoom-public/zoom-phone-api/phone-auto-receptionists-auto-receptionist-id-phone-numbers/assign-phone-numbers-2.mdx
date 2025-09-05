@@ -1,0 +1,85 @@
+# Assign phone numbers
+
+POST {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/phone_numbers
+
+
+<p>
+Assign available phone numbers to an 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+. The available numbers can be retrieved using the List Phone Numbers API with 
+<code>
+type
+</code>
+ query parameter set to 
+<q>
+unassigned
+</q>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom Phone License
+* Account owner or admin permissions
+<br>
+
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_numbers&quot;=&gt;[{&quot;id&quot;=&gt;&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;, &quot;number&quot;=&gt;&quot;+12058945717&quot;}, {&quot;id&quot;=&gt;&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;, &quot;number&quot;=&gt;&quot;+12058945717&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

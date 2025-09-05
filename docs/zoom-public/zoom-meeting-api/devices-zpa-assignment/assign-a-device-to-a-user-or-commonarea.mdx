@@ -1,0 +1,72 @@
+# Assign a device to a user or commonarea
+
+POST {{baseUrl}}/devices/zpa/assignment
+
+
+<p>
+Assign a device to a user or common area, or move a device to another user or common area, or remove a device.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Device must be enrolled in Zoom Device Management (ZDM).
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;vendor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;extension_number&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

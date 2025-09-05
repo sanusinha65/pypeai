@@ -1,0 +1,73 @@
+# List emails from draft folder
+
+GET {{baseUrl}}/emails/mailboxes/:email/drafts?includeSpamTrash=&lt;boolean&gt;&amp;maxResults=&lt;integer&gt;&amp;pageToken=&lt;string&gt;&amp;q=&lt;string&gt;
+
+
+<p>
+Lists the draft messages in the mailbox.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `includeSpamTrash` | string |  | Include messages from SPAM and TRASH in the results. Value should be either &quot;true&quot; or &quot;false&quot;. |
+| `maxResults` | string |  | Maximum number of drafts to return. This field defaults to 50. The maximum allowed value for this field is 500. |
+| `pageToken` | string |  | Page token to retrieve a specific page of results in the list. |
+| `q` | string |  | Specify a server side elastic search query. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;drafts&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;nextPageToken&quot;:&quot;\u003cstring\u003e&quot;,&quot;resultSizeEstimate&quot;:&quot;\u003cinteger\u003e&quot;}
+```

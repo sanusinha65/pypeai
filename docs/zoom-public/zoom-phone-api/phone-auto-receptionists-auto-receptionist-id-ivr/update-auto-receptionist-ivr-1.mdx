@@ -1,0 +1,74 @@
+# Update auto receptionist IVR
+
+PATCH {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/ivr
+
+
+<p>
+Use this API to update the 
+<a href="https://support.zoom.us/hc/en-us/articles/360038601971">
+interactive voice response (IVR) system
+</a>
+ of the specified auto receptionist.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;audio_prompt_id&quot;=&gt;&quot;j2IsurWLRR-yWcbNGqPnaA&quot;, &quot;caller_enters_no_action&quot;=&gt;{&quot;action&quot;=&gt;200, &quot;audio_prompt_repeat&quot;=&gt;2, &quot;forward_to_extension_id&quot;=&gt;&quot;z97zV9NsSoa846i-ag3uEw&quot;}, &quot;holiday_id&quot;=&gt;&quot;YpLBylKbQKe1vEB1iSGatQ&quot;, &quot;hours_type&quot;=&gt;&quot;closed_hours&quot;, &quot;key_action&quot;=&gt;{&quot;action&quot;=&gt;200, &quot;key&quot;=&gt;&quot;0&quot;, &quot;target&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;CQLPaj0oSCC0olJLmAfgwQ&quot;, &quot;phone_number&quot;=&gt;&quot;+12055437350&quot;}, &quot;voicemail_greeting_id&quot;=&gt;&quot;z97zV9NsSoa846i-ag3uEw&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

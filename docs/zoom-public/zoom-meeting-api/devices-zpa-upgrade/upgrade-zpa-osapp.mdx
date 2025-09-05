@@ -1,0 +1,61 @@
+# upgrade zpa os/app
+
+POST {{baseUrl}}/devices/zpa/upgrade
+
+
+<p>
+Upgrade ZPA firmware or app by Zoom Device Manager (ZDM) group ID.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;data&quot;=&gt;{&quot;upgrade_type&quot;=&gt;&quot;UPGRADE_FIRMWARE&quot;, &quot;firmware_versions&quot;=&gt;[{&quot;vendor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;version&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;vendor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;version&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;zdm_group_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

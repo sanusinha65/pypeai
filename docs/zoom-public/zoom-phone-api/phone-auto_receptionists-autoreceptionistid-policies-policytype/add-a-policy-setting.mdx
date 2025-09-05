@@ -1,0 +1,92 @@
+# Add a policy setting
+
+POST {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/policies/:policyType
+
+
+<p>
+Use this API to add a policy sub-setting according to the policy type for a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+. For example, you can set up shared access members.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:auto_receptionist_policy:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;voicemail_access_member&quot;=&gt;{&quot;access_user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;download&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;voicemail_access_member&quot;:{&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;download&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

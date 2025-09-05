@@ -1,0 +1,67 @@
+# Move the specified email to TRASH folder
+
+POST {{baseUrl}}/emails/mailboxes/:email/messages/:messageId/trash
+
+
+<p>
+Moves the specified message to the TRASH folder.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}
+```

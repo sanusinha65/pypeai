@@ -1,0 +1,93 @@
+# Add a new device
+
+POST {{baseUrl}}/devices
+
+
+<p>
+Add a new device to Zoom account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+device:write:admin
+</code>
+   
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;device_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;device_type&quot;=&gt;5, &quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;serial_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;vendor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;room_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;tag&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zdm_group_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;extension_number&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

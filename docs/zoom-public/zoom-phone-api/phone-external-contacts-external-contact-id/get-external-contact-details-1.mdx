@@ -1,0 +1,67 @@
+# Get external contact details
+
+GET {{baseUrl}}/phone/external_contacts/:externalContactId
+
+
+<p>
+Use this API to get an external contact&#39;s information.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+<br>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;description&quot;:&quot;External contact Johnson&quot;,&quot;email&quot;:&quot;example@example.com&quot;,&quot;extension_number&quot;:&quot;101014&quot;,&quot;external_contact_id&quot;:&quot;OJGi5xOFQPmrJbKg68-iWg&quot;,&quot;id&quot;:&quot;external_contact_01&quot;,&quot;name&quot;:&quot;Johnson&quot;,&quot;phone_numbers&quot;:[&quot;+12058945656&quot;,&quot;+12058945657&quot;]}
+```

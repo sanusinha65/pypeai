@@ -1,0 +1,61 @@
+# Update an inbox
+
+PATCH {{baseUrl}}/contact_center/inboxes/:inboxId
+
+
+<p>
+Update an inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_inbox:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;inbox_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;inbox_description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;inbox_content_storage_location&quot;=&gt;&quot;BR&quot;, &quot;voicemail&quot;=&gt;{&quot;soft_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;soft_delete_days_limit&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;voicemail_time_limit&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;delete_voicemail_days_limit&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;voicemail_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;voicemail_notification_by_email&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;include_voicemail_file&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;include_voicemail_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;forward_voicemail_to_emails&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;emails&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

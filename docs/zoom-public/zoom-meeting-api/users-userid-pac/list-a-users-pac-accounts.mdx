@@ -1,0 +1,107 @@
+# List a user&#39;s PAC accounts
+
+GET {{baseUrl}}/users/:userId/pac
+
+
+<p>
+Retrieve a list of a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/204517069-Getting-Started-with-Personal-Audio-Conference">
+personal audio conference (PAC)
+</a>
+ accounts. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+PAC allows Pro or higher account holders to host meetings through PSTN (phone dial-in) only. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+ 
+* A Pro or higher plan with an 
+<a href="https://support.zoom.us/hc/en-us/articles/204517069-Getting-Started-with-Personal-Audio-Conference">
+Audio Conferencing
+</a>
+ subscription. 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/204517069-Getting-Started-with-Personal-Audio-Conference#h_01F5BPM447M6QDJXX50RSFXKJ3">
+
+<strong>
+Personal Audio Conference
+</strong>
+
+</a>
+ setting enabled in the user&#39;s profile.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+pac:read:admin
+</code>
+,
+<code>
+pac:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;pac_accounts&quot;:[{&quot;conference_id&quot;:&quot;\u003clong\u003e&quot;,&quot;dedicated_dial_in_number&quot;:[{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;global_dial_in_numbers&quot;:[{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;listen_only_password&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_password&quot;:&quot;\u003cstring\u003e&quot;},{&quot;conference_id&quot;:&quot;\u003clong\u003e&quot;,&quot;dedicated_dial_in_number&quot;:[{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;global_dial_in_numbers&quot;:[{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;listen_only_password&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_password&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,65 @@
+# Get a meeting poll
+
+GET {{baseUrl}}/meetings/:meetingId/polls/:pollId
+
+
+<p>
+Polls allow the meeting host to survey attendees. Retrieve information about a specific meeting 
+<a href="https://support.zoom.us/hc/en-us/articles/213756303-Polling-for-Meetings">
+poll
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;ended&quot;,&quot;anonymous&quot;:false,&quot;poll_type&quot;:1,&quot;questions&quot;:[{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:false,&quot;type&quot;:&quot;long_answer&quot;},{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:false,&quot;type&quot;:&quot;rating_scale&quot;}],&quot;title&quot;:&quot;\u003cstring\u003e&quot;}
+```

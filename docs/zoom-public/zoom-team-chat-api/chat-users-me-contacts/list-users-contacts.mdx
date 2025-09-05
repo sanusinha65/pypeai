@@ -1,0 +1,106 @@
+# List user&#39;s contacts
+
+GET {{baseUrl}}/chat/users/me/contacts?type=company&amp;page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+A user under an organization&#39;s Zoom account has internal users listed under Company Contacts in the Zoom Client. A Zoom user can also add another Zoom user as a 
+<a href="https://support.zoom.us/hc/en-us/articles/115004055706-Managing-Contacts">
+contact
+</a>
+. Call this API to list all the contacts of a Zoom user. Zoom contacts are categorized into 
+<q>
+company contacts
+</q>
+ and 
+<q>
+external contacts
+</q>
+. You must specify the contact type in the 
+<code>
+type
+</code>
+ query parameter. If you do not specify, by default, the type will be set as company contact.
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note: 
+</b>
+ This API only supports 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+.
+</p>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Scope
+</strong>
+: 
+<code>
+chat_contact:read
+</code>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of contact. The value can be one of the following:
+`company`: Contacts from the user&#39;s organization.
+`external`: External contacts.  |
+| `page_size` | number |  | The number of records returned with a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;contacts&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30}
+```

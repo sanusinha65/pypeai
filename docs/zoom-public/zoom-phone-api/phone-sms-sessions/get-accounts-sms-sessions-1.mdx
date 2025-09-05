@@ -1,0 +1,80 @@
+# Get account&#39;s SMS sessions
+
+GET {{baseUrl}}/phone/sms/sessions?page_size=30&amp;next_page_token=2z0Ov7kngllAbfQi4ZR2eQTb3mFVYQpYAe2&amp;from=2021-12-01&amp;to=2021-12-31&amp;phone_number=18108001001
+
+
+<p>
+Get details about SMS sessions for an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone_sms:read:admin
+</code>
+, 
+<code>
+phone_sms:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Paid account
+* User-enabled Zoom phone
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The current page number of returned records. |
+| `from` | string |  | Start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. If unspecified, returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `phone_number` | number |  | Either the sender&#39;s or receiver&#39;s phone number, to limit the list of SMS sessions. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;2z0Ov7kngllAbfQi4ZR2eQTb3mFVYQpYAe3&quot;,&quot;page_size&quot;:77528222,&quot;sms_sessions&quot;:[{&quot;last_access_time&quot;:&quot;2022-03-25T02:11:27Z&quot;,&quot;participants&quot;:[{&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;18108001001&quot;},{&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;18108001001&quot;}],&quot;session_id&quot;:&quot;d39fc7e14ef9f2b6453f5f02524d79a2&quot;},{&quot;last_access_time&quot;:&quot;2022-03-25T02:11:27Z&quot;,&quot;participants&quot;:[{&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;18108001001&quot;},{&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;18108001001&quot;}],&quot;session_id&quot;:&quot;d39fc7e14ef9f2b6453f5f02524d79a2&quot;}]}
+```

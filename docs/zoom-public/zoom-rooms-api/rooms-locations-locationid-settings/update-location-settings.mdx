@@ -1,0 +1,122 @@
+# Update location settings
+
+PATCH {{baseUrl}}/rooms/locations/:locationId/settings?setting_type=meeting
+
+
+<p>
+Update information on either meeting or alert settings applied to Zoom Rooms located in a specific location. To update 
+<strong>
+Alert Settings
+</strong>
+, specify 
+<code>
+alert
+</code>
+ as the value of the 
+<code>
+setting_type
+</code>
+ query parameter. Similarly, to update 
+<strong>
+Meeting Settings
+</strong>
+, specify 
+<code>
+meeting
+</code>
+ as the value of the 
+<code>
+setting_type
+</code>
+ query parameter.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Zoom Room licenses
+</li>
+
+
+<li>
+Owner or Admin privileges on the Zoom Account.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `setting_type` | string |  | (Required) The type of setting that you would like to update.  
+  `alert`: Alert Settings applied on the Zoom Rooms Account.  
+ 
+`meeting`: Meeting settings of the Zoom Rooms Account.  
+ 
+`signage`: Digital signage settings. |
+
+
+### Request Body
+```
+{&quot;meeting_security&quot;=&gt;{&quot;encryption_type&quot;=&gt;&quot;enhanced_encryption&quot;, &quot;end_to_end_encrypted_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_security&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;zoom_rooms&quot;=&gt;{&quot;allow_multiple_content_sharing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;audio_device_daily_auto_test&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_accept_incoming_call_and_fecc&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_direct_sharing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_start_scheduled_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_stop_scheduled_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;count_attendees_number_in_room&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;display_feedback_survey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;display_meeting_list&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;display_top_banner&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;encrypt_shared_screen_content&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;hide_id_for_private_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;hide_self_view&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;lock_speaker_volume_control&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;send_whiteboard_to_internal_contact_only&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_alert_before_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_call_history_in_room&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_contact_list_on_controller&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_non_video_participants&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;start_airplay_manually&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;start_airplay_mirroring&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;start_hdmi_content_share_manualy&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;support_join_3rd_party_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;transform_meeting_to_private&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;upcoming_meeting_alert&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;voice_commands&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;weekly_system_restart&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

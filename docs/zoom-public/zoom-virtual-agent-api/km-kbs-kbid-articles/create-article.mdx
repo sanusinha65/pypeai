@@ -1,0 +1,62 @@
+# Create Article
+
+POST {{baseUrl}}/km/kbs/:kbId/articles
+
+
+<p>
+Create a knowledge base article.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zva:write:km_kbs
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;content&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;exclude&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;category&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;url&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;language&quot;=&gt;&quot;es-MX&quot;, &quot;external_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;kb_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;category&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;url&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;updated_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;exclude&quot;:&quot;\u003cboolean\u003e&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;external_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;}
+```

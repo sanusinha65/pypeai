@@ -1,0 +1,73 @@
+# Change Zoom Rooms app version
+
+PUT {{baseUrl}}/rooms/:id/devices/:deviceId/app_version
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/204675449-Upgrade-or-Downgrade-Zoom-Rooms-Software">
+upgrade or downgrade
+</a>
+ the version of your installed Zoom Rooms app on your Mac or Windows device. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account with Zoom Rooms. 
+* The Zoom Rooms software must be installed on a Mac or a Windows device. This API does not support other devices.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;upgrade&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

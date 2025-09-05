@@ -1,0 +1,61 @@
+# List past meeting instances
+
+GET {{baseUrl}}/past_meetings/:meetingId/instances
+
+
+<p>
+Return a list of past meeting instances. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;meetings&quot;:[{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

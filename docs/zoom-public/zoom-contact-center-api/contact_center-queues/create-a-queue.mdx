@@ -1,0 +1,66 @@
+# Create a queue
+
+POST {{baseUrl}}/contact_center/queues
+
+
+<p>
+Create an agent 
+<a href="https://support.zoom.us/hc/en-us/articles/4423986595085">
+queue
+</a>
+ to determine which agents calls are routed to. Queues also link to an existing routing profile to determine how calls are routed. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;queue_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;queue_description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;channel_types&quot;=&gt;[&quot;video&quot;, &quot;video&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_types&quot;:[&quot;sms&quot;,&quot;chat&quot;]}
+```

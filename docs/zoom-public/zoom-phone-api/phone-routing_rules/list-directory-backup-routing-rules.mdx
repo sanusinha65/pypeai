@@ -1,0 +1,78 @@
+# List directory backup routing rules
+
+GET {{baseUrl}}/phone/routing_rules?site_id=&lt;string&gt;
+
+
+<p>
+Returns a list of directory backup routing rules. The directory backup routing rules are a series of predefined Regular Expressions. These rules are used to route outgoing calls. If a dialed number does not match a Zoom Phone user, and does not match a defined External Contact, these rules are tested next. If a dialed number does not match any rules, the call will be routed via the PSTN. 
+<strong>
+Prerequisites:
+</strong>
+ * A Business or Enterprise account * A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_routing_rules:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `site_id` | string |  | The unique identifier of the site. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_pattern&quot;:&quot;\u003cstring\u003e&quot;,&quot;order&quot;:&quot;\u003cinteger\u003e&quot;,&quot;routing_path&quot;:{&quot;sip_group&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;sip_group&quot;},&quot;routing_rule_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;translation&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_pattern&quot;:&quot;\u003cstring\u003e&quot;,&quot;order&quot;:&quot;\u003cinteger\u003e&quot;,&quot;routing_path&quot;:{&quot;sip_group&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;sip_group&quot;},&quot;routing_rule_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;translation&quot;:&quot;\u003cstring\u003e&quot;}]
+```

@@ -1,0 +1,74 @@
+# Create a system status
+
+POST {{baseUrl}}/contact_center/system_statuses
+
+
+<p>
+Create custom statuses for the agent
+<u>
+status and queue
+</u>
+opt
+<u>
+out
+</u>
+and
+<u>
+not
+</u>
+ready_status categories. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_preference:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;status_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status_category&quot;=&gt;&quot;queue_opt_out_and_not_ready_status&quot;, &quot;enable&quot;=&gt;true}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Not Ready&quot;,&quot;status_type&quot;:&quot;custom&quot;,&quot;status_category&quot;:&quot;agent_status&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;}
+```

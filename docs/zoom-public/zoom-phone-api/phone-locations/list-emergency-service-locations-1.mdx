@@ -1,0 +1,69 @@
+# List emergency service locations
+
+GET {{baseUrl}}/phone/locations?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30&amp;site_id=SQv52YtkRLC2dwrDdYtGsA
+
+
+<p>
+Use this API to list emergency service locations.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `site_id` | string |  | Unique identifier of the site. This can be retrieved from the [List Phone Sites](https://marketplace.zoom.us/docs/api-reference/phone/methods#operation/listPhoneSites) API. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;locations&quot;:[{&quot;bssid&quot;:&quot;SA43YjfBTS6gJbUpfvIziQ&quot;,&quot;elin&quot;:{&quot;phone_number&quot;:&quot;+12058945656&quot;,&quot;phone_number_id&quot;:&quot;9h5vTQJ0TmyKs0wItZ3JAw&quot;},&quot;id&quot;:&quot;eRYjZlItQIqlFbCuRA__SQ&quot;,&quot;identifier&quot;:&quot;FksDtQDfR9qs3gWXNDsfIw&quot;,&quot;name&quot;:&quot;example location&quot;,&quot;network_switches&quot;:[{&quot;mac_address&quot;:&quot;0004f25eec3d&quot;,&quot;port&quot;:&quot;23&quot;,&quot;port_prefix&quot;:&quot;01&quot;,&quot;port_range_from&quot;:&quot;01&quot;,&quot;port_range_to&quot;:&quot;02&quot;},{&quot;mac_address&quot;:&quot;0004f25eec3d&quot;,&quot;port&quot;:&quot;23&quot;,&quot;port_prefix&quot;:&quot;01&quot;,&quot;port_range_from&quot;:&quot;01&quot;,&quot;port_range_to&quot;:&quot;02&quot;}],&quot;parent_location_id&quot;:&quot;RTGmTYafRU24RqJunfotSA&quot;,&quot;private_ip&quot;:&quot;192.1.1.2&quot;,&quot;public_ip&quot;:&quot;192.1.1.1&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;band width&quot;,&quot;id&quot;:&quot;F_WKDH6FRdeddZBcNUlUeA&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;6th floor&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;zip&quot;:&quot;95113&quot;,&quot;vat_number&quot;:&quot;123456789B01&quot;},&quot;minimum_match_criteria&quot;:true},{&quot;bssid&quot;:&quot;SA43YjfBTS6gJbUpfvIziQ&quot;,&quot;elin&quot;:{&quot;phone_number&quot;:&quot;+12058945656&quot;,&quot;phone_number_id&quot;:&quot;9h5vTQJ0TmyKs0wItZ3JAw&quot;},&quot;id&quot;:&quot;eRYjZlItQIqlFbCuRA__SQ&quot;,&quot;identifier&quot;:&quot;FksDtQDfR9qs3gWXNDsfIw&quot;,&quot;name&quot;:&quot;example location&quot;,&quot;network_switches&quot;:[{&quot;mac_address&quot;:&quot;0004f25eec3d&quot;,&quot;port&quot;:&quot;23&quot;,&quot;port_prefix&quot;:&quot;01&quot;,&quot;port_range_from&quot;:&quot;01&quot;,&quot;port_range_to&quot;:&quot;02&quot;},{&quot;mac_address&quot;:&quot;0004f25eec3d&quot;,&quot;port&quot;:&quot;23&quot;,&quot;port_prefix&quot;:&quot;01&quot;,&quot;port_range_from&quot;:&quot;01&quot;,&quot;port_range_to&quot;:&quot;02&quot;}],&quot;parent_location_id&quot;:&quot;RTGmTYafRU24RqJunfotSA&quot;,&quot;private_ip&quot;:&quot;192.1.1.2&quot;,&quot;public_ip&quot;:&quot;192.1.1.1&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;band width&quot;,&quot;id&quot;:&quot;F_WKDH6FRdeddZBcNUlUeA&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;6th floor&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;country&quot;:&quot;US&quot;,&quot;zip&quot;:&quot;95113&quot;,&quot;vat_number&quot;:&quot;123456789B01&quot;},&quot;minimum_match_criteria&quot;:true}],&quot;next_page_token&quot;:&quot;T6WMY4fJBIAlxPUiqRtwvQS9dvsq8AoRam2&quot;,&quot;page_size&quot;:30}
+```

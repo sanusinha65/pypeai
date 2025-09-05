@@ -1,0 +1,66 @@
+# Get a workspace&#39;s reservations
+
+GET {{baseUrl}}/workspaces/:workspaceId/reservations?from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;&amp;user_id=&lt;string&gt;
+
+
+<p>
+Use this API to get a workspace&#39;s reservations. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:read
+</code>
+
+<code>
+workspace:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The start date of the query. |
+| `to` | string |  | The end date of the query. Can be up to 14 days in the future. |
+| `user_id` | string |  | The ID of the user for whom to create a workspace reservation. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;reservations&quot;:[{&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;}
+```

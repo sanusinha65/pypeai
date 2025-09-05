@@ -1,0 +1,70 @@
+# Add an external contact
+
+POST {{baseUrl}}/phone/external_contacts
+
+
+<p>
+Use this API to add an external contact.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;Johnson&quot;, &quot;description&quot;=&gt;&quot;External contact Johnson&quot;, &quot;email&quot;=&gt;&quot;example@example.com&quot;, &quot;extension_number&quot;=&gt;&quot;101014&quot;, &quot;id&quot;=&gt;&quot;external_contact_01&quot;, &quot;phone_numbers&quot;=&gt;[&quot;+12058945656&quot;, &quot;+12058945657&quot;], &quot;routing_path&quot;=&gt;&quot;PSTN&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

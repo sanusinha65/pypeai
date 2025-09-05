@@ -1,0 +1,84 @@
+# List emergency addresses
+
+GET {{baseUrl}}/phone/emergency_addresses?site_id=SQv52YtkRLC2dwrDdYtGsA&amp;user_id=DnEopNmXQEGU2uvvzjgojw&amp;level=1&amp;status=1&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+<p>
+Use this API to list emergency addresses.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `site_id` | string |  | The emergency address site ID. |
+| `user_id` | string |  | User ID to which the personal emergency address belongs. |
+| `level` | number |  | The emergency address owner level:
+
+* `0` - Account/Company-level emergency address. 
+
+* `1` - User/Personal-level emergency address.
+
+* `2` - Unknown company/pending emergency address. |
+| `status` | number |  | The emergency address verification status: 
+* `1` — Verification not Required. 
+* `2` — Unverified. 
+* `3` — Verification requested. 
+* `4` — Verified. 
+* `5` — Rejected. 
+* `6` — Verification failed. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;emergency_addresses&quot;:[{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;8 Floor&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;,&quot;is_default&quot;:true,&quot;level&quot;:1,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;101002&quot;,&quot;id&quot;:&quot;y9th648XRfSL9S61p1TsBw&quot;,&quot;name&quot;:&quot;ZOOM_API Test&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main site&quot;},&quot;state_code&quot;:&quot;CA&quot;,&quot;status&quot;:1,&quot;zip&quot;:&quot;95113&quot;},{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;8 Floor&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;,&quot;is_default&quot;:true,&quot;level&quot;:1,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;101002&quot;,&quot;id&quot;:&quot;y9th648XRfSL9S61p1TsBw&quot;,&quot;name&quot;:&quot;ZOOM_API Test&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main site&quot;},&quot;state_code&quot;:&quot;CA&quot;,&quot;status&quot;:1,&quot;zip&quot;:&quot;95113&quot;}],&quot;next_page_token&quot;:&quot;T6WMY4fJBIAlxPUiqRtwvQS9dvsq8AoRam2&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:20}
+```

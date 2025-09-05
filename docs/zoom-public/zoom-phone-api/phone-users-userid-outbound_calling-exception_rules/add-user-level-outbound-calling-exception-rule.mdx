@@ -1,0 +1,88 @@
+# Add user level outbound calling exception rule
+
+POST {{baseUrl}}/phone/users/:userId/outbound_calling/exception_rules
+
+
+<p>
+Adds an user level outbound calling policy exception rule for the country region.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:user_outbound_calling_rule:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;exception_rule&quot;=&gt;{&quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;match_type&quot;=&gt;&quot;prefix&quot;, &quot;prefix_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;active&quot;, &quot;comment&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;exception_rule_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

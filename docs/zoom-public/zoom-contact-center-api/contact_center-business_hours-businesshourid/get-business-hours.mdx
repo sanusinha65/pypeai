@@ -1,0 +1,61 @@
+# Get business hours
+
+GET {{baseUrl}}/contact_center/business_hours/:businessHourId
+
+
+<p>
+Get information about business hours. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_operating_hours:read:admin
+</code>
+
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;business_hour_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;business_hour_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;business_hour_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;hours&quot;:{&quot;hour_type&quot;:2,&quot;custom_hours&quot;:[{&quot;day_of_week&quot;:3,&quot;custom_hour_type&quot;:2,&quot;custom_hour_ranges&quot;:[{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;day_of_week&quot;:1,&quot;custom_hour_type&quot;:2,&quot;custom_hour_ranges&quot;:[{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]}]}}
+```

@@ -1,0 +1,83 @@
+# Get emergency service location details
+
+GET {{baseUrl}}/phone/locations/:locationId
+
+
+<p>
+Returns an emergency service location&#39;s information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:emergency_location:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;bssid&quot;:&quot;\u003cstring\u003e&quot;,&quot;elin&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_switches&quot;:[{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_prefix&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_to&quot;:&quot;\u003cstring\u003e&quot;},{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_prefix&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_to&quot;:&quot;\u003cstring\u003e&quot;}],&quot;parent_location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;minimum_match_criteria&quot;:&quot;\u003cboolean\u003e&quot;}
+```

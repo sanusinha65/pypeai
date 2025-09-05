@@ -1,0 +1,60 @@
+# Unassign inbox access users
+
+DELETE {{baseUrl}}/contact_center/inboxes/:inboxId/users?user_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;
+
+
+<p>
+Remove users&#39; access to an inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `user_ids` | string |  | (Required) A comma-separated list of user IDs to query, up to 30 user IDs. |
+| `user_ids` | string |  | (Required) A comma-separated list of user IDs to query, up to 30 user IDs. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

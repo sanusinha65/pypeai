@@ -1,0 +1,66 @@
+# Create a new ACL rule
+
+POST {{baseUrl}}/calendars/:calId/acl
+
+
+<p>
+Creates an access control list rule.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;role&quot;=&gt;&quot;none&quot;, &quot;scope&quot;=&gt;{&quot;type&quot;=&gt;&quot;default&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;role&quot;:&quot;freeBusyReader&quot;,&quot;scope&quot;:{&quot;type&quot;:&quot;default&quot;},&quot;kind&quot;:&quot;calendar#aclRule&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

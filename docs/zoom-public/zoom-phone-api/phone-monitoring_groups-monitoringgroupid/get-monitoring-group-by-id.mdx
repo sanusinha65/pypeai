@@ -1,0 +1,87 @@
+# Get monitoring group by ID
+
+GET {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId
+
+
+<p>
+Returns a 
+<a href="https://support.zoom.us/hc/en-us/articles/360044804711">
+monitoring group
+</a>
+ for the specified ID.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+ * A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:monitoring_group:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;monitor_members_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monitored_members_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monitoring_privileges&quot;:[&quot;take_over&quot;,&quot;barge&quot;],&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:1}
+```

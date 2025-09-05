@@ -1,0 +1,125 @@
+# Get chat metrics
+
+GET {{baseUrl}}/metrics/chat?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Get 
+<a href="https://support.zoom.us/hc/en-us/articles/204654719-Dashboard#h_cc7e9749-1c70-4afb-a9a2-9680654821e4">
+metrics
+</a>
+ for how users are utilizing Zoom Chat to send messages.
+</p>
+
+
+
+<p>
+Use the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters to specify a monthly date range for the dashboard data. The monthly date range must be within the last six months.
+</p>
+
+
+
+<p>
+&gt; 
+<strong>
+Note:
+</strong>
+ To query chat metrics from July 1, 2021 and later, use this endpoint instead of the 
+<a href="/docs/api-reference/zoom-api/methods#operation/dashboardIM">
+
+<strong>
+Get IM metrics
+</strong>
+
+</a>
+ API.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business or a higher plan
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_im:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Resource-intensive
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;users&quot;:[{&quot;audio_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;code_sippet_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;files_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;giphys_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;group_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;images_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;p2p_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;text_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;video_sent&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;audio_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;code_sippet_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;files_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;giphys_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;group_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;images_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;p2p_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;text_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_sent&quot;:&quot;\u003cinteger\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;video_sent&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

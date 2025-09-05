@@ -1,0 +1,122 @@
+# Get a message
+
+GET {{baseUrl}}/chat/users/:userId/messages/:messageId?to_contact=&lt;email&gt;&amp;to_channel=&lt;string&gt;&amp;download_file_formats=audio/mp4
+
+
+<p>
+Gets a chat message previously sent to a contact or a channel. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+You must provide one of the following query parameters:
+<br>
+
+* 
+<code>
+to_contact
+</code>
+ — The email address of the Zoom contact to whom you sent the message.
+* 
+<code>
+to_channel
+</code>
+ — The ID of the Zoom channel where you sent the message.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:read
+</code>
+, 
+<code>
+chat_message:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note:
+</b>
+ For an 
+<b>
+account-level
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, you can only use this API for a user assigned 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:~:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+the 
+<b>
+Edit
+</b>
+ permission for the 
+<b>
+Chat message
+</b>
+ role setting
+</a>
+.
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `to_contact` | string |  | The user ID or member ID or email address of a chat contact to whom the message was sent. You must provide this parameter or the `to_channel` parameter. |
+| `to_channel` | string |  | The channel ID where the message was sent. You must provide this parameter or the `to_channel` parameter. |
+| `download_file_formats` | string |  | For different types of files, this field supports returning the download URL in the specified format. Currently, we only support the download URL in the mp4 format for audio files. If this parameter is not specified, will return the download URL of the file in its default format. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

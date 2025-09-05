@@ -1,0 +1,80 @@
+# Delete an SLG policy setting
+
+DELETE {{baseUrl}}/phone/shared_line_groups/:slgId/policy/:policyType?shared_ids=&lt;string&gt;&amp;shared_ids=&lt;string&gt;
+
+
+<p>
+Removes the policy sub-setting for a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792">
+shared line group
+</a>
+ according to the 
+<code>
+policyType
+</code>
+. For example, you can use this API to remove shared access members. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or higher account with Zoom Phone license.
+* Account owner or admin privileges 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `shared_ids` | string |  | (Required) This field is a comma separated list of shared IDs to remove. The number is limited to the minimum value of 10 or the number of allowed access members account setting. |
+| `shared_ids` | string |  | (Required) This field is a comma separated list of shared IDs to remove. The number is limited to the minimum value of 10 or the number of allowed access members account setting. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

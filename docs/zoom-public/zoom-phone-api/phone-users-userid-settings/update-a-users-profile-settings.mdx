@@ -1,0 +1,111 @@
+# Update a user&#39;s profile settings
+
+PATCH {{baseUrl}}/phone/users/:userId/settings
+
+
+<p>
+Updates the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360021325712-Configuring-Settings">
+profile settings
+</a>
+ of a user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+,
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:user_setting
+</code>
+,
+<code>
+phone:update:user_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;area_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;audio_prompt_language&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country_iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;music_on_hold_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;outbound_caller_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

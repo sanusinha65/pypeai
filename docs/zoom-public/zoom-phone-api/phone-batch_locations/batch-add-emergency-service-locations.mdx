@@ -1,0 +1,88 @@
+# Batch add emergency service locations
+
+POST {{baseUrl}}/phone/batch_locations
+
+
+<p>
+Batches the add emergency service locations.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:batch_emergency_locations:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;locations&quot;=&gt;[{&quot;company_address&quot;=&gt;{&quot;address_line1&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address_line2&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;vat_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;identifier&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;bssid&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;elin&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;network_switches&quot;=&gt;[{&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_prefix&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_prefix&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;parent_identifier&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;private_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;public_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sip_group_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;minimum_match_criteria&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;company_address&quot;=&gt;{&quot;address_line1&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address_line2&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;vat_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;identifier&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;bssid&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;elin&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;network_switches&quot;=&gt;[{&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_prefix&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;mac_address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_prefix&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;port_range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;parent_identifier&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;private_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;public_ip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sip_group_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;minimum_match_criteria&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;locations&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

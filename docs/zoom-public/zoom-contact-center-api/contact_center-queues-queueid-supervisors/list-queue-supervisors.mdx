@@ -1,0 +1,57 @@
+# List queue supervisors
+
+GET {{baseUrl}}/contact_center/queues/:queueId/supervisors
+
+
+<p>
+Return a list of a queue&#39;s assigned supervisors. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;supervisors&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;role_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Occupied&quot;,&quot;user_access&quot;:&quot;active&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;role_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Not Ready&quot;,&quot;user_access&quot;:&quot;active&quot;}]}
+```

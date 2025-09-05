@@ -1,0 +1,90 @@
+# List Zoom Rooms without Zoom Phone assignment
+
+GET {{baseUrl}}/phone/rooms/unassigned?keyword=&lt;string&gt;
+
+
+<p>
+Use this API to retrieve 
+<a href="https://support.zoom.us/hc/en-us/articles/360025153711">
+Zoom Rooms
+</a>
+ that are not assigned a Zoom Phone.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_rooms:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `keyword` | string |  | A search keyword for Zoom Room&#39;s name. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;rooms&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_info&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_info&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

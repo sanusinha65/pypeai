@@ -1,0 +1,111 @@
+# Get user voicemail details from a call log
+
+GET {{baseUrl}}/phone/users/:userId/call_logs/:id/voice_mail
+
+
+<p>
+Use this API to return detailed information on a voicemail associated with a call log ID. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* User must belong to a Business or Enterprise account 
+* User must have a Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+,
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_voicemail:read
+</code>
+,
+<code>
+phone_voicemail:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:voicemail
+</code>
+,
+<code>
+phone:read:voicemail:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:1,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;read&quot;,&quot;transcription&quot;:{&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:409,&quot;engine&quot;:&quot;\u003cstring\u003e&quot;}}
+```

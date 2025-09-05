@@ -1,0 +1,95 @@
+# Update call queue details
+
+PATCH {{baseUrl}}/phone/call_queues/:callQueueId
+
+
+<p>
+Call queues allow you to route incoming calls to a group of users. For instance, you can use call queues to route calls to various departments in your organization such as sales, engineering, billing, customer service etc.
+ Use this API to update information of a specific Call Queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro, Business, or Education account
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;cost_center&quot;=&gt;&quot;Cost center&quot;, &quot;department&quot;=&gt;&quot;Department&quot;, &quot;description&quot;=&gt;&quot;Description&quot;, &quot;extension_number&quot;=&gt;10, &quot;name&quot;=&gt;&quot;Call Queue&quot;, &quot;site_id&quot;=&gt;&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;, &quot;status&quot;=&gt;&quot;active&quot;, &quot;timezone&quot;=&gt;&quot;Pacific/Midway&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

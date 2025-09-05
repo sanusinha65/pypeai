@@ -1,0 +1,73 @@
+# List setting templates
+
+GET {{baseUrl}}/phone/setting_templates?page_size=30&amp;next_page_token=nav48KOj42vYPSG4f0cCdT575bZ980did22&amp;site_id=SQv52YtkRLC2dwrDdYtGsA
+
+
+<p>
+Use this API to get a list of all the created phone template settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+ or 
+<code>
+phone:read
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | Number of records returns within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `site_id` | string |  | Unique identifier of the site. This field is required only if multiple sites have been enabled.  of the site. Required only when multiple sites are enabled. See [Managing multiple sites](https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites) for details. If this is not provided, the response lists the account level setting templates. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;nav48KOj42vYPSG4f0cCdT575bZ980did22&quot;,&quot;page_size&quot;:30,&quot;templates&quot;:[{&quot;description&quot;:&quot;Main site user template&quot;,&quot;id&quot;:&quot;2kFqiqSlS5udzWB5QqMiNg&quot;,&quot;name&quot;:&quot;user_template&quot;,&quot;type&quot;:&quot;user&quot;},{&quot;description&quot;:&quot;Main site user template&quot;,&quot;id&quot;:&quot;2kFqiqSlS5udzWB5QqMiNg&quot;,&quot;name&quot;:&quot;user_template&quot;,&quot;type&quot;:&quot;user&quot;}],&quot;total_records&quot;:2}
+```

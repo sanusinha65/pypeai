@@ -1,0 +1,72 @@
+# Get meeting poll reports
+
+GET {{baseUrl}}/report/meetings/:meetingId/polls
+
+
+<p>
+Use this API to get a report of 
+<a href="https://support.zoom.us/hc/en-us/articles/213756303-Polling-for-Meetings">
+poll
+</a>
+ results for a past meeting. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;questions&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;polling_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;polling_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;polling_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;polling_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;}]}]}
+```

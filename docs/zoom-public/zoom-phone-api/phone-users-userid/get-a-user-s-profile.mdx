@@ -1,0 +1,107 @@
+# Get a user&#39;s profile
+
+GET {{baseUrl}}/phone/users/:userId
+
+
+<p>
+Returns a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360001297663-Quickstart-Guide-for-Zoom-Phone-Administrators">
+Zoom phone
+</a>
+ profile. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:user
+</code>
+,
+<code>
+phone:read:user:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calling_plans&quot;:[{&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;phone_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;policy&quot;:{&quot;ad_hoc_call_recording&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_start_prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_recording_beep_tone&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_beep_volume&quot;:80,&quot;play_beep_time_interval&quot;:60,&quot;play_beep_member&quot;:&quot;allMember&quot;},&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;},&quot;ad_hoc_call_recording_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;auto_call_recording&quot;:{&quot;allow_stop_resume_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;disconnect_on_recording_failure&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;recording_calls&quot;:&quot;inbound&quot;,&quot;recording_explicit_consent&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_start_prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_recording_beep_tone&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_beep_volume&quot;:0,&quot;play_beep_time_interval&quot;:5,&quot;play_beep_member&quot;:&quot;recordingSide&quot;}},&quot;auto_call_recording_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;call_overflow&quot;:{&quot;call_overflow_type&quot;:2,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;user_group&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;call_park&quot;:{&quot;call_not_picked_up_action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;expiration_period&quot;:9,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;sharedLineGroup&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;call_transferring&quot;:{&quot;call_transferring_type&quot;:3,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;user_group&quot;},&quot;delegation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;elevate_to_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;emergency_address_management&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;prompt_default_address&quot;:&quot;\u003cboolean\u003e&quot;},&quot;emergency_calls_to_psap&quot;:&quot;\u003cboolean\u003e&quot;,&quot;forwarding_to_external_numbers&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_handling_forwarding_to_other_users&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_forwarding_type&quot;:4,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;hand_off_to_room&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;international_calling&quot;:&quot;\u003cboolean\u003e&quot;,&quot;mobile_switch_to_carrier&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;},&quot;select_outbound_caller_id&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_hide_outbound_caller_id&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;user_group&quot;},&quot;sms&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;international_sms&quot;:&quot;\u003cboolean\u003e&quot;,&quot;international_sms_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;user_group&quot;},&quot;voicemail&quot;:{&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_videomail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;zoom_phone_on_mobile&quot;:{&quot;allow_calling_sms_mms&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;user_group&quot;},&quot;personal_audio_library&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_music_on_hold_customization&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_voicemail_and_message_greeting_customization&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail_transcription&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail_notification_by_email&quot;:{&quot;include_voicemail_file&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;shared_voicemail_notification_by_email&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;check_voicemails_over_phone&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;audio_intercom&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;peer_to_peer_media&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;e2e_encryption&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;user_group&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;outbound_calling&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;outbound_sms&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;}},&quot;site_admin&quot;:&quot;\u003cboolean\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;deactivate&quot;}
+```

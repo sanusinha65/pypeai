@@ -1,0 +1,102 @@
+# List archived files
+
+GET {{baseUrl}}/archive_files?page_size=30&amp;next_page_token=&lt;string&gt;&amp;from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;&amp;query_date_type=meeting_start_time&amp;group_id=&lt;string&gt;
+
+
+<p>
+Get an account&#39;s archived meeting or webinar files. 
+</p>
+
+
+
+<p>
+Zoom&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360050431572-Archiving-indicators">
+archiving solution
+</a>
+ lets account administrators set up an automated mechanism to record, collect, and archive meeting data to a third-party platform of their choice to satisfy FINRA or other compliance requirements. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/4405656451213--Archiving-for-meetings-and-webinars">
+
+<strong>
+Meeting and Webinar Archiving
+</strong>
+ feature
+</a>
+ enabled for your account by 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Zoom Support
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `from` | string |  | The query start date, in `yyyy-MM-dd&#39;T&#39;HH:mm:ssZ` format. This value and the `to` query parameter value cannot exceed seven days. |
+| `to` | string |  | The query end date, in `yyyy-MM-dd&#39;T&#39;HH:mm:ssZ` format. This value and the `from` query parameter value cannot exceed seven days. |
+| `query_date_type` | string |  | The type of query date.
+* `meeting_start_time` 
+* `archive_complete_time` 
+
+ This value defaults to `meeting_start_time`. |
+| `group_id` | string |  | The group ID. To get a group ID, use the [List groups](https://developers.zoom.us/docs/api/rest/reference/scim-api/methods/#operation/groupSCIM2List) API. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;meetings&quot;:[{&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;archive_files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;encryption_fingerprint&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_extension&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;file_type&quot;:&quot;CC&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;individual&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;participant_leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_type&quot;:&quot;chat_message&quot;,&quot;status&quot;:&quot;failed&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;number_of_messages&quot;:&quot;\u003cinteger\u003e&quot;,&quot;storage_location&quot;:&quot;CA&quot;,&quot;auto_delete&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;encryption_fingerprint&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_extension&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;file_type&quot;:&quot;CHAT&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;individual&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;participant_leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_type&quot;:&quot;audio_only&quot;,&quot;status&quot;:&quot;completed&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;number_of_messages&quot;:&quot;\u003cinteger\u003e&quot;,&quot;storage_location&quot;:&quot;AU&quot;,&quot;auto_delete&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;complete_time&quot;:{},&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;duration_in_second&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;is_breakout_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_type&quot;:&quot;external&quot;,&quot;recording_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;processing&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:6,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;parent_meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;archive_files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;encryption_fingerprint&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_extension&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;file_type&quot;:&quot;CC&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;individual&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;participant_leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_type&quot;:&quot;chat_message&quot;,&quot;status&quot;:&quot;completed&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;number_of_messages&quot;:&quot;\u003cinteger\u003e&quot;,&quot;storage_location&quot;:&quot;BR&quot;,&quot;auto_delete&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;encryption_fingerprint&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_extension&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;file_type&quot;:&quot;CC&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;individual&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;participant_leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_type&quot;:&quot;audio_only&quot;,&quot;status&quot;:&quot;completed&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;number_of_messages&quot;:&quot;\u003cinteger\u003e&quot;,&quot;storage_location&quot;:&quot;IN&quot;,&quot;auto_delete&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;complete_time&quot;:{},&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;duration_in_second&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;is_breakout_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_type&quot;:&quot;internal&quot;,&quot;recording_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;processing&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:8,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;parent_meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

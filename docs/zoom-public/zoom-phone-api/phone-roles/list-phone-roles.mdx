@@ -1,0 +1,65 @@
+# List phone roles
+
+GET {{baseUrl}}/phone/roles
+
+
+<p>
+Use this API to get phone roles.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;roles&quot;:[{&quot;id&quot;:&quot;MRNStlOVS02fJ6pOAzrh0A&quot;,&quot;name&quot;:&quot;Phone Super Admin&quot;,&quot;description&quot;:&quot;Admin has full privileges to access and manage the Zoom Phone (default).&quot;,&quot;total_members&quot;:1,&quot;is_default&quot;:true}]}
+```

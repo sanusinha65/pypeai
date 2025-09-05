@@ -1,0 +1,107 @@
+#Zoom Phone API
+
+Number of APIs: 536
+
+
+<p>
+You can access information from Zoom with Zoom Phone APIs to build private services or public applications on the 
+<a href="https://marketplace.zoom.us/">
+Zoom App Marketplace
+</a>
+.
+</p>
+
+
+
+<p>
+To learn how to get your credentials and create private or public applications, see Zoom APIs use 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+OAuth 2.0 authorization
+</a>
+.
+</p>
+
+
+
+<p>
+All endpoints are available via 
+<code>
+https
+</code>
+ and are located at 
+<code>
+api.zoom.us/v2/
+</code>
+.
+</p>
+
+
+
+<p>
+For instance, you can list all users on an account via 
+<code>
+https://api.zoom.us/v2/users/
+</code>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: You will get 
+<code>
+403
+</code>
+ response 
+<code>
+Zoom Phone has not been enabled for this account
+</code>
+ if the phone account is not set up.
+</p>
+
+
+
+1. [phone-settings - Update phone account settings](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-settings/update-phone-account-settings)
+PATCH {{baseUrl}}/phone/settings
+
+
+2. [phone-setting_templates - Add a setting template](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-setting_templates/add-a-setting-template)
+POST {{baseUrl}}/phone/setting_templates
+
+
+3. [phone-users-{user Id}-outbound caller id/customized numbers - Remove users&#39; customized outbound caller ID phone numbers](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-user-id-outbound-caller-id-customized-numbers/remove-users-customized-outbound-caller-id-phone-numbers-1)
+DELETE {{baseUrl}}/phone/users/:userId/outbound_caller_id/customized_numbers?customize_ids=8_RkKw9OQ42oYsXqJJjs4A&amp;customize_ids=8_RkKw9OQ42oYsXqJJjs4A
+
+
+4. [phone-external_contacts - List external contacts](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-external_contacts/list-external-contacts)
+GET {{baseUrl}}/phone/external_contacts?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+5. [phone-shared_line_groups - Create a shared line group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-shared_line_groups/create-a-shared-line-group)
+POST {{baseUrl}}/phone/shared_line_groups
+
+
+6. [phone-auto_receptionists-{autoReceptionistId}-phone_numbers - Unassign all phone numbers](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-auto_receptionists-autoreceptionistid-phone_numbers/unassign-all-phone-numbers)
+DELETE {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/phone_numbers
+
+
+7. [phone-emergency addresses-{emergency Address Id} - Delete an emergency address](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-emergency-addresses-emergency-address-id/delete-an-emergency-address-1)
+DELETE {{baseUrl}}/phone/emergency_addresses/:emergencyAddressId
+
+
+8. [phone-common areas-{common Area Id}-phone numbers - Unassign phone numbers from common area](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-common-areas-common-area-id-phone-numbers/unassign-phone-numbers-from-common-area-1)
+DELETE {{baseUrl}}/phone/common_areas/:commonAreaId/phone_numbers/:phoneNumberId
+
+
+9. [phone-dial by name directory/extensions - Add users to a directory](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-dial-by-name-directory-extensions/add-users-to-a-directory-1)
+POST {{baseUrl}}/phone/dial_by_name_directory/extensions
+
+
+10. [phone-group call pickup - Add a group call pickup object](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-group-call-pickup/add-a-group-call-pickup-object-1)
+POST {{baseUrl}}/phone/group_call_pickup
+
+

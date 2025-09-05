@@ -1,0 +1,99 @@
+# List user assistants
+
+GET {{baseUrl}}/users/:userId/assistants
+
+
+<p>
+List a user&#39;s assistants. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+Assistants are users who the current user has assigned 
+<a href="https://support.zoom.us/hc/en-us/articles/201362803-Scheduling-Privilege">
+scheduling privilege
+</a>
+. These assistants can schedule meetings on behalf of the current user, as well as manage and act as an alternative host for all meetings if the admin has enabled the 
+<a href="https://zoom.us/account/setting">
+co-host option
+</a>
+ on the account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Current user as well as the assistant must have Licensed or an On-prem license.
+* Assistants must be under the current user&#39;s account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assistants&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

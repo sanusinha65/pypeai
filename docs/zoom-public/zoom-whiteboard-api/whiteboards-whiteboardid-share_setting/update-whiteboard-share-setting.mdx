@@ -1,0 +1,65 @@
+# Update whiteboard share setting
+
+PATCH {{baseUrl}}/whiteboards/:whiteboardId/share_setting
+
+
+<p>
+Updates the whiteboard share setting. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+whiteboard_share_setting:write:admin
+</code>
+,
+<code>
+whiteboard_share_setting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;share_link_setting&quot;=&gt;{&quot;share_scope&quot;=&gt;0, &quot;share_role&quot;=&gt;3}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

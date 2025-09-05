@@ -1,0 +1,85 @@
+# Get call log details
+
+GET {{baseUrl}}/phone/call_logs/:callLogId
+
+
+<p>
+Use this API to return information about a 
+<a href="https://support.zoom.us/hc/en-us/articles/360021114452-Viewing-and-identifying-logs">
+call log
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone_call_log:read
+</code>
+, 
+<code>
+phone_call_log:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits/#zoom-phone-apis">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;7018317023722949162&quot;,&quot;call_type&quot;:&quot;voip&quot;,&quot;callee_country_code&quot;:&quot;1&quot;,&quot;callee_country_iso_code&quot;:&quot;US&quot;,&quot;callee_did_number&quot;:&quot;+12055432724&quot;,&quot;callee_name&quot;:&quot;Callee name&quot;,&quot;callee_number&quot;:&quot;1018&quot;,&quot;callee_number_type&quot;:1,&quot;callee_number_source&quot;:&quot;internal&quot;,&quot;caller_country_code&quot;:&quot;1&quot;,&quot;caller_country_iso_code&quot;:&quot;US&quot;,&quot;caller_did_number&quot;:&quot;+12055432724&quot;,&quot;caller_name&quot;:&quot;Caller name&quot;,&quot;caller_number&quot;:&quot;+16622001852&quot;,&quot;caller_number_type&quot;:1,&quot;caller_number_source&quot;:&quot;internal&quot;,&quot;caller_billing_reference_id&quot;:&quot;ZoomTelecom123456&quot;,&quot;date_time&quot;:&quot;2021-10-12T22:54:31Z&quot;,&quot;device_private_ip&quot;:&quot;12&quot;,&quot;device_public_ip&quot;:&quot;23&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;duration&quot;:20,&quot;has_recording&quot;:false,&quot;has_voicemail&quot;:false,&quot;id&quot;:&quot;a55d94f7-27ea-4dbb-ab25-028f2c8d55bd&quot;,&quot;log_details&quot;:[{&quot;date_time&quot;:&quot;2021-10-12T22:54:31Z&quot;,&quot;hold_time&quot;:5,&quot;device_private_ip&quot;:&quot;12&quot;,&quot;device_public_ip&quot;:&quot;23&quot;,&quot;duration&quot;:20,&quot;forward_to&quot;:{&quot;extension_number&quot;:&quot;1002&quot;,&quot;id&quot;:&quot;1234abcd&quot;,&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;user&quot;},&quot;id&quot;:&quot;a55d94f7-27ea-4dbb-ab25-028f2c8d55bd&quot;,&quot;path&quot;:&quot;callQueue&quot;,&quot;result&quot;:&quot;call_connected&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;}},{&quot;date_time&quot;:&quot;2021-10-12T22:54:31Z&quot;,&quot;hold_time&quot;:5,&quot;device_private_ip&quot;:&quot;12&quot;,&quot;device_public_ip&quot;:&quot;23&quot;,&quot;duration&quot;:20,&quot;forward_to&quot;:{&quot;extension_number&quot;:&quot;1002&quot;,&quot;id&quot;:&quot;1234abcd&quot;,&quot;name&quot;:&quot;name&quot;,&quot;type&quot;:&quot;user&quot;},&quot;id&quot;:&quot;a55d94f7-27ea-4dbb-ab25-028f2c8d55bd&quot;,&quot;path&quot;:&quot;callQueue&quot;,&quot;result&quot;:&quot;call_connected&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;}}],&quot;path&quot;:&quot;callQueue&quot;,&quot;result&quot;:&quot;call_connected&quot;}
+```

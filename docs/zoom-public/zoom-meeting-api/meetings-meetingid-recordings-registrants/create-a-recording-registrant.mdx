@@ -1,0 +1,84 @@
+# Create a recording registrant
+
+POST {{baseUrl}}/meetings/:meetingId/recordings/registrants
+
+
+<p>
+Cloud Recordings of past Zoom Meetings can be made 
+<a href="https://support.zoom.us/hc/en-us/articles/360000488283-On-demand-Recordings">
+on-demand
+</a>
+. Users should be 
+<a href="/docs/api-reference/zoom-api/methods#operation/meetingRecordingRegistrantCreate">
+registered
+</a>
+ to view these recordings.
+</p>
+
+
+
+<p>
+Use this API to register a user to gain access to 
+<strong>
+On-demand Cloud Recordings
+</strong>
+ of a past meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;comments&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;custom_questions&quot;=&gt;[{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;industry&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;job_title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;no_of_employees&quot;=&gt;&quot;1-20&quot;, &quot;org&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;purchasing_time_frame&quot;=&gt;&quot;Within a month&quot;, &quot;role_in_purchase_process&quot;=&gt;&quot;&quot;, &quot;state&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;pending&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;share_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;}
+```

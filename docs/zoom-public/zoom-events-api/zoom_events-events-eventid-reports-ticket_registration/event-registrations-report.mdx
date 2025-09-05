@@ -1,0 +1,65 @@
+# Event Registrations Report
+
+GET {{baseUrl}}/zoom_events/events/:eventId/reports/ticket_registration?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to retrieve event ticket registrations.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_reports.read
+</code>
+
+<code>
+zoom_events_reports:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned in a single API call. Max 300 |
+| `next_page_token` | string |  | The next page token paginates through a set of large results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrations&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;opt_in_marketing&quot;:1,&quot;marketing_consent_prechecked&quot;:0,&quot;register_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;event_attendance&quot;:&quot;attended&quot;,&quot;attendance_type&quot;:[&quot;hybrid&quot;,&quot;hybrid&quot;],&quot;registration_method&quot;:&quot;self-registration&quot;,&quot;tickets&quot;:[{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]}]},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;opt_in_marketing&quot;:1,&quot;marketing_consent_prechecked&quot;:0,&quot;register_date&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;event_attendance&quot;:&quot;attended&quot;,&quot;attendance_type&quot;:[&quot;hybrid&quot;,&quot;hybrid&quot;],&quot;registration_method&quot;:&quot;other&quot;,&quot;tickets&quot;:[{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]}]}]}
+```

@@ -1,0 +1,99 @@
+# Get SMS by message ID
+
+GET {{baseUrl}}/phone/sms/sessions/:sessionId/messages/:messageId
+
+
+<p>
+Get details about a specific message in an SMS session.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Paid account
+* User-enabled Zoom phone
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+,
+<code>
+phone_sms:read
+</code>
+,
+<code>
+phone_sms:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:sms_message
+</code>
+,
+<code>
+phone:read:sms_message:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;attachments&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;JPG&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;JPG&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:3,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;}}]}
+```

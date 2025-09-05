@@ -1,0 +1,57 @@
+# Get a skill
+
+GET {{baseUrl}}/contact_center/skills/:skillId
+
+
+<p>
+Return a skill&#39;s information and its usage. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_skill:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_type&quot;:&quot;proficiency&quot;,&quot;max_proficiency_level&quot;:1,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_users&quot;:&quot;\u003cinteger\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}
+```

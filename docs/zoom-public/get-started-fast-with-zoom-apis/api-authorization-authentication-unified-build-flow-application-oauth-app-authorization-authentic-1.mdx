@@ -1,0 +1,20 @@
+#  API Authorization &amp; Authentication-Unified Build Flow Application-OAuth App Authorization &amp; Authentication-OAuth 2.0
+
+Number of APIs: 4
+
+1. [Request user authorization](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic-1/request-user-authorization-1)
+GET https://zoom.us/oauth/authorize?response_type=code&amp;client_id={{oAuthDevClientId}}&amp;redirect_uri={{oAuthDevRedirectUri}}
+
+
+2. [Request access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic-1/request-access-token-1)
+POST https://zoom.us/oauth/token
+
+
+3. [Refresh access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic-1/refresh-access-token-5)
+POST https://zoom.us/oauth/token?grant_type=refresh_token&amp;refresh_token={{oAuthDevRefreshToken}}
+
+
+4. [Revoke an access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic-1/revoke-an-access-token-5)
+POST https://zoom.us/oauth/revoke
+
+

@@ -1,0 +1,79 @@
+# List SIP phones
+
+GET {{baseUrl}}/sip_phones?page_number=1&amp;search_key=&lt;string&gt;&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Zoom&#39;s Phone System Integration (PSI), also referred as SIP phones, enables an organization to leverage the Zoom client to complete a softphone registration to supported premise based PBX system. End users will have the ability to have softphone functionality within a single client while maintaining a comparable interface to Zoom Phone. Use this API to list SIP phones on an account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:
+* Currently only supported on Cisco and Avaya PBX systems. 
+* User must enable SIP Phone Integration by contacting the 
+<a href="https://zoom.us/contactsales">
+Sales
+</a>
+ team.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+sip_phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_number` | number |  | **Deprecated.** We will no longer support this field in a future release. Instead, use the `next_page_token` for pagination. |
+| `search_key` | string |  | User name or email address of a user. If this parameter is provided, only the SIP phone system integration enabled for that specific user will be returned. Otherwise, all SIP phones on an account will be returned. |
+| `page_size` | string |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phones&quot;:[{&quot;authorization_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server2&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server3&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server2&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server3&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_expire_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;transport_protocol&quot;:&quot;UDP&quot;,&quot;transport_protocol2&quot;:&quot;UDP&quot;,&quot;transport_protocol3&quot;:&quot;UDP&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;voice_mail&quot;:&quot;\u003cstring\u003e&quot;},{&quot;authorization_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server2&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server3&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server2&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server3&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_expire_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;transport_protocol&quot;:&quot;UDP&quot;,&quot;transport_protocol2&quot;:&quot;TLS&quot;,&quot;transport_protocol3&quot;:&quot;UDP&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;voice_mail&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

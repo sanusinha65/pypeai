@@ -1,0 +1,81 @@
+# Update a group&#39;s webinar registration settings
+
+PATCH {{baseUrl}}/groups/:groupId/settings/registration?type=webinar
+
+
+<p>
+Update webinar registration settings for a 
+<a href="https://support.zoom.us/hc/en-us/articles/204519819-Group-Management-">
+group
+</a>
+.&lt;p style=&quot;background-color:#FEEFB3; color:#9F6000&quot;&gt;
+<br>
+
+ Note:&lt;/b&gt; The 
+<code>
+force_pmi_jbh_password
+</code>
+ field under meeting settings is planned to be deprecated on September 22, 2019. This field will be replaced by another field that will provide the same functionality.&lt;/p&gt;
+
+<strong>
+Prerequisite
+</strong>
+: Pro, Business, or Education account  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+group:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The registration type: 
+* `webinar` &amp;mdash; webinar. |
+
+
+### Request Body
+```
+{&quot;options&quot;=&gt;{&quot;host_email_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;close_registration&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_participants_to_join_from_multiple_devices&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_social_share_buttons&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;questions&quot;=&gt;[{&quot;field_name&quot;=&gt;&quot;comments&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;field_name&quot;=&gt;&quot;comments&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;approve_type&quot;=&gt;0, &quot;custom_questions&quot;=&gt;[{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;multiple&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;short&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

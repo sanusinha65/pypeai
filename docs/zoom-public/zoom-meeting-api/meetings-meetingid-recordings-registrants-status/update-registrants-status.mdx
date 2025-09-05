@@ -1,0 +1,70 @@
+# Update registrant&#39;s status
+
+PUT {{baseUrl}}/meetings/:meetingId/recordings/registrants/status
+
+
+<p>
+A registrant can either be approved or denied from viewing the 
+<a href="https://support.zoom.us/hc/en-us/articles/360000488283-On-demand-Recordings">
+on-demand
+</a>
+ recording. 
+Use this API to update a registrant&#39;s status.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;approve&quot;, &quot;registrants&quot;=&gt;[{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

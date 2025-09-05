@@ -1,0 +1,91 @@
+# Add a calendar resource to a calendar service
+
+POST {{baseUrl}}/rooms/calendar/services/:serviceId/resources
+
+
+<p>
+Use this API to add a 
+<a href="https://support.zoom.us/hc/en-us/articles/4409832833037">
+calendar resource
+</a>
+ to a Microsoft Exchange or Office 365 calendar service in a Zoom Room account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ This API does not support adding a calendar resource to a Google calendar service. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with a 
+<a href="https://zoom.us/zoomrooms">
+Zoom Rooms
+</a>
+ license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;calendar_resource_email&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;calendar_resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;calendar_resource_name&quot;:&quot;\u003cstring\u003e&quot;}
+```

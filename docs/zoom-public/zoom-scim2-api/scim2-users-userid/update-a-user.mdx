@@ -1,0 +1,58 @@
+# Update a user
+
+PUT {{baseUrl}}/scim2/Users/:userId
+
+
+<p>
+Use this API to update a user&#39;s information. 
+</p>
+
+
+
+<p>
+
+<strong>
+OAuth Scope:
+</strong>
+ 
+<code>
+scim2
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;schemas&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;active&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;userType&quot;=&gt;&quot;On-Prem&quot;, &quot;name&quot;=&gt;{&quot;givenName&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;familyName&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;locale&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phoneNumbers&quot;=&gt;[{&quot;type&quot;=&gt;&quot;work&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;type&quot;=&gt;&quot;work&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;roles&quot;=&gt;[{&quot;display&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;primary&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;display&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;primary&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;groups&quot;=&gt;[{&quot;display&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;direct&quot;, &quot;primary&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;display&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;direct&quot;, &quot;primary&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User&quot;=&gt;{&quot;department&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;organization&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;costCenter&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;employeeNumber&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;manager&quot;=&gt;&quot;&lt;email&gt;&quot;}, &quot;urn:ietf:params:scim:schemas:extension:zoom:1.0:User&quot;=&gt;{&quot;zoomPhoneExtNumber&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zoomPhoneNumber&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zoomPhoneSite&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zoomPhoneCallingPlan&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;{customAttribute}&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;personalLinkName&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;pronouns&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zoomUnited&quot;=&gt;&quot;4&quot;, &quot;zoomOneBizPlus&quot;=&gt;&quot;128&quot;, &quot;zoomIQ&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoomCustomerManagedKey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoomWhiteboard&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoomWhiteboardPlus&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoomTranslatedCaptions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoomHuddles&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;emails&quot;=&gt;{&quot;type&quot;=&gt;&quot;work&quot;, &quot;value&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;primary&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;name&quot;:{&quot;givenName&quot;:&quot;\u003cstring\u003e&quot;,&quot;familyName&quot;:&quot;\u003cstring\u003e&quot;},&quot;emails&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;userName&quot;:&quot;\u003cemail\u003e&quot;,&quot;active&quot;:&quot;\u003cboolean\u003e&quot;,&quot;userType&quot;:&quot;On-Prem&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;locale&quot;:&quot;\u003cstring\u003e&quot;,&quot;phoneNumbers&quot;:[{&quot;type&quot;:&quot;home&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;type&quot;:&quot;office&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;roles&quot;:[{&quot;display&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;display&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;groups&quot;:[{&quot;display&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;primary&quot;:&quot;\u003cstring\u003e&quot;},{&quot;display&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;primary&quot;:&quot;\u003cstring\u003e&quot;}],&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User&quot;:{&quot;{customAttribute}&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization&quot;:&quot;\u003cstring\u003e&quot;},&quot;urn:ietf:params:scim:schemas:extension:zoom:1.0:User&quot;:{&quot;{customAttribute}&quot;:&quot;\u003cstring\u003e&quot;,&quot;personalLinkName&quot;:&quot;\u003cstring\u003e&quot;,&quot;pronouns&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoomUnited&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoomOneBizPlus&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoomIQ&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomCustomerManagedKey&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomWhiteboard&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomWhiteboardPlus&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomTranslatedCaptions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomHuddles&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

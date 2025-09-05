@@ -1,0 +1,112 @@
+# Update a user setting
+
+PATCH {{baseUrl}}/phone/users/:userId/settings/:settingType
+
+
+<p>
+Use this API to update the user setting according to the setting type, specifically for a shared voicemail access and delegation. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+Phone users can access 
+<a href="https://support.zoom.us/hc/en-us/articles/360033863991-Sharing-and-controlling-access-to-a-voicemail-inbox">
+shared voicemail inboxes
+</a>
+ in the Zoom desktop client, web portal, or provisioned desk phone.
+</p>
+
+
+
+<p>
+To view these settings in the Zoom web portal, navigate to the 
+<strong>
+Admin &gt;&gt; Phone System Management &gt;&gt; Users &amp; Rooms
+</strong>
+ interface. Click the 
+<strong>
+Users
+</strong>
+ tab and select 
+<strong>
+User Settings
+</strong>
+. Scroll down to 
+<strong>
+Voicemail &amp; Call Recordings
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;delegation&quot;=&gt;{&quot;privacy&quot;=&gt;true, &quot;privileges&quot;=&gt;3}, &quot;desk_phone&quot;=&gt;{&quot;devices&quot;=&gt;[{&quot;id&quot;=&gt;&quot;-GHFnf5WQe-H-_r0Wwx9iQ&quot;, &quot;policy&quot;=&gt;{&quot;call_control&quot;=&gt;{&quot;status&quot;=&gt;&quot;off&quot;}, &quot;hot_desking&quot;=&gt;{&quot;status&quot;=&gt;&quot;off&quot;}}}, {&quot;id&quot;=&gt;&quot;-GHFnf5WQe-H-_r0Wwx9iQ&quot;, &quot;policy&quot;=&gt;{&quot;call_control&quot;=&gt;{&quot;status&quot;=&gt;&quot;off&quot;}, &quot;hot_desking&quot;=&gt;{&quot;status&quot;=&gt;&quot;off&quot;}}}], &quot;phone_screen_lock&quot;=&gt;true, &quot;pin_code&quot;=&gt;&quot;09912&quot;}, &quot;voice_mail&quot;=&gt;{&quot;access_user_id&quot;=&gt;&quot;w0RChiauQeqRlv5fgxYULQ&quot;, &quot;delete&quot;=&gt;true, &quot;download&quot;=&gt;true, &quot;shared_id&quot;=&gt;&quot;--e8ugg0SeS-9clgrDkn2w&quot;}, &quot;intercom&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;JHwOJZ_PRICfVhQlL0x_ww&quot;, &quot;device_id&quot;=&gt;&quot;wG2kKqxyTJOCETmOpS5Kww&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

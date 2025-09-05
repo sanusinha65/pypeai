@@ -1,0 +1,65 @@
+# Event Attendance Report
+
+GET {{baseUrl}}/zoom_events/events/:eventId/reports/event_attendance?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to retrieve event attendance report.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_reports:read:admin
+</code>
+
+<code>
+zoom_events_reports:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned in a single API call. Max 300 |
+| `next_page_token` | string |  | The next page token paginates through a set of large results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;attendees&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;opt_in_marketing&quot;:0,&quot;marketing_consent_prechecked&quot;:1,&quot;event_attendance&quot;:&quot;absent&quot;,&quot;attendance_type&quot;:[&quot;hybrid&quot;,&quot;in_person&quot;],&quot;lobby_attendance&quot;:&quot;absent&quot;,&quot;lobby_chat_sent&quot;:&quot;\u003cnumber\u003e&quot;,&quot;survey_taken&quot;:&quot;\u003cnumber\u003e&quot;,&quot;total_sessions_joined&quot;:&quot;\u003cnumber\u003e&quot;,&quot;number_of_tickets&quot;:&quot;\u003cnumber\u003e&quot;,&quot;role&quot;:&quot;\u003cstring\u003e&quot;,&quot;tickets&quot;:[{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;session_attendance&quot;:[{&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_attendance&quot;:&quot;attended&quot;,&quot;duration_spent_in_session&quot;:&quot;\u003cnumber\u003e&quot;,&quot;chat_messages_sent&quot;:&quot;\u003cnumber\u003e&quot;,&quot;connection_made&quot;:&quot;\u003cnumber\u003e&quot;,&quot;material_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;live_stream_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view_duration&quot;:&quot;\u003cnumber\u003e&quot;,&quot;live_streaming_view_duration&quot;:&quot;\u003cnumber\u003e&quot;},{&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_attendance&quot;:&quot;absent&quot;,&quot;duration_spent_in_session&quot;:&quot;\u003cnumber\u003e&quot;,&quot;chat_messages_sent&quot;:&quot;\u003cnumber\u003e&quot;,&quot;connection_made&quot;:&quot;\u003cnumber\u003e&quot;,&quot;material_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;live_stream_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view_duration&quot;:&quot;\u003cnumber\u003e&quot;,&quot;live_streaming_view_duration&quot;:&quot;\u003cnumber\u003e&quot;}],&quot;profile_created&quot;:&quot;\u003cboolean\u003e&quot;,&quot;personal_chats&quot;:&quot;\u003cnumber\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;opt_in_marketing&quot;:1,&quot;marketing_consent_prechecked&quot;:0,&quot;event_attendance&quot;:&quot;absent&quot;,&quot;attendance_type&quot;:[&quot;in_person&quot;,&quot;hybrid&quot;],&quot;lobby_attendance&quot;:&quot;attended&quot;,&quot;lobby_chat_sent&quot;:&quot;\u003cnumber\u003e&quot;,&quot;survey_taken&quot;:&quot;\u003cnumber\u003e&quot;,&quot;total_sessions_joined&quot;:&quot;\u003cnumber\u003e&quot;,&quot;number_of_tickets&quot;:&quot;\u003cnumber\u003e&quot;,&quot;role&quot;:&quot;\u003cstring\u003e&quot;,&quot;tickets&quot;:[{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;ticket_type_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;session_attendance&quot;:[{&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_attendance&quot;:&quot;attended&quot;,&quot;duration_spent_in_session&quot;:&quot;\u003cnumber\u003e&quot;,&quot;chat_messages_sent&quot;:&quot;\u003cnumber\u003e&quot;,&quot;connection_made&quot;:&quot;\u003cnumber\u003e&quot;,&quot;material_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;live_stream_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view_duration&quot;:&quot;\u003cnumber\u003e&quot;,&quot;live_streaming_view_duration&quot;:&quot;\u003cnumber\u003e&quot;},{&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_attendance&quot;:&quot;attended&quot;,&quot;duration_spent_in_session&quot;:&quot;\u003cnumber\u003e&quot;,&quot;chat_messages_sent&quot;:&quot;\u003cnumber\u003e&quot;,&quot;connection_made&quot;:&quot;\u003cnumber\u003e&quot;,&quot;material_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;live_stream_view&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_view_duration&quot;:&quot;\u003cnumber\u003e&quot;,&quot;live_streaming_view_duration&quot;:&quot;\u003cnumber\u003e&quot;}],&quot;profile_created&quot;:&quot;\u003cboolean\u003e&quot;,&quot;personal_chats&quot;:&quot;\u003cnumber\u003e&quot;}]}
+```

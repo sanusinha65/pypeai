@@ -1,0 +1,106 @@
+# Update an alert setting
+
+PATCH {{baseUrl}}/phone/alert_settings/:alertSettingId
+
+
+<p>
+Updates information of an 
+<a href="https://support.zoom.us/hc/en-us/articles/7146944434445">
+Alert setting
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:patch:alert_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;alert_setting_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rule_conditions&quot;=&gt;[{&quot;rule_condition_type&quot;=&gt;3, &quot;rule_condition_value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;rule_condition_type&quot;=&gt;3, &quot;rule_condition_value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;target_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;time_frame_type&quot;=&gt;&quot;specific_time&quot;, &quot;time_frame_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;time_frame_to&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;frequency&quot;=&gt;15, &quot;email_recipients&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;chat_channels&quot;=&gt;[{&quot;chat_channel_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;token&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_point&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;chat_channel_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;token&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_point&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;status&quot;=&gt;0}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

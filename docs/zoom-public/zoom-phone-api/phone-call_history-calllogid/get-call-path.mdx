@@ -1,0 +1,91 @@
+# Get call path
+
+GET {{baseUrl}}/phone/call_history/:callLogId
+
+
+<p>
+Returns information about a 
+<a href="https://support.zoom.us/hc/en-us/articles/360021114452-Viewing-and-identifying-logs">
+call log
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_call_log:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:call_log:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;connect_type&quot;:&quot;internal&quot;,&quot;call_type&quot;:&quot;emergency&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;caller_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_type&quot;:&quot;zoom_room&quot;,&quot;callee_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_type&quot;:&quot;group_call_pickup&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_path&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;connect_type&quot;:&quot;external&quot;,&quot;call_type&quot;:&quot;emergency&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;caller_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_type&quot;:&quot;shared_line_group&quot;,&quot;caller_number_type&quot;:&quot;meeting_phone_number&quot;,&quot;callee_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_type&quot;:&quot;group_call_pickup&quot;,&quot;callee_number_type&quot;:&quot;zoom_toll_free_number&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;event&quot;:&quot;merge&quot;,&quot;result&quot;:&quot;call_failed&quot;,&quot;result_reason&quot;:&quot;answered_by_other&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator_ext_type&quot;:&quot;cisco_room&quot;,&quot;operator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;press_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;segment&quot;:&quot;\u003cinteger\u003e&quot;,&quot;node&quot;:&quot;\u003cinteger\u003e&quot;,&quot;is_node&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recording_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hold_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;waiting_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;voicemail_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;connect_type&quot;:&quot;internal&quot;,&quot;call_type&quot;:&quot;emergency&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;caller_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_type&quot;:&quot;zoom_room&quot;,&quot;caller_number_type&quot;:&quot;zoom_service_number&quot;,&quot;callee_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_type&quot;:&quot;shared_line_group&quot;,&quot;callee_number_type&quot;:&quot;meeting_phone_number&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;event&quot;:&quot;park_pick_up&quot;,&quot;result&quot;:&quot;system_blocked&quot;,&quot;result_reason&quot;:&quot;call_out_by_other&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator_ext_type&quot;:&quot;external_contact&quot;,&quot;operator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;press_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;segment&quot;:&quot;\u003cinteger\u003e&quot;,&quot;node&quot;:&quot;\u003cinteger\u003e&quot;,&quot;is_node&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recording_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hold_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;waiting_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;voicemail_id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

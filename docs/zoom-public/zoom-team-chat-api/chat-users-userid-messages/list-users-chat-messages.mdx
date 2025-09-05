@@ -1,0 +1,146 @@
+# List user&#39;s chat messages
+
+GET {{baseUrl}}/chat/users/:userId/messages?to_contact=&lt;email&gt;&amp;to_channel=&lt;string&gt;&amp;date=&lt;date&gt;&amp;from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;&amp;page_size=10&amp;next_page_token=&lt;string&gt;&amp;include_deleted_and_edited_message=&lt;boolean&gt;&amp;search_type=file&amp;search_key=&lt;string&gt;&amp;exclude_child_message=false&amp;download_file_formats=audio/mp4
+
+
+<p>
+Searches chat messages or shared files between a user and an individual contact or a chat channel. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note:
+</b>
+ For an 
+<b>
+account-level
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:~:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+role
+</a>
+ that has the 
+<b>
+View
+</b>
+ or 
+<b>
+Edit
+</b>
+ permission for 
+<b>
+Chat Messages
+</b>
+.
+</p>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:read
+</code>
+, 
+<code>
+chat_message:read:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `to_contact` | string |  | This field allows you to query by the email address or user ID or member ID of a chat contact with whom the user communicated. The API only returns messages sent and/or received between the user and the queried contact. 
+
+**Note:** 
+* You must provide either the `to_contact` or the `to_channel` query parameter. 
+* When you call the `search_key` and `search_type` query parameters, this query parameter is optional and **not** required. |
+| `to_channel` | string |  | This field queries by the channel ID of a channel in which the user had chat conversations. The API only returns messages sent and/or received by the user in the queried channel. 
+
+**Note:** 
+* You must provide either the `to_contact` or the `to_channel` query parameter. 
+* When you call the `search_key` and `search_type` query parameters, this query parameter is optional and **not** required. |
+| `date` | string |  | The query date from which to retrieve the chat messages. This value defaults to the current date. 
+
+ **Note:** If you do not provide the `date` or `from` query parameters, the API defaults to the `date` query parameter. |
+| `from` | string |  | The query start date, in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` format.
+
+ **Note:** If you provide both the `date` and `from` query parameters, the API queries using the `date` value. |
+| `to` | string |  | The query end date, in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` format. This value defaults to the current date. |
+| `page_size` | number |  | The number of records returned with a single API call.  |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `include_deleted_and_edited_message` | string |  | **Optional** &lt;br&gt;
+Set the value of this field to `true` to include edited and deleted messages in the response. |
+| `search_type` | string |  | The type of search: 
+* `message` — Search messages. 
+* `file` — Search files. 
+
+**Note:** 
+* If you use this query parameter, you must also include a `search_key` query parameter value. 
+* The `to_contact` and the `to_channel` query parameters are **not** required when you query this parameter. If you do not call them, the API returns **all** contact and channel messages that match the `search_type` query. 
+* If you query this parameter, you **cannot** also query the `include_deleted_and_edited_message` parameter. This query parameter does not support the return of deleted or updated messages. |
+| `search_key` | string |  | The messages or files query string, up to 256 characters. 
+
+**Note:** 
+* If you use this query parameter, you must also include a `search_type` query parameter value. 
+* The `to_contact` and the `to_channel` query parameters are **not** required when you query this parameter. If you do not call them, the API returns **all** contact and channel messages that match the `search_key` query. 
+* If you query this parameter, you **cannot** also query the `include_deleted_and_edited_message` parameter. This query parameter does not support the return of deleted or updated messages. |
+| `exclude_child_message` | boolean |  | This parameter is used to exclude returning all child messages in a chat, leaving only the parent messages. |
+| `download_file_formats` | string |  | This field returns the download URL in the specified format for different types of files. Currently, we only support the download URL in the mp4 format for audio files. If this parameter is not specified, will return the download URL of the file in its default format. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;messages&quot;:[{&quot;bot_message&quot;:{},&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;rich_text&quot;:[{&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;format_type&quot;:&quot;Strikethrough&quot;,&quot;format_attr&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;format_type&quot;:&quot;BackgroundColor&quot;,&quot;format_attr&quot;:&quot;\u003cstring\u003e&quot;}],&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Deleted&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;at_items&quot;:[{&quot;at_contact&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_contact_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_type&quot;:2,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;at_contact&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_contact_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_type&quot;:1,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;}]},{&quot;bot_message&quot;:{},&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;rich_text&quot;:[{&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;format_type&quot;:&quot;FontColor&quot;,&quot;format_attr&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;format_type&quot;:&quot;Strikethrough&quot;,&quot;format_attr&quot;:&quot;\u003cstring\u003e&quot;}],&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Edited&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;at_items&quot;:[{&quot;at_contact&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_contact_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_type&quot;:2,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;at_contact&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_contact_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;at_type&quot;:1,&quot;end_position&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_position&quot;:&quot;\u003cinteger\u003e&quot;}]}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:10,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;}
+```

@@ -1,0 +1,65 @@
+# Get cloud recording usage report
+
+GET {{baseUrl}}/videosdk/report/cloud_recording?from=2021-10-11&amp;to=2021-10-11
+
+
+<p>
+Retrieve cloud recording usage report for a specified period. You can only get cloud recording reports for up to 6 months prior to the current date. The date gap between from and to dates should be smaller or equal to 30 days.  
+<br>
+
+<br>
+
+
+<strong>
+Prerequisites
+</strong>
+
+<br>
+
+* A Video SDK account.
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) The start date to query, in `yyyy-mm-dd` format.
+
+The ranges defined in the `from` and `to` parameters should **only** be a one month range. This is because the report only includes one month&#39;s worth of data. |
+| `to` | string |  | (Required) The end date to query, in `yyyy-mm-dd` format.
+
+The ranges defined in the `from` and `to` parameters should **only** be a one month range. This is because the report only includes one month&#39;s worth of data. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;2021-12-01&quot;,&quot;to&quot;:&quot;2021-12-02&quot;,&quot;cloud_recording_storage&quot;:[{&quot;date&quot;:&quot;2020-02-10T21:39:50Z&quot;,&quot;usage&quot;:&quot;29 MB&quot;,&quot;plan_usage&quot;:&quot;0&quot;,&quot;free_usage&quot;:&quot;1 GB&quot;},{&quot;date&quot;:&quot;2020-02-10T21:39:50Z&quot;,&quot;usage&quot;:&quot;29 MB&quot;,&quot;plan_usage&quot;:&quot;0&quot;,&quot;free_usage&quot;:&quot;1 GB&quot;}]}
+```

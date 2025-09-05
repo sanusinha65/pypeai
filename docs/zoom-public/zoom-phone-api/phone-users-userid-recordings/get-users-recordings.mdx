@@ -1,0 +1,121 @@
+# Get user&#39;s recordings
+
+GET {{baseUrl}}/phone/users/:userId/recordings?page_size=30&amp;next_page_token=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+<p>
+Gets a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360021336671-Viewing-Call-History-and-Recordings">
+Zoom Phone recordings
+</a>
+. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone_recording:read:admin
+</code>
+,
+<code>
+phone_recording:read
+</code>
+,
+<code>
+phone:read
+</code>
+,
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_recordings
+</code>
+,
+<code>
+phone:read:list_recordings:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. The month defined should fall within the last six months. If unspecified, returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recordings&quot;:[{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:3,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:2,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transcript_download_url&quot;:&quot;\u003cstring\u003e&quot;},{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:2,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transcript_download_url&quot;:&quot;\u003cstring\u003e&quot;}],&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

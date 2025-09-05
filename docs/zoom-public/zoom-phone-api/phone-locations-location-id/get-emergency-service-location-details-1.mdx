@@ -1,0 +1,64 @@
+# Get emergency service location details
+
+GET {{baseUrl}}/phone/locations/:locationId
+
+
+<p>
+Use this API to return an emergency service location&#39;s information.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;bssid&quot;:&quot;SA43YjfBTS6gJbUpfvIziQ&quot;,&quot;elin&quot;:{&quot;phone_number&quot;:&quot;+12058945656&quot;,&quot;phone_number_id&quot;:&quot;9h5vTQJ0TmyKs0wItZ3JAw&quot;},&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;6th floor&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;95113&quot;},&quot;id&quot;:&quot;eRYjZlItQIqlFbCuRA__SQ&quot;,&quot;name&quot;:&quot;example location&quot;,&quot;network_switches&quot;:[{&quot;mac_address&quot;:&quot;64167f379097&quot;,&quot;port&quot;:&quot;20&quot;,&quot;port_prefix&quot;:&quot;2&quot;,&quot;port_range_from&quot;:&quot;01&quot;,&quot;port_range_to&quot;:&quot;05&quot;},{&quot;mac_address&quot;:&quot;64167f379097&quot;,&quot;port&quot;:&quot;20&quot;,&quot;port_prefix&quot;:&quot;2&quot;,&quot;port_range_from&quot;:&quot;01&quot;,&quot;port_range_to&quot;:&quot;05&quot;}],&quot;parent_location_id&quot;:&quot;FksDtQDfR9qs3gWXNDsfIw&quot;,&quot;private_ip&quot;:&quot;192.1.1.2&quot;,&quot;public_ip&quot;:&quot;192.1.1.1&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;band width&quot;,&quot;id&quot;:&quot;F_WKDH6FRdeddZBcNUlUeA&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main site&quot;},&quot;minimum_match_criteria&quot;:true}
+```

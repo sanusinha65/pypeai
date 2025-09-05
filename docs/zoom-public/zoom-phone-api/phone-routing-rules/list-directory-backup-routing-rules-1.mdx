@@ -1,0 +1,68 @@
+# List directory backup routing rules
+
+GET {{baseUrl}}/phone/routing_rules?site_id=NjHmTu16Qfe8yOiNJuekXA
+
+
+<p>
+Use this API to return a list of directory backup routing rules. The directory backup routing rules are a series of predefined Regular Expressions. These rules are used to route outgoing calls. If a dialed number does not match a Zoom Phone user, and does not match a defined External Contact, these rules are tested next. If a dialed number does not match any rules, the call will be routed via the PSTN. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `site_id` | string |  | Unique identifier of the site. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+[{&quot;name&quot;:&quot;testRoutingRule&quot;,&quot;number_pattern&quot;:&quot;testNumberPattern&quot;,&quot;order&quot;:1,&quot;routing_path&quot;:{&quot;sip_group&quot;:{&quot;id&quot;:&quot;KrjExB4mSuWYkpIRLEjjpQ&quot;,&quot;name&quot;:&quot;sip_test_customer_id2&quot;},&quot;type&quot;:&quot;sip_group&quot;},&quot;routing_rule_id&quot;:&quot;LVkqTcxNQt6d-W45e0Jc6Q&quot;,&quot;site_id&quot;:&quot;NjHmTu16Qfe8yOiNJuekXA&quot;,&quot;translation&quot;:&quot;/[1-9]/&quot;},{&quot;name&quot;:&quot;testRoutingRule&quot;,&quot;number_pattern&quot;:&quot;testNumberPattern&quot;,&quot;order&quot;:1,&quot;routing_path&quot;:{&quot;sip_group&quot;:{&quot;id&quot;:&quot;KrjExB4mSuWYkpIRLEjjpQ&quot;,&quot;name&quot;:&quot;sip_test_customer_id2&quot;},&quot;type&quot;:&quot;sip_group&quot;},&quot;routing_rule_id&quot;:&quot;LVkqTcxNQt6d-W45e0Jc6Q&quot;,&quot;site_id&quot;:&quot;NjHmTu16Qfe8yOiNJuekXA&quot;,&quot;translation&quot;:&quot;/[1-9]/&quot;}]
+```

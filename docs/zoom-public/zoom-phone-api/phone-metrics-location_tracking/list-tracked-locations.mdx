@@ -1,0 +1,95 @@
+# List tracked locations
+
+GET {{baseUrl}}/phone/metrics/location_tracking?type=5&amp;site_id=&lt;string&gt;&amp;location_type=unknown&amp;keyword=&lt;string&gt;
+
+
+<p>
+Lists the tracked locations. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_tracked_locations:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | number |  | The type of response data. Supports  only six responses at this time.
+`1`: Nomadic Emergency Services.
+`2`: Users Permission for Location Sharing.
+`3`: Default Emergency Address.
+`4`: Detectable Personal Location.
+`5`: Real-time Location for Users.
+`6`: Real-time Location for IP Phones. |
+| `site_id` | string |  | The site&#39;s ID. |
+| `location_type` | string |  | The location&#39;s type. &#39;Company&#39; is the default value. |
+| `keyword` | string |  | The device name or device MAC address. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;location_tracking&quot;:[{&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;device&quot;:{&quot;bssid&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_ip&quot;:&quot;\u003cstring\u003e&quot;},&quot;emergency_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_switch&quot;:{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;company&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},{&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;device&quot;:{&quot;bssid&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_ip&quot;:&quot;\u003cstring\u003e&quot;},&quot;emergency_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_switch&quot;:{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;company&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

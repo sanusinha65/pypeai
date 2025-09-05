@@ -1,0 +1,81 @@
+# Get webinar&#39;s session branding
+
+GET {{baseUrl}}/webinars/:webinarId/branding
+
+
+<p>
+Use this API to get the webinar&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/4836268732045-Using-Webinar-Session-Branding">
+Session Branding
+</a>
+ information. Session branding lets hosts visually customize a webinar by setting a webinar wallpaper that displays behind video tiles. Session branding also lets hosts set the Virtual Background for and apply name tags to hosts, alternative hosts, panelists, interpreters, and speakers. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan with the Webinar add-on. 
+* The 
+<strong>
+Webinar Session Branding
+</strong>
+ setting enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read
+</code>
+,
+<code>
+webinar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;wallpaper&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;virtual_backgrounds&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;name_tags&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;text_color&quot;:&quot;\u003cstring\u003e&quot;,&quot;accent_color&quot;:&quot;\u003cstring\u003e&quot;,&quot;background_color&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;text_color&quot;:&quot;\u003cstring\u003e&quot;,&quot;accent_color&quot;:&quot;\u003cstring\u003e&quot;,&quot;background_color&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

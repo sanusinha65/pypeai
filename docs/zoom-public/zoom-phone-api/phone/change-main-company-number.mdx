@@ -1,0 +1,83 @@
+# Change main company number
+
+PUT {{baseUrl}}/phone/company_number
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360028553691#h_82414c34-9df2-428a-85a4-efcf7f9e0d72">
+change an account&#39;s main company number
+</a>
+.
+</p>
+
+
+
+<p>
+External users can use the 
+<a href="https://support.zoom.us/hc/en-us/articles/360028553691">
+main company number
+</a>
+ to reach your Zoom Phone users by dialing the main company number and the user&#39;s extension. It can also be used by your account&#39;s Zoom Phone users as their caller ID when making calls.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* Account owner or admin permissions
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_number&quot;=&gt;&quot;+199955500123&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

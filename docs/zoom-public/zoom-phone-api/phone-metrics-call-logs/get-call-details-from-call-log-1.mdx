@@ -1,0 +1,75 @@
+# Get call details from call log
+
+GET {{baseUrl}}/phone/metrics/call_logs/:call_id
+
+
+<p>
+Call logs provide a record of all incoming and outgoing calls over Zoom Phone in an account. 
+</p>
+
+
+
+<p>
+Use this API to list call log details of a specific call. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;7081466125443483485&quot;,&quot;callee&quot;:{&quot;codec&quot;:&quot;ES8311&quot;,&quot;device_private_ip&quot;:&quot;10.100.111.237&quot;,&quot;device_public_ip&quot;:&quot;38.99.100.2&quot;,&quot;device_type&quot;:&quot;MAC_Client&quot;,&quot;extension_number&quot;:&quot;100994&quot;,&quot;headset&quot;:&quot;Edifier&quot;,&quot;isp&quot;:&quot;Cogent Communications&quot;,&quot;microphone&quot;:&quot;+18889843519&quot;,&quot;phone_number&quot;:&quot;+18889843519&quot;,&quot;site_id&quot;:&quot;ZNWikLeVSjuaMvUoxFqCuw&quot;},&quot;caller&quot;:{&quot;codec&quot;:&quot;ES8311&quot;,&quot;device_private_ip&quot;:&quot;10.100.111.237&quot;,&quot;device_public_ip&quot;:&quot;38.99.100.2&quot;,&quot;device_type&quot;:&quot;MAC_Client&quot;,&quot;extension_number&quot;:&quot;100152&quot;,&quot;headset&quot;:&quot;Edifier&quot;,&quot;isp&quot;:&quot;Cogent Communications&quot;,&quot;microphone&quot;:&quot;+12053194087&quot;,&quot;phone_number&quot;:&quot;+12053194087&quot;,&quot;site_id&quot;:&quot;ZNWikLeVSjuaMvUoxFqCuw&quot;},&quot;date_time&quot;:&quot;2022-04-01T03:05:18Z&quot;,&quot;direction&quot;:&quot;internal&quot;,&quot;duration&quot;:27,&quot;mos&quot;:&quot;3.6&quot;}
+```

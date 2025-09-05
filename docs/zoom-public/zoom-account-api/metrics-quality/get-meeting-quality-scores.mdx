@@ -1,0 +1,83 @@
+# Get meeting quality scores
+
+GET {{baseUrl}}/metrics/quality?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;type=meeting
+
+
+<p>
+Use this API to return 
+<a href="https://support.zoom.us/hc/en-us/articles/360061244651-Meeting-quality-scores-and-network-alerts-on-Dashboard">
+meeting quality score
+</a>
+ information. Meeting quality scores are based on the mean opinion score (MOS). The MOS measures a meeting&#39;s quality on a scale of &quot;Good&quot; (5-4), &quot;Fair&quot; (4-3), &quot;Poor&quot; (3-2), or &quot;Bad&quot; (2-1). 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or a higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_home:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `type` | string |  | The type of meeting quality score to query: 
+* `meeting` &amp;mdash; Query by meetings. 
+* `participants` &amp;mdash; Query by meeting participants. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;quality&quot;:{&quot;audio&quot;:{&quot;bad&quot;:&quot;\u003cinteger\u003e&quot;,&quot;fair&quot;:&quot;\u003cinteger\u003e&quot;,&quot;good&quot;:&quot;\u003cinteger\u003e&quot;,&quot;poor&quot;:&quot;\u003cinteger\u003e&quot;},&quot;screen_share&quot;:{&quot;bad&quot;:&quot;\u003cinteger\u003e&quot;,&quot;fair&quot;:&quot;\u003cinteger\u003e&quot;,&quot;good&quot;:&quot;\u003cinteger\u003e&quot;,&quot;poor&quot;:&quot;\u003cinteger\u003e&quot;},&quot;video&quot;:{&quot;bad&quot;:&quot;\u003cinteger\u003e&quot;,&quot;fair&quot;:&quot;\u003cinteger\u003e&quot;,&quot;good&quot;:&quot;\u003cinteger\u003e&quot;,&quot;poor&quot;:&quot;\u003cinteger\u003e&quot;}},&quot;to&quot;:&quot;\u003cdate\u003e&quot;}
+```

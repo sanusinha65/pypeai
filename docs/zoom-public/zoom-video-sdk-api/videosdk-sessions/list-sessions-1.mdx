@@ -1,0 +1,83 @@
+# List sessions
+
+GET {{baseUrl}}/videosdk/sessions?type=live&amp;from=2021-10-11&amp;to=2021-10-11&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82
+
+
+<p>
+Use this API to display the total live or past sessions that occurred during a specified period of time. You can specify a monthly date range for this data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.
+</p>
+
+
+
+<p>
+The overview response displays whether features such as audio, video, screensharing, and recording were used during the session.
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Resource-intensive
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Video SDK account
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of session to query:
+* `past` — A past session that occurred during the specified date range.
+* `live` — A live sessions.
+
+This parameter defaults to `live`. |
+| `from` | string |  | (Required) The start date to query, in `yyyy-mm-dd` format.
+
+The ranges defined in the `from` and `to` parameters should **only** be a one month range. This is because the report only includes one month&#39;s worth of data. |
+| `to` | string |  | (Required) The end date to query, in `yyyy-mm-dd` format.
+
+The ranges defined in the `from` and `to` parameters should **only** be a one month range. This is because the report only includes one month&#39;s worth of data. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;2021-10-11&quot;,&quot;to&quot;:&quot;2021-10-11&quot;,&quot;page_size&quot;:50,&quot;next_page_token&quot;:&quot;suQA5LvDBnH5No5OYD7mqpJuFzJqUOHK8U2&quot;,&quot;sessions&quot;:[{&quot;id&quot;:&quot;sfk/aOFJSJSYhGwk1hnxgw==&quot;,&quot;session_name&quot;:&quot;My session&quot;,&quot;start_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;end_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;duration&quot;:&quot;30:00&quot;,&quot;user_count&quot;:2,&quot;has_voip&quot;:true,&quot;has_video&quot;:true,&quot;has_screen_share&quot;:true,&quot;has_recording&quot;:true,&quot;has_pstn&quot;:true,&quot;session_key&quot;:&quot;my_session_key&quot;},{&quot;id&quot;:&quot;sfk/aOFJSJSYhGwk1hnxgw==&quot;,&quot;session_name&quot;:&quot;My session&quot;,&quot;start_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;end_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;duration&quot;:&quot;30:00&quot;,&quot;user_count&quot;:2,&quot;has_voip&quot;:true,&quot;has_video&quot;:true,&quot;has_screen_share&quot;:true,&quot;has_recording&quot;:true,&quot;has_pstn&quot;:true,&quot;session_key&quot;:&quot;my_session_key&quot;}]}
+```

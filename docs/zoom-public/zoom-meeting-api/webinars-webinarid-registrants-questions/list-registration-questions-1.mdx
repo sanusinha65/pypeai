@@ -1,0 +1,93 @@
+# List registration questions
+
+GET {{baseUrl}}/webinars/:webinarId/registrants/questions
+
+
+<p>
+List registration questions and fields that are to be answered by users while registering for a webinar. 
+</p>
+
+
+
+<p>
+Scheduling a 
+<a href="https://support.zoom.us/hc/en-us/articles/204619915-Scheduling-a-Webinar-with-Registration">
+webinar with registration
+</a>
+ requires your registrants to complete a brief form with fields and questions before they can receive the link to join the webinar.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan with the webinar add-on.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;custom_questions&quot;:[{&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single_dropdown&quot;},{&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single_radio&quot;}],&quot;questions&quot;:[{&quot;field_name&quot;:&quot;country&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;field_name&quot;:&quot;state&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

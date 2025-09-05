@@ -1,0 +1,84 @@
+# Get user&#39;s profile
+
+GET {{baseUrl}}/phone/users/:userId
+
+
+<p>
+Use this API to return a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360001297663-Quickstart-Guide-for-Zoom-Phone-Administrators">
+Zoom phone
+</a>
+ profile. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calling_plans&quot;:[{&quot;type&quot;:600},{&quot;type&quot;:600}],&quot;cost_center&quot;:&quot;testCostCenter&quot;,&quot;department&quot;:&quot;testDepartment&quot;,&quot;email&quot;:&quot;suesu_test_delete3@testapi.com&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 Almaden Boulevard&quot;,&quot;address_line2&quot;:&quot;1002 Airport Way S&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;CCc8zYT1SN60i7uDMzDbXA&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;95113&quot;},&quot;extension_id&quot;:&quot;nNGsNx2zRDyiIXWVI23FCQ&quot;,&quot;extension_number&quot;:77521529,&quot;id&quot;:&quot;NL3cEpSdRc-c2t8aLoZqiw&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;---M1padRvSUtw7YihN7sA&quot;,&quot;number&quot;:&quot;14232058798&quot;},{&quot;id&quot;:&quot;---M1padRvSUtw7YihN7sA&quot;,&quot;number&quot;:&quot;14232058798&quot;}],&quot;phone_user_id&quot;:&quot;u7pnC468TaS46OuNoEw6GA&quot;,&quot;policy&quot;:{&quot;ad_hoc_call_recording&quot;:{&quot;enable&quot;:true,&quot;recording_start_prompt&quot;:true,&quot;recording_transcription&quot;:true},&quot;auto_call_recording&quot;:{&quot;allow_stop_resume_recording&quot;:true,&quot;disconnect_on_recording_failure&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;recording_calls&quot;:&quot;inbound&quot;,&quot;recording_explicit_consent&quot;:true,&quot;recording_start_prompt&quot;:true,&quot;recording_transcription&quot;:true},&quot;call_overflow&quot;:{&quot;call_overflow_type&quot;:1,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;call_park&quot;:{&quot;call_not_picked_up_action&quot;:9,&quot;enable&quot;:true,&quot;expiration_period&quot;:10,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;test extension name&quot;,&quot;extension_id&quot;:&quot;CcrEGgmeQem1uyJsuIRKwA&quot;,&quot;extension_number&quot;:-51216469,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;fWOgOALdT1ei4vjXK-QYsA&quot;},&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;call_transferring&quot;:{&quot;call_transferring_type&quot;:2,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;delegation&quot;:true,&quot;elevate_to_meeting&quot;:true,&quot;emergency_address_management&quot;:{&quot;enable&quot;:true,&quot;prompt_default_address&quot;:true},&quot;emergency_calls_to_psap&quot;:true,&quot;forwarding_to_external_numbers&quot;:true,&quot;hand_off_to_room&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;international_calling&quot;:true,&quot;mobile_switch_to_carrier&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;select_outbound_caller_id&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;sms&quot;:{&quot;enable&quot;:true,&quot;international_sms&quot;:true,&quot;international_sms_countries&quot;:[&quot;US&quot;,&quot;US&quot;],&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;voicemail&quot;:{&quot;allow_delete&quot;:true,&quot;allow_download&quot;:true,&quot;allow_transcription&quot;:true,&quot;allow_videomail&quot;:true,&quot;enable&quot;:true},&quot;voicemail_access_members&quot;:[{&quot;access_user_id&quot;:&quot;w0RChiauQeqRlv5fgxYULQ&quot;,&quot;allow_delete&quot;:true,&quot;allow_download&quot;:true}],&quot;zoom_phone_on_mobile&quot;:{&quot;allow_calling_sms_mms&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;},&quot;personal_audio_library&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true,&quot;allow_music_on_hold_customization&quot;:true,&quot;allow_voicemail_and_message_greeting_customization&quot;:true},&quot;voicemail_transcription&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true},&quot;voicemail_notification_by_email&quot;:{&quot;include_voicemail_file&quot;:true,&quot;include_voicemail_transcription&quot;:false,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true},&quot;shared_voicemail_notification_by_email&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true},&quot;check_voicemails_over_phone&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true},&quot;audio_intercom&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true}},&quot;site_admin&quot;:true,&quot;site_id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;status&quot;:&quot;activate&quot;}
+```

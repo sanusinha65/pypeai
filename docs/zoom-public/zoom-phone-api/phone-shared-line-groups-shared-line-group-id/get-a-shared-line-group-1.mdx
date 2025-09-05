@@ -1,0 +1,92 @@
+# Get a shared line group
+
+GET {{baseUrl}}/phone/shared_line_groups/:sharedLineGroupId
+
+
+<p>
+A 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792">
+shared line group
+</a>
+ allows Zoom Phone admins to share a phone number and extension with a group of phone users or common area phones. This gives members of the shared line group access to the group&#39;s direct phone number and voicemail. Use this API to list all the Shared Line Groups.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin privileges 
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+ or 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;display_name&quot;:&quot;jamieSLGTest&quot;,&quot;extension_number&quot;:1000123471,&quot;id&quot;:&quot;RQinnFtmTJ25mx89tW5Cmw&quot;,&quot;members&quot;:{&quot;common_area_phones&quot;:[{&quot;id&quot;:&quot;--0hGlT2RlWJJv-oD2DS2Q&quot;,&quot;name&quot;:&quot;area phones3676&quot;},{&quot;id&quot;:&quot;--0hGlT2RlWJJv-oD2DS2Q&quot;,&quot;name&quot;:&quot;area phones3676&quot;}],&quot;users&quot;:[{&quot;id&quot;:&quot;mNlwFK9ISMKC2toK9oDTcg&quot;,&quot;name&quot;:&quot;ZOOM_API Test&quot;,&quot;extension_id&quot;:&quot;oeDyBe8zT2SzOZW6gQJXUA&quot;},{&quot;id&quot;:&quot;mNlwFK9ISMKC2toK9oDTcg&quot;,&quot;name&quot;:&quot;ZOOM_API Test&quot;,&quot;extension_id&quot;:&quot;oeDyBe8zT2SzOZW6gQJXUA&quot;}],&quot;common_areas&quot;:[{&quot;id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;,&quot;name&quot;:&quot;Common Area&quot;,&quot;extension_id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;},{&quot;id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;,&quot;name&quot;:&quot;Common Area&quot;,&quot;extension_id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;}]},&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;---M1padRvSUtw7YihN7sA&quot;,&quot;number&quot;:&quot;14232058798&quot;},{&quot;id&quot;:&quot;---M1padRvSUtw7YihN7sA&quot;,&quot;number&quot;:&quot;14232058798&quot;}],&quot;primary_number&quot;:&quot;14232058798&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;status&quot;:&quot;active&quot;,&quot;timezone&quot;:&quot;UTC&quot;}
+```

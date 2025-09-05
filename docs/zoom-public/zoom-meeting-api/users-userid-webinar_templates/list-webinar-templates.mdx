@@ -1,0 +1,83 @@
+# List webinar templates
+
+GET {{baseUrl}}/users/:userId/webinar_templates
+
+
+<p>
+Display a list of a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/115001079746-Webinar-Templates">
+webinar templates
+</a>
+. For user-level apps, pass 
+<a href="/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. When you schedule a webinar, save the settings for that webinar as a template for scheduling future webinars.  To use a template when scheduling a webinar, use the 
+<code>
+id
+</code>
+ value in this API response in the 
+<code>
+template_id
+</code>
+ field of the 
+<a href="/docs/api-reference/zoom-api/methods#operation/webinarCreate">
+
+<strong>
+Create a webinar
+</strong>
+
+</a>
+ API. 
+<strong>
+Prerequisites:
+</strong>
+ * A Pro or a higher account with the 
+<a href="https://zoom.us/pricing/webinar">
+Zoom Webinar plan
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;templates&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

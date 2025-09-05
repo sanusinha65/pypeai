@@ -1,0 +1,126 @@
+# Update a message
+
+PUT {{baseUrl}}/chat/users/:userId/messages/:messageId
+
+
+<p>
+Edits a chat message that you previously sent to either a contact or a channel in Zoom by providing the ID of the message as the value of the 
+<code>
+messageId
+</code>
+ parameter. You can get the ID from the 
+<strong>
+List User&#39;s Chat Messages
+</strong>
+ API. Additionally, as a query parameter, you must provide either the contact&#39;s 
+<strong>
+email address
+</strong>
+ of the contact or the 
+<strong>
+Channel ID
+</strong>
+ of the channel where the message was sent.
+</p>
+
+
+
+<p>
+For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note:
+</b>
+ For an 
+<b>
+account-level
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:~:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+ role
+</a>
+ that has the 
+<b>
+Edit
+</b>
+ permission for 
+<b>
+Chat Messages
+</b>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+chat_message:write
+</code>
+,
+<code>
+chat_message:write:admin
+</code>
+  
+<br>
+
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;message&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_channel&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_contact&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;file_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

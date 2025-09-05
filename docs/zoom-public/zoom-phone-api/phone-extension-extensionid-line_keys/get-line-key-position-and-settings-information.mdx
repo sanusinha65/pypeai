@@ -1,0 +1,95 @@
+# Get line key position and settings information
+
+GET {{baseUrl}}/phone/extension/:extensionId/line_keys
+
+
+<p>
+Use this API to get the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360040587552">
+line key settings
+</a>
+ information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:line_keys
+</code>
+,
+<code>
+phone:read:line_keys:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;line_keys&quot;:[{&quot;alias&quot;:&quot;\u003cstring\u003e&quot;,&quot;index&quot;:&quot;\u003cinteger\u003e&quot;,&quot;key_assignment&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;retrieval_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;speed_dial_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;line_key_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_caller_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;line&quot;},{&quot;alias&quot;:&quot;\u003cstring\u003e&quot;,&quot;index&quot;:&quot;\u003cinteger\u003e&quot;,&quot;key_assignment&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;retrieval_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;speed_dial_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;line_key_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_caller_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;line&quot;}]}
+```

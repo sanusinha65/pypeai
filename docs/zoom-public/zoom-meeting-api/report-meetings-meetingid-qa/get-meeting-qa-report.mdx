@@ -1,0 +1,79 @@
+# Get meeting Q&amp;A report
+
+GET {{baseUrl}}/report/meetings/:meetingId/qa
+
+
+<p>
+Retrieve a report on questions asked and answered by participants from past meetings.   
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro plan or higher.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;questions&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_details&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;}]},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_details&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;}]}]},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_details&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;}]},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_details&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;default&quot;}]}]}],&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}
+```

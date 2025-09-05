@@ -1,0 +1,61 @@
+#Zoom Calendar API
+
+Number of APIs: 33
+
+
+<p>
+You can use Zoom Calendar APIs to integrate Zoom Calendar into third-party applications or services, and build private services or public applications on the 
+<a href="http://marketplace.zoom.us/">
+Zoom App Marketplace
+</a>
+.  
+</p>
+
+
+
+<p>
+Zoom Calendar APIs empower developers enables you to build custom scheduling solutions for specific industries, such as healthcare, education, and event management. For example, healthcare providers can use the Zoom Calendar API to integrate medical appointments into patient management systems. Educators can integrate Zoom scheduling features to manage virtual classes, office hours, and tutoring sessions. And event managers can use the Zoom Calendar API to provide virtual event scheduling and management features.
+</p>
+
+
+
+1. [calendars-{calId}-events-{eventId} - Delete an existing event from the specified calendar](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-events-eventid/delete-an-existing-event-from-the-specified-calendar)
+DELETE {{baseUrl}}/calendars/:calId/events/:eventId?sendUpdates=none
+
+
+2. [calendars-{calId}-acl - Create a new ACL rule](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-acl/create-a-new-acl-rule)
+POST {{baseUrl}}/calendars/:calId/acl
+
+
+3. [calendars-{calId}-events-import - Import event to the specified calendar](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-events-import/import-event-to-the-specified-calendar)
+POST {{baseUrl}}/calendars/:calId/events/import
+
+
+4. [calendars-{calId}-events-watch - Watch for changes to event](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-events-watch/watch-for-changes-to-event)
+POST {{baseUrl}}/calendars/:calId/events/watch
+
+
+5. [calendars-{calId}-events-{eventId} - Get the specified event on the specified calendar](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-events-eventid/get-the-specified-event-on-the-specified-calendar)
+GET {{baseUrl}}/calendars/:calId/events/:eventId
+
+
+6. [calendars-users-{userIdentifier}-calendarList - List the calendars in the user&#39;s own calendarList](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-users-useridentifier-calendarlist/list-the-calendars-in-the-users-own-calendarlist)
+GET {{baseUrl}}/calendars/users/:userIdentifier/calendarList?maxResults=&lt;integer&gt;&amp;minAccessRole=writer&amp;pageToken=&lt;string&gt;&amp;showDeleted=&lt;boolean&gt;&amp;showHidden=&lt;boolean&gt;
+
+
+7. [calendars-users-{userIdentifier}-calendarList - Insert an existing calendar to the user&#39;s own calendarList](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-users-useridentifier-calendarlist/insert-an-existing-calendar-to-the-user-s-own-calendarlist)
+POST {{baseUrl}}/calendars/users/:userIdentifier/calendarList?colorRgbFormat=&lt;boolean&gt;
+
+
+8. [calendars-{calId} - Get the specified calendar](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid/get-the-specified-calendar)
+GET {{baseUrl}}/calendars/:calId
+
+
+9. [calendars-users-{userIdentifier}-calendarList-watch - Watch for changes to the user&#39;s own calendarList](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-users-useridentifier-calendarlist-watch/watch-for-changes-to-the-users-own-calendarlist)
+POST {{baseUrl}}/calendars/users/:userIdentifier/calendarList/watch
+
+
+10. [calendars-users-{userIdentifier}-calendarList-{calendarId} - Get a specified calendar from the user&#39;s own calendarList](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-users-useridentifier-calendarlist-calendarid/get-a-specified-calendar-from-the-users-own-calendarlist)
+GET {{baseUrl}}/calendars/users/:userIdentifier/calendarList/:calendarId
+
+

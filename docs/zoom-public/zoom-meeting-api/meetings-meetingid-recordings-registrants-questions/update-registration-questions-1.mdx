@@ -1,0 +1,75 @@
+# Update registration questions
+
+PATCH {{baseUrl}}/meetings/:meetingId/recordings/registrants/questions
+
+
+<p>
+For 
+<a href="https://support.zoom.us/hc/en-us/articles/360000488283-On-demand-Recordings">
+on-demand
+</a>
+ meeting recordings, you can include fields with questions that will be shown to registrants when they register to view the recording.
+</p>
+
+
+
+<p>
+Use this API to update registration questions that are to be answered by users while registering to view a recording.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;custom_questions&quot;=&gt;[{&quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single&quot;}, {&quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;short&quot;}], &quot;questions&quot;=&gt;[{&quot;field_name&quot;=&gt;&quot;industry&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;field_name&quot;=&gt;&quot;industry&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

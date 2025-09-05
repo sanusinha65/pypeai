@@ -1,0 +1,95 @@
+#Zoom User API
+
+Number of APIs: 61
+
+
+<p>
+
+<u>
+Note: The Zoom User API was formerly a subset of the Meeting API
+</u>
+
+</p>
+
+
+
+<p>
+The Zoom User API lets developers access data related to Contact Groups, Groups, and Users. Use this API to build private services or public applications on the 
+<a href="http://marketplace.zoom.us/">
+Zoom App Marketplace
+</a>
+. Learn how to get your credentials and create private/public applications in our 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+Authorization Guide
+</a>
+.
+</p>
+
+
+
+<p>
+The API accepts 
+<code>
+application/json
+</code>
+ and 
+<code>
+multipart/form-data
+</code>
+, and responds with 
+<code>
+application/json
+</code>
+ and 
+<code>
+application/xml
+</code>
+. All endpoints are available at 
+<code>
+https://api.zoom.us/v2/
+</code>
+.
+</p>
+
+
+
+1. [contacts-groups-{groupId} - Delete a contact group](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-groupid/delete-a-contact-group)
+DELETE {{baseUrl}}/contacts/groups/:groupId
+
+
+2. [contacts-groups-{groupId} - Update a contact group](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-groupid/update-a-contact-group)
+PATCH {{baseUrl}}/contacts/groups/:groupId
+
+
+3. [contacts-groups - Create a contact group](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-1/create-a-contact-group)
+POST {{baseUrl}}/contacts/groups
+
+
+4. [groups-{groupId}-admins-{userId} - Delete a group admin](https://developers.qodex.ai/zoom-public/zoom-user-api/groups-groupid-admins-userid/delete-a-group-admin)
+DELETE {{baseUrl}}/groups/:groupId/admins/:userId
+
+
+5. [groups-{groupId}-admins - Add group admins](https://developers.qodex.ai/zoom-public/zoom-user-api/groups-groupid-admins/add-group-admins)
+POST {{baseUrl}}/groups/:groupId/admins
+
+
+6. [groups-{groupId}-members-{memberId} - Delete a group member](https://developers.qodex.ai/zoom-public/zoom-user-api/groups-groupid-members-memberid/delete-a-group-member)
+DELETE {{baseUrl}}/groups/:groupId/members/:memberId
+
+
+7. [contacts-groups - List contact groups](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-1/list-contact-groups)
+GET {{baseUrl}}/contacts/groups?page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+8. [groups-{groupId}-lock_settings - Get locked settings](https://developers.qodex.ai/zoom-public/zoom-user-api/groups-groupid-lock_settings/get-locked-settings-1)
+GET {{baseUrl}}/groups/:groupId/lock_settings?option=&lt;string&gt;
+
+
+9. [groups-{groupId}-settings-registration - Get a group&#39;s webinar registration settings](https://developers.qodex.ai/zoom-public/zoom-user-api/groups-groupid-settings-registration/get-a-groups-webinar-registration-settings)
+GET {{baseUrl}}/groups/:groupId/settings/registration?type=webinar
+
+
+10. [groups-{groupId}-settings - Get a group&#39;s settings](https://developers.qodex.ai/zoom-public/zoom-user-api/groups-groupid-settings/get-a-groups-settings)
+GET {{baseUrl}}/groups/:groupId/settings?option=recording_authentication&amp;custom_query_fields=&lt;string&gt;
+
+

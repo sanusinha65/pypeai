@@ -1,0 +1,118 @@
+# Sync user&#39;s call logs
+
+GET {{baseUrl}}/phone/users/:userId/call_logs/sync?sync_type=BSync&amp;count=&lt;integer&gt;&amp;sync_token=&lt;string&gt;
+
+
+<p>
+Syncs a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360001297663-Quickstart-Guide-for-Zoom-Phone-Administrators">
+Zoom phone
+</a>
+ call logs. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_call_logs
+</code>
+,
+<code>
+phone:read:list_call_logs:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | Options for synchronizing call log:  
+ 
+FSync - Full sync  
+ 
+ISync - Increase sync  
+ 
+BSync - Backward sync |
+| `count` | string |  | The number of records returned within a single API call. |
+| `sync_token` | string |  | The time range for returned records. Used for locating where the next retrieval will begin. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_logs&quot;:[{&quot;accepted_by&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;answer_start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_country_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:1,&quot;callee_number_source&quot;:&quot;external&quot;,&quot;caller_country_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:1,&quot;caller_number_source&quot;:&quot;external&quot;,&quot;caller_billing_reference_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;charge&quot;:&quot;\u003cstring\u003e&quot;,&quot;client_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forwarded_by&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;forwarded_to&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outgoing_by&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;path&quot;:&quot;\u003cstring\u003e&quot;,&quot;rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;result&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;hold_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;waiting_time&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;accepted_by&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;answer_start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_country_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:2,&quot;callee_number_source&quot;:&quot;external&quot;,&quot;caller_country_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:2,&quot;caller_number_source&quot;:&quot;internal&quot;,&quot;caller_billing_reference_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;charge&quot;:&quot;\u003cstring\u003e&quot;,&quot;client_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;forwarded_by&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;forwarded_to&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voicemail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outgoing_by&quot;:{&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;path&quot;:&quot;\u003cstring\u003e&quot;,&quot;rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;result&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;hold_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;waiting_time&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;sync_token&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,86 @@
+# Get setting template details
+
+GET {{baseUrl}}/phone/setting_templates/:templateId?custom_query_fields=&lt;string&gt;
+
+
+<p>
+Returns information about an account&#39;s phone template.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:setting_template:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `custom_query_fields` | string |  | This field provides the name of the field to use to filter the response. For example, if you provide &amp;quot;description&amp;quot; as the value of the field, you will get a response similar to the following: {&amp;ldquo;description&amp;rdquo;: &amp;ldquo;template description&amp;rdquo;}. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;policy&quot;:{&quot;ad_hoc_call_recording&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_start_prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_transcription&quot;:&quot;\u003cboolean\u003e&quot;},&quot;auto_call_recording&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_calls&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_start_prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_transcription&quot;:&quot;\u003cboolean\u003e&quot;},&quot;sms&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;international_sms&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail&quot;:{&quot;allow_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;},&quot;call_forwarding&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_forwarding_type&quot;:3},&quot;call_overflow&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_overflow_type&quot;:2}},&quot;profile&quot;:{&quot;area_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;commonArea&quot;,&quot;user_settings&quot;:{&quot;audio_prompt_language&quot;:&quot;\u003cstring\u003e&quot;,&quot;block_calls_without_caller_id&quot;:&quot;\u003cboolean\u003e&quot;,&quot;call_handling&quot;:{&quot;business_hours&quot;:{&quot;business_hour_action&quot;:1,&quot;connect_to_operator&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;zoomRoom&quot;,&quot;external_number&quot;:{&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;},&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_caller_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;},&quot;busy_action&quot;:0,&quot;busy_connect_operator&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;,&quot;external_number&quot;:{&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;},&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_caller_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;},&quot;custom_hours&quot;:[{&quot;from&quot;:&quot;\u003ctime\u003e&quot;,&quot;to&quot;:&quot;\u003ctime\u003e&quot;,&quot;type&quot;:2,&quot;weekday&quot;:4},{&quot;from&quot;:&quot;\u003ctime\u003e&quot;,&quot;to&quot;:&quot;\u003ctime\u003e&quot;,&quot;type&quot;:2,&quot;weekday&quot;:7}],&quot;ring_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;ringing_duration&quot;:&quot;45&quot;,&quot;type&quot;:2},&quot;close_hours&quot;:{&quot;close_hour_action&quot;:1,&quot;connect_to_operator&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;,&quot;external_number&quot;:{&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;},&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_caller_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;},&quot;busy_action&quot;:12,&quot;busy_connect_operator&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;,&quot;external_number&quot;:{&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;},&quot;play_callee_voicemail_greeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_press_1_before_connecting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_caller_check_voicemail&quot;:&quot;\u003cboolean\u003e&quot;},&quot;max_wait_time&quot;:&quot;35&quot;}},&quot;desk_phone&quot;:{&quot;pin_code&quot;:&quot;\u003cstring\u003e&quot;},&quot;hold_music&quot;:&quot;disable&quot;}}
+```

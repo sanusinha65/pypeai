@@ -1,0 +1,61 @@
+# Delete an inbox&#39;s messages
+
+DELETE {{baseUrl}}/contact_center/inboxes/:inboxId/messages?delete_all_messages=true
+
+
+<p>
+Delete messages in an inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_inbox:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `delete_all_messages` | boolean |  | Whether or not to delete all messages in a given inbox.
+
+ true: delete all messages under an inbox. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

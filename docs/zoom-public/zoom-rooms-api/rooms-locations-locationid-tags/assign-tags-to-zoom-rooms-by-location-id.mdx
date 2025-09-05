@@ -1,0 +1,69 @@
+# Assign Tags to Zoom Rooms By Location ID
+
+PATCH {{baseUrl}}/rooms/locations/:locationId/tags
+
+
+<p>
+Use this API to assign Tags to Zoom Rooms by location ID  
+<strong>
+Prerequisites:
+</strong>
+ * A Pro or a higher plan with a 
+<a href="https://zoom.us/zoomrooms">
+Zoom Rooms
+</a>
+ license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;tag_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

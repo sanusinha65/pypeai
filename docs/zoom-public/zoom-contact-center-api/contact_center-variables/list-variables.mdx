@@ -1,0 +1,75 @@
+# List variables
+
+GET {{baseUrl}}/contact_center/variables?variable_group_id=&lt;string&gt;&amp;data_type=currency&amp;variable_type=global_variable&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Returns a list of variables for a specific variable group. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_variable:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `variable_group_id` | string |  | (Required) The variable&#39;s group ID. |
+| `data_type` | string |  | The data&#39;s type. 
+* `string` 
+* `number` 
+* `boolean` 
+* `date_time` 
+* `currency` 
+* `percentage` 
+* `email` 
+* `url` 
+* `phone` - ([E.164 format](https://en.wikipedia.org/wiki/E.164)) |
+| `variable_type` | string |  | The variable&#39;s type. 
+* `global_variable` 
+* `address_book_variable` |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;variables&quot;:[{&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;default_value&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_type&quot;:&quot;address_book_variable&quot;,&quot;data_type&quot;:&quot;percentage&quot;,&quot;variable_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;mask_variable_data&quot;:false,&quot;values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;value_category&quot;:&quot;\u003cstring\u003e&quot;,&quot;used_in_address_book_count&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;default_value&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_type&quot;:&quot;global_variable&quot;,&quot;data_type&quot;:&quot;boolean&quot;,&quot;variable_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;mask_variable_data&quot;:false,&quot;values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;value_category&quot;:&quot;\u003cstring\u003e&quot;,&quot;used_in_address_book_count&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

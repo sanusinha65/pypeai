@@ -1,0 +1,105 @@
+# Sync user&#39;s call logs
+
+GET {{baseUrl}}/phone/users/:userId/call_logs/sync?sync_type=FSync&amp;count=50&amp;sync_token=SDVjM3NHRlNyMF8xNjQwODI3NTkyMzkwXzE2NDgwMTUzNTk0MzI=
+
+
+<p>
+Use this API to sync a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360001297663-Quickstart-Guide-for-Zoom-Phone-Administrators">
+Zoom phone
+</a>
+ call logs. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone_call_log:read
+</code>
+, 
+<code>
+phone_call_log:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits/#zoom-phone-apis">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | Options for synchronizing call log:&lt;br&gt;
+FSync - Full sync&lt;br&gt;
+ISync - Increase sync&lt;br&gt;
+BSync - Backward sync |
+| `count` | number |  | The number of records returned within a single API call. |
+| `sync_token` | string |  | The time range for returned records. Used for locating where the next retrieval will begin. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_logs&quot;:[{&quot;accepted_by&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;answer_start_time&quot;:&quot;2021-10-08T16:10:04Z&quot;,&quot;call_end_time&quot;:&quot;2021-10-08T16:12:04Z&quot;,&quot;call_id&quot;:&quot;7006926284340112376&quot;,&quot;callee_country_code&quot;:&quot;1&quot;,&quot;callee_country_iso_code&quot;:&quot;US&quot;,&quot;callee_did_number&quot;:&quot;+12135551234&quot;,&quot;callee_name&quot;:&quot;Jan Dev&quot;,&quot;callee_number&quot;:&quot;101&quot;,&quot;callee_number_type&quot;:1,&quot;callee_number_source&quot;:&quot;internal&quot;,&quot;caller_country_code&quot;:&quot;1&quot;,&quot;caller_country_iso_code&quot;:&quot;US&quot;,&quot;caller_did_number&quot;:&quot;+18108001001&quot;,&quot;caller_name&quot;:&quot;Zoom&quot;,&quot;caller_number&quot;:&quot;+12095552345&quot;,&quot;caller_number_type&quot;:1,&quot;caller_number_source&quot;:&quot;internal&quot;,&quot;caller_billing_reference_id&quot;:&quot;ZoomTelecom123456&quot;,&quot;charge&quot;:&quot;$0.0255&quot;,&quot;client_code&quot;:&quot;123&quot;,&quot;date_time&quot;:&quot;2022-01-24T23:58:10Z&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;duration&quot;:7,&quot;forwarded_by&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;forwarded_to&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;has_recording&quot;:false,&quot;has_voicemail&quot;:false,&quot;id&quot;:&quot;11f2bacb-37d8-4ae4-8d88-be657421266f&quot;,&quot;outgoing_by&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;path&quot;:&quot;callQueue&quot;,&quot;rate&quot;:&quot;$0.0255&quot;,&quot;recording_type&quot;:&quot;1&quot;,&quot;result&quot;:&quot;call_connected&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;GNO-CItXQaLhqH3qfPD1kg&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;user_id&quot;:&quot;IqoQmDRqS-aIoXqV_FZ88w&quot;,&quot;hold_time&quot;:5,&quot;waiting_time&quot;:47},{&quot;accepted_by&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;answer_start_time&quot;:&quot;2021-10-08T16:10:04Z&quot;,&quot;call_end_time&quot;:&quot;2021-10-08T16:12:04Z&quot;,&quot;call_id&quot;:&quot;7006926284340112376&quot;,&quot;callee_country_code&quot;:&quot;1&quot;,&quot;callee_country_iso_code&quot;:&quot;US&quot;,&quot;callee_did_number&quot;:&quot;+12135551234&quot;,&quot;callee_name&quot;:&quot;Jan Dev&quot;,&quot;callee_number&quot;:&quot;101&quot;,&quot;callee_number_type&quot;:1,&quot;callee_number_source&quot;:&quot;internal&quot;,&quot;caller_country_code&quot;:&quot;1&quot;,&quot;caller_country_iso_code&quot;:&quot;US&quot;,&quot;caller_did_number&quot;:&quot;+18108001001&quot;,&quot;caller_name&quot;:&quot;Zoom&quot;,&quot;caller_number&quot;:&quot;+12095552345&quot;,&quot;caller_number_type&quot;:1,&quot;caller_number_source&quot;:&quot;internal&quot;,&quot;caller_billing_reference_id&quot;:&quot;ZoomTelecom123456&quot;,&quot;charge&quot;:&quot;$0.0255&quot;,&quot;client_code&quot;:&quot;123&quot;,&quot;date_time&quot;:&quot;2022-01-24T23:58:10Z&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;duration&quot;:7,&quot;forwarded_by&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;forwarded_to&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;has_recording&quot;:false,&quot;has_voicemail&quot;:false,&quot;id&quot;:&quot;11f2bacb-37d8-4ae4-8d88-be657421266f&quot;,&quot;outgoing_by&quot;:{&quot;extension_number&quot;:&quot;1009&quot;,&quot;location&quot;:&quot;Glendale     CA&quot;,&quot;name&quot;:&quot;Display name&quot;,&quot;number_type&quot;:1,&quot;phone_number&quot;:&quot;+12055432724&quot;},&quot;path&quot;:&quot;callQueue&quot;,&quot;rate&quot;:&quot;$0.0255&quot;,&quot;recording_type&quot;:&quot;1&quot;,&quot;result&quot;:&quot;call_connected&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;GNO-CItXQaLhqH3qfPD1kg&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;user_id&quot;:&quot;IqoQmDRqS-aIoXqV_FZ88w&quot;,&quot;hold_time&quot;:5,&quot;waiting_time&quot;:47}],&quot;sync_token&quot;:&quot;SDVjM3NHRlNyMF8xNjQwODI3NTkyMzkwXzE2NDgwMTUzNTk0MzI=&quot;}
+```

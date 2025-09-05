@@ -1,0 +1,69 @@
+# Update emergency service location
+
+PATCH {{baseUrl}}/phone/locations/:locationId
+
+
+<p>
+Use this API to update an emergency location&#39;s information.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;bssid&quot;=&gt;&quot;SA43YjfBTS6gJbUpfvIziQ&quot;, &quot;elin_phone_number_id&quot;=&gt;&quot;+12058945656&quot;, &quot;emergency_address_id&quot;=&gt;&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;, &quot;name&quot;=&gt;&quot;example location&quot;, &quot;network_switches&quot;=&gt;[{&quot;mac_address&quot;=&gt;&quot;0004f25eec3d&quot;, &quot;port&quot;=&gt;&quot;22&quot;, &quot;port_prefix&quot;=&gt;&quot;01&quot;, &quot;port_range_from&quot;=&gt;&quot;02&quot;, &quot;port_range_to&quot;=&gt;&quot;05&quot;}, {&quot;mac_address&quot;=&gt;&quot;0004f25eec3d&quot;, &quot;port&quot;=&gt;&quot;22&quot;, &quot;port_prefix&quot;=&gt;&quot;01&quot;, &quot;port_range_from&quot;=&gt;&quot;02&quot;, &quot;port_range_to&quot;=&gt;&quot;05&quot;}], &quot;private_ip&quot;=&gt;&quot;192.1.1.2&quot;, &quot;public_ip&quot;=&gt;&quot;192.1.1.1&quot;, &quot;sip_group_id&quot;=&gt;&quot;SA43YjfBTS6gJbUpfvIziQ&quot;, &quot;minimum_match_criteria&quot;=&gt;true}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

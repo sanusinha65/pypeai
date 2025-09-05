@@ -1,0 +1,69 @@
+# Add an emergency service location
+
+POST {{baseUrl}}/phone/locations
+
+
+<p>
+Use this API to add an emergency service location.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;example location update&quot;, &quot;emergency_address_id&quot;=&gt;&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;, &quot;bssid&quot;=&gt;&quot;SA43YjfBTS6gJbUpfvIziQ&quot;, &quot;elin_phone_number_id&quot;=&gt;&quot;9h5vTQJ0TmyKs0wItZ3JAw&quot;, &quot;parent_location_id&quot;=&gt;&quot;FwOAeL4TRmqQrmF0jOfzkQ&quot;, &quot;private_ip&quot;=&gt;&quot;192.1.1.3&quot;, &quot;public_ip&quot;=&gt;&quot;192.1.1.4&quot;, &quot;sip_group_id&quot;=&gt;&quot;SA43YjfBTS6gJbUpfvIziQ&quot;, &quot;site_id&quot;=&gt;&quot;F_WKDH6FRdeddZBcNUlUeA&quot;, &quot;minimum_match_criteria&quot;=&gt;true}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+[{&quot;id&quot;:&quot;eRYjZlItQIqlFbCuRA__SQ&quot;,&quot;name&quot;:&quot;example location&quot;},{&quot;id&quot;:&quot;eRYjZlItQIqlFbCuRA__SQ&quot;,&quot;name&quot;:&quot;example location&quot;}]
+```

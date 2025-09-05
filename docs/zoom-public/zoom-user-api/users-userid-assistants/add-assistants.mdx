@@ -1,0 +1,104 @@
+# Add assistants
+
+POST {{baseUrl}}/users/:userId/assistants
+
+
+<p>
+Assign assistants to a user. In the request body, provide either the user&#39;s ID or the user&#39;s email address. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+Assistants are the users to whom the current user has assigned 
+<a href="https://support.zoom.us/hc/en-us/articles/201362803-Scheduling-Privilege">
+scheduling privilege
+</a>
+. Assistants can schedule meetings on behalf of the current user, and can also manage and act as an alternative host for all meetings if the admin has enabled the 
+<a href="https://zoom.us/account/setting">
+co-host option
+</a>
+ on the account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The user as well as the assistant must have Licensed or an On-prem license.
+* Assistants must be under the current user&#39;s account, or the assistants&#39; account must be in the same organization as the current user&#39;s account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;assistants&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;add_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;ids&quot;:&quot;\u003cstring\u003e&quot;}
+```

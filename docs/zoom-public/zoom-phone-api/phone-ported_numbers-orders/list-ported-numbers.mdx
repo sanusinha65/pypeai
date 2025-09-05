@@ -1,0 +1,91 @@
+# List ported numbers
+
+GET {{baseUrl}}/phone/ported_numbers/orders?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Use this API to list ported numbers in a Zoom account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_peering:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_ported_numbers:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;ported_numbers&quot;:[{&quot;numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;order_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;replacing_numbers&quot;:[{&quot;source_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;source_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:&quot;Canceled&quot;,&quot;submission_date_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;order_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;replacing_numbers&quot;:[{&quot;source_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;source_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:&quot;Waiting&quot;,&quot;submission_date_time&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

@@ -1,0 +1,98 @@
+# Batch demote channel administrators
+
+DELETE {{baseUrl}}/chat/users/:userId/channels/:channelId/admins?admin_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;
+
+
+<p>
+Demotes administrators in a channel in batch. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_channel:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note:
+</b>
+ For an 
+<b>
+account-level
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:~:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+ role
+</a>
+ that has the 
+<b>
+Edit
+</b>
+ permission for 
+<b>
+Chat Channels
+</b>
+.
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `admin_ids` | string |  | (Required) The member IDs with channel admin privileges. Use commas (,) to separate a maximum of 10 IDs in a call. |
+| `user_ids` | string |  | (Required) The member IDs or user IDs with channel admin privileges. Use commas (,) to separate a maximum of 10 IDs in a call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

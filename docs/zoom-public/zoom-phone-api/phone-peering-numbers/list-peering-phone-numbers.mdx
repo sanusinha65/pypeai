@@ -1,0 +1,109 @@
+# List peering phone numbers
+
+GET {{baseUrl}}/phone/peering/numbers?page_size=30&amp;next_page_token=&lt;string&gt;&amp;phone_number=&lt;string&gt;&amp;carrier_code=&lt;integer&gt;
+
+
+<p>
+Returns phone numbers to Zoom through the Provider Exchange.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Phone peering API and events are for partners who have completed the MoU to peer with Zoom. To become a peering provider/ carrier, submit your 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSewkY6ixVyKVNkWC-vgmejC16gigxsJWXji3dWzE3XlWtjsgg/viewform">
+request
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_peering:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_peering_numbers:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The total number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `phone_number` | string |  | The sender&#39;s or receiver&#39;s phone number that limits the list of SMS sessions. |
+| `carrier_code` | string |  | The carrier&#39;s code. The `clientId` that maps to a carrier peered with Zoom.
+
+This parameter is required if you do **not** use an OAuth token or the OAuth token does not contain the `clientId`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;numbers&quot;:[{&quot;assigned&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_trunk_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_reference_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_info&quot;:&quot;\u003cstring\u003e&quot;},{&quot;assigned&quot;:&quot;\u003cinteger\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_trunk_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_reference_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_info&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

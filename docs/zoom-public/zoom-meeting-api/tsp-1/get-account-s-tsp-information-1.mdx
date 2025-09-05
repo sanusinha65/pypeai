@@ -1,0 +1,79 @@
+# Get account&#39;s TSP information
+
+GET {{baseUrl}}/tsp
+
+
+<p>
+Get information on Telephony Service Provider on an account level.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+A Pro or a higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tsp:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;dial_in_number_unrestricted&quot;:&quot;\u003cboolean\u003e&quot;,&quot;dial_in_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;master_account_setting_extended&quot;:&quot;\u003cboolean\u003e&quot;,&quot;modify_credential_forbidden&quot;:&quot;\u003cboolean\u003e&quot;,&quot;tsp_bridge&quot;:&quot;EU_TSP_TB&quot;,&quot;tsp_enabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;tsp_provider&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,123 @@
+# List past call metrics
+
+GET {{baseUrl}}/phone/metrics/past_calls?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;phone_number=&lt;string&gt;&amp;extension_number=&lt;string&gt;&amp;quality_type=good&amp;department=&lt;string&gt;&amp;cost_center=&lt;string&gt;&amp;directions=internal&amp;directions=inbound&amp;durations=0&amp;durations=1&amp;site_id=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Returns all the call logs metrics of the account from the selected time period. The call logs provide a record of all incoming and outgoing calls over Zoom Phone in an account. You can use query parameters to filter the response by metrics of the call (such as date, phone number, extension number and quality type). 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_call_logs:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. If unspecified, returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `phone_number` | string |  | This setting filters call logs of a specified phone number. |
+| `extension_number` | string |  | This setting filters call logs of a specified extension number |
+| `quality_type` | string |  | This setting filters call logs by voice quality. Zoom uses MOS of 3.5 as a general baseline to categorize calls by call quality. A MOS greater than or equal to 3.5 means good quality, while below 3.5 means poor quality.   
+   
+ The value of this field can be one of the following:  
+ 
+* `good`: Retrieve call logs of the call(s) with good quality of voice.  
+ 
+* `bad`: Retrieve call logs of the call(s) with good quality of voice.  
+  
+ |
+| `department` | string |  | The department the extension belongs to. |
+| `cost_center` | string |  | The cost center the extension belongs to. |
+| `directions` | string |  | The directions of the call. |
+| `directions` | string |  | The directions of the call. |
+| `durations` | number |  | The duration of the call.   
+ 
+* `0`: The call that lasts 1 to 5 minutes.   
+ 
+* `1`: The call that lasts 5 to 10 minutes.   
+ 
+* `2`: The call that lasts more than 10 minutes.   
+ 
+* `3`: The call that lasts less than 1 minute. |
+| `durations` | number |  | The duration of the call.   
+ 
+* `0`: The call that lasts 1 to 5 minutes.   
+ 
+* `1`: The call that lasts 5 to 10 minutes.   
+ 
+* `2`: The call that lasts more than 10 minutes.   
+ 
+* `3`: The call that lasts less than 1 minute. |
+| `site_id` | string |  | The unique identifier of the [site](https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites). Use this query parameter if you have enabled multiple sites and would like to filter the response of this API call by call logs of a specific phone site. |
+| `page_size` | number |  | The number of records returned within a single call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_logs&quot;:[{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee&quot;:{&quot;codec&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;headset&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;caller&quot;:{&quot;codec&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;headset&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;},{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee&quot;:{&quot;codec&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;headset&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;caller&quot;:{&quot;codec&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;headset&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;}],&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

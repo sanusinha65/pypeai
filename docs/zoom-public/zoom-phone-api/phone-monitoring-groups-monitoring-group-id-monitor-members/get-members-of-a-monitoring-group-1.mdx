@@ -1,0 +1,74 @@
+# Get members of a monitoring group
+
+GET {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId/monitor_members?member_type=monitor&amp;page_size=1&amp;next_page_token=ICF5K4lVmGG4kyIyGxSfBU2LH4QQG95cn32
+
+
+<p>
+Use this API to return members list of a 
+<a href="https://support.zoom.us/hc/en-us/articles/360044804711">
+Monitoring Group
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `member_type` | string |  | (Required) Member type |
+| `page_size` | number |  | The size of the page. |
+| `next_page_token` | string |  | The current page number of returned records. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;members&quot;:[{&quot;display_name&quot;:&quot;testUser&quot;,&quot;extension_id&quot;:&quot;JpjPXizWTz-l35tFRUK3Gg&quot;,&quot;extension_number&quot;:10010,&quot;extension_type&quot;:&quot;user&quot;},{&quot;display_name&quot;:&quot;testUser&quot;,&quot;extension_id&quot;:&quot;JpjPXizWTz-l35tFRUK3Gg&quot;,&quot;extension_number&quot;:10010,&quot;extension_type&quot;:&quot;user&quot;}],&quot;next_page_token&quot;:&quot;ICF5K4lVmGG4kyIyGxSfBU2LH4QQG95cn32&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:1}
+```

@@ -1,0 +1,66 @@
+# Watch for changes to ACL rules
+
+POST {{baseUrl}}/calendars/:calId/acl/watch
+
+
+<p>
+Watches for changes to ACL resources.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;params&quot;=&gt;{&quot;ttl&quot;=&gt;&quot;604800&quot;}, &quot;token&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;resourceId&quot;:&quot;\u003cstring\u003e&quot;,&quot;resourceUri&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;expiration&quot;:&quot;\u003cinteger\u003e&quot;}
+```

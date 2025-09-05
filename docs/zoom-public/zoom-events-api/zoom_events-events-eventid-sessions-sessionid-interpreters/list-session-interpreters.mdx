@@ -1,0 +1,61 @@
+# List session interpreters
+
+GET {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId/interpreters
+
+
+<p>
+Use this API to retrieve interpreters in a session.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_sessions:read
+</code>
+
+<code>
+zoom_events_sessions:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;interpreters&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1,&quot;source_language_id&quot;:&quot;FR&quot;,&quot;source_language_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_language_id&quot;:&quot;FR&quot;,&quot;target_language_display_name&quot;:{}},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1,&quot;source_language_id&quot;:&quot;CN&quot;,&quot;source_language_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_language_id&quot;:&quot;KR&quot;,&quot;target_language_display_name&quot;:{}}]}
+```

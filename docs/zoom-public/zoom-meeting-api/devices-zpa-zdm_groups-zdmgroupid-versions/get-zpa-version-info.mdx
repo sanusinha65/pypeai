@@ -1,0 +1,57 @@
+# Get ZPA version info
+
+GET {{baseUrl}}/devices/zpa/zdm_groups/:zdmGroupId/versions
+
+
+<p>
+Get ZPA firmware and app version information that can be upgraded for devices.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;firmware_versions&quot;:[{&quot;vendor&quot;:&quot;\u003cstring\u003e&quot;,&quot;model&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;warn_info&quot;:&quot;\u003cstring\u003e&quot;},{&quot;vendor&quot;:&quot;\u003cstring\u003e&quot;,&quot;model&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;warn_info&quot;:&quot;\u003cstring\u003e&quot;}],&quot;app_versions&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}
+```

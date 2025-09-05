@@ -1,0 +1,69 @@
+# List phone users
+
+GET {{baseUrl}}/phone/users?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;site_id=8f71O6rWT8KFUGQmJIFAdQ
+
+
+<p>
+Use this API to return a list of all of an account&#39;s users who are assigned a Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `site_id` | string |  | Unique identifier of the site. This can be retrieved from the [List Phone Sites](https://marketplace.zoom.us/docs/api-reference/phone/methods#operation/listPhoneSites) API. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;nav48KOj42vYPSG4f0cCdT575bZ980did22&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:45,&quot;users&quot;:[{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}],&quot;email&quot;:&quot;202007160003@testapi.com&quot;,&quot;extension_id&quot;:&quot;V4UobpuxRxCwN_8iNf7k4w&quot;,&quot;extension_number&quot;:-79894737,&quot;id&quot;:&quot;w0RChiauQeqRlv5fgxYULQ&quot;,&quot;name&quot;:&quot;APITA AUTO&quot;,&quot;phone_user_id&quot;:&quot;BOSr0vUiTl61WLR-Q_7bUw&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;IjJ2D75SQJit1VdDvkK_mQ&quot;,&quot;name&quot;:&quot;ApiTA_Site_2020_07_12_02_33_45_707&quot;},&quot;status&quot;:&quot;activate&quot;},{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100},{&quot;name&quot;:&quot;US/CA Metered Calling Plan&quot;,&quot;type&quot;:100}],&quot;email&quot;:&quot;202007160003@testapi.com&quot;,&quot;extension_id&quot;:&quot;V4UobpuxRxCwN_8iNf7k4w&quot;,&quot;extension_number&quot;:68730199,&quot;id&quot;:&quot;w0RChiauQeqRlv5fgxYULQ&quot;,&quot;name&quot;:&quot;APITA AUTO&quot;,&quot;phone_user_id&quot;:&quot;BOSr0vUiTl61WLR-Q_7bUw&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;IjJ2D75SQJit1VdDvkK_mQ&quot;,&quot;name&quot;:&quot;ApiTA_Site_2020_07_12_02_33_45_707&quot;},&quot;status&quot;:&quot;activate&quot;}]}
+```

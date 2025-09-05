@@ -1,0 +1,87 @@
+# Get call pickup group by ID
+
+GET {{baseUrl}}/phone/group_call_pickup/:groupId
+
+
+<p>
+Use this API to retrieve information on a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360060107472-Setting-up-and-using-group-call-pickup">
+Group Call Pickup
+</a>
+ object in an account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:call_pickup_group:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;delay&quot;:5,&quot;member_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;play_incoming_calls_sound&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;ring_tone&quot;:&quot;ringtone_1&quot;,&quot;duration&quot;:5},&quot;directed_call_pickup&quot;:&quot;\u003cboolean\u003e&quot;}
+```

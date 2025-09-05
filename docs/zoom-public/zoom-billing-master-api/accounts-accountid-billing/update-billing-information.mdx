@@ -1,0 +1,94 @@
+# Update billing information
+
+PATCH {{baseUrl}}/accounts/:accountId/billing
+
+
+<p>
+Update 
+<a href="https://support.zoom.us/hc/en-us/articles/201363263-About-Billing">
+billing information
+</a>
+ of a sub account.  
+</p>
+
+
+
+<p>
+This API can only be used by master accounts that pay all billing charges of their associated sub accounts. Zoom allows only 
+<a href="https://marketplace.zoom.us/docs/api-reference/master-account-apis">
+approved partners
+</a>
+ to use master APIs and manage sub accounts&#39; billing information. Email the partner programs team at 
+<strong>
+
+<a href="mailto:partner-success@zoom.us">
+partner-success@zoom.us
+</a>
+
+</strong>
+ for more details.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher paid account with master account option enabled.   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;apt&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

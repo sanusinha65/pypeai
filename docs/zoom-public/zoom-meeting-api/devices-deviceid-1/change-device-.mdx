@@ -1,0 +1,72 @@
+# Change device 
+
+PATCH {{baseUrl}}/devices/:deviceId
+
+
+<p>
+Change device name. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Device must be enrolled in ZMD (Zoom Device Management)
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;device_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;tag&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;room_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;device_type&quot;=&gt;1}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

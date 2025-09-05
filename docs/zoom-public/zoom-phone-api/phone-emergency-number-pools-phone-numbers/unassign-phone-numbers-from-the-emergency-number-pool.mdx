@@ -1,0 +1,73 @@
+# Unassign phone numbers from the emergency number pool
+
+DELETE {{baseUrl}}/phone/emergency_number_pools/phone_numbers/:phoneNumberId
+
+
+<p>
+Use this API to unassign phone numbers from the 
+<a href="https://support.zoom.us/hc/en-us/articles/360062110192-Routing-emergency-calls">
+Emergency Number Pool
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

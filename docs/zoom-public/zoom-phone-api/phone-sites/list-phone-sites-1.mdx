@@ -1,0 +1,77 @@
+# List phone sites
+
+GET {{baseUrl}}/phone/sites?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2
+
+
+<p>
+Sites allow you to organize Zoom Phone users in your organization. Use this API to list all the 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672">
+sites
+</a>
+ that have been created for an account.
+<br>
+
+
+<strong>
+Prerequisites:
+</strong>
+
+<br>
+
+* Multiple Sites must be 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-Multiple-Sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15">
+enabled
+</a>
+.
+* Pro or a higher account with Zoom Phone enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+ 
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;nav48KOj42vYPSG4f0cCdT575bZ980did22&quot;,&quot;page_size&quot;:10,&quot;sites&quot;:[{&quot;country&quot;:{&quot;code&quot;:&quot;US&quot;,&quot;name&quot;:&quot;United States&quot;},&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;main_auto_receptionist&quot;:{&quot;extension_id&quot;:&quot;pl1XprjhTQK1CCMVKTqCFA&quot;,&quot;extension_number&quot;:12345,&quot;id&quot;:&quot;Kbdc9lv_SBCuPMjj_lhxVA&quot;,&quot;name&quot;:&quot;ApiTA_R_2020_07_12_00_41_57_145&quot;},&quot;name&quot;:&quot;ApiTA_Site_2020_07_12_00_41_57_141&quot;,&quot;site_code&quot;:1},{&quot;country&quot;:{&quot;code&quot;:&quot;US&quot;,&quot;name&quot;:&quot;United States&quot;},&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;main_auto_receptionist&quot;:{&quot;extension_id&quot;:&quot;pl1XprjhTQK1CCMVKTqCFA&quot;,&quot;extension_number&quot;:12345,&quot;id&quot;:&quot;Kbdc9lv_SBCuPMjj_lhxVA&quot;,&quot;name&quot;:&quot;ApiTA_R_2020_07_12_00_41_57_145&quot;},&quot;name&quot;:&quot;ApiTA_Site_2020_07_12_00_41_57_141&quot;,&quot;site_code&quot;:1}],&quot;total_records&quot;:20}
+```

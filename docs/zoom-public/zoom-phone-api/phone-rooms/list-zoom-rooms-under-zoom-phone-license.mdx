@@ -1,0 +1,86 @@
+# List Zoom Rooms under Zoom Phone license
+
+GET {{baseUrl}}/phone/rooms?page_size=30&amp;next_page_token=&lt;string&gt;&amp;site_id=&lt;string&gt;&amp;calling_type=&lt;integer&gt;&amp;keyword=&lt;string&gt;
+
+
+<p>
+Retrieves a list of 
+<a href="https://support.zoom.us/hc/en-us/articles/360025153711">
+Zoom Rooms
+</a>
+ under the account that has the Zoom Phone license assigned.
+<strong>
+Prerequisites:
+</strong>
+ * A Pro or higher account plan * A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_rooms:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `site_id` | string |  | The site ID retrievable from the [List Phone Sites](https://marketplace.zoom.us/docs/api-reference/phone/methods#operation/listPhoneSites) API. |
+| `calling_type` | string |  | The type of calling plan. |
+| `keyword` | string |  | The Zoom room name or phone number from which to filter the results . |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;rooms&quot;:[{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

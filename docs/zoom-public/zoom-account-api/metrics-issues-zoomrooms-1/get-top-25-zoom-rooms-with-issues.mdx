@@ -1,0 +1,92 @@
+# Get top 25 Zoom Rooms with issues
+
+GET {{baseUrl}}/metrics/issues/zoomrooms?from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+<p>
+Get information on top 25 Zoom Rooms with issues in a month. The month specified with the &quot;from&quot; and &quot;to&quot; range should fall within the last six months.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business or a higher plan.
+</li>
+
+
+<li>
+Zoom Room must be enabled in the account.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_home:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;zoom_rooms&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;issues_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;issues_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

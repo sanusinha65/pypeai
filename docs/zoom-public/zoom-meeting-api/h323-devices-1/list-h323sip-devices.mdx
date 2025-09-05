@@ -1,0 +1,66 @@
+# List H.323/SIP devices
+
+GET {{baseUrl}}/h323/devices?page_size=30&amp;page_number=1&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+A H.323 or SIP device can make a video call to a 
+<a href="https://support.zoom.us/hc/en-us/articles/201363273-Getting-Started-With-H-323-SIP-Room-Connector">
+Room Connector
+</a>
+ to join a Zoom cloud meeting. A Room Connector can also call out to a H.323 or SIP device to join a Zoom cloud meeting. Use this API to list all H.323/SIP Devices on a Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+h323:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `page_number` | number |  | **Deprecated.** We will no longer support this field in a future release. Instead, use the `next_page_token` for pagination. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_number&quot;:1,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;devices&quot;:[{&quot;encryption&quot;:&quot;no&quot;,&quot;ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;protocol&quot;:&quot;H.323&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;encryption&quot;:&quot;yes&quot;,&quot;ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;protocol&quot;:&quot;H.323&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

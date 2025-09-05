@@ -1,0 +1,85 @@
+# List devices
+
+GET {{baseUrl}}/devices?search_text=&lt;string&gt;&amp;platform_os=iphone&amp;is_enrolled_in_zdm=true&amp;device_type=-1&amp;device_vendor=&lt;string&gt;&amp;device_model=&lt;string&gt;&amp;device_status=-1&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+This API lets you list devices. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:read:admin
+</code>
+,
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `search_text` | string |  | Filter devices by name or serial number. |
+| `platform_os` | string |  | Filter devices by platform operating system. |
+| `is_enrolled_in_zdm` | boolean |  | Filter devices by enrollment of ZDM (Zoom Device Management). |
+| `device_type` | number |  | Filter devices by device type.  
+  Device Type:  
+ `-1` - All Zoom Room device(0,1,2,3,4,6).  
+ `0` - Zoom Rooms Computer.  
+ `1` - Zoom Rooms Controller.  
+ `2` - Zoom Rooms Scheduling Display.  
+ `3` - Zoom Rooms Control System.  
+ `4` -  Zoom Rooms Whiteboard.  
+ `5` - Zoom Phone Appliance.  
+ `6` - Zoom Rooms Computer (with Controller). |
+| `device_vendor` | string |  | Filter devices by vendor. |
+| `device_model` | string |  | Filter devices by model. |
+| `device_status` | number |  | Filter devices by status.   
+  Device Status:  
+ `0` - offline.  
+ `1` - online.  
+ `-1` - unlink |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;devices&quot;:[{&quot;device_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;serial_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;vendor&quot;:&quot;\u003cstring\u003e&quot;,&quot;model&quot;:&quot;\u003cstring\u003e&quot;,&quot;platform_os&quot;:&quot;\u003cstring\u003e&quot;,&quot;app_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;tag&quot;:&quot;\u003cstring\u003e&quot;,&quot;enrolled_in_zdm&quot;:&quot;\u003cboolean\u003e&quot;,&quot;connected_to_zdm&quot;:&quot;\u003cboolean\u003e&quot;,&quot;room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:2,&quot;skd_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_status&quot;:1,&quot;last_online&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;},{&quot;device_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;serial_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;vendor&quot;:&quot;\u003cstring\u003e&quot;,&quot;model&quot;:&quot;\u003cstring\u003e&quot;,&quot;platform_os&quot;:&quot;\u003cstring\u003e&quot;,&quot;app_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;tag&quot;:&quot;\u003cstring\u003e&quot;,&quot;enrolled_in_zdm&quot;:&quot;\u003cboolean\u003e&quot;,&quot;connected_to_zdm&quot;:&quot;\u003cboolean\u003e&quot;,&quot;room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:1,&quot;skd_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_status&quot;:0,&quot;last_online&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

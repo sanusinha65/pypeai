@@ -1,0 +1,65 @@
+# List all user calendar settings of the authenticated user
+
+GET {{baseUrl}}/calendars/users/:userIdentifier/settings?maxResults=&lt;integer&gt;&amp;pageToken=&lt;string&gt;
+
+
+<p>
+Returns all user settings for the authenticated user.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:read
+</code>
+,
+<code>
+calendar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `maxResults` | string |  | The maximum number of entries returned on one result page. |
+| `pageToken` | string |  | The token that specifies which result page to return. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;nextPageToken&quot;:&quot;\u003cstring\u003e&quot;,&quot;items&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

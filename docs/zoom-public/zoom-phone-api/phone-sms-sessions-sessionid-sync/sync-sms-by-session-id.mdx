@@ -1,0 +1,110 @@
+# Sync SMS by session ID
+
+GET {{baseUrl}}/phone/sms/sessions/:sessionId/sync?sync_type=BSync&amp;count=&lt;integer&gt;&amp;sync_token=&lt;string&gt;
+
+
+<p>
+Use this API to sync SMS messages in a session. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Paid account
+* User-enabled Zoom phone
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+,
+<code>
+phone_sms:read
+</code>
+,
+<code>
+phone_sms:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:sms_session
+</code>
+,
+<code>
+phone:read:sms_session:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | Options for synchronizing sms message:  
+ 
+FSync - Full sync  
+ 
+ISync - Increase sync  
+ 
+BSync - Backward sync |
+| `count` | string |  | The number of records returned within a single API call. |
+| `sync_token` | string |  | The time range for returned records. Used for locating where the next retrieval will begin. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;sms_histories&quot;:[{&quot;attachments&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;PNG&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;VIDEO&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:4,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;sharedLineGroup&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;sharedLineGroup&quot;}}]},{&quot;attachments&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;GIF&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;JPG&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:3,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}}]}],&quot;sync_token&quot;:&quot;\u003cstring\u003e&quot;}
+```

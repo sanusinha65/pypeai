@@ -1,0 +1,93 @@
+# Update a device
+
+PATCH {{baseUrl}}/phone/devices/:deviceId
+
+
+<p>
+Update information of a 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092">
+desk phone device
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;assigned_to&quot;=&gt;&quot;DnEopNmXQEGU2uvvzjgojw&quot;, &quot;display_name&quot;=&gt;&quot;testUser&quot;, &quot;mac_address&quot;=&gt;&quot;543968a78ee7&quot;, &quot;provision_template_id&quot;=&gt;&quot;Ke5Ghevvoo001hr&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

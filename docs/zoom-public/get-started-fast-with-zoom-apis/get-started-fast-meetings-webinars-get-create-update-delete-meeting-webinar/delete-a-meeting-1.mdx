@@ -1,0 +1,66 @@
+# Delete a meeting
+
+DELETE {{baseUrl}}/meetings/:meetingId?schedule_for_reminder=true&amp;cancel_meeting_reminder=true
+
+
+<p>
+Delete a meeting.
+<br>
+
+<br>
+
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+ 
+<code>
+meeting:write
+</code>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | number |  |  |
+| `schedule_for_reminder` | boolean |  |  |
+| `cancel_meeting_reminder` | boolean |  |  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

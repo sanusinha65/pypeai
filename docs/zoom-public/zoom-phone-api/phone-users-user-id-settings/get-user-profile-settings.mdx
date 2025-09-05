@@ -1,0 +1,84 @@
+# Get user profile settings
+
+GET {{baseUrl}}/phone/users/:userId/settings
+
+
+<p>
+Use this API to get the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360021325712-Configuring-Settings">
+profile settings
+</a>
+ of a user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;area_code&quot;:&quot;01&quot;,&quot;audio_prompt_language&quot;:&quot;en-US&quot;,&quot;company_number&quot;:&quot;+12058945640&quot;,&quot;country&quot;:{&quot;code&quot;:&quot;US&quot;,&quot;country_code&quot;:&quot;1&quot;,&quot;name&quot;:&quot;United States&quot;},&quot;delegation&quot;:{&quot;assistants&quot;:[{&quot;display_name&quot;:&quot;test user delegation&quot;,&quot;extension_id&quot;:&quot;CcrEGgmeQem1uyJsuIRKwA&quot;,&quot;extension_number&quot;:&quot;1000123477&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;fWOgOALdT1ei4vjXK-QYsA&quot;},{&quot;display_name&quot;:&quot;test user delegation&quot;,&quot;extension_id&quot;:&quot;CcrEGgmeQem1uyJsuIRKwA&quot;,&quot;extension_number&quot;:&quot;1000123477&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;fWOgOALdT1ei4vjXK-QYsA&quot;}],&quot;privacy&quot;:true,&quot;privileges&quot;:2},&quot;desk_phone&quot;:{&quot;devices&quot;:[{&quot;device_type&quot;:&quot;Yealink t42s&quot;,&quot;display_name&quot;:&quot;ApiTA_Device_2020_12_14_22_59_31_749&quot;,&quot;id&quot;:&quot;GHFnf5WQe-H-_r0Wwx9iQ&quot;,&quot;policy&quot;:{&quot;call_control&quot;:{&quot;status&quot;:&quot;off&quot;},&quot;hot_desking&quot;:{&quot;status&quot;:&quot;off&quot;}},&quot;status&quot;:&quot;online&quot;},{&quot;device_type&quot;:&quot;Yealink t42s&quot;,&quot;display_name&quot;:&quot;ApiTA_Device_2020_12_14_22_59_31_749&quot;,&quot;id&quot;:&quot;GHFnf5WQe-H-_r0Wwx9iQ&quot;,&quot;policy&quot;:{&quot;call_control&quot;:{&quot;status&quot;:&quot;off&quot;},&quot;hot_desking&quot;:{&quot;status&quot;:&quot;off&quot;}},&quot;status&quot;:&quot;online&quot;}],&quot;keys_positions&quot;:{&quot;primary_number&quot;:&quot;+123456789&quot;},&quot;phone_screen_lock&quot;:true,&quot;pin_code&quot;:&quot;0995&quot;},&quot;extension_number&quot;:1000001036,&quot;music_on_hold_id&quot;:&quot;NOZ98sQvTimYi0XxL_x-iQ&quot;,&quot;outbound_caller&quot;:{&quot;number&quot;:&quot;+123456789&quot;},&quot;outbound_caller_ids&quot;:[{&quot;is_default&quot;:true,&quot;name&quot;:&quot;Outbound caller name.&quot;,&quot;number&quot;:&quot;+2097392651&quot;},{&quot;is_default&quot;:true,&quot;name&quot;:&quot;Outbound caller name.&quot;,&quot;number&quot;:&quot;+2097392651&quot;}],&quot;status&quot;:&quot;Active&quot;,&quot;voice_mail&quot;:[{&quot;access_user_id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;delete&quot;:true,&quot;download&quot;:true,&quot;shared_id&quot;:&quot;--e8ugg0SeS-9clgrDkn2w&quot;},{&quot;access_user_id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;delete&quot;:true,&quot;download&quot;:true,&quot;shared_id&quot;:&quot;--e8ugg0SeS-9clgrDkn2w&quot;}],&quot;intercom&quot;:{&quot;audio_intercoms&quot;:[{&quot;extension_id&quot;:&quot;52OdSKGSSS-EOyJwQncFvA&quot;,&quot;extension_number&quot;:&quot;1000001004&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;display_name&quot;:&quot;test name&quot;,&quot;status&quot;:&quot;pending&quot;,&quot;device_id&quot;:&quot;GHFnf5WQe-H-_r0Wwx9iQ&quot;,&quot;device_status&quot;:&quot;offline&quot;},{&quot;extension_id&quot;:&quot;52OdSKGSSS-EOyJwQncFvA&quot;,&quot;extension_number&quot;:&quot;1000001004&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;display_name&quot;:&quot;test name&quot;,&quot;status&quot;:&quot;pending&quot;,&quot;device_id&quot;:&quot;GHFnf5WQe-H-_r0Wwx9iQ&quot;,&quot;device_status&quot;:&quot;offline&quot;}],&quot;device&quot;:{&quot;id&quot;:&quot;JHwOJZ_PRICfVhQlL0x_ww&quot;,&quot;name&quot;:&quot;Sita&#39;s Phone&quot;}}}
+```

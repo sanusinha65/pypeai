@@ -1,0 +1,69 @@
+# List tasks
+
+GET {{baseUrl}}/contact_center/tasks?task_status=wrapping&amp;queue_id=&lt;string&gt;&amp;engagement_id=&lt;string&gt;&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to return a list of tasks. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_task:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `task_status` | string |  | The task&#39;s status: 
+* `pending` 
+* `reserved` 
+* `assigned` 
+* `canceled` 
+* `completed` 
+* `wrapping` |
+| `queue_id` | string |  | The task&#39;s queue ID. |
+| `engagement_id` | string |  | The task&#39;s engagement ID. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;tasks&quot;:[{&quot;task_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;task_timeout&quot;:&quot;\u003cinteger\u003e&quot;,&quot;task_priority&quot;:&quot;\u003cinteger\u003e&quot;,&quot;task_status&quot;:&quot;reserved&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_name&quot;:&quot;default&quot;,&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;assigned_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_assign&quot;:&quot;\u003cboolean\u003e&quot;,&quot;created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;task_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;task_timeout&quot;:&quot;\u003cinteger\u003e&quot;,&quot;task_priority&quot;:&quot;\u003cinteger\u003e&quot;,&quot;task_status&quot;:&quot;canceled&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_name&quot;:&quot;phone&quot;,&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;assigned_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_assign&quot;:&quot;\u003cboolean\u003e&quot;,&quot;created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

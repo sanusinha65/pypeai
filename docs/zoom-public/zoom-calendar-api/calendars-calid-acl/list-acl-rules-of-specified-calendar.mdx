@@ -1,0 +1,66 @@
+# List ACL rules of specified calendar
+
+GET {{baseUrl}}/calendars/:calId/acl?maxResults=&lt;integer&gt;&amp;showDeleted=&lt;boolean&gt;&amp;pageToken=&lt;string&gt;
+
+
+<p>
+Returns the rules in the access control list for the calendar.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:read
+</code>
+,
+<code>
+calendar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `maxResults` | string |  | The maximum number of entries returned on one result page. |
+| `showDeleted` | string |  | Whether to include deleted ACLs in the result. |
+| `pageToken` | string |  | The token that specifies which result page to return. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;nextPageToken&quot;:&quot;\u003cstring\u003e&quot;,&quot;items&quot;:[{&quot;role&quot;:&quot;reader&quot;,&quot;scope&quot;:{&quot;type&quot;:&quot;default&quot;},&quot;kind&quot;:&quot;calendar#aclRule&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;role&quot;:&quot;owner&quot;,&quot;scope&quot;:{&quot;type&quot;:&quot;default&quot;},&quot;kind&quot;:&quot;calendar#aclRule&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

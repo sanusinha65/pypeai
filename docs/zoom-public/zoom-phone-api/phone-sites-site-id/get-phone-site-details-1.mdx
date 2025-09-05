@@ -1,0 +1,77 @@
+# Get phone site details
+
+GET {{baseUrl}}/phone/sites/:siteId
+
+
+<p>
+Sites allow you to organize Zoom Phone users in your organization. Use this API to get information on a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672">
+site
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Account must have a Pro or a higher plan with Zoom Phone license.
+* Multiple sites must be 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-Multiple-Sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15">
+enabled
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;country&quot;:{&quot;code&quot;:&quot;US&quot;,&quot;name&quot;:&quot;United States&quot;},&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;main_auto_receptionist&quot;:{&quot;extension_id&quot;:&quot;pl1XprjhTQK1CCMVKTqCFA&quot;,&quot;extension_number&quot;:12345,&quot;id&quot;:&quot;Kbdc9lv_SBCuPMjj_lhxVA&quot;,&quot;name&quot;:&quot;ApiTA_R_2020_07_12_00_41_57_145&quot;},&quot;name&quot;:&quot;ApiTA_Site_2020_07_12_00_41_57_141&quot;,&quot;short_extension&quot;:{&quot;length&quot;:3},&quot;site_code&quot;:321,&quot;policy&quot;:{&quot;select_outbound_caller_id&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;personal_audio_library&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true,&quot;allow_music_on_hold_customization&quot;:true,&quot;allow_voicemail_and_message_greeting_customization&quot;:true},&quot;voicemail&quot;:{&quot;allow_delete&quot;:true,&quot;allow_download&quot;:false,&quot;allow_videomail&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;voicemail_transcription&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;voicemail_notification_by_email&quot;:{&quot;include_voicemail_file&quot;:true,&quot;include_voicemail_transcription&quot;:false,&quot;forward_voicemail_to_email&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;shared_voicemail_notification_by_email&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;international_calling&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;zoom_phone_on_mobile&quot;:{&quot;allow_calling_sms_mms&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;sms&quot;:{&quot;enable&quot;:true,&quot;international_sms&quot;:true,&quot;international_sms_countries&quot;:[&quot;US&quot;,&quot;US&quot;],&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;elevate_to_meeting&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;hand_off_to_room&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;mobile_switch_to_carrier&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;delegation&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;ad_hoc_call_recording&quot;:{&quot;enable&quot;:true,&quot;recording_start_prompt&quot;:false,&quot;recording_transcription&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true},&quot;auto_call_recording&quot;:{&quot;allow_stop_resume_recording&quot;:true,&quot;disconnect_on_recording_failure&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:true,&quot;recording_calls&quot;:&quot;inbound&quot;,&quot;recording_explicit_consent&quot;:true,&quot;recording_start_prompt&quot;:true,&quot;recording_transcription&quot;:true,&quot;play_side_tone_beep&quot;:true,&quot;play_side_tone_beep_volume&quot;:0,&quot;play_beep_time_interval&quot;:null},&quot;call_handling_forwarding_to_other_users&quot;:{&quot;enable&quot;:true,&quot;call_forwarding_type&quot;:1,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;check_voicemails_over_phone&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;call_queue_pickup_code&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;call_queue_opt_out_reason&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true,&quot;call_queue_opt_out_reasons_list&quot;:[{&quot;code&quot;:&quot;Break&quot;,&quot;system&quot;:true,&quot;enable&quot;:true},{&quot;code&quot;:&quot;Break&quot;,&quot;system&quot;:true,&quot;enable&quot;:true}]},&quot;show_user_last_transferred_call&quot;:true,&quot;auto_delete_data_after_retention_duration&quot;:{&quot;enable&quot;:true,&quot;reset&quot;:true,&quot;locked&quot;:false,&quot;locked_by&quot;:&quot;site&quot;,&quot;items&quot;:[{&quot;type&quot;:&quot;callLog&quot;,&quot;duration&quot;:-1,&quot;time_unit&quot;:&quot;year&quot;},{&quot;type&quot;:&quot;callLog&quot;,&quot;duration&quot;:-1,&quot;time_unit&quot;:&quot;year&quot;}],&quot;delete_type&quot;:1},&quot;call_park&quot;:{&quot;call_not_picked_up_action&quot;:50,&quot;enable&quot;:true,&quot;expiration_period&quot;:3,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;ZOOM_API Test&quot;,&quot;extension_id&quot;:&quot;TO586CYlQFC_WCUvPRXytA&quot;,&quot;extension_number&quot;:100014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;oG_nYRFuTJiY1tu0Fur_4Q&quot;},&quot;sequence&quot;:1,&quot;locked&quot;:false,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;call_overflow&quot;:{&quot;call_overflow_type&quot;:1,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;call_transferring&quot;:{&quot;call_transferring_type&quot;:1,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;audio_intercom&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;block_calls_without_caller_id&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;block_external_calls&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true,&quot;block_business_hours&quot;:true,&quot;block_closed_hours&quot;:true,&quot;block_holiday_hours&quot;:true,&quot;block_call_action&quot;:0,&quot;block_call_change_type&quot;:0}}}
+```

@@ -1,0 +1,102 @@
+# Add a common area
+
+POST {{baseUrl}}/phone/common_areas
+
+
+<p>
+Use this API to add an instance of common area. Configure devices shared by users and deployed in shared spaces.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:common_area:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;calling_plans&quot;=&gt;[{&quot;type&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;type&quot;=&gt;&quot;&lt;integer&gt;&quot;}], &quot;country_iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;extension_number&quot;=&gt;&quot;&lt;long&gt;&quot;, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

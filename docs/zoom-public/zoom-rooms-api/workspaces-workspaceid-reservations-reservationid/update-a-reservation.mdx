@@ -1,0 +1,65 @@
+# Update a reservation
+
+PATCH {{baseUrl}}/workspaces/:workspaceId/reservations/:reservationId
+
+
+<p>
+Use this API to update a reservation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:write
+</code>
+
+<code>
+workspace:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;topic&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

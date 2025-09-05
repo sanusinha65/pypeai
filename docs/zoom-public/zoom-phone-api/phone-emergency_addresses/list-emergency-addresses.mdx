@@ -1,0 +1,109 @@
+# List emergency addresses
+
+GET {{baseUrl}}/phone/emergency_addresses?site_id=&lt;string&gt;&amp;user_id=&lt;string&gt;&amp;level=2&amp;status=4&amp;address_keyword=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Lists the emergency addresses.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_emergency_addresses:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `site_id` | string |  | The emergency address site ID. |
+| `user_id` | string |  | User ID to which the personal emergency address belongs. |
+| `level` | number |  | The emergency address owner level:
+
+* `0` - Account/Company-level emergency address. 
+
+* `1` - User/Personal-level emergency address.
+
+* `2` - Unknown company/pending emergency address. |
+| `status` | number |  | The emergency address verification status: 
+* `1` &amp;mdash; Verification not Required. 
+* `2` &amp;mdash; Unverified. 
+* `3` &amp;mdash; Verification requested. 
+* `4` &amp;mdash; Verified. 
+* `5` &amp;mdash; Rejected. 
+* `6` &amp;mdash; Verification failed. |
+| `address_keyword` | string |  | Keyword(s) to filter emergency addresses. You can filter by either: 
+* Address Line 1. 
+* Address Line 2. 
+* City. 
+* State Abbreviation. 
+* Zip Code. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;emergency_addresses&quot;:[{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;level&quot;:1,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:5,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;level&quot;:1,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:6,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

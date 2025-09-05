@@ -1,0 +1,90 @@
+# List phone numbers
+
+GET {{baseUrl}}/phone/carrier_reseller/numbers?page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;&amp;assigned_status=unassigned&amp;sub_account_id=&lt;string&gt;&amp;keyword=&lt;string&gt;
+
+
+<p>
+Use this API to list phone numbers in a carrier reseller (master) account that can be pushed to its subaccounts.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_carrier_numbers:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | string |  | The size of the page. |
+| `next_page_token` | string |  | The current page number of returned records. |
+| `assigned_status` | string |  | Number assignment status. |
+| `sub_account_id` | string |  | Partner account ID from sub-account. |
+| `keyword` | string |  | Partial string of the phone number. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;carrier_reseller_numbers&quot;:[{&quot;assigned_status&quot;:&quot;unassigned&quot;,&quot;carrier_code&quot;:&quot;\u003cinteger\u003e&quot;,&quot;country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;inactive&quot;,&quot;sub_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;assigned_status&quot;:&quot;returned&quot;,&quot;carrier_code&quot;:&quot;\u003cinteger\u003e&quot;,&quot;country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;sub_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

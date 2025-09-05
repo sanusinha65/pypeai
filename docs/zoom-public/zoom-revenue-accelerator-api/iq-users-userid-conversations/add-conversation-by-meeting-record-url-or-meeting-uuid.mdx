@@ -1,0 +1,66 @@
+# Add conversation by meeting record url or meeting UUID.
+
+POST {{baseUrl}}/iq/users/:userId/conversations
+
+
+<p>
+Add new conversation by meeting record url or meeting UUID. If both recording url and meeting UUID are passed in the request and refer to different meetings, we ignore meeting UUID.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_conversation:write
+</code>
+,
+<code>
+iq_conversation:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;recording_link&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;meeting_uuid&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;}
+```

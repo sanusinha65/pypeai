@@ -1,0 +1,102 @@
+# Get a shared line group
+
+GET {{baseUrl}}/phone/shared_line_groups/:sharedLineGroupId
+
+
+<p>
+Lists all the shared line groups. A 
+<a href="https://support.zoom.us/hc/en-us/articles/360038850792">
+shared line group
+</a>
+ allows Zoom Phone admins to share a phone number and extension with a group of phone users or common areas. This gives members of the shared line group access to the group&#39;s direct phone number and voicemail. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+   
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin privileges 
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:shared_line_group:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;members&quot;:{&quot;users&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;common_areas&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;primary_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;active&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;policy&quot;:{&quot;voicemail_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_user_type&quot;:&quot;user&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_user_type&quot;:&quot;user&quot;}]}}
+```

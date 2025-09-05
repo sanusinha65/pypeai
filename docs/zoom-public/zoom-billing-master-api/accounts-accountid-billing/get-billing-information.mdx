@@ -1,0 +1,94 @@
+# Get billing information
+
+GET {{baseUrl}}/accounts/:accountId/billing
+
+
+<p>
+Get 
+<a href="https://support.zoom.us/hc/en-us/articles/201363263-About-Billing">
+billing information
+</a>
+ of a sub account.  
+</p>
+
+
+
+<p>
+Only master accounts can use this API. Zoom allows only 
+<a href="https://marketplace.zoom.us/docs/api-reference/master-account-apis">
+approved partners
+</a>
+ to use master APIs and manage sub accounts&#39; billing information. Email the partner programs team at 
+<strong>
+
+<a href="mailto:partner-success@zoom.us">
+partner-success@zoom.us
+</a>
+
+</strong>
+ for more details.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher paid account with master account option enabled.   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+,
+<code>
+billing_plan:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;employee_count&quot;:&quot;10000+&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;apt&quot;:&quot;\u003cstring\u003e&quot;}
+```

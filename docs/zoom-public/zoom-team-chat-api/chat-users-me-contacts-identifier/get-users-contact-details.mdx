@@ -1,0 +1,91 @@
+# Get user&#39;s contact details
+
+GET {{baseUrl}}/chat/users/me/contacts/:identifier?query_presence_status=&lt;boolean&gt;
+
+
+<p>
+A user under an organization&#39;s Zoom account has internal users listed under Company Contacts in the Zoom Client. A Zoom user can also add another Zoom user as a 
+<a href="https://support.zoom.us/hc/en-us/articles/115004055706-Managing-Contacts">
+contact
+</a>
+. Call this API to get information on a specific contact of the Zoom user.
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note: 
+</b>
+This API only supports 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+.
+</p>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Scope
+</strong>
+: 
+<code>
+chat_contact:read
+</code>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `query_presence_status` | string |  | The presence status of the contact. 
+Include this query parameter with a value of `true` to get the presence status of the contact in the response. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;direct_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Fax&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Fax&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;presence_status&quot;:&quot;Offline&quot;}
+```

@@ -1,0 +1,80 @@
+# Get account&#39;s managed domains
+
+GET {{baseUrl}}/accounts/:accountId/managed_domains
+
+
+<p>
+Retrieve a list of an account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/203395207">
+managed domains
+</a>
+. To get the master account&#39;s managed domains, pass the 
+<code>
+me
+</code>
+ value for the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher paid account with the Master account option enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;domains&quot;:[{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\u003cstring\u003e&quot;},{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

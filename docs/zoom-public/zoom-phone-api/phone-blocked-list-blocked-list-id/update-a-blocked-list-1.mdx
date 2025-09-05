@@ -1,0 +1,74 @@
+# Update a blocked list
+
+PATCH {{baseUrl}}/phone/blocked_list/:blockedListId
+
+
+<p>
+A Zoom account owner or a user with admin privilege can block phone numbers for phone users in an account. Blocked numbers can be inbound (numbers will be blocked from calling in) and outbound (phone users in your account won&#39;t be able to dial those numbers). Blocked callers will hear a generic message stating that the person they are calling is not available.
+Use this API to update the information on the blocked list.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;block_type&quot;=&gt;&quot;outbound&quot;, &quot;comment&quot;=&gt;&quot;testComment&quot;, &quot;country&quot;=&gt;&quot;CH&quot;, &quot;match_type&quot;=&gt;&quot;prefix&quot;, &quot;phone_number&quot;=&gt;&quot;113&quot;, &quot;status&quot;=&gt;&quot;inactive&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,107 @@
+# List meetings
+
+GET {{baseUrl}}/users/:userId/meetings?type=scheduled&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;page_number=&lt;integer&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;timezone=&lt;string&gt;
+
+
+<p>
+List a meeting host user&#39;s scheduled meetings. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+ 
+* This API 
+<strong>
+only
+</strong>
+ supports scheduled meetings. This API does not return information about instant meetings. 
+* This API only returns a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/201362373-Meeting-ID#h_c73f9b08-c1c0-4a1a-b538-e01ebb98e844">
+unexpired meetings
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read
+</code>
+,
+<code>
+meeting:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of meeting. 
+* `scheduled` - All valid previous (unexpired) meetings, live meetings, and upcoming scheduled meetings. 
+* `live` - All the ongoing meetings. 
+* `upcoming` - All upcoming meetings, including live meetings. 
+* `upcoming_meetings` - All upcoming meetings, including live meetings. 
+* `previous_meetings` - All the previous meetings. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_number` | string |  | The page number of the current page in the returned records. |
+| `from` | string |  | The start date. |
+| `to` | string |  | The end date. |
+| `timezone` | string |  | The timezone to assign to the `from` and `to` value. For a list of supported timezones and their formats, see our [timezone list](https://developers.zoom.us/docs/api/rest/other-references/abbreviation-lists/#timezones). |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_number&quot;:1,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;meetings&quot;:[{&quot;agenda&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;pmi&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:8,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;},{&quot;agenda&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;pmi&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:8,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

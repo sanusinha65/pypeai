@@ -1,0 +1,82 @@
+# Get recording by call ID
+
+GET {{baseUrl}}/phone/call_logs/:id/recordings
+
+
+<p>
+Use this API to get an account&#39;s call recording(
+<a href="https://support.zoom.us/hc/en-us/articles/360038521091-Accessing-and-sharing-call-recordings">
+https://support.zoom.us/hc/en-us/articles/360038521091-Accessing-and-sharing-call-recordings
+</a>
+) by the recording&#39;s 
+<code>
+callId
+</code>
+ or 
+<code>
+callLogId
+</code>
+ ID.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account with Zoom Phone license. 
+* Account owner or admin privileges
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;7069775907364530379&quot;,&quot;call_log_id&quot;:&quot;1dfe35c0-5f0f-4bf1-b2e4-a8869a731178&quot;,&quot;callee_name&quot;:&quot;User A&quot;,&quot;callee_number&quot;:&quot;1000001004&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;User B&quot;,&quot;caller_number&quot;:&quot;1000123476&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;User B&quot;,&quot;extension_number&quot;:&quot;123476&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;User A&quot;,&quot;extension_number&quot;:&quot;132001&quot;},&quot;date_time&quot;:&quot;2022-03-08T05:37:23Z&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;download_url&quot;:&quot;https://domain/recording/download/EvVNLihbQ1WpeG_ALwnNzg&quot;,&quot;duration&quot;:115,&quot;end_time&quot;:&quot;2022-03-08T05:39:19Z&quot;,&quot;id&quot;:&quot;1dfe35c05f0f4bf1b2e4a8869a731178&quot;,&quot;owner&quot;:{&quot;extension_number&quot;:1000123476,&quot;id&quot;:&quot;NL3cEpSdRc-c2t8aLoZqiw&quot;,&quot;name&quot;:&quot;user@test.com&quot;,&quot;type&quot;:&quot;user&quot;,&quot;extension_status&quot;:&quot;inactive&quot;}}
+```

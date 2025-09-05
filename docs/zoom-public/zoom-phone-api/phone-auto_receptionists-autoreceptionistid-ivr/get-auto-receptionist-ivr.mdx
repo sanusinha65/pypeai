@@ -1,0 +1,91 @@
+# Get auto receptionist IVR
+
+GET {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/ivr?hours_type=business_hours&amp;holiday_id=&lt;string&gt;
+
+
+<p>
+Gets an 
+<a href="https://support.zoom.us/hc/en-us/articles/360038601971">
+interactive voice response (IVR) system
+</a>
+ of the specified auto receptionist.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:auto_receptionist_ivr:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `hours_type` | string |  | The query hours type: `business_hours` or `closed_hours`, default `business_hours`. |
+| `holiday_id` | string |  | The auto receptionist holiday hours ID. If both `holiday_id` and `hours_type` are passed, `holiday_id` has a high priority and `hours_type` is invalid. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;audio_prompt&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;caller_enters_no_action&quot;:{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;audio_prompt_repeat&quot;:3,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}},&quot;key_actions&quot;:[{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;target&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;action&quot;:&quot;\u003cinteger\u003e&quot;,&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;target&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}}]}
+```

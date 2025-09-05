@@ -1,0 +1,77 @@
+# Get SMS by message ID
+
+GET {{baseUrl}}/phone/sms/sessions/:sessionId/messages/:messageId
+
+
+<p>
+Get details about a specific message in an SMS session.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone_sms:read
+</code>
+, 
+<code>
+phone_sms:read:admin
+</code>
+, 
+<code>
+phone_sms:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Paid account
+* User-enabled Zoom phone
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;attachments&quot;:[{&quot;download_url&quot;:&quot;https://exampleurl.us/file/download/x18dcVWxTcCzbp4zr2AT3A?jwt=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm9zc2ZpbGUiLCJhdWQiOiJmaWxlIiwiZGlnIjoiYTZkODE4NzQ2MDNmN2UzZWM4OThkNDMxM2IxNjNhNTQ4NGI4MjkxMTA0ZmQyYzc4MTg1NmY0MGUxY2FlOTI3YyIsImV4cCI6MTY0ODE5NDA1NH0.eCURcan9QOOw9wvBdSn_-TBzgT5HWBzp04IfsK19Oto&quot;,&quot;id&quot;:&quot;x18dcVWxTcCzbp4zr2AT3A&quot;,&quot;name&quot;:&quot;FWDHOMaNRaqIvNc3aIdisg.jpg&quot;,&quot;size&quot;:78100686,&quot;type&quot;:&quot;OTHER&quot;},{&quot;download_url&quot;:&quot;https://exampleurl.us/file/download/x18dcVWxTcCzbp4zr2AT3A?jwt=eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJjcm9zc2ZpbGUiLCJhdWQiOiJmaWxlIiwiZGlnIjoiYTZkODE4NzQ2MDNmN2UzZWM4OThkNDMxM2IxNjNhNTQ4NGI4MjkxMTA0ZmQyYzc4MTg1NmY0MGUxY2FlOTI3YyIsImV4cCI6MTY0ODE5NDA1NH0.eCURcan9QOOw9wvBdSn_-TBzgT5HWBzp04IfsK19Oto&quot;,&quot;id&quot;:&quot;x18dcVWxTcCzbp4zr2AT3A&quot;,&quot;name&quot;:&quot;FWDHOMaNRaqIvNc3aIdisg.jpg&quot;,&quot;size&quot;:-88404031,&quot;type&quot;:&quot;VIDEO&quot;}],&quot;date_time&quot;:&quot;2022-03-23T02:58:01Z&quot;,&quot;direction&quot;:&quot;In&quot;,&quot;message&quot;:&quot;welcome&quot;,&quot;message_id&quot;:&quot;IQ-cRH5P5EiTWCwpNzScnECJw&quot;,&quot;message_type&quot;:2,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;12092693625&quot;,&quot;display_name&quot;:&quot;ezreal mao&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;WeD59Hn7SvqNRB9jcxz5NQ&quot;,&quot;type&quot;:&quot;user&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;18108001001&quot;,&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;}},{&quot;phone_number&quot;:&quot;18108001001&quot;,&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;}}]}
+```

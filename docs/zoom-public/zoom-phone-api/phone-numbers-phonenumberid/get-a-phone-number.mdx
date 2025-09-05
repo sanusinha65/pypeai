@@ -1,0 +1,83 @@
+# Get a phone number
+
+GET {{baseUrl}}/phone/numbers/:phoneNumberId
+
+
+<p>
+Returns information about an account&#39;s Zoom Phone number.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:numbers:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assignee&quot;:{&quot;audio_prompt_language&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;greeting&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;on_hold_music&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;companyLocation&quot;},&quot;capability&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;carrier&quot;:{&quot;code&quot;:&quot;\u003cinteger\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},&quot;emergency_address_status&quot;:1,&quot;emergency_address_update_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_type&quot;:&quot;tollfree&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;source&quot;:&quot;internal&quot;,&quot;status&quot;:&quot;pending&quot;}
+```

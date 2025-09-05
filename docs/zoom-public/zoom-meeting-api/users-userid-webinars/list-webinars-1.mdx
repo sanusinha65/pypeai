@@ -1,0 +1,115 @@
+# List webinars
+
+GET {{baseUrl}}/users/:userId/webinars?type=scheduled&amp;page_size=30&amp;page_number=1
+
+
+<p>
+List all the webinars scheduled by or on behalf a webinar host. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+Zoom users with a 
+<a href="https://zoom.us/webinar">
+webinar plan
+</a>
+ have access to creating and managing webinars. Webinars let a host broadcast a Zoom meeting to up to 10,000 attendees. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+ This API only returns a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/201362373-Meeting-ID#h_c73f9b08-c1c0-4a1a-b538-e01ebb98e844">
+unexpired webinars
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+ 
+* A Pro or higher plan with the webinar add-on.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of webinar. 
+* `scheduled` - All valid previous (unexpired) webinars, live webinars, and upcoming scheduled webinars. 
+* `upcoming` - All upcoming webinars, including live webinars. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `page_number` | number |  | **Deprecated** We will no longer support this field in a future release. Instead, use the `next_page_token` for pagination. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_number&quot;:1,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;webinars&quot;:[{&quot;agenda&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:5,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_simulive&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;agenda&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:5,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_simulive&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

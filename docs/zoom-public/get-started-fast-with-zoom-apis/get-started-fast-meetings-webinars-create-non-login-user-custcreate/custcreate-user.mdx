@@ -1,0 +1,42 @@
+# custCreate User
+
+POST {{baseUrl}}/users
+
+
+<h3>
+custCreate User
+</h3>
+
+
+
+<p>
+Users created with this 
+<code>
+custCreate
+</code>
+ action do not have passwords and will not have the ability to log in to the Zoom web portal or Zoom clients. These users can still host and join meetings using the start
+<u>
+url and join
+</u>
+url respectively
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;custCreate&quot;, &quot;user_info&quot;=&gt;{&quot;email&quot;=&gt;&quot;jchill@example.com&quot;, &quot;first_name&quot;=&gt;&quot;Jill&quot;, &quot;last_name&quot;=&gt;&quot;Chill&quot;, &quot;password&quot;=&gt;&quot;if42!LfH@&quot;, &quot;type&quot;=&gt;1, &quot;feature&quot;=&gt;{&quot;zoom_phone&quot;=&gt;true}}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

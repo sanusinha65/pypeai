@@ -1,0 +1,57 @@
+# Get a workspace QR code
+
+GET {{baseUrl}}/workspaces/:workspaceId/qr_code
+
+
+<p>
+Use this API to get the workspace QR code. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;qr_code&quot;:&quot;\u003curi\u003e&quot;,&quot;expire_in&quot;:&quot;\u003clong\u003e&quot;}
+```

@@ -1,0 +1,106 @@
+# Update peering phone numbers
+
+PATCH {{baseUrl}}/phone/peering/numbers
+
+
+<p>
+Updates phone numbers to Zoom through the Provider Exchange.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Phone peering API and events are for partners that have completed the MoU to peer with Zoom. To become a peering provider/ carrier, submit your 
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSewkY6ixVyKVNkWC-vgmejC16gigxsJWXji3dWzE3XlWtjsgg/viewform">
+request
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone_peering:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:peering_number:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;carrier_code&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;phone_numbers&quot;=&gt;[{&quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;billing_reference_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;service_info&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sip_trunk_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;billing_reference_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;service_info&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sip_trunk_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;&lt;integer&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;unprocessed_numbers&quot;:[{&quot;failure_reason&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;failure_reason&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,16 @@
+#  phone-sms/sessions-{session Id}
+
+Number of APIs: 3
+
+1. [Get SMS session details](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-sms-sessions-session-id/get-sms-session-details-1)
+GET {{baseUrl}}/phone/sms/sessions/:sessionId?page_size=30&amp;next_page_token=2z0Ov7kngllAbfQi4ZR2eQTb3mFVYQpYAe2&amp;from=2021-12-01&amp;to=2021-12-31&amp;sort=1
+
+
+2. [Sync SMS by session ID](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-sms-sessions-session-id/sync-sms-by-session-id-1)
+GET {{baseUrl}}/phone/sms/sessions/:sessionId/sync?sync_type=FSync&amp;count=100&amp;sync_token=MFgyQ0Z3UDkwaF8xNjQyNDA3MjA3MDE0XzE2NDI0MDcyMDcwMTQ=
+
+
+3. [Get SMS by message ID](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-sms-sessions-session-id/get-sms-by-message-id-1)
+GET {{baseUrl}}/phone/sms/sessions/:sessionId/messages/:messageId
+
+

@@ -1,0 +1,81 @@
+# Invite channel members
+
+POST {{baseUrl}}/chat/channels/:channelId/members
+
+
+<p>
+Invites members that are in a user&#39;s contact list to a channel. A 
+<a href="https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-">
+channel
+</a>
+ can have one or multiple members. The maximum number of members that can be added at once with this API is 5. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+chat_channel:write
+</code>
+ 
+<br>
+
+ 
+<b>
+Note: 
+</b>
+ This API only supports 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;members&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;added_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;ids&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_ids&quot;:&quot;\u003cstring\u003e&quot;}
+```

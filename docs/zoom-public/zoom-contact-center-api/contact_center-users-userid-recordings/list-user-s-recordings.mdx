@@ -1,0 +1,80 @@
+# List user&#39;s recordings
+
+GET {{baseUrl}}/contact_center/users/:userId/recordings?channel_type=voice&amp;from=&lt;string&gt;&amp;to=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Get a user&#39;s recordings. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Use recording-related APIs to manipulate data whose recording creation time is after 2022-07-18. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_recording:read
+</code>
+
+<code>
+contact_center_recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `channel_type` | string |  | The recording&#39;s channel type. 
+* `voice` &amp;mdash; Voice recording 
+* `video` &amp;mdash; Video recording |
+| `from` | string |  | The start time and date in ISO 8601 format: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;, or yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;TZD&#39;. The defined date range should be a month, as the response only includes one month&#39;s worth of data. If unspecified, this parameter returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. The end time and date in ISO 8601 format: yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;, or yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;TZD&#39;, the same format as the `from` parameter. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;recordings&quot;:[{&quot;recording_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;transcript_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;playback_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;on_demand&quot;,&quot;channel_type&quot;:&quot;video&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;owner_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_type&quot;:&quot;user&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumers&quot;:[{&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;recording_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;transcript_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;playback_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;automatic&quot;,&quot;channel_type&quot;:&quot;voice&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;owner_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_type&quot;:&quot;queue&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumers&quot;:[{&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;}]}]}
+```

@@ -1,0 +1,77 @@
+# Update SIP phone
+
+PATCH {{baseUrl}}/sip_phones/:phoneId
+
+
+<p>
+Zoom&#39;s Phone System Integration (PSI), also referred as SIP phones, enables an organization to leverage the Zoom client to complete a softphone registration to supported premise based PBX system. End users will have the ability to have softphone functionality within a single client while maintaining a comparable interface to Zoom Phone. Use this API to update information of a specific SIP Phone on a Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:
+* Currently only supported on Cisco and Avaya PBX systems. 
+* The account owner or account admin must first enable SIP Phone Integration by contacting the 
+<a href="https://zoom.us/contactsales">
+Sales
+</a>
+ team.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+sip_phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;authorization_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;domain&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;proxy_server&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;proxy_server2&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;proxy_server3&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;register_server&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;register_server2&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;register_server3&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;voice_mail&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;registration_expire_time&quot;=&gt;60, &quot;transport_protocol&quot;=&gt;&quot;UDP&quot;, &quot;transport_protocol2&quot;=&gt;&quot;AUTO&quot;, &quot;transport_protocol3&quot;=&gt;&quot;UDP&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

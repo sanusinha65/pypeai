@@ -1,0 +1,65 @@
+# Move the specified event from a calendar to another specified calendar
+
+POST {{baseUrl}}/calendars/:calId/events/:eventId/move?destination=&lt;string&gt;&amp;sendUpdates=none
+
+
+<p>
+Moves an event to another calendar, such as changing an event&#39;s organizer.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `destination` | string |  | (Required) The calendar identifier of the target calendar where the event is to be moved. |
+| `sendUpdates` | string |  | Whether to send notifications about the creation of the new event. Note that some emails might still be sent. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;start&quot;:{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;dateTime&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;},&quot;end&quot;:{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;dateTime&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;},&quot;attendees&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;additionalGuests&quot;:&quot;\u003cinteger\u003e&quot;,&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;optional&quot;:&quot;\u003cboolean\u003e&quot;,&quot;resource&quot;:&quot;\u003cboolean\u003e&quot;,&quot;responseStatus&quot;:&quot;needsAction&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;additionalGuests&quot;:&quot;\u003cinteger\u003e&quot;,&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;optional&quot;:&quot;\u003cboolean\u003e&quot;,&quot;resource&quot;:&quot;\u003cboolean\u003e&quot;,&quot;responseStatus&quot;:&quot;tentative&quot;}],&quot;colorId&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;guestsCanInviteOthers&quot;:&quot;\u003cboolean\u003e&quot;,&quot;guestsCanModify&quot;:&quot;\u003cboolean\u003e&quot;,&quot;guestsCanSeeOtherGuests&quot;:&quot;\u003cboolean\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;recurrence&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;reminders&quot;:{&quot;useDefault&quot;:&quot;\u003cboolean\u003e&quot;,&quot;overrides&quot;:[{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;}]},&quot;status&quot;:&quot;confirmed&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;transparency&quot;:&quot;opaque&quot;,&quot;visibility&quot;:&quot;private&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;created&quot;:&quot;\u003cstring\u003e&quot;,&quot;creator&quot;:{&quot;email&quot;:&quot;\u003cstring\u003e&quot;},&quot;organizer&quot;:{&quot;email&quot;:&quot;\u003cstring\u003e&quot;},&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;updated&quot;:&quot;\u003cstring\u003e&quot;}
+```

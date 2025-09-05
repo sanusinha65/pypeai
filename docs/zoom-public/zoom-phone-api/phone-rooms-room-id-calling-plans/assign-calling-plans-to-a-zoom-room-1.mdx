@@ -1,0 +1,82 @@
+# Assign calling plans to a Zoom Room
+
+POST {{baseUrl}}/phone/rooms/:roomId/calling_plans
+
+
+<p>
+Use this API to assign 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans#zoom-phone-calling-plans">
+calling plans
+</a>
+ to a 
+<a href="https://support.zoom.us/hc/en-us/articles/360025153711#h_70c74c57-50d6-406b-a4fa-2f33d4bebdbc">
+Zoom Room
+</a>
+. Up to 200 numbers at a time.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;calling_plans&quot;=&gt;[{&quot;type&quot;=&gt;100}, {&quot;type&quot;=&gt;100}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

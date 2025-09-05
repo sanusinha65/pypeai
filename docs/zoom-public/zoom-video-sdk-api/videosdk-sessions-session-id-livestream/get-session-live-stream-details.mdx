@@ -1,0 +1,53 @@
+# Get session live stream details
+
+GET {{baseUrl}}/videosdk/sessions/:sessionId/livestream
+
+
+<p>
+Use this API to return a session&#39;s live stream configuration details, such as the stream&#39;s URL, key, and page URL.
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+<br>
+
+<br>
+
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Video SDK account
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;stream_url&quot;:&quot;https://example.com/livestream&quot;,&quot;stream_key&quot;:&quot;ABCDEFG12345HIJ6789&quot;,&quot;page_url&quot;:&quot;https://example.com/livestream/123&quot;}
+```

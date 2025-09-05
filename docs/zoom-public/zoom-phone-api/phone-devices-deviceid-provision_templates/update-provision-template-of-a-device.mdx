@@ -1,0 +1,125 @@
+# Update provision template of a device
+
+PUT {{baseUrl}}/phone/devices/:deviceId/provision_templates
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360035817952#h_6b52ef26-d070-40ed-a3fa-520571944afc">
+assign a provision template to a device
+</a>
+ or 
+<a href="https://support.zoom.us/hc/en-us/articles/360035817952#h_7b34cd1d-5ae6-4a23-bd04-454a6ad8cb3e">
+remove a provision template from the device
+</a>
+ by leaving 
+<code>
+templateId
+</code>
+ empty.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+
+<a href="https://support.zoom.us/hc/en-us/articles/360029698771#note">
+Supported device
+</a>
+
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:device_provision_template:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;provision_template_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

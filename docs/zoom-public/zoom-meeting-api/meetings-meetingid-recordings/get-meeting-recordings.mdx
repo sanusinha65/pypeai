@@ -1,0 +1,93 @@
+# Get meeting recordings
+
+GET {{baseUrl}}/meetings/:meetingId/recordings?include_fields=&lt;string&gt;&amp;ttl=&lt;integer&gt;
+
+
+<p>
+Returns all of a meeting&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/203741855-Cloud-Recording#h_7420acb5-1897-4061-87b4-5b76e99c03b4">
+recordings
+</a>
+.
+</p>
+
+
+
+<p>
+Use the 
+<code>
+download_url
+</code>
+ property listed in the response to download the recording files.  To access a passcode-protected cloud recording, send the user&#39;s 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+OAuth access token
+</a>
+ as a Bearer token in the Authorization header. 
+</p>
+
+
+
+<p>
+Example:  
+<code>
+curl -H &#39;Authorization: Bearer &lt;ACCESS_TOKEN&gt;&#39; https://{{base-domain}}/rec/archive/download/xyz
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read
+</code>
+,
+<code>
+phone_recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `include_fields` | string |  | The `download_access_token` value for downloading the meeting&#39;s recordings. |
+| `ttl` | string |  | The `download_access_token` Time to Live (TTL) value. This parameter is only valid if the `include_fields` query parameter contains the `download_access_token` value. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cinteger\u003e&quot;,&quot;recording_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_size&quot;:&quot;\u003clong\u003e&quot;,&quot;type&quot;:&quot;5&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_play_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_files&quot;:[{&quot;deleted_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cnumber\u003e&quot;,&quot;file_type&quot;:&quot;CHAT_MESSAGE&quot;,&quot;file_extension&quot;:&quot;VTT&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;play_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_end&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_start&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;audio_interpretation&quot;,&quot;status&quot;:&quot;completed&quot;},{&quot;deleted_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cnumber\u003e&quot;,&quot;file_type&quot;:&quot;TB&quot;,&quot;file_extension&quot;:&quot;VTT&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;play_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_end&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_start&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_type&quot;:&quot;audio_transcript&quot;,&quot;status&quot;:&quot;completed&quot;}],&quot;download_access_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_audio_files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cnumber\u003e&quot;,&quot;file_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;play_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_end&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_start&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;completed&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cnumber\u003e&quot;,&quot;file_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;play_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_end&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_start&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;completed&quot;}]}
+```

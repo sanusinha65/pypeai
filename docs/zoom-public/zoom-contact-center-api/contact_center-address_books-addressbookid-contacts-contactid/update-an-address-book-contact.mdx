@@ -1,0 +1,61 @@
+# Update an address book contact
+
+PATCH {{baseUrl}}/contact_center/address_books/:addressBookId/contacts/:contactId
+
+
+<p>
+Use this API to update an address book&#39;s contact. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_contact:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_numbers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;emails&quot;=&gt;[&quot;&lt;email&gt;&quot;, &quot;&lt;email&gt;&quot;], &quot;location&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;account_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;company&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;role&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;variables&quot;=&gt;[{&quot;variable_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;variable_value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;variable_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;variable_value&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

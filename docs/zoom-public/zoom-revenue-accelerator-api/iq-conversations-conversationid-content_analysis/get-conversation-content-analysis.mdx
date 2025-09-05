@@ -1,0 +1,71 @@
+# Get conversation content analysis
+
+GET {{baseUrl}}/iq/conversations/:conversationId/content_analysis?analysis_type=engagingQuestions&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Get the content analysis for a specific conversation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_conversation:read
+</code>
+,
+<code>
+iq_conversation:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `analysis_type` | string |  | (Required) The content analysis type of conversations to query: 
+* `topics` - Topics analysis. 
+* `nextSteps` - Next steps analysis. 
+* `engagingQuestions` - Engaging questions analysis. 
+* `indicators` - Indicators analysis. 
+* `smartChapters` - Smart Chapters analysis. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;smart_chapters&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;category&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;category&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}],&quot;analysis&quot;:[{&quot;section&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;text&quot;:&quot;\u003cstring\u003e&quot;,&quot;utterance&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;key_word&quot;:&quot;\u003cstring\u003e&quot;,&quot;marked_by&quot;:&quot;es&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;text&quot;:&quot;\u003cstring\u003e&quot;,&quot;utterance&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;key_word&quot;:&quot;\u003cstring\u003e&quot;,&quot;marked_by&quot;:&quot;es&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;section&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;text&quot;:&quot;\u003cstring\u003e&quot;,&quot;utterance&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;key_word&quot;:&quot;\u003cstring\u003e&quot;,&quot;marked_by&quot;:&quot;es&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;text&quot;:&quot;\u003cstring\u003e&quot;,&quot;utterance&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;indicator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;key_word&quot;:&quot;\u003cstring\u003e&quot;,&quot;marked_by&quot;:&quot;the value of the user_id&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;}]}]}
+```

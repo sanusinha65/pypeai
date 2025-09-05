@@ -1,0 +1,83 @@
+# Delete a meeting&#39;s archived files
+
+DELETE {{baseUrl}}/past_meetings/:meetingUUID/archive_files
+
+
+<p>
+Use this API to delete all of a meeting&#39;s archived files. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/4405656451213--Archiving-for-meetings-and-webinars">
+
+<strong>
+Meeting and Webinar Archiving
+</strong>
+ feature
+</a>
+ enabled for your account by 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Zoom Support
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

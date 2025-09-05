@@ -1,0 +1,66 @@
+# Query freebusy information for a set of calendars
+
+POST {{baseUrl}}/calendars/freeBusy
+
+
+<p>
+Returns free or busy information for a set of calendars.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;timeMax&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;timeMin&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;timeZone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;calendarExpansionMax&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;groupExpansionMax&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;items&quot;=&gt;[{&quot;id&quot;=&gt;&quot;&lt;email&gt;&quot;}, {&quot;id&quot;=&gt;&quot;&lt;email&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;kind&quot;:&quot;calendar#freeBusy&quot;,&quot;timeMax&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;timeMin&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;calendars&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;errors&quot;:[{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;reason&quot;:&quot;\u003cstring\u003e&quot;},{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;reason&quot;:&quot;\u003cstring\u003e&quot;}],&quot;busy&quot;:[{&quot;start&quot;:&quot;\u003cstring\u003e&quot;,&quot;end&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start&quot;:&quot;\u003cstring\u003e&quot;,&quot;end&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;errors&quot;:[{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;reason&quot;:&quot;\u003cstring\u003e&quot;},{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;reason&quot;:&quot;\u003cstring\u003e&quot;}],&quot;busy&quot;:[{&quot;start&quot;:&quot;\u003cstring\u003e&quot;,&quot;end&quot;:&quot;\u003cstring\u003e&quot;},{&quot;start&quot;:&quot;\u003cstring\u003e&quot;,&quot;end&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;groups&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;errors&quot;:{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;reason&quot;:&quot;\u003cstring\u003e&quot;},&quot;calendars&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;errors&quot;:{&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;reason&quot;:&quot;\u003cstring\u003e&quot;},&quot;calendars&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}]}
+```

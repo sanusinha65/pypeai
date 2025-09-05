@@ -1,0 +1,61 @@
+# List ticket types
+
+GET {{baseUrl}}/zoom_events/events/:eventId/ticket_types
+
+
+<p>
+Use this API to list all ticket types associated with an event.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_ticket_types:read:admin
+</code>
+
+<code>
+zoom_events_ticket_types:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;ticket_types&quot;:[{&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;free&quot;:&quot;\u003cboolean\u003e&quot;,&quot;price&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cnumber\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;sold_quantity&quot;:&quot;\u003cnumber\u003e&quot;,&quot;sessions&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;private_visibility_rules&quot;:{&quot;account_restrict&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_domain_list&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;email_restrict_list&quot;:[&quot;\u003cstring\u003e&quot;]}},{&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;free&quot;:&quot;\u003cboolean\u003e&quot;,&quot;price&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cnumber\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;sold_quantity&quot;:&quot;\u003cnumber\u003e&quot;,&quot;sessions&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;private_visibility_rules&quot;:{&quot;account_restrict&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_domain_list&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;email_restrict_list&quot;:[&quot;\u003cstring\u003e&quot;]}}]}
+```

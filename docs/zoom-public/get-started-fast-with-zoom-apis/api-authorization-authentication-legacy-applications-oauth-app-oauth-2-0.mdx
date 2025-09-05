@@ -1,0 +1,20 @@
+#  API Authorization &amp; Authentication-Legacy Applications-OAuth App-OAuth 2.0
+
+Number of APIs: 4
+
+1. [Request access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-oauth-2-0/request-access-token)
+POST https://zoom.us/oauth/token
+
+
+2. [Revoke an access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-oauth-2-0/revoke-an-access-token-1)
+POST https://zoom.us/oauth/revoke
+
+
+3. [Refresh access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-oauth-2-0/refresh-access-token-1)
+POST https://zoom.us/oauth/token?grant_type=refresh_token&amp;refresh_token={{oAuthDevRefreshToken}}
+
+
+4. [Request user authorization](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-oauth-2-0/request-user-authorization)
+GET https://zoom.us/oauth/authorize?response_type=code&amp;client_id={{oAuthDevClientId}}&amp;redirect_uri={{oAuthDevRedirectUri}}
+
+

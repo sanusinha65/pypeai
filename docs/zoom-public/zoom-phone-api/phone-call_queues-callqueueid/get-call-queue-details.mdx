@@ -1,0 +1,104 @@
+# Get call queue details
+
+GET {{baseUrl}}/phone/call_queues/:callQueueId
+
+
+<p>
+Call queues allow you to route incoming calls to a group of users. For instance, you can use call queues to route calls to various departments in your organization such as sales, engineering, billing, customer service etc.
+ Use this API to get information on a specific Call Queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro, Business, or Education account
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:call_queue:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;members&quot;:{&quot;users&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;level&quot;:&quot;user&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;receive_call&quot;:&quot;\u003cboolean\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;level&quot;:&quot;manager&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;receive_call&quot;:&quot;\u003cboolean\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;common_areas&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;external&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;active&quot;,&quot;policy&quot;:{&quot;voicemail_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}]}}
+```

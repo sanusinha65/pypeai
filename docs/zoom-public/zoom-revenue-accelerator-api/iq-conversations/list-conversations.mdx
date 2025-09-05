@@ -1,0 +1,84 @@
+# List conversations
+
+GET {{baseUrl}}/iq/conversations?host_id=&lt;string&gt;&amp;participant_id=&lt;string&gt;&amp;team_id=&lt;string&gt;&amp;deal_id=&lt;string&gt;&amp;period_type=meetingStartTime&amp;from=&lt;string&gt;&amp;to=&lt;string&gt;&amp;conversation_type=all&amp;callout_type=engagingQuestions&amp;indicator_id=&lt;string&gt;&amp;mentioned_topic_id=&lt;string&gt;&amp;scored=&lt;boolean&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+List all conversations. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_conversation:read:admin
+</code>
+,
+<code>
+iq_conversation:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `host_id` | string |  | The host user ID to query. |
+| `participant_id` | string |  | The internal participant ID to query. |
+| `team_id` | string |  | The Zoom specific team ID to query. |
+| `deal_id` | string |  | The Zoom specific deal ID to query. |
+| `period_type` | string |  | The type of period to query: 
+* `meetingStartTime` &amp;mdash; Queries conversations with meeting_start_time in the time period between the From and To parameters. 
+* `iqProcessedTime` &amp;mdash; Queries conversations with iq_processed_time in the time period between the From and To parameters. |
+| `from` | string |  | The start date in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` format. |
+| `to` | string |  | The end date in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` format. |
+| `conversation_type` | string |  | The type of conversations to query: 
+* `all` &amp;mdash; All conversations. 
+* `meeting` &amp;mdash; Meeting conversations. 
+* `phone` - Phone conversations. |
+| `callout_type` | string |  | The callout type of conversations to query: 
+* `engagingQuestions` &amp;mdash; Only query conversations that include engaging questions indicator. 
+* `nextSteps` &amp;mdash; Only query conversations that include next steps indicator. |
+| `indicator_id` | string |  | The indicator id to query. |
+| `mentioned_topic_id` | string |  | The mentioned topic id to query. |
+| `scored` | string |  | Set to `true` to return scored conversations from the conversation list. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;conversations&quot;:[{&quot;conversation_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;conversation_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;conversation_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;iq_processed_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sentiment_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;engaging_questions_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_steps_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;filler_words_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;processing_analysis&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;conversation_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;conversation_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;conversation_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;iq_processed_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sentiment_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;engaging_questions_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_steps_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;filler_words_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;processing_analysis&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

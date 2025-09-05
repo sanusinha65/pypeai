@@ -1,0 +1,76 @@
+# Delete a policy setting
+
+DELETE {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/policies/:policyType?shared_ids=p8JVVAopTwuA0eLzSwAcwg&amp;shared_ids=p8JVVAopTwuA0eLzSwAcwg
+
+
+<p>
+Use this API to remove the policy sub-setting of a 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom Phone License
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `shared_ids` | string |  | (Required) Unique identifier of the voicemail that the user can access. Required only for `voice_mail` policy type. |
+| `shared_ids` | string |  | (Required) Unique identifier of the voicemail that the user can access. Required only for `voice_mail` policy type. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

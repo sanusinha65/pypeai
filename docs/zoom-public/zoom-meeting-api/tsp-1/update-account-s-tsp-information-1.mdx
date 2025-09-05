@@ -1,0 +1,77 @@
+# Update account&#39;s TSP information
+
+PATCH {{baseUrl}}/tsp
+
+
+<p>
+Update information of the Telephony Service Provider set up on an account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:  
+</p>
+
+
+
+<p>
+TSP account option should be enabled.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tsp:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;dial_in_number_unrestricted&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;master_account_setting_extended&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;modify_credential_forbidden&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;tsp_bridge&quot;=&gt;&quot;US_TSP_TB&quot;, &quot;tsp_enabled&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;tsp_provider&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

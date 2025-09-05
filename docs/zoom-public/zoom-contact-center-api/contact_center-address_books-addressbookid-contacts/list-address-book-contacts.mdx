@@ -1,0 +1,61 @@
+# List address book contacts
+
+GET {{baseUrl}}/contact_center/address_books/:addressBookId/contacts?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Return all contacts in an address book.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_contact:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;contacts&quot;:[{&quot;contact_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;emails&quot;:[&quot;\u003cemail\u003e&quot;,&quot;\u003cemail\u003e&quot;],&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variables&quot;:[{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_type&quot;:&quot;string&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_type&quot;:&quot;boolean&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;contact_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;emails&quot;:[&quot;\u003cemail\u003e&quot;,&quot;\u003cemail\u003e&quot;],&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variables&quot;:[{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_type&quot;:&quot;string&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_type&quot;:&quot;boolean&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;}]}]}
+```

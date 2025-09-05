@@ -1,0 +1,69 @@
+# Get monitoring group by ID
+
+GET {{baseUrl}}/phone/monitoring_groups/:monitoringGroupId
+
+
+<p>
+Use this API to return a 
+<a href="https://support.zoom.us/hc/en-us/articles/360044804711">
+Monitoring Group
+</a>
+ for the specified ID.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;oDmRjKVTRymXGMtgtBK2Sg&quot;,&quot;monitor_members_count&quot;:1,&quot;monitored_members_count&quot;:1,&quot;monitoring_privileges&quot;:[&quot;listen&quot;,&quot;listen&quot;],&quot;name&quot;:&quot;pbx_api_test_uacap&quot;,&quot;prompt&quot;:true,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;type&quot;:1}
+```

@@ -1,0 +1,68 @@
+# List SIP groups
+
+GET {{baseUrl}}/phone/sip_groups?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+<p>
+Use this API to list SIP (Session Initiation Protocol) groups.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;IXIhcpJWscHfISSKTcdl2QpSMLyRE38zH92&quot;,&quot;page_size&quot;:3,&quot;sip_groups&quot;:[{&quot;description&quot;:&quot;test SIP group&quot;,&quot;display_name&quot;:&quot;RRRR&quot;,&quot;id&quot;:&quot;8MhK7ea4Q4ihIQ4TD_g0kw&quot;,&quot;send_sip_group_name&quot;:true,&quot;sip_trunk&quot;:{&quot;id&quot;:&quot;VWQU-veBQnm08EtBkUGnbw&quot;,&quot;name&quot;:&quot;TESTAPI01&quot;}},{&quot;description&quot;:&quot;test SIP group&quot;,&quot;display_name&quot;:&quot;RRRR&quot;,&quot;id&quot;:&quot;8MhK7ea4Q4ihIQ4TD_g0kw&quot;,&quot;send_sip_group_name&quot;:true,&quot;sip_trunk&quot;:{&quot;id&quot;:&quot;VWQU-veBQnm08EtBkUGnbw&quot;,&quot;name&quot;:&quot;TESTAPI01&quot;}}]}
+```

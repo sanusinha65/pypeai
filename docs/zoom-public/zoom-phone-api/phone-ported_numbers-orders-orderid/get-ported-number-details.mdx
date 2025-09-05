@@ -1,0 +1,91 @@
+# Get ported number details
+
+GET {{baseUrl}}/phone/ported_numbers/orders/:orderId
+
+
+<p>
+Use this API to get details on the ported numbers by specifying 
+<code>
+order_id
+</code>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_peering:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:ported_number:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;contact_emails&quot;:&quot;\u003cstring\u003e&quot;,&quot;contact_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;order_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;original_billing_info&quot;:{&quot;account_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:{&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;house_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;street_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},&quot;authorizing_person&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_telephone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;customer_requested_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;pin&quot;:&quot;\u003cstring\u003e&quot;},&quot;printed_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;replacing_numbers&quot;:[{&quot;source_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;source_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;target_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:&quot;Processing&quot;,&quot;submission_date_time&quot;:&quot;\u003cstring\u003e&quot;}
+```

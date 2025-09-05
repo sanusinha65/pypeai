@@ -1,0 +1,93 @@
+# List updatable firmwares
+
+GET {{baseUrl}}/phone/firmwares?is_update=true&amp;site_id=&lt;string&gt;
+
+
+<p>
+Use this API to get updatable 
+<a href="https://support.zoom.us/hc/en-us/articles/360054198852-Setting-up-firmware-update-rules">
+firmwares
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_firmwares:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `is_update` | boolean |  | Firmware update rule enabled. 
+ `true` - Get all firmwares that can have firmware update rules added 
+ `false` - Get all firmwares whether or not you can add firmware update rules to it |
+| `site_id` | string |  | Unique identifier of the [site](https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites). Required if multiple sites are enabled. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;firmwares&quot;:[{&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_model&quot;:&quot;\u003cstring\u003e&quot;,&quot;versions&quot;:[{&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;update_log&quot;:&quot;\u003cstring\u003e&quot;,&quot;expire_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:1},{&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;update_log&quot;:&quot;\u003cstring\u003e&quot;,&quot;expire_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:3}]},{&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_model&quot;:&quot;\u003cstring\u003e&quot;,&quot;versions&quot;:[{&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;update_log&quot;:&quot;\u003cstring\u003e&quot;,&quot;expire_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:2},{&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;update_log&quot;:&quot;\u003cstring\u003e&quot;,&quot;expire_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:1}]}]}
+```

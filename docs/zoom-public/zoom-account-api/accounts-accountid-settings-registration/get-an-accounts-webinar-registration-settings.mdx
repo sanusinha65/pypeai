@@ -1,0 +1,80 @@
+# Get an account&#39;s webinar registration settings
+
+GET {{baseUrl}}/accounts/:accountId/settings/registration?type=webinar
+
+
+<p>
+Get an account&#39;s webinar registration settings. To get the master account&#39;s webinar registration settings, use the 
+<code>
+me
+</code>
+ value for the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The account must be a paid account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The registration&#39;s type.
+* `webinar` &amp;mdash; webinar. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;options&quot;:{&quot;host_email_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;close_registration&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_participants_to_join_from_multiple_devices&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_social_share_buttons&quot;:&quot;\u003cboolean\u003e&quot;},&quot;questions&quot;:[{&quot;field_name&quot;:&quot;country&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;field_name&quot;:&quot;comments&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;approve_type&quot;:1,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single_dropdown&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single_dropdown&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}]}
+```

@@ -1,0 +1,57 @@
+# Get user summary
+
+GET {{baseUrl}}/users/summary
+
+
+<p>
+Use this API to get a summary of users, including the number and types of users in the account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;licensed_users_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;basic_users_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;on_prem_users_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;room_users_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending_users_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;join_only_users_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_users_count&quot;:&quot;\u003cinteger\u003e&quot;}
+```

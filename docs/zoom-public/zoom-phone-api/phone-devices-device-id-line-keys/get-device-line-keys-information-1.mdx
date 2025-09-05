@@ -1,0 +1,77 @@
+# Get device line keys information
+
+GET {{baseUrl}}/phone/devices/:deviceId/line_keys
+
+
+<p>
+Use this API to get information on the Zoom Phone device 
+<a href="https://support.zoom.us/hc/en-us/articles/4402415568397-Customizing-keys-for-devices-with-multiple-users">
+line keys
+</a>
+ settings and position.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+ or 
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;device_id&quot;:&quot;yfWfRkZ_QPSNGuWKiAGYbQ&quot;,&quot;device_name&quot;:&quot;ATA Device&quot;,&quot;positions&quot;:[{&quot;index&quot;:1,&quot;owner_extension_name&quot;:&quot;Port owner name&quot;,&quot;owner_extension_number&quot;:123,&quot;extension_number&quot;:123,&quot;extension_type&quot;:&quot;User&quot;,&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;,&quot;display_name&quot;:&quot;Display name&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;outbound_caller_ids&quot;:[{&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;usage_type&quot;:&quot;Main Company Number&quot;},{&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;usage_type&quot;:&quot;Main Company Number&quot;}]},{&quot;index&quot;:1,&quot;owner_extension_name&quot;:&quot;Port owner name&quot;,&quot;owner_extension_number&quot;:123,&quot;extension_number&quot;:123,&quot;extension_type&quot;:&quot;User&quot;,&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;,&quot;display_name&quot;:&quot;Display name&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;outbound_caller_ids&quot;:[{&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;usage_type&quot;:&quot;Main Company Number&quot;},{&quot;extension_id&quot;:&quot;MjGXQfCxShapaxJDka7&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;usage_type&quot;:&quot;Main Company Number&quot;}]}]}
+```

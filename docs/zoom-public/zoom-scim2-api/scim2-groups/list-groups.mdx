@@ -1,0 +1,59 @@
+# List groups
+
+GET {{baseUrl}}/scim2/Groups?startIndex=1&amp;count=1&amp;filter=&lt;string&gt;
+
+
+<p>
+Use this API to list all groups. You can include additional query parameters to filter the response. 
+</p>
+
+
+
+<p>
+
+<strong>
+OAuth Scope:
+</strong>
+ 
+<code>
+scim2
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `startIndex` | number |  | The start index of records to be returned. |
+| `count` | number |  | The number of records returned in a single API call. |
+| `filter` | string |  | The type of query: 
+* `displayName eq {groupName}` — Provide the group&#39;s name to filter the response to a specific group. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;totalResults&quot;:&quot;\u003cinteger\u003e&quot;,&quot;startIndex&quot;:&quot;\u003cinteger\u003e&quot;,&quot;itemsPerPage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;Resources&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;urn:ietf:params:scim:schemas:extension:zoom:2.0:Group&quot;:{&quot;emailAlias&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;urn:ietf:params:scim:schemas:extension:zoom:2.0:Group&quot;:{&quot;emailAlias&quot;:&quot;\u003cstring\u003e&quot;}}]}
+```

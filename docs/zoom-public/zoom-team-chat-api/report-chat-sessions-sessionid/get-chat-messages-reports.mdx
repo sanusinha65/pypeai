@@ -1,0 +1,75 @@
+# Get chat messages reports
+
+GET {{baseUrl}}/report/chat/sessions/:sessionId?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30&amp;include_fields=edited_messages,deleted_messages&amp;include_bot_message=false
+
+
+<p>
+Gets Zoom Chat message reports for a specified period of time. The monthly date range must be within the last six months.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report_chat:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan 
+* Report chat permissions
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) The start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &quot;from&quot; and &quot;to&quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) The end date. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `include_fields` | string |  | This field returns all edited and deleted messages. The API only returns this value if the `include_fields` query parameter contains the `edited_messages` and/or the `deleted_messages` values.
+
+To include both edited and deleted messages, comma-separate both values. |
+| `include_bot_message` | boolean |  | Whether to return the bot message. If false, the bot_message will not be returned in the response body. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;deleted_messages&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiver&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiver&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;}],&quot;edited_messages&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiver&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiver&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;}],&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;messages&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiver&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;bot_message&quot;:{&quot;is_markdown_support&quot;:&quot;\u003cboolean\u003e&quot;,&quot;source&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_sender_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:{}}},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiver&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;reply_main_message_timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;sender&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sender_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timestamp&quot;:&quot;\u003clong\u003e&quot;,&quot;bot_message&quot;:{&quot;is_markdown_support&quot;:&quot;\u003cboolean\u003e&quot;,&quot;source&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_sender_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:{}}}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;to&quot;:&quot;\u003cdate\u003e&quot;}
+```

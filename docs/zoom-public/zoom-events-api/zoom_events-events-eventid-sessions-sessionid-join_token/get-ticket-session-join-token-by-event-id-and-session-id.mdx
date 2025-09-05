@@ -1,0 +1,61 @@
+# Get ticket session join token by Event ID and Session ID
+
+GET {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId/join_token
+
+
+<p>
+Retrieves the join token to join an event session.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_sessions:read
+</code>
+
+<code>
+zoom_events_sessions:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;code&quot;:1150,&quot;error_message&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_token&quot;:&quot;\u003cstring\u003e&quot;}
+```

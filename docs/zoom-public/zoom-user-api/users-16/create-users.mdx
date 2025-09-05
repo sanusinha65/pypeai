@@ -1,0 +1,106 @@
+# Create users
+
+POST {{baseUrl}}/users
+
+
+<p>
+Add a new user to your Zoom account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+ These rate limits apply when you use the 
+<code>
+create
+</code>
+ value for the 
+<code>
+action
+</code>
+ field: 
+* 50 requests per day for 
+<strong>
+Free
+</strong>
+ accounts. 
+* 1,500 requests per day for 
+<strong>
+Pro
+</strong>
+ accounts. 
+* 10,000 requests per day for 
+<strong>
+Business+
+</strong>
+ accounts. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;ssoCreate&quot;, &quot;user_info&quot;=&gt;{&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;1, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;feature&quot;=&gt;{&quot;zoom_phone&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_one_type&quot;=&gt;268435456}, &quot;plan_united_type&quot;=&gt;&quot;64&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1}
+```

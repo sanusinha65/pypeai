@@ -1,0 +1,92 @@
+# Add a Zoom Room to a Zoom Phone
+
+POST {{baseUrl}}/phone/rooms
+
+
+<p>
+Use this API to associate a 
+<a href="https://support.zoom.us/hc/en-us/articles/360025153711#h_70c74c57-50d6-406b-a4fa-2f33d4bebdbc">
+Zoom Room
+</a>
+ with a Zoom Phone license. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:room:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;calling_plans&quot;=&gt;[{&quot;type&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;type&quot;=&gt;&quot;&lt;integer&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

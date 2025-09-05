@@ -1,0 +1,105 @@
+# Mark message read or unread
+
+PATCH {{baseUrl}}/chat/users/:userId/messages/:messageId/status
+
+
+<p>
+Marks a chat message as read or unread. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+</p>
+
+
+
+<p>
+For an 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+account-level OAuth app
+</a>
+, this API can only be used on behalf of a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management">
+user assigned to a role
+</a>
+ with the 
+<q>
+**Edit**
+</q>
+ permission for 
+<strong>
+Chat Messages
+</strong>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:write
+</code>
+, 
+<code>
+chat_message:write:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;read&quot;, &quot;timestamp&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;to_channel&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to_contact&quot;=&gt;&quot;&lt;email&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

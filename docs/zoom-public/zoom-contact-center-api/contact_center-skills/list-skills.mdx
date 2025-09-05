@@ -1,0 +1,64 @@
+# List skills
+
+GET {{baseUrl}}/contact_center/skills?skill_category_id=&lt;string&gt;&amp;skill_id=&lt;string&gt;&amp;skill_type=text&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Return a list of a skills or a skill category&#39;s assigned skills. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_skill:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `skill_category_id` | string |  | The skill category&#39;s ID. |
+| `skill_id` | string |  | The skill&#39;s ID. |
+| `skill_type` | string |  | The skill category&#39;s type. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_type&quot;:&quot;text&quot;,&quot;max_proficiency_level&quot;:5,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_users&quot;:&quot;\u003cinteger\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_type&quot;:&quot;proficiency&quot;,&quot;max_proficiency_level&quot;:3,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_users&quot;:&quot;\u003cinteger\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

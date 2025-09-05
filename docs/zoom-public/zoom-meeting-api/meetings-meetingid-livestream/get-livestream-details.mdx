@@ -1,0 +1,104 @@
+# Get livestream details
+
+GET {{baseUrl}}/meetings/:meetingId/livestream
+
+
+<p>
+Zoom allows users to 
+<a href="https://support.zoom.us/hc/en-us/articles/115001777826-Live-Streaming-Meetings-or-Webinars-Using-a-Custom-Service">
+livestream a meeting
+</a>
+ to a custom platform. Get a meeting&#39;s livestream configuration details such as Stream URL, Stream Key and Page URL.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+Meeting host must be a licensed user with a Pro or higher plan.  
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+Live streaming details must have been 
+<a href="https://support.zoom.us/hc/en-us/articles/115001777826-Live-Streaming-Meetings-or-Webinars-Using-a-Custom-Service#h_01589a6f-a40a-4e18-a448-cb746e52ebc5">
+configured
+</a>
+ for the meeting.  
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;page_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;stream_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;stream_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;}
+```

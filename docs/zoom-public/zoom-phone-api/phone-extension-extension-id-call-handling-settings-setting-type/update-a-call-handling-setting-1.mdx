@@ -1,0 +1,82 @@
+# Update a call handling setting
+
+PATCH {{baseUrl}}/phone/extension/:extensionId/call_handling/settings/:settingType
+
+
+<p>
+Use this API to update a Zoom Phone&#39;s call handling setting. For more information, read our 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+ documentation.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, or auto receptionist call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;settings&quot;=&gt;{&quot;allow_callers_check_voicemail&quot;=&gt;true, &quot;allow_members_to_reset&quot;=&gt;true, &quot;audio_while_connecting_id&quot;=&gt;&quot;qPwtDrrcSua8O0_n0bDRDg&quot;, &quot;call_distribution&quot;=&gt;{&quot;handle_multiple_calls&quot;=&gt;true, &quot;ring_duration&quot;=&gt;10, &quot;ring_mode&quot;=&gt;&quot;rotating&quot;, &quot;skip_offline_device_phone_number&quot;=&gt;true}, &quot;call_forwarding_settings&quot;=&gt;[{&quot;description&quot;=&gt;&quot;testDescription&quot;, &quot;enable&quot;=&gt;true, &quot;id&quot;=&gt;&quot;qPvrfrrcrf843cdfvbDRDg&quot;, &quot;phone_number&quot;=&gt;&quot;+12058945527&quot;}, {&quot;description&quot;=&gt;&quot;testDescription&quot;, &quot;enable&quot;=&gt;true, &quot;id&quot;=&gt;&quot;qPvrfrrcrf843cdfvbDRDg&quot;, &quot;phone_number&quot;=&gt;&quot;+12058945527&quot;}], &quot;call_not_answer_action&quot;=&gt;4, &quot;connect_to_operator&quot;=&gt;true, &quot;custom_hours_settings&quot;=&gt;[{&quot;from&quot;=&gt;&quot;09:00&quot;, &quot;to&quot;=&gt;&quot;18:00&quot;, &quot;type&quot;=&gt;1, &quot;weekday&quot;=&gt;7}, {&quot;from&quot;=&gt;&quot;09:00&quot;, &quot;to&quot;=&gt;&quot;18:00&quot;, &quot;type&quot;=&gt;1, &quot;weekday&quot;=&gt;7}], &quot;forward_to_extension_id&quot;=&gt;&quot;qPvrfrrcrf843cdfvbDRDg&quot;, &quot;from&quot;=&gt;&quot;2022-05-01T00:00:00Z&quot;, &quot;greeting_prompt_id&quot;=&gt;&quot;qPwe233-f34cdfv45RDg&quot;, &quot;holiday_id&quot;=&gt;&quot;qPvrfrrcrf843cdfvbDRDg&quot;, &quot;max_call_in_queue&quot;=&gt;7, &quot;max_wait_time&quot;=&gt;20, &quot;music_on_hold_id&quot;=&gt;&quot;fdsij3he89qj2-23uie&quot;, &quot;name&quot;=&gt;&quot;Default&quot;, &quot;operator_extension_id&quot;=&gt;&quot;qPvrfrrcrf843cdfvbDRDg&quot;, &quot;receive_call&quot;=&gt;true, &quot;require_press_1_before_connecting&quot;=&gt;true, &quot;ring_mode&quot;=&gt;&quot;sequential&quot;, &quot;to&quot;=&gt;&quot;2022-05-01T00:00:00Z&quot;, &quot;type&quot;=&gt;2, &quot;voicemail_greeting_id&quot;=&gt;&quot;qPwtDrrcSua8O0_n0bDRDg&quot;, &quot;wrap_up_time&quot;=&gt;25}, &quot;sub_setting_type&quot;=&gt;&quot;call_forwarding&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,128 @@
+# Send a chat file
+
+POST {{baseUrl}}/chat/users/:userId/messages/files
+
+
+<p>
+Sends a file on Zoom to either an individual user in your contact list or a 
+<a href="https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-">
+channel
+</a>
+ of which you are a member. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+* The base URL for this API is 
+<code>
+https://file.zoom.us/v2/
+</code>
+. 
+* The rate limit of this API is 20 requests per second per API or 2000 requests per second per IP address. 
+* The caller must support HTTP 30x redirects. 
+* All files are sent as common files except 
+<code>
+png
+</code>
+,
+<code>
+jpg
+</code>
+,
+<code>
+jpeg
+</code>
+ and 
+<code>
+gif
+</code>
+ 
+* Zoom Cloud Storage will store the files sent through this API. If you do not use Zoom Cloud Storage, Zoom Cloud will temporarily store these files for 7 days. 
+* The caller must retain the authorization header when redirected to a different hostname. 
+</p>
+
+
+
+<p>
+For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+For an 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+account-level OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management">
+role
+</a>
+ that has the 
+<strong>
+Edit
+</strong>
+ permission for 
+<strong>
+Chat Messages
+</strong>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:write
+</code>
+, 
+<code>
+chat_message:write:admin
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;files&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}, {&quot;name&quot;=&gt;&quot;reply_main_message_id&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}, {&quot;name&quot;=&gt;&quot;to_channel&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}, {&quot;name&quot;=&gt;&quot;to_contact&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,59 @@
+# Get sharing/recording details
+
+GET {{baseUrl}}/videosdk/sessions/:sessionId/users/sharing?type=live&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82
+
+
+<p>
+Retrieve the sharing and recording details of participants from live or past sessions.
+<br>
+
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+<br>
+
+
+<strong>
+Prerequisites:
+</strong>
+ 
+<br>
+
+* A Video SDK Account.
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The session types: 
+* `past` — A past session. 
+* `live` — A live session.
+
+This value defaults to `live`. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;page_size&quot;:5,&quot;next_page_token&quot;:&quot;1cyhUewZa419P9F8QUYURck0U3rFWB0d1H2&quot;,&quot;users&quot;:[{&quot;id&quot;:&quot;1670000000&quot;,&quot;name&quot;:&quot;User&quot;,&quot;details&quot;:[{&quot;content&quot;:&quot;desktop&quot;,&quot;start_time&quot;:&quot;2021-06-17T06:49:06Z&quot;,&quot;end_time&quot;:&quot;2021-06-17T06:49:35Z&quot;},{&quot;content&quot;:&quot;desktop&quot;,&quot;start_time&quot;:&quot;2021-06-17T06:49:06Z&quot;,&quot;end_time&quot;:&quot;2021-06-17T06:49:35Z&quot;}]},{&quot;id&quot;:&quot;1670000000&quot;,&quot;name&quot;:&quot;User&quot;,&quot;details&quot;:[{&quot;content&quot;:&quot;desktop&quot;,&quot;start_time&quot;:&quot;2021-06-17T06:49:06Z&quot;,&quot;end_time&quot;:&quot;2021-06-17T06:49:35Z&quot;},{&quot;content&quot;:&quot;desktop&quot;,&quot;start_time&quot;:&quot;2021-06-17T06:49:06Z&quot;,&quot;end_time&quot;:&quot;2021-06-17T06:49:35Z&quot;}]}]}
+```

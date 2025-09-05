@@ -1,0 +1,61 @@
+# Get the specified user calendar settings of the authenticated user
+
+GET {{baseUrl}}/calendars/users/:userIdentifier/settings/:settingId
+
+
+<p>
+Returns a single setting.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:read
+</code>
+,
+<code>
+calendar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;displaySecondaryTimezone&quot;,&quot;value&quot;:&quot;false&quot;}
+```

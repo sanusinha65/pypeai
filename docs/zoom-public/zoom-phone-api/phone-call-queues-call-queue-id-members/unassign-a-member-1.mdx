@@ -1,0 +1,83 @@
+# Unassign a member
+
+DELETE {{baseUrl}}/phone/call_queues/:callQueueId/members/:memberId
+
+
+<p>
+Use this API to remove a member who was previously added to a call queue. The member could be a phone user, 
+<a href="https://support.zoom.us/hc/en-us/articles/360028516231-Managing-Common-Area-Phones">
+common area phone
+</a>
+ or common area. Note that you cannot use this API to unassign a call queue manager. 
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account plan.
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

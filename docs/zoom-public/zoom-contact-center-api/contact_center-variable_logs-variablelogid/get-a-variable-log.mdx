@@ -1,0 +1,57 @@
+# Get a variable log
+
+GET {{baseUrl}}/contact_center/variable_logs/:variableLogId
+
+
+<p>
+Get information about a variable log.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_variable_log:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;variable_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;widget_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_type&quot;:&quot;system&quot;,&quot;data_type&quot;:&quot;percent&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;}
+```

@@ -1,0 +1,74 @@
+# List deals
+
+GET {{baseUrl}}/iq/deals?deal_name=&lt;string&gt;&amp;only_show_with_analytics=&lt;boolean&gt;&amp;from=&lt;string&gt;&amp;to=&lt;string&gt;&amp;team_id=&lt;string&gt;&amp;deal_stage=&lt;string&gt;&amp;owner_id=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;integer&gt;&amp;max_deal_amount=&lt;integer&gt;&amp;min_deal_amount=&lt;string&gt;
+
+
+<p>
+List all deals.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_deal:read:admin
+</code>
+,
+<code>
+iq_deal:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `deal_name` | string |  | The deal name |
+| `only_show_with_analytics` | string |  | Set to `true` to return deals with analytics. |
+| `from` | string |  | The start date in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` format. |
+| `to` | string |  | The end date in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` format. |
+| `team_id` | string |  | The Zoom specific team ID to query. |
+| `deal_stage` | string |  | The stage of the deal. |
+| `owner_id` | string |  | The Zoom specific user ID to query. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `max_deal_amount` | string |  | The maximum deal amount to query. |
+| `min_deal_amount` | string |  | The minimum deal amount to query. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;deals&quot;:[{&quot;deal_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_stage&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_is_closed&quot;:&quot;\u003cboolean\u003e&quot;,&quot;create_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_is_private&quot;:&quot;\u003cboolean\u003e&quot;,&quot;deal_amount&quot;:&quot;\u003cinteger\u003e&quot;,&quot;currency_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;close_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;time_in_stage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;number_of_conversations&quot;:&quot;\u003cinteger\u003e&quot;,&quot;last_activity_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;account_type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;deal_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_stage&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_is_closed&quot;:&quot;\u003cboolean\u003e&quot;,&quot;create_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal_is_private&quot;:&quot;\u003cboolean\u003e&quot;,&quot;deal_amount&quot;:&quot;\u003cinteger\u003e&quot;,&quot;currency_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;close_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;time_in_stage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;number_of_conversations&quot;:&quot;\u003cinteger\u003e&quot;,&quot;last_activity_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;account_type&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

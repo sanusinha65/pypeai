@@ -1,0 +1,83 @@
+# Update user settings
+
+PATCH {{baseUrl}}/users/:userId/settings?option=recording_authentication
+
+
+<p>
+Update a user&#39;s settings. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `option` | string |  | Optional query parameters: 
+* `meeting_authentication` &amp;mdash; Use this query parameter to view the [meeting authentication settings](https://support.zoom.us/hc/en-us/articles/360037117472-Authentication-Profiles-for-Meetings-and-Webinars) applied to the user&#39;s account. 
+* `recording_authentication` &amp;mdash; Use this query parameter to view the [recording authentication settings](https://support.zoom.us/hc/en-us/articles/360037756671-Authentication-Profiles-for-Cloud-Recordings) applied to the user&#39;s account. 
+* `meeting_security` &amp;mdash; Use this query parameter to view the meeting security settings applied to the user&#39;s account. |
+
+
+### Request Body
+```
+{&quot;email_notification&quot;=&gt;{&quot;alternative_host_reminder&quot;=&gt;false, &quot;cancel_meeting_reminder&quot;=&gt;false, &quot;cloud_recording_available_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;jbh_reminder&quot;=&gt;false, &quot;recording_available_reminder_alternative_hosts&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_available_reminder_schedulers&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;schedule_for_reminder&quot;=&gt;false}, &quot;feature&quot;=&gt;{&quot;concurrent_meeting&quot;=&gt;&quot;Basic&quot;, &quot;large_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;large_meeting_capacity&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;meeting_capacity&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;webinar&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_capacity&quot;=&gt;500, &quot;zoom_events&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_events_capacity&quot;=&gt;30000, &quot;zoom_events_unlimited&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_events_unlimited_capacities&quot;=&gt;[1000, 5000], &quot;zoom_sessions_unlimited&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_sessions_unlimited_capacities&quot;=&gt;[50000, 20000], &quot;zoom_events_pay_per_attendee&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_sessions_pay_per_attendee&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_phone&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_iq_for_sales&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_revenue_accelerator&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_whiteboard&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_whiteboard_plus&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_translated_captions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_customer_managed_key&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_huddles&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_quality_management&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_workforce_management&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_scheduler&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_clips_plus&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;zoom_mail_calendar&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;in_meeting&quot;=&gt;{&quot;allow_host_to_enable_focus_mode&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_users_to_delete_messages_in_meeting_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_live_streaming&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;post_meeting_feedback&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;whiteboard&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_participants_chat_with&quot;=&gt;2, &quot;allow_users_save_chats&quot;=&gt;3, &quot;annotation&quot;=&gt;false, &quot;attendee_on_hold&quot;=&gt;false, &quot;attention_mode_focus_mode&quot;=&gt;false, &quot;auto_saving_chat&quot;=&gt;false, &quot;breakout_room&quot;=&gt;false, &quot;breakout_room_schedule&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;chat&quot;=&gt;false, &quot;meeting_question_answer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;closed_caption&quot;=&gt;false, &quot;closed_captioning&quot;=&gt;{&quot;auto_transcribing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_caption&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;third_party_captioning_service&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;view_full_transcript&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;co_host&quot;=&gt;false, &quot;custom_data_center_regions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;custom_live_streaming_service&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;custom_service_instructions&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;data_center_regions&quot;=&gt;[&quot;IN&quot;, &quot;DE&quot;], &quot;disable_screen_sharing_for_host_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;disable_screen_sharing_for_in_meeting_guests&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;e2e_encryption&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;entry_exit_chime&quot;=&gt;&quot;all&quot;, &quot;far_end_camera_control&quot;=&gt;false, &quot;feedback&quot;=&gt;false, &quot;file_transfer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;group_hd&quot;=&gt;false, &quot;webinar_group_hd&quot;=&gt;false, &quot;join_from_desktop&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;join_from_mobile&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;language_interpretation&quot;=&gt;{&quot;custom_languages&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;enable_language_interpretation_by_default&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_participants_to_speak_in_listening_channel&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_up_to_25_custom_languages_when_scheduling_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;sign_language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable_sign_language_interpretation_by_default&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;languages&quot;=&gt;[&quot;Chinese&quot;, &quot;Chinese&quot;], &quot;custom_languages&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, &quot;live_streaming_facebook&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;live_streaming_youtube&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;manual_captioning&quot;=&gt;{&quot;allow_to_type&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_generated_captions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;full_transcript&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;manual_captions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_captions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;third_party_captioning_service&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;meeting_reactions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_reactions_emojis&quot;=&gt;&quot;all&quot;, &quot;allow_host_panelists_to_use_audible_clap&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_reactions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_survey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;non_verbal_feedback&quot;=&gt;false, &quot;polling&quot;=&gt;false, &quot;private_chat&quot;=&gt;false, &quot;record_play_voice&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;remote_control&quot;=&gt;false, &quot;remote_support&quot;=&gt;false, &quot;request_permission_to_unmute_participants&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;screen_sharing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;share_dual_camera&quot;=&gt;false, &quot;show_a_join_from_your_browser_link&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_meeting_control_toolbar&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;slide_control&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;virtual_background&quot;=&gt;false, &quot;virtual_background_settings&quot;=&gt;{&quot;allow_upload_custom&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_videos&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;files&quot;=&gt;[{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;is_default&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;size&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;is_default&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;size&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;waiting_room&quot;=&gt;false, &quot;webinar_chat&quot;=&gt;{&quot;allow_attendees_chat_with&quot;=&gt;2, &quot;allow_auto_save_local_chat_file&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_panelists_chat_with&quot;=&gt;1, &quot;allow_panelists_send_direct_message&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_users_save_chats&quot;=&gt;0, &quot;default_attendees_chat_with&quot;=&gt;2, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;webinar_live_streaming&quot;=&gt;{&quot;custom_service_instructions&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;live_streaming_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;live_streaming_service&quot;=&gt;[&quot;workplace_by_facebook&quot;, &quot;custom_live_streaming_service&quot;]}, &quot;meeting_polling&quot;=&gt;{&quot;advanced_polls&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_alternative_host_to_add_edit&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_answers_to_be_anonymous&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_host_to_upload_image&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;webinar_polling&quot;=&gt;{&quot;advanced_polls&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_alternative_host_to_add_edit&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_answers_to_be_anonymous&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_host_to_upload_image&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;webinar_survey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;who_can_share_screen&quot;=&gt;&quot;all&quot;, &quot;who_can_share_screen_when_someone_is_sharing&quot;=&gt;&quot;host&quot;, &quot;participants_share_simultaneously&quot;=&gt;&quot;multiple&quot;, &quot;workplace_by_facebook&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_answer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_show_zoom_windows&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;profile&quot;=&gt;{&quot;recording_storage_location&quot;=&gt;{&quot;allowed_values&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;recording&quot;=&gt;{&quot;ask_host_to_confirm_disclaimer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;ask_participants_to_consent_disclaimer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_delete_cmr&quot;=&gt;false, &quot;auto_delete_cmr_days&quot;=&gt;90, &quot;record_files_separately&quot;=&gt;{&quot;active_speaker&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;gallery_view&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;shared_screen&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;display_participant_name&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_thumbnails&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;optimize_recording_for_3rd_party_video_editor&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_highlight&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_panelist_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_poll_results&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_close_caption&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_recording&quot;=&gt;&quot;local&quot;, &quot;cloud_recording&quot;=&gt;false, &quot;host_pause_stop_recording&quot;=&gt;false, &quot;ip_address_access_control&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;ip_addresses_or_ranges&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;local_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;record_audio_file&quot;=&gt;false, &quot;record_gallery_view&quot;=&gt;false, &quot;record_speaker_view&quot;=&gt;false, &quot;recording_audio_transcript&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_disclaimer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;smart_recording&quot;=&gt;{&quot;create_recording_highlights&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;create_smart_chapters&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;create_next_steps&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;recording_password_requirement&quot;=&gt;{&quot;have_letter&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;have_number&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;have_special_character&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;length&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;only_allow_numeric&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;save_chat_text&quot;=&gt;false, &quot;show_timestamp&quot;=&gt;false}, &quot;schedule_meeting&quot;=&gt;{&quot;audio_type&quot;=&gt;&quot;voip&quot;, &quot;default_password_for_scheduled_meetings&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;embed_password_in_join_link&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;force_pmi_jbh_password&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;host_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;join_before_host&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_password_requirement&quot;=&gt;{&quot;consecutive_characters_length&quot;=&gt;6, &quot;have_letter&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;have_number&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;have_special_character&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;have_upper_and_lower_characters&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;length&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;only_allow_numeric&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;weak_enhance_detection&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;participants_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;personal_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;pmi_password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;pstn_password_protected&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_password_for_instant_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_password_for_pmi_meetings&quot;=&gt;&quot;all&quot;, &quot;require_password_for_scheduled_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_password_for_scheduling_new_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;use_pmi_for_instant_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;use_pmi_for_scheduled_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;telephony&quot;=&gt;{&quot;audio_conference_info&quot;=&gt;&quot;&quot;, &quot;show_international_numbers_link&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;telephony_regions&quot;=&gt;{&quot;selection_values&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;third_party_audio&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;tsp&quot;=&gt;{&quot;call_out&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_international_numbers_link&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

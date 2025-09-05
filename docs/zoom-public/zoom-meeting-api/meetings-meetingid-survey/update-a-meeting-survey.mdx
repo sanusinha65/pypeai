@@ -1,0 +1,85 @@
+# Update a meeting survey
+
+PATCH {{baseUrl}}/meetings/:meetingId/survey
+
+
+<p>
+Update a 
+<a href="https://support.zoom.us/hc/en-us/articles/4404969060621-Post-meeting-survey-and-reporting">
+meeting survey
+</a>
+.  
+<strong>
+Prerequisites:
+</strong>
+ * The host must be a 
+<strong>
+Pro
+</strong>
+ user type. * The 
+<a href="https://support.zoom.us/hc/en-us/articles/4404939095053-Enabling-meeting-surveys">
+
+<strong>
+Meeting Survey
+</strong>
+
+</a>
+ feature is enabled in the host&#39;s account. * The meeting must be a scheduled meeting. Instant meetings do not have survey features enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;custom_survey&quot;=&gt;{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;anonymous&quot;=&gt;false, &quot;numbered_questions&quot;=&gt;false, &quot;show_question_type&quot;=&gt;false, &quot;feedback&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;questions&quot;=&gt;[{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;short_answer&quot;, &quot;answer_required&quot;=&gt;false, &quot;show_as_dropdown&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;prompts&quot;=&gt;[{&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;show_in_the_browser&quot;=&gt;true, &quot;third_party_survey&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

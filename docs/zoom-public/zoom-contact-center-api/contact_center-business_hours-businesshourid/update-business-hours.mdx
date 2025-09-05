@@ -1,0 +1,61 @@
+# Update business hours
+
+PATCH {{baseUrl}}/contact_center/business_hours/:businessHourId
+
+
+<p>
+Update business hours.   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_operating_hours:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;business_hour_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;business_hour_description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;account_default&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;hours&quot;=&gt;{&quot;hour_type&quot;=&gt;2, &quot;custom_hours&quot;=&gt;[{&quot;day_of_week&quot;=&gt;1, &quot;custom_hour_type&quot;=&gt;2, &quot;custom_hour_ranges&quot;=&gt;[{&quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, {&quot;day_of_week&quot;=&gt;3, &quot;custom_hour_type&quot;=&gt;1, &quot;custom_hour_ranges&quot;=&gt;[{&quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;}]}]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

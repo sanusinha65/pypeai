@@ -1,0 +1,65 @@
+# Get phone number details
+
+GET {{baseUrl}}/phone/numbers/:numberId
+
+
+<p>
+Use this API to get information about an account&#39;s Zoom Phone number.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assignee&quot;:{&quot;audio_prompt_language&quot;:&quot;en-GB&quot;,&quot;display_number&quot;:&quot;display_name_123&quot;,&quot;extension_number&quot;:1000001101,&quot;greeting&quot;:{&quot;id&quot;:&quot;4CRwFZtVTa67JcfO37iQqA&quot;,&quot;name&quot;:&quot;TestName&quot;},&quot;id&quot;:&quot;rYgfsrduSXWCxr94poMN5g&quot;,&quot;label&quot;:&quot;abcd&quot;,&quot;meeting_id&quot;:&quot;abcd&quot;,&quot;name&quot;:&quot;Test name&quot;,&quot;on_hold_music&quot;:{&quot;id&quot;:&quot;4CRwFZtVTa67JcfO37iQqA&quot;,&quot;name&quot;:&quot;Audio1&quot;},&quot;type&quot;:&quot;user&quot;},&quot;capability&quot;:[&quot;incoming&quot;,&quot;incoming&quot;],&quot;carrier&quot;:{&quot;code&quot;:2,&quot;name&quot;:&quot;Inteliquent&quot;},&quot;display_name&quot;:&quot;Display name&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;test 7&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;95113&quot;},&quot;emergency_address_status&quot;:1,&quot;emergency_address_update_time&quot;:&quot;2022-02-18T07:20:19Z&quot;,&quot;id&quot;:&quot;iHE1MQAET2iV85MbfaQmwg&quot;,&quot;location&quot;:&quot;Mz83e03MT1efcUvxdKlq3w&quot;,&quot;number&quot;:&quot;+18886510412&quot;,&quot;number_type&quot;:&quot;toll&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;RRRR&quot;,&quot;id&quot;:&quot;8MhK7ea4Q4ihIQ4TD_g0kw&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;source&quot;:&quot;external&quot;,&quot;status&quot;:&quot;available&quot;}
+```

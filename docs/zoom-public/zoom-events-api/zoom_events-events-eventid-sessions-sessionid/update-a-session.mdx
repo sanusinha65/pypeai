@@ -1,0 +1,65 @@
+# Update a session
+
+PATCH {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId
+
+
+<p>
+Use this API to update an existing session in an event. This API is not allowed for single session event type.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_sessions:write:admin
+</code>
+
+<code>
+zoom_events_sessions:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;session_speakers&quot;=&gt;[{&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_to_edit_session&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_in_session_detail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;has_alternative_host_permission&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;featured&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;visible_in_landing_page&quot;=&gt;true, &quot;featured_in_lobby&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;visible_in_lobby&quot;=&gt;true, &quot;is_simulive&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;record_file_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;chat_channel&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;led_by_sponsor&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;track_labels&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;audience_labels&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;product_labels&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;level&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;alternative_host&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;panelist&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

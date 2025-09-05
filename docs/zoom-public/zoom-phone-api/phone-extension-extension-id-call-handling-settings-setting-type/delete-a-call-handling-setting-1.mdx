@@ -1,0 +1,81 @@
+# Delete a call handling setting
+
+DELETE {{baseUrl}}/phone/extension/:extensionId/call_handling/settings/:settingType?call_forwarding_id=qPvrfrrcrf843cdfvbDRDg&amp;holiday_id=ewhu3i9-f3f3-fiohed
+
+
+<p>
+Use this API to delete a Zoom Phone&#39;s call handling settings. For more information, read our 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+ documentation.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, or auto receptionist call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `call_forwarding_id` | string |  | The call forwarding&#39;s ID. Use this parameter if you pass the `call_forwarding_id` value for the `settingType` parameter. |
+| `holiday_id` | string |  | The holiday&#39;s ID. Use this parameter if you pass the `holiday_id` value for the `settingType` parameter. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

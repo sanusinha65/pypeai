@@ -1,0 +1,66 @@
+# Create an event
+
+POST {{baseUrl}}/zoom_events/events
+
+
+<p>
+Use this API to create an event.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_basic:write
+</code>
+
+<code>
+zoom_events_basic:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;event_type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;access_level&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;meeting_type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;categories&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;tags&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;calendar&quot;=&gt;[{&quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;}, {&quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;}], &quot;hub_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;contact_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;lobby_start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;lobby_end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;blocked_countries&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;event_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_level&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;categories&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;tags&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;calendar&quot;:[{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;}],&quot;status&quot;:&quot;\u003cstring\u003e&quot;,&quot;hub_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;contact_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;lobby_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;lobby_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;event_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;blocked_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}
+```

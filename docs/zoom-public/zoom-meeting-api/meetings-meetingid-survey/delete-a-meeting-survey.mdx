@@ -1,0 +1,89 @@
+# Delete a meeting survey
+
+DELETE {{baseUrl}}/meetings/:meetingId/survey
+
+
+<p>
+Delete a 
+<a href="https://support.zoom.us/hc/en-us/articles/4404969060621-Post-meeting-survey-and-reporting">
+meeting survey
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The host must be a 
+<strong>
+Pro
+</strong>
+ user type. 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/4404939095053-Enabling-meeting-surveys">
+
+<strong>
+Meeting Survey
+</strong>
+
+</a>
+ feature enabled in the host&#39;s account. 
+* The meeting must be a scheduled meeting. Instant meetings do not have survey features enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

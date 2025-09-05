@@ -1,0 +1,82 @@
+# Create a phone site
+
+POST {{baseUrl}}/phone/sites
+
+
+<p>
+Sites allow you to organize Zoom Phone users in your organization. Use this API to create a 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672">
+site
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Multiple sites must be 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-Multiple-Sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15">
+enabled
+</a>
+.
+* Pro or a higher account with Zoom Phone enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;Main site&quot;, &quot;auto_receptionist_name&quot;=&gt;&quot;ApiTA_R_2020_07_12_00_41_57_145&quot;, &quot;default_emergency_address&quot;=&gt;{&quot;country&quot;=&gt;&quot;US&quot;, &quot;address_line1&quot;=&gt;&quot;55 Almaden Boulevard&quot;, &quot;city&quot;=&gt;&quot;SAN JOSE&quot;, &quot;zip&quot;=&gt;&quot;95113&quot;, &quot;state_code&quot;=&gt;&quot;CA&quot;, &quot;address_line2&quot;=&gt;&quot;8 Floor&quot;}, &quot;short_extension&quot;=&gt;{&quot;length&quot;=&gt;4}, &quot;site_code&quot;=&gt;2}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,61 @@
+# Get device detail
+
+GET {{baseUrl}}/devices/:deviceId
+
+
+<p>
+Retrieve a device&#39;s details.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:read:admin
+</code>
+,
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;device_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;serial_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;vendor&quot;:&quot;\u003cstring\u003e&quot;,&quot;model&quot;:&quot;\u003cstring\u003e&quot;,&quot;platform_os&quot;:&quot;\u003cstring\u003e&quot;,&quot;app_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;tag&quot;:&quot;\u003cstring\u003e&quot;,&quot;enrolled_in_zdm&quot;:&quot;\u003cboolean\u003e&quot;,&quot;connected_to_zdm&quot;:&quot;\u003cboolean\u003e&quot;,&quot;room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:2,&quot;sdk_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_status&quot;:1,&quot;last_online&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;}
+```

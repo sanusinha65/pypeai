@@ -1,0 +1,122 @@
+#Get Started Fast with Zoom APIs
+
+Number of APIs: 56
+
+
+<h3>
+Done-for-You Developer API Workflows
+</h3>
+
+
+
+<p>
+Discover programmatic workflows like authorization, creating non-login users, in-meeting control and more in this collection.
+</p>
+
+
+
+<hr>
+
+
+
+<h5>
+⚡️ Pro Tips ⚡
+</h5>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+Make sure to fork this collection as well as [the application envrionment(s)] of your need prior to trying to initiate requests.
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+Start with the 
+<strong>
+API Authorization &amp; Authentication
+</strong>
+ folder to retrieve an access token. This is needed for successful requests to the subsequent endpoints.
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+The 
+<u>
+OAuth App
+</u>
+ type will offer the shortest 
+<q>
+time to first API call
+</q>
+ if you&#39;re new to the Zoom Developer platform and eager to see how things work!
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+As you explore and build the different Zoom app types, update the environment-level variables in your forked workspace to continue optimizing your workspace experience.
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+1. [Get Started Fast: Meetings &amp; Webinars-Meeting &amp; Webinar Registration - Add a meeting registrant](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-meeting-webinar-registration/add-a-meeting-registrant-1)
+POST {{baseUrl}}/meetings/{meetingId}/registrants
+
+
+2. [API Authorization &amp; Authentication-Legacy Applications-OAuth App-OAuth 2.0 with PKCE - Request user authorization PKCE](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-oauth-2-0-with-pkce/request-user-authorization-pkce)
+GET https://zoom.us/oauth/token?response_type=code&amp;client_id={{oAuthDevClientId}}&amp;redirect_uri={{oAuthDevRedirectUri}}&amp;code_challenge=
+
+
+3. [API Authorization &amp; Authentication-Unified Build Flow Application-Server-to-Server OAuth App - Get a user](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-server-to-server-oauth-app/get-a-user-3)
+GET {{baseUrl}}/users/{userId}
+
+
+4. [API Authorization &amp; Authentication-Legacy Applications-OAuth App-Easy OAuth 2.0 (Using Qodex Authorization Tab) - Revoke an access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-easy-oauth-2-0-using-qodex-authorization-tab/revoke-an-access-token)
+POST https://zoom.us/oauth/revoke
+
+
+5. [API Authorization &amp; Authentication-Legacy Applications-Server-to-Server OAuth App - Get a user](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-server-to-server-oauth-app/get-a-user-2)
+GET {{baseUrl}}/users/{userId}
+
+
+6. [API Authorization &amp; Authentication-Legacy Applications-Meeting SDKs-OAuth with Meeting SDK-Easy OAuth 2.0 (Using Qodex Authorization Tab) - Refresh access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-meeting-sdks-oauth-with-meeting-sdk-easy-oauth-2-0-using-qodex-authorization-tab/refresh-access-token-3)
+POST https://zoom.us/oauth/token
+
+
+7. [API Authorization &amp; Authentication-Legacy Applications-OAuth App-Easy OAuth 2.0 (Using Qodex Authorization Tab) - Refresh access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-legacy-applications-oauth-app-easy-oauth-2-0-using-qodex-authorization-tab/refresh-access-token)
+POST https://zoom.us/oauth/token
+
+
+8. [Get Started Fast: Zoom Mail-Get, Create, Update, Delete Email Drafts - Update the specified draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/update-the-specified-draft-email-1)
+PUT {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+9. [Get Started Fast: Zoom Mail-Get, Create, Update, Delete Email Drafts - Delete an existing draft email](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-get-create-update-delete-email-drafts/delete-an-existing-draft-email-1)
+DELETE {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+10. [Get Started Fast: Zoom Mail-Create &amp; Get Mailbox &quot;Out of Office&quot; Message - Get mailbox vacation response setting](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-zoom-mail-create-get-mailbox-out-of-office-message/get-mailbox-vacation-response-setting-1)
+GET {{baseUrl}}/emails/mailboxes/:email/settings/vacation
+
+

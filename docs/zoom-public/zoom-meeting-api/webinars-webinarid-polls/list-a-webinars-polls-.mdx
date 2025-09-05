@@ -1,0 +1,70 @@
+# List a webinar&#39;s polls 
+
+GET {{baseUrl}}/webinars/:webinarId/polls?anonymous=&lt;boolean&gt;
+
+
+<p>
+List all the 
+<a href="https://support.zoom.us/hc/en-us/articles/203749865-Polling-for-Webinars">
+polls
+</a>
+ of a Webinar.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `anonymous` | string |  | Whether to query for polls with the **Anonymous** option enabled: 
+* `true` &amp;mdash; Query for polls with the **Anonymous** option enabled. 
+* `false` &amp;mdash; Do not query for polls with the **Anonymous** option enabled. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;polls&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;ended&quot;,&quot;anonymous&quot;:false,&quot;poll_type&quot;:2,&quot;questions&quot;:[{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:false,&quot;type&quot;:&quot;rank_order&quot;},{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:false,&quot;type&quot;:&quot;fill_in_the_blank&quot;}],&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;ended&quot;,&quot;anonymous&quot;:false,&quot;poll_type&quot;:1,&quot;questions&quot;:[{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:false,&quot;type&quot;:&quot;multiple&quot;},{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:false,&quot;type&quot;:&quot;rank_order&quot;}],&quot;title&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

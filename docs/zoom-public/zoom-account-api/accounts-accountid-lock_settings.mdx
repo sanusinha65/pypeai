@@ -1,0 +1,9 @@
+# accounts-{accountId}-lock_settings
+
+Total number of available API endpoints: **2**, offering two distinct operations for handling an account’s lock configuration.
+
+1. [Update locked settings](https://developers.qodex.ai/zoom-public/zoom-account-api/accounts-accountid-lock_settings/update-locked-settings) – Use this endpoint to modify or fine-tune the lock parameters applied to an account so they align with your organization’s policies.
+PATCH {{baseUrl}}/accounts/:accountId/lock_settings – Send a PATCH request to this path to implement the desired changes.
+
+2. [Get locked settings](https://developers.qodex.ai/zoom-public/zoom-account-api/accounts-accountid-lock_settings/get-locked-settings) – Retrieve a complete list of the settings currently locked for an account, helping you understand what is enforced and why.
+GET {{baseUrl}}/accounts/:accountId/lock_settings?option=<string>&custom_query_fields=<string> – Issue a GET request to this endpoint, optionally refining the response by including the shown query parameters.

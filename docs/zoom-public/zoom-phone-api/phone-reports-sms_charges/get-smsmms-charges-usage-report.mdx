@@ -1,0 +1,98 @@
+# Get SMS/MMS charges usage report
+
+GET {{baseUrl}}/phone/reports/sms_charges?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;&amp;show_charges_only=&lt;boolean&gt;
+
+
+<p>
+Retrieves the 
+<strong>
+SMS/MMS Charges Report
+</strong>
+.  The 
+<strong>
+SMS/MMS charges usage report
+</strong>
+ allows account owners and admins to view monthly Zoom phone call charges. Account owners and admins can also access this information by when they log into their Zoom accounts and navigate to 
+<a href="https://zoom.us/pbx/page/report/system#/report/phone-system/charge?page_size=15&amp;chargeRestrict=0&amp;by=2">
+ SMS/MMS Charges Usage Report
+</a>
+.  
+<strong>
+Prerequisites:
+</strong>
+  * Account must be enrolled in Pro or a higher plan * Account must be enrolled in a 
+<a href="https://zoom.us/pricing/zoom-phone">
+Zoom Phone
+</a>
+ plan
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:sms_charges:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. The from date should not exceed recent 13 months. If unspecified, it returns data from the past 30 days. |
+| `to` | string |  | This field is **required** only when you specify the `from` parameter. End time and date is in a **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format.  The `from` parameter uses the the same format. |
+| `page_size` | string |  | The number of records returned within a single API call. The default is **30**, and the maximum is **300**. |
+| `next_page_token` | string |  | The current page number of returned records. |
+| `show_charges_only` | string |  | This field shows sms/mms with charges only. Defaults to false. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;sms_charges&quot;:[{&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;from_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;from_extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;from_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;to_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;to_extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;to_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;sent_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_charge&quot;:&quot;\u003cstring\u003e&quot;},{&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;from_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;from_extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;from_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;to_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;to_extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;to_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;sent_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_charge&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

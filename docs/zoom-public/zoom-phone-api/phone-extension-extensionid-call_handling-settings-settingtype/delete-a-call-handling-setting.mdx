@@ -1,0 +1,103 @@
+# Delete a call handling setting
+
+DELETE {{baseUrl}}/phone/extension/:extensionId/call_handling/settings/:settingType?call_forwarding_id=&lt;string&gt;&amp;holiday_id=&lt;string&gt;
+
+
+<p>
+Deletes a Zoom Phone&#39;s call handling settings. Call handling settings let you control how your system routes calls during business, closed, or holiday hours. For more information, read our 
+<a href="https://marketplace.zoom.us/docs/guides/zoom-phone/call-handling/">
+API guide
+</a>
+ or Zoom support article 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, auto receptionist, or shared line group call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:call_handling_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `call_forwarding_id` | string |  | The call forwarding&#39;s ID. Use this parameter if you pass the `call_forwarding_id` value for the `settingType` parameter. |
+| `holiday_id` | string |  | The holiday&#39;s ID. Use this parameter if you pass the `holiday_id` value for the `settingType` parameter. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

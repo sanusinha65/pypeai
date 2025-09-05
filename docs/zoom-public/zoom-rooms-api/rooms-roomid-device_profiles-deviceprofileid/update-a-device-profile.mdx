@@ -1,0 +1,72 @@
+# Update a device profile
+
+PATCH {{baseUrl}}/rooms/:roomId/device_profiles/:deviceProfileId
+
+
+<p>
+Use this API to update a Zoom Room device profile. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account with Zoom Rooms.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;audio_processing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_adjust_mic_level&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;camera_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;echo_cancellation&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;microphone_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;noise_suppression&quot;=&gt;&quot;aggressive&quot;, &quot;speaker_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

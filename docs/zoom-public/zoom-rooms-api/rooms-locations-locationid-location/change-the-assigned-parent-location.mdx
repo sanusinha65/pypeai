@@ -1,0 +1,104 @@
+# Change the assigned parent location
+
+PUT {{baseUrl}}/rooms/locations/:locationId/location
+
+
+<p>
+An account owner of a Zoom account can establish a 
+<a href="https://support.zoom.us/hc/en-us/articles/115000342983-Zoom-Rooms-Location-Hierarchy">
+Zoom Rooms Location Hierarchy
+</a>
+ to better organize Zoom Rooms spread across various locations. The location can be structured in a hierarchy with Country being the top-level location, followed by city, campus, building, and floor. The location in the lower level in the hierarchy is considered as a child of the location that is a level above in the hierarchy. Use this API to change the parent location of a child location.   
+</p>
+
+
+
+<p>
+For instance, if the location hierarchy is structured in a way where there are two campuses (Campus 1, and Campus 2) in a City and Campus 1 consists of a building named Building 1 with a floor where Zoom Rooms are located, and you would like to rearrange the structure so that Building 1 along with its child locations (floor and Zoom Rooms) are relocated directly under Campus 2 instead of Campus 1, you must provide the location ID of Building 1 in the path parameter of this request and the location ID of Campus 2 as the value of 
+<code>
+parent_location_id
+</code>
+ in the  request body.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Account owner or admin permission
+</li>
+
+
+<li>
+Zoom Rooms version 4.0 or higher
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;parent_location_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,112 @@
+# Cancel additional plans
+
+PATCH {{baseUrl}}/accounts/:accountId/plans/addons/status
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/203634215-How-Do-I-Cancel-My-Subscription-">
+cancel a sub account&#39;s add-on plan
+</a>
+. The cancellation does not provide refund for the current subscription. The service remains active for the current session.
+</p>
+
+
+
+<p>
+This API can only be used by master accounts that pay all billing charges of their associated Pro or higher sub accounts. Zoom allows only 
+<a href="https://marketplace.zoom.us/docs/api-reference/master-account-apis">
+approved partners
+</a>
+ to use master APIs and manage sub accounts&#39; subscriptions. Email the partner programs team at 
+<strong>
+
+<a href="mailto:partner-success@zoom.us">
+partner-success@zoom.us
+</a>
+
+</strong>
+ for more details.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with master account option enabled.
+</li>
+
+
+<li>
+The sub account must be a paid account.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;cancel&quot;, &quot;comment&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;reason&quot;=&gt;4, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

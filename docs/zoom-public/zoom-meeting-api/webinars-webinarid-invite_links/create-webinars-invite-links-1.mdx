@@ -1,0 +1,88 @@
+# Create webinar&#39;s invite links
+
+POST {{baseUrl}}/webinars/:webinarId/invite_links
+
+
+<p>
+Create a batch of invitation links for a webinar.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business, Education or API Plan with the Webinar add-on.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;attendees&quot;=&gt;[{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;ttl&quot;=&gt;7200}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;attendees&quot;:[{&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

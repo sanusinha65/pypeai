@@ -1,0 +1,87 @@
+# List calling plans
+
+GET {{baseUrl}}/phone/calling_plans
+
+
+<p>
+Use this API to return all of an account&#39;s Zoom Phone 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans#zoom-phone-calling-plans">
+calling plans
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_calling_plans:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calling_plans&quot;:[{&quot;assigned&quot;:&quot;\u003cinteger\u003e&quot;,&quot;available&quot;:&quot;\u003cinteger\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;subscribed&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;assigned&quot;:&quot;\u003cinteger\u003e&quot;,&quot;available&quot;:&quot;\u003cinteger\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;subscribed&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

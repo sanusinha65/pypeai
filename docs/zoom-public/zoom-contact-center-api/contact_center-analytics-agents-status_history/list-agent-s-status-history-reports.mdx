@@ -1,0 +1,68 @@
+# List agent&#39;s status history reports
+
+GET {{baseUrl}}/contact_center/analytics/agents/status_history?next_page_token=&lt;string&gt;&amp;page_size=10&amp;timezone=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;queueId=&lt;string&gt;&amp;user_id=&lt;string&gt;&amp;status_id=&lt;string&gt;&amp;sub_status_id=&lt;string&gt;
+
+
+<p>
+Generate a list of an agent&#39;s status history reports. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `timezone` | string |  | The call&#39;s timezone. The default is **UTC**. |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The defined date range should be a month, as the response only includes one month&#39;s worth of data. If no start date is specified, return data from the past 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameters is specified. The end time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `queueId` | string |  | The queue&#39;s ID. |
+| `user_id` | string |  | The agent&#39;s ID. |
+| `status_id` | string |  | The status&#39;s ID. |
+| `sub_status_id` | string |  | The sub status&#39;s ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:10,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;statuses&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Ready&quot;,&quot;sub_status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_status_name&quot;:&quot;Wrapping up&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;string&quot;,&quot;sub_status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_status_name&quot;:&quot;Whispering&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;}]}
+```

@@ -1,0 +1,57 @@
+# Get a user&#39;s profile
+
+GET {{baseUrl}}/contact_center/users/:userId
+
+
+<p>
+Retrieve a user&#39;s profile information. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;role_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;client_integration&quot;:&quot;Salesforce&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Occupied&quot;,&quot;sub_status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_status_name&quot;:&quot;Forced&quot;,&quot;user_access&quot;:&quot;active&quot;,&quot;country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_settings&quot;:{&quot;multi_channel_engagements&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;max_agent_load&quot;:&quot;\u003cinteger\u003e&quot;},&quot;concurrent_message_capacity&quot;:&quot;\u003cinteger\u003e&quot;}}
+```

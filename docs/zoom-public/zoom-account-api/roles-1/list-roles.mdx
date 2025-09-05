@@ -1,0 +1,80 @@
+# List roles
+
+GET {{baseUrl}}/roles?type=common
+
+
+<p>
+List 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control">
+roles
+</a>
+ on your account
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+ :
+*  Pro or higher plan. 
+*  For setting the initial role, you must be the Account Owner. 
+*  For subsequent role management, you must be the Account Owner or user with role management permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+role:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | Specify a value to get the response for the corresponding role type.  
+    
+ `common` - common roles of Zoom.  
+ `iq` - roles of Zoom IQ Sales |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;roles&quot;:[{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_members&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_members&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

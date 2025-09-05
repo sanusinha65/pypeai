@@ -1,0 +1,79 @@
+#Zoom Whiteboard API
+
+Number of APIs: 10
+
+
+<p>
+The Zoom Whiteboard API empowers interactive collaboration by enabling integration with whiteboard features.
+</p>
+
+
+
+<h5>
+Use Cases
+</h5>
+
+
+
+<ul>
+
+
+<li>
+Create a Zoom Whiteboard user.
+</li>
+
+
+<li>
+Facilitate brainstorming sessions with a remote team member.
+</li>
+
+
+<li>
+Conduct interactive training or educational sessions online.
+</li>
+
+
+</ul>
+
+
+
+1. [whiteboards-{whiteboardId}-collaborator-{collaboratorId} - Remove the collaborator from a whiteboard](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid-collaborator-collaboratorid/remove-the-collaborator-from-a-whiteboard)
+DELETE {{baseUrl}}/whiteboards/:whiteboardId/collaborator/:collaboratorId
+
+
+2. [whiteboards-{whiteboardId}-collaborator - Share a whiteboard to new users or team chat channels.](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid-collaborator/share-a-whiteboard-to-new-users-or-team-chat-channels)
+POST {{baseUrl}}/whiteboards/:whiteboardId/collaborator
+
+
+3. [whiteboards - List all whiteboards](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards/list-all-whiteboards)
+GET {{baseUrl}}/whiteboards?search_key=&lt;string&gt;&amp;user_id=&lt;string&gt;&amp;date_filter_type=modified_date&amp;from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;&amp;page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+4. [whiteboards-{whiteboardId} - Update whiteboard basic information](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid/update-whiteboard-basic-information)
+PUT {{baseUrl}}/whiteboards/:whiteboardId
+
+
+5. [whiteboards-{whiteboardId}-collaborator - Get collaborators of a whiteboard](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid-collaborator/get-collaborators-of-a-whiteboard)
+GET {{baseUrl}}/whiteboards/:whiteboardId/collaborator
+
+
+6. [whiteboards-{whiteboardId}-collaborator - Update whiteboard collaborators](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid-collaborator/update-whiteboard-collaborators)
+PATCH {{baseUrl}}/whiteboards/:whiteboardId/collaborator
+
+
+7. [whiteboards-{whiteboardId}-share_setting - Update whiteboard share setting](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid-share_setting/update-whiteboard-share-setting)
+PATCH {{baseUrl}}/whiteboards/:whiteboardId/share_setting
+
+
+8. [whiteboards-{whiteboardId} - Get a whiteboard](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid/get-a-whiteboard)
+GET {{baseUrl}}/whiteboards/:whiteboardId
+
+
+9. [whiteboards-{whiteboardId} - Delete a whiteboard](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards-whiteboardid/delete-a-whiteboard)
+DELETE {{baseUrl}}/whiteboards/:whiteboardId
+
+
+10. [whiteboards - Create a new whiteboard](https://developers.qodex.ai/zoom-public/zoom-whiteboard-api/whiteboards/create-a-new-whiteboard)
+POST {{baseUrl}}/whiteboards
+
+

@@ -1,0 +1,16 @@
+#  phone-metrics-call logs
+
+Number of APIs: 3
+
+1. [List call logs](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-metrics-call-logs/list-call-logs-1)
+GET {{baseUrl}}/phone/metrics/call_logs?from=2021-12-01&amp;to=2021-12-31&amp;site_id=SQv52YtkRLC2dwrDdYtGsA&amp;quality_type=good&amp;page_size=30&amp;next_page_token=T6WMY4fJBIAlxPUiqRtwvQS9dvsq8AoRam2
+
+
+2. [Get call QoS](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-metrics-call-logs/get-call-qos-1)
+GET {{baseUrl}}/phone/metrics/call_logs/:callId/qos
+
+
+3. [Get call details from call log](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-metrics-call-logs/get-call-details-from-call-log-1)
+GET {{baseUrl}}/phone/metrics/call_logs/:call_id
+
+

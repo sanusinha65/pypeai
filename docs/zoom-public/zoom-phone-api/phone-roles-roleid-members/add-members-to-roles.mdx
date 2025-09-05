@@ -1,0 +1,91 @@
+# Add members to roles
+
+POST {{baseUrl}}/phone/roles/:roleId/members
+
+
+<p>
+Use this API to add members to 
+<a href="https://support.zoom.us/hc/en-us/articles/360042099012-Using-Zoom-Phone-role-management#h_01EFHY1R4QWAYTA6Z661NM9Q27">
+roles
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:role_member:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;role_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;copy_targets&quot;=&gt;false, &quot;copy_all_members&quot;=&gt;false, &quot;user_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+&quot;&quot;
+```

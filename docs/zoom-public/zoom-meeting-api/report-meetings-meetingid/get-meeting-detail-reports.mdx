@@ -1,0 +1,81 @@
+# Get meeting detail reports
+
+GET {{baseUrl}}/report/meetings/:meetingId
+
+
+<p>
+Get a detailed report for a past meeting.   
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;participants_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}
+```

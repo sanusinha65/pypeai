@@ -1,0 +1,75 @@
+# Remove members in a contact group
+
+DELETE {{baseUrl}}/contacts/groups/:groupId/members?member_ids=&lt;string&gt;
+
+
+<p>
+Use this API to remove members in a 
+<a href="https://support.zoom.us/hc/en-us/articles/204519819-Group-Management-">
+contact group
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite
+</strong>
+: Pro or higher account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_group:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `member_ids` | string |  | (Required) The member&#39;s ID in a contact group. Use commas (,) to separate a maximum of 20 ids.   
+ 
+Can be retrieved by calling the [**List contact groups**](/docs/api-reference/zoom-api/methods#operation/contactGroupMembers) API. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

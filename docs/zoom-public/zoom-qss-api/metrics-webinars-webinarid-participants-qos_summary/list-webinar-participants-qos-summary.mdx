@@ -1,0 +1,120 @@
+# List webinar participants QoS Summary
+
+GET {{baseUrl}}/metrics/webinars/:webinarId/participants/qos_summary?page_size=1&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to return a list of webinar participants from live or past webinars and the quality of service they received during the webinar. The data returned indicates the connection quality for sending/receiving video, audio, and shared content. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+</p>
+
+
+
+<p>
+This API may return empty values for participants&#39; 
+<code>
+user_name
+</code>
+ and 
+<code>
+email
+</code>
+ responses when the account calling this API: 
+* Does 
+<strong>
+not
+</strong>
+ have a signed HIPAA business associate agreement (BAA). 
+* Is a 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/legacy-business-associate-agreements">
+
+<strong>
+legacy
+</strong>
+ HIPAA BAA account
+</a>
+. 
+* Displays data for any users who are 
+<strong>
+not
+</strong>
+ part of the host&#39;s account (external users) unless they meet certain conditions. See 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#email-address">
+Email address display rules
+</a>
+ for details. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business, Education, or API Plan with Webinar add-on.
+* Developers must subscribe to the QSS summary event to receive data from this API.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_webinars:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of items returned per page. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;participants&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;qos&quot;:[{&quot;type&quot;:&quot;audio_device_to_crc&quot;,&quot;details&quot;:{&quot;min_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_min_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;system_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;type&quot;:&quot;video_output&quot;,&quot;details&quot;:{&quot;min_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_min_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;system_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;}}]},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;qos&quot;:[{&quot;type&quot;:&quot;video_input&quot;,&quot;details&quot;:{&quot;min_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_min_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;system_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;type&quot;:&quot;video_device_from_crc&quot;,&quot;details&quot;:{&quot;min_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;,&quot;min_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;avg_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_min_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;system_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;}}]}]}
+```

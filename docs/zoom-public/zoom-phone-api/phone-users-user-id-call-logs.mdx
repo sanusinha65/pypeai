@@ -1,0 +1,20 @@
+#  phone-users-{user Id}-call logs
+
+Number of APIs: 4
+
+1. [Get user&#39;s call logs](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-user-id-call-logs/get-users-call-logs-1)
+GET {{baseUrl}}/phone/users/:userId/call_logs?page_size=30&amp;from=2020-10-31&amp;to=2021-12-31&amp;type=all&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;phone_number=+12055432724&amp;time_type=startTime
+
+
+2. [Get user voicemail details from a call log](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-user-id-call-logs/get-user-voicemail-details-from-a-call-log-1)
+GET {{baseUrl}}/phone/users/:userId/call_logs/:id/voice_mail
+
+
+3. [Delete a user&#39;s call log](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-user-id-call-logs/delete-a-users-call-log-1)
+DELETE {{baseUrl}}/phone/users/:userId/call_logs/:callLogId
+
+
+4. [Sync user&#39;s call logs](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-users-user-id-call-logs/sync-users-call-logs-1)
+GET {{baseUrl}}/phone/users/:userId/call_logs/sync?sync_type=FSync&amp;count=50&amp;sync_token=SDVjM3NHRlNyMF8xNjQwODI3NTkyMzkwXzE2NDgwMTUzNTk0MzI=
+
+

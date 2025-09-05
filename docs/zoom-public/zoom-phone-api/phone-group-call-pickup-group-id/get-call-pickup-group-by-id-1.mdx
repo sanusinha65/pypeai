@@ -1,0 +1,69 @@
+# Get call pickup group by ID
+
+GET {{baseUrl}}/phone/group_call_pickup/:groupId
+
+
+<p>
+Use this API to retrieve information on a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360060107472-Setting-up-and-using-group-call-pickup">
+Group Call Pickup
+</a>
+ object in an account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;qLZ4vXb8RAydayOR5ckYMg&quot;,&quot;display_name&quot;:&quot;testGCP&quot;,&quot;extension_id&quot;:&quot;mLG45gHYSVaeVVc64gp1jQ&quot;,&quot;extension_number&quot;:10002,&quot;description&quot;:&quot;test&quot;,&quot;delay&quot;:5,&quot;member_count&quot;:1,&quot;cost_center&quot;:&quot;test&quot;,&quot;department&quot;:&quot;test&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;testGCPSite&quot;},&quot;play_incoming_calls_sound&quot;:{&quot;enable&quot;:true,&quot;ring_tone&quot;:&quot;ringtone_1&quot;,&quot;duration&quot;:0},&quot;directed_call_pickup&quot;:true}
+```

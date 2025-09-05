@@ -1,0 +1,73 @@
+# Get an auto receptionist policy
+
+GET {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/policies
+
+
+<p>
+Use this API to get the policy setting of a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license.
+* Account owner or admin permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;voicemail_access_members&quot;:[{&quot;shared_id&quot;:&quot;--e8ugg0SeS-9clgrDkn2w&quot;,&quot;access_user_id&quot;:&quot;w0RChiauQeqRlv5fgxYULQ&quot;,&quot;delete&quot;:false,&quot;download&quot;:false}],&quot;voicemail_transcription&quot;:{&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;voicemail_notification_by_email&quot;:{&quot;include_voicemail_file&quot;:true,&quot;include_voicemail_transcription&quot;:false,&quot;forward_voicemail_to_email&quot;:true,&quot;enable&quot;:true,&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true},&quot;sms&quot;:{&quot;enable&quot;:true,&quot;international_sms&quot;:true,&quot;international_sms_countries&quot;:[&quot;US&quot;,&quot;US&quot;],&quot;locked&quot;:true,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:true}}
+```

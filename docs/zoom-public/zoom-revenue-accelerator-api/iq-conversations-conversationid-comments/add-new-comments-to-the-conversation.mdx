@@ -1,0 +1,66 @@
+# Add new comments to the conversation
+
+POST {{baseUrl}}/iq/conversations/:conversationId/comments
+
+
+<p>
+Add new comments to a specific conversation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_comment:write
+</code>
+,
+<code>
+iq_comment:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;comment&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;parent_comment_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;mention_user_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;mention_team_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;is_private&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;time_in_recording&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;parent_comment_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;comment&quot;:&quot;\u003cstring\u003e&quot;,&quot;mention_users&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;mention_teams&quot;:[{&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;team_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;team_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;team_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;is_private&quot;:&quot;\u003cboolean\u003e&quot;,&quot;time_in_recording&quot;:&quot;\u003cstring\u003e&quot;}
+```

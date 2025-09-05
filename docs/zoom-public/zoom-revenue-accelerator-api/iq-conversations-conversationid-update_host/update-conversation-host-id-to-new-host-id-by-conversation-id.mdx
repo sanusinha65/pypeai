@@ -1,0 +1,84 @@
+# Update conversation host id to new host id by conversation id
+
+PATCH {{baseUrl}}/iq/conversations/:conversationId/update_host
+
+
+<p>
+Update conversation host id.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite
+</strong>
+: 
+You must have either 
+<code>
+iq_conversation:write:admin
+</code>
+ or 
+<code>
+iq_conversation:write
+</code>
+ permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_conversation:write:admin
+</code>
+,
+<code>
+iq_conversation:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;new_host_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

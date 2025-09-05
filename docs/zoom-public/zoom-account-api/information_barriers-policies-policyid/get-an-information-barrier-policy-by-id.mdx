@@ -1,0 +1,76 @@
+# Get an Information Barrier policy by ID
+
+GET {{baseUrl}}/information_barriers/policies/:policyId
+
+
+<p>
+Return an 
+<a href="https://support.zoom.us/hc/en-us/articles/360040913711-Information-Barriers">
+Information Barriers
+</a>
+ policy by its ID. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Contact Zoom Support
+</a>
+ to enable Information Barriers for your account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+information_barriers:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assigned_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;policy_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;settings&quot;:{&quot;complete_phone_calls&quot;:&quot;\u003cboolean\u003e&quot;,&quot;file_transfer&quot;:&quot;\u003cboolean\u003e&quot;,&quot;im&quot;:&quot;\u003cboolean\u003e&quot;,&quot;in_meeting_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;message_via_sms&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;screen_share&quot;:&quot;\u003cboolean\u003e&quot;},&quot;status&quot;:1,&quot;to_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:0}
+```

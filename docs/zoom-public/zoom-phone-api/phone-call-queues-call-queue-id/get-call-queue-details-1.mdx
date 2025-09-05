@@ -1,0 +1,90 @@
+# Get call queue details
+
+GET {{baseUrl}}/phone/call_queues/:callQueueId
+
+
+<p>
+Call queues allow you to route incoming calls to a group of users. For instance, you can use call queues to route calls to various departments in your organization such as sales, engineering, billing, customer service etc.
+ Use this API to get information on a specific Call Queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro, Business, or Education account
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;cost_center&quot;:&quot;testCostCenter&quot;,&quot;department&quot;:&quot;testDepartment&quot;,&quot;extension_id&quot;:&quot;DgKe5UPTTlODBvcgmRIlPw&quot;,&quot;extension_number&quot;:26000026001,&quot;id&quot;:&quot;3PNsZB50TNev4pgBjtKeDw&quot;,&quot;members&quot;:{&quot;common_area_phones&quot;:[{&quot;id&quot;:&quot;JpjPXizWTz-l35tFRUK3Gg&quot;,&quot;name&quot;:&quot;Test_cap_add2&quot;},{&quot;id&quot;:&quot;JpjPXizWTz-l35tFRUK3Gg&quot;,&quot;name&quot;:&quot;Test_cap_add2&quot;}],&quot;users&quot;:[{&quot;id&quot;:&quot;yNCY-HBHQ36rkXEXYTwu2g&quot;,&quot;level&quot;:&quot;user&quot;,&quot;name&quot;:&quot;APITA AUTO&quot;,&quot;receive_call&quot;:true,&quot;extension_id&quot;:&quot;oeDyBe8zT2SzOZW6gQJXUA&quot;},{&quot;id&quot;:&quot;yNCY-HBHQ36rkXEXYTwu2g&quot;,&quot;level&quot;:&quot;user&quot;,&quot;name&quot;:&quot;APITA AUTO&quot;,&quot;receive_call&quot;:true,&quot;extension_id&quot;:&quot;oeDyBe8zT2SzOZW6gQJXUA&quot;}],&quot;common_areas&quot;:[{&quot;id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;,&quot;name&quot;:&quot;Common Area&quot;,&quot;extension_id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;},{&quot;id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;,&quot;name&quot;:&quot;Common Area&quot;,&quot;extension_id&quot;:&quot;HIlHzOEzS8ymQPFBZ-39AQ&quot;}]},&quot;name&quot;:&quot;ApiTA_2020_12_21_19_54_05_476&quot;,&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;,&quot;number&quot;:&quot;+12058945717&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;id&quot;:&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;,&quot;number&quot;:&quot;+12058945717&quot;,&quot;source&quot;:&quot;internal&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;lA68sMSVQ6GAUcGg_GH0nQ&quot;,&quot;name&quot;:&quot;ApiTA_Site_2020_07_12_00_42_50_109&quot;},&quot;status&quot;:&quot;active&quot;}
+```

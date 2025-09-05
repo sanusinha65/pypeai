@@ -1,0 +1,61 @@
+# List the business hours&#39; flows
+
+GET {{baseUrl}}/contact_center/business_hours/:businessHourId/flows?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Show a list of flows using business hours. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_flow:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;flows&quot;:[{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

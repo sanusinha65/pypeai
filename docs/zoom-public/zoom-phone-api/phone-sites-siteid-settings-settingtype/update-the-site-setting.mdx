@@ -1,0 +1,95 @@
+# Update the site setting
+
+PATCH {{baseUrl}}/phone/sites/:siteId/settings/:settingType
+
+
+<p>
+Sites allow you to organize Zoom Phone users in your organization. Use this API to update the site setting of a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672">
+site
+</a>
+ according to the setting type.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Account must have a Pro or a higher plan with Zoom Phone license.
+* Multiple sites must be 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-Multiple-Sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15">
+enabled
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:site_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;location_based_routing&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;place_receive_pstn_calls&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable_media_off_load_pstn_calls&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;business_hours&quot;=&gt;{&quot;custom_hour_type&quot;=&gt;2, &quot;custom_hours&quot;=&gt;[{&quot;from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;2, &quot;weekday&quot;=&gt;7}, {&quot;from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;1, &quot;weekday&quot;=&gt;4}], &quot;overflow&quot;=&gt;{&quot;allow_caller_to_reach_operator&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;operator&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;allow_caller_to_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}, &quot;closed_hours&quot;=&gt;{&quot;overflow&quot;=&gt;{&quot;allow_caller_to_reach_operator&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;operator&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;allow_caller_to_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}, &quot;holiday_hours&quot;=&gt;{&quot;holidays&quot;=&gt;[{&quot;holiday_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;from&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;dateTime&gt;&quot;}, {&quot;holiday_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;from&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;dateTime&gt;&quot;}], &quot;overflow&quot;=&gt;{&quot;allow_caller_to_reach_operator&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;operator&quot;=&gt;{&quot;extension_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;allow_caller_to_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}, &quot;outbound_caller_id&quot;=&gt;{&quot;auto_receptionists_numbers&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;call_queue_numbers&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;share_line_group_numbers&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_outbound_caller_id_for_internal_call&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;audio_prompt&quot;=&gt;{&quot;language&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;greeting_leave_voicemail_instruction&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;closed_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;holiday_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;greeting_menu_leave_or_check_voicemail&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;closed_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;holiday_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;greeting_menu_connect_to_operator_or_leave_voicemail&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;closed_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;holiday_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;greeting_menu_connect_to_operator_leave_or_check_voicemail&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;closed_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;holiday_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;leave_voicemail_introduction&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;closed_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;holiday_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;message_greeting&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;closed_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;holiday_hours&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;audio_while_connecting&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;hold_music&quot;=&gt;{&quot;audio_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, &quot;desk_phone&quot;=&gt;{&quot;hot_desking_session_timeout&quot;=&gt;{&quot;number&quot;=&gt;8, &quot;unit&quot;=&gt;&quot;hours&quot;}}, &quot;dial_by_name&quot;=&gt;{&quot;status&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;inherit&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;rule&quot;=&gt;&quot;first_name&quot;}, &quot;billing_account&quot;=&gt;{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

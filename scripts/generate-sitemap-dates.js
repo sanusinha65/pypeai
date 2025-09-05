@@ -81,7 +81,7 @@ async function listMdxFiles(project) {
             return;
           }
           await walk(fullPath);
-        } else if (entry.isFile() && entry.name.endsWith(".tsx")) {
+        } else if (entry.isFile() && entry.name.endsWith(".mdx")) {
           files.push(fullPath);
         }
       });

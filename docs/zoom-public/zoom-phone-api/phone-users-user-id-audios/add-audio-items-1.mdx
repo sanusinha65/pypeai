@@ -1,0 +1,86 @@
+# Add audio items
+
+POST {{baseUrl}}/phone/users/:userId/audios/batch
+
+
+<p>
+Use this API to add audio items. You can only upload voice files at this time.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+,
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Size and quantity limits for audio attachments:
+</strong>
+
+* Up to 5 attachments
+* Each file size should be no more than 1MB
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;attachments&quot;=&gt;[{&quot;audio_type&quot;=&gt;&quot;audio/mpeg, audio/wav&quot;, &quot;base64_encoding&quot;=&gt;&quot;TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz\nIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2Yg\ndGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZG=&quot;, &quot;name&quot;=&gt;&quot;hello.mp3&quot;}, {&quot;audio_type&quot;=&gt;&quot;audio/mpeg, audio/wav&quot;, &quot;base64_encoding&quot;=&gt;&quot;TWFuIGlzIGRpc3Rpbmd1aXNoZWQsIG5vdCBvbmx5IGJ5IGhpcyByZWFzb24sIGJ1dCBieSB0aGlz\nIHNpbmd1bGFyIHBhc3Npb24gZnJvbSBvdGhlciBhbmltYWxzLCB3aGljaCBpcyBhIGx1c3Qgb2Yg\ndGhlIG1pbmQsIHRoYXQgYnkgYSBwZXJzZXZlcmFuY2Ugb2YgZG=&quot;, &quot;name&quot;=&gt;&quot;hello.mp3&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;audios&quot;:[{&quot;audio_id&quot;:&quot;fPOSdWWqRVqhohLYs7TW9Q&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},{&quot;audio_id&quot;:&quot;fPOSdWWqRVqhohLYs7TW9Q&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}]}
+```

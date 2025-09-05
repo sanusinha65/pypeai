@@ -1,0 +1,61 @@
+# List queue disposition sets
+
+GET {{baseUrl}}/contact_center/queues/:queueId/dispositions/sets
+
+
+<p>
+Return a list of queue&#39;s disposition sets(
+<a href="https://support.zoom.us/hc/en-us/articles/4470153057549-Managing-dispositions">
+https://support.zoom.us/hc/en-us/articles/4470153057549-Managing-dispositions
+</a>
+). 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;disposition_sets&quot;:[{&quot;disposition_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;},{&quot;disposition_set_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_set_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;inactive&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

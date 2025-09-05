@@ -1,0 +1,78 @@
+# Add members to a call queue
+
+POST {{baseUrl}}/phone/call_queues/:callQueueId/members
+
+
+<p>
+Add phone users and/or 
+<a href="https://support.zoom.us/hc/articles/4481136653709">
+common areas
+</a>
+ as members to a specific call queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan.
+* Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;members&quot;=&gt;{&quot;common_area_phone_ids&quot;=&gt;[&quot;-wynmxJjTcWNNlUXW19jSQ&quot;, &quot;-wynmxJjTcWNNlUXW19jSQ&quot;], &quot;common_area_ids&quot;=&gt;[&quot;iewGNg-LSYa0ghhkr4d0Hg&quot;, &quot;iewGNg-LSYa0ghhkr4d0Hg&quot;], &quot;users&quot;=&gt;[{&quot;email&quot;=&gt;&quot;callhandling0001@testapi.com&quot;, &quot;id&quot;=&gt;&quot;wh23uihdqw-43iwdn&quot;}, {&quot;email&quot;=&gt;&quot;callhandling0001@testapi.com&quot;, &quot;id&quot;=&gt;&quot;wh23uihdqw-43iwdn&quot;}]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

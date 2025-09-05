@@ -1,0 +1,80 @@
+# Update livestream status
+
+PATCH {{baseUrl}}/meetings/:meetingId/livestream/status
+
+
+<p>
+Zoom allows users to 
+<a href="https://support.zoom.us/hc/en-us/articles/115001777826-Live-Streaming-Meetings-or-Webinars-Using-a-Custom-Service">
+livestream a meeting
+</a>
+ to a custom platform. Update the status of a meeting&#39;s livestream.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Meeting host must have a Pro license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;start&quot;, &quot;settings&quot;=&gt;{&quot;active_speaker_name&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;layout&quot;=&gt;&quot;follow_host&quot;, &quot;close_caption&quot;=&gt;&quot;burnt-in&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

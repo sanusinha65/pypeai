@@ -1,0 +1,120 @@
+#Zoom Mail API
+
+Number of APIs: 45
+
+
+<p>
+he Zoom Mail API lets developers access information from Zoom. Use this API to build private services or public applications on the 
+<a href="http://marketplace.zoom.us/">
+Zoom App Marketplace
+</a>
+. Learn how to get your credentials and create private or public apps in our 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+Authorization guide
+</a>
+. The API accepts 
+<code>
+application/json
+</code>
+ and 
+<code>
+multipart/form-data
+</code>
+, and 
+<code>
+responds with application/json
+</code>
+ and 
+<code>
+application/xml
+</code>
+. All endpoints are available at 
+<code>
+https://api.zoom.us/v2/
+</code>
+.
+</p>
+
+
+
+<p>
+To use this API, you must have:
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+Zoom One Pro or Standard Pro, Zoom One Business, or Zoom One Enterprise account
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+Account owner or admin privileges
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Pro accounts have the Zoom Mail Services enabled by default. For Business and Enterprise accounts, the Zoom Mail Services are disabled by default.
+</p>
+
+
+
+1. [emails-mailboxes-{email}-drafts-{draftId} - Update the specified draft email](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-drafts-draftid/update-the-specified-draft-email)
+PUT {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+2. [emails-mailboxes-{email}-drafts-{draftId} - Delete an existing draft email](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-drafts-draftid/delete-an-existing-draft-email)
+DELETE {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+3. [emails-mailboxes-{email}-drafts - Create a new draft email](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-drafts/create-a-new-draft-email)
+POST {{baseUrl}}/emails/mailboxes/:email/drafts
+
+
+4. [emails-mailboxes-{email}-messages-batchModify - Batch modify the specified emails](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-messages-batchmodify/batch-modify-the-specified-emails)
+POST {{baseUrl}}/emails/mailboxes/:email/messages/batchModify
+
+
+5. [emails-mailboxes-{email}-labels-{labelId} - Patch the specified label in mailbox](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-labels-labelid/patch-the-specified-label-in-mailbox)
+PATCH {{baseUrl}}/emails/mailboxes/:email/labels/:labelId
+
+
+6. [emails-mailboxes-{email}-labels - Create a new label in mailbox](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-labels/create-a-new-label-in-mailbox)
+POST {{baseUrl}}/emails/mailboxes/:email/labels
+
+
+7. [emails-mailboxes-{email}-stop - Stop receiving push notification for the mailbox](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-stop/stop-receiving-push-notification-for-the-mailbox)
+POST {{baseUrl}}/emails/mailboxes/:email/stop
+
+
+8. [emails-mailboxes-{email}-watch - Create or update a push notification watch on the mailbox](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-watch/create-or-update-a-push-notification-watch-on-the-mailbox)
+POST {{baseUrl}}/emails/mailboxes/:email/watch
+
+
+9. [emails-mailboxes-{email}-settings-vacation - Update mailbox vacation response setting](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-settings-vacation/update-mailbox-vacation-response-setting)
+PUT {{baseUrl}}/emails/mailboxes/:email/settings/vacation
+
+
+10. [emails-mailboxes-{email}-labels-{labelId} - Get the specified label in mailbox](https://developers.qodex.ai/zoom-public/zoom-mail-api/emails-mailboxes-email-labels-labelid/get-the-specified-label-in-mailbox)
+GET {{baseUrl}}/emails/mailboxes/:email/labels/:labelId
+
+

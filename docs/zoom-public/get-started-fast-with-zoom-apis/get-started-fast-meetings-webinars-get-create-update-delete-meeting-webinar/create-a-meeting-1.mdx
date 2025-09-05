@@ -1,0 +1,186 @@
+# Create a meeting
+
+POST {{baseUrl}}/users/:userId/meetings
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/201362413-Scheduling-meetings">
+create a meeting
+</a>
+ for a user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<ul>
+
+
+<li>
+A meeting&#39;s 
+<code>
+start_url
+</code>
+ value is the URL a host or an alternative host can use to start a meeting. The expiration time for the 
+<code>
+start_url
+</code>
+ value is 
+<strong>
+two hours
+</strong>
+ for all regular users.
+</li>
+
+
+<li>
+For 
+<code>
+custCreate
+</code>
+ meeting hosts (users created with the 
+<code>
+custCreate
+</code>
+ parameter via the 
+<a href="/api-reference/zoom-api/methods#operation/userCreate">
+
+<strong>
+Create users
+</strong>
+
+</a>
+ API), the expiration time of the 
+<code>
+start_url
+</code>
+ parameter is 
+<strong>
+90 days
+</strong>
+ from the generation of the 
+<code>
+start_url
+</code>
+.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+</p>
+
+
+
+<p>
+For security reasons, the recommended way to programmatically (after expiry) get the updated 
+<code>
+start_url
+</code>
+ value is to call the 
+<a href="/api-reference/zoom-api/methods#operation/meeting">
+
+<strong>
+Get a meeting
+</strong>
+
+</a>
+ API. Refer to the 
+<code>
+start_url
+</code>
+ value in the response. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+, 
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+ 
+<br>
+
+* This API has a daily rate limit of 
+<strong>
+100 requests per day
+</strong>
+. The rate limit is applied against the 
+<code>
+userId
+</code>
+ of the 
+<strong>
+meeting host
+</strong>
+ used to make the request.
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;agenda&quot;=&gt;&quot;My Meeting&quot;, &quot;default_password&quot;=&gt;false, &quot;duration&quot;=&gt;60, &quot;password&quot;=&gt;&quot;123456&quot;, &quot;pre_schedule&quot;=&gt;false, &quot;recurrence&quot;=&gt;{&quot;end_date_time&quot;=&gt;&quot;2022-04-02T15:59:00Z&quot;, &quot;end_times&quot;=&gt;7, &quot;monthly_day&quot;=&gt;1, &quot;monthly_week&quot;=&gt;1, &quot;monthly_week_day&quot;=&gt;1, &quot;repeat_interval&quot;=&gt;1, &quot;type&quot;=&gt;1, &quot;weekly_days&quot;=&gt;&quot;1&quot;}, &quot;schedule_for&quot;=&gt;&quot;jchill@example.com&quot;, &quot;settings&quot;=&gt;{&quot;additional_data_center_regions&quot;=&gt;[&quot;TY&quot;], &quot;allow_multiple_devices&quot;=&gt;true, &quot;alternative_hosts&quot;=&gt;&quot;jchill@example.com;thill@example.com&quot;, &quot;alternative_hosts_email_notification&quot;=&gt;true, &quot;approval_type&quot;=&gt;2, &quot;approved_or_denied_countries_or_regions&quot;=&gt;{&quot;approved_list&quot;=&gt;[&quot;CX&quot;], &quot;denied_list&quot;=&gt;[&quot;CA&quot;], &quot;enable&quot;=&gt;true, &quot;method&quot;=&gt;&quot;approve&quot;}, &quot;audio&quot;=&gt;&quot;telephony&quot;, &quot;audio_conference_info&quot;=&gt;&quot;test&quot;, &quot;authentication_domains&quot;=&gt;&quot;example.com&quot;, &quot;authentication_exception&quot;=&gt;[{&quot;email&quot;=&gt;&quot;jchill@example.com&quot;, &quot;name&quot;=&gt;&quot;Jill Chill&quot;}], &quot;authentication_option&quot;=&gt;&quot;signIn_D8cJuqWVQ623CI4Q8yQK0Q&quot;, &quot;auto_recording&quot;=&gt;&quot;cloud&quot;, &quot;breakout_room&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;rooms&quot;=&gt;[{&quot;name&quot;=&gt;&quot;room1&quot;, &quot;participants&quot;=&gt;[&quot;jchill@example.com&quot;]}]}, &quot;calendar_type&quot;=&gt;1, &quot;close_registration&quot;=&gt;false, &quot;contact_email&quot;=&gt;&quot;jchill@example.com&quot;, &quot;contact_name&quot;=&gt;&quot;Jill Chill&quot;, &quot;email_notification&quot;=&gt;true, &quot;encryption_type&quot;=&gt;&quot;enhanced_encryption&quot;, &quot;focus_mode&quot;=&gt;true, &quot;global_dial_in_countries&quot;=&gt;[&quot;US&quot;], &quot;host_video&quot;=&gt;true, &quot;jbh_time&quot;=&gt;0, &quot;join_before_host&quot;=&gt;false, &quot;language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;interpreter@example.com&quot;, &quot;languages&quot;=&gt;&quot;US,FR&quot;}]}, &quot;meeting_authentication&quot;=&gt;true, &quot;meeting_invitees&quot;=&gt;[{&quot;email&quot;=&gt;&quot;jchill@example.com&quot;}], &quot;mute_upon_entry&quot;=&gt;false, &quot;participant_video&quot;=&gt;false, &quot;private_meeting&quot;=&gt;false, &quot;registrants_confirmation_email&quot;=&gt;true, &quot;registrants_email_notification&quot;=&gt;true, &quot;registration_type&quot;=&gt;1, &quot;show_share_button&quot;=&gt;true, &quot;use_pmi&quot;=&gt;false, &quot;waiting_room&quot;=&gt;false, &quot;watermark&quot;=&gt;false, &quot;host_save_video_order&quot;=&gt;true, &quot;alternative_host_update_polls&quot;=&gt;true}, &quot;start_time&quot;=&gt;&quot;2022-03-25T07:32:55Z&quot;, &quot;template_id&quot;=&gt;&quot;Dv4YdINdTk+Z5RToadh5ug==&quot;, &quot;timezone&quot;=&gt;&quot;America/Los_Angeles&quot;, &quot;topic&quot;=&gt;&quot;My Meeting&quot;, &quot;tracking_fields&quot;=&gt;[{&quot;field&quot;=&gt;&quot;field1&quot;, &quot;value&quot;=&gt;&quot;value1&quot;}], &quot;type&quot;=&gt;2}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;assistant_id&quot;:&quot;kFFvsJc-Q1OSxaJQLvaa_A&quot;,&quot;host_email&quot;:&quot;jchill@example.com&quot;,&quot;id&quot;:92674392836,&quot;registration_url&quot;:&quot;https://example.com/meeting/register/7ksAkRCoEpt1Jm0wa-E6lICLur9e7Lde5oW6&quot;,&quot;agenda&quot;:&quot;My Meeting&quot;,&quot;created_at&quot;:&quot;2022-03-25T07:29:29Z&quot;,&quot;duration&quot;:60,&quot;h323_password&quot;:&quot;123456&quot;,&quot;join_url&quot;:&quot;https://example.com/j/11111&quot;,&quot;occurrences&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;password&quot;:&quot;123456&quot;,&quot;pmi&quot;:97891943927,&quot;pre_schedule&quot;:false,&quot;recurrence&quot;:{&quot;type&quot;:1,&quot;end_date_time&quot;:&quot;2022-04-02T15:59:00Z&quot;,&quot;end_times&quot;:7,&quot;monthly_day&quot;:1,&quot;monthly_week&quot;:1,&quot;monthly_week_day&quot;:1,&quot;repeat_interval&quot;:1,&quot;weekly_days&quot;:&quot;1&quot;},&quot;settings&quot;:{&quot;allow_multiple_devices&quot;:true,&quot;alternative_hosts&quot;:&quot;jchill@example.com;thill@example.com&quot;,&quot;alternative_hosts_email_notification&quot;:true,&quot;alternative_host_update_polls&quot;:true,&quot;approval_type&quot;:0,&quot;approved_or_denied_countries_or_regions&quot;:{&quot;approved_list&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;denied_list&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;enable&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;method&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},&quot;audio&quot;:&quot;telephony&quot;,&quot;authentication_domains&quot;:&quot;example.com&quot;,&quot;authentication_exception&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;authentication_name&quot;:&quot;Sign in to Zoom&quot;,&quot;authentication_option&quot;:&quot;signIn_D8cJuqWVQ623CI4Q8yQK0Q&quot;,&quot;auto_recording&quot;:&quot;cloud&quot;,&quot;breakout_room&quot;:{&quot;enable&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;rooms&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},&quot;calendar_type&quot;:1,&quot;close_registration&quot;:false,&quot;cn_meeting&quot;:false,&quot;contact_email&quot;:&quot;jchill@example.com&quot;,&quot;contact_name&quot;:&quot;Jill Chill&quot;,&quot;custom_keys&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;email_notification&quot;:true,&quot;encryption_type&quot;:&quot;enhanced_encryption&quot;,&quot;enforce_login&quot;:true,&quot;enforce_login_domains&quot;:&quot;example.com&quot;,&quot;focus_mode&quot;:true,&quot;global_dial_in_countries&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;global_dial_in_numbers&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;host_video&quot;:true,&quot;in_meeting&quot;:false,&quot;jbh_time&quot;:0,&quot;join_before_host&quot;:true,&quot;language_interpretation&quot;:{&quot;enable&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;interpreters&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},&quot;meeting_authentication&quot;:true,&quot;mute_upon_entry&quot;:false,&quot;participant_video&quot;:false,&quot;private_meeting&quot;:false,&quot;registrants_confirmation_email&quot;:true,&quot;registrants_email_notification&quot;:true,&quot;registration_type&quot;:1,&quot;show_share_button&quot;:true,&quot;use_pmi&quot;:false,&quot;waiting_room&quot;:false,&quot;watermark&quot;:false},&quot;start_time&quot;:&quot;2022-03-25T07:29:29Z&quot;,&quot;start_url&quot;:&quot;https://example.com/s/11111&quot;,&quot;timezone&quot;:&quot;America/Los_Angeles&quot;,&quot;topic&quot;:&quot;My Meeting&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;field1&quot;,&quot;value&quot;:&quot;value1&quot;,&quot;visible&quot;:true},{&quot;field&quot;:&quot;field1&quot;,&quot;value&quot;:&quot;value1&quot;,&quot;visible&quot;:true}],&quot;type&quot;:2}
+```

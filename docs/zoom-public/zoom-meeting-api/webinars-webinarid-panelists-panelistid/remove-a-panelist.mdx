@@ -1,0 +1,103 @@
+# Remove a panelist
+
+DELETE {{baseUrl}}/webinars/:webinarId/panelists/:panelistId
+
+
+<p>
+
+<a href="https://support.zoom.us/hc/en-us/articles/115005657826-Inviting-Panelists-to-a-Webinar#h_de31f237-a91c-4fb2-912b-ecfba8ec5ffb">
+Remove
+</a>
+ a single panelist from a webinar.
+<br>
+
+  Retrieve the 
+<code>
+panelistId
+</code>
+ by calling 
+<strong>
+List Panelists API
+</strong>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with the 
+<a href="https://zoom.us/webinar">
+webinar add-on
+</a>
+.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

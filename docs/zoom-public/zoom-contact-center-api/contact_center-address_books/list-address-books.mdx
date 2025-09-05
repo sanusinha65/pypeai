@@ -1,0 +1,62 @@
+# List address books
+
+GET {{baseUrl}}/contact_center/address_books?next_page_token=&lt;string&gt;&amp;page_size=30&amp;unit_id=&lt;string&gt;
+
+
+<p>
+Use this API to return all address books. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_contact:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `unit_id` | string |  | (Required) The address book unit&#39;s ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;address_books&quot;:[{&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_contacts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;unit_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_contacts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;unit_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

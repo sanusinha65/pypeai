@@ -1,0 +1,102 @@
+# Create a role
+
+POST {{baseUrl}}/roles
+
+
+<p>
+Each Zoom user automatically has a role which can either be owner, administrator, or member. 
+</p>
+
+
+
+<p>
+
+<strong>
+Pre-requisites
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+</li>
+
+
+<li>
+
+<p>
+To set the initial role, you must be the account owner.  
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+For subsequent role management, you must be either the account owner or user with role management permissions.  
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+role:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;privileges&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{}
+```

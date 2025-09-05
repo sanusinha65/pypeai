@@ -1,0 +1,97 @@
+# Get past meeting participants
+
+GET {{baseUrl}}/past_meetings/:meetingId/participants?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Retrieve information on participants from a past meeting. Note the API doesn&#39;t return results if there&#39;s only one participant in a meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Paid account on a Pro or higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Please double encode your UUID when using this API if the UUID begins with a &#39;/&#39;or contains &#39;//&#39; in it.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;failover&quot;:&quot;\u003cboolean\u003e&quot;,&quot;status&quot;:&quot;in_meeting&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;failover&quot;:&quot;\u003cboolean\u003e&quot;,&quot;status&quot;:&quot;in_meeting&quot;}]}
+```

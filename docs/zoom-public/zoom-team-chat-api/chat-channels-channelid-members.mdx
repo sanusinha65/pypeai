@@ -1,0 +1,16 @@
+#  chat-channels-{channelId}-members
+
+Number of APIs: 3
+
+1. [Invite channel members](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-channels-channelid-members/invite-channel-members-1)
+POST {{baseUrl}}/chat/channels/:channelId/members
+
+
+2. [List channel members](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-channels-channelid-members/list-channel-members-2)
+GET {{baseUrl}}/chat/channels/:channelId/members?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+3. [Batch remove members from a channel](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-channels-channelid-members/batch-remove-members-from-a-channel)
+DELETE {{baseUrl}}/chat/channels/:channelId/members?member_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;
+
+

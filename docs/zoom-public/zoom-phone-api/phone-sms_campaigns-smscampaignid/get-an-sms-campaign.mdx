@@ -1,0 +1,83 @@
+# Get an SMS campaign
+
+GET {{baseUrl}}/phone/sms_campaigns/:smsCampaignId
+
+
+<p>
+Use this API to get a specific SMS campaign.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:sms_campaign:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;declined&quot;,&quot;service_type&quot;:&quot;contactCenter&quot;,&quot;brand&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;auto_renew&quot;:&quot;\u003cboolean\u003e&quot;,&quot;create_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;use_case&quot;:&quot;lowVolumeMixed&quot;,&quot;categories_fit&quot;:&quot;\u003cboolean\u003e&quot;,&quot;content_type&quot;:[&quot;urlLink&quot;,&quot;urlLink&quot;],&quot;sample_message_1&quot;:&quot;\u003cstring\u003e&quot;,&quot;sample_message_2&quot;:&quot;\u003cstring\u003e&quot;,&quot;sample_message_3&quot;:&quot;\u003cstring\u003e&quot;,&quot;sample_message_4&quot;:&quot;\u003cstring\u003e&quot;,&quot;sample_message_5&quot;:&quot;\u003cstring\u003e&quot;}
+```

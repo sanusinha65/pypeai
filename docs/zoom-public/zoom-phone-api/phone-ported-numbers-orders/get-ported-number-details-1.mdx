@@ -1,0 +1,68 @@
+# Get ported number details
+
+GET {{baseUrl}}/phone/ported_numbers/orders/:orderId
+
+
+<p>
+Use this API to get details on the ported numbers by specifying 
+<code>
+order_id
+</code>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;contact_emails&quot;:&quot;example@163.com&quot;,&quot;contact_number&quot;:&quot;2058945753&quot;,&quot;isp&quot;:&quot;Twilio International&quot;,&quot;numbers&quot;:[&quot;+12058945752&quot;,&quot;+12058945752&quot;],&quot;order_id&quot;:&quot;2021080307332974349&quot;,&quot;original_billing_info&quot;:{&quot;account_number&quot;:&quot;111223&quot;,&quot;address&quot;:{&quot;city&quot;:&quot;San Jose&quot;,&quot;country&quot;:&quot;US&quot;,&quot;house_number&quot;:&quot;55&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;street_name&quot;:&quot;ALMADEN BLVD&quot;,&quot;zip&quot;:&quot;95113&quot;},&quot;authorizing_person&quot;:&quot;zz&quot;,&quot;billing_telephone_number&quot;:&quot;2058945751&quot;,&quot;company&quot;:&quot;zm&quot;,&quot;customer_requested_date&quot;:&quot;2021-08-06&quot;,&quot;pin&quot;:&quot;111223&quot;},&quot;printed_name&quot;:&quot;Jiang&quot;,&quot;replacing_numbers&quot;:[{&quot;source_number&quot;:&quot;+12058945752&quot;,&quot;target_number&quot;:&quot;+12058945755&quot;},{&quot;source_number&quot;:&quot;+12058945752&quot;,&quot;target_number&quot;:&quot;+12058945755&quot;}],&quot;status&quot;:&quot;Canceled&quot;,&quot;submission_date_time&quot;:&quot;2021-08-03T07:33:29Z&quot;}
+```

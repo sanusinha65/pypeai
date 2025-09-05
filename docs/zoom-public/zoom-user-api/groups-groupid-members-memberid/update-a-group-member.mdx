@@ -1,0 +1,84 @@
+# Update a group member
+
+PATCH {{baseUrl}}/groups/:groupId/members/:memberId
+
+
+<p>
+Use this API to perform either of the following tasks: 
+* Remove a group member from one group and move them to a different group. 
+* Set a user&#39;s primary group. By default, the primary group is the first group that user is added to.
+</p>
+
+
+
+<p>
+If a user is a member of multiple groups, you can 
+<a href="https://support.zoom.us/hc/en-us/articles/204519819-Group-Management-#h_d07c7dcd-4fd8-485a-b5fe-a322e8d21c09">
+assign the user a primary group
+</a>
+. The user will use the primary group&#39;s settings by default. However, if the user is a member of a group with locked settings, those group settings will remain locked to the user.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+group:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;set_primary&quot;, &quot;target_group_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

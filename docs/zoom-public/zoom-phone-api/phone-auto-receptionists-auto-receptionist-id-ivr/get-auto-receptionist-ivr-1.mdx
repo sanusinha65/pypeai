@@ -1,0 +1,73 @@
+# Get auto receptionist IVR
+
+GET {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/ivr?hours_type=business_hours&amp;holiday_id=YpLBylKbQKe1vEB1iSGatQ
+
+
+<p>
+Use this API to get an 
+<a href="https://support.zoom.us/hc/en-us/articles/360038601971">
+interactive voice response (IVR) system
+</a>
+ of the specified auto receptionist.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `hours_type` | string |  | Query hours type, `business_hours` or `closed_hours`, default `business_hours`. |
+| `holiday_id` | string |  | Auto receptionist holiday hours ID. If both `holiday_id` and `hours_type` are passed, `holiday_id` has a high priority and `hours_type` is invalid. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;audio_prompt&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;example.mp3&quot;},&quot;caller_enters_no_action&quot;:{&quot;action&quot;:15,&quot;audio_prompt_repeat&quot;:3,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;ZOOM_API Test&quot;,&quot;extension_id&quot;:&quot;z97zV9NsSoa846i-ag3uEw&quot;,&quot;extension_number&quot;:&quot;exercitation esse mollit ut Lorem&quot;,&quot;id&quot;:&quot;EVqEKnrMRWyPr705Fk5h2w&quot;}},&quot;key_actions&quot;:[{&quot;action&quot;:200,&quot;key&quot;:&quot;0&quot;,&quot;target&quot;:{&quot;display_name&quot;:&quot;ZOOM_API Test&quot;,&quot;extension_id&quot;:&quot;TO586CYlQFC_WCUvPRXytA&quot;,&quot;extension_number&quot;:&quot;101002&quot;,&quot;id&quot;:&quot;oG_nYRFuTJiY1tu0Fur_4Q&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;},&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;j2IsurWLRR-yWcbNGqPnaA&quot;,&quot;name&quot;:&quot;custom.wav&quot;}},{&quot;action&quot;:200,&quot;key&quot;:&quot;0&quot;,&quot;target&quot;:{&quot;display_name&quot;:&quot;ZOOM_API Test&quot;,&quot;extension_id&quot;:&quot;TO586CYlQFC_WCUvPRXytA&quot;,&quot;extension_number&quot;:&quot;101002&quot;,&quot;id&quot;:&quot;oG_nYRFuTJiY1tu0Fur_4Q&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;},&quot;voicemail_greeting&quot;:{&quot;id&quot;:&quot;j2IsurWLRR-yWcbNGqPnaA&quot;,&quot;name&quot;:&quot;custom.wav&quot;}}]}
+```

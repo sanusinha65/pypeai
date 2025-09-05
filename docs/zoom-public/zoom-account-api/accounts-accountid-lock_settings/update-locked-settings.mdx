@@ -1,0 +1,106 @@
+# Update locked settings
+
+PATCH {{baseUrl}}/accounts/:accountId/lock_settings
+
+
+<p>
+Update an account&#39;s locked settings.
+</p>
+
+
+
+<p>
+
+<a href="https://support.zoom.us/hc/en-us/articles/115005269866">
+Account Locked Settings
+</a>
+ allows account admins and account owners to toggle settings on or off for all users in your account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ Yout must have a Pro or a higher plan and enabled master and sub accounts options.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher paid account.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;audio_conferencing&quot;=&gt;{&quot;toll_free_and_fee_based_toll_call&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;chat&quot;=&gt;{&quot;share_files&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;chat_emojis&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;record_voice_messages&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;record_video_messages&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;screen_capture&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;share_links_in_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;schedule_meetings_in_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;set_retention_period_in_cloud&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;set_retention_period_in_local&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_users_to_add_contacts&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_users_to_chat_with_others&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;chat_etiquette_tool&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;send_data_to_third_party_archiving_service&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;translate_messages&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;search_and_send_animated_gif_images&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;email_notification&quot;=&gt;{&quot;alternative_host_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;cancel_meeting_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;cloud_recording_available_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;jbh_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;schedule_for_reminder&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;in_meeting&quot;=&gt;{&quot;alert_guest_join&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_users_to_delete_messages_in_meeting_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_live_streaming&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_show_zoom_windows&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;annotation&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;anonymous_question_answer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;attendee_on_hold&quot;=&gt;false, &quot;attention_mode_focus_mode&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_answer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_generated_captions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_saving_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;breakout_room&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_question_answer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;closed_caption&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;co_host&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;custom_data_center_regions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;disable_screen_sharing_for_host_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;disable_screen_sharing_for_in_meeting_guests&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;dscp_marking&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;e2e_encryption&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;entry_exit_chime&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;far_end_camera_control&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;feedback&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;file_transfer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;full_transcript&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;group_hd&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_group_hd&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;language_interpretation&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;sign_language_interpretation&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_reactions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_survey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;original_audio&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;polling&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;post_meeting_feedback&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;private_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;remote_control&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;non_verbal_feedback&quot;=&gt;false, &quot;remote_support&quot;=&gt;false, &quot;request_permission_to_unmute_participants&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_caption&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;save_captions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;screen_sharing&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;sending_default_email_invites&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_meeting_control_toolbar&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;slide_control&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;stereo_audio&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;use_html_format_email&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;virtual_background&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_live_streaming&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_polling&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_question_answer&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_survey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;whiteboard&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;other_options&quot;=&gt;{&quot;blur_snapshot&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;webinar_registration_options&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;recording&quot;=&gt;{&quot;account_user_access_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_delete_cmr&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;cloud_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;cloud_recording_download&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;host_delete_cloud_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;ip_address_access_control&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;local_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;prevent_host_access_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_authentication&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;archive&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;schedule_meeting&quot;=&gt;{&quot;audio_type&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;embed_password_in_join_link&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enforce_login&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enforce_login_domains&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enforce_login_with_domains&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;host_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;join_before_host&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_authentication&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;not_store_meeting_topic&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;always_display_zoom_webinar_as_topic&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;participant_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;personal_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_password_for_instant_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_password_for_pmi_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_password_for_scheduling_new_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;use_pmi_for_instant_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;use_pmi_for_scheduled_meetings&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;continuous_meeting_chat&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;telephony&quot;=&gt;{&quot;telephony_regions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;third_party_audio&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;tsp&quot;=&gt;{&quot;call_out&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_international_numbers_link&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{}
+```

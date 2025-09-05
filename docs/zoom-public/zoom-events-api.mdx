@@ -1,0 +1,58 @@
+#Zoom Events API
+
+Number of APIs: 32
+
+
+<p>
+Zoom Events &amp; Zoom Sessions APIs
+</p>
+
+
+
+<p>
+Contact Support:
+ Name: Zoom Developers
+</p>
+
+
+
+1. [zoom_events-hubs - List hubs](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-hubs/list-hubs)
+GET {{baseUrl}}/zoom_events/hubs?role_type=host
+
+
+2. [zoom_events-events-{eventId}-tickets - List tickets](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-tickets/list-tickets)
+GET {{baseUrl}}/zoom_events/events/:eventId/tickets?external_ticket_id=&lt;string&gt;&amp;email=&lt;string&gt;&amp;ticket_type_id=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+3. [zoom_events-events-{eventId}-sessions - Create a session](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-sessions/create-a-session)
+POST {{baseUrl}}/zoom_events/events/:eventId/sessions
+
+
+4. [zoom_events-events-{eventId}-reports-ticket_registration - Event Registrations Report](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-reports-ticket_registration/event-registrations-report)
+GET {{baseUrl}}/zoom_events/events/:eventId/reports/ticket_registration?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+5. [zoom_events-events-{eventId}-sessions-{sessionId}-attendees - List session attendees](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-sessions-sessionid-attendees/list-session-attendees)
+GET {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId/attendees?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+6. [zoom_events-events-{eventId}-ticket_types-{ticketTypeId}-questions - Update registration questions for ticket type](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-ticket_types-tickettypeid-questions/update-registration-questions-for-ticket-type)
+PUT {{baseUrl}}/zoom_events/events/:eventId/ticket_types/:ticketTypeId/questions
+
+
+7. [zoom_events-events-{eventId}-ticket_types-{ticketTypeId}-questions - List registration questions for ticket type](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-ticket_types-tickettypeid-questions/list-registration-questions-for-ticket-type)
+GET {{baseUrl}}/zoom_events/events/:eventId/ticket_types/:ticketTypeId/questions
+
+
+8. [zoom_events-events-{eventId}-sessions-{sessionId} - Get the session information](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-sessions-sessionid/get-the-session-information)
+GET {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId
+
+
+9. [zoom_events-events-{eventId}-questions - Update registration questions for an event](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-questions/update-registration-questions-for-an-event)
+PUT {{baseUrl}}/zoom_events/events/:eventId/questions
+
+
+10. [zoom_events-events-{eventId}-sessions-{sessionId}-polls - Create or update session polls.](https://developers.qodex.ai/zoom-public/zoom-events-api/zoom_events-events-eventid-sessions-sessionid-polls/create-or-update-session-polls)
+PUT {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId/polls
+
+

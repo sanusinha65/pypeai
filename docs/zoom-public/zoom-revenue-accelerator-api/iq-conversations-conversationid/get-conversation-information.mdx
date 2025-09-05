@@ -1,0 +1,61 @@
+# Get conversation information
+
+GET {{baseUrl}}/iq/conversations/:conversationId
+
+
+<p>
+Get information for a specific conversation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_conversation:read:admin
+</code>
+,
+<code>
+iq_conversation:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;conversation_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;conversation_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;conversation_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;stage_during_conversation&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;iq_processed_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sentiment_score&quot;:&quot;\u003cinteger\u003e&quot;,&quot;conversation_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;deal&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;stage&quot;:&quot;\u003cstring\u003e&quot;,&quot;customer_crm_account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;close_date&quot;:&quot;\u003cstring\u003e&quot;}}
+```

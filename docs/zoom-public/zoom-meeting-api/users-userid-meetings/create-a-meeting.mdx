@@ -1,0 +1,189 @@
+# Create a meeting
+
+POST {{baseUrl}}/users/:userId/meetings
+
+
+<p>
+
+<a href="https://support.zoom.us/hc/en-us/articles/201362413-Scheduling-meetings">
+Create a meeting
+</a>
+ for a user. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<ul>
+
+
+<li>
+A meeting&#39;s 
+<code>
+start_url
+</code>
+ value is the URL a host or an alternative host can use to start a meeting. The expiration time for the 
+<code>
+start_url
+</code>
+ value is 
+<strong>
+two hours
+</strong>
+ for all regular users.
+</li>
+
+
+<li>
+For 
+<code>
+custCreate
+</code>
+ meeting hosts (users created with the 
+<code>
+custCreate
+</code>
+ parameter via the 
+<a href="https://developers.zoom.us/docs/api/rest/reference/zoom-api/methods/#operation/userCreate">
+
+<strong>
+Create users
+</strong>
+
+</a>
+ API), the expiration time of the 
+<code>
+start_url
+</code>
+ parameter is 
+<strong>
+90 days
+</strong>
+ from the generation of the 
+<code>
+start_url
+</code>
+.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+</p>
+
+
+
+<p>
+For security reasons, the recommended way to programmatically get the updated 
+<code>
+start_url
+</code>
+ value after expiry is to call the 
+<a href="/api-reference/zoom-api/methods#operation/meeting">
+
+<strong>
+Get a meeting
+</strong>
+
+</a>
+ API. Refer to the 
+<code>
+start_url
+</code>
+ value in the response. 
+</p>
+
+
+
+<p>
+
+<strong>
+100 requests per day
+</strong>
+. The rate limit is applied against the 
+<code>
+userId
+</code>
+ of the 
+<strong>
+meeting host
+</strong>
+ used to make the request.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;agenda&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;default_password&quot;=&gt;false, &quot;duration&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;pre_schedule&quot;=&gt;false, &quot;recurrence&quot;=&gt;{&quot;type&quot;=&gt;2, &quot;end_date_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;end_times&quot;=&gt;1, &quot;monthly_day&quot;=&gt;1, &quot;monthly_week&quot;=&gt;1, &quot;monthly_week_day&quot;=&gt;6, &quot;repeat_interval&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;weekly_days&quot;=&gt;&quot;1&quot;}, &quot;schedule_for&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;settings&quot;=&gt;{&quot;additional_data_center_regions&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;allow_multiple_devices&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;alternative_hosts&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;alternative_hosts_email_notification&quot;=&gt;true, &quot;approval_type&quot;=&gt;2, &quot;approved_or_denied_countries_or_regions&quot;=&gt;{&quot;approved_list&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;denied_list&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;method&quot;=&gt;&quot;deny&quot;}, &quot;audio&quot;=&gt;&quot;both&quot;, &quot;audio_conference_info&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;authentication_domains&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;authentication_exception&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;authentication_option&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;auto_recording&quot;=&gt;&quot;none&quot;, &quot;breakout_room&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;rooms&quot;=&gt;[{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;participants&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;participants&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}]}, &quot;calendar_type&quot;=&gt;2, &quot;close_registration&quot;=&gt;false, &quot;cn_meeting&quot;=&gt;false, &quot;contact_email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;contact_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email_notification&quot;=&gt;true, &quot;encryption_type&quot;=&gt;&quot;enhanced_encryption&quot;, &quot;focus_mode&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;global_dial_in_countries&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;host_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;in_meeting&quot;=&gt;false, &quot;jbh_time&quot;=&gt;10, &quot;join_before_host&quot;=&gt;false, &quot;language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;languages&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;languages&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;sign_language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;sign_language&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;sign_language&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;meeting_authentication&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_invitees&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;}], &quot;mute_upon_entry&quot;=&gt;false, &quot;participant_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;private_meeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registrants_confirmation_email&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registrants_email_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registration_type&quot;=&gt;1, &quot;show_share_button&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;use_pmi&quot;=&gt;false, &quot;waiting_room&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;watermark&quot;=&gt;false, &quot;host_save_video_order&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;alternative_host_update_polls&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;internal_meeting&quot;=&gt;false, &quot;continuous_meeting_chat&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_add_invited_external_users&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;participant_focused_meeting&quot;=&gt;false, &quot;push_change_to_calendar&quot;=&gt;false, &quot;resources&quot;=&gt;[{&quot;resource_type&quot;=&gt;&quot;whiteboard&quot;, &quot;resource_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;permission_level&quot;=&gt;&quot;editor&quot;}, {&quot;resource_type&quot;=&gt;&quot;whiteboard&quot;, &quot;resource_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;permission_level&quot;=&gt;&quot;editor&quot;}], &quot;auto_start_meeting_summary&quot;=&gt;false, &quot;auto_start_ai_companion_questions&quot;=&gt;false}, &quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;template_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;topic&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;tracking_fields&quot;=&gt;[{&quot;field&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;field&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;type&quot;=&gt;2}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;assistant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;registration_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;agenda&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;h323_password&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;chat_join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;occurrences&quot;:[{&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;occurrence_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;deleted&quot;},{&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;occurrence_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;available&quot;}],&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;pmi&quot;:&quot;\u003cstring\u003e&quot;,&quot;pre_schedule&quot;:false,&quot;recurrence&quot;:{&quot;type&quot;:1,&quot;end_date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_times&quot;:1,&quot;monthly_day&quot;:1,&quot;monthly_week&quot;:4,&quot;monthly_week_day&quot;:4,&quot;repeat_interval&quot;:&quot;\u003cinteger\u003e&quot;,&quot;weekly_days&quot;:&quot;1&quot;},&quot;settings&quot;:{&quot;allow_multiple_devices&quot;:&quot;\u003cboolean\u003e&quot;,&quot;alternative_hosts&quot;:&quot;\u003cstring\u003e&quot;,&quot;alternative_hosts_email_notification&quot;:true,&quot;alternative_host_update_polls&quot;:&quot;\u003cboolean\u003e&quot;,&quot;approval_type&quot;:2,&quot;approved_or_denied_countries_or_regions&quot;:{&quot;approved_list&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;denied_list&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;method&quot;:&quot;deny&quot;},&quot;audio&quot;:&quot;both&quot;,&quot;audio_conference_info&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_domains&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_exception&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;}],&quot;authentication_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_option&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_recording&quot;:&quot;none&quot;,&quot;breakout_room&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;rooms&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;participants&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;participants&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}]},&quot;calendar_type&quot;:1,&quot;close_registration&quot;:false,&quot;cn_meeting&quot;:false,&quot;contact_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;contact_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;email_notification&quot;:true,&quot;encryption_type&quot;:&quot;enhanced_encryption&quot;,&quot;enforce_login&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enforce_login_domains&quot;:&quot;\u003cstring\u003e&quot;,&quot;focus_mode&quot;:&quot;\u003cboolean\u003e&quot;,&quot;global_dial_in_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;global_dial_in_numbers&quot;:[{&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;tollfree&quot;},{&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;toll&quot;}],&quot;host_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;in_meeting&quot;:false,&quot;jbh_time&quot;:0,&quot;join_before_host&quot;:false,&quot;language_interpretation&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;interpreters&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;languages&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;languages&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;sign_language_interpretation&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;interpreters&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;sign_language&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;sign_language&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;meeting_authentication&quot;:&quot;\u003cboolean\u003e&quot;,&quot;mute_upon_entry&quot;:false,&quot;participant_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;private_meeting&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registrants_confirmation_email&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registrants_email_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registration_type&quot;:1,&quot;show_share_button&quot;:&quot;\u003cboolean\u003e&quot;,&quot;use_pmi&quot;:false,&quot;waiting_room&quot;:false,&quot;watermark&quot;:false,&quot;host_save_video_order&quot;:&quot;\u003cboolean\u003e&quot;,&quot;internal_meeting&quot;:false,&quot;continuous_meeting_chat&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_add_invited_external_users&quot;:&quot;\u003cboolean\u003e&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;participant_focused_meeting&quot;:false,&quot;push_change_to_calendar&quot;:false,&quot;resources&quot;:[{&quot;resource_type&quot;:&quot;whiteboard&quot;,&quot;resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;permission_level&quot;:&quot;editor&quot;},{&quot;resource_type&quot;:&quot;whiteboard&quot;,&quot;resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;permission_level&quot;:&quot;editor&quot;}],&quot;auto_start_meeting_summary&quot;:false,&quot;auto_start_ai_companion_questions&quot;:false},&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;start_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;,&quot;visible&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;,&quot;visible&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;type&quot;:2}
+```

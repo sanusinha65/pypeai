@@ -1,0 +1,80 @@
+# List phone numbers
+
+GET {{baseUrl}}/phone/numbers?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;type=all&amp;extension_type=user&amp;page_size=30&amp;number_type=toll&amp;pending_numbers=false&amp;site_id=8f71O6rWT8KFUGQmJIFAdQ
+
+
+<p>
+Use this API to list all Zoom Phone numbers in a Zoom account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `type` | string |  | Query response by number assignment. The value can be one of the following:
+&lt;br&gt;
+`assigned`: The number has been assigned to either a user, a call queue, an auto-receptionist or a common area phone in an account. &lt;br&gt;`unassigned`: The number is not assigned to anyone.&lt;br&gt;
+`all`: Include both assigned and unassigned numbers in the response.&lt;br&gt;
+`byoc`: Include Bring Your Own Carrier (BYOC) numbers only in the response. |
+| `extension_type` | string |  | The type of assignee to whom the number is assigned. The value can be one of the following:&lt;br&gt;
+`user`&lt;br&gt; `callQueue`&lt;br&gt; `autoReceptionist`&lt;br&gt;
+`commonAreaPhone` |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `number_type` | string |  | The type of phone number. The value can be either `toll` or `tollfree`. |
+| `pending_numbers` | boolean |  | Include or exclude pending numbers in the response. The value can be either `true` or `false`. |
+| `site_id` | string |  | Unique identifier of the site. Use this query parameter if you have enabled multiple sites and would like to filter the response of this API call by a specific phone site. See [Managing multiple sites](https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites) or [Adding a site](https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15) for details. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;bkOcmnm6mn6ioYAi10BcgRiEL38WzAo6jP2&quot;,&quot;page_size&quot;:30,&quot;phone_numbers&quot;:[{&quot;assignee&quot;:{&quot;extension_number&quot;:47317542,&quot;id&quot;:&quot;Y40mS72DRamFgGh0V1Ul_Q&quot;,&quot;name&quot;:&quot;User Name&quot;,&quot;type&quot;:&quot;user&quot;},&quot;capability&quot;:[&quot;incoming&quot;,&quot;incoming&quot;],&quot;carrier&quot;:{&quot;code&quot;:1,&quot;name&quot;:&quot;Bandwidth&quot;},&quot;display_name&quot;:&quot;abc&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;test 7&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;95113&quot;},&quot;emergency_address_status&quot;:1,&quot;emergency_address_update_time&quot;:&quot;2022-02-18T07:20:19Z&quot;,&quot;id&quot;:&quot;aMy7P9DMS9iNRkpwXNfRbw&quot;,&quot;location&quot;:&quot;United States&quot;,&quot;number&quot;:&quot;+12008001005&quot;,&quot;number_type&quot;:&quot;toll&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;RRRR&quot;,&quot;id&quot;:&quot;8MhK7ea4Q4ihIQ4TD_g0kw&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;source&quot;:&quot;external&quot;,&quot;status&quot;:&quot;available&quot;},{&quot;assignee&quot;:{&quot;extension_number&quot;:-27970745,&quot;id&quot;:&quot;Y40mS72DRamFgGh0V1Ul_Q&quot;,&quot;name&quot;:&quot;User Name&quot;,&quot;type&quot;:&quot;user&quot;},&quot;capability&quot;:[&quot;incoming&quot;,&quot;incoming&quot;],&quot;carrier&quot;:{&quot;code&quot;:1,&quot;name&quot;:&quot;Bandwidth&quot;},&quot;display_name&quot;:&quot;abc&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;55 ALMADEN BLVD&quot;,&quot;address_line2&quot;:&quot;test 7&quot;,&quot;city&quot;:&quot;SAN JOSE&quot;,&quot;country&quot;:&quot;US&quot;,&quot;state_code&quot;:&quot;CA&quot;,&quot;zip&quot;:&quot;95113&quot;},&quot;emergency_address_status&quot;:1,&quot;emergency_address_update_time&quot;:&quot;2022-02-18T07:20:19Z&quot;,&quot;id&quot;:&quot;aMy7P9DMS9iNRkpwXNfRbw&quot;,&quot;location&quot;:&quot;United States&quot;,&quot;number&quot;:&quot;+12008001005&quot;,&quot;number_type&quot;:&quot;toll&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;RRRR&quot;,&quot;id&quot;:&quot;8MhK7ea4Q4ihIQ4TD_g0kw&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;source&quot;:&quot;external&quot;,&quot;status&quot;:&quot;available&quot;}],&quot;total_records&quot;:50}
+```

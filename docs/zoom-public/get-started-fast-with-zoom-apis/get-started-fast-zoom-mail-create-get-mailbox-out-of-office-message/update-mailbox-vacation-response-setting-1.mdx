@@ -1,0 +1,72 @@
+# Update mailbox vacation response setting
+
+PUT {{baseUrl}}/emails/mailboxes/:email/settings/vacation
+
+
+<p>
+Updates vacation responder settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;enableAutoReply&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;responseSubject&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;responseBodyPlainText&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;responseBodyHtml&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enableAlwaysRespond&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;restrictToContacts&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;restrictToDomain&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;startTime&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;startTimeISO&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;endTime&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;endTimeISO&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;enableAutoReply&quot;:&quot;\u003cboolean\u003e&quot;,&quot;responseSubject&quot;:&quot;\u003cstring\u003e&quot;,&quot;responseBodyPlainText&quot;:&quot;\u003cstring\u003e&quot;,&quot;responseBodyHtml&quot;:&quot;\u003cstring\u003e&quot;,&quot;enableAlwaysRespond&quot;:&quot;\u003cboolean\u003e&quot;,&quot;restrictToContacts&quot;:&quot;\u003cboolean\u003e&quot;,&quot;restrictToDomain&quot;:&quot;\u003cboolean\u003e&quot;,&quot;startTime&quot;:&quot;\u003cstring\u003e&quot;,&quot;startTimeISO&quot;:&quot;\u003cstring\u003e&quot;,&quot;endTime&quot;:&quot;\u003cstring\u003e&quot;,&quot;endTimeISO&quot;:&quot;\u003cstring\u003e&quot;}
+```

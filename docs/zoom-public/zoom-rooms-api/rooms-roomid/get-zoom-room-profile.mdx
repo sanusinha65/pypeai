@@ -1,0 +1,88 @@
+# Get Zoom Room profile
+
+GET {{baseUrl}}/rooms/:roomId?regenerate_activation_code=false
+
+
+<p>
+Zoom Rooms is a software-based room system that provides an integrated experience for audio conferencing, wireless screen sharing and video conferencing. Use this API to get detailed information on a specific Zoom Room in a Zoom account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with 
+<a href="https://zoom.us/zoomrooms">
+Zoom Room
+</a>
+ license.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `regenerate_activation_code` | boolean |  | Whether to regenerate an activation code for a Zoom Room. Default is `false`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;basic&quot;:{&quot;activation_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;hide_room_in_contacts&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;required_code_to_ext&quot;:&quot;\u003cboolean\u003e&quot;,&quot;room_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;support_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;support_phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_room_type&quot;:&quot;StandaloneWhiteboard&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;tag_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},&quot;device&quot;:{&quot;device_profile_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;setup&quot;:{&quot;checkin_and_checkout&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;checkin_and_checkout_options&quot;:{&quot;checkin_minutes_prior_to_meeting_start_time&quot;:&quot;\u003cinteger\u003e&quot;,&quot;allowed_minutes_before_release_room_after_no_checkout&quot;:&quot;\u003cinteger\u003e&quot;,&quot;enable_new_user_checkin_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable_remove_recurring&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allowed_consecutive_missed_checkin_before_removing_room&quot;:&quot;\u003cinteger\u003e&quot;}},&quot;under_construction&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

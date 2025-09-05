@@ -1,0 +1,85 @@
+# Delete an account&#39;s inbound blocked statistics
+
+DELETE {{baseUrl}}/phone/inbound_blocked/extension_rules/statistics?blocked_statistic_id=&lt;string&gt;
+
+
+<p>
+Deletes the statistic of extensions blocked rule for inbound calls and messaging. (e.g. Call Queue, Auto Receptionist, Shared Line Group, Common Area, Zoom Room and User)
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:extension_inbound_block_rule_stat:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `blocked_statistic_id` | string |  | (Required) The unique identifier of the blocked statistic. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

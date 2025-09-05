@@ -1,0 +1,69 @@
+# Get blocked list details
+
+GET {{baseUrl}}/phone/blocked_list/:blockedListId
+
+
+<p>
+A Zoom account owner or a user with admin privilege can block phone numbers for phone users in an account. Blocked numbers can be inbound (numbers will be blocked from calling in) and outbound (phone users in your account won&#39;t be able to dial those numbers). Blocked callers will hear a generic message stating that the person they are calling is not available.
+Use this API to get information about a specific blocked list.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;block_type&quot;:&quot;inbound&quot;,&quot;comment&quot;:&quot;test&quot;,&quot;id&quot;:&quot;2ypsHHwTTFK-fzZJkudYwA&quot;,&quot;match_type&quot;:&quot;prefix&quot;,&quot;phone_number&quot;:&quot;112&quot;,&quot;status&quot;:&quot;active&quot;}
+```

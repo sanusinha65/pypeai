@@ -1,0 +1,102 @@
+# Update user level outbound calling exception rule
+
+PATCH {{baseUrl}}/phone/users/:userId/outbound_calling/exception_rules/:exceptionRuleId
+
+
+<p>
+Updates the user level outbound calling policy for the country region exception rule.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin permissions.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:user_outbound_calling_rule:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;exception_rule&quot;=&gt;{&quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;match_type&quot;=&gt;&quot;phoneNumber&quot;, &quot;prefix_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;active&quot;, &quot;comment&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

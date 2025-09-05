@@ -1,0 +1,103 @@
+# Update common area
+
+PATCH {{baseUrl}}/phone/common_areas/:commonAreaId
+
+
+<p>
+Use this API to update the common area information.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;area_code&quot;=&gt;&quot;408&quot;, &quot;cost_center&quot;=&gt;&quot;cost_center_pbx&quot;, &quot;country_iso_code&quot;=&gt;&quot;US&quot;, &quot;department&quot;=&gt;&quot;department_pbx&quot;, &quot;display_name&quot;=&gt;&quot;common area 01&quot;, &quot;emergency_address_id&quot;=&gt;&quot;gBGwqgwoTb-DiSCA75tMWw&quot;, &quot;extension_number&quot;=&gt;1001014, &quot;outbound_caller_id&quot;=&gt;&quot;+12055437350&quot;, &quot;site_id&quot;=&gt;&quot;SQv52YtkRLC2dwrDdYtGsA&quot;, &quot;timezone&quot;=&gt;&quot;Europe/Berlin&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

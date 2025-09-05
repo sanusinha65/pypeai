@@ -1,0 +1,20 @@
+#  phone-devices
+
+Number of APIs: 4
+
+1. [List devices](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-devices/list-devices-1)
+GET {{baseUrl}}/phone/devices?type=assigned&amp;assignee_type=commonArea&amp;device_source=haas&amp;location_status=unknownAddress&amp;site_id=&lt;string&gt;&amp;device_type=yealink&amp;keyword=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+2. [Add a device](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-devices/add-a-device)
+POST {{baseUrl}}/phone/devices
+
+
+3. [List devices](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-devices/list-devices-2)
+GET {{baseUrl}}/phone/devices?type=assigned&amp;assignee_type=user&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+4. [Sync deskphones](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-devices/sync-deskphones-1)
+POST {{baseUrl}}/phone/devices/sync
+
+

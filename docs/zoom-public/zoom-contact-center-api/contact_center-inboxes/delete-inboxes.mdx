@@ -1,0 +1,62 @@
+# Delete inboxes
+
+DELETE {{baseUrl}}/contact_center/inboxes?inbox_ids=&lt;string&gt;&amp;inbox_ids=&lt;string&gt;&amp;delete_all_messages_and_inboxes=&lt;boolean&gt;&amp;move_to_inbox_id=&lt;string&gt;
+
+
+<p>
+Delete one or more inboxes. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_inbox:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `inbox_ids` | string |  | List all inboxes to delete. |
+| `inbox_ids` | string |  | List all inboxes to delete. |
+| `delete_all_messages_and_inboxes` | string |  | Delete all inboxes and messages provided. |
+| `move_to_inbox_id` | string |  | The ID of the inbox where messages from deleted inbox(es) will be moved. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

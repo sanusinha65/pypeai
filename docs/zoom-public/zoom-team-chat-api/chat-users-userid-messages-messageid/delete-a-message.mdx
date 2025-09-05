@@ -1,0 +1,94 @@
+# Delete a message
+
+DELETE {{baseUrl}}/chat/users/:userId/messages/:messageId?to_contact=&lt;email&gt;&amp;to_channel=&lt;string&gt;
+
+
+<p>
+Deletes a chat message previously sent to a contact or a channel. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+For an 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+account-level OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management">
+role
+</a>
+ that has the 
+<strong>
+Edit
+</strong>
+ permission for 
+<strong>
+Chat Messages
+</strong>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:write
+</code>
+, 
+<code>
+chat_message:write:admin
+</code>
+ 
+<br >
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `to_contact` | string |  | The member ID  or user ID or email address of a chat contact to whom the message was sent. You must provide this parameter or the `to_channel` parameter. |
+| `to_channel` | string |  | The channel ID where the message was sent. You must provide this parameter or the `to_channel` parameter. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

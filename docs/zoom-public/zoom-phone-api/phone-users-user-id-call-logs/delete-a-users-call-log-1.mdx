@@ -1,0 +1,97 @@
+# Delete a user&#39;s call log
+
+DELETE {{baseUrl}}/phone/users/:userId/call_logs/:callLogId
+
+
+<p>
+Use this API to delete a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360021114452-Viewing-and-identifying-logs">
+call log
+</a>
+. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* User must belong to a Business or Enterprise account 
+* User must have a Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+, 
+<code>
+phone_call_log:write
+</code>
+, 
+<code>
+phone_call_log:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits/#zoom-phone-apis">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

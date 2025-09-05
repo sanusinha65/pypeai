@@ -1,0 +1,85 @@
+# Get account plan information
+
+GET {{baseUrl}}/accounts/:accountId/plans
+
+
+<p>
+Master accounts can retrieve its subaccounts&#39; plan information. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite
+</strong>
+: This API can only be used by Master accounts that pay all billing charges of their associated Pro or higher sub accounts. 
+</p>
+
+
+
+<p>
+Zoom only allows approved partners to use 
+<a href="https://marketplace.zoom.us/docs/api-reference/master-account-apis">
+Master APIs
+</a>
+ and manage sub accounts&#39; billing information. Email the partner programs team at 
+<a href="mailto:partner-success@zoom.us">
+
+<strong>
+partner-success@zoom.us
+</strong>
+
+</a>
+ for more details. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;plan_audio&quot;:{&quot;callout_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;ddi_numbers&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;premium_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;tollfree_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_base&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;included_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;overage_price&quot;:&quot;\u003cinteger\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_large_meeting&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_phone&quot;:{&quot;plan_base&quot;:{&quot;callout_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_calling&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_number&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;plan_zcc&quot;:{&quot;plan_package&quot;:{&quot;callout_countries&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_usage&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_phone_number&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;plan_recording&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_recording_next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_recording_service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_recording_status&quot;:&quot;cancelled&quot;,&quot;plan_room_connector&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_webinar&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_zoom_events&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_zoom_rooms&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_sdk_cmr&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_whiteboard&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_whiteboard_plus&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zoom_iq&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_ztransl&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zwr&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_zoom_one&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_qss&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}],&quot;plan_zsched&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_znode&quot;:{&quot;plan_znode_base&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;},&quot;plan_zphybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;},&quot;plan_zmhybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;},&quot;plan_mchybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;},&quot;plan_rchybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;}},&quot;plan_mesh&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;cancelled&quot;},&quot;plan_audio_us_ca&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;expired&quot;}}
+```

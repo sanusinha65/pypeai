@@ -1,0 +1,67 @@
+# Get the mailbox profile
+
+GET {{baseUrl}}/emails/mailboxes/:email/profile
+
+
+<p>
+Get the mailbox profile.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;emailAddress&quot;:&quot;\u003cstring\u003e&quot;,&quot;groupEmails&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;createTime&quot;:&quot;\u003cinteger\u003e&quot;,&quot;status&quot;:&quot;inactive&quot;,&quot;mboxSize&quot;:&quot;\u003cnumber\u003e&quot;,&quot;messagesTotal&quot;:&quot;\u003cinteger\u003e&quot;,&quot;threadsTotal&quot;:&quot;\u003cinteger\u003e&quot;,&quot;encryptionEnabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;labelEncryptionEnabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;historyId&quot;:&quot;\u003cstring\u003e&quot;}
+```

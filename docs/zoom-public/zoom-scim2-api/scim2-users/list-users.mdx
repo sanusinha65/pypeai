@@ -1,0 +1,61 @@
+# List users
+
+GET {{baseUrl}}/scim2/Users?startIndex=1&amp;count=1&amp;filter=&lt;string&gt;
+
+
+<p>
+Use this API to list all users. You can include additional query parameters to filter the response. 
+</p>
+
+
+
+<p>
+
+<strong>
+OAuth Scope:
+</strong>
+ 
+<code>
+scim2
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `startIndex` | number |  | (Required) The start index of records to be returned. |
+| `count` | number |  | The number of records returned in a single API call. |
+| `filter` | string |  | The type of query: 
+* `userName eq {userEmail}` — Provide the user&#39;s email address to filter the response to a specific user. 
+* `license type` — Filter the response by license type. 
+* `externalId eq {userId}` — Filter the response by the user&#39;s ID (`userId`). |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;totalResults&quot;:&quot;\u003cinteger\u003e&quot;,&quot;startIndex&quot;:&quot;\u003cinteger\u003e&quot;,&quot;itemsPerPage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;Resources&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;name&quot;:{&quot;givenName&quot;:&quot;\u003cstring\u003e&quot;,&quot;familyName&quot;:&quot;\u003cstring\u003e&quot;},&quot;emails&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;userName&quot;:&quot;\u003cemail\u003e&quot;,&quot;active&quot;:&quot;\u003cboolean\u003e&quot;,&quot;userType&quot;:&quot;Licensed&quot;,&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User&quot;:{&quot;department&quot;:&quot;\u003cstring\u003e&quot;},&quot;urn:us:zoom:scim:schemas:extension:1.0:ZoomUser&quot;:{&quot;loginType&quot;:{&quot;workEmail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sso&quot;:&quot;\u003cboolean\u003e&quot;}}},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;name&quot;:{&quot;givenName&quot;:&quot;\u003cstring\u003e&quot;,&quot;familyName&quot;:&quot;\u003cstring\u003e&quot;},&quot;emails&quot;:[{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;userName&quot;:&quot;\u003cemail\u003e&quot;,&quot;active&quot;:&quot;\u003cboolean\u003e&quot;,&quot;userType&quot;:&quot;Licensed&quot;,&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User&quot;:{&quot;department&quot;:&quot;\u003cstring\u003e&quot;},&quot;urn:us:zoom:scim:schemas:extension:1.0:ZoomUser&quot;:{&quot;loginType&quot;:{&quot;workEmail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sso&quot;:&quot;\u003cboolean\u003e&quot;}}}]}
+```

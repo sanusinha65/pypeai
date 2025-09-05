@@ -1,0 +1,92 @@
+# Add members to a call queue
+
+POST {{baseUrl}}/phone/call_queues/:callQueueId/members
+
+
+<p>
+Add phone users and/or 
+<a href="https://support.zoom.us/hc/articles/4481136653709">
+common areas
+</a>
+ as members to a specific call queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan.
+* Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:call_queue_member:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;members&quot;=&gt;{&quot;common_area_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;users&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

@@ -1,0 +1,79 @@
+# Get a meeting&#39;s join token for local recording
+
+GET {{baseUrl}}/meetings/:meetingId/jointoken/local_recording?bypass_waiting_room=&lt;boolean&gt;
+
+
+<p>
+Get a meeting&#39;s join token to allow for local recording. The join token lets a recording bot implemented using Zoom Meeting SDK to connect to a Zoom meeting. The recording bot can then automatically start locally recording. This supports both regular and raw local recording types. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<strong>
+Local recording
+</strong>
+ user setting enabled in the Zoom web portal.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting_token:read:local_recording
+</code>
+,
+<code>
+meeting_token:read:admin:local_recording
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `bypass_waiting_room` | string |  | Whether to bypass the waiting room. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;expire_in&quot;:120,&quot;token&quot;:&quot;\u003cstring\u003e&quot;}
+```

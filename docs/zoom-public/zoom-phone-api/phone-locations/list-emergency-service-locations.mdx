@@ -1,0 +1,103 @@
+# List emergency service locations
+
+GET {{baseUrl}}/phone/locations?next_page_token=&lt;string&gt;&amp;page_size=30&amp;site_id=&lt;string&gt;
+
+
+<p>
+Returns emergency service locations. 
+
+<strong>
+Note
+</strong>
+: When you enable 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites">
+multiple sites
+</a>
+, the 
+<code>
+site_id
+</code>
+ parameter is required.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_emergency_locations:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `site_id` | string |  | The unique identifier of the site. This can be retrieved from the [List Phone Sites](https://marketplace.zoom.us/docs/api-reference/phone/methods#operation/listPhoneSites) API. 
+
+**Note:** When the account has been enabled Multiple Sites, this field is required. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;locations&quot;:[{&quot;bssid&quot;:&quot;\u003cstring\u003e&quot;,&quot;elin&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;identifier&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_switches&quot;:[{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_prefix&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_to&quot;:&quot;\u003cstring\u003e&quot;},{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_prefix&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_to&quot;:&quot;\u003cstring\u003e&quot;}],&quot;parent_location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;vat_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;minimum_match_criteria&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;bssid&quot;:&quot;\u003cstring\u003e&quot;,&quot;elin&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;identifier&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_switches&quot;:[{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_prefix&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_to&quot;:&quot;\u003cstring\u003e&quot;},{&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;port&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_prefix&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;port_range_to&quot;:&quot;\u003cstring\u003e&quot;}],&quot;parent_location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;vat_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;minimum_match_criteria&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;}
+```

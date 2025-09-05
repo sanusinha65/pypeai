@@ -1,0 +1,53 @@
+# Get a user
+
+GET {{baseUrl}}/scim2/Users/:userId
+
+
+<p>
+Use this API to return information about a specific user. 
+</p>
+
+
+
+<p>
+
+<strong>
+OAuth Scope:
+</strong>
+ 
+<code>
+scim2
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;name&quot;:{&quot;givenName&quot;:&quot;\u003cstring\u003e&quot;,&quot;familyName&quot;:&quot;\u003cstring\u003e&quot;},&quot;emails&quot;:[{&quot;type&quot;:&quot;work&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;type&quot;:&quot;work&quot;,&quot;value&quot;:&quot;\u003cemail\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;userName&quot;:&quot;\u003cemail\u003e&quot;,&quot;active&quot;:&quot;\u003cboolean\u003e&quot;,&quot;userType&quot;:&quot;On-Prem&quot;,&quot;phoneNumbers&quot;:[{&quot;type&quot;:&quot;work&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;type&quot;:&quot;work&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;roles&quot;:{&quot;display&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;,&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;},&quot;groups&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;,&quot;display&quot;:&quot;\u003cstring\u003e&quot;},&quot;urn:ietf:params:scim:schemas:extension:enterprise:2.0:User&quot;:{&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization&quot;:&quot;\u003cstring\u003e&quot;,&quot;costCenter&quot;:&quot;\u003cstring\u003e&quot;,&quot;employeeNumber&quot;:&quot;\u003cstring\u003e&quot;,&quot;manager&quot;:&quot;\u003cemail\u003e&quot;},&quot;urn:us:zoom:scim:schemas:extension:1.0:ZoomUser&quot;:{&quot;loginType&quot;:{&quot;workEmail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sso&quot;:&quot;\u003cboolean\u003e&quot;}},&quot;urn:ietf:params:scim:schemas:extension:zoom:1.0:User&quot;:{&quot;personalLinkName&quot;:&quot;\u003cstring\u003e&quot;,&quot;pronouns&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoomUnited&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoomOneBizPlus&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoomIQ&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomCustomerManagedKey&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomWhiteboard&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomWhiteboardPlus&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomTranslatedCaptions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;zoomHuddles&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

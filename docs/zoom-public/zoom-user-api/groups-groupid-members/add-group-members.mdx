@@ -1,0 +1,77 @@
+# Add group members
+
+POST {{baseUrl}}/groups/:groupId/members
+
+
+<p>
+Use this API to add users to a 
+<a href="https://support.zoom.us/hc/en-us/articles/204519819-Group-Management-">
+group
+</a>
+ in your account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro, Business, or Education account
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+group:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;members&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;added_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;ids&quot;:&quot;\u003cstring\u003e&quot;}
+```

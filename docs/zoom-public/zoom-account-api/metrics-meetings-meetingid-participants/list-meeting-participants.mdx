@@ -1,0 +1,157 @@
+# List meeting participants
+
+GET {{baseUrl}}/metrics/meetings/:meetingId/participants?type=live&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;include_fields=registrant_id
+
+
+<p>
+Return a list of participants from live or past meetings. 
+ If you don&#39;t provide the 
+<code>
+type
+</code>
+ query parameter, the default value is set to the 
+<code>
+live
+</code>
+ value. This API only returns metrics for participants in a live meeting, if any exist. You can specify a monthly date range for the dashboard data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+</p>
+
+
+
+<p>
+This API may return empty values for participants&#39; 
+<code>
+user_name
+</code>
+, 
+<code>
+ip_address
+</code>
+, 
+<code>
+location
+</code>
+, and 
+<code>
+email
+</code>
+ responses when the account calling this API: 
+* Does 
+<strong>
+not
+</strong>
+ have a signed HIPAA business associate agreement (BAA). 
+* Is a 
+<a href="/docs/api-reference/other-references/legacy-business-associate-agreements">
+
+<strong>
+legacy
+</strong>
+ HIPAA BAA account
+</a>
+. 
+* Displays data for any users who are 
+<strong>
+not
+</strong>
+ part of the host&#39;s account (external users) unless they meet certain conditions. See 
+<a href="/docs/api-reference/using-zoom-apis#email-address">
+Email address display rules
+</a>
+ for details. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_meetings:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of meeting to query. 
+* `past` - All past meetings. 
+* `pastOne` - All past one-user meetings. 
+* `live` - All live meetings. 
+
+This value defaults to `live`. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `include_fields` | string |  | This field provides `registrant_id` as the value for this field if you would like to see the registrant ID attribute in the response of this API call. 
+
+A registrant ID is a unique identifier of a [meeting registrant](/docs/api-reference/zoom-api/methods#operation/meetingRegistrants), which is not supported for `live` meeting types. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:[{&quot;audio_quality&quot;:&quot;good&quot;,&quot;camera&quot;:&quot;\u003cstring\u003e&quot;,&quot;connection_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;customer_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;device&quot;:&quot;Mac&quot;,&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;from_sip_uri&quot;:&quot;\u003cstring\u003e&quot;,&quot;full_data_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;harddisk_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;internal_ip_addresses&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_reason&quot;:&quot;Host ended the meeting.&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_addr&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_type&quot;:&quot;Wifi&quot;,&quot;participant_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;pc_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;attendee&quot;,&quot;screen_share_quality&quot;:&quot;fair&quot;,&quot;share_application&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_desktop&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_whiteboard&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sip_uri&quot;:&quot;\u003cstring\u003e&quot;,&quot;speaker&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;in_meeting&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;video_quality&quot;:&quot;fair&quot;,&quot;bo_mtg_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_call&quot;:[{&quot;call_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;call-in&quot;,&quot;zoom_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;call_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;call-out&quot;,&quot;zoom_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;os&quot;:&quot;\u003cstring\u003e&quot;,&quot;os_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;audio_quality&quot;:&quot;&quot;,&quot;camera&quot;:&quot;\u003cstring\u003e&quot;,&quot;connection_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;customer_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;data_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;device&quot;:&quot;H.323/SIP&quot;,&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;from_sip_uri&quot;:&quot;\u003cstring\u003e&quot;,&quot;full_data_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;harddisk_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;internal_ip_addresses&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_reason&quot;:&quot;$name left the meeting.&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_addr&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_type&quot;:&quot;Wired&quot;,&quot;participant_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;pc_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;attendee&quot;,&quot;screen_share_quality&quot;:&quot;poor&quot;,&quot;share_application&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_desktop&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_whiteboard&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sip_uri&quot;:&quot;\u003cstring\u003e&quot;,&quot;speaker&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;in_meeting&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;version&quot;:&quot;\u003cstring\u003e&quot;,&quot;video_quality&quot;:&quot;poor&quot;,&quot;bo_mtg_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_call&quot;:[{&quot;call_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;call-out&quot;,&quot;zoom_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;call_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;call-in&quot;,&quot;zoom_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;os&quot;:&quot;\u003cstring\u003e&quot;,&quot;os_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

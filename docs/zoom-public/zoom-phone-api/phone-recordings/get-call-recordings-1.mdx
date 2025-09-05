@@ -1,0 +1,88 @@
+# Get call recordings
+
+GET {{baseUrl}}/phone/recordings?page_size=30&amp;next_page_token=cWiI3vTqdcENiV9RJz3Rh8iP1ksNPheW8c1&amp;from=2021-12-01&amp;to=2021-12-31&amp;owner_type=all&amp;recording_type=OnDemand&amp;site_id=8f71O6rWT8KFUGQmJIFAdQ&amp;query_date_type=start_time
+
+
+<p>
+Use this API to list an account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360038521091-Accessing-and-sharing-call-recordings">
+call recordings
+</a>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* A Pro or higher account plan 
+* A Zoom Phone license 
+* Account owner or admin privileges
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone_recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. The default is **30**, and the maximum is **300**. |
+| `next_page_token` | string |  | The current page number of returned records. |
+| `from` | string |  | Start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. If unspecified, returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `owner_type` | string |  | The owner type. The allowed values are null, `user`, or `callQueue`. The default is null. If null, returns all owner types.
+ |
+| `recording_type` | string |  | The recording type. The allowed values are null, `OnDemand`, or `Automatic`. The default is null. If null, returns all recording types.
+ |
+| `site_id` | string |  | The site ID. The default is `All sites`. |
+| `query_date_type` | string |  | Query date type, `start_time` or `end_time`, default `start_time` |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;cWiI3vTqdcENiV9RJz3Rh8iP1ksNPheW8c1&quot;,&quot;page_size&quot;:-24462698,&quot;recordings&quot;:[{&quot;call_id&quot;:&quot;7072598989368295984&quot;,&quot;call_log_id&quot;:&quot;6f9c2948-40ad-46bc-8700-34ca2d098098&quot;,&quot;callee_name&quot;:&quot;User A&quot;,&quot;callee_number&quot;:&quot;1000001004&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;User B&quot;,&quot;caller_number&quot;:&quot;1000123476&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;User B&quot;,&quot;extension_number&quot;:&quot;123476&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;User A&quot;,&quot;extension_number&quot;:&quot;10201&quot;},&quot;date_time&quot;:&quot;2022-03-08T05:37:23Z&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;download_url&quot;:&quot;https://domain/recording/download/EvVNLihbQ1WpeG_ALwnNzg&quot;,&quot;duration&quot;:115,&quot;end_time&quot;:&quot;2022-03-08T05:39:19Z&quot;,&quot;id&quot;:&quot;6f9c294840ad46bc870034ca2d098098&quot;,&quot;owner&quot;:{&quot;extension_number&quot;:1000123476,&quot;id&quot;:&quot;NL3cEpSdRc-c2t8aLoZqiw&quot;,&quot;name&quot;:&quot;user@test.com&quot;,&quot;type&quot;:&quot;user&quot;,&quot;extension_status&quot;:&quot;inactive&quot;},&quot;recording_type&quot;:&quot;OnDemand&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;transcript_download_url&quot;:&quot;https://domain/recording_transcript/download/8f7345c50a654182ab1672fdb3be61ff&quot;},{&quot;call_id&quot;:&quot;7072598989368295984&quot;,&quot;call_log_id&quot;:&quot;6f9c2948-40ad-46bc-8700-34ca2d098098&quot;,&quot;callee_name&quot;:&quot;User A&quot;,&quot;callee_number&quot;:&quot;1000001004&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;User B&quot;,&quot;caller_number&quot;:&quot;1000123476&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;User B&quot;,&quot;extension_number&quot;:&quot;123476&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;User A&quot;,&quot;extension_number&quot;:&quot;10201&quot;},&quot;date_time&quot;:&quot;2022-03-08T05:37:23Z&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;download_url&quot;:&quot;https://domain/recording/download/EvVNLihbQ1WpeG_ALwnNzg&quot;,&quot;duration&quot;:115,&quot;end_time&quot;:&quot;2022-03-08T05:39:19Z&quot;,&quot;id&quot;:&quot;6f9c294840ad46bc870034ca2d098098&quot;,&quot;owner&quot;:{&quot;extension_number&quot;:1000123476,&quot;id&quot;:&quot;NL3cEpSdRc-c2t8aLoZqiw&quot;,&quot;name&quot;:&quot;user@test.com&quot;,&quot;type&quot;:&quot;user&quot;,&quot;extension_status&quot;:&quot;inactive&quot;},&quot;recording_type&quot;:&quot;OnDemand&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;Main Site&quot;},&quot;transcript_download_url&quot;:&quot;https://domain/recording_transcript/download/8f7345c50a654182ab1672fdb3be61ff&quot;}],&quot;total_records&quot;:50}
+```

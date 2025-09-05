@@ -1,0 +1,82 @@
+# Join a channel
+
+POST {{baseUrl}}/chat/channels/:channelId/members/me
+
+
+<p>
+Joins a channel that is open for anyone in the same organization to join. A 
+<a href="https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-">
+channel
+</a>
+ can have one or more members. You cannot use this API to join private channels that only allow invited members to be a part of them.
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note: 
+</b>
+This API only supports 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth apps
+</a>
+.
+</p>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+chat_channel:write
+</code>
+
+<br>
+
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;added_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

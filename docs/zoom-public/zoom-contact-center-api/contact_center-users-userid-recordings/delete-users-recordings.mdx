@@ -1,0 +1,70 @@
+# Delete user&#39;s recordings
+
+DELETE {{baseUrl}}/contact_center/users/:userId/recordings?delete_all_recordings=true
+
+
+<p>
+Delete all of a given user&#39;s recordings.  
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: Use recording-related APIs to manipulate data whose recording creation time is after 2022-07-18. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_recording:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `delete_all_recordings` | boolean |  | Whether to delete all of this user&#39;s recordings. 
+* `true` &amp;mdash; Delete all of this user&#39;s recordings |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

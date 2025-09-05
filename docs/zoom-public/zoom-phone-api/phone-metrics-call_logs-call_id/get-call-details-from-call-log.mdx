@@ -1,0 +1,65 @@
+# Get call details from call log
+
+GET {{baseUrl}}/phone/metrics/call_logs/:call_id
+
+
+<p>
+Lists call log details of a specific call. The call logs provide a record of all incoming and outgoing calls over Zoom Phone in an account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:call_log:admin
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee&quot;:{&quot;codec&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;headset&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;caller&quot;:{&quot;codec&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;headset&quot;:&quot;\u003cstring\u003e&quot;,&quot;isp&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;}
+```

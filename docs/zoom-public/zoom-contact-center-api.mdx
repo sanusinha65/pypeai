@@ -1,0 +1,81 @@
+#Zoom Contact Center API
+
+Number of APIs: 158
+
+
+<p>
+Pair this 
+<a href="https://developers.zoom.us/docs/api/rest/contact-center-api/">
+API
+</a>
+ with 
+<a href="https://explore.zoom.us/en/products/contactcenter/?creative=671282573009&keyword=zoom%20contact%20center&matchtype=e&network=g&device=c&zcid=13526&gad_source=1&gclid=Cj0KCQiAgqGrBhDtARIsAM5s0_meTwyr60hkXRI5l-YzWvR0av54pCwGS_WPU3NZy6RR7lKksEdSS9caAntFEALw_wcB">
+Zoom Contact Center
+</a>
+ rogrammatically help businesses deliver prompt, accurate, and highly personalized customer experiences that drive loyalty.
+</p>
+
+
+
+<p>
+The API accepts 
+<code>
+application/json
+</code>
+ and 
+<code>
+multipart/form-data
+</code>
+, and responds with 
+<code>
+application/json
+</code>
+ and 
+<code>
+application/xml
+</code>
+.
+</p>
+
+
+
+1. [contact_center-queues-{queueId}-supervisors - List queue supervisors](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-queues-queueid-supervisors/list-queue-supervisors)
+GET {{baseUrl}}/contact_center/queues/:queueId/supervisors
+
+
+2. [contact_center-variables-groups - List variable groups](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-variables-groups/list-variable-groups)
+GET {{baseUrl}}/contact_center/variables/groups?next_page_token=&lt;string&gt;&amp;page_size=30&amp;variable_group_type=system
+
+
+3. [contact_center-queues-{queueId}-supervisors - Assign queue supervisors](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-queues-queueid-supervisors/assign-queue-supervisors)
+POST {{baseUrl}}/contact_center/queues/:queueId/supervisors
+
+
+4. [contact_center-variable_logs-{variableLogId} - Get a variable log](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-variable_logs-variablelogid/get-a-variable-log)
+GET {{baseUrl}}/contact_center/variable_logs/:variableLogId
+
+
+5. [contact_center-tasks-{taskId} - Get a task](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-tasks-taskid/get-a-task)
+GET {{baseUrl}}/contact_center/tasks/:taskId
+
+
+6. [contact_center-tasks-{taskId} - Update a task](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-tasks-taskid/update-a-task)
+PATCH {{baseUrl}}/contact_center/tasks/:taskId
+
+
+7. [contact_center-queues-{queueId}-supervisors-{userId} - Unassign a queue supervisor](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-queues-queueid-supervisors-userid/unassign-a-queue-supervisor)
+DELETE {{baseUrl}}/contact_center/queues/:queueId/supervisors/:userId
+
+
+8. [contact_center-system_statuses-{statusId} - Delete a system status](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-system_statuses-statusid/delete-a-system-status)
+DELETE {{baseUrl}}/contact_center/system_statuses/:statusId
+
+
+9. [contact_center-variables-{variableId} - Delete a variable](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-variables-variableid/delete-a-variable)
+DELETE {{baseUrl}}/contact_center/variables/:variableId
+
+
+10. [contact_center-users-{userId}-skills-{skillId} - Unassign user&#39;s skill](https://developers.qodex.ai/zoom-public/zoom-contact-center-api/contact_center-users-userid-skills-skillid/unassign-users-skill)
+DELETE {{baseUrl}}/contact_center/users/:userId/skills/:skillId
+
+

@@ -1,0 +1,93 @@
+# Get webinar&#39;s token
+
+GET {{baseUrl}}/webinars/:webinarId/token?type=closed_caption_token
+
+
+<p>
+Use this API to get a webinar&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/115002212983-Using-a-third-party-closed-captioning-service">
+closed caption token (caption URL)
+</a>
+. This token lets you use a third-party service to stream text to their closed captioning software to the Zoom webinar. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan with the Webinar add-on. 
+* The 
+<strong>
+Closed captioning
+</strong>
+ setting enabled in the Zoom web portal. 
+* 
+* The 
+<strong>
+Allow use of caption API Token to integrate with 3rd-party Closed Captioning services
+</strong>
+ setting enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read
+</code>
+,
+<code>
+webinar:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The webinar token type: 
+* `closed_caption_token` &amp;mdash; The third-party closed caption API token. 
+
+This defaults to `closed_caption_token`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;token&quot;:&quot;\u003cstring\u003e&quot;}
+```

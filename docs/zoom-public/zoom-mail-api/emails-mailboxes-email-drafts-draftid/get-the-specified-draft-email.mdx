@@ -1,0 +1,70 @@
+# Get the specified draft email
+
+GET {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId?format=full
+
+
+<p>
+Retrieves the specified draft.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `format` | string |  | The format to return the draft in.  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;snippet&quot;:&quot;\u003cstring\u003e&quot;,&quot;historyId&quot;:&quot;\u003cstring\u003e&quot;,&quot;internalDate&quot;:&quot;\u003cstring\u003e&quot;,&quot;payload&quot;:{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}}]},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}}]}]},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}}]},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;},&quot;parts&quot;:[{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}},{&quot;partId&quot;:&quot;\u003cstring\u003e&quot;,&quot;mimeType&quot;:&quot;\u003cstring\u003e&quot;,&quot;filename&quot;:&quot;\u003cstring\u003e&quot;,&quot;headers&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;body&quot;:{&quot;attachmentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;data&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;}}]}]}]},&quot;sizeEstimate&quot;:&quot;\u003cinteger\u003e&quot;,&quot;raw&quot;:&quot;\u003cstring\u003e&quot;}}
+```

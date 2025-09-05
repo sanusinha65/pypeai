@@ -1,0 +1,16 @@
+#  videosdk-sessions-{session Id}-recordings
+
+Number of APIs: 3
+
+1. [Delete session&#39;s recordings](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-recordings/delete-sessions-recordings)
+DELETE {{baseUrl}}/videosdk/sessions/:sessionId/recordings?action=trash
+
+
+2. [Recover session&#39;s recordings](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-recordings/recover-sessions-recordings)
+PUT {{baseUrl}}/videosdk/sessions/:sessionId/recordings/status
+
+
+3. [List session&#39;s recordings](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-recordings/list-sessions-recordings)
+GET {{baseUrl}}/videosdk/sessions/:sessionId/recordings?include_fields=download_access_token&amp;ttl=0
+
+

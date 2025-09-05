@@ -1,0 +1,89 @@
+# Change a Zoom Room&#39;s location
+
+PUT {{baseUrl}}/rooms/:roomId/location
+
+
+<p>
+An account owner of a Zoom account can establish a 
+<a href="https://support.zoom.us/hc/en-us/articles/115000342983-Zoom-Rooms-Location-Hierarchy">
+Zoom Rooms Location Hierarchy
+</a>
+ to better organize Zoom Rooms spread across various locations. The location can be structured in a hierarchy with Country being the top-level location, followed by city, campus, building, and floor. Use this API to assign a new location for a Zoom Room. Note that the Zoom Room can be assigned only to the lowest level location available in the hierarchy.
+
+<strong>
+Prerequisite:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Account owner or admin permission
+</li>
+
+
+<li>
+Zoom Rooms version 4.0 or higher
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;location_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

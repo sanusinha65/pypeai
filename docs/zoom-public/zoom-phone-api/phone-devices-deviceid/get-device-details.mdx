@@ -1,0 +1,87 @@
+# Get device details
+
+GET {{baseUrl}}/phone/devices/:deviceId
+
+
+<p>
+Gets detailed information about a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021119092">
+desk phone device
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:device:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assignee&quot;:{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;},&quot;assignees&quot;:[{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;commonArea&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;provision&quot;:{&quot;sip_accounts&quot;:[{&quot;authorization_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_proxy&quot;:&quot;\u003cstring\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;secondary_outbound_proxy&quot;:&quot;\u003cstring\u003e&quot;,&quot;shared_line&quot;:{&quot;alias&quot;:&quot;\u003cstring\u003e&quot;,&quot;line_subscription&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;outbound_caller_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;sip_domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;authorization_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_proxy&quot;:&quot;\u003cstring\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;secondary_outbound_proxy&quot;:&quot;\u003cstring\u003e&quot;,&quot;shared_line&quot;:{&quot;alias&quot;:&quot;\u003cstring\u003e&quot;,&quot;line_subscription&quot;:{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;outbound_caller_id&quot;:&quot;\u003cstring\u003e&quot;},&quot;sip_domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;type&quot;:&quot;assisted&quot;,&quot;url&quot;:&quot;\u003cstring\u003e&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;offline&quot;,&quot;provision_template_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,88 @@
+# Get user voicemail details from a call log
+
+GET {{baseUrl}}/phone/users/:userId/call_logs/:id/voice_mail
+
+
+<p>
+Use this API to return detailed information on a voicemail associated with a call log ID. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone_voicemail:read
+</code>
+, 
+<code>
+phone_voicemail:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* User must belong to a Business or Enterprise account 
+* User must have a Zoom Phone license
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;876634343743&quot;,&quot;call_log_id&quot;:&quot;46541323465&quot;,&quot;callee_name&quot;:&quot;Jane Doe&quot;,&quot;callee_number&quot;:&quot;34567889&quot;,&quot;callee_number_type&quot;:2,&quot;caller_name&quot;:&quot;John Doe&quot;,&quot;caller_number&quot;:&quot;12345678&quot;,&quot;caller_number_type&quot;:1,&quot;date_time&quot;:&quot;2019-05-19T20:00:00Z&quot;,&quot;download_url&quot;:&quot;exampleurl.io&quot;,&quot;duration&quot;:18,&quot;id&quot;:&quot;d43520fc6b7e4b26bbeef58a8a80f235&quot;,&quot;status&quot;:&quot;read&quot;,&quot;transcription&quot;:{&quot;content&quot;:&quot;some transcript content&quot;,&quot;status&quot;:2}}
+```

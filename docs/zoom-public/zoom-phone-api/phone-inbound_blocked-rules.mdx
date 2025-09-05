@@ -1,0 +1,16 @@
+#  phone-inbound_blocked-rules
+
+Number of APIs: 3
+
+1. [Delete an account&#39;s inbound block rule](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-inbound_blocked-rules/delete-an-accounts-inbound-block-rule)
+DELETE {{baseUrl}}/phone/inbound_blocked/rules?blocked_rule_id=&lt;string&gt;
+
+
+2. [Add an account&#39;s inbound block rule](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-inbound_blocked-rules/add-an-accounts-inbound-block-rule)
+POST {{baseUrl}}/phone/inbound_blocked/rules
+
+
+3. [List an account&#39;s inbound block rules](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-inbound_blocked-rules/list-an-accounts-inbound-block-rules)
+GET {{baseUrl}}/phone/inbound_blocked/rules?keyword=&lt;string&gt;&amp;match_type=prefix&amp;type=block_as_threat&amp;status=inactive&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+

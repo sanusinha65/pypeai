@@ -1,0 +1,83 @@
+# List engagements
+
+GET {{baseUrl}}/contact_center/engagements?next_page_token=&lt;string&gt;&amp;page_size=10&amp;timezone=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;queue_id=&lt;string&gt;&amp;user_id=&lt;string&gt;&amp;consumer_number=&lt;string&gt;&amp;channel_types=in_app_video&amp;channel_types=video
+
+
+<p>
+Returns a list of engagements.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_engagement:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `timezone` | string |  | The call&#39;s timezone. The default is **UTC**. |
+| `from` | string |  | The start time and date, in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The defined date range should be a month, as the response only includes one month&#39;s worth of data. If no start date is specified, return data from the past 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. The end time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `queue_id` | string |  | The queue&#39;s ID. |
+| `user_id` | string |  | The agent&#39;s ID. |
+| `consumer_number` | string |  | The customer&#39;s phone number. |
+| `channel_types` | string |  | The channel&#39;s type. 
+* voice 
+* SMS 
+* chat 
+* video 
+* kiosk 
+* in_app_chat 
+* in_app_video |
+| `channel_types` | string |  | The channel&#39;s type. 
+* voice 
+* SMS 
+* chat 
+* video 
+* kiosk 
+* in_app_chat 
+* in_app_video |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:10,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;engagements&quot;:[{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_types&quot;:[&quot;sms&quot;,&quot;voice&quot;],&quot;consumers&quot;:[{&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dispositions&quot;:[{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;notes&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}]},{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_types&quot;:[&quot;sms&quot;,&quot;sms&quot;],&quot;consumers&quot;:[{&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dispositions&quot;:[{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;notes&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}]}]}
+```

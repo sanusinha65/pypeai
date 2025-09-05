@@ -1,0 +1,97 @@
+# Update a webinar
+
+PATCH {{baseUrl}}/webinars/:webinarId?occurrence_id=&lt;string&gt;
+
+
+<p>
+Make updates to a scheduled webinar. 
+</p>
+
+
+
+<p>
+
+<strong>
+100 requests per day
+</strong>
+. The rate limit is applied to the 
+<code>
+userId
+</code>
+ of the 
+<strong>
+webinar host
+</strong>
+ used to make the request. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+ 
+* A Pro or higher plan with a webinar add-on.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | string |  | Webinar occurrence ID. Support change of agenda, start time, duration, and settings `host_video`, `panelist_video`, `hd_video, watermark`, `auto_recording`. |
+
+
+### Request Body
+```
+{&quot;agenda&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;duration&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;schedule_for&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;recurrence&quot;=&gt;{&quot;type&quot;=&gt;1, &quot;end_date_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;end_times&quot;=&gt;1, &quot;monthly_day&quot;=&gt;1, &quot;monthly_week&quot;=&gt;1, &quot;monthly_week_day&quot;=&gt;4, &quot;repeat_interval&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;weekly_days&quot;=&gt;&quot;1&quot;}, &quot;settings&quot;=&gt;{&quot;allow_multiple_devices&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;alternative_hosts&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;alternative_host_update_polls&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;approval_type&quot;=&gt;2, &quot;attendees_and_panelists_reminder_email_notification&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;type&quot;=&gt;4}, &quot;audio&quot;=&gt;&quot;both&quot;, &quot;audio_conference_info&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;authentication_domains&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;authentication_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;authentication_option&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;auto_recording&quot;=&gt;&quot;none&quot;, &quot;close_registration&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;contact_email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;contact_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email_language&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enforce_login&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enforce_login_domains&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;follow_up_absentees_email_notification&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;type&quot;=&gt;2}, &quot;follow_up_attendees_email_notification&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;type&quot;=&gt;2}, &quot;global_dial_in_countries&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;hd_video&quot;=&gt;false, &quot;hd_video_for_attendees&quot;=&gt;false, &quot;host_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;languages&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;languages&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;sign_language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;sign_language&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;sign_language&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;panelist_authentication&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;meeting_authentication&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;add_watermark&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;add_audio_watermark&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;notify_registrants&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;on_demand&quot;=&gt;false, &quot;panelists_invitation_email_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;panelists_video&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;post_webinar_survey&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;practice_session&quot;=&gt;false, &quot;question_and_answer&quot;=&gt;{&quot;allow_submit_questions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_anonymous_questions&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;answer_questions&quot;=&gt;&quot;all&quot;, &quot;attendees_can_comment&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;attendees_can_upvote&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_auto_reply&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_reply_text&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;registrants_confirmation_email&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registrants_email_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registrants_restrict_number&quot;=&gt;0, &quot;registration_type&quot;=&gt;1, &quot;send_1080p_video_to_attendees&quot;=&gt;false, &quot;show_share_button&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;survey_url&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enable_session_branding&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;topic&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;tracking_fields&quot;=&gt;[{&quot;field&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;field&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;type&quot;=&gt;5, &quot;is_simulive&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;record_file_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

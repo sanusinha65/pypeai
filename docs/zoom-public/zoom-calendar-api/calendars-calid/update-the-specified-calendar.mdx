@@ -1,0 +1,66 @@
+# Update the specified calendar
+
+PATCH {{baseUrl}}/calendars/:calId
+
+
+<p>
+Updates metadata for a calendar.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;summary&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timeZone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;location&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;kind&quot;:&quot;calendar#calendar&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cemail\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;}
+```

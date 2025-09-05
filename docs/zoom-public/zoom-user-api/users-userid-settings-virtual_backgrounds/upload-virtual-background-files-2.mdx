@@ -1,0 +1,111 @@
+# Upload Virtual Background files
+
+POST {{baseUrl}}/users/:userId/settings/virtual_backgrounds
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background">
+upload a Virtual Background files
+</a>
+ to a user&#39;s profile. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+* A user profile cannot exceed more than 10 Virtual Background files. 
+* You can only upload image files that are in JPG/JPEG, GIF or PNG format. 
+* Video files must be in MP4 or MOV file format with a minimum resolution of 480 by 360 pixels (360p) and a maximum resolution of 1920 by 1080 pixels (1080p). 
+* The Virtual Background file size cannot exceed 15 megabytes (MB). 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background#h_2ef28080-fce9-4ac2-b567-dc958afab1b7">
+Virtual Background feature
+</a>
+ must be enabled on the account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;file&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;video&quot;}
+```

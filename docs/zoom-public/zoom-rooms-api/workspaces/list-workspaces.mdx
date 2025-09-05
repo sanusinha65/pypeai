@@ -1,0 +1,66 @@
+# List workspaces
+
+GET {{baseUrl}}/workspaces?location_id=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to list a location&#39;s workspaces. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:read
+</code>
+
+<code>
+workspace:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `location_id` | string |  | (Required) The location&#39;s ID. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;workspaces&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_type&quot;:&quot;desk&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_type&quot;:&quot;room&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

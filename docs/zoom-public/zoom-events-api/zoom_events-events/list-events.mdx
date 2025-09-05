@@ -1,0 +1,75 @@
+# List events
+
+GET {{baseUrl}}/zoom_events/events?role_type=attendee&amp;event_status_type=upcoming&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to retrieve all events associated with the user.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_basic:read
+</code>
+
+<code>
+zoom_events_basic:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `role_type` | string |  | The user role type:
+* `host` &amp;mdash; All hosted events.
+* `attendee` &amp;mdash; All non-hosted ticketed events. |
+| `event_status_type` | string |  | The type of event status:
+* `upcoming` &amp;mdash; All upcoming events.
+* `past` &amp;mdash; All past events.
+* `draft` &amp;mdash; All events marked as draft.
+* `cancelled` &amp;mdash; All cancelled events.
+
+For the `ATTENDEE` role type, only `upcoming` and `past` are valid status types. As a `HOST`, all status types are valid. |
+| `page_size` | number |  | The number of records returned in a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a set of large results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;events&quot;:[{&quot;event_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_level&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;categories&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;tags&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;calendar&quot;:[{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;}],&quot;status&quot;:&quot;\u003cstring\u003e&quot;,&quot;hub_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;contact_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;contact_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;lobby_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;lobby_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;event_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;blocked_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;event_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_level&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;categories&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;tags&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;calendar&quot;:[{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;}],&quot;status&quot;:&quot;\u003cstring\u003e&quot;,&quot;hub_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;contact_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;contact_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;lobby_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;lobby_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;event_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;blocked_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}]}
+```

@@ -1,0 +1,69 @@
+# List external contacts
+
+GET {{baseUrl}}/phone/external_contacts?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+<p>
+Use this API to list external contacts.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;external_contacts&quot;:[{&quot;description&quot;:&quot;External contact Johnson&quot;,&quot;email&quot;:&quot;example@example.com&quot;,&quot;extension_number&quot;:&quot;101014&quot;,&quot;external_contact_id&quot;:&quot;OJGi5xOFQPmrJbKg68-iWg&quot;,&quot;id&quot;:&quot;external_contact_01&quot;,&quot;name&quot;:&quot;Johnson&quot;,&quot;phone_numbers&quot;:[&quot;+12058945656&quot;,&quot;+12058945657&quot;]},{&quot;description&quot;:&quot;External contact Johnson&quot;,&quot;email&quot;:&quot;example@example.com&quot;,&quot;extension_number&quot;:&quot;101014&quot;,&quot;external_contact_id&quot;:&quot;OJGi5xOFQPmrJbKg68-iWg&quot;,&quot;id&quot;:&quot;external_contact_01&quot;,&quot;name&quot;:&quot;Johnson&quot;,&quot;phone_numbers&quot;:[&quot;+12058945656&quot;,&quot;+12058945657&quot;]}],&quot;next_page_token&quot;:&quot;BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&quot;,&quot;page_size&quot;:30}
+```

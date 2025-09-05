@@ -1,0 +1,110 @@
+# List alert settings with paging query
+
+GET {{baseUrl}}/phone/alert_settings?page_size=30&amp;next_page_token=&lt;string&gt;&amp;module=2&amp;rule=2&amp;status=1
+
+
+<p>
+Gets 
+<a href="https://support.zoom.us/hc/en-us/articles/7146944434445">
+alert settings
+</a>
+ for an account with paging query.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_alert_settings:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records a single API call returns. |
+| `next_page_token` | string |  | The current page number of the returned records. |
+| `module` | number |  | This field filters the specific alert list by the module. The module and its code mappings are shown as:  
+ 
+`Call Queue Management`-`1`, `Route Group Management`-`2`, `Devices &amp;amp; Phones Management`-`3`, `Call Quality Management`-`4`, `Emergency Services Management`-`5` |
+| `rule` | number |  | This field filters the specific alert list by the rule. The rule and its code mappings display as:  
+ 
+`Service Level`-`1`, `Inbound Abandoned Calls`-`2`, `Inbound Overflowed Calls`-`3`, `Inbound Avg Call Waiting Time`-`4`, `Inbound Forwarded to Voicemail`-`5`, `Number of Waiting Calls`-`6`, `Member Availability (Active)`-`7`, `Member Availability (Opt-in/Opt-out)`-`8`, `Route groups status change`-`9`, `Devices go offline`-`10`, `Devices go online`-`11`, `Device offline rate`-`12`, `QoS Alert`-`13`, `Emergency Call Alert`-`14`.  
+ 
+When the value of the `module` is `1`, the value of `rule` can only be in the range of `1` to `8`.   
+ 
+When the value of the `module` is `2`, the value of `rule` can only be `9`.  
+ 
+When the value of the `module` is `3`, the value of `rule` can only be in the range of `10` to `12`.  
+ 
+When the value of the `module` is `4`, the value of `rule` can only be `13`.  
+ 
+When the value of the `module` is `5`, the value of `rule` can only be `14`. |
+| `status` | number |  | The alert&#39;s status:
+* `0` &amp;mdash; Inactive.
+* `1` &amp;mdash; Active. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;alert_settings&quot;:[{&quot;alert_setting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;alert_setting_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;module&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rule&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rule_conditions&quot;:[{&quot;rule_condition_type&quot;:5,&quot;rule_condition_value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;rule_condition_type&quot;:2,&quot;rule_condition_value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;targets&quot;:[{&quot;target_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;target_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;time_frame_type&quot;:&quot;specific_time&quot;,&quot;time_frame_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;time_frame_to&quot;:&quot;\u003cstring\u003e&quot;,&quot;frequency&quot;:60,&quot;email_recipients&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;chat_channels&quot;:[{&quot;chat_channel_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_point&quot;:&quot;\u003cstring\u003e&quot;},{&quot;chat_channel_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_point&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:1},{&quot;alert_setting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;alert_setting_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;module&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rule&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rule_conditions&quot;:[{&quot;rule_condition_type&quot;:3,&quot;rule_condition_value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;rule_condition_type&quot;:5,&quot;rule_condition_value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;targets&quot;:[{&quot;target_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;target_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;time_frame_type&quot;:&quot;all_day&quot;,&quot;time_frame_from&quot;:&quot;\u003cstring\u003e&quot;,&quot;time_frame_to&quot;:&quot;\u003cstring\u003e&quot;,&quot;frequency&quot;:60,&quot;email_recipients&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;chat_channels&quot;:[{&quot;chat_channel_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_point&quot;:&quot;\u003cstring\u003e&quot;},{&quot;chat_channel_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;token&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_point&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:1}]}
+```

@@ -1,0 +1,61 @@
+# Update a closure set
+
+PATCH {{baseUrl}}/contact_center/closures/:closureSetId
+
+
+<p>
+Update information about a closure set.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_operating_hours:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;closure_set_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;closures&quot;=&gt;[{&quot;closure_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;closure_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;closure_hour_type&quot;=&gt;2, &quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;recurring_frequency&quot;=&gt;0, &quot;recurring_frequency_type&quot;=&gt;2, &quot;recurring_month&quot;=&gt;2, &quot;recurring_week_interval&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;recurring_days_of_week&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;to_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;closure_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;closure_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;closure_hour_type&quot;=&gt;1, &quot;start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;recurring_frequency&quot;=&gt;1, &quot;recurring_frequency_type&quot;=&gt;2, &quot;recurring_month&quot;=&gt;3, &quot;recurring_week_interval&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;recurring_days_of_week&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;to_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;closure_set_description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;account_default&quot;=&gt;&quot;&lt;boolean&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

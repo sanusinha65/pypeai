@@ -1,0 +1,93 @@
+# Get a list of monitoring groups on an account
+
+GET {{baseUrl}}/phone/monitoring_groups?type=2&amp;site_id=&lt;string&gt;&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Returns an account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360044804711">
+monitoring group
+</a>
+ list.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_monitoring_groups:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | number |  | The monitoring group&#39;s type. |
+| `site_id` | string |  | The unique identifier of the monitoring group&#39;s site. |
+| `page_size` | string |  | The size of the page. |
+| `next_page_token` | string |  | The current page number of returned records. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;monitoring_groups&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;monitor_members_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monitored_members_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monitoring_privileges&quot;:[&quot;listen&quot;,&quot;listen&quot;],&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:4},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;monitor_members_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monitored_members_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;monitoring_privileges&quot;:[&quot;barge&quot;,&quot;take_over&quot;],&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:4}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

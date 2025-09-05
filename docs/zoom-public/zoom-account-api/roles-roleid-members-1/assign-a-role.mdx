@@ -1,0 +1,92 @@
+# Assign a role
+
+POST {{baseUrl}}/roles/:roleId/members
+
+
+<p>
+User 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control">
+roles
+</a>
+ can have a set of permissions that allows access only to the pages a user needs to view or edit. Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control#h_748b6fd8-5057-4cf4-bbfd-787909c09db0">
+assign a role
+</a>
+ to members.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+A Pro or a higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+role:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;members&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;add_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;ids&quot;:&quot;\u003cstring\u003e&quot;}
+```

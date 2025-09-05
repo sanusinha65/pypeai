@@ -1,0 +1,61 @@
+# Get a ticket
+
+GET {{baseUrl}}/zoom_events/events/:eventId/tickets/:ticketId
+
+
+<p>
+Use this API to get information on a specific ticket.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_tickets:read
+</code>
+
+<code>
+zoom_events_tickets:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_join_link&quot;:&quot;\u003cstring\u003e&quot;,&quot;send_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_role_type&quot;:&quot;subscription&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;industry&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization_size&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

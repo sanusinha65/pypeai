@@ -1,0 +1,107 @@
+# Get a user&#39;s profile settings
+
+GET {{baseUrl}}/phone/users/:userId/settings
+
+
+<p>
+Gets the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360021325712-Configuring-Settings">
+profile settings
+</a>
+ of a user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:user_setting:admin
+</code>
+,
+<code>
+phone:read:user_setting
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;area_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_prompt_language&quot;:&quot;\u003cstring\u003e&quot;,&quot;company_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;delegation&quot;:{&quot;assistants&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;extension_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;privacy&quot;:&quot;\u003cboolean\u003e&quot;,&quot;privileges&quot;:3,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;},&quot;desk_phone&quot;:{&quot;devices&quot;:[{&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;policy&quot;:{&quot;call_control&quot;:{&quot;status&quot;:&quot;unsupported&quot;},&quot;hot_desking&quot;:{&quot;status&quot;:&quot;off&quot;}},&quot;status&quot;:&quot;offline&quot;},{&quot;device_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;policy&quot;:{&quot;call_control&quot;:{&quot;status&quot;:&quot;off&quot;},&quot;hot_desking&quot;:{&quot;status&quot;:&quot;on&quot;}},&quot;status&quot;:&quot;online&quot;}],&quot;keys_positions&quot;:{&quot;primary_number&quot;:&quot;\u003cstring\u003e&quot;},&quot;phone_screen_lock&quot;:&quot;\u003cboolean\u003e&quot;,&quot;pin_code&quot;:&quot;\u003cstring\u003e&quot;},&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;music_on_hold_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_caller&quot;:{&quot;number&quot;:&quot;\u003cstring\u003e&quot;},&quot;outbound_caller_ids&quot;:[{&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;status&quot;:&quot;Active&quot;,&quot;voice_mail&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;intercom&quot;:{&quot;audio_intercoms&quot;:[{&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;device_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_status&quot;:&quot;online&quot;},{&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;active&quot;,&quot;device_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_status&quot;:&quot;offline&quot;}],&quot;device&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}},&quot;auto_call_recording_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;ad_hoc_call_recording_access_members&quot;:[{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

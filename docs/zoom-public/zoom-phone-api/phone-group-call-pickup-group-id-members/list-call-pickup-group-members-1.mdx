@@ -1,0 +1,79 @@
+# List call pickup group members
+
+GET {{baseUrl}}/phone/group_call_pickup/:groupId/members?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;site_id=NjHmTu16Qfe8yOiNJuekXA&amp;extension_type=user
+
+
+<p>
+Use this API to retrieve members of a 
+<a href="https://support.zoom.us/hc/en-us/articles/360060107472-Setting-up-and-using-group-call-pickup">
+call pickup group
+</a>
+ in an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `site_id` | string |  | Unique identifier of the site. |
+| `extension_type` | string |  | Type of the assignee. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;group_call_pickup_member&quot;:[{&quot;id&quot;:&quot;F1r_jMw4SGGljLqKdcMsvw&quot;,&quot;display_name&quot;:&quot;testGCPUser&quot;,&quot;extension_id&quot;:&quot;qLZ4vr_jMw4SFUGQmJI&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_number&quot;:10001},{&quot;id&quot;:&quot;F1r_jMw4SGGljLqKdcMsvw&quot;,&quot;display_name&quot;:&quot;testGCPUser&quot;,&quot;extension_id&quot;:&quot;qLZ4vr_jMw4SFUGQmJI&quot;,&quot;extension_type&quot;:&quot;user&quot;,&quot;extension_number&quot;:10001}],&quot;next_page_token&quot;:&quot;fefeLbe42&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:1}
+```

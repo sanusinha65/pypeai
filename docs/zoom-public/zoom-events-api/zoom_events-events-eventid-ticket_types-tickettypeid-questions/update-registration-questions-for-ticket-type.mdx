@@ -1,0 +1,65 @@
+# Update registration questions for ticket type
+
+PUT {{baseUrl}}/zoom_events/events/:eventId/ticket_types/:ticketTypeId/questions
+
+
+<p>
+Use this API to update registration questions and fields that are to be answered by users while registering for an event. These questions are setup at ticket_type level. This API is not allowed for single session event type.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_ticket_types:write:admin
+</code>
+
+<code>
+zoom_events_ticket_types:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;questions&quot;=&gt;[{&quot;field_name&quot;=&gt;&quot;address&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;question_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;field_name&quot;=&gt;&quot;organization&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;question_id&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;custom_questions&quot;=&gt;[{&quot;options&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;question_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single_dropdown&quot;, &quot;min_length&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;max_length&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;options&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;question_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;multiple_choice&quot;, &quot;min_length&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;max_length&quot;=&gt;&quot;&lt;integer&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

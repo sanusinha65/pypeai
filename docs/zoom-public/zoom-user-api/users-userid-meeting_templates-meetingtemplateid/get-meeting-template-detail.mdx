@@ -1,0 +1,77 @@
+# Get meeting template detail
+
+GET {{baseUrl}}/users/:userId/meeting_templates/:meetingTemplateId
+
+
+<p>
+Retrieve a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360036559151-Meeting-templates">
+meeting template
+</a>
+. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;settings&quot;:{&quot;in_meeting&quot;:{&quot;entry_exit_chime&quot;:&quot;all&quot;,&quot;feedback&quot;:&quot;\u003cboolean\u003e&quot;,&quot;polling&quot;:&quot;\u003cboolean\u003e&quot;,&quot;post_meeting_feedback&quot;:&quot;\u003cboolean\u003e&quot;,&quot;screen_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;who_can_share_screen&quot;:&quot;all&quot;,&quot;who_can_share_screen_when_someone_is_sharing&quot;:&quot;host&quot;,&quot;disable_screen_sharing_for_host_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;annotation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;whiteboard&quot;:&quot;\u003cboolean\u003e&quot;,&quot;remote_control&quot;:&quot;\u003cboolean\u003e&quot;,&quot;non_verbal_feedback&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_participants_to_rename&quot;:&quot;\u003cboolean\u003e&quot;,&quot;breakout_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;remote_support&quot;:&quot;\u003cboolean\u003e&quot;,&quot;manual_captioning&quot;:{&quot;auto_generated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_to_type&quot;:&quot;\u003cboolean\u003e&quot;,&quot;manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;save_captions&quot;:&quot;\u003cboolean\u003e&quot;},&quot;closed_captioning&quot;:{&quot;auto_transcribing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;save_caption&quot;:&quot;\u003cboolean\u003e&quot;}},&quot;recording&quot;:{&quot;auto_recording&quot;:&quot;local&quot;},&quot;schedule_meeting&quot;:{&quot;host_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;mute_upon_entry&quot;:false},&quot;meeting_security&quot;:{&quot;waiting_room&quot;:&quot;\u003cboolean\u003e&quot;}}}
+```

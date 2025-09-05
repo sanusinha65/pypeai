@@ -1,0 +1,108 @@
+# List session users
+
+GET {{baseUrl}}/videosdk/sessions/:sessionId/users?type=live&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82
+
+
+<p>
+Use this API to return a list of users from live or past sessions. You can specify a monthly date range for this data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.
+</p>
+
+
+
+<ul>
+
+
+<li>
+If you do 
+<strong>
+not
+</strong>
+ provide the 
+<code>
+type
+</code>
+ query parameter, the API defaults to the 
+<code>
+live
+</code>
+ value and the API will only return metrics for users in a live session, if a session is currently in progress.
+</li>
+
+
+<li>
+To view metrics on past session users, provide the 
+<code>
+past
+</code>
+ value for the 
+<code>
+type
+</code>
+ query parameter.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Video SDK account.
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The session types: 
+* `past` — A past session. 
+* `live` — A live session.
+
+This value defaults to `live`. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;page_size&quot;:50,&quot;next_page_token&quot;:&quot;suQA5LvDBnH5No5OYD7mqpJuFzJqUOHK8U2&quot;,&quot;users&quot;:[{&quot;id&quot;:&quot;32dsfsd4g5gd&quot;,&quot;name&quot;:&quot;exampleuser&quot;,&quot;device&quot;:&quot;Windows&quot;,&quot;ip_address&quot;:&quot;127.0.0.1&quot;,&quot;location&quot;:&quot;New York&quot;,&quot;network_type&quot;:&quot;Wifi&quot;,&quot;microphone&quot;:&quot;Plantronics BT600&quot;,&quot;speaker&quot;:&quot;Plantronics BT600&quot;,&quot;camera&quot;:&quot;FaceTime HD Camera&quot;,&quot;data_center&quot;:&quot;SC&quot;,&quot;connection_type&quot;:&quot;P2P&quot;,&quot;join_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;leave_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;user_key&quot;:&quot;myUserKey&quot;},{&quot;id&quot;:&quot;32dsfsd4g5gd&quot;,&quot;name&quot;:&quot;exampleuser&quot;,&quot;device&quot;:&quot;Windows&quot;,&quot;ip_address&quot;:&quot;127.0.0.1&quot;,&quot;location&quot;:&quot;New York&quot;,&quot;network_type&quot;:&quot;Wifi&quot;,&quot;microphone&quot;:&quot;Plantronics BT600&quot;,&quot;speaker&quot;:&quot;Plantronics BT600&quot;,&quot;camera&quot;:&quot;FaceTime HD Camera&quot;,&quot;data_center&quot;:&quot;SC&quot;,&quot;connection_type&quot;:&quot;P2P&quot;,&quot;join_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;leave_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;user_key&quot;:&quot;myUserKey&quot;}]}
+```

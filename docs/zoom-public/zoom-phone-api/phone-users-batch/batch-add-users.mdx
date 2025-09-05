@@ -1,0 +1,93 @@
+# Batch add users
+
+POST {{baseUrl}}/phone/users/batch
+
+
+<p>
+Adds phone users in batch. You can add up to 10 users at a time.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* The users must be active in your 
+<a href="https://marketplace.zoom.us/docs/api-reference/zoom-api/methods#tag/Users/operation/users">
+Zoom account
+</a>
+. 
+* Pro or higher account plan with Zoom phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:batch_users:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;users&quot;=&gt;[{&quot;calling_plans&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;extension_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;template_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_numbers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;outbound_caller_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;select_outbound_caller_id&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;sms&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;desk_phones&quot;=&gt;[{&quot;brand&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;mac&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;provision_template&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;brand&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;mac&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;provision_template&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, {&quot;calling_plans&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;extension_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;template_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_numbers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;outbound_caller_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;select_outbound_caller_id&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;sms&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;desk_phones&quot;=&gt;[{&quot;brand&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;mac&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;provision_template&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;brand&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;model&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;mac&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;provision_template&quot;=&gt;&quot;&lt;string&gt;&quot;}]}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;}]
+```

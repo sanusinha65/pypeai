@@ -1,0 +1,83 @@
+# Get call QoS
+
+GET {{baseUrl}}/phone/metrics/call_logs/:callId/qos
+
+
+<p>
+Gets the call quality of service (QoS) data for a call made or received by a Zoom phone user in the account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:call_qos:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_qos&quot;:{&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiving&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;sending&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}}]},&quot;caller_qos&quot;:{&quot;device_private_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_public_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;receiving&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;sending&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;qos&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;mos&quot;:&quot;\u003cstring\u003e&quot;,&quot;network_delay&quot;:&quot;\u003cstring\u003e&quot;}}]}}
+```

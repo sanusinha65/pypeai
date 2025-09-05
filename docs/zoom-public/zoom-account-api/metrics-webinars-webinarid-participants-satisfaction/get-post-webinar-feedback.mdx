@@ -1,0 +1,90 @@
+# Get post webinar feedback
+
+GET {{baseUrl}}/metrics/webinars/:webinarId/participants/satisfaction?type=live&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+When a Webinar ends, each attendee will be prompted to share their Webinar experience by clicking either thumbs up or thumbs down. Use this API to retrieve the feedback submitted for a specific webinar. Note that this API only works for meetings scheduled after December 20, 2020.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* 
+<a href="https://support.zoom.us/hc/en-us/articles/115005838023">
+Feedback to Zoom
+</a>
+ setting must be enabled by the participant prior to the meeting.
+* The user making the API request must be enrolled in a Business or a higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_webinars:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | Specify a value to get the response for the corresponding meeting type. The value of this field can be one of the following:  
+    
+ `past` - Meeting that already occurred in the specified date range.  
+ `pastOne` - Past meetings that were attended by only one user.   
+ `live` - Live meetings.  
+   
+ 
+
+If you do not provide this field, the default value will be `live` and thus, the API will only query responses for live meetings. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;quality&quot;:&quot;GOOD&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;comment&quot;:&quot;\u003cstring\u003e&quot;},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;quality&quot;:&quot;NOT GOOD&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;comment&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

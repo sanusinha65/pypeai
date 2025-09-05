@@ -1,0 +1,107 @@
+# Add an alert setting
+
+POST {{baseUrl}}/phone/alert_settings
+
+
+<p>
+
+<a href="https://support.zoom.us/hc/en-us/articles/7146944434445">
+Adds an alert setting
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:alert_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;alert_setting_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;module&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rule&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rule_conditions&quot;=&gt;[{&quot;rule_condition_type&quot;=&gt;4, &quot;rule_condition_value&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;rule_condition_type&quot;=&gt;1, &quot;rule_condition_value&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;target_type&quot;=&gt;5, &quot;time_frame_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;time_frame_to&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;time_frame_type&quot;=&gt;&quot;specific_time&quot;, &quot;target_ids&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;frequency&quot;=&gt;5, &quot;email_recipients&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;chat_channels&quot;=&gt;[{&quot;chat_channel_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;token&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_point&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;chat_channel_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;token&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;end_point&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;status&quot;=&gt;0}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;alert_setting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;alert_setting_name&quot;:&quot;\u003cstring\u003e&quot;}
+```

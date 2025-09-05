@@ -1,0 +1,137 @@
+# Delete a user
+
+DELETE {{baseUrl}}/users/:userId?encrypted_email=false&amp;action=disassociate&amp;transfer_email=&lt;string&gt;&amp;transfer_meeting=&lt;boolean&gt;&amp;transfer_webinar=&lt;boolean&gt;&amp;transfer_recording=&lt;boolean&gt;&amp;transfer_whiteboard=&lt;boolean&gt;
+
+
+<p>
+
+<strong>
+Disassociate
+</strong>
+ (unlink) a user or permanently 
+<strong>
+delete
+</strong>
+ a user.  
+</p>
+
+
+
+<p>
+
+<strong>
+Disassociating
+</strong>
+ a user unlinks the user from the associated Zoom account and provides the user their own basic free Zoom account. The disassociated user can then purchase their own Zoom licenses. An account owner or account admin can transfer the user&#39;s meetings, webinars, and cloud recordings to another user before disassociation.
+</p>
+
+
+
+<p>
+
+<strong>
+Deleting
+</strong>
+ a user permanently removes the user and their data from Zoom. Users can create a new Zoom account using the same email address. An account owner or an account admin can transfer meetings, webinars, and cloud recordings to another Zoom user account before deleting.
+</p>
+
+
+
+<p>
+For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ This API does not support the deletion requirements of a 
+<a href="https://dataprivacymanager.net/what-is-data-subject-access-request-dsar/">
+Data Subject Access Request (DSAR)
+</a>
+. For a DSAR request, contact Zoom Support. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `encrypted_email` | boolean |  | Whether the email address passed for the `userId` value is an encrypted email address. 
+
+ * `true` - The email address is encrypted. 
+ * `false` - The email address is not encrypted. 
+
+ If you do not query this parameter, this value defaults to null (`false`). |
+| `action` | string |  | Delete action options. 
+ `disassociate` - Disassociate a user.  
+ `delete`-  Permanently delete a user.  
+ Note: To delete pending user in the account, use `disassociate` |
+| `transfer_email` | string |  | Transfer email. This field is **required** if the user has Zoom Events/Sessions feature. After you delete or disassociate the user, the user&#39;s hub assets on Zoom Events site will be transferred to the target user. |
+| `transfer_meeting` | string |  | Transfer meeting. |
+| `transfer_webinar` | string |  | Transfer webinar. |
+| `transfer_recording` | string |  | Transfer recording. |
+| `transfer_whiteboard` | string |  | When deleting a user, whether to transfer all their [Zoom Whiteboard](https://support.zoom.us/hc/en-us/articles/4410916881421) data to another user. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

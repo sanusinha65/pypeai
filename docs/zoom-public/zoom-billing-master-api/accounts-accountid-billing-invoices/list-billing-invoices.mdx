@@ -1,0 +1,125 @@
+# List billing invoices
+
+GET {{baseUrl}}/accounts/:accountId/billing/invoices?from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+<p>
+List 
+<a href="https://support.zoom.us/hc/en-us/articles/207276556-Viewing-your-invoice-history#h_6710542f-23cc-4059-9cc7-ff02bec7314e">
+invoices
+</a>
+ of a Zoom account.
+</p>
+
+
+
+<p>
+To list a regular Zoom account&#39;s invoices or a master account&#39;s invoices, provide 
+<code>
+me
+</code>
+ as the value of the 
+<code>
+accountId
+</code>
+ path parameter. To list a sub account&#39;s invoices, provide the account ID of the sub account in the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Account must be enrolled in Pro or a higher plan.  
+</p>
+
+
+
+<p>
+
+<strong>
+Additional Rate Limit:
+</strong>
+ You can make 
+<strong>
+one
+</strong>
+ API request per account(
+<code>
+accountId
+</code>
+) every 
+<strong>
+five
+</strong>
+ minutes until the daily limit is reached. This API has a daily limit of 
+<strong>
+6
+</strong>
+ requests per account(
+<code>
+accountId
+</code>
+).
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | Start date for the invoice query in `yyyy-mm-dd` format. The date range defined by the &amp;ldquo;from&amp;rdquo; and &amp;ldquo;to&amp;rdquo; parameters should not exceed one year. The range defined should fall within the past three years.
+ |
+| `to` | string |  | End date for the invoice query in `yyyy-mm-dd` format |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoices&quot;:[{&quot;balance&quot;:&quot;\u003cdouble\u003e&quot;,&quot;due_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\&quot;Draft\&quot;&quot;,&quot;target_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cdouble\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cdouble\u003e&quot;},{&quot;balance&quot;:&quot;\u003cdouble\u003e&quot;,&quot;due_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\&quot;Draft\&quot;&quot;,&quot;target_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cdouble\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cdouble\u003e&quot;}]}
+```

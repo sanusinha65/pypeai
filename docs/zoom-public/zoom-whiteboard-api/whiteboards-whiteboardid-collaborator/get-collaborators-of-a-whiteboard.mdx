@@ -1,0 +1,57 @@
+# Get collaborators of a whiteboard
+
+GET {{baseUrl}}/whiteboards/:whiteboardId/collaborator
+
+
+<p>
+Returns a list of a whiteboard collaborators. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+whiteboard_collaborator:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+[{&quot;collaborator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;collaborator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;avatar&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:1,&quot;collaborator_type&quot;:1},{&quot;collaborator_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;collaborator_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;avatar&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:3,&quot;collaborator_type&quot;:0}]
+```

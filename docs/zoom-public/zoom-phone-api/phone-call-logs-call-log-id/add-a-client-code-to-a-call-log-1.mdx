@@ -1,0 +1,78 @@
+# Add a client code to a call log
+
+PUT {{baseUrl}}/phone/call_logs/:callLogId/client_code
+
+
+<p>
+Use this API to add a client code to a 
+<a href="https://support.zoom.us/hc/en-us/articles/360040999352-Assigning-client-codes-to-phone-calls">
+call log
+</a>
+. You can track call logs with a client code. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits/#zoom-phone-apis">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;client_code&quot;=&gt;&quot;123&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

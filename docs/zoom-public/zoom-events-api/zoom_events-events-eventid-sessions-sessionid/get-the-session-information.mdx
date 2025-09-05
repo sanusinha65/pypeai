@@ -1,0 +1,61 @@
+# Get the session information
+
+GET {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId
+
+
+<p>
+Use this API to get the session information.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_sessions:read
+</code>
+
+<code>
+zoom_events_sessions:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:0,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;webinar_id&quot;:&quot;\u003clong\u003e&quot;,&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;session_speakers&quot;:[{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:2,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:2,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:1,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:2,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:1,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:2,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:1,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:1,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:2,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:1,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:2,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;speaker_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_to_edit_session&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_in_session_detail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_alternative_host_permission&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_role&quot;:0,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;}],&quot;featured&quot;:&quot;\u003cboolean\u003e&quot;,&quot;visible_in_landing_page&quot;:true,&quot;featured_in_lobby&quot;:&quot;\u003cboolean\u003e&quot;,&quot;visible_in_lobby&quot;:true,&quot;is_simulive&quot;:&quot;\u003cboolean\u003e&quot;,&quot;record_file_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;chat_channel&quot;:&quot;\u003cboolean\u003e&quot;,&quot;led_by_sponsor&quot;:&quot;\u003cboolean\u003e&quot;,&quot;track_labels&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;audience_labels&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;product_labels&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;level&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;alternative_host&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;panelist&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;interpreter_languages&quot;:[{&quot;language_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;language_display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;language_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;language_display_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;sign_interpreter_languages&quot;:[{&quot;language_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;language_display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;language_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;language_display_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

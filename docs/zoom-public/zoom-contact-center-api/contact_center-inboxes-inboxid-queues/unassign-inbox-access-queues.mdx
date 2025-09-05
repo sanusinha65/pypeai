@@ -1,0 +1,60 @@
+# Unassign inbox access queues
+
+DELETE {{baseUrl}}/contact_center/inboxes/:inboxId/queues?queue_ids=&lt;string&gt;&amp;queue_ids=&lt;string&gt;
+
+
+<p>
+Remove queues&#39; access to an inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `queue_ids` | string |  | The queue&#39;s IDs. The maximum value is 10. |
+| `queue_ids` | string |  | The queue&#39;s IDs. The maximum value is 10. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

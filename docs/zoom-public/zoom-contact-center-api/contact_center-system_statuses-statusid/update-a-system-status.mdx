@@ -1,0 +1,73 @@
+# Update a system status
+
+PATCH {{baseUrl}}/contact_center/system_statuses/:statusId
+
+
+<p>
+Update a custom status for the agent
+<u>
+status and queue
+</u>
+opt
+<u>
+out
+</u>
+and
+<u>
+not
+</u>
+ready_status categories. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_preference:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;status_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enable&quot;=&gt;true}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

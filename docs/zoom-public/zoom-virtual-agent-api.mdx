@@ -1,0 +1,46 @@
+#Zoom Virtual Agent API
+
+Number of APIs: 7
+
+
+<p>
+Zoom Virtual Agent
+</p>
+
+
+
+<p>
+Contact Support:
+ Name: Zoom Developers
+</p>
+
+
+
+1. [km-kbs-{kbId}-articles - Get Articles](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/km-kbs-kbid-articles/get-articles-4)
+GET {{baseUrl}}/km/kbs/:kbId/articles?next_page_token=&lt;string&gt;&amp;page_size=30&amp;include_contents=false&amp;excluded=false&amp;language=de
+
+
+2. [virtual_agent-report-engagements-query_details - Get ZVA Query Details](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/virtual_agent-report-engagements-query_details/get-zva-query-details)
+GET {{baseUrl}}/virtual_agent/report/engagements/query_details?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;timezone=&lt;string&gt;&amp;page_size=10&amp;next_page_token=&lt;string&gt;&amp;engagement_ids=&lt;string&gt;
+
+
+3. [virtual_agent-report-engagements - Get ZVA Engagements](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/virtual_agent-report-engagements/get-zva-engagements)
+GET {{baseUrl}}/virtual_agent/report/engagements?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;timezone=&lt;string&gt;&amp;page_size=10&amp;next_page_token=&lt;string&gt;&amp;include_query_detail=&lt;boolean&gt;
+
+
+4. [km-kbs-{kbId}-articles-{articleId} - Get Article](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/km-kbs-kbid-articles-articleid/get-article)
+GET {{baseUrl}}/km/kbs/:kbId/articles/:articleId
+
+
+5. [km-kbs-{kbId}-articles-{articleId} - Update Article](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/km-kbs-kbid-articles-articleid/update-article)
+PUT {{baseUrl}}/km/kbs/:kbId/articles/:articleId
+
+
+6. [km-kbs-{kbId}-articles-{articleId} - Delete Article](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/km-kbs-kbid-articles-articleid/delete-article)
+DELETE {{baseUrl}}/km/kbs/:kbId/articles/:articleId
+
+
+7. [km-kbs-{kbId}-articles - Create Article](https://developers.qodex.ai/zoom-public/zoom-virtual-agent-api/km-kbs-kbid-articles/create-article)
+POST {{baseUrl}}/km/kbs/:kbId/articles
+
+

@@ -1,0 +1,81 @@
+# Get a meeting survey
+
+GET {{baseUrl}}/meetings/:meetingId/survey
+
+
+<p>
+Display information about a 
+<a href="https://support.zoom.us/hc/en-us/articles/4404969060621-Post-meeting-survey-and-reporting">
+meeting survey
+</a>
+.  
+<strong>
+Prerequisites:
+</strong>
+ * The host has a 
+<strong>
+Pro
+</strong>
+ license. * The 
+<a href="https://support.zoom.us/hc/en-us/articles/4404939095053-Enabling-meeting-surveys">
+
+<strong>
+Meeting Survey
+</strong>
+
+</a>
+ feature is enabled on the host&#39;s account. * The meeting must be a scheduled meeting. Instant meetings do not have survey features enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read
+</code>
+,
+<code>
+meeting:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;custom_survey&quot;:{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;anonymous&quot;:false,&quot;numbered_questions&quot;:false,&quot;show_question_type&quot;:false,&quot;feedback&quot;:&quot;\u003cstring\u003e&quot;,&quot;questions&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;short_answer&quot;,&quot;answer_required&quot;:false,&quot;show_as_dropdown&quot;:false,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;}],&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;}]},&quot;show_in_the_browser&quot;:true,&quot;third_party_survey&quot;:&quot;\u003cstring\u003e&quot;}
+```

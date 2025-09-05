@@ -1,0 +1,59 @@
+# Delete a role
+
+DELETE {{baseUrl}}/contact_center/roles/:roleId?transfer_role_id=&lt;string&gt;
+
+
+<p>
+Use this API to delete a role. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_role:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `transfer_role_id` | string |  | (Required) The transfer role&#39;s ID. If you deleted the role, you will need to reassign the users associated to this role to a different role. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

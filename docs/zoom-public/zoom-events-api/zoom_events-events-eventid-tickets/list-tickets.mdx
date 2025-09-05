@@ -1,0 +1,69 @@
+# List tickets
+
+GET {{baseUrl}}/zoom_events/events/:eventId/tickets?external_ticket_id=&lt;string&gt;&amp;email=&lt;string&gt;&amp;ticket_type_id=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Use this API to retrieve the ticket information of an event.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_tickets:read
+</code>
+
+<code>
+zoom_events_tickets:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `external_ticket_id` | string |  | The ID of the external ticket. |
+| `email` | string |  | The email of registrant.
+ |
+| `ticket_type_id` | string |  | The ID of the ticket type. |
+| `next_page_token` | string |  | The next page token paginates through a set of large results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned in a single API call. Max 300 |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;tickets&quot;:[{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_join_link&quot;:&quot;\u003cstring\u003e&quot;,&quot;send_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_role_type&quot;:&quot;company_zoom_room&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;industry&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization_size&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_type_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;external_ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;event_join_link&quot;:&quot;\u003cstring\u003e&quot;,&quot;send_notification&quot;:&quot;\u003cboolean\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;ticket_role_type&quot;:&quot;speaker&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;industry&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization&quot;:&quot;\u003cstring\u003e&quot;,&quot;organization_size&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;}]}]}
+```

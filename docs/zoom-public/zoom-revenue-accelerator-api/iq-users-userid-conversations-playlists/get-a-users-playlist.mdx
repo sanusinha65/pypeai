@@ -1,0 +1,72 @@
+# Get a user&#39;s playlist
+
+GET {{baseUrl}}/iq/users/:userId/conversations/playlists?page_size=30&amp;next_page_token=&lt;string&gt;&amp;type=All&amp;following=false&amp;create_by_self=false
+
+
+<p>
+Get all playlists for a user. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_playlist:read:admin
+</code>
+,
+<code>
+iq_playlist:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `type` | string |  | The type of the playlist to query: 
+* `All` - All playlists. 
+* `Normal` - Normal playlist. 
+* `Smart` - Smart playlist. 
+* `Favorite` - Favorite playlist. |
+| `following` | boolean |  | Whether to see Following only. |
+| `create_by_self` | boolean |  | Whether to see playlist created by self. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;playlists&quot;:[{&quot;playlist_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;playlist_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_of_conversations&quot;:&quot;\u003cinteger\u003e&quot;,&quot;following&quot;:&quot;\u003cboolean\u003e&quot;,&quot;created_by&quot;:&quot;\u003cstring\u003e&quot;},{&quot;playlist_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;playlist_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number_of_conversations&quot;:&quot;\u003cinteger\u003e&quot;,&quot;following&quot;:&quot;\u003cboolean\u003e&quot;,&quot;created_by&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

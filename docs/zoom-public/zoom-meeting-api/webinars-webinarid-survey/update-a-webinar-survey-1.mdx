@@ -1,0 +1,81 @@
+# Update a webinar survey
+
+PATCH {{baseUrl}}/webinars/:webinarId/survey
+
+
+<p>
+Update a 
+<a href="https://support.zoom.us/hc/en-us/articles/360048745651">
+webinar survey
+</a>
+.  
+<strong>
+Prerequisites:
+</strong>
+ * A Pro or higher plan with the Webinar add-on. * Enable the 
+<a href="https://support.zoom.us/hc/en-us/articles/360061293191-Enabling-webinar-survey">
+
+<strong>
+Webinar Survey
+</strong>
+
+</a>
+ feature in the host&#39;s account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;custom_survey&quot;=&gt;{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;anonymous&quot;=&gt;false, &quot;numbered_questions&quot;=&gt;false, &quot;show_question_type&quot;=&gt;false, &quot;feedback&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;questions&quot;=&gt;[{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;matching&quot;, &quot;answer_required&quot;=&gt;false, &quot;show_as_dropdown&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;prompts&quot;=&gt;[{&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;show_in_the_browser&quot;=&gt;true, &quot;show_in_the_follow_up_email&quot;=&gt;false, &quot;third_party_survey&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

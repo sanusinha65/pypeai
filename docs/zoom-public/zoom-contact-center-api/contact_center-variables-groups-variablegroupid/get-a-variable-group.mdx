@@ -1,0 +1,57 @@
+# Get a variable group
+
+GET {{baseUrl}}/contact_center/variables/groups/:variableGroupId
+
+
+<p>
+Get information about a variable group.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_variable:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;variable_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_group_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_group_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_group_type&quot;:&quot;system&quot;,&quot;variable_group_variables_count&quot;:&quot;\u003cinteger\u003e&quot;}
+```

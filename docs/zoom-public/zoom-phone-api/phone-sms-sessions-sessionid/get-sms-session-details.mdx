@@ -1,0 +1,106 @@
+# Get SMS session details
+
+GET {{baseUrl}}/phone/sms/sessions/:sessionId?page_size=30&amp;next_page_token=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;sort=&lt;integer&gt;
+
+
+<p>
+Get details about an SMS session.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Paid account
+* User-enabled Zoom phone
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+,
+<code>
+phone_sms:read
+</code>
+,
+<code>
+phone_sms:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:sms_session
+</code>
+,
+<code>
+phone:read:sms_session:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The current page number of returned records. |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. If unspecified, returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `sort` | string |  | Order of SMS to return based on creation time. `1`: ascending `2`: descending |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sms_histories&quot;:[{&quot;attachments&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;PNG&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;OTHER&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:2,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;sharedLineGroup&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;}}]},{&quot;attachments&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;OTHER&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;PNG&quot;}],&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message_type&quot;:6,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;}},{&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;}}]}]}
+```

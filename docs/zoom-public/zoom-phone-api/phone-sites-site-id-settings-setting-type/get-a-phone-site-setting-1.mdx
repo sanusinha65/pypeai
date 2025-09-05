@@ -1,0 +1,92 @@
+# Get a phone site setting
+
+GET {{baseUrl}}/phone/sites/:siteId/settings/:settingType
+
+
+<p>
+Sites allow you to organize Zoom Phone users in your organization. Use this API to get site setting about a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672">
+site
+</a>
+ according to the setting type.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+</p>
+
+
+
+<ul>
+
+
+<li>
+Account must have a Pro or a higher plan with Zoom Phone license.
+</li>
+
+
+<li>
+Multiple sites must be 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672-Managing-Multiple-Sites#h_05c88e35-1593-491f-b1a8-b7139a75dc15">
+enabled
+</a>
+.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;location_based_routing&quot;:{&quot;enable&quot;:false,&quot;place_receive_pstn_calls&quot;:false,&quot;enable_media_off_load_pstn_calls&quot;:false},&quot;business_hours&quot;:{&quot;custom_hour_type&quot;:2,&quot;custom_hours&quot;:[{&quot;from&quot;:&quot;09:00&quot;,&quot;to&quot;:&quot;18:00&quot;,&quot;type&quot;:0,&quot;weekday&quot;:1},{&quot;from&quot;:&quot;09:00&quot;,&quot;to&quot;:&quot;18:00&quot;,&quot;type&quot;:0,&quot;weekday&quot;:1}],&quot;overflow&quot;:{&quot;allow_caller_to_reach_operator&quot;:true,&quot;operator&quot;:{&quot;extension_id&quot;:&quot;FGAMaMWESMCNF0jmEU1emw&quot;,&quot;extension_number&quot;:1000001018,&quot;display_name&quot;:&quot;Test_callQueue&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;},&quot;allow_caller_to_check_voicemail&quot;:false}},&quot;closed_hours&quot;:{&quot;overflow&quot;:{&quot;allow_caller_to_reach_operator&quot;:true,&quot;operator&quot;:{&quot;extension_id&quot;:&quot;FGAMaMWESMCNF0jmEU1emw&quot;,&quot;extension_number&quot;:1000001018,&quot;display_name&quot;:&quot;Test_callQueue&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;},&quot;allow_caller_to_check_voicemail&quot;:false}},&quot;holiday_hours&quot;:{&quot;holidays&quot;:[{&quot;holiday_id&quot;:&quot;i3gP6xFUTHqSFrIE6nHs7Q&quot;,&quot;name&quot;:&quot;Holiday 1&quot;,&quot;from&quot;:&quot;2022-03-08T16:00:00Z&quot;,&quot;to&quot;:&quot;2022-03-09T16:00:00Z&quot;},{&quot;holiday_id&quot;:&quot;i3gP6xFUTHqSFrIE6nHs7Q&quot;,&quot;name&quot;:&quot;Holiday 1&quot;,&quot;from&quot;:&quot;2022-03-08T16:00:00Z&quot;,&quot;to&quot;:&quot;2022-03-09T16:00:00Z&quot;}],&quot;overflow&quot;:{&quot;allow_caller_to_reach_operator&quot;:true,&quot;operator&quot;:{&quot;extension_id&quot;:&quot;FGAMaMWESMCNF0jmEU1emw&quot;,&quot;extension_number&quot;:1000001018,&quot;display_name&quot;:&quot;Test_callQueue&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;},&quot;allow_caller_to_check_voicemail&quot;:false}},&quot;security&quot;:{&quot;device_types&quot;:[&quot;Poly trioc60&quot;,&quot;Poly trioc60&quot;]},&quot;outbound_caller_id&quot;:{&quot;auto_receptionists_numbers&quot;:false,&quot;call_queue_numbers&quot;:false,&quot;share_line_group_numbers&quot;:false,&quot;show_outbound_caller_id_for_internal_call&quot;:false},&quot;audio_prompt&quot;:{&quot;language&quot;:&quot;en-GB&quot;,&quot;greeting_leave_voicemail_instruction&quot;:{&quot;business_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;closed_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;holiday_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;greeting_menu_leave_or_check_voicemail&quot;:{&quot;business_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;closed_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;holiday_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;greeting_menu_connect_to_operator_or_leave_voicemail&quot;:{&quot;business_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;closed_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;holiday_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;greeting_menu_connect_to_operator_leave_or_check_voicemail&quot;:{&quot;business_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;closed_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;holiday_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;leave_voicemail_introduction&quot;:{&quot;business_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;closed_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;holiday_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;message_greeting&quot;:{&quot;business_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;closed_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;holiday_hours&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;audio_while_connecting&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;},&quot;hold_music&quot;:{&quot;id&quot;:&quot;yCT14TwySDGVUypVlKNEyA&quot;,&quot;name&quot;:&quot;hello.mp3&quot;}},&quot;dial_by_name&quot;:{&quot;status&quot;:true,&quot;inherit&quot;:false,&quot;rule&quot;:&quot;last_name&quot;}}
+```

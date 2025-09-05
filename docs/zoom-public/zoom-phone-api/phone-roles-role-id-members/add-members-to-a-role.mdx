@@ -1,0 +1,69 @@
+# Add members to a role
+
+POST {{baseUrl}}/phone/roles/:roleId/members
+
+
+<p>
+Use this API to add member(s) to a role.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business, or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;role_id&quot;=&gt;&quot;Ft0H7NYlSX6EeO-rwaZW-Q&quot;, &quot;copy_targets&quot;=&gt;true, &quot;copy_all_members&quot;=&gt;true, &quot;user_ids&quot;=&gt;[&quot;1PXbl7s6Q52nbePrUxUZTg&quot;, &quot;1PXbl7s6Q52nbePrUxUZTg&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+&quot;&quot;
+```

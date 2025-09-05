@@ -1,0 +1,132 @@
+# Request user authorization PKCE
+
+GET https://zoom.us/oauth/token?response_type=code&amp;client_id={{oAuthDevClientId}}&amp;redirect_uri={{oAuthDevRedirectUri}}&amp;code_challenge=
+
+
+<h3>
+Step 1: Request User Authorization
+</h3>
+
+
+
+<p>
+Zoom supports Proof Key for Code Exchange (PKCE) when requesting user tokens. This offers better security by enabling clients to use a code challenge and code exchange as part of the initial user authorization request. See 
+<a href="https://tools.ietf.org/html/rfc7636">
+rfc7636
+</a>
+ for more information.
+</p>
+
+
+
+<h5>
+Option 1: via Manual Header
+</h5>
+
+
+
+<p>
+To use this feature, send the 
+<code>
+code_challenge
+</code>
+ field and optional 
+<code>
+code_challenge_method
+</code>
+ field in Params in the user Authorization request. Then send the 
+<code>
+code_verifier
+</code>
+ field in the 
+<a href="https://zoom-developer.Qodex.co/workspace/Zoom-Public-API-Workspace%7E93c57614-646e-432d-94ed-3792fa567a48/request/22097587-00dd9c32-3453-4b51-bc60-71ba124829e6">
+
+<code>
+POST Request access token PKCE
+</code>
+
+</a>
+ request params.
+</p>
+
+
+
+<p>
+If Zoom verifies that the 
+<code>
+code_challenge
+</code>
+ and the 
+<code>
+code_verifier
+</code>
+ values match, the token endpoint continues processing. If they do not match, you will receive an 
+<code>
+invalid_grant
+</code>
+ error.
+</p>
+
+
+
+<h5>
+Option 2: via Auth Helper
+</h5>
+
+
+
+<p>
+Use the Authorization tab to both authorize and retrieve the access token with PKCE. Everything has been configured for you.
+</p>
+
+
+
+<hr>
+
+
+
+<h5>
+Developer Documentation:
+</h5>
+
+
+
+<ul>
+
+
+<li>
+
+<a href="https://developers.zoom.us/docs/integrations/oauth/#step-1-request-user-authorization">
+Request user authorization
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `response_type` | string |  |  |
+| `client_id` | string |  | OAuth application&#39;s Development or Production Client ID. |
+| `redirect_uri` | string |  | URI to handle successful user authorization. Must match with Development or Production Redirect URI in your OAuth app settings.
+ |
+| `state` | null |  | (Optional) An opaque value that you can use to maintain state between the request and callback. The authorization server appends the state value to the redirect URI. This is also useful to prevent cross-site request forgery. |
+| `code_challenge` | null |  | Required for PKCE. A challenge derived from the code verifier sent in the authorization request to verify against the code_verifier later. |
+| `code_challenge_method` | string |  | Optional. A method that was used to derive the code challenge. Defaults to &quot;plain&quot; if not present in the request. Code verifier transformation method is &quot;S256&quot; or &quot;plain&quot;.
+ |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

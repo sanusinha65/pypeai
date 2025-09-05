@@ -1,0 +1,77 @@
+# Create a tracking field
+
+POST {{baseUrl}}/tracking_fields
+
+
+<p>
+Use this API to create a new 
+<a href="https://support.zoom.us/hc/en-us/articles/115000293426-Scheduling-Tracking-Fields">
+tracking field
+</a>
+. Tracking fields let you analyze usage by various fields within an organization. When scheduling a meeting, tracking fields will be included in the meeting options. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business, Education, API or higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tracking_fields:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;field&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;recommended_values&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;visible&quot;=&gt;&quot;&lt;boolean&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;recommended_values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;visible&quot;:&quot;\u003cboolean\u003e&quot;}
+```

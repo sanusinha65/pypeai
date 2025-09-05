@@ -1,0 +1,75 @@
+# Get chat sessions reports
+
+GET {{baseUrl}}/report/chat/sessions?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Gets Zoom Chat session reports for a specified period of time. The monthly date range 
+<strong>
+must
+</strong>
+ be within the last six months.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report_chat:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan 
+* Report chat permissions.
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) The start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &quot;from&quot; and &quot;to&quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) The end date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;sessions&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_message_sent_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;Group&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_message_sent_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;1:1&quot;,&quot;channel_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;to&quot;:&quot;\u003cdate\u003e&quot;}
+```

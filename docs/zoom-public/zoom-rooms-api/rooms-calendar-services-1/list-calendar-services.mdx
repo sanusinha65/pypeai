@@ -1,0 +1,76 @@
+# List calendar services
+
+GET {{baseUrl}}/rooms/calendar/services
+
+
+<p>
+Use this API to list all the existing 
+<a href="https://support.zoom.us/hc/en-us/articles/4409832833037">
+calendar services
+</a>
+ in a Zoom Room account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with a 
+<a href="https://zoom.us/zoomrooms">
+Zoom Rooms
+</a>
+ license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;calendar_services&quot;:[{&quot;calendar_service_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_service_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_total_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;calendar_resource_assigned_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;added_date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;latest_synced_date_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;calendar_service_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_service_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_total_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;calendar_resource_assigned_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;added_date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;latest_synced_date_time&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

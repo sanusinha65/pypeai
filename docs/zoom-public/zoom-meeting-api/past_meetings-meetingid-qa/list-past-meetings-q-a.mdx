@@ -1,0 +1,89 @@
+# List past meetings&#39; Q&amp;A
+
+GET {{baseUrl}}/past_meetings/:meetingId/qa
+
+
+<p>
+The question &amp; answer (Q&amp;A) feature for Zoom Meetings lets attendees ask questions during a meeting and lets the other attendees answer those questions.  
+</p>
+
+
+
+<p>
+List Q&amp;A of a specific meeting.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;questions&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}
+```

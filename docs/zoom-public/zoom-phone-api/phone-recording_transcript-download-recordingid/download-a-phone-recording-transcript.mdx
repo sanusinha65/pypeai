@@ -1,0 +1,113 @@
+# Download a phone recording transcript
+
+GET {{baseUrl}}/phone/recording_transcript/download/:recordingId
+
+
+<p>
+Downloads the phone recording transcript. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+A Business or Enterprise account
+</li>
+
+
+<li>
+A Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+,
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_recording:read
+</code>
+,
+<code>
+phone_recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:recording_transcript
+</code>
+,
+<code>
+phone:read:recording_transcript:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

@@ -1,0 +1,103 @@
+# Perform batch registration
+
+POST {{baseUrl}}/meetings/:meetingId/batch_registrants
+
+
+<p>
+Register up to 30 registrants at once for a meeting that requires 
+<a href="https://support.zoom.us/hc/en-us/articles/211579443-Registration-for-Meetings">
+registration
+</a>
+.   
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+The meeting host must be a Licensed user.
+</li>
+
+
+<li>
+The meeting must require registration and should be of type 
+<code>
+2
+</code>
+, i.e., they should be scheduled meetings. Instant meetings and Recurring meetings are not supported by this API.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;auto_approve&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registrants_confirmation_email&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;registrants&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;first_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;last_name&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;registrants&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_pin_code&quot;:&quot;\u003clong\u003e&quot;},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_pin_code&quot;:&quot;\u003clong\u003e&quot;}]}
+```

@@ -1,0 +1,42 @@
+# Create a Meeting
+
+POST {{baseUrl}}/users/{userId}/meetings
+
+
+<h3>
+Create a Meeting with custCreate User
+</h3>
+
+
+
+<p>
+CustCreate users are non-login users created via API. If you create a meeting via API, you can specify the user ID of the API user as the host. The start
+<u>
+url will reflect them as the meeting host when used to start the meeting—this will launch the Zoom Client. Please note the expiration time of the `start
+</u>
+url
+<code>
+parameter is **90 days** from the generation of the
+</code>
+start_url`.
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;agenda&quot;=&gt;&quot;My Meeting&quot;, &quot;default_password&quot;=&gt;false, &quot;duration&quot;=&gt;60, &quot;password&quot;=&gt;&quot;123456&quot;, &quot;pre_schedule&quot;=&gt;false, &quot;recurrence&quot;=&gt;{&quot;end_date_time&quot;=&gt;&quot;2022-04-02T15:59:00Z&quot;, &quot;end_times&quot;=&gt;7, &quot;monthly_day&quot;=&gt;1, &quot;monthly_week&quot;=&gt;1, &quot;monthly_week_day&quot;=&gt;1, &quot;repeat_interval&quot;=&gt;1, &quot;type&quot;=&gt;1, &quot;weekly_days&quot;=&gt;&quot;1&quot;}, &quot;schedule_for&quot;=&gt;&quot;jchill@example.com&quot;, &quot;settings&quot;=&gt;{&quot;additional_data_center_regions&quot;=&gt;[&quot;TY&quot;], &quot;allow_multiple_devices&quot;=&gt;true, &quot;alternative_hosts&quot;=&gt;&quot;jchill@example.com;thill@example.com&quot;, &quot;alternative_hosts_email_notification&quot;=&gt;true, &quot;approval_type&quot;=&gt;2, &quot;approved_or_denied_countries_or_regions&quot;=&gt;{&quot;approved_list&quot;=&gt;[&quot;CX&quot;], &quot;denied_list&quot;=&gt;[&quot;CA&quot;], &quot;enable&quot;=&gt;true, &quot;method&quot;=&gt;&quot;approve&quot;}, &quot;audio&quot;=&gt;&quot;telephony&quot;, &quot;authentication_domains&quot;=&gt;&quot;example.com&quot;, &quot;authentication_exception&quot;=&gt;[{&quot;email&quot;=&gt;&quot;jchill@example.com&quot;, &quot;name&quot;=&gt;&quot;Jill Chill&quot;}], &quot;authentication_option&quot;=&gt;&quot;signIn_D8cJuqWVQ623CI4Q8yQK0Q&quot;, &quot;auto_recording&quot;=&gt;&quot;cloud&quot;, &quot;breakout_room&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;rooms&quot;=&gt;[{&quot;name&quot;=&gt;&quot;room1&quot;, &quot;participants&quot;=&gt;[&quot;jchill@example.com&quot;]}]}, &quot;calendar_type&quot;=&gt;1, &quot;close_registration&quot;=&gt;false, &quot;cn_meeting&quot;=&gt;false, &quot;contact_email&quot;=&gt;&quot;jchill@example.com&quot;, &quot;contact_name&quot;=&gt;&quot;Jill Chill&quot;, &quot;email_notification&quot;=&gt;true, &quot;encryption_type&quot;=&gt;&quot;enhanced_encryption&quot;, &quot;focus_mode&quot;=&gt;true, &quot;global_dial_in_countries&quot;=&gt;[&quot;US&quot;], &quot;host_video&quot;=&gt;true, &quot;in_meeting&quot;=&gt;false, &quot;jbh_time&quot;=&gt;0, &quot;join_before_host&quot;=&gt;false, &quot;language_interpretation&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;interpreter@example.com&quot;, &quot;languages&quot;=&gt;&quot;US,FR&quot;}]}, &quot;meeting_authentication&quot;=&gt;true, &quot;meeting_invitees&quot;=&gt;[{&quot;email&quot;=&gt;&quot;jchill@example.com&quot;}], &quot;mute_upon_entry&quot;=&gt;false, &quot;participant_video&quot;=&gt;false, &quot;private_meeting&quot;=&gt;false, &quot;registrants_confirmation_email&quot;=&gt;true, &quot;registrants_email_notification&quot;=&gt;true, &quot;registration_type&quot;=&gt;1, &quot;show_share_button&quot;=&gt;true, &quot;use_pmi&quot;=&gt;false, &quot;waiting_room&quot;=&gt;false, &quot;watermark&quot;=&gt;false, &quot;host_save_video_order&quot;=&gt;true, &quot;alternative_host_update_polls&quot;=&gt;true}, &quot;start_time&quot;=&gt;&quot;2022-03-25T07:32:55Z&quot;, &quot;template_id&quot;=&gt;&quot;Dv4YdINdTk+Z5RToadh5ug==&quot;, &quot;timezone&quot;=&gt;&quot;America/Los_Angeles&quot;, &quot;topic&quot;=&gt;&quot;My Meeting&quot;, &quot;tracking_fields&quot;=&gt;[{&quot;field&quot;=&gt;&quot;field1&quot;, &quot;value&quot;=&gt;&quot;value1&quot;}], &quot;type&quot;=&gt;2}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

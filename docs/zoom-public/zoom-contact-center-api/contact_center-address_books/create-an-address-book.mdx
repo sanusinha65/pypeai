@@ -1,0 +1,66 @@
+# Create an address book
+
+POST {{baseUrl}}/contact_center/address_books
+
+
+<p>
+Use this API to create an 
+<a href="https://support.zoom.us/hc/en-us/articles/4471544949389">
+address book
+</a>
+. An address book is a collection of consumer information like display names, phone numbers, and locations. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_contact:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;unit_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address_book_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address_book_description&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;address_book_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_book_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;unit_name&quot;:&quot;\u003cstring\u003e&quot;}
+```

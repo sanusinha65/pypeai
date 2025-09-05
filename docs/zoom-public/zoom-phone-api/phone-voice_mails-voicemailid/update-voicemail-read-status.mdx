@@ -1,0 +1,105 @@
+# Update Voicemail Read Status
+
+PATCH {{baseUrl}}/phone/voice_mails/:voicemailId?read_status=Unread
+
+
+<p>
+Updates the status of 
+<a href="https://support.zoom.us/hc/en-us/articles/360021400211-Managing-voicemail-messages">
+voicemail message
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+,
+<code>
+phone_voicemail:write
+</code>
+,
+<code>
+phone_voicemail:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:voicemail
+</code>
+,
+<code>
+phone:update:voicemail:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `read_status` | string |  | (Required) The voicemail status. The `Unread` feature must enable **Mark Voicemail as Unread**. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,147 @@
+# Get `in-meeting` chat
+
+GET {{baseUrl}}/meetings/{meetingId}/recordings
+
+
+<h3>
+Get 
+<code>
+in-meeting
+</code>
+ Chat
+</h3>
+
+
+
+<p>
+After a meeting has ended and the recording files are finished processing, call the 
+<a href="https://marketplace.zoom.us/docs/api-reference/zoom-api/cloud-recording/recordingget">
+GET Meetings Recordings endpoint
+</a>
+.
+</p>
+
+
+
+<p>
+In the payload you will see the file
+<u>
+type of 
+<q>
+CHAT
+</q>
+ which you can then download via the download
+</u>
+url.
+</p>
+
+
+
+<h5>
+
+<strong>
+Prerequisites
+</strong>
+
+</h5>
+
+
+
+<ul>
+
+
+<li>
+  Ensure the meeting is recorded
+</li>
+
+
+<li>
+  Ensure the 
+<q>
+Save chat messages from the meeting / webinar
+</q>
+ setting is enabled.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<img src="https://devsupport.zoom.us/hc/article_attachments/360092844391/articleSS1.png" alt="">
+
+</p>
+
+
+
+<hr>
+
+
+
+<h5>
+
+<strong>
+Support Article:
+</strong>
+
+</h5>
+
+
+
+<ul>
+
+
+<li>
+  
+<a href="https://support.zoom.us/hc/en-us/articles/203650445-In-meeting-chat">
+Chatting in a Zoom meeting
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+<h5>
+
+<strong>
+API Reference:
+</strong>
+
+</h5>
+
+
+
+<ul>
+
+
+<li>
+  
+<a href="https://marketplace.zoom.us/docs/api-reference/zoom-api/methods/#operation/recordingGet">
+Get meeting recordings
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

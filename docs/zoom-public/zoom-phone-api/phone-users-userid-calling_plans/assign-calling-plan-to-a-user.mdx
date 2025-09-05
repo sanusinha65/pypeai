@@ -1,0 +1,116 @@
+# Assign calling plan to a user
+
+POST {{baseUrl}}/phone/users/:userId/calling_plans
+
+
+<p>
+Assigns a 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans#zoom-phone-calling-plans">
+calling plan
+</a>
+ to a 
+<a href="https://support.zoom.us/hc/en-us/categories/360001370051-Zoom-Phone">
+Zoom Phone
+</a>
+ user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+,
+<code>
+phone:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:calling_plan
+</code>
+,
+<code>
+phone:write:calling_plan:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;calling_plans&quot;=&gt;[{&quot;type&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;billing_account_id&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;type&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;billing_account_id&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{}
+```

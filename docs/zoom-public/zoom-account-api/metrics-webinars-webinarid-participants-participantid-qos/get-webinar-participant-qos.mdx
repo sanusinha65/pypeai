@@ -1,0 +1,150 @@
+# Get webinar participant QoS
+
+GET {{baseUrl}}/metrics/webinars/:webinarId/participants/:participantId/qos?type=live
+
+
+<p>
+Return the quality of service (QoS) for participants during live or past webinars. This data returned indicates the connection quality for sending/receiving video, audio, and shared content. The API returns this data for either the API request or when the API request was last received. 
+</p>
+
+
+
+<p>
+When the sender sends its data, a timestamp is attached to the sender&#39;s data packet. The receiver then returns this timestamp to the sender. This helps determine the upstream and downstream latency, which includes the application processing time. The latency data returned is the five second average and five second maximum. 
+</p>
+
+
+
+<p>
+This API will 
+<strong>
+not
+</strong>
+ return data if there is no data being sent or received at the time of request. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+</p>
+
+
+
+<p>
+This API may return empty values for participants&#39; 
+<code>
+user_name
+</code>
+, 
+<code>
+ip_address
+</code>
+, 
+<code>
+location
+</code>
+, and 
+<code>
+email
+</code>
+ responses when the account calling this API: 
+* Does 
+<strong>
+not
+</strong>
+ have a signed HIPAA business associate agreement (BAA). 
+* Is a 
+<a href="https://developers.zoom.us/docs/api/rest/other-references/legacy-business-associate-agreements/">
+
+<strong>
+legacy
+</strong>
+ HIPAA BAA account
+</a>
+. 
+* Displays data for any users who are 
+<strong>
+not
+</strong>
+ part of the host&#39;s account, such as external users, unless they meet certain conditions. See 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#email-address-display-rules">
+Email address display rules
+</a>
+ for details. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business, Education, or API Plan with Zoom Rooms set up.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_webinars:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of webinar to query. 
+* `past` - All past webinars. 
+* `live` - All live webinars. 
+
+This value defaults to `live`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;device&quot;:&quot;iOS&quot;,&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;harddisk_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;internal_ip_addresses&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;mac_addr&quot;:&quot;\u003cstring\u003e&quot;,&quot;pc_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_qos&quot;:[{&quot;as_device_from_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_device_to_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_input&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_output&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_from_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_to_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_input&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_output&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;cpu_usage&quot;:{&quot;system_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_min_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;video_device_from_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_device_to_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_input&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_output&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_device_from_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_device_to_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_from_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_to_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_device_from_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_device_to_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;wifi_rssi&quot;:{&quot;max_rssi&quot;:&quot;\u003cinteger\u003e&quot;,&quot;avg_rssi&quot;:&quot;\u003cinteger\u003e&quot;,&quot;min_rssi&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rssi_unit&quot;:&quot;\u003cstring\u003e&quot;}},{&quot;as_device_from_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_device_to_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_input&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_output&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_from_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_to_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_input&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_output&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;cpu_usage&quot;:{&quot;system_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_min_cpu_usage&quot;:&quot;\u003cstring\u003e&quot;},&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;video_device_from_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_device_to_crc&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_input&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_output&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_device_from_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;as_device_to_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_from_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;audio_device_to_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_device_from_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;video_device_to_rwg&quot;:{&quot;avg_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;bitrate&quot;:&quot;\u003cstring\u003e&quot;,&quot;jitter&quot;:&quot;\u003cstring\u003e&quot;,&quot;latency&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_loss&quot;:&quot;\u003cstring\u003e&quot;,&quot;frame_rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;resolution&quot;:&quot;\u003cstring\u003e&quot;},&quot;wifi_rssi&quot;:{&quot;max_rssi&quot;:&quot;\u003cinteger\u003e&quot;,&quot;avg_rssi&quot;:&quot;\u003cinteger\u003e&quot;,&quot;min_rssi&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rssi_unit&quot;:&quot;\u003cstring\u003e&quot;}}],&quot;version&quot;:&quot;\u003cstring\u003e&quot;}
+```

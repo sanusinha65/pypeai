@@ -1,0 +1,69 @@
+# Add an emergency address
+
+POST {{baseUrl}}/phone/emergency_addresses
+
+
+<p>
+Use this API to add an emergency address.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone license 
+* Account owner or admin permissions
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;country&quot;=&gt;&quot;US&quot;, &quot;address_line1&quot;=&gt;&quot;55 Almaden Blvd&quot;, &quot;state_code&quot;=&gt;&quot;10&quot;, &quot;city&quot;=&gt;&quot;San Jose&quot;, &quot;zip&quot;=&gt;&quot;95113&quot;, &quot;address_line2&quot;=&gt;&quot;8 Floor&quot;, &quot;is_default&quot;=&gt;true, &quot;site_id&quot;=&gt;&quot;SQv52YtkRLC2dwrDdYtGsA&quot;, &quot;user_id&quot;=&gt;&quot;fWOgOALdT1ei4vjXK-QYsA&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+[{&quot;address_line1&quot;:&quot;55 Almaden Blvd&quot;,&quot;address_line2&quot;:&quot;8 Floor&quot;,&quot;city&quot;:&quot;San Jose&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;,&quot;is_default&quot;:true,&quot;level&quot;:1,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;101002&quot;,&quot;id&quot;:&quot;y9th648XRfSL9S61p1TsBw&quot;,&quot;name&quot;:&quot;ZOOM_API Test&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main site&quot;},&quot;state_code&quot;:&quot;CA&quot;,&quot;status&quot;:1,&quot;zip&quot;:&quot;95113&quot;},{&quot;address_line1&quot;:&quot;55 Almaden Blvd&quot;,&quot;address_line2&quot;:&quot;8 Floor&quot;,&quot;city&quot;:&quot;San Jose&quot;,&quot;country&quot;:&quot;US&quot;,&quot;id&quot;:&quot;Qza2T_KATwCeUfTkzGsOmQ&quot;,&quot;is_default&quot;:true,&quot;level&quot;:1,&quot;owner&quot;:{&quot;extension_number&quot;:&quot;101002&quot;,&quot;id&quot;:&quot;y9th648XRfSL9S61p1TsBw&quot;,&quot;name&quot;:&quot;ZOOM_API Test&quot;},&quot;site&quot;:{&quot;id&quot;:&quot;SQv52YtkRLC2dwrDdYtGsA&quot;,&quot;name&quot;:&quot;Main site&quot;},&quot;state_code&quot;:&quot;CA&quot;,&quot;status&quot;:1,&quot;zip&quot;:&quot;95113&quot;}]
+```

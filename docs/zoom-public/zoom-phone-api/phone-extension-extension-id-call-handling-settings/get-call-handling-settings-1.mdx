@@ -1,0 +1,78 @@
+# Get call handling settings
+
+GET {{baseUrl}}/phone/extension/:extensionId/call_handling/settings
+
+
+<p>
+Use this API to get information about a Zoom Phone&#39;s call handling settings. For more information, read our 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+ documentation.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, or auto receptionist call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;business_hours&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;allow_members_to_reset&quot;:true,&quot;audio_while_connecting&quot;:{&quot;id&quot;:&quot;qPwtDrrcSua8O0_n0bDRDg&quot;,&quot;name&quot;:&quot;Default&quot;},&quot;call_distribution&quot;:{&quot;handle_multiple_calls&quot;:true,&quot;ring_duration&quot;:10,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;skip_offline_device_phone_number&quot;:true},&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testNumber&quot;,&quot;enable&quot;:true,&quot;id&quot;:&quot;qPvrfrrcrf843cdfvbDRDg&quot;,&quot;phone_number&quot;:&quot;+12058945565&quot;},{&quot;description&quot;:&quot;testNumber&quot;,&quot;enable&quot;:true,&quot;id&quot;:&quot;qPvrfrrcrf843cdfvbDRDg&quot;,&quot;phone_number&quot;:&quot;+12058945565&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:true,&quot;custom_hours_settings&quot;:[{&quot;from&quot;:&quot;09:00&quot;,&quot;to&quot;:&quot;18:00&quot;,&quot;type&quot;:1,&quot;weekday&quot;:5},{&quot;from&quot;:&quot;09:00&quot;,&quot;to&quot;:&quot;18:00&quot;,&quot;type&quot;:1,&quot;weekday&quot;:5}],&quot;greeting_prompt&quot;:{&quot;id&quot;:&quot;0&quot;,&quot;name&quot;:&quot;test&quot;},&quot;max_call_in_queue&quot;:5,&quot;max_wait_time&quot;:30,&quot;music_on_hold&quot;:{&quot;id&quot;:&quot;fdsij3he89qj2-23uie&quot;,&quot;name&quot;:&quot;Default&quot;},&quot;receive_call&quot;:true,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}},&quot;type&quot;:1,&quot;wrap_up_time&quot;:30},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;},{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;allow_members_to_reset&quot;:true,&quot;audio_while_connecting&quot;:{&quot;id&quot;:&quot;qPwtDrrcSua8O0_n0bDRDg&quot;,&quot;name&quot;:&quot;Default&quot;},&quot;call_distribution&quot;:{&quot;handle_multiple_calls&quot;:true,&quot;ring_duration&quot;:10,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;skip_offline_device_phone_number&quot;:true},&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testNumber&quot;,&quot;enable&quot;:true,&quot;id&quot;:&quot;qPvrfrrcrf843cdfvbDRDg&quot;,&quot;phone_number&quot;:&quot;+12058945565&quot;},{&quot;description&quot;:&quot;testNumber&quot;,&quot;enable&quot;:true,&quot;id&quot;:&quot;qPvrfrrcrf843cdfvbDRDg&quot;,&quot;phone_number&quot;:&quot;+12058945565&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:true,&quot;custom_hours_settings&quot;:[{&quot;from&quot;:&quot;09:00&quot;,&quot;to&quot;:&quot;18:00&quot;,&quot;type&quot;:1,&quot;weekday&quot;:5},{&quot;from&quot;:&quot;09:00&quot;,&quot;to&quot;:&quot;18:00&quot;,&quot;type&quot;:1,&quot;weekday&quot;:5}],&quot;greeting_prompt&quot;:{&quot;id&quot;:&quot;0&quot;,&quot;name&quot;:&quot;test&quot;},&quot;max_call_in_queue&quot;:5,&quot;max_wait_time&quot;:30,&quot;music_on_hold&quot;:{&quot;id&quot;:&quot;fdsij3he89qj2-23uie&quot;,&quot;name&quot;:&quot;Default&quot;},&quot;receive_call&quot;:true,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}},&quot;type&quot;:1,&quot;wrap_up_time&quot;:30},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;}],&quot;closed_hours&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;sd8683_fwh39_F3hfsd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;},{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;sd8683_fwh39_F3hfsd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:true,&quot;max_wait_time&quot;:null,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}}},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;},{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;sd8683_fwh39_F3hfsd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;},{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;sd8683_fwh39_F3hfsd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:true,&quot;max_wait_time&quot;:30,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;simultaneous&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}}},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;}],&quot;holiday_hours&quot;:[{&quot;details&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;},{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:false,&quot;from&quot;:&quot;2022-05-01T00:00:00Z&quot;,&quot;max_wait_time&quot;:null,&quot;name&quot;:&quot;Labor Day&quot;,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;sequential&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}},&quot;to&quot;:&quot;2022-05-05T00:00:00Z&quot;},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;},{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;},{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:false,&quot;from&quot;:&quot;2022-05-01T00:00:00Z&quot;,&quot;max_wait_time&quot;:60,&quot;name&quot;:&quot;Labor Day&quot;,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;sequential&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}},&quot;to&quot;:&quot;2022-05-05T00:00:00Z&quot;},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;}],&quot;holiday_id&quot;:&quot;ewhu3i9-f3f3-fiohed&quot;},{&quot;details&quot;:[{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;},{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:false,&quot;from&quot;:&quot;2022-05-01T00:00:00Z&quot;,&quot;max_wait_time&quot;:60,&quot;name&quot;:&quot;Labor Day&quot;,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;sequential&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}},&quot;to&quot;:&quot;2022-05-05T00:00:00Z&quot;},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;},{&quot;settings&quot;:{&quot;allow_callers_check_voicemail&quot;:true,&quot;call_forwarding_settings&quot;:[{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;},{&quot;description&quot;:&quot;testDescription&quot;,&quot;enable&quot;:false,&quot;id&quot;:&quot;dash32943QWfjiofejd&quot;,&quot;phone_number&quot;:&quot;+12058945583&quot;}],&quot;call_not_answer_action&quot;:2,&quot;connect_to_operator&quot;:false,&quot;from&quot;:&quot;2022-05-01T00:00:00Z&quot;,&quot;max_wait_time&quot;:60,&quot;name&quot;:&quot;Labor Day&quot;,&quot;require_press_1_before_connecting&quot;:true,&quot;ring_mode&quot;:&quot;sequential&quot;,&quot;routing&quot;:{&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;api_ta_test&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;,&quot;phone_number&quot;:&quot;18889843519&quot;,&quot;voicemail_greeting&quot;:{}},&quot;operator&quot;:{&quot;display_name&quot;:&quot;user A&quot;,&quot;extension_id&quot;:&quot;jN9mb38lQTaMgxUq3Nd6ow&quot;,&quot;extension_number&quot;:101014,&quot;extension_type&quot;:&quot;user&quot;,&quot;id&quot;:&quot;DYHrdpjrS3uaOf7dPkkg8w&quot;}},&quot;to&quot;:&quot;2022-05-05T00:00:00Z&quot;},&quot;sub_setting_type&quot;:&quot;call_forwarding&quot;}],&quot;holiday_id&quot;:&quot;ewhu3i9-f3f3-fiohed&quot;}]}
+```

@@ -1,0 +1,64 @@
+# Get a user&#39;s app requests
+
+GET {{baseUrl}}/marketplace/users/:userId/apps?page_size=30&amp;next_page_token=R4aF9Oj0fVM2hhezJTEmSKaBSkfesDwGy42&amp;type=active_requests
+
+
+<p>
+Use this API to get all of a user&#39;s app requests. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+marketplace_app:read
+</code>
+,
+<code>
+marketplace_app:read:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. The API returns a next page token whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `type` | string |  | The type of app request to query: 
+* `active_requests` — All active app requests. 
+* `past_requests` - All past app requests. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;w7587w4eiyfsudgf&quot;,&quot;page_size&quot;:30,&quot;apps&quot;:[{&quot;app_id&quot;:&quot;nqSreNVsQ2eGzUMGnA8AHA&quot;,&quot;app_name&quot;:&quot;Example App&quot;,&quot;app_type&quot;:&quot;ZoomApp&quot;,&quot;app_usage&quot;:1,&quot;app_status&quot;:&quot;PUBLISHED&quot;,&quot;request_id&quot;:&quot;zZLSQoL6S0OB6asaZ3zAOQ&quot;,&quot;request_date_time&quot;:&quot;2021-07-21T17:32:28Z&quot;,&quot;request_status&quot;:&quot;pending&quot;},{&quot;app_id&quot;:&quot;nqSreNVsQ2eGzUMGnA8AHA&quot;,&quot;app_name&quot;:&quot;Example App&quot;,&quot;app_type&quot;:&quot;ZoomApp&quot;,&quot;app_usage&quot;:1,&quot;app_status&quot;:&quot;PUBLISHED&quot;,&quot;request_id&quot;:&quot;zZLSQoL6S0OB6asaZ3zAOQ&quot;,&quot;request_date_time&quot;:&quot;2021-07-21T17:32:28Z&quot;,&quot;request_status&quot;:&quot;pending&quot;}]}
+```

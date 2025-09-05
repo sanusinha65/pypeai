@@ -1,0 +1,91 @@
+# Update an auto receptionist policy
+
+PATCH {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/policies
+
+
+<p>
+Use this API to update the policy setting of a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom Phone License
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:auto_receptionist_policy:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;voicemail_transcription&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;voicemail_notification_by_email&quot;=&gt;{&quot;include_voicemail_file&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;include_voicemail_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;forward_voicemail_to_email&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;sms&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;international_sms&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;international_sms_countries&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,89 @@
+# Update user&#39;s profile
+
+PATCH {{baseUrl}}/phone/users/:userId
+
+
+<p>
+Use this API to update a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/categories/360001370051-Zoom-Phone">
+Zoom Phone
+</a>
+ profile. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;emergency_address_id&quot;=&gt;&quot;CCc8zYT1SN60i7uDMzDbXA&quot;, &quot;extension_number&quot;=&gt;&quot;1000123477&quot;, &quot;policy&quot;=&gt;{&quot;ad_hoc_call_recording&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;recording_start_prompt&quot;=&gt;true, &quot;recording_transcription&quot;=&gt;true}, &quot;auto_call_recording&quot;=&gt;{&quot;allow_stop_resume_recording&quot;=&gt;true, &quot;disconnect_on_recording_failure&quot;=&gt;true, &quot;enable&quot;=&gt;true, &quot;recording_calls&quot;=&gt;&quot;inbound&quot;, &quot;recording_explicit_consent&quot;=&gt;true, &quot;recording_start_prompt&quot;=&gt;true, &quot;recording_transcription&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;call_overflow&quot;=&gt;{&quot;call_overflow_type&quot;=&gt;2, &quot;enable&quot;=&gt;true}, &quot;call_park&quot;=&gt;{&quot;call_not_picked_up_action&quot;=&gt;50, &quot;enable&quot;=&gt;true, &quot;expiration_period&quot;=&gt;10, &quot;forward_to_extension_id&quot;=&gt;&quot;CcrEGgmeQem1uyJsuIRKwA&quot;}, &quot;call_transferring&quot;=&gt;{&quot;call_transferring_type&quot;=&gt;2, &quot;enable&quot;=&gt;true}, &quot;delegation&quot;=&gt;true, &quot;elevate_to_meeting&quot;=&gt;true, &quot;emergency_address_management&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;prompt_default_address&quot;=&gt;true}, &quot;emergency_calls_to_psap&quot;=&gt;true, &quot;forwarding_to_external_numbers&quot;=&gt;true, &quot;hand_off_to_room&quot;=&gt;{&quot;enable&quot;=&gt;true}, &quot;international_calling&quot;=&gt;true, &quot;mobile_switch_to_carrier&quot;=&gt;{&quot;enable&quot;=&gt;true}, &quot;select_outbound_caller_id&quot;=&gt;{&quot;enable&quot;=&gt;true}, &quot;sms&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;international_sms&quot;=&gt;true, &quot;international_sms_countries&quot;=&gt;[&quot;US&quot;, &quot;US&quot;]}, &quot;voicemail&quot;=&gt;{&quot;allow_delete&quot;=&gt;true, &quot;allow_download&quot;=&gt;true, &quot;allow_transcription&quot;=&gt;true, &quot;allow_videomail&quot;=&gt;true, &quot;enable&quot;=&gt;true}, &quot;voicemail_access_members&quot;=&gt;[{&quot;access_user_id&quot;=&gt;&quot;w0RChiauQeqRlv5fgxYULQ&quot;, &quot;allow_delete&quot;=&gt;true, &quot;allow_download&quot;=&gt;true}], &quot;zoom_phone_on_mobile&quot;=&gt;{&quot;allow_calling_sms_mms&quot;=&gt;true, &quot;enable&quot;=&gt;true}, &quot;personal_audio_library&quot;=&gt;{&quot;allow_music_on_hold_customization&quot;=&gt;true, &quot;allow_voicemail_and_message_greeting_customization&quot;=&gt;true, &quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;voicemail_transcription&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;voicemail_notification_by_email&quot;=&gt;{&quot;include_voicemail_file&quot;=&gt;true, &quot;include_voicemail_transcription&quot;=&gt;true, &quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;shared_voicemail_notification_by_email&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;check_voicemails_over_phone&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}, &quot;audio_intercom&quot;=&gt;{&quot;enable&quot;=&gt;true, &quot;reset&quot;=&gt;true}}, &quot;site_id&quot;=&gt;&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;, &quot;template_id&quot;=&gt;&quot;Dv4YdINdTk+Z5RToadh5ug==&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

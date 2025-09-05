@@ -1,0 +1,102 @@
+# Get meeting details
+
+GET {{baseUrl}}/metrics/meetings/:meetingId?type=live
+
+
+<p>
+Get details on live or past meetings. This overview will show if features such as audio, video, screen sharing, and recording were being used in the meeting. You can also see the license types of each user on your account.
+<br>
+
+  You can specify a monthly date range for the dashboard data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.    
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+   
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business or a higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_meetings:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of meeting to query: 
+* `past` &amp;mdash; All past meetings. 
+* `pastOne` &amp;mdash; All past one-user meetings. 
+* `live` - All live meetings. 
+
+This value defaults to `live`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;has_meeting_summary&quot;:&quot;\u003cboolean\u003e&quot;}
+```

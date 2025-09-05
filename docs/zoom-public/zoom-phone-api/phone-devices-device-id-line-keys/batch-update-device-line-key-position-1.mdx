@@ -1,0 +1,82 @@
+# Batch update device line key position
+
+PATCH {{baseUrl}}/phone/devices/:deviceId/line_keys
+
+
+<p>
+Use this API to batch update the Zoom Phone device 
+<a href="https://support.zoom.us/hc/en-us/articles/4402415568397-Customizing-keys-for-devices-with-multiple-users">
+line key position
+</a>
+ information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+ or 
+<code>
+phone:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;positions&quot;=&gt;[{&quot;extension_id&quot;=&gt;&quot;MjGXQfCxShapaxJDka7&quot;, &quot;index&quot;=&gt;1}, {&quot;extension_id&quot;=&gt;&quot;MjGXQfCxShapaxJDka7&quot;, &quot;index&quot;=&gt;1}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

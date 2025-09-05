@@ -1,0 +1,16 @@
+#  phone-extension-{extensionId}-inbound_blocked-rules
+
+Number of APIs: 3
+
+1. [Add an extension&#39;s inbound block rule](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-extension-extensionid-inbound_blocked-rules/add-an-extensions-inbound-block-rule)
+POST {{baseUrl}}/phone/extension/:extensionId/inbound_blocked/rules
+
+
+2. [List an extension&#39;s inbound block rules](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-extension-extensionid-inbound_blocked-rules/list-an-extensions-inbound-block-rules)
+GET {{baseUrl}}/phone/extension/:extensionId/inbound_blocked/rules?keyword=&lt;string&gt;&amp;match_type=prefix&amp;type=block_as_threat&amp;next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+3. [Delete an extension&#39;s inbound block rule](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-extension-extensionid-inbound_blocked-rules/delete-an-extensions-inbound-block-rule)
+DELETE {{baseUrl}}/phone/extension/:extensionId/inbound_blocked/rules?blocked_rule_id=&lt;string&gt;
+
+

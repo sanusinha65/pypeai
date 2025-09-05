@@ -1,0 +1,88 @@
+# Get call queue recordings
+
+GET {{baseUrl}}/phone/call_queues/:callQueueId/recordings?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;from=2020-10-31&amp;to=2021-12-31
+
+
+<p>
+Use this API to view 
+<a href="https://support.zoom.us/hc/en-us/articles/360038521091#h_cbc9f2a3-e06c-4daa-83d4-ddbceef9c77b">
+call recordings
+</a>
+ from the call queue.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher account with Zoom Phone license.
+</li>
+
+
+<li>
+
+<a href="https://support.zoom.us/hc/en-us/articles/360033511872#h_fcb297bb-14e8-4094-91ca-dc61e1a18734">
+Automatic call recordings
+</a>
+ must be enabled in the Policy Settings for call queues. 
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `from` | string |  | Start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data. The month defined should fall within the last six months. If unspecified, returns data within the 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;2022-03-26&quot;,&quot;next_page_token&quot;:&quot;OvrVMfenVmKgsH0SqfWQ2jgUsHFGXeanCB2&quot;,&quot;page_size&quot;:30,&quot;recordings&quot;:[{&quot;callee_name&quot;:&quot;APITA AUTO&quot;,&quot;callee_number&quot;:&quot;+12058945717&quot;,&quot;callee_number_type&quot;:&quot;3&quot;,&quot;caller_name&quot;:&quot;ZOOM_API Test&quot;,&quot;caller_number&quot;:&quot;+12055432724&quot;,&quot;caller_number_type&quot;:1,&quot;date_time&quot;:&quot;2022-04-01&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;download_url&quot;:&quot;https://file.zoomdev.us/file?filename=call_recording_080e-2cba-4315-a963-81ce9635e_20220401031509.mp3\u0026jwt=eyJhbGciNiJ9.eyJka0NzZiNjQyYjhkZjRlN2E3ZTgxNjU4MmEzMWQ4NjE3NjkyNjNjYmQ0NDJhM2QzYzY3NTZjIiwiaXNzIjoiwiYXVkIjoiZmlsZSIsImlhdCI6MTY0ODV4cCI6MTY0ODc4NTMxN30.azPOfIrODv6v6-7YWwvBWAqysJy_xe_FAI\u0026path=zoomfs%3A%2F%2Fpbx-voice%2Frecording%2F2022%2F4%2F1%2FKxQKamXhQfWQs9BPdvDagA%2F8dunF6uUT1qW3KEe0sgaXA%2F08096c0e-2cba-4315-a963-81=e9635e%2Fcall_recording_080=c0e-2cba-4315-a963-813=635e_20220401031509.mp3&quot;,&quot;duration&quot;:10,&quot;id&quot;:&quot;08096c0e2cba4315a963813d1ce9635e&quot;},{&quot;callee_name&quot;:&quot;APITA AUTO&quot;,&quot;callee_number&quot;:&quot;+12058945717&quot;,&quot;callee_number_type&quot;:&quot;3&quot;,&quot;caller_name&quot;:&quot;ZOOM_API Test&quot;,&quot;caller_number&quot;:&quot;+12055432724&quot;,&quot;caller_number_type&quot;:1,&quot;date_time&quot;:&quot;2022-04-01&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;download_url&quot;:&quot;https://file.zoomdev.us/file?filename=call_recording_080e-2cba-4315-a963-81ce9635e_20220401031509.mp3\u0026jwt=eyJhbGciNiJ9.eyJka0NzZiNjQyYjhkZjRlN2E3ZTgxNjU4MmEzMWQ4NjE3NjkyNjNjYmQ0NDJhM2QzYzY3NTZjIiwiaXNzIjoiwiYXVkIjoiZmlsZSIsImlhdCI6MTY0ODV4cCI6MTY0ODc4NTMxN30.azPOfIrODv6v6-7YWwvBWAqysJy_xe_FAI\u0026path=zoomfs%3A%2F%2Fpbx-voice%2Frecording%2F2022%2F4%2F1%2FKxQKamXhQfWQs9BPdvDagA%2F8dunF6uUT1qW3KEe0sgaXA%2F08096c0e-2cba-4315-a963-81=e9635e%2Fcall_recording_080=c0e-2cba-4315-a963-813=635e_20220401031509.mp3&quot;,&quot;duration&quot;:10,&quot;id&quot;:&quot;08096c0e2cba4315a963813d1ce9635e&quot;}],&quot;to&quot;:&quot;2022-04-1&quot;,&quot;total_records&quot;:1}
+```

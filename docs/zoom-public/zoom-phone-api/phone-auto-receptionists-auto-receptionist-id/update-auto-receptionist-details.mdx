@@ -1,0 +1,80 @@
+# Update auto receptionist details
+
+PATCH {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId
+
+
+<p>
+An auto receptionist answers calls with a personalized recording and routes calls to a phone user, call queue, common area phone, or voicemail. An auto receptionist can also be set up so that it routes calls to an interactive voice response (IVR) system to allow callers to select the routing options.
+<br>
+
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-#h_1d5ffc56-6ba3-4ce5-9d86-4a1a1ee743f3">
+change information
+</a>
+ such as display name and extension number assigned to the main auto receptionist.
+<br>
+
+<br>
+
+
+<strong>
+Prerequisites:
+</strong>
+
+<br>
+
+* Pro or higher account with Zoom Phone license.
+<br>
+
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+ 
+<br>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;cost_center&quot;=&gt;&quot;testCostCenter&quot;, &quot;department&quot;=&gt;&quot;testDepartment&quot;, &quot;extension_number&quot;=&gt;555550000000001, &quot;name&quot;=&gt;&quot;JamieAuto&quot;, &quot;audio_prompt_language&quot;=&gt;&quot;en-US&quot;, &quot;timezone&quot;=&gt;&quot;Pacific/Midway&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

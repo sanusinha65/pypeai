@@ -1,0 +1,112 @@
+# Get common area details
+
+GET {{baseUrl}}/phone/common_areas/:commonAreaId
+
+
+<p>
+Use this API to get detailed information on the common area.
+</p>
+
+
+
+<p>
+
+<strong>
+Note
+</strong>
+: For use by customers who opted for 
+<code>
+Common Area Optimization
+</code>
+  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:common_area:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;area_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;calling_plans&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cinteger\u003e&quot;,&quot;billing_account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_account_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003clong\u003e&quot;,&quot;emergency_address&quot;:{&quot;address_line1&quot;:&quot;\u003cstring\u003e&quot;,&quot;address_line2&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;state_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:1,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;},&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;outbound_caller_ids&quot;:[{&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;phone_numbers&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;internal&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;external&quot;}],&quot;policy&quot;:{&quot;international_calling&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;outbound_calling&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;}},&quot;site&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;status&quot;:&quot;offline&quot;}
+```

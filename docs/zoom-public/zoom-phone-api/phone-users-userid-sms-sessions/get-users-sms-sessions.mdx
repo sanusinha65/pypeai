@@ -1,0 +1,141 @@
+# Get user&#39;s SMS sessions
+
+GET {{baseUrl}}/phone/users/:userId/sms/sessions?page_size=30&amp;next_page_token=&lt;string&gt;&amp;session_type=user&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;phone_number=&lt;string&gt;&amp;filter_type=last_message_time
+
+
+<p>
+Returns details about SMS sessions for a user. 
+</p>
+
+
+
+<p>
+For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Paid account 
+* User-enabled Zoom phone
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+,
+<code>
+phone_sms:read:admin
+</code>
+,
+<code>
+phone_sms:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_sms_sessions
+</code>
+,
+<code>
+phone:read:list_sms_sessions:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The current page number of returned records. |
+| `session_type` | string |  | This field filters the specific session list by a session type.
+
+The value for this field can be one of the following:  
+ `user`  
+ `call_queue`  
+ `auto_receptionist`  
+ `all` |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. 
+
+The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. 
+
+If unspecified, it returns data from the past 30 days. |
+| `to` | string |  | This field is required only when the `from` parameter is specified. 
+
+The end time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format is the same format as the `from` parameter. |
+| `phone_number` | string |  | The sender&#39;s or receiver&#39;s phone number that limits the list of SMS sessions. |
+| `filter_type` | string |  | This field filters by `sent_message_time`, `received_message_time`, or `last_message_time` for the From and To dates.
+* `last_message_time`: can query which sessions last messages between From and To dates.
+* `sent_message_time`: can query which sessions have sent messages between From and To dates.
+* `received_message_time`: can query which sessions have received messages between From and To dates. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sms_sessions&quot;:[{&quot;last_access_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;participants&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_type&quot;:&quot;\u003cstring\u003e&quot;},{&quot;last_access_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;participants&quot;:[{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;autoReceptionist&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;callQueue&quot;},&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_session_owner&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;session_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;session_type&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

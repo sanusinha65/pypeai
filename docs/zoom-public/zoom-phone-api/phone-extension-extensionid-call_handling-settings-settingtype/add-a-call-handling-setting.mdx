@@ -1,0 +1,105 @@
+# Add a call handling setting
+
+POST {{baseUrl}}/phone/extension/:extensionId/call_handling/settings/:settingType
+
+
+<p>
+Adds Zoom Phone call handling subsettings for your phone system. Call handling settings allow you to control how your system routes calls during business, closed, or holiday hours. For more information, see our 
+<a href="https://marketplace.zoom.us/docs/guides/zoom-phone/call-handling/">
+API guide
+</a>
+ or Zoom support article 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, auto receptionist, or shared line group call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:call_handling_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;settings&quot;=&gt;{&quot;holiday_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;sub_setting_type&quot;=&gt;&quot;call_forwarding&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;call_forwarding_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

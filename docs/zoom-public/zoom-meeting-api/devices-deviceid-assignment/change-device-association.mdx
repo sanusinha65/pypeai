@@ -1,0 +1,72 @@
+# Change device association
+
+PATCH {{baseUrl}}/devices/:deviceId/assignment
+
+
+<p>
+This Device API lets you change device association from one Zoom Room to another. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Device must be enrolled in ZMD (Zoom Device Management) 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+device:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;room_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;app_type&quot;=&gt;&quot;ZR&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

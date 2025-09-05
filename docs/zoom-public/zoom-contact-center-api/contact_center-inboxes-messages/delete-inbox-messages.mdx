@@ -1,0 +1,67 @@
+# Delete inbox messages
+
+DELETE {{baseUrl}}/contact_center/inboxes/messages?delete_all_messages=&lt;boolean&gt;&amp;queue_ids=&lt;string&gt;&amp;queue_ids=&lt;string&gt;&amp;flow_ids=&lt;string&gt;&amp;flow_ids=&lt;string&gt;
+
+
+<p>
+Delete messages. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_inbox:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `delete_all_messages` | string |  | Whether or not to delete all inbox messages.
+
+ true: Delete all inbox messages related to the filtered queues or flows. 
+
+ false: No inbox message is deleted. |
+| `queue_ids` | string |  | The queue&#39;s IDs. The maximum value is 10. |
+| `queue_ids` | string |  | The queue&#39;s IDs. The maximum value is 10. |
+| `flow_ids` | string |  | List of flow&#39;s IDs, up to 10 separate IDs. |
+| `flow_ids` | string |  | List of flow&#39;s IDs, up to 10 separate IDs. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

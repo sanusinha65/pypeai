@@ -1,0 +1,69 @@
+# Update registration questions
+
+PATCH {{baseUrl}}/meetings/:meetingId/registrants/questions
+
+
+<p>
+Update registration questions that will be displayed to users while 
+<a href="https://support.zoom.us/hc/en-us/articles/211579443-Registration-for-Meetings">
+registering for a meeting
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write
+</code>
+,
+<code>
+meeting:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;custom_questions&quot;=&gt;[{&quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single&quot;}, {&quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single&quot;}], &quot;questions&quot;=&gt;[{&quot;field_name&quot;=&gt;&quot;address&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;field_name&quot;=&gt;&quot;role_in_purchase_process&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

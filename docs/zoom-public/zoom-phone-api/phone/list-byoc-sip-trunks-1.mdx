@@ -1,0 +1,75 @@
+# List BYOC SIP trunks
+
+GET {{baseUrl}}/phone/sip_trunk/trunks?next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;page_size=30
+
+
+<p>
+Use this API to return a list of an account&#39;s assigned 
+<a href="https://zoom.us/docs/doc/Zoom-Bring%20Your%20Own%20Carrier.pdf">
+BYOC (Bring Your Own Carrier) SIP (Session Initiation Protocol) trunks
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+ or 
+<code>
+phone:master
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;byoc_sip_trunk&quot;:[{&quot;carrier&quot;:&quot;Bandwidth&quot;,&quot;carrier_account&quot;:&quot;123123131313&quot;,&quot;id&quot;:&quot;fVA-LsQhQAC2fTS7NiccFA&quot;,&quot;name&quot;:&quot;TestSipTrunk&quot;,&quot;region&quot;:&quot;newqa01sipjp01&quot;,&quot;sbc_label&quot;:&quot;Test&quot;},{&quot;carrier&quot;:&quot;Bandwidth&quot;,&quot;carrier_account&quot;:&quot;123123131313&quot;,&quot;id&quot;:&quot;fVA-LsQhQAC2fTS7NiccFA&quot;,&quot;name&quot;:&quot;TestSipTrunk&quot;,&quot;region&quot;:&quot;newqa01sipjp01&quot;,&quot;sbc_label&quot;:&quot;Test&quot;}],&quot;next_page_token&quot;:&quot;Ds6anZEv59aLMmTSrfF4wmHYCMiYXMWhRQ2&quot;,&quot;page_size&quot;:30}
+```

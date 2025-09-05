@@ -1,0 +1,62 @@
+# Create an inbox
+
+POST {{baseUrl}}/contact_center/inboxes
+
+
+<p>
+Create a new inbox. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_inbox:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;inbox_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;inbox_description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;inbox_type&quot;=&gt;&quot;voicemail&quot;, &quot;inbox_content_storage_location&quot;=&gt;&quot;US&quot;, &quot;voicemail&quot;=&gt;{&quot;soft_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;soft_delete_days_limit&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;voicemail_time_limit&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;delete_voicemail_days_limit&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;voicemail_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;voicemail_notification_by_email&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;include_voicemail_file&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;include_voicemail_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;forward_voicemail_to_emails&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;emails&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;inbox_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_description&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_type&quot;:&quot;voicemail&quot;,&quot;inbox_content_storage_location&quot;:&quot;CA&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;voicemail&quot;:{&quot;soft_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;soft_delete_days_limit&quot;:&quot;\u003cinteger\u003e&quot;,&quot;voicemail_time_limit&quot;:&quot;\u003cinteger\u003e&quot;,&quot;delete_voicemail_days_limit&quot;:&quot;\u003cinteger\u003e&quot;,&quot;voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;voicemail_notification_by_email&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_file&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;forward_voicemail_to_emails&quot;:&quot;\u003cboolean\u003e&quot;,&quot;emails&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}}}
+```

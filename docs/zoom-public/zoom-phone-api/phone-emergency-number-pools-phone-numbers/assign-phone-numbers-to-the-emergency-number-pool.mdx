@@ -1,0 +1,78 @@
+# Assign phone numbers to the emergency number pool
+
+POST {{baseUrl}}/phone/emergency_number_pools/phone_numbers
+
+
+<p>
+Use this API to assign phone numbers to the 
+<a href="https://support.zoom.us/hc/en-us/articles/360062110192-Routing-emergency-calls">
+Emergency Number Pool
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_numbers&quot;=&gt;[{&quot;id&quot;=&gt;&quot;iHE1MQAET2iV85MbfaQmwg&quot;, &quot;number&quot;=&gt;&quot;+18887193005&quot;}, {&quot;id&quot;=&gt;&quot;iHE1MQAET2iV85MbfaQmwg&quot;, &quot;number&quot;=&gt;&quot;+18887193005&quot;}], &quot;site_id&quot;=&gt;&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;iHE1MQAET2iV85MbfaQmwg&quot;,&quot;number&quot;:&quot;+18887193005&quot;},{&quot;id&quot;:&quot;iHE1MQAET2iV85MbfaQmwg&quot;,&quot;number&quot;:&quot;+18887193005&quot;}]}
+```

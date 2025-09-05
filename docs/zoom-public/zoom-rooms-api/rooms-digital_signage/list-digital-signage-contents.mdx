@@ -1,0 +1,97 @@
+# List digital signage contents
+
+GET {{baseUrl}}/rooms/digital_signage?type=&lt;string&gt;&amp;folder_id=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to return information about a Zoom account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360000030683-Zoom-Rooms-digital-signage">
+Zoom Rooms digital signage content
+</a>
+. You can also view this content in the 
+<strong>
+Room Management
+</strong>
+ section&#39;s 
+<a href="https://zoom.us/digitalsignage#/">
+
+<strong>
+Digital Signage Content
+</strong>
+
+</a>
+ tab in the Zoom web portal. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher account with Zoom Rooms. 
+* Existing content in the 
+<strong>
+Digital Signage Content
+</strong>
+ tab.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | Specify the type of digital signage resource. The value can be one of the following:
+* `content`: Returns information about content files.
+* `folder`: Returns information about the folder where the content files are located. |
+| `folder_id` | string |  | Unique identifier of the folder where the content is located. Provide this field if you would like to filter the response by contents that are only available in a specific folder. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;contents&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;}
+```

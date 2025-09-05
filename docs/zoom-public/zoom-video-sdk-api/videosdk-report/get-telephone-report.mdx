@@ -1,0 +1,80 @@
+# Get telephone report
+
+GET {{baseUrl}}/videosdk/report/telephone?from=2021-10-11&amp;to=2021-10-11&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82&amp;type=&amp;query_date_type=
+
+
+<p>
+The 
+<a href="https://support.zoom.us/hc/en-us/articles/206514816-Telephone-reports">
+telephone report
+</a>
+ allows you to view who dialed into sessions via phone (Audio Conferencing or SIP Connected Audio), which number they dialed into, and other details. Use this API to get the telephone report for a specified period of time. 
+<br>
+
+<br>
+
+
+<strong>
+Prerequisites
+</strong>
+
+<br>
+
+* A Video SDK account.
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) The start date to query, in `yyyy-mm-dd` format.
+
+The ranges defined in the `from` and `to` parameters should **only** be a one month range. This is because the report only includes one month&#39;s worth of data. |
+| `to` | string |  | (Required) The end date to query, in `yyyy-mm-dd` format.
+
+The ranges defined in the `from` and `to` parameters should **only** be a one month range. This is because the report only includes one month&#39;s worth of data. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `type` | null |  | Audio types:&lt;br&gt;`1` - Toll-free Call-in &amp; Call-out.&lt;br&gt;`2` - Toll &lt;br&gt;
+`3` - SIP Connected Audio (This can only be one of 1,2,3) |
+| `query_date_type` | null |  | The type of date to query: 
+* `start_time` — Query by call start time. 
+* `end_time` — Query by call end time. 
+* `session_start_time` — Query by session start time. 
+* `session_end_time` — Query by session end time. 
+
+This value defaults to `start_time`. (This can only be one of start_time,end_time,session_start_time,session_end_time) |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;page_size&quot;:50,&quot;next_page_token&quot;:&quot;suQA5LvDBnH5No5OYD7mqpJuFzJqUOHK8U2&quot;,&quot;from&quot;:&quot;2019-07-15&quot;,&quot;to&quot;:&quot;2019-07-20&quot;,&quot;telephony_usage&quot;:[{&quot;session_id&quot;:&quot;sfk/aOFJSJSYhGwk1hnxgw==&quot;,&quot;phone_number&quot;:&quot;000002001&quot;,&quot;signaled_number&quot;:&quot;000002001&quot;,&quot;start_time&quot;:&quot;2019-07-15T23:24:52Z&quot;,&quot;end_time&quot;:&quot;2019-07-15T23:30:19Z&quot;,&quot;duration&quot;:52779115,&quot;total&quot;:90324461.0447123,&quot;country_name&quot;:&quot;Macau SAR&quot;,&quot;call_in_number&quot;:&quot;+85123456789&quot;,&quot;type&quot;:&quot;toll-free&quot;,&quot;rate&quot;:26614345.8026177},{&quot;session_id&quot;:&quot;sfk/aOFJSJSYhGwk1hnxgw==&quot;,&quot;phone_number&quot;:&quot;000002001&quot;,&quot;signaled_number&quot;:&quot;000002001&quot;,&quot;start_time&quot;:&quot;2019-07-15T23:24:52Z&quot;,&quot;end_time&quot;:&quot;2019-07-15T23:30:19Z&quot;,&quot;duration&quot;:40716844,&quot;total&quot;:-43407581.102647,&quot;country_name&quot;:&quot;Macau SAR&quot;,&quot;call_in_number&quot;:&quot;+85123456789&quot;,&quot;type&quot;:&quot;toll-free&quot;,&quot;rate&quot;:51499133.88117099}]}
+```

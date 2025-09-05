@@ -1,0 +1,113 @@
+# Unassign user&#39;s calling plan
+
+DELETE {{baseUrl}}/phone/users/:userId/calling_plans/:planType?billing_account_id=&lt;string&gt;
+
+
+<p>
+Unassigns a a 
+<a href="https://support.zoom.us/hc/en-us/categories/360001370051">
+Zoom Phone
+</a>
+ user&#39;s 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans#zoom-phone-calling-plans">
+calling plan
+</a>
+. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+,
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:users_calling_plan
+</code>
+,
+<code>
+phone:delete:users_calling_plan:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `billing_account_id` | string |  | The billing account ID. If the user is located in India, the parameter is required. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,16 @@
+#  chat-users-{userId}-channels-{channelId}-admins
+
+Number of APIs: 3
+
+1. [List channel administrators](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-channels-channelid-admins/list-channel-administrators)
+GET {{baseUrl}}/chat/users/:userId/channels/:channelId/admins?page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+2. [Promote channel members to administrators](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-channels-channelid-admins/promote-channel-members-to-administrators)
+POST {{baseUrl}}/chat/users/:userId/channels/:channelId/admins
+
+
+3. [Batch demote channel administrators](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-channels-channelid-admins/batch-demote-channel-administrators)
+DELETE {{baseUrl}}/chat/users/:userId/channels/:channelId/admins?admin_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;
+
+

@@ -1,0 +1,116 @@
+# Add audio items
+
+POST {{baseUrl}}/phone/users/:userId/audios/batch
+
+
+<p>
+Adds the audio items. You can only upload voice files at this time. Only the admin or user can add your audio and directly pass the 
+<code>
+me
+</code>
+ value instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Size and quantity limits for audio attachments:
+</strong>
+
+* Up to 5 attachments
+* Each file size should be no more than 1MB
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+,
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:batch_audios
+</code>
+,
+<code>
+phone:write:batch_audios:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;attachments&quot;=&gt;[{&quot;audio_type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;base64_encoding&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;audio_type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;base64_encoding&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;audios&quot;:[{&quot;audio_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;audio_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

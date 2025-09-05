@@ -1,0 +1,79 @@
+# Get billing reports
+
+GET {{baseUrl}}/report/billing
+
+
+<p>
+Get department billing reports of a Zoom account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Department Billing option enabled. Contact Zoom Support team for details.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;billing_reports&quot;:[{&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1},{&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:0}],&quot;currency&quot;:&quot;\u003cstring\u003e&quot;}
+```

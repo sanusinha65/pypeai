@@ -1,0 +1,73 @@
+# Remove users&#39; customized outbound caller ID phone numbers
+
+DELETE {{baseUrl}}/phone/users/:userId/outbound_caller_id/customized_numbers?customize_ids=8_RkKw9OQ42oYsXqJJjs4A&amp;customize_ids=8_RkKw9OQ42oYsXqJJjs4A
+
+
+<p>
+Use this API to remove the users&#39; customized outbound caller ID phone numbers. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `customize_ids` | string |  | The customization IDs. |
+| `customize_ids` | string |  | The customization IDs. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

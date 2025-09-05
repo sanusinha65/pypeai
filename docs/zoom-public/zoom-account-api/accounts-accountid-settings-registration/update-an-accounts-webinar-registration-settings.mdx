@@ -1,0 +1,84 @@
+# Update an account&#39;s webinar registration settings
+
+PATCH {{baseUrl}}/accounts/:accountId/settings/registration?type=webinar
+
+
+<p>
+Update an account&#39;s webinar registration settings. To update the master account&#39;s webinar registration settings, pass the 
+<code>
+me
+</code>
+ value for the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The account must be a paid account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The registration&#39;s type.
+* `webinar` &amp;mdash; webinar. |
+
+
+### Request Body
+```
+{&quot;options&quot;=&gt;{&quot;host_email_notification&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;close_registration&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_participants_to_join_from_multiple_devices&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;show_social_share_buttons&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;questions&quot;=&gt;[{&quot;field_name&quot;=&gt;&quot;country&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;field_name&quot;=&gt;&quot;comments&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;}], &quot;approve_type&quot;=&gt;1, &quot;custom_questions&quot;=&gt;[{&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single_dropdown&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;single_dropdown&quot;, &quot;required&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,99 @@
+# Get user&#39;s recordings
+
+GET {{baseUrl}}/phone/users/:userId/recordings?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;from=2020-12-31&amp;to=2021-12-31
+
+
+<p>
+Use this API to get a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360021336671-Viewing-Call-History-and-Recordings">
+Zoom Phone recordings
+</a>
+. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read
+</code>
+, 
+<code>
+phone:read:admin
+</code>
+, 
+<code>
+phone_recording:read
+</code>
+, 
+<code>
+phone_recording:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `from` | string |  | Start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. The month defined should fall within the last six months. If unspecified, returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;2021-11-01&quot;,&quot;next_page_token&quot;:&quot;6jqhz348c100oHbw6cVER45YderniREnwr1&quot;,&quot;page_count&quot;:1,&quot;page_size&quot;:30,&quot;recordings&quot;:[{&quot;call_id&quot;:&quot;7025841973929235024&quot;,&quot;call_log_id&quot;:&quot;8f7345c5-0a65-4182-ab16-72fdb3be61ff&quot;,&quot;callee_name&quot;:&quot;User A&quot;,&quot;callee_number&quot;:&quot;1000001004&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;User B&quot;,&quot;caller_number&quot;:&quot;1000001028&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;User B&quot;,&quot;extension_number&quot;:&quot;123476&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;User A&quot;,&quot;extension_number&quot;:&quot;101001&quot;},&quot;date_time&quot;:&quot;2021-11-02T05:35:20Z&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;download_url&quot;:&quot;https://domain/recording/download/EvVNLihbQ1WpeG_ALwnNzg&quot;,&quot;duration&quot;:11,&quot;id&quot;:&quot;8f7345c50a654182ab1672fdb3be61ff&quot;,&quot;transcript_download_url&quot;:&quot;https://domain/recording_transcript/download/8f7345c50a654182ab1672fdb3be61ff&quot;},{&quot;call_id&quot;:&quot;7025841973929235024&quot;,&quot;call_log_id&quot;:&quot;8f7345c5-0a65-4182-ab16-72fdb3be61ff&quot;,&quot;callee_name&quot;:&quot;User A&quot;,&quot;callee_number&quot;:&quot;1000001004&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;User B&quot;,&quot;caller_number&quot;:&quot;1000001028&quot;,&quot;caller_number_type&quot;:1,&quot;outgoing_by&quot;:{&quot;name&quot;:&quot;User B&quot;,&quot;extension_number&quot;:&quot;123476&quot;},&quot;accepted_by&quot;:{&quot;name&quot;:&quot;User A&quot;,&quot;extension_number&quot;:&quot;101001&quot;},&quot;date_time&quot;:&quot;2021-11-02T05:35:20Z&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;download_url&quot;:&quot;https://domain/recording/download/EvVNLihbQ1WpeG_ALwnNzg&quot;,&quot;duration&quot;:11,&quot;id&quot;:&quot;8f7345c50a654182ab1672fdb3be61ff&quot;,&quot;transcript_download_url&quot;:&quot;https://domain/recording_transcript/download/8f7345c50a654182ab1672fdb3be61ff&quot;}],&quot;to&quot;:&quot;2021-11-03&quot;,&quot;total_records&quot;:50}
+```

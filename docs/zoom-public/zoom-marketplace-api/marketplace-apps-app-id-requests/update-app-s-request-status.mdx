@@ -1,0 +1,57 @@
+# Update app&#39;s request status
+
+PATCH {{baseUrl}}/marketplace/apps/:appId/requests
+
+
+<p>
+Use this API to update an app&#39;s request status. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+marketplace_app:write:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;approve_all&quot;, &quot;request_user_ids&quot;=&gt;[&quot;f1sTWCMaTmOIZxLMlmHvEQ&quot;, &quot;f1sTWCMaTmOIZxLMlmHvEQ&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

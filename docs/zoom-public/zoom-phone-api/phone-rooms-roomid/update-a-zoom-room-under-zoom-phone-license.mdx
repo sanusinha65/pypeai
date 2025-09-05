@@ -1,0 +1,91 @@
+# Update a Zoom Room under Zoom Phone license
+
+PATCH {{baseUrl}}/phone/rooms/:roomId
+
+
+<p>
+Use this API to update a 
+<a href="https://support.zoom.us/hc/en-us/articles/360025153711">
+Zoom Room
+</a>
+ in an account that has the Zoom Phone license assigned.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:room:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;extension_number&quot;=&gt;&quot;&lt;long&gt;&quot;, &quot;policy&quot;=&gt;{&quot;international_calling&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;select_outbound_caller_id&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}, &quot;site_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

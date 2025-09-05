@@ -1,0 +1,74 @@
+# Add phone numbers for users&#39; customized outbound caller ID
+
+POST {{baseUrl}}/phone/users/:userId/outbound_caller_id/customized_numbers
+
+
+<p>
+Use this API to add users&#39; customized outbound caller ID phone numbers. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_number_ids&quot;=&gt;[&quot;55JUZPwERHuGttd_j4qBsQ&quot;, &quot;55JUZPwERHuGttd_j4qBsQ&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{}
+```

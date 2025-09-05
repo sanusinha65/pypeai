@@ -1,0 +1,100 @@
+# List meetings
+
+GET {{baseUrl}}/users/:userId/meetings?type=scheduled&amp;page_size=30&amp;next_page_token=IAfJX3jsOLW7w3dokmFl84zOa0MAVGyMEB2&amp;page_number=1
+
+
+<p>
+Use this API to list a user&#39;s (meeting host) scheduled meetings. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+* This API 
+<strong>
+only
+</strong>
+ supports scheduled meetings. This API does not return information about instant meetings. 
+* This API only returns a user&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/201362373-Meeting-ID#h_c73f9b08-c1c0-4a1a-b538-e01ebb98e844">
+unexpired meetings
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+, 
+<code>
+meeting:read
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The type of meeting: 
+* `scheduled` — All valid previous (unexpired) meetings, live meetings, and upcoming scheduled meetings. 
+* `live` — All the ongoing meetings. 
+* `upcoming` — All upcoming meetings, including live meetings. 
+* `upcoming_meetings` — All upcoming meetings, including live meetings. 
+* `previous_meetings` — All the previous meetings. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_number` | number |  | The page number of the current page in the returned records. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;Tva2CuIdTgsv8wAnhyAdU3m06Y2HuLQtlh3&quot;,&quot;page_count&quot;:1,&quot;page_number&quot;:1,&quot;page_size&quot;:30,&quot;total_records&quot;:1,&quot;meetings&quot;:[{&quot;agenda&quot;:&quot;My Meeting&quot;,&quot;created_at&quot;:&quot;2022-03-23T05:31:16Z&quot;,&quot;duration&quot;:60,&quot;host_id&quot;:&quot;30R7kT7bTIKSNUFEuH_Qlg&quot;,&quot;id&quot;:97763643886,&quot;join_url&quot;:&quot;https://example.com/j/11111&quot;,&quot;pmi&quot;:&quot;97891943927&quot;,&quot;start_time&quot;:&quot;2022-03-23T06:00:00Z&quot;,&quot;timezone&quot;:&quot;America/Los_Angeles&quot;,&quot;topic&quot;:&quot;My Meeting&quot;,&quot;type&quot;:2,&quot;uuid&quot;:&quot;aDYlohsHRtCd4ii1uC2+hA==&quot;},{&quot;agenda&quot;:&quot;My Meeting&quot;,&quot;created_at&quot;:&quot;2022-03-23T05:31:16Z&quot;,&quot;duration&quot;:60,&quot;host_id&quot;:&quot;30R7kT7bTIKSNUFEuH_Qlg&quot;,&quot;id&quot;:97763643886,&quot;join_url&quot;:&quot;https://example.com/j/11111&quot;,&quot;pmi&quot;:&quot;97891943927&quot;,&quot;start_time&quot;:&quot;2022-03-23T06:00:00Z&quot;,&quot;timezone&quot;:&quot;America/Los_Angeles&quot;,&quot;topic&quot;:&quot;My Meeting&quot;,&quot;type&quot;:2,&quot;uuid&quot;:&quot;aDYlohsHRtCd4ii1uC2+hA==&quot;}]}
+```

@@ -1,0 +1,87 @@
+# Get an auto receptionist policy
+
+GET {{baseUrl}}/phone/auto_receptionists/:autoReceptionistId/policies
+
+
+<p>
+Use this API to get the policy setting of a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license.
+* Account owner or admin permissions.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:auto_receptionist_policy:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;voicemail_access_members&quot;:[{&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;download&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;shared_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;download&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;voicemail_transcription&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail_notification_by_email&quot;:{&quot;include_voicemail_file&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;forward_voicemail_to_email&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;},&quot;sms&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;international_sms&quot;:&quot;\u003cboolean\u003e&quot;,&quot;international_sms_countries&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;site&quot;,&quot;modified&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

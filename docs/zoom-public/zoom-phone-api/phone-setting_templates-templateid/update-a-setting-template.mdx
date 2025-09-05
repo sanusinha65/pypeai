@@ -1,0 +1,87 @@
+# Update a setting template
+
+PATCH {{baseUrl}}/phone/setting_templates/:templateId
+
+
+<p>
+Updates or modifies a phone template&#39;s settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:setting_template:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;policy&quot;=&gt;{&quot;ad_hoc_call_recording&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_start_prompt&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;auto_call_recording&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_calls&quot;=&gt;&quot;outbound&quot;, &quot;recording_start_prompt&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;sms&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;international_sms&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;voicemail&quot;=&gt;{&quot;allow_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;call_forwarding&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;call_forwarding_type&quot;=&gt;1}, &quot;call_overflow&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;call_overflow_type&quot;=&gt;1}}, &quot;profile&quot;=&gt;{&quot;area_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;user_settings&quot;=&gt;{&quot;audio_prompt_language&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;block_calls_without_caller_id&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;call_handling&quot;=&gt;{&quot;business_hours&quot;=&gt;{&quot;business_hour_action&quot;=&gt;1, &quot;connect_to_operator&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_number&quot;=&gt;{&quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;play_callee_voicemail_greeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_press_1_before_connecting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_caller_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;busy_action&quot;=&gt;26, &quot;busy_connect_operator&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_number&quot;=&gt;{&quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;play_callee_voicemail_greeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_press_1_before_connecting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_caller_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;custom_hours&quot;=&gt;[{&quot;from&quot;=&gt;&quot;&lt;time&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;time&gt;&quot;, &quot;type&quot;=&gt;2, &quot;weekday&quot;=&gt;7}, {&quot;from&quot;=&gt;&quot;&lt;time&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;time&gt;&quot;, &quot;type&quot;=&gt;2, &quot;weekday&quot;=&gt;4}], &quot;ring_type&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;ringing_duration&quot;=&gt;&quot;45&quot;, &quot;type&quot;=&gt;2}, &quot;close_hours&quot;=&gt;{&quot;close_hour_action&quot;=&gt;0, &quot;connect_to_operator&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_number&quot;=&gt;{&quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;play_callee_voicemail_greeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_press_1_before_connecting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_caller_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;busy_action&quot;=&gt;0, &quot;busy_connect_operator&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_number&quot;=&gt;{&quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;play_callee_voicemail_greeting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;require_press_1_before_connecting&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_caller_check_voicemail&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;max_wait_time&quot;=&gt;&quot;50&quot;}}, &quot;desk_phone&quot;=&gt;{&quot;pin_code&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;hold_music&quot;=&gt;&quot;default&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,135 @@
+# Get account&#39;s call history
+
+GET {{baseUrl}}/phone/call_history?page_size=30&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;next_page_token=&lt;string&gt;&amp;keyword=&lt;string&gt;&amp;directions=outbound&amp;directions=outbound&amp;connect_types=internal&amp;connect_types=internal&amp;number_types=3rd_party_contact_center&amp;number_types=byoc&amp;call_types=emergency&amp;call_types=emergency&amp;extension_types=group_call_pickup&amp;extension_types=user&amp;call_results=answered&amp;call_results=connected&amp;group_ids=&lt;string&gt;&amp;group_ids=&lt;string&gt;&amp;site_ids=&lt;string&gt;&amp;site_ids=&lt;string&gt;&amp;department=&lt;string&gt;&amp;cost_center=&lt;string&gt;&amp;time_type=start_time&amp;recording_status=
+
+
+<p>
+Returns an account&#39;s new edition 
+<a href="https://support.zoom.us/hc/en-us/articles/360021114452-Viewing-Call-Logs">
+call logs
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license 
+* Account owner or a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Role-Based-Access-Control">
+role
+</a>
+ with Zoom Phone management
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone_call_log:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_call_logs:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. 
+
+The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data. The month defined should fall within the last six months. If unspecified, returns data within the 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. 
+
+End time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `keyword` | string |  | The keyword of the name, extension, number, email address, and call ID. It provides the ability to search by keyword and it shows a list of all the related calls. Any calls go through this keyword. |
+| `directions` | string |  | The direction filter of the call logs. |
+| `directions` | string |  | The direction filter of the call logs. |
+| `connect_types` | string |  | The connect type filter of the call logs. 
+* `internal` 
+* `external`  |
+| `connect_types` | string |  | The connect type filter of the call logs. 
+* `internal` 
+* `external`  |
+| `number_types` | string |  | The number type filter of the caller or callee.  |
+| `number_types` | string |  | The number type filter of the caller or callee.  |
+| `call_types` | string |  | The call type filter of the call logs. 
+* `general` 
+* `emergency` |
+| `call_types` | string |  | The call type filter of the call logs. 
+* `general` 
+* `emergency` |
+| `extension_types` | string |  | The extension type filter of the call logs. |
+| `extension_types` | string |  | The extension type filter of the call logs. |
+| `call_results` | string |  | The call result filter of the call logs. |
+| `call_results` | string |  | The call result filter of the call logs. |
+| `group_ids` | string |  | The primary group filter of call logs. |
+| `group_ids` | string |  | The primary group filter of call logs. |
+| `site_ids` | string |  | The site filter of call logs. |
+| `site_ids` | string |  | The site filter of call logs. |
+| `department` | string |  | The department of which the call log belongs. |
+| `cost_center` | string |  | The cost center of which the call log belongs. |
+| `time_type` | string |  | This field enables you to search call logs by start or end time. By default, using start_time |
+| `recording_status` | null |  | The recording filter indicates whether the whole call has recording or not. recorded means the call has at least one recording, non_recorded means the call does not have any recordings. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_logs&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;connect_type&quot;:&quot;internal&quot;,&quot;sbc_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sbc_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;general&quot;,&quot;call_result&quot;:&quot;abandoned&quot;,&quot;caller_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_type&quot;:&quot;shared_line_group&quot;,&quot;caller_number_type&quot;:&quot;anonymous_number&quot;,&quot;callee_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_type&quot;:&quot;common_area&quot;,&quot;callee_number_type&quot;:&quot;byop&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;spam&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_status&quot;:&quot;recorded&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;connect_type&quot;:&quot;external&quot;,&quot;sbc_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sbc_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_group_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;general&quot;,&quot;call_result&quot;:&quot;hang_up&quot;,&quot;caller_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_ext_type&quot;:&quot;call_queue&quot;,&quot;caller_number_type&quot;:&quot;zoom_toll_free_number&quot;,&quot;callee_ext_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_did_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_email&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_ext_type&quot;:&quot;external_contact&quot;,&quot;callee_number_type&quot;:&quot;anonymous_number&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;site_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;spam&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_status&quot;:&quot;recorded&quot;}],&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,95 @@
+# Get Zoom Rooms details
+
+GET {{baseUrl}}/metrics/zoomrooms/:zoomroomId?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+The Zoom Rooms dashboard metrics lets you know the type of configuration a Zoom room has and details on the meetings held in that room. 
+</p>
+
+
+
+<p>
+Use this API to retrieve information on a specific room.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Business, Education or API Plan with Zoom Rooms set up.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_zr:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;account_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;calender_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;camera&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_ip&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;health&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;issues&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;last_start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;microphone&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;speaker&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;\u003cstring\u003e&quot;,&quot;live_meeting&quot;:{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;},&quot;past_meetings&quot;:{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;meetings&quot;:[{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;},{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}]}}
+```

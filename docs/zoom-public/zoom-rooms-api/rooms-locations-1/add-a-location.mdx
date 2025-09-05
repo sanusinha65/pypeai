@@ -1,0 +1,78 @@
+# Add a location
+
+POST {{baseUrl}}/rooms/locations
+
+
+<p>
+Add a location to the 
+<a href="https://support.zoom.us/hc/en-us/articles/115000342983-Zoom-Rooms-Location-Hierarchy">
+location hierarchial structure(s)
+</a>
+ of Zoom Rooms in an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Account owner or admin permissions.
+* Zoom Rooms Version 4.0 or higher  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;parent_location_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;parent_location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;states&quot;}
+```

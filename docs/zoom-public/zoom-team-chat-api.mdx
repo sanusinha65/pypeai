@@ -1,0 +1,74 @@
+#Zoom Team Chat API
+
+Number of APIs: 40
+
+
+<p>
+The Zoom Team Chat API allows developers to access information from Zoom. You can use this API to build private services or public applications on the 
+<a href="http://marketplace.zoom.us">
+Zoom App Marketplace
+</a>
+. To learn how to get your credentials and create private/public applications, read our 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+OAuth
+</a>
+ documentation. All endpoints are available via 
+<code>
+https
+</code>
+ and are located at 
+<code>
+api.zoom.us/v2/
+</code>
+.
+</p>
+
+
+
+<p>
+Contact Support:
+ Name: Zoom Developers
+</p>
+
+
+
+1. [im-users-me-chat-messages - Send IM messages](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/im-users-me-chat-messages/send-im-messages)
+POST {{baseUrl}}/im/users/me/chat/messages?chat_user=&lt;email&gt;
+
+
+2. [im-chat-sessions-{sessionId} - Get IM chat messages](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/im-chat-sessions-sessionid/get-im-chat-messages)
+GET {{baseUrl}}/im/chat/sessions/:sessionId?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+3. [chat-users-{userId}-messages-{messageId} - Delete a message](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-messages-messageid/delete-a-message)
+DELETE {{baseUrl}}/chat/users/:userId/messages/:messageId?to_contact=&lt;email&gt;&amp;to_channel=&lt;string&gt;
+
+
+4. [chat-users-{userId}-messages-{messageId}-emoji_reactions - React to a chat message](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-messages-messageid-emoji_reactions/react-to-a-chat-message)
+PATCH {{baseUrl}}/chat/users/:userId/messages/:messageId/emoji_reactions
+
+
+5. [chat-users-{userId}-messages-files - Send a chat file](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-messages-files/send-a-chat-file)
+POST {{baseUrl}}/chat/users/:userId/messages/files
+
+
+6. [chat-users-{userId}-messages - Send a chat message](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-messages/send-a-chat-message)
+POST {{baseUrl}}/chat/users/:userId/messages
+
+
+7. [chat-users-{userId}-channels-{channelId}-admins - List channel administrators](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-channels-channelid-admins/list-channel-administrators)
+GET {{baseUrl}}/chat/users/:userId/channels/:channelId/admins?page_size=10&amp;next_page_token=&lt;string&gt;
+
+
+8. [chat-users-{userId}-files - Upload a chat file](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-files/upload-a-chat-file)
+POST {{baseUrl}}/chat/users/:userId/files
+
+
+9. [chat-users-{userId}-channels-{channelId}-members-{identifier} - Remove a member](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-channels-channelid-members-identifier/remove-a-member)
+DELETE {{baseUrl}}/chat/users/:userId/channels/:channelId/members/:identifier
+
+
+10. [chat-users-{userId}-channels-{channelId} - Delete a channel](https://developers.qodex.ai/zoom-public/zoom-team-chat-api/chat-users-userid-channels-channelid/delete-a-channel)
+DELETE {{baseUrl}}/chat/users/:userId/channels/:channelId
+
+

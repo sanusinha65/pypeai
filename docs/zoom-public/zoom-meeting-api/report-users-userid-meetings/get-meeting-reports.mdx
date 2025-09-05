@@ -1,0 +1,99 @@
+# Get meeting reports
+
+GET {{baseUrl}}/report/users/:userId/meetings?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;type=past
+
+
+<p>
+Retrieve 
+<a href="https://support.zoom.us/hc/en-us/articles/216378603-Meeting-Reporting">
+report
+</a>
+ on past meetings and webinars for a specified time period. The time range for the report is limited to a month and the month must fall within the past six months.
+</p>
+
+
+
+<p>
+Meetings and webinars are returned only if they have two or more unique participants.    
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `type` | string |  | The meeting type to query for: 
+* `past` &amp;mdash; All past meetings. 
+* `pastOne` &amp;mdash; A single past user meeting. 
+* `pastJoined` &amp;mdash; All past meetings the account&#39;s users hosted or joined. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_number&quot;:1,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;meetings&quot;:[{&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;session_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:4,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;schedule_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_waiting_room_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_organization&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_encryption_status&quot;:2,&quot;participants_count_my_account&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;id&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;session_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;source&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:1,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;schedule_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_waiting_room_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_organization&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_encryption_status&quot;:2,&quot;participants_count_my_account&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;to&quot;:&quot;\u003cdate\u003e&quot;}
+```

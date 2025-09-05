@@ -1,0 +1,61 @@
+# Update a queue&#39;s operating hours
+
+PATCH {{baseUrl}}/contact_center/queues/:queueId/operating_hours
+
+
+<p>
+Update a queue&#39;s operating hours. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_queue:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;account_default_business_hour&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;operating_hours_business_hour_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;account_default_closure_set&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;operating_hours_closure_set_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

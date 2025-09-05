@@ -1,0 +1,110 @@
+# List user schedulers
+
+GET {{baseUrl}}/users/:userId/schedulers
+
+
+<p>
+List all of a user&#39;s schedulers. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+Schedulers in this context are users who can schedule meetings for the current user. For example, if the current user, the user whose 
+<code>
+userId
+</code>
+ was passed in the 
+<code>
+path
+</code>
+ parameter, is 
+<strong>
+User A
+</strong>
+, this API&#39;s response will list all users for whom 
+<strong>
+User A
+</strong>
+ can schedule and manage meetings. 
+<strong>
+User A
+</strong>
+ is the assistant of these users, and thus has scheduling privilege for these users.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+ 
+* Current user must be under the same account as the scheduler.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:read:admin
+</code>
+,
+<code>
+user:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;schedulers&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;pmi&quot;:&quot;\u003clong\u003e&quot;},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;pmi&quot;:&quot;\u003clong\u003e&quot;}]}
+```

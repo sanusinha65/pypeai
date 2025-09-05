@@ -1,0 +1,66 @@
+# List users&#39; profiles
+
+GET {{baseUrl}}/contact_center/users?search_key=&lt;string&gt;&amp;next_page_token=&lt;string&gt;&amp;page_size=30&amp;region_id=&lt;string&gt;&amp;user_access=inactive
+
+
+<p>
+Returns a list of users and their information. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_user:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `search_key` | string |  | The user&#39;s email address or username. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `region_id` | string |  | The region&#39;s ID. |
+| `user_access` | string |  | The user&#39;s access status. 
+* `active` &amp;mdash; The user&#39;s role permissions allow them to access the Contact Center. 
+* `inactive` &amp;mdash; The user cannot access the Contact Center. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;users&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;role_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;client_integration&quot;:&quot;Default&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Offline&quot;,&quot;sub_status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_status_name&quot;:&quot;Meal&quot;,&quot;user_access&quot;:&quot;inactive&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_settings&quot;:{&quot;multi_channel_engagements&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;max_agent_load&quot;:&quot;\u003cinteger\u003e&quot;},&quot;concurrent_message_capacity&quot;:&quot;\u003cinteger\u003e&quot;}},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;role_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;client_integration&quot;:&quot;Microsoft_Dynamics_365&quot;,&quot;status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status_name&quot;:&quot;Occupied&quot;,&quot;sub_status_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sub_status_name&quot;:&quot;Meal&quot;,&quot;user_access&quot;:&quot;active&quot;,&quot;modified_by&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;country_iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_settings&quot;:{&quot;multi_channel_engagements&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;max_agent_load&quot;:&quot;\u003cinteger\u003e&quot;},&quot;concurrent_message_capacity&quot;:&quot;\u003cinteger\u003e&quot;}}]}
+```

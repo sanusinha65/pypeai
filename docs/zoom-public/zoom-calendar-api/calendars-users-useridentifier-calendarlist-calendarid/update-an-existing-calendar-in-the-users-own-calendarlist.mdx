@@ -1,0 +1,69 @@
+# Update an existing calendar in the user&#39;s own calendarList
+
+PATCH {{baseUrl}}/calendars/users/:userIdentifier/calendarList/:calendarId?colorRgbFormat=&lt;boolean&gt;
+
+
+<p>
+Updates an existing calendar on the user&#39;s calendar list.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `colorRgbFormat` | string |  | This parameter must be set to true when user wants to change the foreground or background color.  |
+
+
+### Request Body
+```
+{&quot;id&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;summary&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;location&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timeZone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;colorId&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;backgroundColor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;foregroundColor&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;hidden&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;selected&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;accessRole&quot;=&gt;&quot;freeBusyReader&quot;, &quot;defaultReminders&quot;=&gt;[{&quot;method&quot;=&gt;&quot;email&quot;, &quot;minutes&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;method&quot;=&gt;&quot;email&quot;, &quot;minutes&quot;=&gt;&quot;&lt;integer&gt;&quot;}], &quot;defaultAllDayReminders&quot;=&gt;[{&quot;method&quot;=&gt;&quot;popup&quot;, &quot;minutes&quot;=&gt;&quot;&lt;integer&gt;&quot;}, {&quot;method&quot;=&gt;&quot;popup&quot;, &quot;minutes&quot;=&gt;&quot;&lt;integer&gt;&quot;}], &quot;notificationSettings&quot;=&gt;{&quot;notifications&quot;=&gt;[{&quot;type&quot;=&gt;&quot;agenda&quot;, &quot;method&quot;=&gt;&quot;email&quot;}, {&quot;type&quot;=&gt;&quot;eventCancellation&quot;, &quot;method&quot;=&gt;&quot;email&quot;}]}, &quot;primary&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;deleted&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;summaryOverride&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cemail\u003e&quot;,&quot;kind&quot;:&quot;\u003cstring\u003e&quot;,&quot;etag&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;timeZone&quot;:&quot;\u003cstring\u003e&quot;,&quot;colorId&quot;:&quot;\u003cstring\u003e&quot;,&quot;backgroundColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;foregroundColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;hidden&quot;:&quot;\u003cboolean\u003e&quot;,&quot;selected&quot;:&quot;\u003cboolean\u003e&quot;,&quot;accessRole&quot;:&quot;reader&quot;,&quot;defaultReminders&quot;:[{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;defaultAllDayReminders&quot;:[{&quot;method&quot;:&quot;email&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;method&quot;:&quot;popup&quot;,&quot;minutes&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;notificationSettings&quot;:{&quot;notifications&quot;:[{&quot;type&quot;:&quot;eventChange&quot;,&quot;method&quot;:&quot;email&quot;},{&quot;type&quot;:&quot;agenda&quot;,&quot;method&quot;:&quot;email&quot;}]},&quot;primary&quot;:&quot;\u003cboolean\u003e&quot;,&quot;deleted&quot;:&quot;\u003cboolean\u003e&quot;,&quot;summaryOverride&quot;:&quot;\u003cstring\u003e&quot;}
+```

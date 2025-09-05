@@ -1,0 +1,72 @@
+# List tracking fields
+
+GET {{baseUrl}}/tracking_fields
+
+
+<p>
+Use this API to list all the 
+<a href="https://support.zoom.us/hc/en-us/articles/115000293426-Scheduling-Tracking-Fields">
+tracking fields
+</a>
+ on your Zoom account. Tracking fields let you analyze usage by various fields within an organization. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business, Education, API or higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tracking_fields:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;tracking_fields&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;recommended_values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;visible&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;recommended_values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;visible&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

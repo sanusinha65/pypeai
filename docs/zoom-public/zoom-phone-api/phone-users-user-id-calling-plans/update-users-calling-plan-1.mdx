@@ -1,0 +1,94 @@
+# Update user&#39;s calling plan
+
+PUT {{baseUrl}}/phone/users/:userId/calling_plans
+
+
+<p>
+Use this API to switch 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans#zoom-phone-calling-plans">
+calling plans
+</a>
+ of a 
+<a href="https://support.zoom.us/hc/en-us/categories/360001370051-Zoom-Phone">
+Zoom Phone
+</a>
+ user. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;source_type&quot;=&gt;100, &quot;target_type&quot;=&gt;200}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

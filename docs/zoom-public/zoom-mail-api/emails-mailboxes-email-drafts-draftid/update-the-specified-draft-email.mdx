@@ -1,0 +1,72 @@
+# Update the specified draft email
+
+PUT {{baseUrl}}/emails/mailboxes/:email/drafts/:draftId
+
+
+<p>
+Replaces a draft email&#39;s content.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;message&quot;=&gt;{&quot;raw&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;message&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;threadId&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}}
+```

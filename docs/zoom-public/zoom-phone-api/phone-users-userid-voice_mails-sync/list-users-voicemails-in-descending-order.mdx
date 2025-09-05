@@ -1,0 +1,110 @@
+# List user&#39;s voicemails in descending order
+
+GET {{baseUrl}}/phone/users/:userId/voice_mails/sync?sync_type=FSync&amp;sync_token=&lt;string&gt;&amp;count=&lt;integer&gt;
+
+
+<p>
+Use this API to retrieve a user&#39;s Zoom Phone voicemails in descending order. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+,
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_voicemails
+</code>
+,
+<code>
+phone:read:list_voicemails:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | (Required) FSync: Full sync 
+BSync: Backward sync 
+ISync: Forward sync |
+| `sync_token` | string |  | Sync token. Use if requesting a backward (`BSync`) or forward (`ISync`) sync. |
+| `count` | string |  | Record count of each query. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;sync_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;voice_mails&quot;:[{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:2,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:1,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;unread&quot;},{&quot;call_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:1,&quot;caller_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:2,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;read&quot;}]}
+```

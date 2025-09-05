@@ -1,0 +1,65 @@
+# Create or update session polls.
+
+PUT {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId/polls
+
+
+<p>
+Use this API to create or update the list of polls for the session.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_sessions:write
+</code>
+
+<code>
+zoom_events_sessions:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;polls&quot;=&gt;[{&quot;anonymous&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;poll_type&quot;=&gt;3, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;inactive&quot;, &quot;questions&quot;=&gt;[{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;rank_order&quot;, &quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;prompts&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false}, {&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;long_answer&quot;, &quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;prompts&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false}]}, {&quot;anonymous&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;poll_type&quot;=&gt;1, &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status&quot;=&gt;&quot;inactive&quot;, &quot;questions&quot;=&gt;[{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;matching&quot;, &quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;prompts&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false}, {&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;matching&quot;, &quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;prompts&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false}]}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

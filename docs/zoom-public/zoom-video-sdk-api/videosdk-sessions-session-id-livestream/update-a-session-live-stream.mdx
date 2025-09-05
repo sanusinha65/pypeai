@@ -1,0 +1,58 @@
+# Update a session live stream
+
+PATCH {{baseUrl}}/videosdk/sessions/:sessionId/livestream
+
+
+<p>
+Use this API to update a session&#39;s live stream information.
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Video SDK account
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;stream_url&quot;=&gt;&quot;https://example.com/livestream&quot;, &quot;stream_key&quot;=&gt;&quot;ABCDEFG12345HIJ6789&quot;, &quot;page_url&quot;=&gt;&quot;https://example.com/livestream/123&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

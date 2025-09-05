@@ -1,0 +1,81 @@
+# Use Zoom Room controls
+
+PATCH {{baseUrl}}/rooms/:id/events
+
+
+<p>
+Use this API to control 
+<a href="https://support.zoom.us/hc/en-us/articles/207483343">
+Zoom Rooms
+</a>
+, including room check-in and check-out, mute on and off, incoming meeting request accept or decline, meeting join, leave, or end, room restart, and cancellation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* 
+<a href="https://support.zoom.us/hc/en-us/articles/207483343-Getting-started-with-Zoom-Rooms#:%7E:text=Zoom%20Rooms%20is%20a%20software,or%20from%20their%20mobile%20device">
+Zoom Rooms
+</a>
+ must have been set up for use for the account and must be online. 
+* You must have access to the Calendar Integration APIs (either Microsoft Exchange or Google Calendar APIs) to get calendar information associated with the Room.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;method&quot;=&gt;&quot;zoomroom.check_in&quot;, &quot;params&quot;=&gt;{&quot;calendar_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;change_key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;event_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;resource_email&quot;=&gt;&quot;&lt;email&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

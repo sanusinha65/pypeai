@@ -1,0 +1,75 @@
+# Get session details
+
+GET {{baseUrl}}/videosdk/sessions/:sessionId?type=live
+
+
+<p>
+Use this API to return information about live or past sessions. You can specify a monthly date range for this data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.
+</p>
+
+
+
+<p>
+The overview response displays whether features such as audio, video, screensharing, and recording were used during the session.
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Video SDK account
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The session types: 
+* `past` — A past session. 
+* `live` — A live session.
+
+This value defaults to `live`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;sfk/aOFJSJSYhGwk1hnxgw==&quot;,&quot;session_name&quot;:&quot;My session&quot;,&quot;start_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;end_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;duration&quot;:&quot;30:00&quot;,&quot;user_count&quot;:2,&quot;has_voip&quot;:true,&quot;has_video&quot;:true,&quot;has_screen_share&quot;:true,&quot;has_recording&quot;:true,&quot;has_pstn&quot;:true,&quot;session_key&quot;:&quot;my_session_key&quot;}
+```

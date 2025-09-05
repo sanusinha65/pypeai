@@ -1,0 +1,16 @@
+#  contacts-groups-{groupId}-members
+
+Number of APIs: 3
+
+1. [Add contact group members](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-groupid-members/add-contact-group-members)
+POST {{baseUrl}}/contacts/groups/:groupId/members
+
+
+2. [Remove members in a contact group](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-groupid-members/remove-members-in-a-contact-group)
+DELETE {{baseUrl}}/contacts/groups/:groupId/members?member_ids=&lt;string&gt;
+
+
+3. [List contact group members](https://developers.qodex.ai/zoom-public/zoom-user-api/contacts-groups-groupid-members/list-contact-group-members)
+GET {{baseUrl}}/contacts/groups/:groupId/members?page_size=10&amp;next_page_token=&lt;string&gt;
+
+

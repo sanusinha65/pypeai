@@ -1,0 +1,82 @@
+# Update a channel
+
+PATCH {{baseUrl}}/chat/channels/:channelId
+
+
+<p>
+Updates the name and settings of a specific channel owned or administrated by you. Zoom chat channels allow users to communicate via chat in private or public channels. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+chat_channel:write
+</code>
+ 
+<br>
+
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note: 
+</b>
+ This API only supports 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+.
+</p>
+
+<br>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;channel_settings&quot;=&gt;{&quot;add_member_permissions&quot;=&gt;1, &quot;new_members_can_see_previous_messages_files&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;posting_permissions&quot;=&gt;3, &quot;mention_all_permissions&quot;=&gt;1}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

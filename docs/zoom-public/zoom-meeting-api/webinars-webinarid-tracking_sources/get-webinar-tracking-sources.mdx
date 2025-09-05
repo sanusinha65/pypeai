@@ -1,0 +1,99 @@
+# Get webinar tracking sources
+
+GET {{baseUrl}}/webinars/:webinarId/tracking_sources
+
+
+<p>
+
+<a href="https://support.zoom.us/hc/en-us/articles/360000315683-Webinar-Registration-Source-Tracking">
+Webinar Registration Tracking Sources
+</a>
+ allow you to see where your registrants are coming from if you share the webinar registration page in multiple platforms. You can then use the source tracking to see the number of registrants generated from each platform.
+<br>
+
+  Use this API to list information on all the tracking sources of a Webinar.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<a href="https://zoom.us/webinar">
+Webinar license
+</a>
+.
+</li>
+
+
+<li>
+Registration must be required for the Webinar.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;tracking_sources&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;source_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;tracking_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;visitor_count&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;source_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;tracking_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;visitor_count&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

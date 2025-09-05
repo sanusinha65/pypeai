@@ -1,0 +1,53 @@
+# Get a group
+
+GET {{baseUrl}}/scim2/Groups/:groupId
+
+
+<p>
+Use this API to return information about a specific group. 
+</p>
+
+
+
+<p>
+
+<strong>
+OAuth Scope:
+</strong>
+ 
+<code>
+scim2
+</code>
+ 
+</br>
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meta&quot;:{&quot;resourceType&quot;:&quot;\u003cstring\u003e&quot;},&quot;schemas&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;displayName&quot;:&quot;\u003cstring\u003e&quot;,&quot;urn:ietf:params:scim:schemas:extension:zoom:2.0:Group&quot;:{&quot;emailAlias&quot;:&quot;\u003cstring\u003e&quot;}}
+```

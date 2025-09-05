@@ -1,0 +1,70 @@
+# List variable logs
+
+GET {{baseUrl}}/contact_center/variable_logs?next_page_token=&lt;string&gt;&amp;page_size=30&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;group_type=system&amp;data_type=boolean&amp;engagement_id=&lt;string&gt;&amp;flow_id=&lt;string&gt;&amp;widget_name=&lt;string&gt;&amp;variable_name=&lt;string&gt;&amp;variable_value=&lt;string&gt;
+
+
+<p>
+Return a list of variable logs.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_variable_log:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `from` | string |  | The start time and date in yyyy-mm-dd or ISO 8601 format (yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; or yyyy-MM-dd&#39;T&#39;HH:mm:ss&amp;rsquo;TZD&amp;rsquo;). The defined date range should be a month, as the response only includes one month&#39;s worth of data. If no start date is specified, return data from the past 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. The end time and date in yyyy-mm-dd or ISO 8601 format (yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; or yyyy-MM-dd&#39;T&#39;HH:mm:ss&amp;rsquo;TZD&amp;rsquo;). |
+| `group_type` | string |  | The variable group&#39;s type. |
+| `data_type` | string |  | The variable data&#39;s type. |
+| `engagement_id` | string |  | The engagement&#39;s ID. |
+| `flow_id` | string |  | The flow&#39;s ID. |
+| `widget_name` | string |  | The widget&#39;s name. |
+| `variable_name` | string |  | The variable&#39;s name. |
+| `variable_value` | string |  | The variable&#39;s value. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:10,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;variable_logs&quot;:[{&quot;variable_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;widget_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_type&quot;:&quot;system&quot;,&quot;data_type&quot;:&quot;currency&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;variable_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;widget_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;variable_value&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_type&quot;:&quot;custom&quot;,&quot;data_type&quot;:&quot;percent&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

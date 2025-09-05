@@ -1,0 +1,72 @@
+# Get a tracking field
+
+GET {{baseUrl}}/tracking_fields/:fieldId
+
+
+<p>
+Use this API to return information about a 
+<a href="https://support.zoom.us/hc/en-us/articles/115000293426-Scheduling-Tracking-Fields">
+tracking field
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business, Education, API or higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tracking_fields:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;recommended_values&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;visible&quot;:&quot;\u003cboolean\u003e&quot;}
+```

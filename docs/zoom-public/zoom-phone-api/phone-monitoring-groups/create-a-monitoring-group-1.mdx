@@ -1,0 +1,74 @@
+# Create a monitoring group
+
+POST {{baseUrl}}/phone/monitoring_groups
+
+
+<p>
+Use this API to create a 
+<a href="https://support.zoom.us/hc/en-us/articles/360044804711">
+Monitoring Group
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+ * A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;monitoring_privileges&quot;=&gt;[&quot;listen&quot;, &quot;listen&quot;], &quot;name&quot;=&gt;&quot;pbx_api_test_uacap&quot;, &quot;prompt&quot;=&gt;true, &quot;site_id&quot;=&gt;&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;, &quot;type&quot;=&gt;1}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;oDmRjKVTRymXGMtgtBK2Sg&quot;,&quot;name&quot;:&quot;pbx_api_test_uacap&quot;}
+```

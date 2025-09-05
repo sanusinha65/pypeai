@@ -1,0 +1,70 @@
+# List labels in the mailbox
+
+GET {{baseUrl}}/emails/mailboxes/:email/labels?format=full
+
+
+<p>
+Lists all labels in the mailbox.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `format` | string |  | Enum value to control how much label information is returned. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;labels&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;parentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelLevel&quot;:&quot;\u003cinteger\u003e&quot;,&quot;messageListVisibility&quot;:&quot;show&quot;,&quot;labelListVisibility&quot;:&quot;hide&quot;,&quot;messagesTotal&quot;:&quot;\u003cinteger\u003e&quot;,&quot;messagesUnread&quot;:&quot;\u003cinteger\u003e&quot;,&quot;threadsTotal&quot;:&quot;\u003cinteger\u003e&quot;,&quot;threadsUnread&quot;:&quot;\u003cinteger\u003e&quot;,&quot;color&quot;:{&quot;textColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;backgroundColor&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;user&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;parentId&quot;:&quot;\u003cstring\u003e&quot;,&quot;labelLevel&quot;:&quot;\u003cinteger\u003e&quot;,&quot;messageListVisibility&quot;:&quot;show&quot;,&quot;labelListVisibility&quot;:&quot;hide&quot;,&quot;messagesTotal&quot;:&quot;\u003cinteger\u003e&quot;,&quot;messagesUnread&quot;:&quot;\u003cinteger\u003e&quot;,&quot;threadsTotal&quot;:&quot;\u003cinteger\u003e&quot;,&quot;threadsUnread&quot;:&quot;\u003cinteger\u003e&quot;,&quot;color&quot;:{&quot;textColor&quot;:&quot;\u003cstring\u003e&quot;,&quot;backgroundColor&quot;:&quot;\u003cstring\u003e&quot;},&quot;type&quot;:&quot;system&quot;}]}
+```

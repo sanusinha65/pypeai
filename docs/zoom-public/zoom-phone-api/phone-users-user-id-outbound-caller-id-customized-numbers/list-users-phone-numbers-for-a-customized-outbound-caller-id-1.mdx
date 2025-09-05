@@ -1,0 +1,81 @@
+# List users&#39; phone numbers for a customized outbound caller ID
+
+GET {{baseUrl}}/phone/users/:userId/outbound_caller_id/customized_numbers?selected=true&amp;site_id=SQv52YtkRLC2dwrDdYtGsA&amp;extension_type=callQueue&amp;keyword=408&amp;page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2
+
+
+<p>
+Use this API to retrieve phone numbers that can be the 
+<code>
+user-level
+</code>
+ customized outbound caller ID. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `selected` | boolean |  | Status of the phone numbers.&lt;br&gt;`true`- Numbers already added to the custom list. &lt;br&gt;`false`- Numbers not yet added to the custom list |
+| `site_id` | string |  | For filtering phone numbers that belong to the site. |
+| `extension_type` | string |  | The type of extension to which the phone number belongs. |
+| `keyword` | number |  | A search keyword for phone or extension numbers. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;customize_numbers&quot;:[{&quot;customize_id&quot;:&quot;8_RkKw9OQ42oYsXqJJjs4A&quot;,&quot;phone_number_id&quot;:&quot;55JUZPwERHuGttd_j4qBsQ&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;display_name&quot;:&quot;test abc&quot;,&quot;incoming&quot;:true,&quot;outgoing&quot;:true,&quot;extension_id&quot;:&quot;HaSokHMCSeK8taMdv2vnXQ&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;,&quot;extension_number&quot;:&quot;est dolor dolor&quot;,&quot;extension_name&quot;:&quot;SJ CQ&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;testSite&quot;}},{&quot;customize_id&quot;:&quot;8_RkKw9OQ42oYsXqJJjs4A&quot;,&quot;phone_number_id&quot;:&quot;55JUZPwERHuGttd_j4qBsQ&quot;,&quot;phone_number&quot;:&quot;+12055437350&quot;,&quot;display_name&quot;:&quot;test abc&quot;,&quot;incoming&quot;:true,&quot;outgoing&quot;:true,&quot;extension_id&quot;:&quot;HaSokHMCSeK8taMdv2vnXQ&quot;,&quot;extension_type&quot;:&quot;callQueue&quot;,&quot;extension_number&quot;:&quot;cillum Ut voluptate in Excepteur&quot;,&quot;extension_name&quot;:&quot;SJ CQ&quot;,&quot;site&quot;:{&quot;id&quot;:&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;,&quot;name&quot;:&quot;testSite&quot;}}],&quot;next_page_token&quot;:&quot;BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:10}
+```

@@ -1,0 +1,65 @@
+# List registrants
+
+GET {{baseUrl}}/zoom_events/events/:eventId/registrants?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to retrieve event registrants.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_registrants:read
+</code>
+
+<code>
+zoom_events_registrants:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned in a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a set of large results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrants&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_status&quot;:&quot;PRE_REGISTER_INVITED&quot;,&quot;tickets&quot;:[{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;GUEST&quot;},{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;ORIGINAL_HOST&quot;}]},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_status&quot;:&quot;GIFTED&quot;,&quot;tickets&quot;:[{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;PANELIST&quot;},{&quot;ticket_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;role&quot;:&quot;INTERPRETER&quot;}]}]}
+```

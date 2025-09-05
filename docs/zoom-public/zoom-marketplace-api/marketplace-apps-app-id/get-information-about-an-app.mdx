@@ -1,0 +1,57 @@
+# Get information about an app
+
+GET {{baseUrl}}/marketplace/apps/:appId
+
+
+<p>
+Use this API to get app information. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+marketplace_app:read
+</code>
+,
+<code>
+marketplace_app:read:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+ 
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;app_id&quot;:&quot;nqSreNVsQ2eGzUMGnA8AHA&quot;,&quot;app_name&quot;:&quot;Example App&quot;,&quot;app_description&quot;:&quot;Example App description&quot;,&quot;app_type&quot;:&quot;ZoomApp&quot;,&quot;app_usage&quot;:1,&quot;app_status&quot;:&quot;PUBLISHED&quot;,&quot;app_links&quot;:{&quot;documentation_url&quot;:&quot;https://xxxx&quot;,&quot;privacy_policy_url&quot;:&quot;https://xxxx&quot;,&quot;support_url&quot;:&quot;https://xxxx&quot;,&quot;terms_of_use_url&quot;:&quot;https://xxxx&quot;},&quot;app_permissions&quot;:[{&quot;group&quot;:&quot;View&quot;,&quot;group_message&quot;:&quot;App can view information&quot;,&quot;title&quot;:&quot;Associated with you&quot;,&quot;permissions&quot;:[{&quot;name&quot;:&quot;Devices&quot;},{&quot;name&quot;:&quot;Devices&quot;}]},{&quot;group&quot;:&quot;View&quot;,&quot;group_message&quot;:&quot;App can view information&quot;,&quot;title&quot;:&quot;Associated with you&quot;,&quot;permissions&quot;:[{&quot;name&quot;:&quot;Devices&quot;},{&quot;name&quot;:&quot;Devices&quot;}]}],&quot;app_requirements&quot;:{&quot;user_role&quot;:&quot;admin&quot;,&quot;min_client_version&quot;:&quot;5.7.3&quot;,&quot;account_eligibility&quot;:{&quot;account_types&quot;:[&quot;Free&quot;,&quot;Free&quot;],&quot;premium_events&quot;:[{&quot;event_name&quot;:&quot;Meeting participant data&quot;,&quot;event&quot;:&quot;meeting.participant_qos_summary&quot;},{&quot;event_name&quot;:&quot;Meeting participant data&quot;,&quot;event&quot;:&quot;meeting.participant_qos_summary&quot;}]}},&quot;app_scopes&quot;:[&quot;meeting:read&quot;,&quot;meeting:read&quot;]}
+```

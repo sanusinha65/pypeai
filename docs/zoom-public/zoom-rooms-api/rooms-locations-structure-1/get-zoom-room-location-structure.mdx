@@ -1,0 +1,90 @@
+# Get Zoom Room location structure
+
+GET {{baseUrl}}/rooms/locations/structure
+
+
+<p>
+Get the 
+<a href="https://support.zoom.us/hc/en-us/articles/115000342983-Zoom-Rooms-Location-Hierarchy">
+location hierarchial structure(s)
+</a>
+ applied on the Zoom Rooms in an account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Zoom Rooms version 4.0 or higher
+</li>
+
+
+<li>
+Account owner or admin permissions
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;structures&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}
+```

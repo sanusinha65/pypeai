@@ -1,0 +1,84 @@
+# Batch remove members from a channel
+
+DELETE {{baseUrl}}/chat/channels/:channelId/members?member_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;
+
+
+<p>
+Batch removes multiple members from a chat channel. A 
+<a href="https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-">
+channel
+</a>
+ can have one or many members. 
+<br>
+
+<br>
+
+ 
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_channel:write
+</code>
+
+<br>
+
+ 
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#01579b; padding:8px">
+ 
+<b>
+Note: 
+</b>
+ This API only supports 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth apps
+</a>
+.
+</p>
+
+<br>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `member_ids` | string |  | (Required) The members&#39; member IDs. Use commas (,) to separate a supported maximum of 20 IDs. |
+| `user_ids` | string |  | (Required) The members&#39; member IDs or user IDs. Use commas (,) to separate a supported maximum of 20 IDs. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,86 @@
+# List an account&#39;s zoom phone settings
+
+GET {{baseUrl}}/phone/account_settings?setting_types=&lt;string&gt;
+
+
+<p>
+Returns an account&#39;s Zoom phone settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_account_settings:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `setting_types` | string |  | The comma separated list of the setting items you want to fetch. Allowed values: `call_live_transcription`,`local_survivability_mode`,`external_calling_on_zoom_room_common_area`, `select_outbound_caller_id`, `personal_audio_library`, `voicemail`, `voicemail_transcription`, `voicemail_notification_by_email`, `shared_voicemail_notification_by_email`, `restricted_call_hours`, `allowed_call_locations`, `check_voicemails_over_phone`, `auto_call_recording`, `ad_hoc_call_recording`, `international_calling`, `outbound_calling`, `outbound_sms`, `sms`, `sms_etiquette_tool`, `zoom_phone_on_mobile`, `zoom_phone_on_pwa`, `e2e_encryption`, `call_handling_forwarding_to_other_users`, `call_overflow`, `call_transferring`, `elevate_to_meeting`, `call_park`, `hand_off_to_room`, `mobile_switch_to_carrier`, `delegation`, `audio_intercom`, `block_calls_without_caller_id`, `block_external_calls`,`call_queue_opt_out_reason`,`auto_delete_data_after_retention_duration`,`auto_call_from_third_party_apps`, `override_default_port`,`peer_to_peer_media`,`advanced_encryption`,`display_call_feedback_survey`,`block_list_for_inbound_calls_and_messaging`,`block_calls_as_threat`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_live_transcription&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;transcription_start_prompt&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;audio_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_name&quot;:&quot;\u003cstring\u003e&quot;}},&quot;local_survivability_mode&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;external_calling_on_zoom_room_common_area&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;select_outbound_caller_id&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;allow_hide_outbound_caller_id&quot;:&quot;\u003cboolean\u003e&quot;},&quot;personal_audio_library&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;allow_music_on_hold_customization&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_voicemail_and_message_greeting_customization&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;allow_videomail&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_delete&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_virtual_background&quot;:&quot;\u003cboolean\u003e&quot;},&quot;voicemail_transcription&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;voicemail_notification_by_email&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;include_voicemail_file&quot;:&quot;\u003cboolean\u003e&quot;,&quot;include_voicemail_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;forward_voicemail_to_email&quot;:&quot;\u003cboolean\u003e&quot;},&quot;shared_voicemail_notification_by_email&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;restricted_call_hours&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;time_zone&quot;:{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;},&quot;restricted_hours_applied&quot;:&quot;\u003cboolean\u003e&quot;,&quot;restricted_holiday_hours_applied&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_internal_calls&quot;:&quot;\u003cboolean\u003e&quot;},&quot;allowed_call_locations&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;locations_applied&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_internal_calls&quot;:&quot;\u003cboolean\u003e&quot;},&quot;check_voicemails_over_phone&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;auto_call_recording&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;recording_calls&quot;:&quot;both&quot;,&quot;recording_transcription&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_start_prompt&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_start_prompt_audio_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_explicit_consent&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_stop_resume_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;disconnect_on_recording_failure&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_recording_beep_tone&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;play_beep_member&quot;:&quot;allMembers&quot;,&quot;play_beep_volume&quot;:80,&quot;play_beep_time_interval&quot;:60}},&quot;ad_hoc_call_recording&quot;:{&quot;recording_transcription&quot;:false,&quot;allow_download&quot;:true,&quot;allow_delete&quot;:false,&quot;recording_start_prompt&quot;:false,&quot;recording_explicit_consent&quot;:false,&quot;play_recording_beep_tone&quot;:{&quot;enable&quot;:true,&quot;play_beep_member&quot;:&quot;allMembers&quot;,&quot;play_beep_volume&quot;:60,&quot;play_beep_time_interval&quot;:120},&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;international_calling&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;outbound_calling&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;outbound_sms&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;sms&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;,&quot;international_sms&quot;:&quot;\u003cboolean\u003e&quot;},&quot;sms_etiquette_tool&quot;:{&quot;sms_etiquette_policy&quot;:[{&quot;id&quot;:&quot;Lorem d&quot;,&quot;name&quot;:&quot;proident non&quot;,&quot;description&quot;:&quot;laborum&quot;,&quot;rule&quot;:2,&quot;content&quot;:&quot;cupidatat&quot;,&quot;action&quot;:1,&quot;active&quot;:false},{&quot;id&quot;:&quot;et sed&quot;,&quot;name&quot;:&quot;mollit occaecat veniam&quot;,&quot;description&quot;:&quot;occaecat commodo&quot;,&quot;rule&quot;:2,&quot;content&quot;:&quot;Ut aliquip&quot;,&quot;action&quot;:2,&quot;active&quot;:true}],&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;zoom_phone_on_mobile&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;allow_calling_sms_mms&quot;:&quot;\u003cboolean\u003e&quot;},&quot;zoom_phone_on_pwa&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;e2e_encryption&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;call_handling_forwarding_to_other_users&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;call_forwarding_type&quot;:4},&quot;call_overflow&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;call_overflow_type&quot;:2},&quot;call_transferring&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;,&quot;call_transferring_type&quot;:4},&quot;elevate_to_meeting&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;call_park&quot;:{&quot;expiration_period&quot;:25,&quot;call_not_picked_up_action&quot;:75981537,&quot;forward_to&quot;:{&quot;display_name&quot;:&quot;nisi consectetur in magna non&quot;,&quot;extension_id&quot;:&quot;cillum id&quot;,&quot;extension_number&quot;:55261343,&quot;extension_type&quot;:&quot;ciscoRoom/polycomRoom&quot;,&quot;id&quot;:&quot;aute dolor irure&quot;},&quot;sequence&quot;:1,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;hand_off_to_room&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;mobile_switch_to_carrier&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;delegation&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;audio_intercom&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;block_calls_without_caller_id&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;block_external_calls&quot;:{&quot;block_business_hours&quot;:true,&quot;block_closed_hours&quot;:true,&quot;block_holiday_hours&quot;:true,&quot;block_call_action&quot;:9,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;call_queue_opt_out_reason&quot;:{&quot;call_queue_opt_out_reasons_list&quot;:[{&quot;code&quot;:&quot;Excepteur Duis i&quot;,&quot;system&quot;:true,&quot;enable&quot;:false},{&quot;code&quot;:&quot;consequat aliqua ut cillum&quot;,&quot;system&quot;:true,&quot;enable&quot;:false}],&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;auto_delete_data_after_retention_duration&quot;:{&quot;items&quot;:[{&quot;type&quot;:&quot;onDemandRecording&quot;,&quot;duration&quot;:-17949473,&quot;time_unit&quot;:&quot;day&quot;},{&quot;type&quot;:&quot;callLog&quot;,&quot;duration&quot;:-30906276,&quot;time_unit&quot;:&quot;day&quot;}],&quot;delete_type&quot;:2,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;auto_call_from_third_party_apps&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;override_default_port&quot;:{&quot;min_port&quot;:-41667702,&quot;max_port&quot;:-95568124,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;peer_to_peer_media&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;advanced_encryption&quot;:{&quot;disable_incoming_unencrypted_voicemail&quot;:false,&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;display_call_feedback_survey&quot;:{&quot;feedback_type&quot;:1,&quot;feedback_mos&quot;:{&quot;enable&quot;:false,&quot;min&quot;:&quot;nulla ullamco minim&quot;,&quot;max&quot;:&quot;exercitation et consectetur&quot;},&quot;feedback_duration&quot;:{&quot;enable&quot;:true,&quot;min&quot;:-15324878,&quot;max&quot;:-60299975},&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;invalid&quot;},&quot;block_list_for_inbound_calls_and_messaging&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;account&quot;},&quot;block_calls_as_threat&quot;:{&quot;enable&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked&quot;:&quot;\u003cboolean\u003e&quot;,&quot;locked_by&quot;:&quot;\u003cstring\u003e&quot;}}
+```

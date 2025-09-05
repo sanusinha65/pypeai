@@ -1,0 +1,67 @@
+# Get mailbox vacation response setting
+
+GET {{baseUrl}}/emails/mailboxes/:email/settings/vacation
+
+
+<p>
+Gets vacation respondes settings.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;enableAutoReply&quot;:&quot;\u003cboolean\u003e&quot;,&quot;responseSubject&quot;:&quot;\u003cstring\u003e&quot;,&quot;responseBodyPlainText&quot;:&quot;\u003cstring\u003e&quot;,&quot;responseBodyHtml&quot;:&quot;\u003cstring\u003e&quot;,&quot;enableAlwaysRespond&quot;:&quot;\u003cboolean\u003e&quot;,&quot;restrictToContacts&quot;:&quot;\u003cboolean\u003e&quot;,&quot;restrictToDomain&quot;:&quot;\u003cboolean\u003e&quot;,&quot;startTime&quot;:&quot;\u003cstring\u003e&quot;,&quot;startTimeISO&quot;:&quot;\u003cstring\u003e&quot;,&quot;endTime&quot;:&quot;\u003cstring\u003e&quot;,&quot;endTimeISO&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,93 @@
+# Update directory backup routing rule
+
+PATCH {{baseUrl}}/phone/routing_rules/:routingRuleId
+
+
+<p>
+Updates the directory backup routing rule. 
+</p>
+
+
+
+<p>
+The directory backup routing rules are a series of predefined regular expressions. These rules are used to route outgoing calls. If a dialed number does not match a Zoom Phone user, and does not match a defined external contact, these rules are tested next. If a dialed number does not match any rules, the call will be routed through the PSTN.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:routing_rule:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;number_pattern&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;order&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;sip_group_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;translation&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;other_sites&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

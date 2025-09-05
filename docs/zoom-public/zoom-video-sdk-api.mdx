@@ -1,0 +1,62 @@
+#Zoom Video SDK API
+
+Number of APIs: 21
+
+
+<p>
+The Zoom Video SDK API allows owners of Zoom Video SDK accounts to access information from Zoom. You can use this API to build private services or applications. To learn how to get your JWT credentials and create private applications, read our 
+<a href="https://marketplace.zoom.us/docs/guides/auth/jwt">
+JWT
+</a>
+ documentation. All endpoints are available via https and are located at api.zoom.us/v2/.
+</p>
+
+
+
+<p>
+Contact Support:
+ Name: Zoom Developer Support
+</p>
+
+
+
+1. [videosdk-sessions-{session Id}-recordings-{recording Id} - Delete session&#39;s recording file](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-recordings-recording-id/delete-sessions-recording-file)
+DELETE {{baseUrl}}/videosdk/sessions/:sessionId/recordings/:recordingId?action=trash
+
+
+2. [videosdk-sessions-{session Id}-recordings - Delete session&#39;s recordings](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-recordings/delete-sessions-recordings)
+DELETE {{baseUrl}}/videosdk/sessions/:sessionId/recordings?action=trash
+
+
+3. [videosdk-sessions-{session Id}-recordings - Recover session&#39;s recordings](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-recordings/recover-sessions-recordings)
+PUT {{baseUrl}}/videosdk/sessions/:sessionId/recordings/status
+
+
+4. [videosdk-sessions-{session Id}-livestream - Get session live stream details](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-livestream/get-session-live-stream-details)
+GET {{baseUrl}}/videosdk/sessions/:sessionId/livestream
+
+
+5. [videosdk-report - Get telephone report](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-report/get-telephone-report)
+GET {{baseUrl}}/videosdk/report/telephone?from=2021-10-11&amp;to=2021-10-11&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82&amp;type=&amp;query_date_type=
+
+
+6. [videosdk-report - Get cloud recording usage report](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-report/get-cloud-recording-usage-report-1)
+GET {{baseUrl}}/videosdk/report/cloud_recording?from=2021-10-11&amp;to=2021-10-11
+
+
+7. [videosdk-report - Get operation logs report](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-report/get-operation-logs-report-1)
+GET {{baseUrl}}/videosdk/report/operationlogs?from=2021-10-11&amp;to=2021-10-11&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82&amp;category_type=
+
+
+8. [videosdk-sessions-{session Id} - Get session details](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id/get-session-details)
+GET {{baseUrl}}/videosdk/sessions/:sessionId?type=live
+
+
+9. [videosdk-sessions - List sessions](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions/list-sessions-1)
+GET {{baseUrl}}/videosdk/sessions?type=live&amp;from=2021-10-11&amp;to=2021-10-11&amp;page_size=30&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82
+
+
+10. [videosdk-sessions-{session Id}-livestream - Update a session live stream](https://developers.qodex.ai/zoom-public/zoom-video-sdk-api/videosdk-sessions-session-id-livestream/update-a-session-live-stream)
+PATCH {{baseUrl}}/videosdk/sessions/:sessionId/livestream
+
+

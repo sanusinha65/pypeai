@@ -1,0 +1,57 @@
+# Get a region
+
+GET {{baseUrl}}/contact_center/regions/:regionId
+
+
+<p>
+Get information about a region.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_region:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;region_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;region_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_zone_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_zone_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_main_region&quot;:&quot;\u003cboolean\u003e&quot;}
+```

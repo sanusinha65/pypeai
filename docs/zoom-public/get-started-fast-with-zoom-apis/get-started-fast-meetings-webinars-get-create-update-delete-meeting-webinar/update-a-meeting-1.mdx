@@ -1,0 +1,109 @@
+# Update a meeting
+
+PATCH {{baseUrl}}/meetings/:meetingId?occurrence_id=1648194360000
+
+
+<p>
+Use this API to update a meeting&#39;s details.
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+* This API has a rate limit of 
+<strong>
+100 requests per day
+</strong>
+. Because of this, a meeting can only be updated for a maximum of 
+<strong>
+100 times within a 24-hour period
+</strong>
+. 
+* The 
+<code>
+start_time
+</code>
+ value 
+<strong>
+must
+</strong>
+ be a future date. If the value is omitted or a date in the past, the API ignores this value and will 
+<strong>
+not
+</strong>
+ update any recurring meetings. 
+* If the 
+<code>
+start_time
+</code>
+ value is a future date, the 
+<code>
+recurrence
+</code>
+ object is 
+<strong>
+required
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+, 
+<code>
+meeting:write
+</code>
+
+</br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | number |  | Meeting occurrence id. Support change of agenda, start_time, duration, settings: {host_video, participant_video, join_before_host, mute_upon_entry, waiting_room, watermark, auto_recording} |
+
+
+### Request Body
+```
+{&quot;schedule_for&quot;=&gt;&quot;jchill@example.com&quot;, &quot;agenda&quot;=&gt;&quot;My Meeting&quot;, &quot;duration&quot;=&gt;60, &quot;password&quot;=&gt;&quot;123456&quot;, &quot;pre_schedule&quot;=&gt;false, &quot;recurrence&quot;=&gt;{&quot;value&quot;=&gt;&quot;&lt;Error: Too many levels of nesting to fake this schema&gt;&quot;}, &quot;settings&quot;=&gt;{&quot;value&quot;=&gt;&quot;&lt;Error: Too many levels of nesting to fake this schema&gt;&quot;}, &quot;start_time&quot;=&gt;&quot;2022-03-25T07:29:29Z&quot;, &quot;template_id&quot;=&gt;&quot;5Cj3ceXoStO6TGOVvIOVPA==&quot;, &quot;timezone&quot;=&gt;&quot;America/Los_Angeles&quot;, &quot;topic&quot;=&gt;&quot;My Meeting&quot;, &quot;tracking_fields&quot;=&gt;[{&quot;value&quot;=&gt;&quot;&lt;Error: Too many levels of nesting to fake this schema&gt;&quot;}, {&quot;value&quot;=&gt;&quot;&lt;Error: Too many levels of nesting to fake this schema&gt;&quot;}], &quot;type&quot;=&gt;2}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

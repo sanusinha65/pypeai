@@ -1,0 +1,40 @@
+#  Get Started Fast: Meetings &amp; Webinars-Get, Create, Update, Delete Meeting/Webinar
+
+Number of APIs: 9
+
+1. [Create a meeting](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/create-a-meeting-1)
+POST {{baseUrl}}/users/:userId/meetings
+
+
+2. [Delete a meeting](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/delete-a-meeting-1)
+DELETE {{baseUrl}}/meetings/:meetingId?schedule_for_reminder=true&amp;cancel_meeting_reminder=true
+
+
+3. [Get a webinar](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/get-a-webinar-1)
+GET {{baseUrl}}/webinars/:webinarId?occurrence_id=&lt;string&gt;&amp;show_previous_occurrences=&lt;boolean&gt;
+
+
+4. [Delete a webinar](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/delete-a-webinar-1)
+DELETE {{baseUrl}}/webinars/:webinarId?occurrence_id=&lt;string&gt;&amp;cancel_webinar_reminder=&lt;boolean&gt;
+
+
+5. [Update a webinar](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/update-a-webinar-1)
+PATCH {{baseUrl}}/webinars/:webinarId?occurrence_id=&lt;string&gt;
+
+
+6. [List meetings](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/list-meetings-2)
+GET {{baseUrl}}/users/:userId/meetings?type=scheduled&amp;page_size=30&amp;next_page_token=IAfJX3jsOLW7w3dokmFl84zOa0MAVGyMEB2&amp;page_number=1
+
+
+7. [Update a meeting](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/update-a-meeting-1)
+PATCH {{baseUrl}}/meetings/:meetingId?occurrence_id=1648194360000
+
+
+8. [List webinars](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/list-webinars-2)
+GET {{baseUrl}}/users/:userId/webinars?type=scheduled&amp;page_size=30&amp;page_number=1
+
+
+9. [Get a meeting](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/get-started-fast-meetings-webinars-get-create-update-delete-meeting-webinar/get-a-meeting-1)
+GET {{baseUrl}}/meetings/:meetingId?occurrence_id=1648194360000&amp;show_previous_occurrences=true
+
+

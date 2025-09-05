@@ -1,0 +1,81 @@
+# Upload virtual background files
+
+POST {{baseUrl}}/accounts/:accountId/settings/virtual_backgrounds
+
+
+<p>
+
+<a href="https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background#h_01EJF3YFEWGT8YA0ZJ079JEDQE">
+Upload virtual background files
+</a>
+ for all users on the account to use. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background#h_2ef28080-fce9-4ac2-b567-dc958afab1b7">
+Virtual Background feature
+</a>
+ must be enabled on the account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;file&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;}
+```

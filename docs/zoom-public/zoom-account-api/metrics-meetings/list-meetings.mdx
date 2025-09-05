@@ -1,0 +1,98 @@
+# List meetings
+
+GET {{baseUrl}}/metrics/meetings?type=live&amp;from=&lt;string&gt;&amp;to=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;group_id=&lt;string&gt;&amp;group_include_participant=&lt;boolean&gt;&amp;include_fields=tracking_fields&amp;query_date_type=start_time
+
+
+<p>
+Lists the total live or past meetings that occurred during a specified period of time. This overview shows if features such as audio, video, screen sharing, and recording were being used in the meeting. You can also see the license types of each user on your account. Specify a monthly date range for the dashboard data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.   
+<strong>
+Prerequisites:
+</strong>
+    * Business or a higher plan. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_meetings:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+RESOURCE-INTENSIVE
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | A value to get the response for the corresponding meeting type.  
+ 
+ `past` - Meetings that already occurred in the specified date range.  
+ `pastOne` - Past meetings that were attended by only one user.   
+ `live` - Live meetings.  
+   
+ 
+
+If you do not provide this field, the default value will be `live` and the API will only query responses for live meetings. |
+| `from` | string |  | (Required) The start date in &#39;yyyy-MM-dd HH:mm:ss&#39; or &#39;yyyy-MM-dd&#39; format. The date range defined by the `from` and `to` parameters should only be one month, as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) The end date &#39;yyyy-MM-dd HH:mm:ss&#39; or &#39;yyyy-MM-dd&#39; format. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `group_id` | string |  | The group ID. To get a group ID, use the [**List groups**](https://developers.zoom.us/docs/api/rest/reference/scim-api/methods/#operation/groupSCIM2List) API. 
+
+ **Note:** The API response will only contain meetings where the host is a member of the queried group ID if the &amp;quot;group_include_participant&amp;quot; is false. |
+| `group_include_participant` | string |  | Whether the response will contain meetings where the participant is a member of the queried group ID. |
+| `include_fields` | string |  | Set the value of this field to `tracking_fields` if you want to include tracking fields of each meeting in the response. |
+| `query_date_type` | string |  | The type of date to query. This field is only supported when `type` is `past`. 
+* `start_time` - Query by call start time. 
+* `end_time` - Query by call end time. 
+
+This value defaults to `start_time`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;meetings&quot;:[{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_quality&quot;:&quot;poor&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;screen_share_quality&quot;:&quot;bad&quot;,&quot;session_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;video_quality&quot;:&quot;poor&quot;},{&quot;host&quot;:&quot;\u003cstring\u003e&quot;,&quot;audio_quality&quot;:&quot;poor&quot;,&quot;custom_keys&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;has_3rd_party_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_archiving&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_pstn&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_screen_share&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_sip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_voip&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;has_automated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;in_room_participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;,&quot;screen_share_quality&quot;:&quot;fair&quot;,&quot;session_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;field&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;user_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;video_quality&quot;:&quot;good&quot;}]}
+```

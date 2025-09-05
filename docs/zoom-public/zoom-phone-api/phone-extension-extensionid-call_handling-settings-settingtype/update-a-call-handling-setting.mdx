@@ -1,0 +1,110 @@
+# Update a call handling setting
+
+PATCH {{baseUrl}}/phone/extension/:extensionId/call_handling/settings/:settingType
+
+
+<p>
+Updates a Zoom Phone&#39;s call handling setting. 
+</p>
+
+
+
+<p>
+Call handling settings allow you to control how your system routes calls during business, closed, or holiday hours. For more information, read our 
+<a href="https://developers.zoom.us/docs/zoom-phone/call-handling/">
+Call Handling API guide
+</a>
+ or Zoom support article 
+<a href="https://support.zoom.us/hc/en-us/articles/360059966372-Customizing-call-handling-settings">
+Customizing call handling settings
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Applicable to user, call queue, auto receptionist, or shared line group call handling at this time.
+</strong>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Pro or a higher account with Zoom Phone enabled
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:call_handling_setting:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;settings&quot;=&gt;{&quot;call_forwarding_settings&quot;=&gt;[{&quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_contact&quot;=&gt;{&quot;external_contact_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}, {&quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;phone_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;external_contact&quot;=&gt;{&quot;external_contact_id&quot;=&gt;&quot;&lt;string&gt;&quot;}}], &quot;require_press_1_before_connecting&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;sub_setting_type&quot;=&gt;&quot;call_forwarding&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

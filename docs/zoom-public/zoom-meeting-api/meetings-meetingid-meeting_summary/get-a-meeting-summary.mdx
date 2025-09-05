@@ -1,0 +1,74 @@
+# Get a meeting summary
+
+GET {{baseUrl}}/meetings/:meetingId/meeting_summary
+
+
+<p>
+Displays information about a meeting summary.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:
+* Host user type must be Pro or higher plan.
+* The Meeting Summary with AI Companion feature enabled in the host&#39;s account.
+* E2ee meetings do not have summary feature enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting_summary:read:admin
+</code>
+,
+<code>
+meeting_summary:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;meeting_host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_host_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;meeting_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary_overview&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary_details&quot;:[{&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;},{&quot;label&quot;:&quot;\u003cstring\u003e&quot;,&quot;summary&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_steps&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;edited_summary&quot;:{&quot;summary_details&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_steps&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}}
+```

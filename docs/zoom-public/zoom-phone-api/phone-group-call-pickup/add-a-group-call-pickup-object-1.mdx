@@ -1,0 +1,78 @@
+# Add a group call pickup object
+
+POST {{baseUrl}}/phone/group_call_pickup
+
+
+<p>
+Use this API to add a 
+<a href="https://support.zoom.us/hc/en-us/articles/360060107472-Setting-up-and-using-group-call-pickup">
+Group Call Pickup
+</a>
+ instance to the account that has the Zoom Phone license assigned. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;display_name&quot;=&gt;&quot;test&quot;, &quot;site_id&quot;=&gt;&quot;NjHmTu16Qfe8yOiNJuekXA&quot;, &quot;description&quot;=&gt;&quot;test&quot;, &quot;extension_number&quot;=&gt;1, &quot;delay&quot;=&gt;0, &quot;play_incoming_calls_sound&quot;=&gt;{&quot;enable&quot;=&gt;false, &quot;ring_tone&quot;=&gt;&quot;ringtone_1&quot;, &quot;duration&quot;=&gt;0}, &quot;directed_call_pickup&quot;=&gt;false, &quot;member_extension_ids&quot;=&gt;[&quot;RfFxkRTIRnOp6ZYo7c1Ptg&quot;, &quot;RfFxkRTIRnOp6ZYo7c1Ptg&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;q5C69v95SPKsZ5uUi-Xbcw&quot;,&quot;display_name&quot;:&quot;testGCP&quot;}
+```

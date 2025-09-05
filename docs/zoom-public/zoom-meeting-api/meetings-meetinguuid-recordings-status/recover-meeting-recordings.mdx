@@ -1,0 +1,91 @@
+# Recover meeting recordings
+
+PUT {{baseUrl}}/meetings/:meetingUUID/recordings/status
+
+
+<p>
+Zoom allows users to recover recordings from trash for up to 30 days from the deletion date. Use this API to recover all deleted 
+<a href="https://support.zoom.us/hc/en-us/articles/203741855-Cloud-Recording">
+Cloud Recordings
+</a>
+ of a specific meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:  
+</p>
+
+
+
+<ul>
+
+
+<li>
+A Pro user with Cloud Recording enabled.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write:admin
+</code>
+,
+<code>
+recording:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;recover&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+&quot;&quot;
+```

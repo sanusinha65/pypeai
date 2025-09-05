@@ -1,0 +1,74 @@
+# Get webinar participant reports
+
+GET {{baseUrl}}/report/webinars/:webinarId/participants?page_size=30&amp;next_page_token=&lt;string&gt;&amp;include_fields=registrant_id
+
+
+<p>
+Get a detailed report on each webinar attendee. You can get webinar participant reports for the last 6 months. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with Webinar add-on enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `include_fields` | string |  | The additional query parameters to include. 
+* `registrant_id` - Include the registrant&#39;s ID in the API response. The registrant ID is the webinar participant&#39;s unique ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:[{&quot;customer_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;failover&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;in_waiting_room&quot;,&quot;user_email&quot;:&quot;pa2SVS.sWdoVD.Z$.QP%b.E/krc/p}yl@aGBRv.rta&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_user_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;customer_key&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;failover&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;registrant_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;in_waiting_room&quot;,&quot;user_email&quot;:&quot;JA87FIm.iMR|i.CVTsc{i.G}Fa`.^@RSAgC6ozL.4.-HOafM.3cFNJWUcPJR.xYgpOpmpzcx.fZ3.Qtsl1nuuUn.FA61y.Ql&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_user_id&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

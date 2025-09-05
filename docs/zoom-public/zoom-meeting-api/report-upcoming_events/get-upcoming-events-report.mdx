@@ -1,0 +1,83 @@
+# Get upcoming events report
+
+GET {{baseUrl}}/report/upcoming_events?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;type=all&amp;group_id=&lt;string&gt;
+
+
+<p>
+Use this API to list upcoming meeting and/or webinar events within a specified period of time. The report&#39;s time range is limited to one month.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `type` | string |  | The type of event to query. 
+* `meeting` &amp;mdash; A meeting event. 
+* `webinar` &amp;mdash; A webinar event. 
+* `all` &amp;mdash; Both meeting and webinar events.
+
+This value defaults to `all`. |
+| `group_id` | string |  | The group ID. To get a group ID, use the [**List groups**](/api-reference/zoom-api/methods#operation/groups) API. 
+
+ **Note:** The API response will only contain meetings where the host is a member of the queried group ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;upcoming_events&quot;:[{&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;},{&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;host_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

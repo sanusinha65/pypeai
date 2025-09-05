@@ -1,0 +1,103 @@
+# Delete a user setting
+
+DELETE {{baseUrl}}/phone/users/:userId/settings/:settingType?shared_id=--e8ugg0SeS-9clgrDkn2w&amp;assistant_extension_id=---52bTzRAW2z5Qdu_MQRg&amp;device_id=-GHFnf5WQe-H-_r0Wwx9iQ&amp;intercom_extension_id=GQUUuvGMQu-bvod7HsYYIw
+
+
+<p>
+Use this API to remove the setting type of a user for a shared voicemail access and delegation. For user-level apps, pass 
+<a href="https://marketplace.zoom.us/docs/api-reference/using-zoom-apis#mekeyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+To view these settings in your Zoom web portal, navigate to the 
+<strong>
+Admin &gt;&gt; Phone System Management &gt;&gt; Users &amp; Rooms
+</strong>
+ interface. Click the 
+<strong>
+Users
+</strong>
+ tab and select 
+<strong>
+User Settings
+</strong>
+. Scroll down to 
+<strong>
+Voicemail &amp; Call Recordings
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `shared_id` | string |  | Required only for voicemail setting type. |
+| `assistant_extension_id` | string |  | Delete the delegation assistant, used for delegation setting type. |
+| `device_id` | string |  | Delete the assigned device, used for `desk_phone` setting type. |
+| `intercom_extension_id` | string |  | Delete the intercom connection, used for `intercom` setting type. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

@@ -1,0 +1,104 @@
+# Add a common area phone
+
+POST {{baseUrl}}/phone/common_area_phones
+
+
+<p>
+Use this API to 
+<a href="https://support.zoom.us/hc/en-us/articles/360028516231-Managing-Common-Area-Phones#h_2d0da347-c35a-4993-9771-e21aaa568deb">
+add a common area phone
+</a>
+.
+</p>
+
+
+
+<p>
+A common area phone can be provisioned by a Zoom account owner or a Zoom admin so that anyone in an organization can use it. For example, if your office has shared desks that don&#39;t belong to a specific employees, you could add a common area phone so that any person can use it.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+A 
+<a href="https://support.zoom.us/hc/en-us/articles/360001299063-Zoom-Voice-Supported-Devices">
+supported device
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;display_name&quot;=&gt;&quot;test_cap&quot;, &quot;extension_number&quot;=&gt;1000001014, &quot;mac_address&quot;=&gt;&quot;0004f25eec4e&quot;, &quot;type&quot;=&gt;&quot;Polycom&quot;, &quot;cost_center&quot;=&gt;&quot;pbx cost center&quot;, &quot;department&quot;=&gt;&quot;pbx department&quot;, &quot;description&quot;=&gt;&quot;description of common area phone&quot;, &quot;model&quot;=&gt;&quot;trio8500&quot;, &quot;provision_template_id&quot;=&gt;&quot;CLbU64xzTzCUXz58e2Lo-w&quot;, &quot;site_id&quot;=&gt;&quot;8f71O6rWT8KFUGQmJIFAdQ&quot;, &quot;timezone&quot;=&gt;&quot;America/Los_Angeles&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;display_name&quot;:&quot;test_cap&quot;,&quot;id&quot;:&quot;JOZmuJ30Spyrw-v9vUzIrA&quot;,&quot;common_area_optimized&quot;:true}
+```

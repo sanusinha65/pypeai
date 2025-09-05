@@ -1,0 +1,103 @@
+# Search company contacts
+
+GET {{baseUrl}}/contacts?search_key=&lt;string&gt;&amp;query_presence_status=&lt;boolean&gt;&amp;page_size=1&amp;contact_types=1&amp;user_status=inactive&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+A user under an organization&#39;s Zoom account has internal users listed under Company Contacts in the Zoom Client. Use this API to search users that are in the company contacts of a Zoom account. Using the 
+<code>
+search_key
+</code>
+ query parameter, provide either first name, last name or the email address of the user that you would like to search for. Optionally, set 
+<code>
+query_presence_status
+</code>
+ to 
+<code>
+true
+</code>
+ in order to include the presence status of a contact. 
+<br>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact:read:admin
+</code>
+, 
+<code>
+contact:read
+</code>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `search_key` | string |  | (Required) Provide the keyword - either first name, last name or email of the contact whom you have to search for. |
+| `query_presence_status` | string |  | Set `query_presence_status` to `true` in order to include the presence status of a contact in the response. |
+| `page_size` | number |  | The number of records to be returned with a single API call. |
+| `contact_types` | number |  | A comma-separated list of the type of user contact to query: 
+* `1` — A Zoom user. 
+* `2` — An auto receptionist. 
+* `3` — A common area phone. 
+* `4` — A call queue. 
+ * `5` — A shared line group. 
+* `6` — A shared global directory. 
+* `7` — A shared office contact. 
+* `8` — A ZOOM Room.
+
+**Note:** 
+* You must have a [phone management role with the &quot;**View**&quot; permission](https://support.zoom.us/hc/en-us/articles/360042099012-Using-Zoom-Phone-role-management) to query the `2`, `3`, `4`, `5`, and `7` values. 
+* You must provide a valid `search_key` value to query this parameter. |
+| `user_status` | string |  | The Zoom user&#39;s status: 
+* `active` — The user exists on the account. 
+* `inactive` — The user has been deactivated. 
+
+This value only work for the `contact_types` field is `1`, if not provide all users can be search. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token is returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;contacts&quot;:[{&quot;contact_type&quot;:4,&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;direct_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;im_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;im_group_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Office&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Mobile&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;presence_status&quot;:&quot;Do_Not_Disturb&quot;,&quot;user_status&quot;:&quot;active&quot;,&quot;activity&quot;:&quot;Unknown&quot;,&quot;sip_phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_uri&quot;:&quot;\u003cstring\u003e&quot;},{&quot;contact_type&quot;:7,&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;direct_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;extension_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;member_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;im_group_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;im_group_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Mobile&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Home&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;presence_status&quot;:&quot;Available&quot;,&quot;user_status&quot;:&quot;active&quot;,&quot;activity&quot;:&quot;Inactive&quot;,&quot;sip_phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;sip_uri&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;}
+```

@@ -1,0 +1,128 @@
+# Get call charges usage report
+
+GET {{baseUrl}}/phone/reports/call_charges?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;&amp;billing_account_id=&lt;string&gt;&amp;show_charges_only=&lt;boolean&gt;
+
+
+<p>
+Retrieves the 
+<strong>
+Phone Call Charges Report
+</strong>
+. 
+</p>
+
+
+
+<p>
+The 
+<strong>
+Call charges usage report
+</strong>
+ allows account owners and admins to view monthly Zoom phone call charges. Account owners and admins can also access this information when they log into their Zoom accounts and navigate to 
+<a href="https://zoom.us/pbx/page/report/system#/report/phone-system/charge?page_size=15&amp;chargeRestrict=0&amp;by=1">
+Call Charges Usage Report
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+</p>
+
+
+
+<ul>
+
+
+<li>
+Account must be enrollled in Pro or a higher plan
+</li>
+
+
+<li>
+Account must be enrolled in a 
+<a href="https://zoom.us/pricing/zoom-phone">
+Zoom Phone
+</a>
+ plan
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:call_charges:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The date range defined by the `from` and `to` parameters should be a month as the response only includes one month&#39;s worth of data at once. The from date should not exceed recent 13 months. If unspecified, it returns data from the past 30 days. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. The end time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format is the same format as the `from` parameter. |
+| `page_size` | string |  | The number of records to be returned within a single API call. The default is **30** and the maximum is **300**. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes.. |
+| `billing_account_id` | string |  | The billing account ID. |
+| `show_charges_only` | string |  | This field shows calls with charges only. The default value is `false`. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_charges&quot;:[{&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;international&quot;,&quot;service_type&quot;:&quot;meeting&quot;,&quot;calling_party_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;employee_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;charge_mode&quot;:&quot;per_min_after_t_duration&quot;,&quot;rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_charge&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;forward_number_billing&quot;:&quot;\u003cstring\u003e&quot;},{&quot;call_log_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;call_type&quot;:&quot;callCenter&quot;,&quot;service_type&quot;:&quot;call&quot;,&quot;calling_party_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;cost_center&quot;:&quot;\u003cstring\u003e&quot;,&quot;employee_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;department&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;charge_mode&quot;:&quot;per_min_after_t_duration&quot;,&quot;rate&quot;:&quot;\u003cstring\u003e&quot;,&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_charge&quot;:&quot;\u003cstring\u003e&quot;,&quot;billing_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;forward_number_billing&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

@@ -1,0 +1,132 @@
+# Request user authorization
+
+GET https://zoom.us/oauth/authorize?response_type=code&amp;client_id={{oAuthDevClientId}}&amp;redirect_uri={{oAuthDevRedirectUri}}
+
+
+<h3>
+Step 1: Request User Authorization
+</h3>
+
+
+
+<p>
+Click the Params tab.
+</p>
+
+
+
+<p>
+If this is your first time authorizing Zoom API access, update the 
+<code>
+client_id
+</code>
+ and 
+<code>
+redirect_uri
+</code>
+ variables with the appropriate fields from the App Credentials tab of your OAuth app from the Zoom App Marketplace.
+</p>
+
+
+
+<p>
+To verify that this is your first time, and to test the manual OAuth 2.0 process, navigate to the Local Test tab of your app and check if it says 
+<q>
+added
+</q>
+. If so, click 
+<q>
+remove
+</q>
+ before proceeding with the next action.
+</p>
+
+
+
+<p>
+After updating the 
+<code>
+client_id
+</code>
+ and 
+<code>
+redirect_uri
+</code>
+ variables in the Qodex Params tab, the URL should resemble this: 
+<code>
+https://zoom.us/oauth/authorize?response_type=code&amp;client_id={{ClientID}}&amp;redirect_uri={{redirect_uri}}
+</code>
+
+</p>
+
+
+
+<p>
+Now paste that URL in the browser you logged into the Zoom App Marketplace and using to test this flow and hit enter. Follow the prompt to authorize the app. Once you consent, you&#39;ll be redirected to a new page confirming the authorization. You&#39;ll also see a new url with a &#39;code&#39; query parameter includes.Copy this &#39;code&#39; query parameter. It&#39;s needed for the 
+<a href="https://marketplace.zoom.us/docs/guides/auth/oauth/#step-2-request-access-token">
+
+<code>
+POST Request access token
+</code>
+
+</a>
+.
+</p>
+
+
+
+<p>
+Proceed to the next request in this collection to continue.
+</p>
+
+
+
+<hr>
+
+
+
+<h5>
+Developer Documentation:
+</h5>
+
+
+
+<ul>
+
+
+<li>
+
+<a href="https://developers.zoom.us/docs/integrations/oauth/#step-1-request-user-authorization">
+Request user authorization
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `response_type` | string |  |  |
+| `client_id` | string |  | OAuth application&#39;s Development or Production Client ID. |
+| `redirect_uri` | string |  | URI to handle successful user authorization. Must match with Development or Production Redirect URI in your OAuth app settings.
+ |
+| `state` | null |  | (Optional) An opaque value that you can use to maintain state between the request and callback. The authorization server appends the state value to the redirect URI. This is also useful to prevent cross-site request forgery. |
+| `code_challenge` | null |  | (Optional, but required if using PKCE) A challenge derived from the code verifier sent in the authorization request to verify against the code_verifier later. |
+| `code_challenge_method` | null |  | (Optional) A method that was used to derive the code challenge. Defaults to &quot;plain&quot; if not present in the request. Code verifier transformation method is &quot;S256&quot; or &quot;plain&quot;.
+ |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

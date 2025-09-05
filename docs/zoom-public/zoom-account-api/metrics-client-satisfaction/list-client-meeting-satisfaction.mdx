@@ -1,0 +1,95 @@
+# List client meeting satisfaction
+
+GET {{baseUrl}}/metrics/client/satisfaction?from=&lt;date&gt;&amp;to=&lt;date&gt;
+
+
+<p>
+If the 
+<a href="https://support.zoom.us/hc/en-us/articles/115005855266">
+End of Meeting Feedback Survey
+</a>
+ option is enabled, attendees will be prompted with a survey window where they can tap either the 
+<strong>
+Thumbs Up
+</strong>
+ or 
+<strong>
+Thumbs Down
+</strong>
+ button that indicates their Zoom meeting experience. With this API, you can get information on the attendees&#39; meeting satisfaction. Specify a monthly date range for the query using the from and to query parameters. The month should fall within the last six months.
+</p>
+
+
+
+<p>
+To get information on the survey results with negative experiences (indicated by 
+<strong>
+Thumbs Down
+</strong>
+), use the 
+<a href="/docs/api-reference/zoom-api/methods#operation/dashboardClientFeedbackDetail">
+
+<strong>
+Get Zoom meetings client feedback
+</strong>
+
+</a>
+ API.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_home:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The start date for the query in &amp;ldquo;yyyy-mm-dd&amp;rdquo; format.  |
+| `to` | string |  | The end date for the query in &amp;ldquo;yyyy-mm-dd&amp;rdquo; format.  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;client_satisfaction&quot;:[{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;good_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;none_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;not_good_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;satisfaction_percent&quot;:&quot;\u003cdouble\u003e&quot;},{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;good_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;none_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;not_good_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;satisfaction_percent&quot;:&quot;\u003cdouble\u003e&quot;}],&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

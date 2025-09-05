@@ -1,0 +1,59 @@
+# Get daily usage report
+
+GET {{baseUrl}}/videosdk/report/daily?year=&amp;month=
+
+
+<p>
+Retrieve daily report to access the account-wide usage of Zoom services for each day in a given month. It lists the number of sessions, users, and session minutes.
+<br>
+
+
+<strong>
+Prerequisites
+</strong>
+
+<br>
+
+* A Video SDK account.
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `year` | null |  | Year for this report |
+| `month` | null |  | Month for this report |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;year&quot;:2021,&quot;month&quot;:12,&quot;dates&quot;:[{&quot;date&quot;:&quot;2021-12-01&quot;,&quot;sessions&quot;:20,&quot;users&quot;:80,&quot;session_minutes&quot;:380},{&quot;date&quot;:&quot;2021-12-01&quot;,&quot;sessions&quot;:20,&quot;users&quot;:80,&quot;session_minutes&quot;:380}]}
+```

@@ -1,0 +1,88 @@
+# Add an account&#39;s inbound block rule
+
+POST {{baseUrl}}/phone/inbound_blocked/rules
+
+
+<p>
+Adds an account level block rule for inbound calls and messaging from a phone number. As a result, all extensions block calls and messages to the phone number.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher account with Zoom Phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:inbound_block_rule:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;blocked_number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;match_type&quot;=&gt;&quot;SMS-shortCodes&quot;, &quot;status&quot;=&gt;&quot;active&quot;, &quot;type&quot;=&gt;&quot;block_for_other_reasons&quot;, &quot;comment&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,62 @@
+# Bulk update feature
+
+POST {{baseUrl}}/users/features
+
+
+<p>
+Bulk update features. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;feature_type&quot;=&gt;&quot;zoom_events&quot;, &quot;feature_value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;users&quot;=&gt;[{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;success_user_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;fail_details&quot;:[{&quot;user_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;reason&quot;:&quot;Can&#39;t update for Zoom One users&quot;},{&quot;user_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;reason&quot;:&quot;Can&#39;t update for Zoom Room users&quot;}]}
+```

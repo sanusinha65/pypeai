@@ -1,0 +1,55 @@
+#Zoom Revenue Accelerator API
+
+Number of APIs: 22
+
+
+<p>
+Our conversational intelligence capabilities within Zoom products include the Zoom Revenue Accelerator add-on. Zoom Revenue Accelerator uses machine-learning algorithms to transform customer interactions into valuable insights for identifying opportunities, assessing risks, and ultimately enabling and improving sales team performance. For more information, read this 
+<a href="https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0059301">
+support article.
+</a>
+
+</p>
+
+
+
+1. [iq-deals-{dealId}-activities - Get deal activities](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-deals-dealid-activities/get-deal-activities)
+GET {{baseUrl}}/iq/deals/:dealId/activities?conversation_topic=&lt;string&gt;&amp;callout_type=engagingQuestions&amp;indicator_id=&lt;string&gt;&amp;mentioned_topic_id=&lt;string&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+2. [iq-users-{userId}-conversations-playlists - Get a user&#39;s playlist](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-users-userid-conversations-playlists/get-a-users-playlist)
+GET {{baseUrl}}/iq/users/:userId/conversations/playlists?page_size=30&amp;next_page_token=&lt;string&gt;&amp;type=All&amp;following=false&amp;create_by_self=false
+
+
+3. [iq-conversations - Add conversation by file id or download url.](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations/add-conversation-by-file-id-or-download-url)
+POST {{baseUrl}}/iq/conversations
+
+
+4. [iq-settings-indicators - Get indicators settings](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-settings-indicators/get-indicators-settings)
+GET {{baseUrl}}/iq/settings/indicators?category_id=&lt;string&gt;&amp;type=guiding_sentences&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+5. [iq-conversations-{conversationId}-content_analysis - Get conversation content analysis](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations-conversationid-content_analysis/get-conversation-content-analysis)
+GET {{baseUrl}}/iq/conversations/:conversationId/content_analysis?analysis_type=engagingQuestions&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+6. [iq-conversations-{conversationId}-scorecards - Get conversation scorecards](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations-conversationid-scorecards/get-conversation-scorecards)
+GET {{baseUrl}}/iq/conversations/:conversationId/scorecards?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+7. [iq-conversations-{conversationId}-interactions - Get conversation interactions](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations-conversationid-interactions/get-conversation-interactions)
+GET {{baseUrl}}/iq/conversations/:conversationId/interactions?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+8. [iq-conversations-{conversationId}-comments - Add new comments to the conversation](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations-conversationid-comments/add-new-comments-to-the-conversation)
+POST {{baseUrl}}/iq/conversations/:conversationId/comments
+
+
+9. [iq-conversations-{conversationId}-comments-{commentId} - Delete conversation&#39;s comment](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations-conversationid-comments-commentid/delete-conversations-comment)
+DELETE {{baseUrl}}/iq/conversations/:conversationId/comments/:commentId
+
+
+10. [iq-conversations-{conversationId}-comments-{commentId} - Edit conversation comment](https://developers.qodex.ai/zoom-public/zoom-revenue-accelerator-api/iq-conversations-conversationid-comments-commentid/edit-conversation-comment)
+PATCH {{baseUrl}}/iq/conversations/:conversationId/comments/:commentId
+
+

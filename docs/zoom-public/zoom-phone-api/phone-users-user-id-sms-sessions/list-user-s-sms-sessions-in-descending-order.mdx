@@ -1,0 +1,78 @@
+# List user&#39;s SMS sessions in descending order
+
+GET {{baseUrl}}/phone/users/:userId/sms/sessions/sync?sync_type=FSync&amp;sync_token=MFgyQ0Z3UDkwaF8xNjQyNDA3MjA3MDE0XzE2NDI0MDcyMDcwMTQ=&amp;count=50
+
+
+<p>
+Use this API to retrieve user&#39;s SMS sessions in descending order. Mirrors the ZP client behavior with the most recent on top.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Paid account 
+* User-enabled Zoom phone 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone_sms:read
+</code>
+, 
+<code>
+phone_sms:read:admin
+</code>
+, 
+<code>
+phone_sms:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `sync_type` | string |  | (Required) FSync: Full sync BSync: Backward sync ISync: Forward sync |
+| `sync_token` | string |  | Sync token. Use if requesting a backward (`BSync`) or forward (`ISync`) sync. |
+| `count` | number |  | Record count of each query |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;sms_sessions&quot;:[{&quot;last_access_time&quot;:&quot;2022-03-25T02:11:27Z&quot;,&quot;latest_message&quot;:{&quot;attachments&quot;:[{&quot;id&quot;:&quot;ttllslww&quot;,&quot;type&quot;:&quot;GIF&quot;},{&quot;id&quot;:&quot;ttllslww&quot;,&quot;type&quot;:&quot;GIF&quot;}],&quot;date_time&quot;:&quot;2022-03-25T02:11:27Z&quot;,&quot;direction&quot;:&quot;Out&quot;,&quot;message&quot;:&quot;hello&quot;,&quot;message_id&quot;:&quot;cfc07047-123e-4097-91d4-ac2635d646af&quot;,&quot;message_type&quot;:null,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;+18108001001&quot;,&quot;display_name&quot;:&quot;usersubsetting0001@testapi.com&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;+13522348840&quot;,&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;}},{&quot;phone_number&quot;:&quot;+13522348840&quot;,&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;}}]},&quot;participants&quot;:[{&quot;display_name&quot;:&quot;usersubsetting0001@testapi.com&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;+13522348840&quot;},{&quot;display_name&quot;:&quot;usersubsetting0001@testapi.com&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;+13522348840&quot;}],&quot;session_id&quot;:&quot;67e261d9eefb2f87dc8193b4c2aeb1d8&quot;},{&quot;last_access_time&quot;:&quot;2022-03-25T02:11:27Z&quot;,&quot;latest_message&quot;:{&quot;attachments&quot;:[{&quot;id&quot;:&quot;ttllslww&quot;,&quot;type&quot;:&quot;GIF&quot;},{&quot;id&quot;:&quot;ttllslww&quot;,&quot;type&quot;:&quot;GIF&quot;}],&quot;date_time&quot;:&quot;2022-03-25T02:11:27Z&quot;,&quot;direction&quot;:&quot;Out&quot;,&quot;message&quot;:&quot;hello&quot;,&quot;message_id&quot;:&quot;cfc07047-123e-4097-91d4-ac2635d646af&quot;,&quot;message_type&quot;:&quot;6&quot;,&quot;sender&quot;:{&quot;phone_number&quot;:&quot;+18108001001&quot;,&quot;display_name&quot;:&quot;usersubsetting0001@testapi.com&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;DnEopNmXQEGU2uvvzjgojw&quot;,&quot;type&quot;:&quot;user&quot;}},&quot;to_members&quot;:[{&quot;phone_number&quot;:&quot;+13522348840&quot;,&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;}},{&quot;phone_number&quot;:&quot;+13522348840&quot;,&quot;display_name&quot;:&quot;test api&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;}}]},&quot;participants&quot;:[{&quot;display_name&quot;:&quot;usersubsetting0001@testapi.com&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;+13522348840&quot;},{&quot;display_name&quot;:&quot;usersubsetting0001@testapi.com&quot;,&quot;owner&quot;:{&quot;id&quot;:&quot;QOFvOvk7SJeOR2VBfL79_g&quot;,&quot;type&quot;:&quot;user&quot;},&quot;phone_number&quot;:&quot;+13522348840&quot;}],&quot;session_id&quot;:&quot;67e261d9eefb2f87dc8193b4c2aeb1d8&quot;}],&quot;sync_token&quot;:&quot;TVR5cXB2b2dmSl8xNjIxNTc0ODQ0MDY3XzE2NDgxNzQyODcwMDk=&quot;}
+```

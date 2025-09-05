@@ -1,0 +1,66 @@
+# Get a meeting
+
+GET {{baseUrl}}/meetings/:meetingId?occurrence_id=1648194360000&amp;show_previous_occurrences=true
+
+
+<p>
+Retrieve the details of a meeting.
+<br>
+
+<br>
+
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+ 
+<code>
+meeting:read
+</code>
+
+<br>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+ 
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | number |  | Meeting Occurrence ID. Provide this field to view meeting details of a particular occurrence of the [recurring meeting](https://support.zoom.us/hc/en-us/articles/214973206-Scheduling-Recurring-Meetings). |
+| `show_previous_occurrences` | boolean |  | Set the value of this field to `true` if you would like to view meeting details of all previous occurrences of a [recurring meeting](https://support.zoom.us/hc/en-us/articles/214973206-Scheduling-Recurring-Meetings).  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;assistant_id&quot;:&quot;kFFvsJc-Q1OSxaJQLvaa_A&quot;,&quot;host_email&quot;:&quot;jchill@example.com&quot;,&quot;host_id&quot;:&quot;30R7kT7bTIKSNUFEuH_Qlg&quot;,&quot;id&quot;:97763643886,&quot;uuid&quot;:&quot;aDYlohsHRtCd4ii1uC2+hA==&quot;,&quot;agenda&quot;:&quot;My Meeting&quot;,&quot;created_at&quot;:&quot;2022-03-25T07:29:29Z&quot;,&quot;duration&quot;:60,&quot;encrypted_password&quot;:&quot;8pEkRweVXPV3Ob2KJYgFTRlDtl1gSn.1&quot;,&quot;h323_password&quot;:&quot;123456&quot;,&quot;join_url&quot;:&quot;https://example.com/j/11111&quot;,&quot;occurrences&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;password&quot;:&quot;123456&quot;,&quot;pmi&quot;:&quot;97891943927&quot;,&quot;pre_schedule&quot;:false,&quot;recurrence&quot;:{&quot;type&quot;:1,&quot;end_date_time&quot;:&quot;2022-04-02T15:59:00Z&quot;,&quot;end_times&quot;:7,&quot;monthly_day&quot;:1,&quot;monthly_week&quot;:1,&quot;monthly_week_day&quot;:1,&quot;repeat_interval&quot;:1,&quot;weekly_days&quot;:&quot;1&quot;},&quot;settings&quot;:{&quot;allow_multiple_devices&quot;:true,&quot;alternative_hosts&quot;:&quot;jchill@example.com;thill@example.com&quot;,&quot;alternative_hosts_email_notification&quot;:true,&quot;alternative_host_update_polls&quot;:true,&quot;approval_type&quot;:0,&quot;approved_or_denied_countries_or_regions&quot;:{&quot;approved_list&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;denied_list&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;enable&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;method&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},&quot;audio&quot;:&quot;telephony&quot;,&quot;authentication_domains&quot;:&quot;example.com&quot;,&quot;authentication_exception&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;authentication_name&quot;:&quot;Sign in to Zoom&quot;,&quot;authentication_option&quot;:&quot;signIn_D8cJuqWVQ623CI4Q8yQK0Q&quot;,&quot;auto_recording&quot;:&quot;cloud&quot;,&quot;breakout_room&quot;:{&quot;enable&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;rooms&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},&quot;calendar_type&quot;:1,&quot;close_registration&quot;:false,&quot;cn_meeting&quot;:false,&quot;contact_email&quot;:&quot;jchill@example.com&quot;,&quot;contact_name&quot;:&quot;Jill Chill&quot;,&quot;custom_keys&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;email_notification&quot;:true,&quot;encryption_type&quot;:&quot;enhanced_encryption&quot;,&quot;enforce_login&quot;:true,&quot;enforce_login_domains&quot;:&quot;example.com&quot;,&quot;focus_mode&quot;:true,&quot;global_dial_in_countries&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;global_dial_in_numbers&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}],&quot;host_video&quot;:true,&quot;in_meeting&quot;:false,&quot;jbh_time&quot;:0,&quot;join_before_host&quot;:true,&quot;language_interpretation&quot;:{&quot;enable&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;interpreters&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}},&quot;meeting_authentication&quot;:true,&quot;mute_upon_entry&quot;:false,&quot;participant_video&quot;:false,&quot;private_meeting&quot;:false,&quot;registrants_confirmation_email&quot;:true,&quot;registrants_email_notification&quot;:true,&quot;registration_type&quot;:1,&quot;show_share_button&quot;:true,&quot;use_pmi&quot;:false,&quot;waiting_room&quot;:false,&quot;watermark&quot;:false},&quot;start_time&quot;:&quot;2022-03-25T07:29:29Z&quot;,&quot;start_url&quot;:&quot;https://example.com/s/11111&quot;,&quot;status&quot;:&quot;waiting&quot;,&quot;timezone&quot;:&quot;America/Los_Angeles&quot;,&quot;topic&quot;:&quot;My Meeting&quot;,&quot;tracking_fields&quot;:[{&quot;field&quot;:&quot;field1&quot;,&quot;value&quot;:&quot;value1&quot;,&quot;visible&quot;:true},{&quot;field&quot;:&quot;field1&quot;,&quot;value&quot;:&quot;value1&quot;,&quot;visible&quot;:true}],&quot;type&quot;:2}
+```

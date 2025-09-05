@@ -1,0 +1,73 @@
+# Delete users from a directory of a site
+
+DELETE {{baseUrl}}/phone/sites/:siteId/dial_by_name_directory/extensions?site_id=fleoq3&amp;extension_ids=fiefi02kd&amp;extension_ids=fiefi02kd
+
+
+<p>
+Use this API to delete users from a 
+<a href="https://support.zoom.us/hc/en-us/articles/4404938949389-Using-a-dial-by-name-directory">
+directory
+</a>
+ of the specified site.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Rate Limit Label:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `site_id` | string |  | Unique identifier of the [site](https://support.zoom.us/hc/en-us/articles/360020809672-Managing-multiple-sites) to which users to delete belongs |
+| `extension_ids` | string |  | Extension Ids. If the value is not specified, delete the value of `site_id` from  `included sites` and delete all users related with `site_id` from directory |
+| `extension_ids` | string |  | Extension Ids. If the value is not specified, delete the value of `site_id` from  `included sites` and delete all users related with `site_id` from directory |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

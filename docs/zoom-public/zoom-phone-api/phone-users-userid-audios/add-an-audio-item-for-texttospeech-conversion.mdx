@@ -1,0 +1,108 @@
+# Add an audio item for text-to-speech conversion
+
+POST {{baseUrl}}/phone/users/:userId/audios
+
+
+<p>
+Adds an audio item for 
+<a href="https://support.zoom.us/hc/en-us/articles/4402414203533-Using-the-audio-library-to-customize-audio#h_01F8B0D2ZJBKEDH10DFZ7J2CM7">
+text-to-speech conversion
+</a>
+. Only the admin or user can add your audio and directly pass the 
+<code>
+me
+</code>
+ value instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+,
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:write:audio
+</code>
+,
+<code>
+phone:write:audio:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;audio_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;text&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;voice_language&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;voice_accent&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;audio_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,103 @@
+# List call queue members
+
+GET {{baseUrl}}/phone/call_queues/:callQueueId/members
+
+
+<p>
+Lists the call queue members.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro, Business, or Education account
+</li>
+
+
+<li>
+Account owner or admin permissions
+</li>
+
+
+<li>
+Zoom Phone license
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:list_call_queue_members:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;call_queue_members&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;level&quot;:&quot;user&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;receive_call&quot;:&quot;\u003cboolean\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;level&quot;:&quot;commonArea&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;receive_call&quot;:&quot;\u003cboolean\u003e&quot;,&quot;extension_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

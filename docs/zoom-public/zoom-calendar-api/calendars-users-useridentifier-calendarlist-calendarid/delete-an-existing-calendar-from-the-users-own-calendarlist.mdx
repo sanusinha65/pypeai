@@ -1,0 +1,64 @@
+# Delete an existing calendar from the user&#39;s own calendarList
+
+DELETE {{baseUrl}}/calendars/users/:userIdentifier/calendarList/:calendarId
+
+
+<p>
+Removes a calendar from the user&#39;s calendar list. The user can be 
+<code>
+me
+</code>
+ or a given calendar ID. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+calendar:write
+</code>
+,
+<code>
+calendar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

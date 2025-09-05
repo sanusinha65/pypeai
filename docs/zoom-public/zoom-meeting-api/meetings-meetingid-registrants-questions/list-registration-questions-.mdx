@@ -1,0 +1,65 @@
+# List registration questions 
+
+GET {{baseUrl}}/meetings/:meetingId/registrants/questions
+
+
+<p>
+List registration questions that will be displayed to users while 
+<a href="https://support.zoom.us/hc/en-us/articles/211579443-Registration-for-Meetings">
+registering for a meeting
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read
+</code>
+,
+<code>
+meeting:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;custom_questions&quot;:[{&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single&quot;},{&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single&quot;}],&quot;questions&quot;:[{&quot;field_name&quot;:&quot;address&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;field_name&quot;:&quot;role_in_purchase_process&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

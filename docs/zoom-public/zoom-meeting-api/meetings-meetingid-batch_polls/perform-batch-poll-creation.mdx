@@ -1,0 +1,106 @@
+# Perform batch poll creation
+
+POST {{baseUrl}}/meetings/:meetingId/batch_polls
+
+
+<p>
+Polls allow the meeting host to survey attendees. Create batch 
+<a href="https://support.zoom.us/hc/en-us/articles/213756303-Polling-for-Meetings">
+polls
+</a>
+ for a meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Host user type must be 
+<strong>
+Pro
+</strong>
+ or higher plan.
+</li>
+
+
+<li>
+Polling feature must be enabled in the host&#39;s account.
+</li>
+
+
+<li>
+Meeting must be a scheduled meeting. Instant meetings do not have polling features enabled.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:write:admin
+</code>
+,
+<code>
+meeting:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;polls&quot;=&gt;[{&quot;anonymous&quot;=&gt;false, &quot;poll_type&quot;=&gt;1, &quot;questions&quot;=&gt;[{&quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompts&quot;=&gt;[{&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false, &quot;type&quot;=&gt;&quot;rank_order&quot;}, {&quot;answer_max_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_min_character&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;answer_required&quot;=&gt;false, &quot;answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;case_sensitive&quot;=&gt;false, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompts&quot;=&gt;[{&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, {&quot;prompt_question&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;prompt_right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}], &quot;rating_max_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_max_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;rating_min_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;rating_min_value&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;right_answers&quot;=&gt;[&quot;&lt;string&gt;&quot;], &quot;show_as_dropdown&quot;=&gt;false, &quot;type&quot;=&gt;&quot;short_answer&quot;}], &quot;title&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;polls&quot;:[{&quot;anonymous&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;poll_type&quot;:2,&quot;questions&quot;:[{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:&quot;short_answer&quot;},{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:&quot;matching&quot;}],&quot;status&quot;:&quot;sharing&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;},{&quot;anonymous&quot;:&quot;\u003cboolean\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;poll_type&quot;:1,&quot;questions&quot;:[{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:&quot;matching&quot;},{&quot;answer_max_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_min_character&quot;:&quot;\u003cinteger\u003e&quot;,&quot;answer_required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;case_sensitive&quot;:false,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompts&quot;:[{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;prompt_question&quot;:&quot;\u003cstring\u003e&quot;,&quot;prompt_right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;rating_max_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_max_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rating_min_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;rating_min_value&quot;:&quot;\u003cinteger\u003e&quot;,&quot;right_answers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;show_as_dropdown&quot;:&quot;\u003cboolean\u003e&quot;,&quot;type&quot;:&quot;fill_in_the_blank&quot;}],&quot;status&quot;:&quot;ended&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

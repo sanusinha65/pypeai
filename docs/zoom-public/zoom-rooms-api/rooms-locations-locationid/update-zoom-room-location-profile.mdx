@@ -1,0 +1,95 @@
+# Update Zoom Room location profile
+
+PATCH {{baseUrl}}/rooms/locations/:locationId
+
+
+<p>
+Each location type of the 
+<a href="https://support.zoom.us/hc/en-us/articles/115000342983-Zoom-Rooms-Location-Hierarchy">
+Zoom Rooms location hierarchy
+</a>
+ has a profile page that includes information such as name of the location, address, support email, etc. Use this API to update information about a specific Zoom Rooms location type such as information about the city where the Zoom Rooms is located.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Account owner or admin permission
+</li>
+
+
+<li>
+Zoom Rooms version 4.0 or higher
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;basic&quot;=&gt;{&quot;address&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;description&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;required_code_to_ext&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;room_passcode&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;support_email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;support_phone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{}
+```

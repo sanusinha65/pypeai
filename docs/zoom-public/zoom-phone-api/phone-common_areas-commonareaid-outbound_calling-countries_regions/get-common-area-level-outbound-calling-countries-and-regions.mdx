@@ -1,0 +1,87 @@
+# Get common area level outbound calling countries and regions
+
+GET {{baseUrl}}/phone/common_areas/:commonAreaId/outbound_calling/countries_regions?next_page_token=&lt;string&gt;&amp;page_size=30
+
+
+<p>
+Returns the common area level outbound calling countries and regions.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:read:common_area_outbound_calling_rule:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. It returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `page_size` | number |  | The number of records in a single API call. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;countries_regions&quot;:[{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;code&quot;:&quot;\u003cinteger\u003e&quot;,&quot;iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;rule&quot;:4,&quot;enabled_carrier&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;code&quot;:&quot;\u003cinteger\u003e&quot;,&quot;iso_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;rule&quot;:2,&quot;enabled_carrier&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}],&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30}
+```

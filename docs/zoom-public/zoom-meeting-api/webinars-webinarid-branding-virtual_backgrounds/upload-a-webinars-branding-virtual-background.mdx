@@ -1,0 +1,88 @@
+# Upload a webinar&#39;s branding Virtual Background
+
+POST {{baseUrl}}/webinars/:webinarId/branding/virtual_backgrounds
+
+
+<p>
+Use this API to upload a webinar&#39;s session branding 
+<a href="https://support.zoom.us/hc/en-us/articles/210707503-Virtual-Background">
+Virtual Background
+</a>
+. Hosts and panelists can select and use these Virtual Backgrounds during the webinar. Branding Virtual Background files have the following restrictions: 
+* A webinar cannot exceed more than 10 Virtual Background files. 
+* You can only upload image files that are in JPG/JPEG, GIF or PNG format. 
+* The Virtual Background file size cannot exceed 15 megabytes (MB). 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+*  The 
+<strong>
+Webinar Session Branding
+</strong>
+ setting enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;file&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}, {&quot;name&quot;=&gt;&quot;default&quot;, &quot;value&quot;=&gt;&quot;false&quot;, &quot;datatype&quot;=&gt;&quot;boolean&quot;}, {&quot;name&quot;=&gt;&quot;set_default_for_all_panelists&quot;, &quot;value&quot;=&gt;&quot;true&quot;, &quot;datatype&quot;=&gt;&quot;boolean&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;is_default&quot;:&quot;\u003cboolean\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;image&quot;}
+```

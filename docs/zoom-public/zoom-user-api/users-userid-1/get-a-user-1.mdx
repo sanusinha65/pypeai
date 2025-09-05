@@ -1,0 +1,140 @@
+# Get a user
+
+GET {{baseUrl}}/users/:userId?login_type=99&amp;encrypted_email=false&amp;search_by_unique_id=&lt;boolean&gt;
+
+
+<p>
+View a user&#39;s information on a Zoom account. For user-managed apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter. 
+
+<strong>
+Note:
+</strong>
+ The 
+<code>
+user_info:read
+</code>
+ scope is only available when you pass the 
+<code>
+me
+</code>
+ value for the 
+<code>
+$userId
+</code>
+ value. 
+</p>
+
+
+
+<p>
+Users who have not activated their account will have a 
+<code>
+pending
+</code>
+ status. These users&#39; 
+<code>
+created_at
+</code>
+ timestamp will also display the time at which the API call was made, 
+<strong>
+not
+</strong>
+ the account&#39;s creation date. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user_info:read
+</code>
+,
+<code>
+user:read
+</code>
+,
+<code>
+user:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `login_type` | number |  | The user&#39;s login method. 
+* `0` - Facebook OAuth 
+* `1` - Google OAuth. 
+* `24` - Apple OAuth. 
+* `27` - Microsoft OAuth. 
+* `97` - Mobile device. 
+* `98` - RingCentral OAuth. 
+* `99` - API user. 
+* `100` - Zoom Work email. 
+* `101` - Single Sign-On (SSO). 
+
+These login methods are only available in China. 
+* `11` - Phone number. 
+* `21` - WeChat. 
+* `23` - Alipay. |
+| `encrypted_email` | boolean |  | Whether the email address passed for the `userId` value is an encrypted email address. 
+
+ * `true` - The email address is encrypted. 
+ * `false` - The email address is not encrypted. 
+
+ If you do not query this parameter, this value defaults to null (`false`). |
+| `search_by_unique_id` | string |  | Whether the queried `userId` value is an employee unique ID. 
+* `true` - The queried ID is an employee&#39;s unique ID. 
+* `false` - The queried ID is not an employee&#39;s unique ID. 
+
+This value defaults to `false` (null). |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;type&quot;:2,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;dept&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_client_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_login_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;pmi&quot;:&quot;\u003clong\u003e&quot;,&quot;role_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;use_pmi&quot;:false,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_number&quot;:&quot;\u003clong\u003e&quot;,&quot;cms_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;company&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;custom_attributes&quot;:[{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;key&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;employee_unique_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;im_group_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;jid&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;language&quot;:&quot;\u003cstring\u003e&quot;,&quot;location&quot;:&quot;\u003cstring\u003e&quot;,&quot;login_types&quot;:[24,99],&quot;manager&quot;:&quot;\u003cemail\u003e&quot;,&quot;personal_meeting_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_country&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Home&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;label&quot;:&quot;Mobile&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;pic_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_united_type&quot;:&quot;16384&quot;,&quot;pronouns&quot;:&quot;\u003cstring\u003e&quot;,&quot;pronouns_option&quot;:2,&quot;role_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;inactive&quot;,&quot;vanity_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;verified&quot;:&quot;\u003cinteger\u003e&quot;,&quot;cluster&quot;:&quot;\u003cstring\u003e&quot;,&quot;zoom_one_type&quot;:&quot;\u003cinteger\u003e&quot;}
+```

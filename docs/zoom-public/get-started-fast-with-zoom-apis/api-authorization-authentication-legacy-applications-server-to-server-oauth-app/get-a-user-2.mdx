@@ -1,0 +1,202 @@
+# Get a user
+
+GET {{baseUrl}}/users/{userId}
+
+
+<h3>
+Get a User
+</h3>
+
+
+
+<p>
+In order to get your Server-to-Server app 
+<code>
+access_token
+</code>
+, you will need your account
+<u>
+id. The account
+</u>
+id is available on your Server-to-Server app credentials page, but you can also get it programmatically.
+</p>
+
+
+
+<p>
+Use the 
+<q>
+Get a user
+</q>
+ API endpoint to programmatically retrieve the account
+<u>
+id using another pre-created OAuth app type&#39;s `access
+</u>
+token`.
+</p>
+
+
+
+<p>
+
+<strong>
+This will work only if you have already authorized and authenticated Zoom API access via a pre-created OAuth app.
+</strong>
+
+</p>
+
+
+
+<p>
+The Auth tab is pre-set to Bearer Token where you can input the 
+<code>
+access_token
+</code>
+ of your choice. It will be sent in the Request Headers to the API endpoint.
+</p>
+
+
+
+<p>
+If successful, you&#39;ll receive a response like this:
+</p>
+
+
+
+<pre>
+
+<code class="json">
+{
+  &quot;id&quot;: &quot;zJKyaiAyTNC-MWjiWC18KQ&quot;,
+  &quot;created_at&quot;: &quot;2018-10-31T04:32:37Z&quot;,
+  &quot;dept&quot;: &quot;Developers&quot;,
+  &quot;email&quot;: &quot;jchill@example.com&quot;,
+  &quot;first_name&quot;: &quot;Jill&quot;,
+  &quot;last_client_version&quot;: &quot;5.9.6.4993(mac)&quot;,
+  &quot;last_login_time&quot;: &quot;2021-05-05T20:40:30Z&quot;,
+  &quot;last_name&quot;: &quot;Chill&quot;,
+  &quot;pmi&quot;: 3542471135,
+  &quot;role_name&quot;: &quot;Admin&quot;,
+  &quot;timezone&quot;: &quot;Asia/Shanghai&quot;,
+  &quot;type&quot;: 1,
+  &quot;use_pmi&quot;: false,
+  &quot;account_id&quot;: &quot;q6gBJVO5TzexKYTb_I2rpg&quot;,
+  &quot;account_number&quot;: 10009239,
+  &quot;cms_user_id&quot;: &quot;KDcuGIm1QgePTO8WbOqwIQ&quot;,
+  &quot;company&quot;: &quot;Jill&quot;,
+  &quot;custom_attributes&quot;: {
+    &quot;key&quot;: &quot;cbf_cywdkexrtqc73f97gd4w6g&quot;,
+    &quot;name&quot;: &quot;A1&quot;,
+    &quot;value&quot;: &quot;1&quot;
+  },
+  &quot;employee_unique_id&quot;: &quot;HqDyI037Qjili1kNsSIrIg&quot;,
+  &quot;group_ids&quot;: [
+    &quot;RSMaSp8sTEGK0_oamiA2_w&quot;
+  ],
+  &quot;im_group_ids&quot;: [
+    &quot;t-_-d56CSWG-7BF15LLrOw&quot;
+  ],
+  &quot;jid&quot;: &quot;jchill@example.com&quot;,
+  &quot;job_title&quot;: &quot;API Developer&quot;,
+  &quot;language&quot;: &quot;en-US&quot;,
+  &quot;location&quot;: &quot;Paris&quot;,
+  &quot;login_type&quot;: 101,
+  &quot;manager&quot;: &quot;thill@example.com&quot;,
+  &quot;personal_meeting_url&quot;: &quot;example.com&quot;,
+  &quot;phone_country&quot;: &quot;US&quot;,
+  &quot;phone_number&quot;: &quot;+1 800000000&quot;,
+  &quot;phone_numbers&quot;: [
+    {
+      &quot;code&quot;: &quot;+1&quot;,
+      &quot;country&quot;: &quot;US&quot;,
+      &quot;label&quot;: &quot;Mobile&quot;,
+      &quot;number&quot;: &quot;800000000&quot;,
+      &quot;verified&quot;: true
+    }
+  ],
+  &quot;pic_url&quot;: &quot;example.com&quot;,
+  &quot;plan_united_type&quot;: &quot;1&quot;,
+  &quot;pronouns&quot;: &quot;3123&quot;,
+  &quot;pronouns_option&quot;: 1,
+  &quot;role_id&quot;: &quot;0&quot;,
+  &quot;status&quot;: &quot;pending&quot;,
+  &quot;vanity_url&quot;: &quot;example.com&quot;,
+  &quot;verified&quot;: 1,
+  &quot;cluster&quot;: &quot;us04&quot;,
+  &quot;zoom_one_type&quot;: 4
+}
+
+
+</code>
+
+</pre>
+
+
+
+<p>
+Equipped with the 
+<code>
+account_id
+</code>
+, proceed to the next request in this folder.
+</p>
+
+
+
+<hr>
+
+
+
+<h5>
+Developer Documentation:
+</h5>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+
+<a href="https://developers.zoom.us/docs/api/rest/reference/zoom-api/methods/#operation/user">
+Get a user API endpoint
+</a>
+
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+
+<a href="https://developers.zoom.us/docs/internal-apps/s2s-oauth/">
+Get app credentials
+</a>
+
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `` | null |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

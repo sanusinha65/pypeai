@@ -1,0 +1,66 @@
+# List upcoming renewal accounts
+
+GET {{baseUrl}}/accounts/billing/renewals?interval=30&amp;page_size=&lt;integer&gt;&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+List sub accounts&#39; upcoming renewal plans.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+,
+<code>
+account:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `interval` | number |  | Valid date range. Value is 30, 60, or 90. |
+| `page_size` | string |  | Page size. Value is less than 50. |
+| `next_page_token` | string |  |  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;interval&quot;:30,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;results&quot;:[{&quot;account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_renew&quot;:&quot;\u003cboolean\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_renewal_date&quot;:&quot;\u003cDate\u003e&quot;,&quot;renewable_subscriptions&quot;:[{&quot;billing_cycle&quot;:&quot;Annual&quot;,&quot;next_invoice_amount&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cDate\u003e&quot;,&quot;plan_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cDate\u003e&quot;},{&quot;billing_cycle&quot;:&quot;Quarterly&quot;,&quot;next_invoice_amount&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cDate\u003e&quot;,&quot;plan_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cDate\u003e&quot;}],&quot;total_renewal_amount&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;account_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;account_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;auto_renew&quot;:&quot;\u003cboolean\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;next_renewal_date&quot;:&quot;\u003cDate\u003e&quot;,&quot;renewable_subscriptions&quot;:[{&quot;billing_cycle&quot;:&quot;Annual&quot;,&quot;next_invoice_amount&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cDate\u003e&quot;,&quot;plan_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cDate\u003e&quot;},{&quot;billing_cycle&quot;:&quot;Monthly&quot;,&quot;next_invoice_amount&quot;:&quot;\u003cnumber\u003e&quot;,&quot;next_invoice_date&quot;:&quot;\u003cDate\u003e&quot;,&quot;plan_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;service_effective_date&quot;:&quot;\u003cDate\u003e&quot;}],&quot;total_renewal_amount&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;}
+```

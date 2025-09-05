@@ -1,0 +1,77 @@
+# Get a meeting&#39;s join token for live streaming
+
+GET {{baseUrl}}/meetings/:meetingId/jointoken/live_streaming
+
+
+<p>
+Get a meeting&#39;s join token to allow live streaming. The join token allows a recording bot implemented using Zoom meeting SDK to connect to a Zoom meeting &quot;hosted by the issuer of the token&quot;, and can call the streaming method automatically. It supports both regular live streaming, and raw streaming. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher plan for the meeting host. 
+* The 
+<strong>
+Allow livestreaming of meetings
+</strong>
+ user setting enabled in the Zoom web portal.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting_token:read:admin:live_streaming
+</code>
+,
+<code>
+meeting_token:read:live_streaming
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;expire_in&quot;:120,&quot;token&quot;:&quot;\u003cstring\u003e&quot;}
+```

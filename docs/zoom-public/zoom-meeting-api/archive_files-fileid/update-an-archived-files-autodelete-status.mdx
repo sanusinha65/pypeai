@@ -1,0 +1,93 @@
+# Update an archived file&#39;s auto-delete status
+
+PATCH {{baseUrl}}/archive_files/:fileId
+
+
+<p>
+Update an archived file&#39;s auto-delete status. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Zoom Support
+</a>
+ must enable the 
+<a href="https://support.zoom.us/hc/en-us/articles/4405656451213--Archiving-for-meetings-and-webinars">
+
+<strong>
+Meeting and Webinar Archiving
+</strong>
+ feature
+</a>
+ for your account.
+* Open the disabling auto-delete feature in OP. Contact 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Zoom Support
+</a>
+ to open.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:write
+</code>
+,
+<code>
+recording:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;auto_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

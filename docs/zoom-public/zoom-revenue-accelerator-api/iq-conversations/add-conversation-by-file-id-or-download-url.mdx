@@ -1,0 +1,66 @@
+# Add conversation by file id or download url.
+
+POST {{baseUrl}}/iq/conversations
+
+
+<p>
+Add conversation by file ID or third party download URL.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_conversation:write:admin
+</code>
+,
+<code>
+iq_conversation:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;conversation_type&quot;=&gt;&quot;meeting&quot;, &quot;meeting_start_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;host_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;file_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;download_url&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;conversation_topic&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;deal_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;primary_language&quot;=&gt;&quot;fr&quot;, &quot;meeting_end_time&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;timezone&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;participants&quot;=&gt;[{&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;timeline&quot;=&gt;[{&quot;participants&quot;=&gt;[{&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;start_time_in_recording&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;participants&quot;=&gt;[{&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;display_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;}], &quot;start_time_in_recording&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;conversation_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

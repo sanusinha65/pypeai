@@ -1,0 +1,74 @@
+# Download sub accounts&#39; billing invoice reports
+
+GET {{baseUrl}}/accounts/billing/invoice_reports/:invoiceReportId?download=&lt;boolean&gt;
+
+
+<p>
+Use this API to download a Zoom sub accounts&#39; billing invoice reports.
+</p>
+
+
+
+<p>
+
+<strong>
+one
+</strong>
+ request to this API every 
+<strong>
+1 second
+</strong>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `download` | string |  | (Required)  |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;accounts_total_number&quot;:&quot;\u003cinteger\u003e&quot;,&quot;remaining_days&quot;:&quot;\u003cinteger\u003e&quot;,&quot;status&quot;:&quot;Processing&quot;}
+```

@@ -1,0 +1,66 @@
+# Create a reservation
+
+POST {{baseUrl}}/workspaces/:workspaceId/reservations
+
+
+<p>
+Use this API to create a workspace reservation. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:write
+</code>
+
+<code>
+workspace:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;end_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;start_time&quot;=&gt;&quot;&lt;dateTime&gt;&quot;, &quot;topic&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;meeting&quot;=&gt;{&quot;end_to_end_encrypted&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;waiting_room&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;reserve_for&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;reservation_id &quot;:&quot;\u003cstring\u003e&quot;}
+```

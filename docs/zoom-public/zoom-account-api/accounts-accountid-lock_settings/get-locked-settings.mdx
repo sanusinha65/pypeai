@@ -1,0 +1,101 @@
+# Get locked settings
+
+GET {{baseUrl}}/accounts/:accountId/lock_settings?option=&lt;string&gt;&amp;custom_query_fields=&lt;string&gt;
+
+
+<p>
+Retrieve an account&#39;s locked settings. 
+</p>
+
+
+
+<p>
+Account admins and account owners can use 
+<a href="https://support.zoom.us/hc/en-us/articles/115005269866">
+Account Locked Settings
+</a>
+ to toggle settings on or off for all users in their account. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ You can use Account Locked Settings with accounts that have master and sub accounts enabled.   
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher paid account.   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `option` | string |  | Optional query parameters: 
+* `meeting_security` &amp;mdash; Use this query parameter to view the meeting security settings applied to the user&#39;s account. |
+| `custom_query_fields` | string |  | Provide the name of the field by which you would like to filter the response. For example, if you provide &amp;quot;host_video&amp;quot; as the value of this field, you will get a response similar to the following:  
+ 
+{
+    &amp;quot;schedule_meeting&amp;quot;: {
+        &amp;quot;host_video&amp;quot;: false
+    }
+}
+  
+ You can provide multiple values by separating them with commas(example: &amp;quot;host_video,participant_video&amp;rdquo;). |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;audio_conferencing&quot;:{&quot;toll_free_and_fee_based_toll_call&quot;:&quot;\u003cboolean\u003e&quot;},&quot;chat&quot;:{&quot;share_files&quot;:&quot;\u003cboolean\u003e&quot;,&quot;chat_emojis&quot;:&quot;\u003cboolean\u003e&quot;,&quot;record_voice_messages&quot;:&quot;\u003cboolean\u003e&quot;,&quot;record_video_messages&quot;:&quot;\u003cboolean\u003e&quot;,&quot;screen_capture&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_links_in_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;schedule_meetings_in_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;set_retention_period_in_cloud&quot;:&quot;\u003cboolean\u003e&quot;,&quot;set_retention_period_in_local&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_users_to_add_contacts&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_users_to_chat_with_others&quot;:&quot;\u003cboolean\u003e&quot;,&quot;chat_etiquette_tool&quot;:&quot;\u003cboolean\u003e&quot;,&quot;send_data_to_third_party_archiving_service&quot;:&quot;\u003cboolean\u003e&quot;,&quot;translate_messages&quot;:&quot;\u003cboolean\u003e&quot;,&quot;search_and_send_animated_gif_images&quot;:&quot;\u003cboolean\u003e&quot;},&quot;email_notification&quot;:{&quot;alternative_host_reminder&quot;:&quot;\u003cboolean\u003e&quot;,&quot;cancel_meeting_reminder&quot;:&quot;\u003cboolean\u003e&quot;,&quot;cloud_recording_available_reminder&quot;:&quot;\u003cboolean\u003e&quot;,&quot;jbh_reminder&quot;:&quot;\u003cboolean\u003e&quot;,&quot;schedule_for_reminder&quot;:&quot;\u003cboolean\u003e&quot;},&quot;in_meeting&quot;:{&quot;alert_guest_join&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_users_to_delete_messages_in_meeting_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_live_streaming&quot;:&quot;\u003cboolean\u003e&quot;,&quot;allow_show_zoom_windows&quot;:&quot;\u003cboolean\u003e&quot;,&quot;annotation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;anonymous_question_answer&quot;:&quot;\u003cboolean\u003e&quot;,&quot;attendee_on_hold&quot;:false,&quot;attention_mode_focus_mode&quot;:false,&quot;auto_answer&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_generated_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_saving_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;breakout_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_question_answer&quot;:&quot;\u003cboolean\u003e&quot;,&quot;closed_caption&quot;:&quot;\u003cboolean\u003e&quot;,&quot;co_host&quot;:&quot;\u003cboolean\u003e&quot;,&quot;custom_data_center_regions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;disable_screen_sharing_for_host_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;disable_screen_sharing_for_in_meeting_guests&quot;:&quot;\u003cboolean\u003e&quot;,&quot;dscp_marking&quot;:&quot;\u003cboolean\u003e&quot;,&quot;e2e_encryption&quot;:&quot;\u003cboolean\u003e&quot;,&quot;entry_exit_chime&quot;:&quot;\u003cstring\u003e&quot;,&quot;far_end_camera_control&quot;:&quot;\u003cboolean\u003e&quot;,&quot;feedback&quot;:&quot;\u003cboolean\u003e&quot;,&quot;file_transfer&quot;:&quot;\u003cboolean\u003e&quot;,&quot;full_transcript&quot;:&quot;\u003cboolean\u003e&quot;,&quot;group_hd&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_group_hd&quot;:&quot;\u003cboolean\u003e&quot;,&quot;language_interpretation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sign_language_interpretation&quot;:&quot;\u003cboolean\u003e&quot;,&quot;manual_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_reactions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_reactions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_survey&quot;:&quot;\u003cboolean\u003e&quot;,&quot;original_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;polling&quot;:&quot;\u003cboolean\u003e&quot;,&quot;post_meeting_feedback&quot;:&quot;\u003cboolean\u003e&quot;,&quot;private_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;remote_control&quot;:&quot;\u003cboolean\u003e&quot;,&quot;non_verbal_feedback&quot;:false,&quot;remote_support&quot;:false,&quot;request_permission_to_unmute_participants&quot;:&quot;\u003cboolean\u003e&quot;,&quot;save_caption&quot;:&quot;\u003cboolean\u003e&quot;,&quot;save_captions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;screen_sharing&quot;:&quot;\u003cboolean\u003e&quot;,&quot;sending_default_email_invites&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_meeting_control_toolbar&quot;:&quot;\u003cboolean\u003e&quot;,&quot;slide_control&quot;:&quot;\u003cboolean\u003e&quot;,&quot;stereo_audio&quot;:&quot;\u003cboolean\u003e&quot;,&quot;use_html_format_email&quot;:&quot;\u003cboolean\u003e&quot;,&quot;virtual_background&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_chat&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_live_streaming&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_polling&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_question_answer&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_survey&quot;:&quot;\u003cboolean\u003e&quot;,&quot;whiteboard&quot;:&quot;\u003cboolean\u003e&quot;},&quot;other_options&quot;:{&quot;blur_snapshot&quot;:&quot;\u003cboolean\u003e&quot;,&quot;webinar_registration_options&quot;:&quot;\u003cboolean\u003e&quot;},&quot;recording&quot;:{&quot;account_user_access_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_delete_cmr&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;cloud_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;cloud_recording_download&quot;:&quot;\u003cboolean\u003e&quot;,&quot;host_delete_cloud_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;ip_address_access_control&quot;:&quot;\u003cboolean\u003e&quot;,&quot;local_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;prevent_host_access_recording&quot;:&quot;\u003cboolean\u003e&quot;,&quot;recording_authentication&quot;:&quot;\u003cboolean\u003e&quot;,&quot;archive&quot;:&quot;\u003cboolean\u003e&quot;},&quot;schedule_meeting&quot;:{&quot;audio_type&quot;:&quot;\u003cboolean\u003e&quot;,&quot;embed_password_in_join_link&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enforce_login&quot;:&quot;\u003cboolean\u003e&quot;,&quot;enforce_login_domains&quot;:&quot;\u003cstring\u003e&quot;,&quot;enforce_login_with_domains&quot;:&quot;\u003cboolean\u003e&quot;,&quot;host_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;join_before_host&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_authentication&quot;:&quot;\u003cboolean\u003e&quot;,&quot;not_store_meeting_topic&quot;:&quot;\u003cboolean\u003e&quot;,&quot;always_display_zoom_webinar_as_topic&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_video&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_password_for_instant_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_password_for_pmi_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;require_password_for_scheduling_new_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;use_pmi_for_instant_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;use_pmi_for_scheduled_meetings&quot;:&quot;\u003cboolean\u003e&quot;,&quot;continuous_meeting_chat&quot;:&quot;\u003cboolean\u003e&quot;},&quot;telephony&quot;:{&quot;telephony_regions&quot;:&quot;\u003cboolean\u003e&quot;,&quot;third_party_audio&quot;:&quot;\u003cboolean\u003e&quot;},&quot;tsp&quot;:{&quot;call_out&quot;:&quot;\u003cboolean\u003e&quot;,&quot;show_international_numbers_link&quot;:&quot;\u003cboolean\u003e&quot;}}
+```

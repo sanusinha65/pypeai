@@ -1,0 +1,90 @@
+# Update phone site details
+
+PATCH {{baseUrl}}/phone/sites/:siteId
+
+
+<p>
+Updates information about a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/360020809672">
+site
+</a>
+. It allows you to organize Zoom Phone users in your organization. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* Account must have a Pro or a higher plan with Zoom Phone license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:update:site:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;site_code&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;short_extension&quot;=&gt;{&quot;length&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;ranges&quot;=&gt;[{&quot;range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;range_from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;range_to&quot;=&gt;&quot;&lt;string&gt;&quot;}]}, &quot;default_emergency_address&quot;=&gt;{&quot;address_line1&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;city&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;state_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;zip&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;address_line2&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;sip_zone&quot;=&gt;{&quot;id&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;caller_id_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;policy&quot;=&gt;{&quot;select_outbound_caller_id&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_hide_outbound_caller_id&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;personal_audio_library&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_music_on_hold_customization&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_voicemail_and_message_greeting_customization&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;voicemail&quot;=&gt;{&quot;allow_delete&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_download&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_videomail&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;voicemail_transcription&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;voicemail_notification_by_email&quot;=&gt;{&quot;include_voicemail_file&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;include_voicemail_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;forward_voicemail_to_email&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;shared_voicemail_notification_by_email&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;international_calling&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;zoom_phone_on_mobile&quot;=&gt;{&quot;allow_calling_sms_mms&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;sms&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;international_sms&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;international_sms_countries&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;]}, &quot;elevate_to_meeting&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;hand_off_to_room&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;mobile_switch_to_carrier&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;delegation&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;ad_hoc_call_recording&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_start_prompt&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;play_recording_beep_tone&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;play_beep_volume&quot;=&gt;40, &quot;play_beep_time_interval&quot;=&gt;5, &quot;play_beep_member&quot;=&gt;&quot;allMember&quot;}}, &quot;auto_call_recording&quot;=&gt;{&quot;allow_stop_resume_recording&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;disconnect_on_recording_failure&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_calls&quot;=&gt;&quot;inbound&quot;, &quot;recording_explicit_consent&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_start_prompt&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;recording_transcription&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;play_recording_beep_tone&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;play_beep_volume&quot;=&gt;40, &quot;play_beep_time_interval&quot;=&gt;5, &quot;play_beep_member&quot;=&gt;&quot;recordingSide&quot;}}, &quot;call_handling_forwarding_to_other_users&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;call_forwarding_type&quot;=&gt;1, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;check_voicemails_over_phone&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;call_queue_pickup_code&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;call_queue_opt_out_reason&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;call_queue_opt_out_reasons_list&quot;=&gt;[{&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;system&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, {&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;system&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;}]}, &quot;show_user_last_transferred_call&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;auto_delete_data_after_retention_duration&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;items&quot;=&gt;[{&quot;type&quot;=&gt;&quot;onDemandRecording&quot;, &quot;duration&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;time_unit&quot;=&gt;&quot;month&quot;}, {&quot;type&quot;=&gt;&quot;onDemandRecording&quot;, &quot;duration&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;time_unit&quot;=&gt;&quot;day&quot;}], &quot;delete_type&quot;=&gt;2}, &quot;call_park&quot;=&gt;{&quot;call_not_picked_up_action&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;expiration_period&quot;=&gt;2, &quot;forward_to_extension_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sequence&quot;=&gt;0}, &quot;call_overflow&quot;=&gt;{&quot;call_overflow_type&quot;=&gt;3, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;call_transferring&quot;=&gt;{&quot;call_transferring_type&quot;=&gt;4, &quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;audio_intercom&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;block_calls_without_caller_id&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;}, &quot;block_external_calls&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;reset&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;block_business_hours&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;block_closed_hours&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;block_holiday_hours&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;block_call_action&quot;=&gt;9, &quot;block_call_change_type&quot;=&gt;1, &quot;e2e_encryption&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;locked_by&quot;=&gt;&quot;account&quot;, &quot;modified&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}, &quot;force_off_net&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;allow_extension_only_users_call_users_outside_site&quot;=&gt;&quot;&lt;boolean&gt;&quot;}}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

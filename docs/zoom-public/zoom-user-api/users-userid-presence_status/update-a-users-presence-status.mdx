@@ -1,0 +1,152 @@
+# Update a user&#39;s presence status
+
+PUT {{baseUrl}}/users/:userId/presence_status
+
+
+<p>
+Update a user&#39;s presence status. For user-level apps, pass 
+<a href="https://developers.zoom.us/docs/api/rest/using-zoom-apis/#the-me-keyword">
+the 
+<code>
+me
+</code>
+ value
+</a>
+ instead of the 
+<code>
+userId
+</code>
+ parameter.
+</p>
+
+
+
+<p>
+A user&#39;s status 
+<strong>
+cannot
+</strong>
+ be updated more than once per minute. For example, you can only submit a maximum of one update request per minute for a single user.
+</p>
+
+
+
+<p>
+Users in the Zoom desktop client and mobile apps are assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/360032554051-Status-Icons">
+presence status
+</a>
+. The presence status informs users of their contact&#39;s availability. Users can also change their own presence status to one the following:
+* 
+<strong>
+Away
+</strong>
+
+* 
+<strong>
+Do not disturb
+</strong>
+
+* 
+<strong>
+Available
+</strong>
+
+* 
+<strong>
+In a calendar event
+</strong>
+
+* 
+<strong>
+Presenting
+</strong>
+
+* 
+<strong>
+In a Zoom meeting
+</strong>
+
+* 
+<strong>
+On a call
+</strong>
+
+* 
+<strong>
+Out of Office
+</strong>
+
+* 
+<strong>
+Busy
+</strong>
+
+</p>
+
+
+
+<p>
+Note that a user&#39;s presence status 
+<strong>
+cannot
+</strong>
+ be updated via this API if the user is not logged in to the Zoom client.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+user:write:admin
+</code>
+,
+<code>
+user:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;duration&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;status&quot;=&gt;&quot;Presenting&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

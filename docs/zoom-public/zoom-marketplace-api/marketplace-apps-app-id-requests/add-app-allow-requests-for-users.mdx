@@ -1,0 +1,58 @@
+# Add app allow requests for users
+
+POST {{baseUrl}}/marketplace/apps/:appId/requests
+
+
+<p>
+Use this API to add app allow requests for all users, groups of users, or specific users. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+marketplace_app:write:admin
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;&quot;add_all&quot;, &quot;user_ids&quot;=&gt;[&quot;f1sTWCMaTmOIZxLMlmHvEQ&quot;, &quot;f1sTWCMaTmOIZxLMlmHvEQ&quot;], &quot;group_ids&quot;=&gt;[&quot;t-_-d56CSWG-7BF15LLrOw&quot;, &quot;t-_-d56CSWG-7BF15LLrOw&quot;]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;added_at&quot;:&quot;2021-07-21T17:32:28Z&quot;,&quot;user_ids&quot;:[&quot;f1sTWCMaTmOIZxLMlmHvEQ&quot;,&quot;f1sTWCMaTmOIZxLMlmHvEQ&quot;],&quot;group_ids&quot;:[&quot;t-_-d56CSWG-7BF15LLrOw&quot;,&quot;t-_-d56CSWG-7BF15LLrOw&quot;]}
+```

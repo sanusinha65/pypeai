@@ -1,0 +1,65 @@
+# Assign user&#39;s skills
+
+POST {{baseUrl}}/contact_center/users/:userId/skills
+
+
+<p>
+Assign 
+<a href="https://support.zoom.us/hc/en-us/articles/4423986613261">
+skills
+</a>
+ to a user. Skills are user traits that ensure that a given agent is the best person to handle a given customer interaction. Proficiency ratings indicate the user&#39;s level of expertise or knowledge of that skill. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_skill:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;skills&quot;=&gt;[{&quot;skill_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;max_proficiency_level&quot;=&gt;&quot;&lt;integer&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+&quot;&quot;
+```

@@ -1,0 +1,68 @@
+# Activate phone numbers
+
+PATCH {{baseUrl}}/phone/carrier_reseller/numbers
+
+
+<p>
+Use this API to change phone number status to &#39;active&#39; in a carrier reseller&#39;s master account. Up to 200 numbers at a time.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+[&quot;+12059535689&quot;, &quot;+12059535689&quot;]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

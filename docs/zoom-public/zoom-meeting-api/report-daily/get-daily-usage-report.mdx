@@ -1,0 +1,88 @@
+# Get daily usage report
+
+GET {{baseUrl}}/report/daily?year=&lt;integer&gt;&amp;month=&lt;integer&gt;&amp;group_id=&lt;string&gt;
+
+
+<p>
+Retrieve daily report to access the account-wide usage of Zoom services for each day in a given month. It lists the number of new users, meetings, participants, and meeting minutes.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `year` | string |  | Year for this report |
+| `month` | string |  | Month for this report |
+| `group_id` | string |  | The group ID. To get a group ID, use the [**List groups**](/api-reference/zoom-api/methods#operation/groups) API. 
+
+ **Note:** The API response will only contain users who are members of the queried group ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;dates&quot;:[{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;meeting_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;meetings&quot;:&quot;\u003cinteger\u003e&quot;,&quot;new_users&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;date&quot;:&quot;\u003cdate\u003e&quot;,&quot;meeting_minutes&quot;:&quot;\u003cinteger\u003e&quot;,&quot;meetings&quot;:&quot;\u003cinteger\u003e&quot;,&quot;new_users&quot;:&quot;\u003cinteger\u003e&quot;,&quot;participants&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;month&quot;:&quot;\u003cinteger\u003e&quot;,&quot;year&quot;:&quot;\u003cinteger\u003e&quot;}
+```

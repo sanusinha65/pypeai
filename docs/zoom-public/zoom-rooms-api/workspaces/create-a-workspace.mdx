@@ -1,0 +1,62 @@
+# Create a workspace
+
+POST {{baseUrl}}/workspaces
+
+
+<p>
+Use this API to create workspaces. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;location_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;workspace_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;workspace_type&quot;=&gt;&quot;room&quot;, &quot;calendar_resource_id&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

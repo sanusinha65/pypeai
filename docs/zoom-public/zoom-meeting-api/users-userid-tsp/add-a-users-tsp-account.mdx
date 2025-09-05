@@ -1,0 +1,66 @@
+# Add a user&#39;s TSP account
+
+POST {{baseUrl}}/users/:userId/tsp
+
+
+<p>
+Add a user&#39;s TSP account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+tsp:write:admin
+</code>
+,
+<code>
+tsp:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;conference_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;leader_pin&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;dial_in_numbers&quot;=&gt;[{&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;media_link&quot;}, {&quot;code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;country_label&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;number&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;&quot;media_link&quot;}], &quot;tsp_bridge&quot;=&gt;&quot;US_TSP_TB&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;conference_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;leader_pin&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;dial_in_numbers&quot;:[{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;media_link&quot;},{&quot;code&quot;:&quot;\u003cstring\u003e&quot;,&quot;country_label&quot;:&quot;\u003cstring\u003e&quot;,&quot;number&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;tollfree&quot;}],&quot;tsp_bridge&quot;:&quot;US_TSP_TB&quot;}
+```

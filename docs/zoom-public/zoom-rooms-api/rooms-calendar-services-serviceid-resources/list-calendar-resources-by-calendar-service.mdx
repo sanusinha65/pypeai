@@ -1,0 +1,80 @@
+# List calendar resources by calendar service
+
+GET {{baseUrl}}/rooms/calendar/services/:serviceId/resources?page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Use this API to list all of a Zoom Room account&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/4409832833037">
+calendar resources
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or a higher plan with a 
+<a href="https://zoom.us/zoomrooms">
+Zoom Rooms
+</a>
+ license.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;calendar_resources&quot;:[{&quot;calendar_resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;calendar_resource_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;assigned_room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sync_status&quot;:&quot;Success&quot;},{&quot;calendar_resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;calendar_resource_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;assigned_room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;sync_status&quot;:&quot;Failed&quot;}]}
+```

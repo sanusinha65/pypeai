@@ -1,0 +1,66 @@
+# List hubs
+
+GET {{baseUrl}}/zoom_events/hubs?role_type=host
+
+
+<p>
+Use this API to retrieve event hubs.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_hubs:read
+</code>
+
+<code>
+zoom_events_hubs:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `role_type` | string |  | (Required) The user role type:
+* `host` &amp;mdash; All hosted Hubs.
+* `attendee` &amp;mdash; All related Hubs. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;total_records&quot;:&quot;\u003cnumber\u003e&quot;,&quot;hubs&quot;:[{&quot;hub_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_level&quot;:&quot;PUBLIC&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;hidden_hub&quot;:&quot;\u003cboolean\u003e&quot;,&quot;hub_active&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_list_events&quot;:&quot;\u003cboolean\u003e&quot;,&quot;landing_hub&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;hub_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;access_level&quot;:&quot;INTERNAL&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;public_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;hidden_hub&quot;:&quot;\u003cboolean\u003e&quot;,&quot;hub_active&quot;:&quot;\u003cboolean\u003e&quot;,&quot;auto_list_events&quot;:&quot;\u003cboolean\u003e&quot;,&quot;landing_hub&quot;:&quot;\u003cboolean\u003e&quot;}]}
+```

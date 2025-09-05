@@ -1,0 +1,72 @@
+# List the client versions
+
+GET {{baseUrl}}/metrics/client_versions
+
+
+<p>
+Use this API to list all the client versions and its count. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or a higher plan.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+dashboard_home:read:admin
+</code>
+,
+<code>
+dashboard:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;client_versions&quot;:[{&quot;client_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_count&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;client_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_count&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

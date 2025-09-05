@@ -1,0 +1,86 @@
+# Get a channel
+
+GET {{baseUrl}}/chat/channels/:channelId
+
+
+<p>
+Gets information about a specific channel. Zoom chat 
+<a href="https://support.zoom.us/hc/en-us/articles/200912909-Getting-Started-With-Channels-Group-Messaging-">
+channels
+</a>
+ allow users to communicate via chat in private or public groups.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+chat_channel:read
+</code>
+  
+<br>
+
+
+<strong>
+
+<a href="https://developers.zoom.us/docs/api/rest/rate-limits/">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<p style="background-color:#e1f5fe; color:#000000; padding:8px">
+ 
+<b>
+Note: 
+</b>
+ This API supports only 
+<b>
+user-managed
+</b>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth apps
+</a>
+. If you use an Account-Level OAuth Access token, you can only retrieve the channel information for the authorized user. You can&#39;t retrieve the channel information of other account users. Use the 
+<a href="/docs/api-reference/chat/methods#operation/getChannel">
+
+<strong>
+Get a channel
+</strong>
+
+</a>
+ API to retrieve the channel information of other account users.
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;properties&quot;:{&quot;channel_settings&quot;:{&quot;add_member_permissions&quot;:2,&quot;new_members_can_see_previous_messages_files&quot;:&quot;\u003cboolean\u003e&quot;,&quot;posting_permissions&quot;:3,&quot;mention_all_permissions&quot;:2,&quot;allow_to_add_external_users&quot;:0},&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;jid&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:1,&quot;channel_url&quot;:&quot;\u003cstring\u003e&quot;}}
+```

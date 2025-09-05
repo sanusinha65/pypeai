@@ -1,0 +1,78 @@
+# Enable SIP phone
+
+POST {{baseUrl}}/sip_phones
+
+
+<p>
+Zoom&#39;s Phone System Integration (PSI), also referred as SIP phones, enables an organization to leverage the Zoom client to complete a softphone registration to supported premise based PBX system. End users will have the ability to have softphone functionality within a single client while maintaining a comparable interface to Zoom Phone. Use this API to enable a user to use SIP phone.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+:
+* Currently only supported on Cisco and Avaya PBX systems. 
+* The account owner or account admin must first enable SIP Phone Integration by contacting the 
+<a href="https://zoom.us/contactsales">
+Sales
+</a>
+ team.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+sip_phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;authorization_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;domain&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;password&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;proxy_server&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;register_server&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;user_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;voice_mail&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;proxy_server2&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;proxy_server3&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;register_server2&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;register_server3&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;registration_expire_time&quot;=&gt;60, &quot;transport_protocol&quot;=&gt;&quot;TLS&quot;, &quot;transport_protocol2&quot;=&gt;&quot;TLS&quot;, &quot;transport_protocol3&quot;=&gt;&quot;TCP&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;authorization_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;domain&quot;:&quot;\u003cstring\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server2&quot;:&quot;\u003cstring\u003e&quot;,&quot;proxy_server3&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server2&quot;:&quot;\u003cstring\u003e&quot;,&quot;register_server3&quot;:&quot;\u003cstring\u003e&quot;,&quot;registration_expire_time&quot;:60,&quot;transport_protocol&quot;:&quot;AUTO&quot;,&quot;transport_protocol2&quot;:&quot;TLS&quot;,&quot;transport_protocol3&quot;:&quot;UDP&quot;,&quot;user_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;user_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;voice_mail&quot;:&quot;\u003cstring\u003e&quot;}
+```

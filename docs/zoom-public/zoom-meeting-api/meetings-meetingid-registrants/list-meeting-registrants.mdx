@@ -1,0 +1,75 @@
+# List meeting registrants
+
+GET {{baseUrl}}/meetings/:meetingId/registrants?occurrence_id=&lt;string&gt;&amp;status=approved&amp;page_size=30&amp;page_number=1&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+A host or a user with admin permission can require 
+<a href="https://support.zoom.us/hc/en-us/articles/211579443-Registration-for-Meetings">
+registration for a Zoom meeting
+</a>
+. List users that have registered for a meeting.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `occurrence_id` | string |  | The meeting or webinar occurrence ID. |
+| `status` | string |  | Query by the registrant&#39;s status. 
+* `pending` - The registration is pending. 
+* `approved` - The registrant is approved. 
+* `denied` - The registration is denied. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `page_number` | number |  | **Deprecated.** We will no longer support this field in a future release. Instead, use the `next_page_token` for pagination. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;page_number&quot;:1,&quot;page_size&quot;:30,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;registrants&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;comments&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;industry&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;no_of_employees&quot;:&quot;1,001-5,000&quot;,&quot;org&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;purchasing_time_frame&quot;:&quot;&quot;,&quot;role_in_purchase_process&quot;:&quot;Decision Maker&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;denied&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_pin_code&quot;:&quot;\u003clong\u003e&quot;},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;comments&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;industry&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;no_of_employees&quot;:&quot;1-20&quot;,&quot;org&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;purchasing_time_frame&quot;:&quot;1-3 months&quot;,&quot;role_in_purchase_process&quot;:&quot;Not involved&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;pending&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_pin_code&quot;:&quot;\u003clong\u003e&quot;}]}
+```

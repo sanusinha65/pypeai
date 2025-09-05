@@ -1,0 +1,65 @@
+# Get meeting recording settings
+
+GET {{baseUrl}}/meetings/:meetingId/recordings/settings
+
+
+<p>
+Retrieves settings applied to a meeting&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/203741855-Cloud-Recording">
+Cloud Recording
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+,
+<code>
+recording:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;approval_type&quot;:2,&quot;authentication_domains&quot;:&quot;\u003cstring\u003e&quot;,&quot;authentication_option&quot;:&quot;\u003cstring\u003e&quot;,&quot;on_demand&quot;:&quot;\u003cboolean\u003e&quot;,&quot;password&quot;:&quot;\u003cstring\u003e&quot;,&quot;recording_authentication&quot;:&quot;\u003cboolean\u003e&quot;,&quot;send_email_to_host&quot;:&quot;\u003cboolean\u003e&quot;,&quot;share_recording&quot;:&quot;publicly&quot;,&quot;show_social_share_buttons&quot;:&quot;\u003cboolean\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;viewer_download&quot;:&quot;\u003cboolean\u003e&quot;}
+```

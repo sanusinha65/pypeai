@@ -1,0 +1,104 @@
+# Update a live stream
+
+PATCH {{baseUrl}}/webinars/:webinarId/livestream
+
+
+<p>
+Update a webinar&#39;s live stream information. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+Pro or higher plan with the webinar add-on.  
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+Live streaming details must be 
+<a href="https://support.zoom.us/hc/en-us/articles/115001777826-Live-Streaming-Meetings-or-Webinars-Using-a-Custom-Service#h_01589a6f-a40a-4e18-a448-cb746e52ebc5">
+configured
+</a>
+ for the webinar.  
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;page_url&quot;=&gt;&quot;&lt;uri&gt;&quot;, &quot;stream_key&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;stream_url&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;resolution&quot;=&gt;&quot;&lt;string&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

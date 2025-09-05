@@ -1,0 +1,74 @@
+# Batch add emergency service locations
+
+POST {{baseUrl}}/phone/batch_locations
+
+
+<p>
+Use this API to batch add emergency service locations.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or higher account plan with Zoom phone license
+* Account owner or admin permissions
+</p>
+
+
+
+<p>
+
+<strong>
+Scope:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;locations&quot;=&gt;[{&quot;identifier&quot;=&gt;&quot;eRYjZlItQIqlFbCuRA__SQ&quot;, &quot;display_name&quot;=&gt;&quot;example location&quot;, &quot;company_address&quot;=&gt;{&quot;address_line1&quot;=&gt;&quot;55 Almaden Boulevard&quot;, &quot;country&quot;=&gt;&quot;United States&quot;, &quot;address_line2&quot;=&gt;&quot;6th floor&quot;, &quot;city&quot;=&gt;&quot;SAN JOSE&quot;, &quot;state_code&quot;=&gt;&quot;CA&quot;, &quot;vat_number&quot;=&gt;&quot;123456789B01&quot;, &quot;zip&quot;=&gt;&quot;95113&quot;}, &quot;bssid&quot;=&gt;&quot;SA43YjfBTS6gJbUpfvIziQ&quot;, &quot;elin&quot;=&gt;&quot;+12058945656&quot;, &quot;network_switches&quot;=&gt;[{&quot;mac_address&quot;=&gt;&quot;0004f25eec3d&quot;, &quot;port&quot;=&gt;&quot;11&quot;, &quot;port_prefix&quot;=&gt;&quot;1&quot;, &quot;port_range_from&quot;=&gt;&quot;10&quot;, &quot;port_range_to&quot;=&gt;&quot;20&quot;}, {&quot;mac_address&quot;=&gt;&quot;0004f25eec3d&quot;, &quot;port&quot;=&gt;&quot;11&quot;, &quot;port_prefix&quot;=&gt;&quot;1&quot;, &quot;port_range_from&quot;=&gt;&quot;10&quot;, &quot;port_range_to&quot;=&gt;&quot;20&quot;}], &quot;parent_identifier&quot;=&gt;&quot;FksDtQDfR9qs3gWXNDsfIw&quot;, &quot;private_ip&quot;=&gt;&quot;192.1.1.2&quot;, &quot;public_ip&quot;=&gt;&quot;192.1.1.1&quot;, &quot;sip_group_name&quot;=&gt;&quot;band width&quot;, &quot;minimum_match_criteria&quot;=&gt;true}, {&quot;identifier&quot;=&gt;&quot;eRYjZlItQIqlFbCuRA__SQ&quot;, &quot;display_name&quot;=&gt;&quot;example location&quot;, &quot;company_address&quot;=&gt;{&quot;address_line1&quot;=&gt;&quot;55 Almaden Boulevard&quot;, &quot;country&quot;=&gt;&quot;United States&quot;, &quot;address_line2&quot;=&gt;&quot;6th floor&quot;, &quot;city&quot;=&gt;&quot;SAN JOSE&quot;, &quot;state_code&quot;=&gt;&quot;CA&quot;, &quot;vat_number&quot;=&gt;&quot;123456789B01&quot;, &quot;zip&quot;=&gt;&quot;95113&quot;}, &quot;bssid&quot;=&gt;&quot;SA43YjfBTS6gJbUpfvIziQ&quot;, &quot;elin&quot;=&gt;&quot;+12058945656&quot;, &quot;network_switches&quot;=&gt;[{&quot;mac_address&quot;=&gt;&quot;0004f25eec3d&quot;, &quot;port&quot;=&gt;&quot;11&quot;, &quot;port_prefix&quot;=&gt;&quot;1&quot;, &quot;port_range_from&quot;=&gt;&quot;10&quot;, &quot;port_range_to&quot;=&gt;&quot;20&quot;}, {&quot;mac_address&quot;=&gt;&quot;0004f25eec3d&quot;, &quot;port&quot;=&gt;&quot;11&quot;, &quot;port_prefix&quot;=&gt;&quot;1&quot;, &quot;port_range_from&quot;=&gt;&quot;10&quot;, &quot;port_range_to&quot;=&gt;&quot;20&quot;}], &quot;parent_identifier&quot;=&gt;&quot;FksDtQDfR9qs3gWXNDsfIw&quot;, &quot;private_ip&quot;=&gt;&quot;192.1.1.2&quot;, &quot;public_ip&quot;=&gt;&quot;192.1.1.1&quot;, &quot;sip_group_name&quot;=&gt;&quot;band width&quot;, &quot;minimum_match_criteria&quot;=&gt;true}], &quot;site_id&quot;=&gt;&quot;SQv52YtkRLC2dwrDdYtGsA&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+[{&quot;display_name&quot;:&quot;example location&quot;,&quot;location_id&quot;:&quot;FwOAeL4TRmqQrmF0jOfzkQ&quot;},{&quot;display_name&quot;:&quot;example location&quot;,&quot;location_id&quot;:&quot;FwOAeL4TRmqQrmF0jOfzkQ&quot;}]
+```

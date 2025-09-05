@@ -1,0 +1,76 @@
+# Get a meeting registrant
+
+GET {{baseUrl}}/meetings/:meetingId/registrants/:registrantId
+
+
+<p>
+Retrieve details on a specific user who has registered for the meeting. A host or a user with administrative permissions can require 
+<a href="https://support.zoom.us/hc/en-us/articles/211579443-Registration-for-Meetings">
+registration for Zoom meetings
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The account must have a Meeting plan
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting:read:admin
+</code>
+,
+<code>
+meeting:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;address&quot;:&quot;\u003cstring\u003e&quot;,&quot;city&quot;:&quot;\u003cstring\u003e&quot;,&quot;comments&quot;:&quot;\u003cstring\u003e&quot;,&quot;country&quot;:&quot;\u003cstring\u003e&quot;,&quot;custom_questions&quot;:[{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;},{&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;value&quot;:&quot;\u003cstring\u003e&quot;}],&quot;industry&quot;:&quot;\u003cstring\u003e&quot;,&quot;job_title&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;no_of_employees&quot;:&quot;5,001-10,000&quot;,&quot;org&quot;:&quot;\u003cstring\u003e&quot;,&quot;phone&quot;:&quot;\u003cstring\u003e&quot;,&quot;purchasing_time_frame&quot;:&quot;4-6 months&quot;,&quot;role_in_purchase_process&quot;:&quot;Influencer&quot;,&quot;state&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;denied&quot;,&quot;zip&quot;:&quot;\u003cstring\u003e&quot;,&quot;create_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;join_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_pin_code&quot;:&quot;\u003clong\u003e&quot;}
+```

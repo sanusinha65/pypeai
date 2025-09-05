@@ -1,0 +1,12 @@
+#  calendars-{calId}-events
+
+Number of APIs: 2
+
+1. [List events on the specified calendar](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-events/list-events-on-the-specified-calendar)
+GET {{baseUrl}}/calendars/:calId/events?maxResults=&lt;integer&gt;&amp;orderBy=startTime&amp;showDeleted=&lt;boolean&gt;&amp;singleEvents=&lt;boolean&gt;&amp;pageToken=&lt;string&gt;&amp;timeMax=&lt;string&gt;&amp;timeMin=&lt;string&gt;&amp;timeZone=&lt;string&gt;
+
+
+2. [Insert a new event to the specified calendar](https://developers.qodex.ai/zoom-public/zoom-calendar-api/calendars-calid-events/insert-a-new-event-to-the-specified-calendar)
+POST {{baseUrl}}/calendars/:calId/events?sendUpdates=none
+
+

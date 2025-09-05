@@ -1,0 +1,136 @@
+# List historical detail reports
+
+GET {{baseUrl}}/contact_center/analytics/historical/details/metrics?next_page_token=&lt;string&gt;&amp;page_size=10&amp;timezone=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;queue_ids=&lt;string&gt;&amp;queue_ids=&lt;string&gt;&amp;user_id=&lt;string&gt;&amp;consumer_number=&lt;string&gt;&amp;consumer_id=&lt;string&gt;&amp;direction=outbound&amp;results=&lt;string&gt;&amp;results=&lt;string&gt;&amp;channel_types=chat&amp;channel_types=video&amp;queue_wait_type=live_waiting&amp;required_skill_ids=&lt;string&gt;&amp;required_skill_ids=&lt;string&gt;
+
+
+<p>
+Generate a list of historical detail reports. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `timezone` | string |  | The call&#39;s timezone. The default is **UTC**. |
+| `from` | string |  | The start time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format. The defined date range should be a month, as the response only includes one month&#39;s worth of data. If no start date is specified, return data from the past 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameters is specified. The end time and date in **yyyy-mm-dd** or **yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;** format, the same format as the `from` parameter. |
+| `queue_ids` | string |  | A comma-separated list of queue IDs to query, up to 20 queue IDs. |
+| `queue_ids` | string |  | A comma-separated list of queue IDs to query, up to 20 queue IDs. |
+| `user_id` | string |  | The agent&#39;s ID. |
+| `consumer_number` | string |  | The consumer&#39;s phone number. |
+| `consumer_id` | string |  | The consumer ID for video, chat, or SMS engagements. |
+| `direction` | string |  | The engagement&#39;s direction. 
+
+ Voice, SMS: 
+* `inbound` 
+* `outbound` 
+
+ Chat, Video: 
+* `inbound` |
+| `results` | string |  | The engagement&#39;s results. 
+
+ Voice: 
+* `completed` 
+* `short_abandoned` 
+* `long_abandoned` 
+* `hold_abandoned` 
+* `overflowed_to_inbox` 
+* `overflowed_to_disconnect` 
+* `long_calls` 
+* `short_calls` 
+* `hang_up_calls` 
+* `missed` 
+* `declined` 
+
+ Video: 
+* `completed` 
+* `short_abandoned` 
+* `long_abandoned` 
+* `missed` 
+* `declined` 
+
+ Chat, SMS: 
+* `completed` 
+* `auto_closed` 
+* `missed` 
+* `declined` |
+| `results` | string |  | The engagement&#39;s results. 
+
+ Voice: 
+* `completed` 
+* `short_abandoned` 
+* `long_abandoned` 
+* `hold_abandoned` 
+* `overflowed_to_inbox` 
+* `overflowed_to_disconnect` 
+* `long_calls` 
+* `short_calls` 
+* `hang_up_calls` 
+* `missed` 
+* `declined` 
+
+ Video: 
+* `completed` 
+* `short_abandoned` 
+* `long_abandoned` 
+* `missed` 
+* `declined` 
+
+ Chat, SMS: 
+* `completed` 
+* `auto_closed` 
+* `missed` 
+* `declined` |
+| `channel_types` | string |  | (Required) The channel&#39;s type. Provide only a single channel type. |
+| `channel_types` | string |  | (Required) The channel&#39;s type. Provide only a single channel type. |
+| `queue_wait_type` | string |  | The queue&#39;s wait type. This is applicable to voice channel. |
+| `required_skill_ids` | string |  | The required skill&#39;s ID. This is applicable to voice channel. |
+| `required_skill_ids` | string |  | The required skill&#39;s ID. This is applicable to voice channel. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:10,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;details&quot;:[{&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;results&quot;:&quot;hold_abandoned&quot;,&quot;total_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;ivr_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;waiting_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;talking_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;hold_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;wrap_up_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flows&quot;:[{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_version&quot;:&quot;\u003cstring\u003e&quot;},{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_version&quot;:&quot;\u003cstring\u003e&quot;}],&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;agents&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_flow_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;queue_wait_type&quot;:&quot;live_waiting&quot;,&quot;last_widget_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;agent_first_message_speed&quot;:&quot;\u003clong\u003e&quot;,&quot;dialed_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;callback_waiting_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;callback_pending_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;handling_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;ring_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;required_skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;minimum_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;minimum_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;optional_skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;matched&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;matched&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;agent_skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;}]},{&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;results&quot;:&quot;declined&quot;,&quot;total_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;ivr_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;waiting_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;talking_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;hold_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;wrap_up_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flows&quot;:[{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_version&quot;:&quot;\u003cstring\u003e&quot;},{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_version&quot;:&quot;\u003cstring\u003e&quot;}],&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;agents&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;total_flow_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;queue_wait_type&quot;:&quot;callback&quot;,&quot;last_widget_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;agent_first_message_speed&quot;:&quot;\u003clong\u003e&quot;,&quot;dialed_numbers&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;callback_waiting_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;callback_pending_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;handling_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;ring_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;required_skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;minimum_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;minimum_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;optional_skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;matched&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;matched&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;agent_skills&quot;:[{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;}]}]}
+```

@@ -1,0 +1,77 @@
+# Get line key position and settings information
+
+GET {{baseUrl}}/phone/extension/:extensionId/line_keys
+
+
+<p>
+Use this API to get the Zoom Phone 
+<a href="https://support.zoom.us/hc/en-us/articles/360040587552">
+line key settings
+</a>
+ information.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+ or 
+<code>
+phone:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;line_keys&quot;:[{&quot;alias&quot;:&quot;Line1&quot;,&quot;index&quot;:1,&quot;key_assignment&quot;:{&quot;display_name&quot;:&quot;Test 123&quot;,&quot;extension_id&quot;:&quot;TO586CYlQFC_WCUvPRXytA&quot;,&quot;extension_number&quot;:&quot;1000001004&quot;,&quot;phone_number&quot;:&quot;+12058945795&quot;,&quot;retrieval_code&quot;:&quot;*801&quot;,&quot;speed_dial_number&quot;:&quot;123456&quot;},&quot;line_key_id&quot;:&quot;BH9SHc4YTnWqQ9u0LC3kkg&quot;,&quot;outbound_caller_id&quot;:&quot;+18108001001&quot;,&quot;type&quot;:&quot;line&quot;},{&quot;alias&quot;:&quot;Line1&quot;,&quot;index&quot;:1,&quot;key_assignment&quot;:{&quot;display_name&quot;:&quot;Test 123&quot;,&quot;extension_id&quot;:&quot;TO586CYlQFC_WCUvPRXytA&quot;,&quot;extension_number&quot;:&quot;1000001004&quot;,&quot;phone_number&quot;:&quot;+12058945795&quot;,&quot;retrieval_code&quot;:&quot;*801&quot;,&quot;speed_dial_number&quot;:&quot;123456&quot;},&quot;line_key_id&quot;:&quot;BH9SHc4YTnWqQ9u0LC3kkg&quot;,&quot;outbound_caller_id&quot;:&quot;+18108001001&quot;,&quot;type&quot;:&quot;line&quot;}]}
+```

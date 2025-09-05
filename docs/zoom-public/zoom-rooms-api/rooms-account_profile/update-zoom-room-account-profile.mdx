@@ -1,0 +1,93 @@
+# Update Zoom Room account profile
+
+PATCH {{baseUrl}}/rooms/account_profile
+
+
+<p>
+Update information on the account profile of a Zoom Room. This information can only by accessed either by the Zoom Room Account Owner or a user with Zoom Rooms admin permission. To update information on an individual Room Profile, use the 
+<a href="/docs/api-reference/zoom-api/methods#operation/updateRoomProfile">
+
+<strong>
+Update a Zoom Room profile
+</strong>
+
+</a>
+ API. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Zoom account owner or Zoom Rooms admin permissions
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;basic&quot;=&gt;{&quot;required_code_to_ext&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;room_passcode&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;support_email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;support_phone&quot;=&gt;&quot;&lt;string&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

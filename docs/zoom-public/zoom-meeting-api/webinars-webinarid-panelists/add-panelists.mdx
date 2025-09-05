@@ -1,0 +1,88 @@
+# Add panelists
+
+POST {{baseUrl}}/webinars/:webinarId/panelists
+
+
+<p>
+Panelists in a webinar can view and send video, screen share, annotate, and do much more compared to attendees in a webinar.
+<br>
+
+ 
+<a href="https://support.zoom.us/hc/en-us/articles/115005657826-Inviting-Panelists-to-a-Webinar#h_7550d59e-23f5-4703-9e22-e76bded1ed70">
+Add panelists
+</a>
+ to a scheduled webinar.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Pro or a higher plan with the 
+<a href="https://zoom.us/webinar">
+Webinar Add-on
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:write
+</code>
+,
+<code>
+webinar:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;panelists&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;virtual_background_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_pronouns&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_description&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;virtual_background_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_name&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_pronouns&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;name_tag_description&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;updated_at&quot;:&quot;\u003cdateTime\u003e&quot;}
+```

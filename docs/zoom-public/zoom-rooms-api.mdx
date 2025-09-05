@@ -1,0 +1,82 @@
+#Zoom Rooms API
+
+Number of APIs: 64
+
+
+<p>
+Use this 
+<a href="https://developers.zoom.us/docs/api/rest/zoom-rooms-api/">
+API
+</a>
+ to facilitate seamless control of 
+<a href="https://zoom.us/pricing/zoom-rooms">
+Zoom meeting rooms
+</a>
+. Streamline room management and enhance user experiences.
+</p>
+
+
+
+<h5>
+Use Case Examples:
+</h5>
+
+
+
+<ul>
+
+
+<li>
+Get information about room details.
+</li>
+
+
+<li>
+Create tailored meeting experiences in Zoom Rooms.
+</li>
+
+
+</ul>
+
+
+
+1. [workspaces-usage - Get a location&#39;s hot desk usage](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-usage/get-a-locations-hot-desk-usage)
+GET {{baseUrl}}/workspaces/usage?location_id=&lt;string&gt;
+
+
+2. [workspaces-{workspaceId}-reservations-{reservationId} - Delete a reservation](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-workspaceid-reservations-reservationid/delete-a-reservation)
+DELETE {{baseUrl}}/workspaces/:workspaceId/reservations/:reservationId
+
+
+3. [workspaces-{workspaceId}-reservations-{reservationId} - Update a reservation](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-workspaceid-reservations-reservationid/update-a-reservation)
+PATCH {{baseUrl}}/workspaces/:workspaceId/reservations/:reservationId
+
+
+4. [rooms-{roomId}-tags - Un-assign Tags from a Zoom Room](https://developers.qodex.ai/zoom-public/zoom-rooms-api/rooms-roomid-tags/unassign-tags-from-a-zoom-room)
+DELETE {{baseUrl}}/rooms/:roomId/tags?tag_ids=&lt;string&gt;
+
+
+5. [workspaces-{workspaceId}-qr_code - Get a workspace QR code](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-workspaceid-qr_code/get-a-workspace-qr-code)
+GET {{baseUrl}}/workspaces/:workspaceId/qr_code
+
+
+6. [workspaces-{workspaceId} - Get a workspace](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-workspaceid/get-a-workspace)
+GET {{baseUrl}}/workspaces/:workspaceId
+
+
+7. [workspaces-{workspaceId} - Delete a workspace](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-workspaceid/delete-a-workspace)
+DELETE {{baseUrl}}/workspaces/:workspaceId
+
+
+8. [workspaces-{workspaceId} - Update a workspace](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-workspaceid/update-a-workspace)
+PATCH {{baseUrl}}/workspaces/:workspaceId
+
+
+9. [workspaces-events - Check in/out of a reservation](https://developers.qodex.ai/zoom-public/zoom-rooms-api/workspaces-events/check-inout-of-a-reservation)
+POST {{baseUrl}}/workspaces/events
+
+
+10. [rooms-{roomId}-tags - Assign Tags to a Zoom Room](https://developers.qodex.ai/zoom-public/zoom-rooms-api/rooms-roomid-tags/assign-tags-to-a-zoom-room)
+PATCH {{baseUrl}}/rooms/:roomId/tags
+
+

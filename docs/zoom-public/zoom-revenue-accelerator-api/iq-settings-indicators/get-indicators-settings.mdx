@@ -1,0 +1,81 @@
+# Get indicators settings
+
+GET {{baseUrl}}/iq/settings/indicators?category_id=&lt;string&gt;&amp;type=guiding_sentences&amp;page_size=30&amp;next_page_token=&lt;string&gt;
+
+
+<p>
+Get the account&#39;s indicators settings. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The account must be a paid account.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+account:read:admin
+</code>
+,
+<code>
+iq_account:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `category_id` | string |  | The category id of indicators: |
+| `type` | string |  | The type of indicators: 
+* `basic` &amp;mdash; Identify basic keyword phrases. 
+* `advanced` &amp;mdash; Identify advanced keyword phrases. 
+* `guiding_sentences` &amp;mdash; Identify guiding sentences. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;indicators&quot;:[{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;advanced&quot;,&quot;mentioned_by&quot;:&quot;prospects&quot;,&quot;enabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_user_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;description&quot;:&quot;\u003cstring\u003e&quot;,&quot;category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;advanced&quot;,&quot;mentioned_by&quot;:&quot;prospects&quot;,&quot;enabled&quot;:&quot;\u003cboolean\u003e&quot;,&quot;created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;last_modified_user_name&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

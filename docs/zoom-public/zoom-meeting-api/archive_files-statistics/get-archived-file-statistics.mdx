@@ -1,0 +1,94 @@
+# Get archived file statistics
+
+GET {{baseUrl}}/archive_files/statistics?from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;
+
+
+<p>
+Get statistics about an account&#39;s archived meeting or webinar files. 
+</p>
+
+
+
+<p>
+Zoom&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360050431572-Archiving-indicators">
+archiving solution
+</a>
+ lets account administrators set up an automated mechanism to record, collect, and archive meeting data to a third-party platform of their choice to satisfy FINRA and other compliance requirements. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/4405656451213--Archiving-for-meetings-and-webinars">
+
+<strong>
+Meeting and Webinar Archiving
+</strong>
+ feature
+</a>
+ enabled for your account by 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Zoom Support
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | The query start date, `yyyy-MM-dd&#39;T&#39;HH:mm:ssZ` format. This value and the `to` query parameter value cannot exceed seven days. |
+| `to` | string |  | The query end date, in `yyyy-MM-dd&#39;T&#39;HH:mm:ssZ` format. This value and the `from` query parameter value cannot exceed seven days. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;statistic_by_file_extension&quot;:{&quot;mp4_file_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;m4a_file_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;txt_file_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;json_file_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;vtt_file_count&quot;:&quot;\u003cinteger\u003e&quot;},&quot;statistic_by_file_status&quot;:{&quot;processing_file_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;completed_file_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;failed_file_count&quot;:&quot;\u003cinteger\u003e&quot;}}
+```

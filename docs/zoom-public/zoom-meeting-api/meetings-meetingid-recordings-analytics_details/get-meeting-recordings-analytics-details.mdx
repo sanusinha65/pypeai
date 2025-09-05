@@ -1,0 +1,92 @@
+# Get Meeting Recording&#39;s Analytics Details
+
+GET {{baseUrl}}/meetings/:meetingId/recordings/analytics_details?page_size=30&amp;next_page_token=&lt;string&gt;&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;type=by_download
+
+
+<p>
+Use this API to return a meeting recording&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/205347605-Managing-cloud-recordings#h_0b665029-ce74-4849-9794-d1aa0320d163">
+analytics details
+</a>
+. 
+<strong>
+Maximum duration: 1 Month
+</strong>
+. To access a password-protected cloud recording, send the user&#39;s 
+<a href="https://developers.zoom.us/docs/integrations/oauth/">
+OAuth access token
+</a>
+ as a Bearer token in the Authorization header. For example, 
+</p>
+
+
+
+<p>
+
+<code>
+curl -H &amp;quot;Authorization: Bearer &amp;lt;ACCESS_TOKEN&amp;gt;&amp;quot; https://{{base-domain}}/rec/archive/download/xyz
+</code>
+ 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+,
+<code>
+recording:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `from` | string |  | The start date for the monthly range to query. The maximum range can be a month. If you do not provide this value, this defaults to the current date. |
+| `to` | string |  | The end date for the monthly range to query. The maximum range can be a month. |
+| `type` | string |  | The type of analytics details: 
+* `by_view` &amp;mdash; by_view. 
+* `by_download` &amp;mdash; by_download. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;from&quot;:&quot;\u003cdate\u003e&quot;,&quot;to&quot;:&quot;\u003cdate\u003e&quot;,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;analytics_details&quot;:[{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;date_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

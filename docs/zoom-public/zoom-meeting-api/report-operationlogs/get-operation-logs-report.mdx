@@ -1,0 +1,111 @@
+# Get operation logs report
+
+GET {{baseUrl}}/report/operationlogs?from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;category_type=webinar
+
+
+<p>
+The 
+<a href="https://support.zoom.us/hc/en-us/articles/360032748331-Operation-Logs">
+Operations Logs
+</a>
+ report allows you to audit admin and user activity, such as adding a new user, changing account settings, and deleting recordings.  
+</p>
+
+
+
+<p>
+Use this API to retrieve operation logs report for a specified period of time.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `from` | string |  | (Required) Start date in &#39;yyyy-mm-dd&#39; format. The date range defined by the &amp;quot;from&amp;quot; and &amp;quot;to&amp;quot; parameters should only be one month as the report includes only one month worth of data at once. |
+| `to` | string |  | (Required) End date. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `category_type` | string |  | **Optional**  
+ 
+Filter your response by a category type to see reports for a specific category.
+The value for this field can be one of the following:  
+  `all`  
+ `user`  
+ `user_settings`  
+ `account`  
+ `billing`  
+ `im`  
+ `recording`  
+ `phone_contacts`  
+ `webinar`  
+ `sub_account`  
+ `role`  
+ `zoom_rooms` |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:30,&quot;operation_logs&quot;:[{&quot;action&quot;:&quot;\u003cstring\u003e&quot;,&quot;category_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;operation_detail&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator&quot;:&quot;\u003cstring\u003e&quot;,&quot;time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;action&quot;:&quot;\u003cstring\u003e&quot;,&quot;category_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;operation_detail&quot;:&quot;\u003cstring\u003e&quot;,&quot;operator&quot;:&quot;\u003cstring\u003e&quot;,&quot;time&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

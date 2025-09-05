@@ -1,0 +1,57 @@
+# Get Article
+
+GET {{baseUrl}}/km/kbs/:kbId/articles/:articleId
+
+
+<p>
+Get a knowledge base article
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zva:read:km_kbs
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;kb_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;category&quot;:&quot;\u003cstring\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;url&quot;:&quot;\u003cstring\u003e&quot;,&quot;created_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;updated_at&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;exclude&quot;:&quot;\u003cboolean\u003e&quot;,&quot;language&quot;:&quot;zh-CN&quot;,&quot;external_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;content&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,68 @@
+# Create phone numbers
+
+POST {{baseUrl}}/phone/carrier_reseller/numbers
+
+
+<p>
+Use this API to add phone numbers to a carrier reseller (master) account. Up to 200 numbers at a time. If this API is called in MA mode, it also has functions of distribution.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Pro or higher account plan 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;0&quot;=&gt;{&quot;phone_number&quot;=&gt;&quot;+12059535689&quot;, &quot;status&quot;=&gt;&quot;inactive&quot;}, &quot;1&quot;=&gt;{&quot;phone_number&quot;=&gt;&quot;+12059535689&quot;, &quot;status&quot;=&gt;&quot;inactive&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+&quot;&quot;
+```

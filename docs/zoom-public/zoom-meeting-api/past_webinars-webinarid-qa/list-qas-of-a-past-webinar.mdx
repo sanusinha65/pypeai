@@ -1,0 +1,99 @@
+# List Q&amp;As of a past webinar
+
+GET {{baseUrl}}/past_webinars/:webinarId/qa
+
+
+<p>
+List the Q&amp;A of a specific past webinar. 
+</p>
+
+
+
+<p>
+The 
+<a href="https://support.zoom.us/hc/en-us/articles/203686015-Getting-Started-with-Question-Answer">
+question &amp; answer (Q&amp;A)
+</a>
+ feature for webinars lets attendees ask questions during the webinar and for the panelists, co-hosts and host to answer their questions. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<a href="https://zoom.us/webinar">
+Webinar license
+</a>
+
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+webinar:read:admin
+</code>
+,
+<code>
+webinar:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;questions&quot;:[{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;email&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_details&quot;:[{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;},{&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;question&quot;:&quot;\u003cstring\u003e&quot;}]}],&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;}
+```

@@ -1,0 +1,78 @@
+# Assign phone number to user
+
+POST {{baseUrl}}/phone/users/:userId/phone_numbers
+
+
+<p>
+Use this API to assign a 
+<a href="https://support.zoom.us/hc/en-us/articles/360020808292-Managing-Phone-Numbers">
+phone number
+</a>
+ to a user who has already enabled Zoom Phone.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write
+</code>
+, 
+<code>
+phone:write:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Business or Enterprise account 
+* A Zoom Phone license
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;phone_numbers&quot;=&gt;[{&quot;id&quot;=&gt;&quot;iHE1MQAET2iV85MbfaQmwg&quot;, &quot;number&quot;=&gt;&quot;+18887193005&quot;}, {&quot;id&quot;=&gt;&quot;iHE1MQAET2iV85MbfaQmwg&quot;, &quot;number&quot;=&gt;&quot;+18887193005&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;iHE1MQAET2iV85MbfaQmwg&quot;,&quot;number&quot;:&quot;+18887193005&quot;},{&quot;id&quot;:&quot;iHE1MQAET2iV85MbfaQmwg&quot;,&quot;number&quot;:&quot;+18887193005&quot;}]}
+```

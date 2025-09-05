@@ -1,0 +1,57 @@
+# Get a note
+
+GET {{baseUrl}}/contact_center/engagements/:engagementId/notes/:noteId
+
+
+<p>
+Retrieve a note. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_note:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_type&quot;:&quot;sms&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

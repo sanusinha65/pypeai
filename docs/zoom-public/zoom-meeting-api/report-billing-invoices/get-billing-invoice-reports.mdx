@@ -1,0 +1,92 @@
+# Get billing invoice reports
+
+GET {{baseUrl}}/report/billing/invoices?billing_id=&lt;string&gt;
+
+
+<p>
+Get department billing invoices reports for a specific billing period. Provide the 
+<code>
+billing_id
+</code>
+ of the billing period for which you would like to retrieve the invoices for. This ID can be retrieved from 
+<strong>
+Get Billing Reports
+</strong>
+ API. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Department Billing option enabled. Contact the Zoom Support team to enable this feature.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `billing_id` | string |  | (Required) Unique Identifier of the Billing Report. Retrieve this ID from the response of **Get Billing Reports** API request. 
+
+ |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;currency&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoices&quot;:[{&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;invoice_charge_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cstring\u003e&quot;},{&quot;end_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;invoice_charge_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;invoice_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;quantity&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_date&quot;:&quot;\u003cdate\u003e&quot;,&quot;tax_amount&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_amount&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

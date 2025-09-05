@@ -1,0 +1,83 @@
+# Get meeting survey report
+
+GET {{baseUrl}}/report/meetings/:meetingId/survey
+
+
+<p>
+Retrieve a report on past 
+<a href="https://support.zoom.com/hc/en/article?id=zm_kb&sysparm_article=KB0057559">
+meeting survey
+</a>
+.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+report:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;survey_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;survey_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;survey_answers&quot;:[{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_details&quot;:[{&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;}]},{&quot;email&quot;:&quot;\u003cemail\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;first_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer_details&quot;:[{&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;},{&quot;question&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;answer&quot;:&quot;\u003cstring\u003e&quot;,&quot;date_time&quot;:&quot;\u003cstring\u003e&quot;}]}]}
+```

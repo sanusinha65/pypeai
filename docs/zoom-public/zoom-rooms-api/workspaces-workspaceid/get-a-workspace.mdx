@@ -1,0 +1,57 @@
+# Get a workspace
+
+GET {{baseUrl}}/workspaces/:workspaceId
+
+
+<p>
+Use this API to get workspace detail. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+workspace:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;workspace_type&quot;:&quot;desk&quot;,&quot;workspace_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;activation_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;calendar_resource_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

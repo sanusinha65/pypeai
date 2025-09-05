@@ -1,0 +1,147 @@
+# Get plan usage
+
+GET {{baseUrl}}/accounts/:accountId/plans/usage
+
+
+<p>
+Get information on 
+<a href="https://marketplace.zoom.us/docs/api-reference/other-references/plans">
+plan usage
+</a>
+ for an account.  
+</p>
+
+
+
+<p>
+This API supports standard and master accounts and subaccounts. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisite
+</strong>
+:   Account type: master account on a paid Pro, Business or Enterprise plan.   
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+To get a standard account&#39;s plan usage, use the 
+<code>
+account:read:admin
+</code>
+ scope. Enter 
+<code>
+me
+</code>
+ as the value of the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+To get a master account&#39;s plan usage, use use the 
+<code>
+billing:master
+</code>
+ scope. Enter  
+<code>
+me
+</code>
+ as the value of the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+To get a subaccount&#39;s plan usage, use use the 
+<code>
+billing:master
+</code>
+ scope. Enter the subaccount&#39;s actual account ID as the value of the 
+<code>
+accountId
+</code>
+ path parameter. 
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+billing:master
+</code>
+,
+<code>
+account:master
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;plan_base&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_large_meeting&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_recording&quot;:{&quot;free_storage&quot;:&quot;\u003cstring\u003e&quot;,&quot;free_storage_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_storage&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_storage_exceed&quot;:&quot;\u003cstring\u003e&quot;,&quot;max_exceed_date&quot;:&quot;\u003cstring\u003e&quot;,&quot;plan_storage_usage&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;},&quot;plan_united&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_webinar&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_zoom_events&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_zoom_one&quot;:[{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;}],&quot;plan_zoom_rooms&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_room_connector&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_whiteboard&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_whiteboard_plus&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zoom_iq&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_ztransl&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zwr&quot;:{&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_znode_base&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zphybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zsched&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_zmhybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_mchybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_rchybrid&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;},&quot;plan_workforce_management&quot;:{&quot;type&quot;:&quot;\u003cstring\u003e&quot;,&quot;hosts&quot;:&quot;\u003cinteger\u003e&quot;,&quot;usage&quot;:&quot;\u003cinteger\u003e&quot;,&quot;pending&quot;:&quot;\u003cinteger\u003e&quot;}}
+```

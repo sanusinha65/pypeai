@@ -1,0 +1,89 @@
+# Get Zoom Room account profile
+
+GET {{baseUrl}}/rooms/account_profile
+
+
+<p>
+Get details on the account profile of a Zoom Room. This information can only by accessed either by the Zoom Room Account Owner or a user with Zoom Rooms admin permission. To get information on an individual Room Profile, use the 
+<a href="/docs/api-reference/zoom-api/methods#operation/getZRProfile">
+
+<strong>
+Get Zoom Room profile
+</strong>
+
+</a>
+ API. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Zoom account owner or Zoom Rooms admin permissions
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;basic&quot;:{&quot;required_code_to_ext&quot;:&quot;\u003cboolean\u003e&quot;,&quot;room_passcode&quot;:&quot;\u003cstring\u003e&quot;,&quot;support_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;support_phone&quot;:&quot;\u003cstring\u003e&quot;}}
+```

@@ -1,0 +1,76 @@
+# List meeting summaries of an account
+
+GET {{baseUrl}}/meetings/meeting_summaries?page_size=30&amp;next_page_token=&lt;string&gt;&amp;from=&lt;dateTime&gt;&amp;to=&lt;dateTime&gt;
+
+
+<p>
+Generates a list of all meeting summaries for an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites
+</strong>
+
+* Host user type must be Pro or higher plan.
+* The Meeting Summary with AI Companion feature enabled in the host&#39;s account.
+* E2ee meetings do not have summary feature enabled.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+meeting_summary:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | The next page token paginates through a large set of results. A next page token returns whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+| `from` | string |  | The start date in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` UTC format used to retrieve the creation date range of the meeting summaries. |
+| `to` | string |  | The end date in `yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39;` UTC format used to retrieve the creation date range of the meeting summaries. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;page_size&quot;:30,&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summaries&quot;:[{&quot;meeting_host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_host_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;meeting_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;meeting_host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_host_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;meeting_uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_id&quot;:&quot;\u003clong\u003e&quot;,&quot;meeting_topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;meeting_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;meeting_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_end_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_created_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;summary_last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}]}
+```

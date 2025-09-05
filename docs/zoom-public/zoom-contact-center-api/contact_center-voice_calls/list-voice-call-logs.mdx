@@ -1,0 +1,77 @@
+# List voice call logs
+
+GET {{baseUrl}}/contact_center/voice_calls?next_page_token=&lt;string&gt;&amp;page_size=10&amp;from=&lt;date&gt;&amp;to=&lt;date&gt;&amp;types=external_conference_call&amp;types=external_call&amp;distribution=non_acd&amp;consumer_number=&lt;string&gt;&amp;direction=outbound&amp;user_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;&amp;engagement_id=&lt;string&gt;&amp;queue_ids=&lt;string&gt;&amp;queue_ids=&lt;string&gt;&amp;country_iso_codes=&lt;string&gt;&amp;country_iso_codes=&lt;string&gt;&amp;number_types=byoc_number&amp;number_types=byoc_number
+
+
+<p>
+Returns a list of voice call logs. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_voice_call:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token returns whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `page_size` | number |  | The number of items returned per page. |
+| `from` | string |  | The start time and date in yyyy-mm-dd or ISO 8601 format (yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; or yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;TZD&#39;). The defined date range should be a month, as the response only includes one month&#39;s worth of data. If no start date is specified, return data from the past 24 hours. |
+| `to` | string |  | **Required** only when the `from` parameter is specified. The end time and date in yyyy-mm-dd or ISO 8601 format (yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;Z&#39; or yyyy-MM-dd&#39;T&#39;HH:mm:ss&#39;TZD&#39;. |
+| `types` | string |  | The call&#39;s type. |
+| `types` | string |  | The call&#39;s type. |
+| `distribution` | string |  | The engagement&#39;s distribution. |
+| `consumer_number` | string |  | The consumer&#39;s phone number. |
+| `direction` | string |  | The engagement&#39;s direction. |
+| `user_ids` | string |  | A comma-separated list of agents&#39; user IDs to query, up to 20 agent IDs. |
+| `user_ids` | string |  | A comma-separated list of agents&#39; user IDs to query, up to 20 agent IDs. |
+| `engagement_id` | string |  | The engagement&#39;s ID. |
+| `queue_ids` | string |  | A comma-separated list of queue IDs to query, up to 20 queue IDs. If user provide `none`, filter by &amp;ldquo;No queue used&amp;rdquo; in the web UI. |
+| `queue_ids` | string |  | A comma-separated list of queue IDs to query, up to 20 queue IDs. If user provide `none`, filter by &amp;ldquo;No queue used&amp;rdquo; in the web UI. |
+| `country_iso_codes` | string |  | Two-letter country [code](https://marketplace.zoom.us/docs/api-reference/other-references/abbreviation-lists#countries). |
+| `country_iso_codes` | string |  | Two-letter country [code](https://marketplace.zoom.us/docs/api-reference/other-references/abbreviation-lists#countries). |
+| `number_types` | string |  | The number&#39;s type. |
+| `number_types` | string |  | The number&#39;s type. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:10,&quot;total_records&quot;:&quot;\u003cinteger\u003e&quot;,&quot;from&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;to&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;voice_calls&quot;:[{&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;call_legs&quot;:[&quot;inbound&quot;,&quot;outbound&quot;],&quot;distributions&quot;:[&quot;acd&quot;,&quot;acd&quot;],&quot;types&quot;:[&quot;internal_call&quot;,&quot;internal_conference_call&quot;],&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:&quot;virtual_service_number&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:&quot;byoc_number&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;agents&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;flows&quot;:[{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;country_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recorded&quot;:&quot;\u003cboolean\u003e&quot;,&quot;monitored&quot;:&quot;\u003cboolean\u003e&quot;,&quot;inbox&quot;:&quot;\u003cboolean\u003e&quot;,&quot;result&quot;:&quot;short_abandoned&quot;,&quot;caller_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calling_party&quot;:&quot;agent&quot;,&quot;charge&quot;:&quot;\u003cstring\u003e&quot;,&quot;rates&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;charge_type&quot;:&quot;per_minute&quot;},{&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;inbound&quot;,&quot;call_legs&quot;:[&quot;outbound&quot;,&quot;outbound&quot;],&quot;distributions&quot;:[&quot;acd&quot;,&quot;non_acd&quot;],&quot;types&quot;:[&quot;internal_callback_call&quot;,&quot;internal_conference_call&quot;],&quot;caller_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;caller_number_type&quot;:&quot;virtual_service_number&quot;,&quot;callee_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;callee_number_type&quot;:&quot;byoc_number&quot;,&quot;start_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;end_time&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;agents&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;flows&quot;:[{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;country_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;recorded&quot;:&quot;\u003cboolean\u003e&quot;,&quot;monitored&quot;:&quot;\u003cboolean\u003e&quot;,&quot;inbox&quot;:&quot;\u003cboolean\u003e&quot;,&quot;result&quot;:&quot;hang_up_calls&quot;,&quot;caller_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;calling_party&quot;:&quot;consumer&quot;,&quot;charge&quot;:&quot;\u003cstring\u003e&quot;,&quot;rates&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;charge_type&quot;:&quot;per_minute&quot;}]}
+```

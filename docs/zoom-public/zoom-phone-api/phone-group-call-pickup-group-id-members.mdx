@@ -1,0 +1,16 @@
+#  phone-group call pickup-{group Id}-members
+
+Number of APIs: 3
+
+1. [List call pickup group members](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-group-call-pickup-group-id-members/list-call-pickup-group-members-1)
+GET {{baseUrl}}/phone/group_call_pickup/:groupId/members?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2&amp;site_id=NjHmTu16Qfe8yOiNJuekXA&amp;extension_type=user
+
+
+2. [Add members to a call pickup group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-group-call-pickup-group-id-members/add-members-to-a-call-pickup-group-1)
+POST {{baseUrl}}/phone/group_call_pickup/:groupId/members
+
+
+3. [Remove members from call pickup group](https://developers.qodex.ai/zoom-public/zoom-phone-api/phone-group-call-pickup-group-id-members/remove-members-from-call-pickup-group-1)
+DELETE {{baseUrl}}/phone/group_call_pickup/:groupId/members/:extensionId
+
+

@@ -1,0 +1,108 @@
+# List session users QoS
+
+GET {{baseUrl}}/videosdk/sessions/:sessionId/users/qos?type=live&amp;page_size=10&amp;next_page_token=Usse957pzxvmYwlmCZ50a6CNXFrhztxuj82
+
+
+<p>
+Use this API to return a list of session users from live or past sessions along with the QoS (quality of service) they received during the session. For example, connection quality for sending and receiving video, audio, and shared content. You can specify a monthly date range for the dashboard data using the 
+<code>
+from
+</code>
+ and 
+<code>
+to
+</code>
+ query parameters. The month should fall within the last six months.
+</p>
+
+
+
+<ul>
+
+
+<li>
+If you do 
+<strong>
+not
+</strong>
+ provide the 
+<code>
+type
+</code>
+ query parameter, the API defaults to the 
+<code>
+live
+</code>
+ value and the API will only return metrics for users in a live session, if a session is currently in progress.
+</li>
+
+
+<li>
+To view metrics on past session users, provide the 
+<code>
+past
+</code>
+ value for the 
+<code>
+type
+</code>
+ query parameter.
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Heavy
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* A Video SDK Account
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `type` | string |  | The session types: 
+* `past` — A past session. 
+* `live` — A live session.
+
+This value defaults to `live`. |
+| `page_size` | number |  | The number of items returned per page. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;page_size&quot;:5,&quot;next_page_token&quot;:&quot;1cyhUewZa419P9F8QUYURck0U3rFWB0d1H2&quot;,&quot;users&quot;:[{&quot;id&quot;:&quot;1670000000&quot;,&quot;name&quot;:&quot;User&quot;,&quot;device&quot;:&quot;Android&quot;,&quot;ip_address&quot;:&quot;192.0.2.0&quot;,&quot;location&quot;:&quot;San Jose (US)&quot;,&quot;network_type&quot;:&quot;Wifi&quot;,&quot;microphone&quot;:&quot;Plantronics BT600&quot;,&quot;speaker&quot;:&quot;Plantronics BT600&quot;,&quot;camera&quot;:&quot;FaceTime HD Camera&quot;,&quot;data_center&quot;:&quot;SC&quot;,&quot;connection_type&quot;:&quot;P2P&quot;,&quot;join_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;leave_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;user_qos&quot;:[{&quot;date_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;audio_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;audio_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;video_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;video_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;cpu_usage&quot;:{&quot;zoom_min_cpu_usage&quot;:&quot;8%&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;12%&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;18%&quot;,&quot;system_max_cpu_usage&quot;:&quot;40%&quot;}},{&quot;date_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;audio_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;audio_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;video_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;video_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;cpu_usage&quot;:{&quot;zoom_min_cpu_usage&quot;:&quot;8%&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;12%&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;18%&quot;,&quot;system_max_cpu_usage&quot;:&quot;40%&quot;}}]},{&quot;id&quot;:&quot;1670000000&quot;,&quot;name&quot;:&quot;User&quot;,&quot;device&quot;:&quot;Android&quot;,&quot;ip_address&quot;:&quot;192.0.2.0&quot;,&quot;location&quot;:&quot;San Jose (US)&quot;,&quot;network_type&quot;:&quot;Wifi&quot;,&quot;microphone&quot;:&quot;Plantronics BT600&quot;,&quot;speaker&quot;:&quot;Plantronics BT600&quot;,&quot;camera&quot;:&quot;FaceTime HD Camera&quot;,&quot;data_center&quot;:&quot;SC&quot;,&quot;connection_type&quot;:&quot;P2P&quot;,&quot;join_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;leave_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;user_qos&quot;:[{&quot;date_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;audio_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;audio_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;video_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;video_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;cpu_usage&quot;:{&quot;zoom_min_cpu_usage&quot;:&quot;8%&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;12%&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;18%&quot;,&quot;system_max_cpu_usage&quot;:&quot;40%&quot;}},{&quot;date_time&quot;:&quot;2021-12-07T05:42:28Z&quot;,&quot;audio_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;audio_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;},&quot;video_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;video_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_input&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;as_output&quot;:{&quot;bitrate&quot;:&quot;23 kbps&quot;,&quot;latency&quot;:&quot;126 ms&quot;,&quot;jitter&quot;:&quot;6 ms&quot;,&quot;avg_loss&quot;:&quot;0.3%&quot;,&quot;max_loss&quot;:&quot;1.9%&quot;,&quot;resolution&quot;:&quot;1280*720&quot;,&quot;frame_rate&quot;:&quot;12 fps&quot;},&quot;cpu_usage&quot;:{&quot;zoom_min_cpu_usage&quot;:&quot;8%&quot;,&quot;zoom_avg_cpu_usage&quot;:&quot;12%&quot;,&quot;zoom_max_cpu_usage&quot;:&quot;18%&quot;,&quot;system_max_cpu_usage&quot;:&quot;40%&quot;}}]}]}
+```

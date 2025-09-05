@@ -1,0 +1,73 @@
+# Update the account owner
+
+PUT {{baseUrl}}/accounts/:accountId/owner
+
+
+<p>
+Change an account&#39;s owner.
+</p>
+
+
+
+<p>
+An account&#39;s current owner can 
+<a href="https://support.zoom.us/hc/en-us/articles/115005686983-Change-Account-Owner">
+change the account&#39;s owner
+</a>
+ to another user on the same account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* An account owner or admin permissions of an account 
+* The account making this API request must be on a Pro or a higher account plan with 
+<a href="https://developers.zoom.us/docs/api/rest/master-account-apis/">
+Master account
+</a>
+ privileges
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+HEAVY
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;email&quot;=&gt;&quot;&lt;email&gt;&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

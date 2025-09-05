@@ -1,0 +1,65 @@
+# Create or update session interpreters.
+
+PUT {{baseUrl}}/zoom_events/events/:eventId/sessions/:sessionId/interpreters
+
+
+<p>
+Use this API to create or update the list of interpreters for the session.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_sessions:write:admin
+</code>
+
+<code>
+zoom_events_sessions:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;interpreters&quot;=&gt;[{&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;1, &quot;source_language_id&quot;=&gt;&quot;PT&quot;, &quot;target_language_id&quot;=&gt;&quot;PT&quot;}, {&quot;email&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;type&quot;=&gt;1, &quot;source_language_id&quot;=&gt;&quot;RU&quot;, &quot;target_language_id&quot;=&gt;&quot;FR&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

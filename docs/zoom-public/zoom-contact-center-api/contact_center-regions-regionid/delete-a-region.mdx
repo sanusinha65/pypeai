@@ -1,0 +1,59 @@
+# Delete a region
+
+DELETE {{baseUrl}}/contact_center/regions/:regionId?move_users_to_region_id=&lt;string&gt;
+
+
+<p>
+Delete a site and move its members to another region.   
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_region:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `move_users_to_region_id` | string |  | (Required) ID of the region to move users to. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

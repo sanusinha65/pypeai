@@ -1,0 +1,210 @@
+# Revoke an access token
+
+POST https://zoom.us/oauth/revoke
+
+
+<h3>
+Revoking an Access Token
+</h3>
+
+
+
+<p>
+Supply the 
+<code>
+access_token
+</code>
+ you wish to revoke to the query params.
+</p>
+
+
+
+<p>
+Navigate to the Auth tab and under 
+<code>
+Basic Auth
+</code>
+ fill in the following:
+</p>
+
+
+
+<ul>
+
+
+<li>
+Username: [Client_ID]
+</li>
+
+
+<li>
+Password: [Client_Secret]
+</li>
+
+
+</ul>
+
+
+
+<p>
+Remember, you can always use the [global variables] feature and syntax within Qodex or directly paste those values in the respective form fields if you do not wish to edit/use the global variables feature.
+</p>
+
+
+
+<p>
+
+<strong>
+Alternatively, you can clear the Auth tab fields, and use the
+</strong>
+ 
+<strong>
+
+<code>
+Headers
+</code>
+
+</strong>
+ 
+<strong>
+tab per our Zoom documentation
+</strong>
+.
+</p>
+
+
+
+<p>
+If you go this route, make sure to re-check the 
+<code>
+Headers
+</code>
+ key-value field boxes and 
+<a href="https://www.base64encode.org/">
+Base64-encode
+</a>
+ the 
+<code>
+Client_ID:Client_Secret
+</code>
+ (with the colon between the two and no spaces) before pasting in the 
+<code>
+Authorization
+</code>
+ value field.
+</p>
+
+
+
+<p>
+Once you&#39;re done, send the POST request to 
+<code>
+https://zoom.us/oauth/revoke
+</code>
+ (already pre-populated in this request for you).
+</p>
+
+
+
+<p>
+
+<strong>
+Here&#39;s an example request to revoke an access token:
+</strong>
+
+</p>
+
+
+
+<pre>
+
+<code class="plaintext">
+POST /oauth/revoke HTTP/1.1
+Host: zoom.us
+Authorization: Basic base64Encode(client_id:client_secret)
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8 4
+token=[ACCESS TOKEN]
+
+
+</code>
+
+</pre>
+
+
+
+<p>
+
+<strong>
+If successful, the response body will be a JSON representation of your user&#39;s refreshed access token like this:
+</strong>
+
+</p>
+
+
+
+<pre>
+
+<code class="json">
+{
+  &quot;status&quot;: &quot;success&quot;
+}
+
+
+</code>
+
+</pre>
+
+
+
+<hr>
+
+
+
+<p>
+
+<strong>
+Developer Documentation:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<a href="https://developers.zoom.us/docs/integrations/oauth/#getting-an-access-token">
+Revoking an access token
+</a>
+
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `` | null |  |  |
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;token&quot;, &quot;value&quot;=&gt;&quot;{{oAuthDevAccessToken}}&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Authorization` | string |  | The string Basic with your Client ID and Client Secret separated with colon (:), Base64-encoded. |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

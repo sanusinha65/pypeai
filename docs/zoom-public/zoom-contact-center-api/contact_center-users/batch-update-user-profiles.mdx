@@ -1,0 +1,61 @@
+# Batch update user profiles
+
+PATCH {{baseUrl}}/contact_center/users
+
+
+<p>
+Batch update user profiles. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;users&quot;=&gt;[{&quot;user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;client_integration&quot;=&gt;&quot;Salesforce&quot;, &quot;role_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sub_status_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_access&quot;=&gt;&quot;inactive&quot;, &quot;country_iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;}, {&quot;user_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_email&quot;=&gt;&quot;&lt;email&gt;&quot;, &quot;client_integration&quot;=&gt;&quot;Salesforce&quot;, &quot;role_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sub_status_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_access&quot;=&gt;&quot;active&quot;, &quot;country_iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;}]}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

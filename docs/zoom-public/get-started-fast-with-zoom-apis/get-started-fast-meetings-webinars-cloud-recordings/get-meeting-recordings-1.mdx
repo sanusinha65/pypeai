@@ -1,0 +1,87 @@
+# Get meeting recordings
+
+GET {{baseUrl}}/meetings/:meetingId/recordings?include_fields=a2f19f96-9294-4f51-8134-6f0eea108eb2&amp;ttl=1
+
+
+<p>
+Use this API to return all of a meeting&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/203741855-Cloud-Recording#h_7420acb5-1897-4061-87b4-5b76e99c03b4">
+recordings
+</a>
+. The recording files can be downloaded via the 
+<code>
+download_url
+</code>
+ property listed in the response. 
+</p>
+
+
+
+<p>
+To access a password-protected cloud recording, add an 
+<code>
+access_token
+</code>
+ parameter to the download URL and provide OAuth access token or 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-jwt-app">
+JWT
+</a>
+ as the 
+<code>
+access_token
+</code>
+ value. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read:admin
+</code>
+, 
+<code>
+recording:read
+</code>
+ 
+<br>
+ 
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `include_fields` | string |  | The `download_access_token` value for downloading the meeting&#39;s recordings. |
+| `ttl` | number |  | The `download_access_token` Time to Live (TTL) value. This parameter is only valid if the `include_fields` query parameter contains the `download_access_token` value. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;account_id&quot;:&quot;Cx3wERazSgup7ZWRHQM8-w&quot;,&quot;duration&quot;:20,&quot;host_id&quot;:&quot;_0ctZtY0REqWalTmwvrdIw&quot;,&quot;id&quot;:6840331990,&quot;recording_count&quot;:22,&quot;start_time&quot;:&quot;2021-03-18T05:41:36Z&quot;,&quot;topic&quot;:&quot;My Personal Meeting&quot;,&quot;total_size&quot;:22,&quot;type&quot;:&quot;4&quot;,&quot;uuid&quot;:&quot;BOKXuumlTAGXuqwr3bLyuQ==&quot;,&quot;recording_files&quot;:{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},&quot;download_access_token&quot;:&quot;abJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJodHRwczovL2V2ZW50Lnpvb20udXMiLCJhY2NvdW50SWQiOiJNdDZzdjR1MFRBeVBrd2dzTDJseGlBIiwiYXVkIjoiaHR0cHM6Ly9vYXV0aC56b29tLnVzIiwibWlkIjoieFp3SEc0c3BRU2VuekdZWG16dnpiUT09IiwiZXhwIjoxNjI2MTM5NTA3LCJ1c2VySWQiOiJEWUhyZHBqclMzdWFPZjdkUGtrZzh3In0.a6KetiC6BlkDhf1dP4KBGUE1bb2brMeraoD45yhFx0eSSSTFdkHQnsKmlJQ-hdo9Zy-4vQw3rOxlyoHv583JyZ&quot;,&quot;password&quot;:&quot;981651&quot;,&quot;participant_audio_files&quot;:[{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;},{&quot;value&quot;:&quot;\u003cError: Too many levels of nesting to fake this schema\u003e&quot;}]}
+```

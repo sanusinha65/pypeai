@@ -1,0 +1,76 @@
+# Delete activity from the deal
+
+DELETE {{baseUrl}}/iq/deals/:dealId/activities?conversation_id=&lt;string&gt;&amp;message_id=&lt;string&gt;
+
+
+<p>
+Delete specific activity from the deal. Either 
+<b>
+conversation
+<u>
+id
+</b>
+ or 
+<b>
+message
+</u>
+id
+</b>
+ would be required.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+iq_deal:write
+</code>
+,
+<code>
+iq_deal:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `conversation_id` | string |  | The conversation ID. |
+| `message_id` | string |  | The message ID. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

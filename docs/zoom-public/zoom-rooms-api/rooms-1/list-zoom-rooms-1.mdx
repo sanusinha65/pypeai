@@ -1,0 +1,99 @@
+# List Zoom Rooms
+
+GET {{baseUrl}}/rooms?status=UnderConstruction&amp;tag_ids=&lt;string&gt;&amp;type=ZoomRoom&amp;unassigned_rooms=false&amp;page_size=30&amp;next_page_token=&lt;string&gt;&amp;location_id=&lt;string&gt;&amp;query_name=&lt;string&gt;
+
+
+<p>
+Zoom Rooms is a software-based room system that provides an integrated experience for audio conferencing, wireless screen sharing and video conferencing. Use this API to list all the existing 
+<a href="https://support.zoom.us/hc/en-us/articles/207483343-Getting-Started-with-Zoom-Rooms">
+Zoom Rooms
+</a>
+ in a Zoom account.  
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher plan with 
+<a href="https://zoom.us/zoomrooms">
+Zoom Room
+</a>
+ license.
+<br>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+MEDIUM
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `status` | string |  | The status of the Zoom Room. |
+| `tag_ids` | string |  | The room tag IDs associated with the Zoom Room. Use commas (,) to separate between them. It&#39;s OR logic if query for multiple tags. |
+| `type` | string |  | The type of Zoom Rooms . |
+| `unassigned_rooms` | boolean |  | Use this query parameter with a value of `true` if you would like to see Zoom Rooms in your account that have not been assigned to anyone yet. |
+| `page_size` | number |  | The number of records returned within a single API call. |
+| `next_page_token` | string |  | Use the next page token to paginate through large result sets. A next page token is returned whenever the set of available results exceeds the current page size. This token&#39;s expiration period is 15 minutes. |
+| `location_id` | string |  | The parent location ID of the Zoom Room. |
+| `query_name` | string |  | The name of a Zoom Room. If you do not call this parameter, the API will return all of the account&#39;s Zoom Rooms. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;next_page_token&quot;:&quot;\u003cstring\u003e&quot;,&quot;page_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;rooms&quot;:[{&quot;activation_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Offline&quot;,&quot;tag_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]},{&quot;activation_code&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;location_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;name&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Available&quot;,&quot;tag_ids&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;]}]}
+```

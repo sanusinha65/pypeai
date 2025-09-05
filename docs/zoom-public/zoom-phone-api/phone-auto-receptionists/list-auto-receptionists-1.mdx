@@ -1,0 +1,84 @@
+# List auto receptionists
+
+GET {{baseUrl}}/phone/auto_receptionists?page_size=30&amp;next_page_token=BJLYC6PABbAHdjwSkGVQeeR6B1juwHqj3G2
+
+
+<p>
+Use this API to list auto receptionists.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:read:admin
+</code>
+
+<br>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+</p>
+
+
+
+<ul>
+
+
+<li>
+Pro or a higher account with Zoom Phone license.
+</li>
+
+
+<li>
+Account owner or admin permissions.
+</li>
+
+
+</ul>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `page_size` | number |  | The total number of records returned from a single API call. |
+| `next_page_token` | string |  | The next page token is used to paginate through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. The expiration period for this token is 15 minutes. |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;auto_receptionists&quot;:[{&quot;cost_center&quot;:&quot;testCostCenter&quot;,&quot;department&quot;:&quot;testDepartment&quot;,&quot;extension_id&quot;:&quot;WfsrPERXS8inWrpH1Hi_KQ&quot;,&quot;extension_number&quot;:555550000000001,&quot;id&quot;:&quot;nqerMCD0Tu6RPGoCpVbPtA&quot;,&quot;name&quot;:&quot;JamieAuto&quot;,&quot;timezone&quot;:&quot;Pacific/Midway&quot;,&quot;audio_prompt_language&quot;:&quot;en-US&quot;,&quot;holiday_hours&quot;:[{&quot;id&quot;:&quot;i3gP6xFUTHqSFrIE6nHs7Q&quot;,&quot;name&quot;:&quot;Holiday 1&quot;,&quot;from&quot;:&quot;2022-03-08T16:00:00Z&quot;,&quot;to&quot;:&quot;2022-03-09T16:00:00Z&quot;},{&quot;id&quot;:&quot;i3gP6xFUTHqSFrIE6nHs7Q&quot;,&quot;name&quot;:&quot;Holiday 1&quot;,&quot;from&quot;:&quot;2022-03-08T16:00:00Z&quot;,&quot;to&quot;:&quot;2022-03-09T16:00:00Z&quot;}],&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;,&quot;number&quot;:&quot;+12058945717&quot;},{&quot;id&quot;:&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;,&quot;number&quot;:&quot;+12058945717&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;O4rBC_zEQnCVoiHfXKGKNA&quot;,&quot;name&quot;:&quot;jamietestsite&quot;}},{&quot;cost_center&quot;:&quot;testCostCenter&quot;,&quot;department&quot;:&quot;testDepartment&quot;,&quot;extension_id&quot;:&quot;WfsrPERXS8inWrpH1Hi_KQ&quot;,&quot;extension_number&quot;:555550000000001,&quot;id&quot;:&quot;nqerMCD0Tu6RPGoCpVbPtA&quot;,&quot;name&quot;:&quot;JamieAuto&quot;,&quot;timezone&quot;:&quot;Pacific/Midway&quot;,&quot;audio_prompt_language&quot;:&quot;en-US&quot;,&quot;holiday_hours&quot;:[{&quot;id&quot;:&quot;i3gP6xFUTHqSFrIE6nHs7Q&quot;,&quot;name&quot;:&quot;Holiday 1&quot;,&quot;from&quot;:&quot;2022-03-08T16:00:00Z&quot;,&quot;to&quot;:&quot;2022-03-09T16:00:00Z&quot;},{&quot;id&quot;:&quot;i3gP6xFUTHqSFrIE6nHs7Q&quot;,&quot;name&quot;:&quot;Holiday 1&quot;,&quot;from&quot;:&quot;2022-03-08T16:00:00Z&quot;,&quot;to&quot;:&quot;2022-03-09T16:00:00Z&quot;}],&quot;phone_numbers&quot;:[{&quot;id&quot;:&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;,&quot;number&quot;:&quot;+12058945717&quot;},{&quot;id&quot;:&quot;KsxwNLEhQ0SJ4U4Bor4ShA&quot;,&quot;number&quot;:&quot;+12058945717&quot;}],&quot;site&quot;:{&quot;id&quot;:&quot;O4rBC_zEQnCVoiHfXKGKNA&quot;,&quot;name&quot;:&quot;jamietestsite&quot;}}],&quot;next_page_token&quot;:&quot;OvrVMfenVmKgsH0SqfWQ2jgUsHFGXeanCB2&quot;,&quot;page_size&quot;:1,&quot;total_records&quot;:2}
+```

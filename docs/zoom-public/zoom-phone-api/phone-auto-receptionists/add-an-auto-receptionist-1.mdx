@@ -1,0 +1,80 @@
+# Add an auto receptionist
+
+POST {{baseUrl}}/phone/auto_receptionists
+
+
+<p>
+Auto receptionists answer calls with a personalized recording and routes calls to a phone user, call queue, common area phone, voicemail or an IVR system. Use this API to add an 
+<a href="https://support.zoom.us/hc/en-us/articles/360021121312-Managing-Auto-Receptionists-and-Interactive-Voice-Response-IVR-">
+auto receptionist
+</a>
+ to a Zoom Phone
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+<br>
+
+* Pro or higher account with Zoom Phone license.
+* Account owner or admin privileges 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;name&quot;=&gt;&quot;JamieAuto&quot;, &quot;site_id&quot;=&gt;&quot;O4rBC_zEQnCVoiHfXKGKNA&quot;}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;extension_number&quot;:555550000000001,&quot;id&quot;:&quot;nqerMCD0Tu6RPGoCpVbPtA&quot;,&quot;name&quot;:&quot;JamieAuto&quot;}
+```

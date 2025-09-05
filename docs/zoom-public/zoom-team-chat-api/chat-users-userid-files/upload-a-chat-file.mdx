@@ -1,0 +1,110 @@
+# Upload a chat file
+
+POST {{baseUrl}}/chat/users/:userId/files
+
+
+<p>
+Uploads a file to chat. 
+</p>
+
+
+
+<p>
+
+<strong>
+Note:
+</strong>
+ 
+* The base URL for this API&#39;s is 
+<code>
+https://file.zoom.us/v2/
+</code>
+. 
+* The rate limit of this API is 20 requests per second per API or 2000 requests per second per IP address. 
+* The caller must support HTTP 30x redirects. 
+* All files are sent as common files except 
+<code>
+png
+</code>
+,
+<code>
+jpg
+</code>
+,
+<code>
+jpeg
+</code>
+ and 
+<code>
+gif
+</code>
+ 
+* Zoom Cloud Storage will store the files sent through this API. If you do not use Zoom Cloud Storage, Zoom Cloud will temporarily store these files for 7 days. 
+* The caller must retain the authorization header when redirected to a different hostname. 
+</p>
+
+
+
+<p>
+For an 
+<strong>
+account-level
+</strong>
+ 
+<a href="https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-oauth-app">
+OAuth app
+</a>
+, this API can only be used on behalf of a user who is assigned with a 
+<a href="https://support.zoom.us/hc/en-us/articles/115001078646-Using-role-management#:%7E:text=Each%20user%20in%20a%20Zoom,owner%2C%20administrator%2C%20or%20member.&text=Role%2Dbased%20access%20control%20enables,needs%20to%20view%20or%20edit.">
+role
+</a>
+ that has the 
+<strong>
+Edit
+</strong>
+ permission for 
+<strong>
+Chat Messages
+</strong>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+chat_message:write
+</code>
+, 
+<code>
+chat_message:write:admin
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+[{&quot;name&quot;=&gt;&quot;file&quot;, &quot;value&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;datatype&quot;=&gt;&quot;string&quot;}]
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `Created`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;}
+```

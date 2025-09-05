@@ -1,0 +1,34 @@
+# Message with Markdown
+
+POST {{baseUrl}}/v2/im/chat/messages
+
+
+<p>
+
+<a href="https://marketplace.zoom.us/docs/guides/chatbots/customizing-messages/message-with-text">
+https://marketplace.zoom.us/docs/guides/chatbots/customizing-messages/message-with-text
+</a>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;robot_jid&quot;=&gt;&quot;{{zoom_bot_jid}}&quot;, &quot;to_jid&quot;=&gt;&quot;{{zoom_to_jid}}&quot;, &quot;account_id&quot;=&gt;&quot;{{zoom_account_id}}&quot;, &quot;is_markdown_support&quot;=&gt;true, &quot;content&quot;=&gt;{&quot;head&quot;=&gt;{&quot;text&quot;=&gt;&quot;_this header is italic_&quot;, &quot;sub_head&quot;=&gt;{&quot;text&quot;=&gt;&quot;~this sub header has a strikethrough~&quot;}}, &quot;body&quot;=&gt;[{&quot;type&quot;=&gt;&quot;section&quot;, &quot;sections&quot;=&gt;[{&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;*this text is bold*&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;_this text is italic_&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;~this text has a strikethrough~&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;`this text is monospace`&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;&gt; this text is a block qoute&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;&lt;https://zoom.us&gt;&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;&lt;\#{{zoom_to_jid}}|Name Here&gt;&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;&lt;!all&gt;&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;&lt;!{{zoom_to_jid}}|Name Here&gt;&quot;}, {&quot;type&quot;=&gt;&quot;fields&quot;, &quot;items&quot;=&gt;[{&quot;key&quot;=&gt;&quot;Code&quot;, &quot;value&quot;=&gt;&quot;`console.log(&#39;this form field value is monospace&#39;)`&quot;, &quot;editable&quot;=&gt;false}]}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;&lt;img:https://marketplace.zoom.us/competition/images/zoom.png|alt text&gt;&quot;}, {&quot;type&quot;=&gt;&quot;message&quot;, &quot;text&quot;=&gt;&quot;this text has an inline image &lt;img:https://marketplace.zoom.us/competition/images/zoom.png|alt text&gt;&quot;}], &quot;footer&quot;=&gt;&quot;this text is in the footer&quot;}]}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Authorization` | string |  |  |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

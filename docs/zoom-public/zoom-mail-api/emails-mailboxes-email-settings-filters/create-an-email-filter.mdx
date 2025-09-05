@@ -1,0 +1,72 @@
+# Create an email filter
+
+POST {{baseUrl}}/emails/mailboxes/:email/settings/filters
+
+
+<p>
+Creates a message filter.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+mail:write
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Not supported in Gov cluster
+</strong>
+ 
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;action&quot;=&gt;{&quot;addLabelIds&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;removeLabelIds&quot;=&gt;[&quot;&lt;string&gt;&quot;, &quot;&lt;string&gt;&quot;], &quot;forward&quot;=&gt;&quot;&lt;string&gt;&quot;}, &quot;criteria&quot;=&gt;{&quot;from&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;to&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;subject&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;query&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;negatedQuery&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;hasAttachment&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;size&quot;=&gt;&quot;&lt;integer&gt;&quot;, &quot;sizeComparison&quot;=&gt;&quot;smaller&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;criteria&quot;:{&quot;from&quot;:&quot;\u003cstring\u003e&quot;,&quot;to&quot;:&quot;\u003cstring\u003e&quot;,&quot;subject&quot;:&quot;\u003cstring\u003e&quot;,&quot;query&quot;:&quot;\u003cstring\u003e&quot;,&quot;negatedQuery&quot;:&quot;\u003cstring\u003e&quot;,&quot;hasAttachment&quot;:&quot;\u003cboolean\u003e&quot;,&quot;size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;sizeComparison&quot;:&quot;larger&quot;},&quot;action&quot;:{&quot;addLabelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;removeLabelIds&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;forward&quot;:&quot;\u003cstring\u003e&quot;}}
+```

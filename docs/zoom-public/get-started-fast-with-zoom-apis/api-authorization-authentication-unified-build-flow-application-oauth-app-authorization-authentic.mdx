@@ -1,0 +1,16 @@
+#  API Authorization &amp; Authentication-Unified Build Flow Application-OAuth App Authorization &amp; Authentication-OAuth 2.0 with PKCE
+
+Number of APIs: 3
+
+1. [Refresh access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic/refresh-access-token-6)
+POST https://zoom.us/oauth/token
+
+
+2. [Revoke an access token](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic/revoke-an-access-token-6)
+POST https://zoom.us/oauth/revoke
+
+
+3. [Request user authorization PKCE](https://developers.qodex.ai/zoom-public/get-started-fast-with-zoom-apis/api-authorization-authentication-unified-build-flow-application-oauth-app-authorization-authentic/request-user-authorization-pkce-1)
+GET https://zoom.us/oauth/token?response_type=code&amp;client_id={{oAuthDevClientId}}&amp;redirect_uri={{oAuthDevRedirectUri}}&amp;code_challenge=
+
+

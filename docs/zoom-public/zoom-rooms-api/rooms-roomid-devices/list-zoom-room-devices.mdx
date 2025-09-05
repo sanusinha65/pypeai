@@ -1,0 +1,100 @@
+# List Zoom Room devices
+
+GET {{baseUrl}}/rooms/:roomId/devices
+
+
+<p>
+List information about the devices that are being used for a specific 
+<a href="https://support.zoom.us/hc/en-us/articles/207483343-Getting-Started-with-Zoom-Rooms">
+Zoom Room
+</a>
+ in an account.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+  
+</p>
+
+
+
+<ul>
+
+
+<li>
+
+<p>
+Pro or a higher plan with 
+<a href="https://zoom.us/zoomrooms">
+Zoom Room
+</a>
+ license.  
+</p>
+
+</li>
+
+
+<li>
+
+<p>
+Account owner or admin permissions.
+</p>
+
+</li>
+
+
+</ul>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+room:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Medium
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;devices&quot;:[{&quot;app_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_system&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;Companion Whiteboard&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Offline&quot;,&quot;device_mac_addresses&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;device_hostname&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_manufacturer&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_model&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_firmware&quot;:&quot;\u003cstring\u003e&quot;,&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;serial_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;app_version&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_system&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_type&quot;:&quot;Zoom Rooms Computer&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;room_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;status&quot;:&quot;Offline&quot;,&quot;device_mac_addresses&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;device_hostname&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_manufacturer&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_model&quot;:&quot;\u003cstring\u003e&quot;,&quot;device_firmware&quot;:&quot;\u003cstring\u003e&quot;,&quot;ip_address&quot;:&quot;\u003cstring\u003e&quot;,&quot;serial_number&quot;:&quot;\u003cstring\u003e&quot;}]}
+```

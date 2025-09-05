@@ -1,0 +1,61 @@
+# Update a user&#39;s profile
+
+PATCH {{baseUrl}}/contact_center/users/:userId
+
+
+<p>
+Update information in a user&#39;s profile. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_user:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+### Request Body
+```
+{&quot;client_integration&quot;=&gt;&quot;ServiceNow&quot;, &quot;role_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;status_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;sub_status_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;user_access&quot;=&gt;&quot;active&quot;, &quot;country_iso_code&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;region_id&quot;=&gt;&quot;&lt;string&gt;&quot;, &quot;channel_settings&quot;=&gt;{&quot;multi_channel_engagements&quot;=&gt;{&quot;enable&quot;=&gt;&quot;&lt;boolean&gt;&quot;, &quot;max_agent_load&quot;=&gt;&quot;&lt;integer&gt;&quot;}, &quot;concurrent_message_capacity&quot;=&gt;&quot;&lt;integer&gt;&quot;}}
+```
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Content-Type` | string |  |  |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

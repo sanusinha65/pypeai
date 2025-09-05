@@ -1,0 +1,90 @@
+# Delete members in a role
+
+DELETE {{baseUrl}}/phone/roles/:roleId/members?user_ids=&lt;string&gt;&amp;user_ids=&lt;string&gt;
+
+
+<p>
+Use this API to delete member(s) in a 
+<a href="https://support.zoom.us/hc/en-us/articles/360042099012-Using-Zoom-Phone-role-management">
+role
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+
+* Business or Education account
+* Zoom Phone license 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+phone:write:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+Granular Scopes:
+</strong>
+ 
+<code>
+phone:delete:role_member:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+### Request Params
+| Key | Datatype | Required | Description |
+| `user_ids` | string |  | (Required) The user IDs or email addresses of the user |
+| `user_ids` | string |  | (Required) The user IDs or email addresses of the user |
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+
+
+### RESPONSES
+
+**status**: ``
+```
+
+```

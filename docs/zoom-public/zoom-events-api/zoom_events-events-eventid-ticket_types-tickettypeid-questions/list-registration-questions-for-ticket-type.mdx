@@ -1,0 +1,61 @@
+# List registration questions for ticket type
+
+GET {{baseUrl}}/zoom_events/events/:eventId/ticket_types/:ticketTypeId/questions
+
+
+<p>
+Use this API to list registration questions and fields that are to be answered by users while registering for an event. These questions are setup at ticket_type level.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+zoom_events_ticket_types:read
+</code>
+
+<code>
+zoom_events_ticket_types:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+Light
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;questions&quot;:[{&quot;field_name&quot;:&quot;country&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;},{&quot;field_name&quot;:&quot;address&quot;,&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;}],&quot;custom_questions&quot;:[{&quot;options&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;short_answer&quot;,&quot;min_length&quot;:&quot;\u003cinteger\u003e&quot;,&quot;max_length&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;options&quot;:[&quot;\u003cstring\u003e&quot;,&quot;\u003cstring\u003e&quot;],&quot;required&quot;:&quot;\u003cboolean\u003e&quot;,&quot;title&quot;:&quot;\u003cstring\u003e&quot;,&quot;question_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;type&quot;:&quot;single_dropdown&quot;,&quot;min_length&quot;:&quot;\u003cinteger\u003e&quot;,&quot;max_length&quot;:&quot;\u003cinteger\u003e&quot;}]}
+```

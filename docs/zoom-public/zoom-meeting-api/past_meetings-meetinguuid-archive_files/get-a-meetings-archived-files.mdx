@@ -1,0 +1,84 @@
+# Get a meeting&#39;s archived files
+
+GET {{baseUrl}}/past_meetings/:meetingUUID/archive_files
+
+
+<p>
+Return a specific meeting instance&#39;s 
+<a href="https://support.zoom.us/hc/en-us/articles/360050431572-Archiving-indicators">
+archived files
+</a>
+. 
+</p>
+
+
+
+<p>
+
+<strong>
+Prerequisites:
+</strong>
+ 
+* The 
+<a href="https://support.zoom.us/hc/en-us/articles/4405656451213--Archiving-for-meetings-and-webinars">
+
+<strong>
+Meeting and Webinar Archiving
+</strong>
+ feature
+</a>
+ enabled for your account by 
+<a href="https://support.zoom.us/hc/en-us/articles/201362003">
+Zoom Support
+</a>
+.
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+recording:read
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;account_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;archive_files&quot;:[{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;encryption_fingerprint&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_extension&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;file_type&quot;:&quot;M4A&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;individual&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;participant_leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_type&quot;:&quot;audio_only&quot;,&quot;status&quot;:&quot;processing&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;number_of_messages&quot;:&quot;\u003cinteger\u003e&quot;,&quot;storage_location&quot;:&quot;BR&quot;,&quot;auto_delete&quot;:&quot;\u003cboolean\u003e&quot;},{&quot;download_url&quot;:&quot;\u003cstring\u003e&quot;,&quot;encryption_fingerprint&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_extension&quot;:&quot;\u003cstring\u003e&quot;,&quot;file_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;file_type&quot;:&quot;M4A&quot;,&quot;id&quot;:&quot;\u003cstring\u003e&quot;,&quot;individual&quot;:&quot;\u003cboolean\u003e&quot;,&quot;participant_join_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;participant_leave_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;recording_type&quot;:&quot;chat_message&quot;,&quot;status&quot;:&quot;failed&quot;,&quot;file_path&quot;:&quot;\u003cstring\u003e&quot;,&quot;participant_email&quot;:&quot;\u003cemail\u003e&quot;,&quot;number_of_messages&quot;:&quot;\u003cinteger\u003e&quot;,&quot;storage_location&quot;:&quot;BR&quot;,&quot;auto_delete&quot;:&quot;\u003cboolean\u003e&quot;}],&quot;complete_time&quot;:{},&quot;duration&quot;:&quot;\u003cinteger\u003e&quot;,&quot;duration_in_second&quot;:&quot;\u003cinteger\u003e&quot;,&quot;host_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;id&quot;:&quot;\u003clong\u003e&quot;,&quot;is_breakout_room&quot;:&quot;\u003cboolean\u003e&quot;,&quot;meeting_type&quot;:&quot;external&quot;,&quot;recording_count&quot;:&quot;\u003cinteger\u003e&quot;,&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;status&quot;:&quot;completed&quot;,&quot;timezone&quot;:&quot;\u003cstring\u003e&quot;,&quot;topic&quot;:&quot;\u003cstring\u003e&quot;,&quot;total_size&quot;:&quot;\u003cinteger\u003e&quot;,&quot;type&quot;:4,&quot;uuid&quot;:&quot;\u003cstring\u003e&quot;,&quot;parent_meeting_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;group_id&quot;:&quot;\u003cstring\u003e&quot;}
+```

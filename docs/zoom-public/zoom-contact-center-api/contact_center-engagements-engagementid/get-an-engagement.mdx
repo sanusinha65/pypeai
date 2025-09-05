@@ -1,0 +1,57 @@
+# Get an engagement
+
+GET {{baseUrl}}/contact_center/engagements/:engagementId
+
+
+<p>
+Get information about an engagement. 
+</p>
+
+
+
+<p>
+
+<strong>
+Scopes:
+</strong>
+ 
+<code>
+contact_center_engagement:read:admin
+</code>
+
+</p>
+
+
+
+<p>
+
+<strong>
+
+<a href="https://marketplace.zoom.us/docs/api-reference/rate-limits#rate-limits">
+Rate Limit Label
+</a>
+:
+</strong>
+ 
+<code>
+LIGHT
+</code>
+
+</p>
+
+
+
+
+
+
+### HEADERS
+| Key | Datatype | Required | Description |
+| `Accept` | string |  |  |
+
+
+### RESPONSES
+
+**status**: `OK`
+```
+{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;,&quot;engagement_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;channel_types&quot;:[&quot;sms&quot;,&quot;sms&quot;],&quot;consumers&quot;:[{&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;},{&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_number&quot;:&quot;\u003cstring\u003e&quot;}],&quot;direction&quot;:&quot;outbound&quot;,&quot;flows&quot;:[{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_version&quot;:&quot;\u003cstring\u003e&quot;},{&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_version&quot;:&quot;\u003cstring\u003e&quot;}],&quot;queues&quot;:[{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;agents&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;display_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;queue_wait_type&quot;:&quot;callback&quot;,&quot;flow_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;waiting_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;handling_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;wrap_up_duration&quot;:&quot;\u003clong\u003e&quot;,&quot;voice_mail&quot;:&quot;\u003cinteger\u003e&quot;,&quot;dispositions&quot;:[{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;},{&quot;disposition_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;disposition_name&quot;:&quot;\u003cstring\u003e&quot;}],&quot;notes&quot;:[{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;},{&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;note&quot;:&quot;\u003cstring\u003e&quot;,&quot;last_modified_time&quot;:&quot;\u003cdateTime\u003e&quot;}],&quot;events&quot;:[{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;,&quot;channel_type&quot;:&quot;sms&quot;,&quot;event_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;accept_type&quot;:&quot;auto&quot;,&quot;transfer_to_flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_user_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_type&quot;:&quot;warm&quot;,&quot;upgraded_to_channel_type&quot;:&quot;video&quot;,&quot;crm_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;crm_call_status&quot;:&quot;hangup&quot;,&quot;supervisor_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;supervisor_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skills&quot;:[{&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;}]},{&quot;start_time&quot;:&quot;\u003cdateTime\u003e&quot;,&quot;duration&quot;:&quot;\u003clong\u003e&quot;,&quot;channel_type&quot;:&quot;sms&quot;,&quot;event_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;direction&quot;:&quot;outbound&quot;,&quot;flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;user_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;accept_type&quot;:&quot;manual&quot;,&quot;transfer_to_flow_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_flow_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_queue_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_queue_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_user_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_user_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_to_number&quot;:&quot;\u003cstring\u003e&quot;,&quot;transfer_type&quot;:&quot;warm&quot;,&quot;upgraded_to_channel_type&quot;:&quot;video&quot;,&quot;crm_type&quot;:&quot;\u003cstring\u003e&quot;,&quot;crm_call_status&quot;:&quot;miss&quot;,&quot;supervisor_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;supervisor_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;consumer_display_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;inbox_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skills&quot;:[{&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;},{&quot;skill_category_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_category_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_id&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_name&quot;:&quot;\u003cstring\u003e&quot;,&quot;skill_proficiency_level&quot;:&quot;\u003cinteger\u003e&quot;}]}]}
+```

@@ -18,7 +18,7 @@ function buildGitTimestamps() {
       cwd: REPO_ROOT,
       encoding: "utf8",
       stdio: ["pipe", "pipe", "ignore"],
-      maxBuffer: 1024 * 1024 * 50 // allow large output (50MB)
+      maxBuffer: 1024 * 1024 * 50, // allow large output (50MB)
     });
 
     const timestamps = {};
@@ -102,15 +102,16 @@ async function generate() {
     return;
   }
 
-  console.log("Starting sitemap generation...");
-  const startTime = Date.now();
+  const buildStart = new Date();
+  console.log("🕒 Build started at:", buildStart.toISOString());
 
+  const startTime = Date.now();
   let newestChange = new Date(0);
   const projects = await listProjects();
-  console.log(`Found ${projects.length} projects`);
+  console.log(`📦 Found ${projects.length} projects`);
 
   // Build git timestamps once
-  console.log("Fetching git timestamps in batch...");
+  console.log("🔍 Fetching git timestamps in batch...");
   const gitTimestamps = buildGitTimestamps();
 
   const allFiles = [];
@@ -118,7 +119,7 @@ async function generate() {
   const projectPromises = projects.map(async (project) => {
     try {
       const mdxFiles = await listMdxFiles(project);
-      console.log(`Found ${mdxFiles.length} MDX files in ${project}`);
+      console.log(`📄 Found ${mdxFiles.length} MDX files in ${project}`);
 
       const projectFiles = [];
       let projectNewestChange = new Date(0);
@@ -136,10 +137,13 @@ async function generate() {
 
         if (slug === "introduction") return null;
 
+        const loc = `${SITE_ROOT}/${project}/${slug}`;
+        console.log("   ✅", loc, "→", lastmod.toISOString());
+
         return {
-          loc: `${SITE_ROOT}/${project}/${slug}`,
-          lastmod: lastmod.toISOString(),
-          priority: "0.7"
+          loc,
+          lastmod: lastmod.toISOString().split("T")[0],
+          priority: "0.7",
         };
       });
 
@@ -158,12 +162,14 @@ async function generate() {
       if (projectLastmod && projectLastmod > projectNewestChange)
         projectNewestChange = projectLastmod;
 
+      console.log("   📌", `${SITE_ROOT}/${project}`, "→", projectLastmod.toISOString());
+
       projectFiles.push({
         loc: `${SITE_ROOT}/${project}`,
         lastmod: projectLastmod
-          ? projectLastmod.toISOString()
-          : new Date().toISOString(),
-        priority: "0.8"
+          ? projectLastmod.toISOString().split("T")[0]
+          : new Date().toISOString().split("T")[0],
+        priority: "0.8",
       });
 
       return { projectFiles, projectNewestChange };
@@ -184,10 +190,12 @@ async function generate() {
 
   // Add homepage
   const homeLastmod = newestChange > new Date(0) ? newestChange : new Date();
+  console.log("🏠 Homepage lastmod →", homeLastmod.toISOString());
+
   allFiles.unshift({
     loc: `${SITE_ROOT}/`,
-    lastmod: homeLastmod.toISOString(),
-    priority: "1.0"
+    lastmod: homeLastmod.toISOString().split("T")[0],
+    priority: "1.0",
   });
 
   const staticPagesWithDates = allFiles
@@ -208,6 +216,7 @@ async function generate() {
       2
     )}s`
   );
+  console.log("🕒 Build finished at:", new Date().toISOString());
 }
 
 generate().catch((err) => {

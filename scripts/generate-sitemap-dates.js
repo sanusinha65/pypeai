@@ -142,7 +142,7 @@ async function generate() {
 
         return {
           loc,
-          lastmod: lastmod.toISOString().split("T")[0],
+          lastmod: lastmod.toISOString(),
           priority: "0.7",
         };
       });
@@ -167,8 +167,8 @@ async function generate() {
       projectFiles.push({
         loc: `${SITE_ROOT}/${project}`,
         lastmod: projectLastmod
-          ? projectLastmod.toISOString().split("T")[0]
-          : new Date().toISOString().split("T")[0],
+          ? projectLastmod.toISOString()
+          : new Date().toISOString(),
         priority: "0.8",
       });
 
@@ -194,7 +194,7 @@ async function generate() {
 
   allFiles.unshift({
     loc: `${SITE_ROOT}/`,
-    lastmod: homeLastmod.toISOString().split("T")[0],
+    lastmod: homeLastmod.toISOString(),
     priority: "1.0",
   });
 
